@@ -1,0 +1,512 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: top_level.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_level.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_level"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : top_level
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level/myComp.vhd" into library work
+Parsing entity <myComp>.
+Parsing architecture <Behavioral> of entity <mycomp>.
+Parsing VHDL file "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level/comm_fpga_fx2.vhd" into library work
+Parsing entity <comm_fpga_fx2>.
+Parsing architecture <behavioural> of entity <comm_fpga_fx2>.
+Parsing VHDL file "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level/top_level.vhd" into library work
+Parsing entity <top_level>.
+Parsing architecture <behavioural> of entity <top_level>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top_level> (architecture <behavioural>) from library <work>.
+
+Elaborating entity <myComp> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level/myComp.vhd" Line 32: clk should be on the sensitivity list of the process
+
+Elaborating entity <comm_fpga_fx2> (architecture <behavioural>) from library <work>.
+WARNING:HDLCompiler:1127 - "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level/top_level.vhd" Line 199: Assignment to flags ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_level>.
+    Related source file is "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level/top_level.vhd".
+INFO:Xst:3210 - "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level/top_level.vhd" line 175: Output port <f2hReady_out> of the instance <comm_fpga_fx2> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <reg0>.
+    Found 8-bit register for signal <reg1>.
+    Found 8-bit register for signal <reg2>.
+    Found 8-bit register for signal <reg3>.
+    Found 8-bit register for signal <reg4>.
+    Found 8-bit 7-to-1 multiplexer for signal <_n0092> created at line 66.
+    Summary:
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <top_level> synthesized.
+
+Synthesizing Unit <myComp>.
+    Related source file is "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level/myComp.vhd".
+    Found 8-bit register for signal <C>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <myComp> synthesized.
+
+Synthesizing Unit <comm_fpga_fx2>.
+    Related source file is "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level/comm_fpga_fx2.vhd".
+    Found 32-bit register for signal <count>.
+    Found 7-bit register for signal <chanAddr>.
+    Found 1-bit register for signal <isWrite>.
+    Found 1-bit register for signal <isAligned>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 21                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 8                                              |
+    | Clock              | fx2Clk_in (rising_edge)                        |
+    | Power Up State     | s_idle                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <GND_6_o_GND_6_o_sub_18_OUT<31:0>> created at line 1308.
+    Found 1-bit tristate buffer for signal <fx2Data_io<7>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<6>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<5>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<4>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<3>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<2>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<1>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<0>> created at line 222
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred  48 Multiplexer(s).
+	inferred   8 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <comm_fpga_fx2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit subtractor                                     : 1
+# Registers                                            : 10
+ 1-bit register                                        : 2
+ 32-bit register                                       : 1
+ 7-bit register                                        : 1
+ 8-bit register                                        : 6
+# Multiplexers                                         : 51
+ 1-bit 2-to-1 multiplexer                              : 34
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 4
+ 8-bit 7-to-1 multiplexer                              : 1
+# Tristates                                            : 8
+ 1-bit tristate buffer                                 : 8
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit subtractor                                     : 1
+# Registers                                            : 89
+ Flip-Flops                                            : 89
+# Multiplexers                                         : 50
+ 1-bit 2-to-1 multiplexer                              : 34
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 7-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <C_2> in Unit <myComp> is equivalent to the following 2 FFs/Latches, which will be removed : <C_5> <C_7> 
+INFO:Xst:2261 - The FF/Latch <C_0> in Unit <myComp> is equivalent to the following FF/Latch, which will be removed : <C_6> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <comm_fpga_fx2/FSM_0> on signal <state[1:4]> with user encoding.
+------------------------------------
+ State                  | Encoding
+------------------------------------
+ s_idle                 | 0000
+ s_get_count0           | 0001
+ s_get_count1           | 0010
+ s_get_count2           | 0011
+ s_get_count3           | 0100
+ s_begin_write          | 0101
+ s_write                | 0110
+ s_end_write_aligned    | 0111
+ s_end_write_nonaligned | 1000
+ s_read                 | 1001
+------------------------------------
+
+Optimizing unit <top_level> ...
+
+Optimizing unit <myComp> ...
+INFO:Xst:2261 - The FF/Latch <reg4_0> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <reg4_6> 
+INFO:Xst:2261 - The FF/Latch <reg4_2> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <reg4_5> <reg4_7> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 0.
+WARNING:Xst:2677 - Node <comm_fpga_fx2/state_FSM_FFd1_1> of sequential type is unconnected in block <top_level>.
+FlipFlop comm_fpga_fx2/state_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd3 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd4 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 92
+ Flip-Flops                                            : 92
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top_level.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 251
+#      GND                         : 1
+#      INV                         : 31
+#      LUT1                        : 1
+#      LUT2                        : 7
+#      LUT3                        : 14
+#      LUT4                        : 7
+#      LUT5                        : 40
+#      LUT6                        : 85
+#      MUXCY                       : 31
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 32
+# FlipFlops/Latches                : 92
+#      FD                          : 15
+#      FDE                         : 72
+#      FDR                         : 2
+#      FDS                         : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 32
+#      IBUF                        : 10
+#      IOBUF                       : 8
+#      OBUF                        : 14
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              92  out of  54576     0%  
+ Number of Slice LUTs:                  185  out of  27288     0%  
+    Number used as Logic:               185  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    193
+   Number with an unused Flip Flop:     101  out of    193    52%  
+   Number with an unused LUT:             8  out of    193     4%  
+   Number of fully used LUT-FF pairs:    84  out of    193    43%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    218    15%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+fx2Clk_in                          | BUFGP                  | 92    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.783ns (Maximum Frequency: 264.365MHz)
+   Minimum input arrival time before clock: 4.879ns
+   Maximum output required time after clock: 7.619ns
+   Maximum combinational path delay: 7.750ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'fx2Clk_in'
+  Clock period: 3.783ns (frequency: 264.365MHz)
+  Total number of paths / destination ports: 1659 / 151
+-------------------------------------------------------------------------
+Delay:               3.783ns (Levels of Logic = 3)
+  Source:            comm_fpga_fx2/count_14 (FF)
+  Destination:       comm_fpga_fx2/state_FSM_FFd2 (FF)
+  Source Clock:      fx2Clk_in rising
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/count_14 to comm_fpga_fx2/state_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.447   1.015  comm_fpga_fx2/count_14 (comm_fpga_fx2/count_14)
+     LUT6:I0->O            1   0.203   0.924  comm_fpga_fx2/count[31]_GND_6_o_equal_19_o<31>5 (comm_fpga_fx2/count[31]_GND_6_o_equal_19_o<31>4)
+     LUT6:I1->O            4   0.203   0.684  comm_fpga_fx2/count[31]_GND_6_o_equal_19_o<31>6 (comm_fpga_fx2/count[31]_GND_6_o_equal_19_o)
+     LUT6:I5->O            2   0.205   0.000  comm_fpga_fx2/state_FSM_FFd1-In5 (comm_fpga_fx2/state_FSM_FFd1-In)
+     FD:D                      0.102          comm_fpga_fx2/state_FSM_FFd1
+    ----------------------------------------
+    Total                      3.783ns (1.160ns logic, 2.623ns route)
+                                       (30.7% logic, 69.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 256 / 163
+-------------------------------------------------------------------------
+Offset:              4.879ns (Levels of Logic = 2)
+  Source:            fx2GotData_in (PAD)
+  Destination:       comm_fpga_fx2/count_31 (FF)
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: fx2GotData_in to comm_fpga_fx2/count_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.841  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT6:I0->O           32   0.203   1.291  comm_fpga_fx2/_n0223_inv1 (comm_fpga_fx2/_n0223_inv)
+     FDE:CE                    0.322          comm_fpga_fx2/count_0
+    ----------------------------------------
+    Total                      4.879ns (1.747ns logic, 3.132ns route)
+                                       (35.8% logic, 64.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 196 / 21
+-------------------------------------------------------------------------
+Offset:              7.619ns (Levels of Logic = 4)
+  Source:            comm_fpga_fx2/state_FSM_FFd1 (FF)
+  Destination:       fx2Data_io<7> (PAD)
+  Source Clock:      fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/state_FSM_FFd1 to fx2Data_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              42   0.447   1.662  comm_fpga_fx2/state_FSM_FFd1 (comm_fpga_fx2/state_FSM_FFd1)
+     LUT4:I1->O            1   0.205   0.580  comm_fpga_fx2/Mmux_dataOut12_SW0 (N6)
+     LUT6:I5->O            8   0.205   1.167  comm_fpga_fx2/Mmux_dataOut12 (comm_fpga_fx2/Mmux_dataOut12)
+     LUT6:I0->O            1   0.203   0.579  comm_fpga_fx2/Mmux_dataOut13 (comm_fpga_fx2/dataOut<0>)
+     IOBUF:I->IO               2.571          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+    ----------------------------------------
+    Total                      7.619ns (3.631ns logic, 3.988ns route)
+                                       (47.7% logic, 52.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 27 / 11
+-------------------------------------------------------------------------
+Delay:               7.750ns (Levels of Logic = 5)
+  Source:            fx2GotRoom_in (PAD)
+  Destination:       fx2Data_io<7> (PAD)
+
+  Data Path: fx2GotRoom_in to fx2Data_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   1.222   1.021  fx2GotRoom_in_IBUF (fx2GotRoom_in_IBUF)
+     LUT4:I0->O            1   0.203   0.580  comm_fpga_fx2/Mmux_dataOut12_SW0 (N6)
+     LUT6:I5->O            8   0.205   1.167  comm_fpga_fx2/Mmux_dataOut12 (comm_fpga_fx2/Mmux_dataOut12)
+     LUT6:I0->O            1   0.203   0.579  comm_fpga_fx2/Mmux_dataOut13 (comm_fpga_fx2/dataOut<0>)
+     IOBUF:I->IO               2.571          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+    ----------------------------------------
+    Total                      7.750ns (4.404ns logic, 3.346ns route)
+                                       (56.8% logic, 43.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock fx2Clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |    3.783|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.47 secs
+ 
+--> 
+
+
+Total memory usage is 393392 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

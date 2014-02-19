@@ -1,0 +1,59 @@
+MAKESTUFF BUILD INFRASTRUCTURE
+
+Most of the software on makestuff.eu uses this cross-platform build
+infrastructure to abstract the details of compilation away from individual
+projects to a central location.
+
+There are four subdirectories here:
+
+  libs - Libraries (.dll, .lib, .so, .dylib, .a etc).
+  apps - Executables (.exe etc).
+  3rd - Third-party libraries, etc.
+  scripts - A few useful scripts.
+
+Once you've installed the infrastructure in a convenient location of your choice
+(e.g $HOME/makestuff), you can then fetch and build some application code from
+GitHub:
+
+  cd $HOME/makestuff/apps
+  ../scripts/msget.sh makestuff/lsep
+  cd lsep
+  make deps
+
+This will fetch the master branch of the lsep source code and build it,
+transitively fetching dependencies as necessary. You can build libraries in a
+similar way:
+
+  cd $HOME/makestuff/libs
+  ../scripts/msget.sh makestuff/libbuffer
+  cd libbuffer
+  make deps
+
+If instead of the master branch you wish to fetch the source code for the
+development branch, you can do that like this:
+
+  ../scripts/msget.sh makestuff/libbuffer/dev
+
+Or if you want the source code for a specific release:
+
+  ../scripts/msget.sh makestuff/libbuffer/20130701
+
+If you fetch a different branch or a specific release, the dependencies will be
+correctly matched when you do make deps.
+
+If you have git installed and wish to fetch the code for editing, you can do so
+using the msgit.sh script:
+
+  ../scripts/msgit.sh makestuff/libbuffer
+
+This time it defaults to fetching the dev branch. If you want a different
+branch, you can specify it as before:
+
+  ../scripts/msgit.sh makestuff/libbuffer/master
+
+Cloning from GitHub in this way will only give you one local branch; to get
+another of the remote branches you can do it with:
+
+  git checkout -b dev origin/dev
+
+Have fun!

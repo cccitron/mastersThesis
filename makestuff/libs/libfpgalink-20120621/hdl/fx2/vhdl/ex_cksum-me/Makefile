@@ -1,0 +1,43 @@
+#
+# Copyright (C) 2009-2012 Chris McClelland
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+TOP_LEVEL := top_level
+PLATFORM  := atlys
+COMMON    := ../../../common
+HDL       := vhdl
+HDLS      := \
+	$(TOP_LEVEL).vhdl \
+	../comm_fpga/comm_fpga_fx2.vhdl \
+	CamCtl.vhdl \
+	FBCtl.vhdl \
+	iodrp_controller.vhdl \
+	iodrp_mcb_controller.vhdl \
+	mcb_raw_wrapper.vhdl \
+	mcb_soft_calibration.vhdl \
+	mcb_soft_calibration_top.vhdl \
+	memc3_wrapper.vhdl \
+	SysCon.vhdl \
+	ipcore_dir/dcm_fixed.xco \
+	ipcore_dir/dcm_recfg.xco \
+	remote_sources/_/lib/digilent/DVITransmitter.vhdl \
+	remote_sources/_/lib/digilent/InputSync.vhdl \
+	remote_sources/_/lib/digilent/LocalRst.vhdl \
+	remote_sources/_/lib/digilent/SerializerN_1.vhdl \
+	remote_sources/_/lib/digilent/TMDSEncoder.vhdl \
+	remote_sources/_/lib/digilent/VideoTimingCtl.vhdl
+
+include $(COMMON)/top.mk
+include $(COMMON)/xilinx.mk

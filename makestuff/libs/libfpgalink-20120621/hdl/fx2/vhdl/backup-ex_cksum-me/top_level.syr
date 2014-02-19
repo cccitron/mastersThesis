@@ -1,0 +1,598 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: top_level.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_level.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_level"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : top_level
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/comm_fpga/comm_fpga_fx2.vhdl" into library work
+Parsing entity <comm_fpga_fx2>.
+Parsing architecture <behavioural> of entity <comm_fpga_fx2>.
+Parsing VHDL file "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup-ex_cksum-me/top_level.vhdl" into library work
+Parsing entity <top_level>.
+Parsing architecture <behavioural> of entity <top_level>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top_level> (architecture <behavioural>) from library <work>.
+
+Elaborating entity <comm_fpga_fx2> (architecture <behavioural>) from library <work>.
+WARNING:HDLCompiler:1127 - "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup-ex_cksum-me/top_level.vhdl" Line 183: Assignment to flags ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_level>.
+    Related source file is "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup-ex_cksum-me/top_level.vhdl".
+INFO:Xst:3210 - "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup-ex_cksum-me/top_level.vhdl" line 159: Output port <f2hReady_out> of the instance <comm_fpga_fx2> is unconnected or connected to loadless signal.
+WARNING:Xst:2999 - Signal 'array0_1', unconnected in block 'top_level', is tied to its initial value.
+WARNING:Xst:2999 - Signal 'array0_0', unconnected in block 'top_level', is tied to its initial value.
+WARNING:Xst:2999 - Signal 'array0_2', unconnected in block 'top_level', is tied to its initial value.
+    Found 8-bit register for signal <reg0>.
+    Found 8-bit register for signal <reg1>.
+    Found 8-bit register for signal <reg2>.
+    Found 8-bit register for signal <reg3>.
+    Found 8-bit register for signal <reg4>.
+    Found 32-bit register for signal <j>.
+    Found 32-bit register for signal <i>.
+    Found 32-bit adder for signal <i[31]_GND_4_o_add_3_OUT> created at line 115.
+    Found 32-bit adder for signal <j[31]_GND_4_o_add_6_OUT> created at line 120.
+    Found 4x24-bit Read Only RAM for signal <_n0180>
+    Found 8-bit 7-to-1 multiplexer for signal <_n0154> created at line 57.
+    Found 32-bit comparator greater for signal <j[31]_GND_4_o_LessThan_3_o> created at line 113
+    Found 32-bit comparator greater for signal <i[31]_GND_4_o_LessThan_5_o> created at line 116
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 104 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <top_level> synthesized.
+
+Synthesizing Unit <comm_fpga_fx2>.
+    Related source file is "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/comm_fpga/comm_fpga_fx2.vhdl".
+    Found 32-bit register for signal <count>.
+    Found 7-bit register for signal <chanAddr>.
+    Found 1-bit register for signal <isWrite>.
+    Found 1-bit register for signal <isAligned>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 21                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 8                                              |
+    | Clock              | fx2Clk_in (rising_edge)                        |
+    | Power Up State     | s_idle                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_18_OUT<31:0>> created at line 1308.
+    Found 1-bit tristate buffer for signal <fx2Data_io<7>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<6>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<5>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<4>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<3>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<2>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<1>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<0>> created at line 222
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred  48 Multiplexer(s).
+	inferred   8 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <comm_fpga_fx2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x24-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 2
+ 32-bit subtractor                                     : 1
+# Registers                                            : 11
+ 1-bit register                                        : 2
+ 32-bit register                                       : 3
+ 7-bit register                                        : 1
+ 8-bit register                                        : 5
+# Comparators                                          : 2
+ 32-bit comparator greater                             : 2
+# Multiplexers                                         : 50
+ 1-bit 2-to-1 multiplexer                              : 34
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 7-to-1 multiplexer                              : 1
+# Tristates                                            : 8
+ 1-bit tristate buffer                                 : 8
+# FSMs                                                 : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <top_level>.
+The following registers are absorbed into counter <j>: 1 register on signal <j>.
+The following registers are absorbed into counter <i>: 1 register on signal <i>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0180> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 24-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <j<1:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <top_level> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x24-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 1
+ 32-bit subtractor                                     : 1
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 81
+ Flip-Flops                                            : 81
+# Comparators                                          : 2
+ 32-bit comparator greater                             : 2
+# Multiplexers                                         : 50
+ 1-bit 2-to-1 multiplexer                              : 34
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 7-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <comm_fpga_fx2/FSM_0> on signal <state[1:4]> with user encoding.
+------------------------------------
+ State                  | Encoding
+------------------------------------
+ s_idle                 | 0000
+ s_get_count0           | 0001
+ s_get_count1           | 0010
+ s_get_count2           | 0011
+ s_get_count3           | 0100
+ s_begin_write          | 0101
+ s_write                | 0110
+ s_end_write_aligned    | 0111
+ s_end_write_nonaligned | 1000
+ s_read                 | 1001
+------------------------------------
+INFO:Xst:2261 - The FF/Latch <reg4_3> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <reg4_5> <reg4_6> <reg4_7> 
+
+Optimizing unit <top_level> ...
+WARNING:Xst:1293 - FF/Latch <i_2> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_3> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_9> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_10> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_11> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_12> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_13> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_14> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_15> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_16> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_17> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_18> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_19> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_20> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_21> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_22> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_23> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_24> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_25> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_26> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_27> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_28> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_31> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_2> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_3> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_9> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_10> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_11> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_12> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_13> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_14> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_15> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_16> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_17> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_18> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_19> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_20> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_21> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_22> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_23> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_24> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_25> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_26> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_27> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_28> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <j_31> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 0.
+FlipFlop comm_fpga_fx2/chanAddr_0 has been replicated 1 time(s)
+FlipFlop comm_fpga_fx2/chanAddr_1 has been replicated 1 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd2 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd3 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd4 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 95
+ Flip-Flops                                            : 95
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top_level.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 285
+#      GND                         : 1
+#      INV                         : 35
+#      LUT1                        : 3
+#      LUT2                        : 3
+#      LUT3                        : 13
+#      LUT4                        : 16
+#      LUT5                        : 41
+#      LUT6                        : 81
+#      MUXCY                       : 51
+#      MUXF7                       : 4
+#      VCC                         : 1
+#      XORCY                       : 36
+# FlipFlops/Latches                : 95
+#      FD                          : 21
+#      FDE                         : 74
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 32
+#      IBUF                        : 10
+#      IOBUF                       : 8
+#      OBUF                        : 14
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              95  out of  54576     0%  
+ Number of Slice LUTs:                  192  out of  27288     0%  
+    Number used as Logic:               192  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    209
+   Number with an unused Flip Flop:     114  out of    209    54%  
+   Number with an unused LUT:            17  out of    209     8%  
+   Number of fully used LUT-FF pairs:    78  out of    209    37%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    218    15%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+fx2Clk_in                          | BUFGP                  | 95    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.025ns (Maximum Frequency: 248.469MHz)
+   Minimum input arrival time before clock: 5.256ns
+   Maximum output required time after clock: 7.383ns
+   Maximum combinational path delay: 7.082ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'fx2Clk_in'
+  Clock period: 4.025ns (frequency: 248.469MHz)
+  Total number of paths / destination ports: 1848 / 151
+-------------------------------------------------------------------------
+Delay:               4.025ns (Levels of Logic = 4)
+  Source:            comm_fpga_fx2/count_14 (FF)
+  Destination:       comm_fpga_fx2/state_FSM_FFd2 (FF)
+  Source Clock:      fx2Clk_in rising
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/count_14 to comm_fpga_fx2/state_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.447   1.015  comm_fpga_fx2/count_14 (comm_fpga_fx2/count_14)
+     LUT6:I0->O            1   0.203   0.924  comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>5 (comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>4)
+     LUT6:I1->O            4   0.203   0.788  comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>6 (comm_fpga_fx2/count[31]_GND_5_o_equal_19_o)
+     LUT6:I4->O            1   0.203   0.000  comm_fpga_fx2/state_FSM_FFd2-In1_G (N67)
+     MUXF7:I1->O           3   0.140   0.000  comm_fpga_fx2/state_FSM_FFd2-In1 (comm_fpga_fx2/state_FSM_FFd2-In)
+     FD:D                      0.102          comm_fpga_fx2/state_FSM_FFd2
+    ----------------------------------------
+    Total                      4.025ns (1.298ns logic, 2.727ns route)
+                                       (32.3% logic, 67.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 247 / 159
+-------------------------------------------------------------------------
+Offset:              5.256ns (Levels of Logic = 3)
+  Source:            fx2GotData_in (PAD)
+  Destination:       reg1_0 (FF)
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: fx2GotData_in to reg1_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O            1   0.203   0.684  comm_fpga_fx2/Mmux_h2fValid_out11_1 (comm_fpga_fx2/Mmux_h2fValid_out11)
+     LUT5:I3->O            8   0.203   0.802  GND_4_o_h2fValid_AND_6_o1 (GND_4_o_h2fValid_AND_6_o)
+     FDE:CE                    0.322          reg1_0
+    ----------------------------------------
+    Total                      5.256ns (1.950ns logic, 3.306ns route)
+                                       (37.1% logic, 62.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 196 / 21
+-------------------------------------------------------------------------
+Offset:              7.383ns (Levels of Logic = 4)
+  Source:            comm_fpga_fx2/chanAddr_6 (FF)
+  Destination:       fx2Data_io<7> (PAD)
+  Source Clock:      fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/chanAddr_6 to fx2Data_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.447   0.864  comm_fpga_fx2/chanAddr_6 (comm_fpga_fx2/chanAddr_6)
+     LUT4:I0->O            8   0.203   1.147  _n0155<6>1 (_n0155)
+     LUT6:I1->O            8   0.203   1.167  comm_fpga_fx2/Mmux_dataOut121 (comm_fpga_fx2/Mmux_dataOut12)
+     LUT6:I0->O            1   0.203   0.579  comm_fpga_fx2/Mmux_dataOut12 (comm_fpga_fx2/dataOut<0>)
+     IOBUF:I->IO               2.571          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+    ----------------------------------------
+    Total                      7.383ns (3.627ns logic, 3.756ns route)
+                                       (49.1% logic, 50.9% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 27 / 11
+-------------------------------------------------------------------------
+Delay:               7.082ns (Levels of Logic = 4)
+  Source:            fx2GotRoom_in (PAD)
+  Destination:       fx2Data_io<7> (PAD)
+
+  Data Path: fx2GotRoom_in to fx2Data_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   1.222   1.138  fx2GotRoom_in_IBUF (fx2GotRoom_in_IBUF)
+     LUT6:I0->O            8   0.203   1.167  comm_fpga_fx2/Mmux_dataOut121 (comm_fpga_fx2/Mmux_dataOut12)
+     LUT6:I0->O            1   0.203   0.579  comm_fpga_fx2/Mmux_dataOut12 (comm_fpga_fx2/dataOut<0>)
+     IOBUF:I->IO               2.571          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+    ----------------------------------------
+    Total                      7.082ns (4.199ns logic, 2.883ns route)
+                                       (59.3% logic, 40.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock fx2Clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |    4.025|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.59 secs
+ 
+--> 
+
+
+Total memory usage is 387296 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   64 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

@@ -1,0 +1,99 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Jan 10 21:18:00 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "fx2Clk_in" LOCATE = SITE "C10" LEVEL 1;
+COMP "fx2Data_io<0>" LOCATE = SITE "A2" LEVEL 1;
+COMP "fx2Data_io<1>" LOCATE = SITE "D6" LEVEL 1;
+COMP "fx2Data_io<2>" LOCATE = SITE "C6" LEVEL 1;
+COMP "fx2Data_io<3>" LOCATE = SITE "B3" LEVEL 1;
+COMP "fx2Data_io<4>" LOCATE = SITE "A3" LEVEL 1;
+COMP "fx2Data_io<5>" LOCATE = SITE "B4" LEVEL 1;
+COMP "fx2Data_io<6>" LOCATE = SITE "A4" LEVEL 1;
+COMP "fx2Data_io<7>" LOCATE = SITE "C5" LEVEL 1;
+COMP "fx2Read_out" LOCATE = SITE "F13" LEVEL 1;
+COMP "fx2GotData_in" LOCATE = SITE "C15" LEVEL 1;
+COMP "fx2GotRoom_in" LOCATE = SITE "A9" LEVEL 1;
+COMP "led_out<0>" LOCATE = SITE "U18" LEVEL 1;
+COMP "led_out<1>" LOCATE = SITE "M14" LEVEL 1;
+COMP "led_out<2>" LOCATE = SITE "N14" LEVEL 1;
+COMP "led_out<3>" LOCATE = SITE "L14" LEVEL 1;
+COMP "led_out<4>" LOCATE = SITE "M13" LEVEL 1;
+COMP "led_out<5>" LOCATE = SITE "D4" LEVEL 1;
+COMP "led_out<6>" LOCATE = SITE "P16" LEVEL 1;
+COMP "led_out<7>" LOCATE = SITE "N12" LEVEL 1;
+COMP "fx2Write_out" LOCATE = SITE "E13" LEVEL 1;
+COMP "sw_in<0>" LOCATE = SITE "A10" LEVEL 1;
+COMP "sw_in<1>" LOCATE = SITE "D14" LEVEL 1;
+COMP "sw_in<2>" LOCATE = SITE "C14" LEVEL 1;
+COMP "sw_in<3>" LOCATE = SITE "P15" LEVEL 1;
+COMP "sw_in<4>" LOCATE = SITE "P12" LEVEL 1;
+COMP "sw_in<5>" LOCATE = SITE "R5" LEVEL 1;
+COMP "sw_in<6>" LOCATE = SITE "T5" LEVEL 1;
+COMP "sw_in<7>" LOCATE = SITE "E4" LEVEL 1;
+COMP "sseg_out<0>" LOCATE = SITE "N10" LEVEL 1;
+COMP "sseg_out<1>" LOCATE = SITE "T12" LEVEL 1;
+COMP "sseg_out<2>" LOCATE = SITE "R11" LEVEL 1;
+COMP "sseg_out<3>" LOCATE = SITE "M11" LEVEL 1;
+COMP "sseg_out<4>" LOCATE = SITE "U13" LEVEL 1;
+COMP "sseg_out<5>" LOCATE = SITE "U15" LEVEL 1;
+COMP "sseg_out<6>" LOCATE = SITE "U16" LEVEL 1;
+COMP "sseg_out<7>" LOCATE = SITE "M10" LEVEL 1;
+COMP "fx2PktEnd_out" LOCATE = SITE "C4" LEVEL 1;
+COMP "fx2Addr_out<0>" LOCATE = SITE "A14" LEVEL 1;
+COMP "fx2Addr_out<1>" LOCATE = SITE "B14" LEVEL 1;
+COMP "anode_out<0>" LOCATE = SITE "U11" LEVEL 1;
+COMP "anode_out<1>" LOCATE = SITE "R10" LEVEL 1;
+COMP "anode_out<2>" LOCATE = SITE "U10" LEVEL 1;
+COMP "anode_out<3>" LOCATE = SITE "R8" LEVEL 1;
+COMP "fx2OE_out" LOCATE = SITE "A15" LEVEL 1;
+TIMEGRP fx2Clk_in = BEL "reg0_0" BEL "reg0_1" BEL "reg0_2" BEL "reg0_3" BEL
+        "reg0_4" BEL "reg0_5" BEL "reg0_6" BEL "reg0_7" BEL "reg1_0" BEL
+        "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL "reg1_4" BEL "reg1_5" BEL
+        "reg1_6" BEL "reg1_7" BEL "reg2_0" BEL "reg2_1" BEL "reg2_2" BEL
+        "reg2_3" BEL "reg2_4" BEL "reg2_5" BEL "reg2_6" BEL "reg2_7" BEL
+        "reg3_0" BEL "reg3_1" BEL "reg3_2" BEL "reg3_3" BEL "reg3_4" BEL
+        "reg3_5" BEL "reg3_6" BEL "reg3_7" BEL "comm_fpga_fx2/state_FSM_FFd2"
+        BEL "comm_fpga_fx2/state_FSM_FFd3" BEL "comm_fpga_fx2/state_FSM_FFd1"
+        BEL "comm_fpga_fx2/state_FSM_FFd4" BEL "comm_fpga_fx2/count_31" BEL
+        "comm_fpga_fx2/count_30" BEL "comm_fpga_fx2/count_29" BEL
+        "comm_fpga_fx2/count_28" BEL "comm_fpga_fx2/count_27" BEL
+        "comm_fpga_fx2/count_26" BEL "comm_fpga_fx2/count_25" BEL
+        "comm_fpga_fx2/count_24" BEL "comm_fpga_fx2/count_23" BEL
+        "comm_fpga_fx2/count_22" BEL "comm_fpga_fx2/count_21" BEL
+        "comm_fpga_fx2/count_20" BEL "comm_fpga_fx2/count_19" BEL
+        "comm_fpga_fx2/count_18" BEL "comm_fpga_fx2/count_17" BEL
+        "comm_fpga_fx2/count_16" BEL "comm_fpga_fx2/count_15" BEL
+        "comm_fpga_fx2/count_14" BEL "comm_fpga_fx2/count_13" BEL
+        "comm_fpga_fx2/count_12" BEL "comm_fpga_fx2/count_11" BEL
+        "comm_fpga_fx2/count_10" BEL "comm_fpga_fx2/count_9" BEL
+        "comm_fpga_fx2/count_8" BEL "comm_fpga_fx2/count_7" BEL
+        "comm_fpga_fx2/count_6" BEL "comm_fpga_fx2/count_5" BEL
+        "comm_fpga_fx2/count_4" BEL "comm_fpga_fx2/count_3" BEL
+        "comm_fpga_fx2/count_2" BEL "comm_fpga_fx2/count_1" BEL
+        "comm_fpga_fx2/count_0" BEL "comm_fpga_fx2/isWrite" BEL
+        "comm_fpga_fx2/chanAddr_6" BEL "comm_fpga_fx2/chanAddr_5" BEL
+        "comm_fpga_fx2/chanAddr_4" BEL "comm_fpga_fx2/chanAddr_3" BEL
+        "comm_fpga_fx2/chanAddr_2" BEL "comm_fpga_fx2/chanAddr_1" BEL
+        "comm_fpga_fx2/chanAddr_0" BEL "seven_seg/count_17" BEL
+        "seven_seg/count_16" BEL "seven_seg/count_15" BEL "seven_seg/count_14"
+        BEL "seven_seg/count_13" BEL "seven_seg/count_12" BEL
+        "seven_seg/count_11" BEL "seven_seg/count_10" BEL "seven_seg/count_9"
+        BEL "seven_seg/count_8" BEL "seven_seg/count_7" BEL
+        "seven_seg/count_6" BEL "seven_seg/count_5" BEL "seven_seg/count_4"
+        BEL "seven_seg/count_3" BEL "seven_seg/count_2" BEL
+        "seven_seg/count_1" BEL "seven_seg/count_0" BEL
+        "comm_fpga_fx2/isAligned" BEL "comm_fpga_fx2/state_FSM_FFd1_1" BEL
+        "comm_fpga_fx2/state_FSM_FFd4_1" BEL "comm_fpga_fx2/state_FSM_FFd3_1"
+        BEL "comm_fpga_fx2/state_FSM_FFd2_1" BEL "comm_fpga_fx2/chanAddr_0_1"
+        BEL "comm_fpga_fx2/chanAddr_1_1" BEL "checksum_0" BEL "checksum_1" BEL
+        "checksum_2" BEL "checksum_3" BEL "checksum_4" BEL "checksum_5" BEL
+        "checksum_6" BEL "checksum_7" BEL "checksum_8" BEL "checksum_9" BEL
+        "checksum_10" BEL "checksum_11" BEL "checksum_12" BEL "checksum_13"
+        BEL "checksum_14" BEL "checksum_15" BEL
+        "comm_fpga_fx2/state_FSM_FFd3_2" BEL "comm_fpga_fx2/state_FSM_FFd2_2"
+        BEL "comm_fpga_fx2/state_FSM_FFd1_2" BEL "fx2Clk_in_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
+SCHEMATIC END;
+

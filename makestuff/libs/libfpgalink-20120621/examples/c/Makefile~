@@ -1,0 +1,9 @@
+all:
+	gcc -m64 -O3 -Wall -Wextra -Wundef -pedantic-errors -std=c99 -Wstrict-prototypes -Wno-missing-field-initializers -I../.. -I../../../../common -Wl,--relax,--gc-sections,-rpath,\$ORIGIN,-rpath-link,../../linux.x86_64/rel -o ../../linux.x86_64/rel/fpgalink *.c -L../../linux.x86_64/rel -lfpgalink
+	dd of=/var/tmp/foo.dat if=/dev/urandom bs=65536 count=160
+	
+cksum:
+	../../linux.x86_64/rel/fpgalink -s -v 1443:0007 -i 1443:0007 -x ../../gen_csvf/ex_cksum_atlys_fx2_vhdl.csvf -f /var/tmp/foo.dat
+
+clean:
+	
