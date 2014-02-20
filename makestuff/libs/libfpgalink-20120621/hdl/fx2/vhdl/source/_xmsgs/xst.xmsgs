@@ -5,121 +5,124 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 397: Actual for formal port <arg fmt="%s" index="1">red_i</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 445: Actual for formal port <arg fmt="%s" index="1">red_i</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 398: Actual for formal port <arg fmt="%s" index="1">green_i</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 446: Actual for formal port <arg fmt="%s" index="1">green_i</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 399: Actual for formal port <arg fmt="%s" index="1">blue_i</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 447: Actual for formal port <arg fmt="%s" index="1">blue_i</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 577: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 577: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 581: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 581: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 620: Using initial value <arg fmt="%s" index="1">&quot;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</arg> for <arg fmt="%s" index="2">allzero</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 620: Using initial value <arg fmt="%s" index="1">&quot;00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;</arg> for <arg fmt="%s" index="2">allzero</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3120: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3120: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3408: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3408: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3670: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3670: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3877: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3877: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 368: Using initial value <arg fmt="%s" index="1">&apos;1&apos;</arg> for <arg fmt="%s" index="2">start_broadcast</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 368: Using initial value <arg fmt="%s" index="1">&apos;1&apos;</arg> for <arg fmt="%s" index="2">start_broadcast</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 483: Assignment to <arg fmt="%s" index="1">half_mv_du</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 483: Assignment to <arg fmt="%s" index="1">half_mv_du</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 485: Assignment to <arg fmt="%s" index="1">half_mv_dd</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 485: Assignment to <arg fmt="%s" index="1">half_mv_dd</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_mcb_controller.vhd" Line 443: <arg fmt="%s" index="1">bit_cnt7</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_mcb_controller.vhd" Line 443: <arg fmt="%s" index="1">bit_cnt7</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_mcb_controller.vhd" Line 467: <arg fmt="%s" index="1">bit_cnt7</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_mcb_controller.vhd" Line 467: <arg fmt="%s" index="1">bit_cnt7</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 559: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 559: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 773: Assignment to <arg fmt="%s" index="1">mcb_uodatavalid_u</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 773: Assignment to <arg fmt="%s" index="1">mcb_uodatavalid_u</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 817: Assignment to <arg fmt="%s" index="1">iodrpctrlr_use_bkst</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 817: Assignment to <arg fmt="%s" index="1">iodrpctrlr_use_bkst</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration_top.vhd" Line 376: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration_top.vhd" Line 376: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6887: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6887: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6918: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6918: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6919: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6919: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6944: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6944: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6945: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6945: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6969: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6969: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6980: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6980: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6981: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6981: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6985: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6985: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6986: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
+<msg type="warning" file="HDLCompiler" num="321" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6986: Comparison between arrays of unequal length always returns <arg fmt="%s" index="1">FALSE</arg>.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd" Line 163: Assignment to <arg fmt="%s" index="1">fstop</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd" Line 163: Assignment to <arg fmt="%s" index="1">fstop</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">251</arg>: Output port &lt;<arg fmt="%s" index="3">f2hReady_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">comm_fpga_fx2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">266</arg>: Output port &lt;<arg fmt="%s" index="3">outputData_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">write_fifo</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">283</arg>: Output port &lt;<arg fmt="%s" index="3">RSEL_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_SysCon</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">266</arg>: Output port &lt;<arg fmt="%s" index="3">outputValid_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">write_fifo</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">283</arg>: Output port &lt;<arg fmt="%s" index="3">SW_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_SysCon</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">283</arg>: Output port &lt;<arg fmt="%s" index="3">inputReady_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">read_fifo</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">283</arg>: Output port &lt;<arg fmt="%s" index="3">CLK_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_SysCon</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">331</arg>: Output port &lt;<arg fmt="%s" index="3">RSEL_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_SysCon</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">311</arg>: Output port &lt;<arg fmt="%s" index="3">HCNT_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_VideoTimingCtl</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">331</arg>: Output port &lt;<arg fmt="%s" index="3">SW_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_SysCon</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">311</arg>: Output port &lt;<arg fmt="%s" index="3">VCNT_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_VideoTimingCtl</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">331</arg>: Output port &lt;<arg fmt="%s" index="3">CLK_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_SysCon</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2999" delta="old" >Signal &apos;<arg fmt="%s" index="1">array0_1</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&apos;, is tied to its initial value.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">359</arg>: Output port &lt;<arg fmt="%s" index="3">HCNT_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_VideoTimingCtl</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2999" delta="old" >Signal &apos;<arg fmt="%s" index="1">array0_0</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&apos;, is tied to its initial value.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd</arg>&quot; line <arg fmt="%s" index="2">359</arg>: Output port &lt;<arg fmt="%s" index="3">VCNT_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_VideoTimingCtl</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2999" delta="old" >Signal &apos;<arg fmt="%s" index="1">array0_2</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&apos;, is tied to its initial value.
+<msg type="warning" file="Xst" num="2999" delta="new" >Signal &apos;<arg fmt="%s" index="1">array0</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&apos;, is tied to its initial value.
+</msg>
+
+<msg type="warning" file="Xst" num="3035" delta="new" >Index value(s) does not match array range for signal &lt;<arg fmt="%s" index="1">array0</arg>&gt;, simulation mismatch.
 </msg>
 
 <msg type="info" file="Xst" num="2774" delta="old" >HDL ADVISOR - <arg fmt="%s" index="1">S</arg> <arg fmt="%s" index="2">property</arg> attached to signal <arg fmt="%s" index="3">dummy_t</arg> may hinder XST clustering optimizations.
@@ -146,238 +149,238 @@
 <msg type="warning" file="Xst" num="1581" delta="old" >Constraint &quot;<arg fmt="%s" index="1">TIG</arg>&quot; is only supported in a XCF file outside the BEGIN MODEL/END section.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_wr_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p0_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p1_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p2_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p2_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p2_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p2_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p2_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p2_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p2_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p2_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p3_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p3_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p3_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p3_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p3_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p3_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p3_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">p3_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">selfrefresh_mode</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">542</arg>: Output port &lt;<arg fmt="%s" index="3">selfrefresh_mode</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_ddr2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">selfrefresh_enter</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">status</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">status</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p2_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p3_wr_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_wr_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p4_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_cmd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_cmd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_underrun</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_wr_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_empty</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">p5_rd_error</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">mcbx_dram_ddr3_rst</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">mcbx_dram_ddr3_rst</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_data_valid</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_data_valid</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_cmd_ready_in</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_cmd_ready_in</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_refrsh_flag</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_refrsh_flag</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_cal_start</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_cal_start</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_sdo</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd</arg>&quot; line <arg fmt="%s" index="2">679</arg>: Output port &lt;<arg fmt="%s" index="3">uo_sdo</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">memc3_mcb_raw_wrapper_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">p0_cmd_byte_addr&lt;0:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -560,7 +563,7 @@
 <msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">mcbx_dram_ddr3_rst</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration_top.vhd</arg>&quot; line <arg fmt="%s" index="2">287</arg>: Output port &lt;<arg fmt="%s" index="3">Max_Value</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_soft_calibration_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration_top.vhd</arg>&quot; line <arg fmt="%s" index="2">287</arg>: Output port &lt;<arg fmt="%s" index="3">Max_Value</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mcb_soft_calibration_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">MCB_UODATA</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -575,10 +578,10 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">MCB_UO_CAL_START</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd</arg>&quot; line <arg fmt="%s" index="2">507</arg>: Output port &lt;<arg fmt="%s" index="3">DRP_BKST</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">iodrp_controller_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd</arg>&quot; line <arg fmt="%s" index="2">507</arg>: Output port &lt;<arg fmt="%s" index="3">DRP_BKST</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">iodrp_controller_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd</arg>&quot; line <arg fmt="%s" index="2">525</arg>: Output port &lt;<arg fmt="%s" index="3">read_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">iodrp_mcb_controller_inst</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd</arg>&quot; line <arg fmt="%s" index="2">525</arg>: Output port &lt;<arg fmt="%s" index="3">read_data</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">iodrp_mcb_controller_inst</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">MCB_UIDQLOWERDEC</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">mcb_soft_calibration</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0</arg>).
@@ -620,7 +623,7 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">FV_I</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/CamCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">265</arg>: Output port &lt;<arg fmt="%s" index="3">ERRTYPE_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_TWICtl</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/CamCtl.vhd</arg>&quot; line <arg fmt="%s" index="2">265</arg>: Output port &lt;<arg fmt="%s" index="3">ERRTYPE_O</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Inst_TWICtl</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="3035" delta="old" >Index value(s) does not match array range for signal &lt;<arg fmt="%s" index="1">CamInitRAM</arg>&gt;, simulation mismatch.
@@ -836,7 +839,7 @@
 <msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CamInitRAM</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram__n0202</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_array0</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
 <msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">RSEL_O</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">SysCon</arg>.
@@ -972,6 +975,18 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">n1_q_m_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TMDSEncoder</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">count_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&gt;.
+</msg>
+
 <msg type="info" file="Xst" num="1901" delta="old" >Instance <arg fmt="%s" index="1">Inst_pll_mcb</arg> in unit <arg fmt="%s" index="2">Inst_pll_mcb</arg> of type <arg fmt="%s" index="3">PLL_BASE</arg> has been replaced by <arg fmt="%s" index="4">PLL_ADV</arg>
 </msg>
 
@@ -1006,9 +1021,6 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Inst_camctlB/Inst_LocalRst/RstQ_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Inst_camctlA/Inst_LocalRst/RstQ_1&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">reg4_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;reg4_5&gt; &lt;reg4_6&gt; &lt;reg4_7&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Inst_camctlB/Inst_LocalRst/RstQ_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Inst_camctlA/Inst_LocalRst/RstQ_2&gt; </arg>
@@ -1197,186 +1209,6 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_9</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_16</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_17</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_18</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_19</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_20</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_22</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_25</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_26</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_27</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_28</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_29</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_30</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_31</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_9</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_16</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_17</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_18</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_19</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_20</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_22</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_25</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_26</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_27</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_28</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_29</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_30</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">i_31</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">j_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">VmodCAM_Ref</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Inst_camctlB/intRst</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Inst_camctlA/intRst&gt; </arg>
 </msg>
 
@@ -1524,7 +1356,28 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Inst_DVITransmitter/Inst_clk_serializer_10_1/gear_s</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">VmodCAM_Ref</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Inst_DVITransmitter/Inst_d2_serializer_10_1/gear_s&gt; &lt;Inst_DVITransmitter/Inst_d1_serializer_10_1/gear_s&gt; &lt;Inst_DVITransmitter/Inst_d0_serializer_10_1/gear_s&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="2957" delta="old" >There are clock and non-clock loads on clock signal <arg fmt="%s" index="1">Inst_SysCon/SysConCLK_BUFG</arg>. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">write_fifo/fifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">write_fifo/fifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">read_fifo/fifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">read_fifo/fifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">write_fifo/fifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">write_fifo/fifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">read_fifo/fifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">read_fifo/fifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="741" delta="old" >HDL ADVISOR - A <arg fmt="%d" index="1">4</arg>-bit shift register was found for signal &lt;<arg fmt="%s" index="2">Inst_camctlB/Inst_LocalRst/RstQ_4</arg>&gt; and currently occupies <arg fmt="%d" index="3">4</arg> logic cells (<arg fmt="%d" index="4">2</arg> slices). Removing the set/reset logic would take advantage of SRL<arg fmt="%d" index="5">32</arg> (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.

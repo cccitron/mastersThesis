@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Feb 18 21:30:15 2014
+// Written by: Map P.20131013 on Wed Feb 19 19:23:06 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -129,35 +129,6 @@ COMP "TMDS_TX_CLK_N" LOCATE = SITE "A6" LEVEL 1;
 COMP "TMDS_TX_CLK_P" LOCATE = SITE "B6" LEVEL 1;
 COMP "fx2OE_out" LOCATE = SITE "A15" LEVEL 1;
 COMP "RESET_I" LOCATE = SITE "T15" LEVEL 1;
-TIMEGRP fx2Clk_in = BEL "reg4_0" BEL "reg4_1" BEL "reg4_2" BEL "reg4_3" BEL
-        "reg4_4" BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
-        "reg1_4" BEL "reg1_5" BEL "reg1_6" BEL "reg1_7" BEL "reg2_0" BEL
-        "reg2_1" BEL "reg2_2" BEL "reg2_3" BEL "reg2_4" BEL "reg2_5" BEL
-        "reg2_6" BEL "reg2_7" BEL "reg3_0" BEL "reg3_1" BEL "reg3_2" BEL
-        "reg3_3" BEL "reg3_4" BEL "reg3_5" BEL "reg3_6" BEL "reg3_7" BEL "i_0"
-        BEL "i_1" BEL "j_0" BEL "j_1" BEL "comm_fpga_fx2/state_FSM_FFd2" BEL
-        "comm_fpga_fx2/state_FSM_FFd3" BEL "comm_fpga_fx2/state_FSM_FFd1" BEL
-        "comm_fpga_fx2/state_FSM_FFd4" BEL "comm_fpga_fx2/count_31" BEL
-        "comm_fpga_fx2/count_30" BEL "comm_fpga_fx2/count_29" BEL
-        "comm_fpga_fx2/count_28" BEL "comm_fpga_fx2/count_27" BEL
-        "comm_fpga_fx2/count_26" BEL "comm_fpga_fx2/count_25" BEL
-        "comm_fpga_fx2/count_24" BEL "comm_fpga_fx2/count_23" BEL
-        "comm_fpga_fx2/count_22" BEL "comm_fpga_fx2/count_21" BEL
-        "comm_fpga_fx2/count_20" BEL "comm_fpga_fx2/count_19" BEL
-        "comm_fpga_fx2/count_18" BEL "comm_fpga_fx2/count_17" BEL
-        "comm_fpga_fx2/count_16" BEL "comm_fpga_fx2/count_15" BEL
-        "comm_fpga_fx2/count_14" BEL "comm_fpga_fx2/count_13" BEL
-        "comm_fpga_fx2/count_12" BEL "comm_fpga_fx2/count_11" BEL
-        "comm_fpga_fx2/count_10" BEL "comm_fpga_fx2/count_9" BEL
-        "comm_fpga_fx2/count_8" BEL "comm_fpga_fx2/count_7" BEL
-        "comm_fpga_fx2/count_6" BEL "comm_fpga_fx2/count_5" BEL
-        "comm_fpga_fx2/count_4" BEL "comm_fpga_fx2/count_3" BEL
-        "comm_fpga_fx2/count_2" BEL "comm_fpga_fx2/count_1" BEL
-        "comm_fpga_fx2/count_0" BEL "comm_fpga_fx2/isWrite" BEL
-        "comm_fpga_fx2/chanAddr_6" BEL "comm_fpga_fx2/chanAddr_5" BEL
-        "comm_fpga_fx2/chanAddr_4" BEL "comm_fpga_fx2/chanAddr_3" BEL
-        "comm_fpga_fx2/chanAddr_2" BEL "comm_fpga_fx2/chanAddr_1" BEL
-        "comm_fpga_fx2/chanAddr_0" BEL "comm_fpga_fx2/isAligned";
 PIN Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0_pins<256> = BEL
         "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0" PINNAME P2CLK;
 PIN Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0_pins<278> = BEL
@@ -289,6 +260,245 @@ TIMEGRP CAMA_PCLK_I = BEL "Inst_InputSync_FVA/D_O" BEL
         "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0_pins<217>" BEL
         "Inst_FBCtl/pa_int_rst" BEL "Inst_FBCtl/pa_wr_data_sel" BEL
         "Inst_camctlA/cam_data_sel" BEL "CAMA_PCLK_I";
+PIN
+        read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram_pins<26>
+        = BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram"
+        PINNAME CLKAWRCLK;
+PIN
+        read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram_pins<27>
+        = BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram"
+        PINNAME CLKBRDCLK;
+TIMEGRP fx2Clk_in = BEL "consumer_timer/count_0" BEL "consumer_timer/count_1"
+        BEL "consumer_timer/count_2" BEL "consumer_timer/count_3" BEL
+        "consumer_timer/count_4" BEL "consumer_timer/count_5" BEL
+        "consumer_timer/count_6" BEL "consumer_timer/count_7" BEL
+        "consumer_timer/count_8" BEL "consumer_timer/count_9" BEL
+        "consumer_timer/count_10" BEL "consumer_timer/count_11" BEL
+        "consumer_timer/count_12" BEL "consumer_timer/count_13" BEL
+        "consumer_timer/count_14" BEL "consumer_timer/count_15" BEL
+        "consumer_timer/count_16" BEL "consumer_timer/count_17" BEL
+        "consumer_timer/count_18" BEL "consumer_timer/count_19" BEL
+        "consumer_timer/count_20" BEL "consumer_timer/count_21" BEL
+        "consumer_timer/count_22" BEL "consumer_timer/count_23" BEL
+        "consumer_timer/count_24" BEL "consumer_timer/count_25" BEL
+        "producer_timer/count_0" BEL "producer_timer/count_1" BEL
+        "producer_timer/count_2" BEL "producer_timer/count_3" BEL
+        "producer_timer/count_4" BEL "producer_timer/count_5" BEL
+        "producer_timer/count_6" BEL "producer_timer/count_7" BEL
+        "producer_timer/count_8" BEL "producer_timer/count_9" BEL
+        "producer_timer/count_10" BEL "producer_timer/count_11" BEL
+        "producer_timer/count_12" BEL "producer_timer/count_13" BEL
+        "producer_timer/count_14" BEL "producer_timer/count_15" BEL
+        "producer_timer/count_16" BEL "producer_timer/count_17" BEL
+        "producer_timer/count_18" BEL "producer_timer/count_19" BEL
+        "producer_timer/count_20" BEL "producer_timer/count_21" BEL
+        "producer_timer/count_22" BEL "producer_timer/count_23" BEL
+        "producer_timer/count_24" BEL "producer_timer/count_25" BEL "count_0"
+        BEL "count_1" BEL "count_2" BEL "count_3" BEL
+        "comm_fpga_fx2/state_FSM_FFd2" BEL "comm_fpga_fx2/state_FSM_FFd3" BEL
+        "comm_fpga_fx2/state_FSM_FFd1" BEL "comm_fpga_fx2/state_FSM_FFd4" BEL
+        "comm_fpga_fx2/count_31" BEL "comm_fpga_fx2/count_30" BEL
+        "comm_fpga_fx2/count_29" BEL "comm_fpga_fx2/count_28" BEL
+        "comm_fpga_fx2/count_27" BEL "comm_fpga_fx2/count_26" BEL
+        "comm_fpga_fx2/count_25" BEL "comm_fpga_fx2/count_24" BEL
+        "comm_fpga_fx2/count_23" BEL "comm_fpga_fx2/count_22" BEL
+        "comm_fpga_fx2/count_21" BEL "comm_fpga_fx2/count_20" BEL
+        "comm_fpga_fx2/count_19" BEL "comm_fpga_fx2/count_18" BEL
+        "comm_fpga_fx2/count_17" BEL "comm_fpga_fx2/count_16" BEL
+        "comm_fpga_fx2/count_15" BEL "comm_fpga_fx2/count_14" BEL
+        "comm_fpga_fx2/count_13" BEL "comm_fpga_fx2/count_12" BEL
+        "comm_fpga_fx2/count_11" BEL "comm_fpga_fx2/count_10" BEL
+        "comm_fpga_fx2/count_9" BEL "comm_fpga_fx2/count_8" BEL
+        "comm_fpga_fx2/count_7" BEL "comm_fpga_fx2/count_6" BEL
+        "comm_fpga_fx2/count_5" BEL "comm_fpga_fx2/count_4" BEL
+        "comm_fpga_fx2/count_3" BEL "comm_fpga_fx2/count_2" BEL
+        "comm_fpga_fx2/count_1" BEL "comm_fpga_fx2/count_0" BEL
+        "comm_fpga_fx2/isWrite" BEL "comm_fpga_fx2/chanAddr_6" BEL
+        "comm_fpga_fx2/chanAddr_5" BEL "comm_fpga_fx2/chanAddr_4" BEL
+        "comm_fpga_fx2/chanAddr_3" BEL "comm_fpga_fx2/chanAddr_2" BEL
+        "comm_fpga_fx2/chanAddr_1" BEL "comm_fpga_fx2/chanAddr_0" BEL
+        "comm_fpga_fx2/isAligned" BEL "comm_fpga_fx2/state_FSM_FFd2_1" BEL
+        "comm_fpga_fx2/state_FSM_FFd3_1" BEL "comm_fpga_fx2/state_FSM_FFd1_1"
+        BEL "comm_fpga_fx2/state_FSM_FFd4_1" BEL "fx2Clk_in_BUFGP/BUFG" BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_0"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_1"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_2"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_3"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_5"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_6"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_6"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_5"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_4"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_3"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_0"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_6"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_5"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_4"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_3"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_2"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_1"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/curr_fwft_state_FSM_FFd1"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/user_valid"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_6"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_5"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_4"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_3"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_2"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_1"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_0"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_6"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_5"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_4"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_3"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_2"
+        BEL
+        "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_1"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_7"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_6"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_5"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_4"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_3"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_2"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_1"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_0"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_0"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_1"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_2"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_3"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_5"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_6"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_6"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_5"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_4"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_3"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_0"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_6"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_5"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_4"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_3"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_2"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_1"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/curr_fwft_state_FSM_FFd1"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/user_valid"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_6"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_5"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_4"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_3"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_2"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_1"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_0"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_6"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_5"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_4"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_3"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_2"
+        BEL
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_1"
+        PIN
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram_pins<26>"
+        PIN
+        "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram_pins<27>";
 PIN Inst_camctlA/Inst_ODDR2_MCLK_FORWARD_pins<1> = BEL
         "Inst_camctlA/Inst_ODDR2_MCLK_FORWARD" PINNAME CK0;
 PIN Inst_camctlB/Inst_ODDR2_MCLK_FORWARD_pins<1> = BEL
@@ -499,8 +709,22 @@ TIMEGRP Inst_SysCon_pllout_x1 = BEL "Inst_FBCtl/RDADDRCNT_PROC.hCnt_30" BEL
         "Inst_FBCtl/RDADDRCNT_PROC.hCnt_2" BEL
         "Inst_FBCtl/RDADDRCNT_PROC.hCnt_1" BEL
         "Inst_FBCtl/RDADDRCNT_PROC.hCnt_0" BEL "Inst_FBCtl/stateRd_FSM_FFd1"
-        BEL "Inst_FBCtl/stateRd_FSM_FFd2" BEL
-        "Inst_FBCtl/Inst_LocalRstC/RstQ_1" BEL
+        BEL "Inst_FBCtl/stateRd_FSM_FFd2" BEL "Inst_FBCtl/pc_rd_addr1_30" BEL
+        "Inst_FBCtl/pc_rd_addr1_29" BEL "Inst_FBCtl/pc_rd_addr1_28" BEL
+        "Inst_FBCtl/pc_rd_addr1_27" BEL "Inst_FBCtl/pc_rd_addr1_26" BEL
+        "Inst_FBCtl/pc_rd_addr1_25" BEL "Inst_FBCtl/pc_rd_addr1_24" BEL
+        "Inst_FBCtl/pc_rd_addr1_23" BEL "Inst_FBCtl/pc_rd_addr1_22" BEL
+        "Inst_FBCtl/pc_rd_addr1_21" BEL "Inst_FBCtl/pc_rd_addr1_20" BEL
+        "Inst_FBCtl/pc_rd_addr1_19" BEL "Inst_FBCtl/pc_rd_addr1_18" BEL
+        "Inst_FBCtl/pc_rd_addr1_17" BEL "Inst_FBCtl/pc_rd_addr1_16" BEL
+        "Inst_FBCtl/pc_rd_addr1_15" BEL "Inst_FBCtl/pc_rd_addr1_14" BEL
+        "Inst_FBCtl/pc_rd_addr1_13" BEL "Inst_FBCtl/pc_rd_addr1_12" BEL
+        "Inst_FBCtl/pc_rd_addr1_11" BEL "Inst_FBCtl/pc_rd_addr1_10" BEL
+        "Inst_FBCtl/pc_rd_addr1_9" BEL "Inst_FBCtl/pc_rd_addr1_8" BEL
+        "Inst_FBCtl/pc_rd_addr1_7" BEL "Inst_FBCtl/pc_rd_addr1_6" BEL
+        "Inst_FBCtl/pc_rd_addr1_5" BEL "Inst_FBCtl/pc_rd_addr1_4" BEL
+        "Inst_FBCtl/pc_rd_addr1_3" BEL "Inst_FBCtl/pc_rd_addr1_2" BEL
+        "Inst_FBCtl/pc_rd_addr1_1" BEL "Inst_FBCtl/Inst_LocalRstC/RstQ_1" BEL
         "Inst_FBCtl/Inst_LocalRstC/RstQ_2" BEL
         "Inst_FBCtl/Inst_LocalRstC/RstQ_3" BEL
         "Inst_FBCtl/Inst_LocalRstC/RstQ_4" BEL "Inst_FBCtl/pc_rd_addr2_20" BEL
@@ -644,21 +868,6 @@ TIMEGRP Inst_SysCon_pllout_x1 = BEL "Inst_FBCtl/RDADDRCNT_PROC.hCnt_30" BEL
         "Inst_FBCtl/RDY_O" BEL "Inst_FBCtl/fVMemSource" BEL
         "Inst_FBCtl/rd_data_sel" BEL "Inst_VideoTimingCtl/vs" BEL
         "Inst_DVITransmitter/Inst_clk_serializer_10_1/gear" BEL
-        "Inst_FBCtl/pc_rd_addr1_30" BEL "Inst_FBCtl/pc_rd_addr1_29" BEL
-        "Inst_FBCtl/pc_rd_addr1_28" BEL "Inst_FBCtl/pc_rd_addr1_27" BEL
-        "Inst_FBCtl/pc_rd_addr1_26" BEL "Inst_FBCtl/pc_rd_addr1_25" BEL
-        "Inst_FBCtl/pc_rd_addr1_24" BEL "Inst_FBCtl/pc_rd_addr1_23" BEL
-        "Inst_FBCtl/pc_rd_addr1_22" BEL "Inst_FBCtl/pc_rd_addr1_21" BEL
-        "Inst_FBCtl/pc_rd_addr1_20" BEL "Inst_FBCtl/pc_rd_addr1_19" BEL
-        "Inst_FBCtl/pc_rd_addr1_18" BEL "Inst_FBCtl/pc_rd_addr1_17" BEL
-        "Inst_FBCtl/pc_rd_addr1_16" BEL "Inst_FBCtl/pc_rd_addr1_15" BEL
-        "Inst_FBCtl/pc_rd_addr1_14" BEL "Inst_FBCtl/pc_rd_addr1_13" BEL
-        "Inst_FBCtl/pc_rd_addr1_12" BEL "Inst_FBCtl/pc_rd_addr1_11" BEL
-        "Inst_FBCtl/pc_rd_addr1_10" BEL "Inst_FBCtl/pc_rd_addr1_9" BEL
-        "Inst_FBCtl/pc_rd_addr1_8" BEL "Inst_FBCtl/pc_rd_addr1_7" BEL
-        "Inst_FBCtl/pc_rd_addr1_6" BEL "Inst_FBCtl/pc_rd_addr1_5" BEL
-        "Inst_FBCtl/pc_rd_addr1_4" BEL "Inst_FBCtl/pc_rd_addr1_3" BEL
-        "Inst_FBCtl/pc_rd_addr1_2" BEL "Inst_FBCtl/pc_rd_addr1_1" BEL
         "Inst_DVITransmitter/Inst_TMDSEncoder_red/Mshreg_de_dd" BEL
         "Inst_DVITransmitter/Inst_TMDSEncoder_red/de_dd" BEL
         "Inst_DVITransmitter/Inst_TMDSEncoder_blue/Mshreg_c1_dd" BEL
@@ -1151,18 +1360,6 @@ TIMEGRP Inst_SysCon_mcb_drp_clk_bfg = BEL
         BEL
         "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/MCB_UIREAD"
         BEL
-        "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd5_1"
-        BEL
-        "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6_1"
-        BEL
-        "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_int_6_1"
-        BEL
-        "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_int_5_1"
-        BEL
-        "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_int_7_1"
-        BEL
-        "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_int_5_2"
-        BEL
         "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Mshreg_SELFREFRESH_MCB_MODE_R2"
         BEL
         "Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/SELFREFRESH_MCB_MODE_R2";
@@ -1460,13 +1657,17 @@ PIN Inst_SysCon/Inst_dcm_recfg/dcm_clkgen_inst_pins<1> = BEL
         "Inst_SysCon/Inst_dcm_recfg/dcm_clkgen_inst" PINNAME CLKIN;
 PIN Inst_SysCon/Inst_dcm_recfg/dcm_clkgen_inst_pins<4> = BEL
         "Inst_SysCon/Inst_dcm_recfg/dcm_clkgen_inst" PINNAME PROGCLK;
-PIN Inst_SysCon/Inst_pll_mcb/PLL_ADV_pins<2> = BEL
-        "Inst_SysCon/Inst_pll_mcb/PLL_ADV" PINNAME CLKIN1;
 PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
         PINNAME DIVCLK;
 PIN Inst_SysCon/Inst_dcm_fixed/dcm_sp_inst_pins<3> = BEL
         "Inst_SysCon/Inst_dcm_fixed/dcm_sp_inst" PINNAME CLKIN;
+PIN SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_1_pins<0> = BEL
+        "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_1" PINNAME DIVCLK;
+PIN Inst_SysCon/Inst_pll_mcb/PLL_ADV_pins<2> = BEL
+        "Inst_SysCon/Inst_pll_mcb/PLL_ADV" PINNAME CLKIN1;
 TIMEGRP CLK_I = PIN "Inst_SysCon/Inst_dcm_recfg/dcm_clkgen_inst_pins<1>" PIN
+        "Inst_SysCon/Inst_dcm_recfg/dcm_clkgen_inst_pins<4>" PIN
+        "Inst_SysCon/Inst_dcm_recfg/dcm_clkgen_inst_pins<1>" PIN
         "Inst_SysCon/Inst_dcm_recfg/dcm_clkgen_inst_pins<4>" BEL
         "Inst_SysCon/SRL16_inst/SRL16E" BEL "Inst_SysCon/state_FSM_FFd4" BEL
         "Inst_SysCon/state_FSM_FFd2" BEL "Inst_SysCon/state_FSM_FFd3" BEL
@@ -1487,11 +1688,12 @@ TIMEGRP CLK_I = PIN "Inst_SysCon/Inst_dcm_recfg/dcm_clkgen_inst_pins<1>" PIN
         BEL "Inst_SysCon/RstD_3" BEL "Inst_SysCon/RstD_4" BEL
         "Inst_SysCon/RstD_6" BEL "Inst_SysCon/RstD_5" BEL
         "Inst_SysCon/state_FSM_FFd5" BEL "Inst_SysCon/RstDbncQ_1" BEL
-        "Inst_SysCon/SysConCLK_BUFG" BEL "Inst_SysCon/Mshreg_RstQ_96_0" BEL
-        "Inst_SysCon/Mshreg_RstQ_96_1" BEL "Inst_SysCon/Mshreg_RstQ_96_2" BEL
-        "Inst_SysCon/RstQ_96" PIN "Inst_SysCon/Inst_pll_mcb/PLL_ADV_pins<2>"
-        PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
-        "Inst_SysCon/Inst_dcm_fixed/dcm_sp_inst_pins<3>";
+        "Inst_SysCon/Mshreg_RstQ_96_0" BEL "Inst_SysCon/Mshreg_RstQ_96_1" BEL
+        "Inst_SysCon/Mshreg_RstQ_96_2" BEL "Inst_SysCon/RstQ_96" PIN
+        "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
+        "Inst_SysCon/Inst_dcm_fixed/dcm_sp_inst_pins<3>" PIN
+        "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_1_pins<0>" PIN
+        "Inst_SysCon/Inst_pll_mcb/PLL_ADV_pins<2>";
 PIN Inst_SysCon/Inst_10_1_pll/PLL_ADV_pins<2> = BEL
         "Inst_SysCon/Inst_10_1_pll/PLL_ADV" PINNAME CLKIN1;
 TIMEGRP Inst_SysCon_Inst_dcm_recfg_clkfx = BEL
@@ -1580,10 +1782,10 @@ TIMEGRP Inst_SysCon_pllout_xs = PIN
         "Inst_DVITransmitter/Inst_d1_serializer_10_1/oserdes_m_pins<0>" PIN
         "Inst_DVITransmitter/Inst_d0_serializer_10_1/oserdes_s_pins<0>" PIN
         "Inst_DVITransmitter/Inst_d0_serializer_10_1/oserdes_m_pins<0>";
+TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 TS_CLK_I = PERIOD TIMEGRP "CLK_I" 99.99 MHz HIGH 50%;
 TS_CAMA_PCLK_I = PERIOD TIMEGRP "CAMA_PCLK_I" 80 MHz HIGH 50%;
 TS_CAMB_PCLK_I = PERIOD TIMEGRP "CAMB_PCLK_I" 80 MHz HIGH 50%;
-TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 TS_Inst_SysCon_Inst_dcm_recfg_clkfx = PERIOD TIMEGRP
         "Inst_SysCon_Inst_dcm_recfg_clkfx" TS_CLK_I * 1.08 HIGH 50%;
 TS_Inst_SysCon_Inst_dcm_fixed_clkfx = PERIOD TIMEGRP

@@ -139,111 +139,103 @@ signal FbRdy, FbRdEn, FbRdRst, FbRdClk : std_logic;
 signal FbRdData : std_logic_vector(16-1 downto 0);
 signal FbWrARst, FbWrBRst, int_FVA, int_FVB : std_logic;
 
+-- FIFO --
 -- Channel read/write interface -----------------------------------------------------------------
-	signal chanAddr  : std_logic_vector(6 downto 0);  -- the selected channel (0-127)
+signal chanAddr  : std_logic_vector(6 downto 0);  -- the selected channel (0-127)
 
-	-- Host >> FPGA pipe:
-	signal h2fData   : std_logic_vector(7 downto 0);  -- data lines used when the host writes to a channel
-	signal h2fValid  : std_logic;                     -- '1' means "on the next clock rising edge, please accept the data on h2fData"
-	signal h2fReady  : std_logic;                     -- channel logic can drive this low to say "I'm not ready for more data yet"
+-- Host >> FPGA pipe:
+signal h2fData   : std_logic_vector(7 downto 0);  -- data lines used when the host writes to a channel
+signal h2fValid  : std_logic;                     -- '1' means "on the next clock rising edge, please accept the data on h2fData"
+signal h2fReady  : std_logic;                     -- channel logic can drive this low to say "I'm not ready for more data yet"
 
-	-- Host << FPGA pipe:
-	signal f2hData   : std_logic_vector(7 downto 0);  -- data lines used when the host reads from a channel
-	signal f2hValid  : std_logic;                     -- channel logic can drive this low to say "I don't have data ready for you"
-	signal f2hReady  : std_logic;                     -- '1' means "on the next clock rising edge, put your next byte of data on f2hData"
-	-- ----------------------------------------------------------------------------------------------
+-- Host << FPGA pipe:
+signal f2hData   : std_logic_vector(7 downto 0);  -- data lines used when the host reads from a channel
+signal f2hValid  : std_logic;                     -- channel logic can drive this low to say "I don't have data ready for you"
+signal f2hReady  : std_logic;                     -- '1' means "on the next clock rising edge, put your next byte of data on f2hData"
+-- ----------------------------------------------------------------------------------------------
 
-	-- Needed so that the comm_fpga_fx2 module can drive both fx2Read_out and fx2OE_out
-	signal fx2Read                 : std_logic;
+-- Needed so that the comm_fpga_fx2 module can drive both fx2Read_out and fx2OE_out
+signal fx2Read                 : std_logic;
 
-	-- Registers implementing the channels
-	signal checksum, checksum_next : std_logic_vector(15 downto 0) := x"0000";
-	signal reg0, reg0_next         : std_logic_vector(7 downto 0)  := x"00";
-	signal reg1, reg1_next         : std_logic_vector(7 downto 0)  := x"00";
-	signal reg2, reg2_next         : std_logic_vector(7 downto 0)  := x"00";
-	signal reg3, reg3_next         : std_logic_vector(7 downto 0)  := x"00";
-	
-	-- first define the type of array
-	type array_type is array (0 to 2, 0 to 2) of std_logic_vector(7 downto 0);
-	--type array_type is array (3 downto 0) of std_logic_vector(23 downto 0); -- reg4 is a 4 element array of 24-bit vectors
-	signal array0 : array_type := ((x"fc", x"11", x"05"),
-	                               (x"02", x"fe", x"13"),
-	                               (x"15", x"01", x"fd"));
-   --signal array1 : array_type := ((x"ff", x"11", x"05"),
-	--                               (x"02", x"ff", x"13"),
-	--                               (x"15", x"01", x"ff")); 
-   --signal array2 : array_type := ((x"ff", x"11", x"05"),
-	--                              (x"02", x"ff", x"13"),
-	--                               (x"15", x"01", x"ff")); 
-	                               
-	-- initializing a 4 element array of 24 bit elements to zero.
-	--array0 <= (others => (others => '0'));
-	----- Alternate idea: single array w/ every 3 bytes being a diff pixel -----
-	signal reg4 : std_logic_vector(7 downto 0)  := x"00";
-	signal reg5 : std_logic_vector(7 downto 0)  := x"00";
-	signal reg6 : std_logic_vector(7 downto 0)  := x"00";
-	--array0(0) = x"05";
-	--array0(1) := x"12";
-	--array0(2) := x"ff";
-	--array0(3) <= x"0000ff";
-	
-	signal i, j : integer := 0;
+-- FIFOs implementing the channels
+signal fifoCount               : std_logic_vector(15 downto 0); -- MSB=writeFifo, LSB=readFifo
+
+-- Write FIFO:
+signal writeFifoInputData      : std_logic_vector(7 downto 0);  -- producer: data
+signal writeFifoInputValid     : std_logic;                     --           valid flag
+signal writeFifoInputReady     : std_logic;                     --           ready flag
+signal writeFifoOutputData     : std_logic_vector(7 downto 0);  -- consumer: data
+signal writeFifoOutputValid    : std_logic;                     --           valid flag
+signal writeFifoOutputReady    : std_logic;                     --           ready flag
+
+-- Read FIFO:
+signal readFifoInputData       : std_logic_vector(7 downto 0);  -- producer: data
+signal readFifoInputValid      : std_logic;                     --           valid flag
+signal readFifoInputReady      : std_logic;                     --           ready flag
+signal readFifoOutputData      : std_logic_vector(7 downto 0);  -- consumer: data
+signal readFifoOutputValid     : std_logic;                     --           valid flag
+signal readFifoOutputReady     : std_logic;                     --           ready flag
+
+-- Arrays
+-- first define the type of array
+type array_type is array (0 to 8) of std_logic_vector(7 downto 0);
+signal array0 : array_type := (x"fc", x"11", x"05",
+										 x"02", x"fe", x"13",
+										 x"15", x"01", x"fd");
+
+-- Counter which endlessly puts items into the read FIFO for the host to read
+signal count, count_next       : std_logic_vector(7 downto 0) := (others => '0');
+
+-- Producer and consumer timers
+signal producerSpeed           : std_logic_vector(3 downto 0);
+signal consumerSpeed           : std_logic_vector(3 downto 0);
 
 begin
-
--- Infer registers
+	
+	---------------------------
+	-- Start FIFO Stuff
+	---------------------------
+	-- Infer registers
 	process(fx2Clk_in)
 	begin
 		if ( rising_edge(fx2Clk_in) ) then
-			checksum <= checksum_next;
-			reg0 <= reg0_next;
-			reg1 <= reg1_next;
-			reg2 <= reg2_next;
-			reg3 <= reg3_next;
-			reg4 <= array0(i, j);
-			if (chanAddr = "0000100") then
-			   if (j > 2) then
-			      j <= 0;
-			      i <= i + 1;
-			      if (i > 2) then
-			         i <= 0;
-			      end if;
-			   else
-			      j <= j + 1;
-            end if;
-         end if;
+			count <= count_next;
 		end if;
 	end process;
 
-	-- Drive register inputs for each channel when the host is writing
-	checksum_next <=
-		std_logic_vector(unsigned(checksum) + unsigned(h2fData))
-			when chanAddr = "0000000" and h2fValid = '1'
-		else x"0000"
-			when chanAddr = "0000001" and h2fValid = '1' and h2fData(0) = '1'
-		else checksum;
-	reg0_next <= h2fData when chanAddr = "0000000" and h2fValid = '1' else reg0;
-	reg1_next <= h2fData when chanAddr = "0000001" and h2fValid = '1' else reg1;
-	reg2_next <= h2fData when chanAddr = "0000010" and h2fValid = '1' else reg2;
-	reg3_next <= h2fData when chanAddr = "0000011" and h2fValid = '1' else reg3;
-	--reg4_next <= h2fData when chanAddr = "0000100" and h2fValid = '1' else reg4;
-	
-	--reg4_next <= x"8a";
-	--reg4 <= x"8a";
+	-- Wire up write FIFO to channel 0 writes:
+	--   flags(2) driven by writeFifoOutputValid
+	--   writeFifoOutputReady driven by consumer_timer
+	--   LEDs driven by writeFifoOutputData
+	writeFifoInputData <= h2fData;
+	writeFifoInputValid <=
+		'1' when h2fValid = '1' and chanAddr = "0000000"
+		else '0';
+	h2fReady <=
+		'0' when writeFifoInputReady = '0' and chanAddr = "0000000"
+		else '1';
+
+	-- Wire up read FIFO to channel 0 reads:
+	--   readFifoInputValid driven by producer_timer
+	--   flags(0) driven by readFifoInputReady
+	count_next <=
+		std_logic_vector(unsigned(count) + 1) when readFifoInputValid = '1'
+		else count;
+	readFifoInputData <= array0(TO_INTEGER(unsigned(count)));
+	f2hValid <=
+		'0' when readFifoOutputValid = '0' and chanAddr = "0000000"
+		else '1';
+	readFifoOutputReady <=
+		'1' when f2hReady = '1' and chanAddr = "0000000"
+		else '0';
 	
 	-- Select values to return for each channel when the host is reading
 	with chanAddr select f2hData <=
-		SW_I when "0000000",
-		reg1  when "0000001",
-		reg2  when "0000010",
-		reg3  when "0000011",
-		reg4  when "0000100",
-		x"00" when others;
-
-	-- Assert that there's always data for reading, and always room for writing
-	f2hValid <= '1';
-	h2fReady <= '1';                                                         --END_SNIPPET(registers)
-
+		readFifoOutputData     when "0000000",  -- get data from read FIFO
+		fifoCount(15 downto 8) when "0000001",  -- read the depth of the write FIFO
+		fifoCount(7 downto 0)  when "0000010",  -- read the depth of the read FIFO
+		x"00"                  when others;                                   --END_SNIPPET(fifos)
+	
 	-- CommFPGA module
 	fx2Read_out <= fx2Read;
 	fx2OE_out <= fx2Read;
@@ -269,6 +261,62 @@ begin
 			f2hValid_in    => f2hValid,
 			f2hReady_out   => f2hReady
 		);
+
+	-- Write FIFO: written by host, read by LEDs
+	write_fifo : entity work.fifo_wrapper
+		port map(
+			clk_in          => fx2Clk_in,
+			depth_out       => fifoCount(15 downto 8),
+
+			-- Production end
+			inputData_in    => writeFifoInputData,
+			inputValid_in   => writeFifoInputValid,
+			inputReady_out  => writeFifoInputReady,
+
+			-- Consumption end
+			outputData_out  => writeFifoOutputData,
+			outputValid_out => writeFifoOutputValid,
+			outputReady_in  => writeFifoOutputReady
+		);
+	
+	-- Read FIFO: written by counter, read by host
+	read_fifo : entity work.fifo_wrapper
+		port map(
+			clk_in          => fx2Clk_in,
+			depth_out       => fifoCount(7 downto 0),
+
+			-- Production end
+			inputData_in    => readFifoInputData,
+			inputValid_in   => readFifoInputValid,
+			inputReady_out  => readFifoInputReady,
+
+			-- Consumption end
+			outputData_out  => readFifoOutputData,
+			outputValid_out => readFifoOutputValid,
+			outputReady_in  => readFifoOutputReady
+		);
+
+	-- Producer timer: how fast stuff is put into the read FIFO
+	producerSpeed <= not(SW_I(3 downto 0));
+	producer_timer : entity work.timer
+		port map(
+			clk_in     => fx2Clk_in,
+			ceiling_in => producerSpeed,
+			tick_out   => readFifoInputValid
+		);
+
+	-- Consumer timer: how fast stuff is drained from the write FIFO
+	consumerSpeed <= not(SW_I(7 downto 4));
+	consumer_timer : entity work.timer
+		port map(
+			clk_in     => fx2Clk_in,
+			ceiling_in => consumerSpeed,
+			tick_out   => writeFifoOutputReady
+		);
+	---------------------------
+	-- End FIFO Stuff
+	---------------------------
+		
 ----------------------------------------------------------------------------------
 
 LED_O <= VtcHs & VtcHs & VtcVde & async_rst & "0000";
@@ -487,4 +535,3 @@ FbWrBRst <= async_rst or not int_FVB;
    );	
 dummy_t <= '1';
 end Behavioral;
-

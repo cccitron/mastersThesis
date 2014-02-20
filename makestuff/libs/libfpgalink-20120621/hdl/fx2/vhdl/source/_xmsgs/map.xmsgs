@@ -11,7 +11,7 @@
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">Inst_SysCon/SYNC_SW/gen_bits[7].gen_bit/sreg&lt;1&gt;</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">11</arg> more times for the following (max. 5 shown):
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">21</arg> more times for the following (max. 5 shown):
 <arg fmt="%s" index="3">Inst_SysCon/SYNC_SW/gen_bits[6].gen_bit/sreg&lt;1&gt;,
 Inst_SysCon/SYNC_SW/gen_bits[5].gen_bit/sreg&lt;1&gt;,
 Inst_SysCon/SYNC_SW/gen_bits[4].gen_bit/sreg&lt;1&gt;,
@@ -55,6 +55,9 @@ For more information about the Timing Analyzer, consult the Xilinx Timing Analyz
 </msg>
 
 <msg type="info" file="PhysDesignRules" num="1861" delta="old" >To achieve optimal frequency synthesis performance with the CLKFX and CLKFX180 outputs of the DCM comp <arg fmt="%s" index="1">Inst_SysCon/Inst_dcm_fixed/dcm_sp_inst</arg>, consult the device Data Sheet.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2410" delta="new" >This design is using one or more 9K Block RAMs (RAMB8BWER).  9K Block RAM initialization data, both user defined and default, may be incorrect and should not be used.  For more information, please reference Xilinx Answer Record 39999.
 </msg>
 
 </messages>

@@ -10,7 +10,7 @@ Target Device  : xc6slx45
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue Feb 18 21:29:10 2014
+Mapped Date    : Wed Feb 19 19:21:59 2014
 
 Mapping design into LUTs...
 Running directed packing...
@@ -44,7 +44,7 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-* TS_Inst_SysCon_pllout_x1 = PERIOD TIMEGRP | SETUP       |    -1.154ns|   153.665ns|       4|        4616
+* TS_Inst_SysCon_pllout_x1 = PERIOD TIMEGRP | SETUP       |    -1.056ns|   141.402ns|       4|        4224
    "Inst_SysCon_pllout_x1" TS_Inst_SysCon_I | HOLD        |     0.060ns|            |       0|           0
   nst_dcm_recfg_clkfx HIGH 50%              |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
@@ -85,8 +85,9 @@ Asterisk (*) preceding a constraint indicates it was not met.
   TS_CAMB_PCLK_I = PERIOD TIMEGRP "CAMB_PCL | SETUP       |     9.222ns|     3.278ns|       0|           0
   K_I" 80 MHz HIGH 50%                      | HOLD        |     0.060ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns | SETUP       |    18.129ns|     1.871ns|       0|           0
-   HIGH 50%                                 | HOLD        |     0.355ns|            |       0|           0
+  TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns | SETUP       |    17.938ns|     2.062ns|       0|           0
+   HIGH 50%                                 | HOLD        |     0.132ns|            |       0|           0
+                                            | MINPERIOD   |    16.876ns|     3.124ns|       0|           0
 ----------------------------------------------------------------------------------------------------------
   TS_Inst_SysCon_mcb_drp_clk_bfg = PERIOD T | SETUP       |    21.872ns|     2.130ns|       0|           0
   IMEGRP "Inst_SysCon_mcb_drp_clk_bfg" TS_C | HOLD        |     0.060ns|            |       0|           0
@@ -118,17 +119,17 @@ Analyzed       |
 Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+---
 ----------+
-|TS_CLK_I                       |     10.001ns|      5.340ns|    165.958ns|            0|          154|          360|   
-    28131|
-| TS_Inst_SysCon_Inst_dcm_recfg_|      9.260ns|      3.334ns|    153.665ns|            0|           24|            0|   
-     7808|
+|TS_CLK_I                       |     10.001ns|      5.340ns|    152.714ns|            0|          154|          360|   
+    26039|
+| TS_Inst_SysCon_Inst_dcm_recfg_|      9.260ns|      3.334ns|    141.402ns|            0|           24|            0|   
+     7838|
 | clkfx                         |             |             |             |             |             |             |   
          |
 |  TS_Inst_SysCon_pllout_x2     |      4.630ns|      1.730ns|          N/A|           20|            0|           83|   
         0|
 |  TS_Inst_SysCon_pllout_xs     |      0.926ns|          N/A|          N/A|            0|            0|            0|   
         0|
-|  TS_Inst_SysCon_pllout_x1     |      9.260ns|    153.665ns|          N/A|            4|            0|         7725|   
+|  TS_Inst_SysCon_pllout_x1     |      9.260ns|    141.402ns|          N/A|            4|            0|         7755|   
         0|
 | TS_Inst_SysCon_Inst_dcm_fixed_|     41.671ns|      2.836ns|          N/A|          130|            0|         6237|   
         0|
@@ -142,7 +143,7 @@ Derivative  |
         0|
 | TS_Inst_SysCon_ddr2clk_2x     |      1.500ns|      1.249ns|          N/A|            0|            0|            0|   
         0|
-| TS_Inst_SysCon_mcb_drp_clk_bfg|     24.002ns|      2.130ns|          N/A|            0|            0|        14086|   
+| TS_Inst_SysCon_mcb_drp_clk_bfg|     24.002ns|      2.130ns|          N/A|            0|            0|        11964|   
         0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+---
 ----------+
@@ -158,76 +159,80 @@ INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 13 secs 
-Total CPU  time at the beginning of Placer: 11 secs 
+Total REAL time at the beginning of Placer: 12 secs 
+Total CPU  time at the beginning of Placer: 12 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:652256d9) REAL time: 15 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:baa3fef7) REAL time: 14 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:652256d9) REAL time: 16 secs 
+Phase 2.7  Design Feasibility Check (Checksum:baa3fef7) REAL time: 15 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:652256d9) REAL time: 16 secs 
+Phase 3.31  Local Placement Optimization (Checksum:baa3fef7) REAL time: 15 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:cd93ed55) REAL time: 48 secs 
+(Checksum:545ee74e) REAL time: 48 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:cd93ed55) REAL time: 48 secs 
+Phase 5.36  Local Placement Optimization (Checksum:545ee74e) REAL time: 48 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:cd93ed55) REAL time: 48 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:545ee74e) REAL time: 48 secs 
 
 Phase 7.3  Local Placement Optimization
-Phase 7.3  Local Placement Optimization (Checksum:cd93ed55) REAL time: 48 secs 
+Phase 7.3  Local Placement Optimization (Checksum:545ee74e) REAL time: 49 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:cd93ed55) REAL time: 48 secs 
+Phase 8.5  Local Placement Optimization (Checksum:545ee74e) REAL time: 49 secs 
 
 Phase 9.8  Global Placement
-..................................
-...................................................................................................................
-....................................................
-...................
-Phase 9.8  Global Placement (Checksum:d11b9d81) REAL time: 57 secs 
+............................
+..............................................
+.....................................................
+...............................
+Phase 9.8  Global Placement (Checksum:68e4b8f1) REAL time: 58 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:d11b9d81) REAL time: 57 secs 
+Phase 10.5  Local Placement Optimization (Checksum:68e4b8f1) REAL time: 58 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:4d84de79) REAL time: 1 mins 1 secs 
+Phase 11.18  Placement Optimization (Checksum:10e29265) REAL time: 1 mins 3 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:4d84de79) REAL time: 1 mins 1 secs 
+Phase 12.5  Local Placement Optimization (Checksum:10e29265) REAL time: 1 mins 3 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:105a0134) REAL time: 1 mins 1 secs 
+Phase 13.34  Placement Validation (Checksum:78febb6a) REAL time: 1 mins 3 secs 
 
-Total REAL time to Placer completion: 1 mins 4 secs 
-Total CPU  time to Placer completion: 1 mins 2 secs 
+Total REAL time to Placer completion: 1 mins 6 secs 
+Total CPU  time to Placer completion: 1 mins 6 secs 
 Running post-placement packing...
 Writing output files...
+WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
+   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
+   default, may be incorrect and should not be used.  For more information,
+   please reference Xilinx Answer Record 39999.
 
 Design Summary
 --------------
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    3
+Number of warnings:    4
 Slice Logic Utilization:
-  Number of Slice Registers:                   990 out of  54,576    1%
-    Number used as Flip Flops:                 990
+  Number of Slice Registers:                 1,098 out of  54,576    2%
+    Number used as Flip Flops:               1,098
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,603 out of  27,288    5%
-    Number used as logic:                    1,523 out of  27,288    5%
-      Number using O6 output only:           1,013
-      Number using O5 output only:             181
-      Number using O5 and O6:                  329
+  Number of Slice LUTs:                      1,668 out of  27,288    6%
+    Number used as logic:                    1,593 out of  27,288    5%
+      Number using O6 output only:           1,000
+      Number using O5 output only:             226
+      Number using O5 and O6:                  367
       Number used as ROM:                        0
     Number used as Memory:                      42 out of   6,408    1%
       Number used as Dual Port RAM:              0
@@ -239,21 +244,21 @@ Slice Logic Utilization:
         Number using O6 output only:             8
         Number using O5 output only:             0
         Number using O5 and O6:                  0
-    Number used exclusively as route-thrus:     38
-      Number with same-slice register load:     21
-      Number with same-slice carry load:        17
+    Number used exclusively as route-thrus:     33
+      Number with same-slice register load:     20
+      Number with same-slice carry load:        13
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   562 out of   6,822    8%
-  Number of MUXCYs used:                       448 out of  13,644    3%
-  Number of LUT Flip Flop pairs used:        1,741
-    Number with an unused Flip Flop:           848 out of   1,741   48%
-    Number with an unused LUT:                 138 out of   1,741    7%
-    Number of fully used LUT-FF pairs:         755 out of   1,741   43%
-    Number of unique control sets:              96
+  Number of occupied Slices:                   607 out of   6,822    8%
+  Number of MUXCYs used:                       500 out of  13,644    3%
+  Number of LUT Flip Flop pairs used:        1,809
+    Number with an unused Flip Flop:           813 out of   1,809   44%
+    Number with an unused LUT:                 141 out of   1,809    7%
+    Number of fully used LUT-FF pairs:         855 out of   1,809   47%
+    Number of unique control sets:             102
     Number of slice register sites lost
-      to control set restrictions:             312 out of  54,576    1%
+      to control set restrictions:             324 out of  54,576    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -270,9 +275,9 @@ IO Utilization:
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of     116    0%
-  Number of RAMB8BWERs:                          0 out of     232    0%
-  Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
-    Number used as BUFIO2s:                      1
+  Number of RAMB8BWERs:                          1 out of     232    1%
+  Number of BUFIO2/BUFIO2_2CLKs:                 2 out of      32    6%
+    Number used as BUFIO2s:                      2
     Number used as BUFIO2_2CLKs:                 0
   Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
   Number of BUFG/BUFGMUXs:                       9 out of      16   56%
@@ -302,11 +307,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                3.74
+Average Fanout of Non-Clock Nets:                3.66
 
-Peak Memory Usage:  870 MB
-Total REAL time to MAP completion:  1 mins 6 secs 
-Total CPU time to MAP completion (all processors):   1 mins 4 secs 
+Peak Memory Usage:  873 MB
+Total REAL time to MAP completion:  1 mins 8 secs 
+Total CPU time to MAP completion (all processors):   1 mins 9 secs 
 
 Mapping completed.
 See MAP report file "VmodCAM_Ref_map.mrp" for details.
