@@ -1,19 +1,19 @@
-Release 14.7 ngdbuild P.20131013 (lin64)
+Release 14.6 ngdbuild P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
-ise -dd _ngo -sd ipcore_dir -nt timestamp -uc atlys.ucf -uc timing.ucf -uc
-atlys_vmodcam.ucf -p xc6slx45-csg324-3 VmodCAM_Ref.ngc VmodCAM_Ref.ngd
+Command Line: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc timing.ucf -uc atlys.ucf
+-uc atlys_vmodcam.ucf -p xc6slx45-csg324-3 VmodCAM_Ref.ngc VmodCAM_Ref.ngd
 
-Reading NGO file
-"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/s
-ource/VmodCAM_Ref.ngc" ...
+Reading NGO file "H:/Users/Connor
+Citron/Dropbox/GitHub/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/
+vhdl/source/VmodCAM_Ref.ngc" ...
 Loading design module "ipcore_dir/fifo.ngc"...
 Gathering constraint information from source properties...
 Done.
 
-Annotating constraints to design from ucf file "atlys.ucf" ...
 Annotating constraints to design from ucf file "timing.ucf" ...
+Annotating constraints to design from ucf file "atlys.ucf" ...
 Annotating constraints to design from ucf file "atlys_vmodcam.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
@@ -302,10 +302,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:  31
 
-Total memory usage is 419572 kilobytes
+Total memory usage is 177944 kilobytes
 
 Writing NGD file "VmodCAM_Ref.ngd" ...
-Total REAL time to NGDBUILD completion:  6 sec
+Total REAL time to NGDBUILD completion:  5 sec
 Total CPU time to NGDBUILD completion:   5 sec
 
 Writing NGDBUILD log file "VmodCAM_Ref.bld"...

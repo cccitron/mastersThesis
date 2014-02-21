@@ -1,7 +1,7 @@
-#Release 14.7 - par P.20131013 (lin64)
+#Release 14.6 - par P.68d (nt64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Wed Feb 19 19:23:37 2014
+#Thu Feb 20 19:17:51 2014
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -55,7 +55,7 @@ B15,,,VCCO_0,,,0,,,,,3.30,,,,
 B16,,IOBM,IO_L66P_SCP1_0,UNUSED,,0,,,,,,,,,
 B17,,,VCCAUX,,,,,,,,3.3,,,,
 B18,,,TMS,,,,,,,,,,,,
-C1,,IOBS,IO_L83N_VREF_3, ,,3,,,,,0.90,,,,
+C1,,IOBS,IO_L83N_VREF_3,VREF Required,,3,,,,,0.90,,,,
 C2,mcb3_zio,IOB,IO_L83P_3,BIDIR,SSTL18_II,3,,,,NONE,,LOCATED,NO,NONE,
 C3,,,GND,,,,,,,,,,,,
 C4,fx2PktEnd_out,IOB,IO_L1N_VREF_0,OUTPUT,LVTTL,0,12,SLOW,,,,LOCATED,NO,NONE,
@@ -221,7 +221,7 @@ M1,mcb3_dram_dq<9>,IOB,IO_L36N_M3DQ9_3,BIDIR,SSTL18_II,3,,,,NONE,,LOCATED,NO,NON
 M2,,,GND,,,,,,,,,,,,
 M3,mcb3_dram_dq<8>,IOB,IO_L36P_M3DQ8_3,BIDIR,SSTL18_II,3,,,,NONE,,LOCATED,NO,NONE,
 M4,,,VCCO_3,,,3,,,,,1.80,,,,
-M5,,IOBS,IO_L31N_VREF_3, ,,3,,,,,0.90,,,,
+M5,,IOBS,IO_L31N_VREF_3,VREF Required,,3,,,,,0.90,,,,
 M6,,,GND,,,,,,,,,,,,
 M7,,,VCCINT,,,,,,,,1.2,,,,
 M8,CAMB_D_I<3>,IOB,IO_L40P_2,INPUT,LVCMOS33,2,,,,NONE,,LOCATED,NO,NONE,
@@ -237,7 +237,7 @@ M17,,,GND,,,,,,,,,,,,
 M18,,IOBS,IO_L47N_LDC_M1DQ1_1,UNUSED,,1,,,,,,,,,
 N1,mcb3_dram_dq<11>,IOB,IO_L35N_M3DQ11_3,BIDIR,SSTL18_II,3,,,,NONE,,LOCATED,NO,NONE,
 N2,mcb3_dram_dq<10>,IOB,IO_L35P_M3DQ10_3,BIDIR,SSTL18_II,3,,,,NONE,,LOCATED,NO,NONE,
-N3,,IOBS,IO_L1N_VREF_3, ,,3,,,,,0.90,,,,
+N3,,IOBS,IO_L1N_VREF_3,VREF Required,,3,,,,,0.90,,,,
 N4,,IOBM,IO_L1P_3,UNUSED,,3,,,,,,,,,
 N5,,IOBM,IO_L64P_D8_2,UNUSED,,2,,,,,,,,,
 N6,CAMB_LV_I,IOB,IO_L47P_2,INPUT,LVCMOS33,2,,,,NONE,,LOCATED,NO,NONE,

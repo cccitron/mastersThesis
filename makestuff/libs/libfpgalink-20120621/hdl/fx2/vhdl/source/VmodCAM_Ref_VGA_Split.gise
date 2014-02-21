@@ -22,11 +22,8 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="VmodCAM_Ref_VGA_Split.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="VmodCAM_Ref.bgn" xil_pn:subbranch="FPGAConfiguration"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="VmodCAM_Ref.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="VmodCAM_Ref.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="VmodCAM_Ref.cmd_log"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="VmodCAM_Ref.drc" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="VmodCAM_Ref.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="VmodCAM_Ref.ncd" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="VmodCAM_Ref.ngc"/>
@@ -125,7 +122,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1392866506" xil_pn:in_ck="2276812465470804317" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4234937241914138674" xil_pn:start_ts="1392866479">
+    <transform xil_pn:end_ts="1392952439" xil_pn:in_ck="2276812465470804317" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4234937241914138674" xil_pn:start_ts="1392952408">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -147,7 +144,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1392866516" xil_pn:in_ck="-3788150142038871314" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-7991218418638219072" xil_pn:start_ts="1392866508">
+    <transform xil_pn:end_ts="1392952568" xil_pn:in_ck="-3788150142038871314" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-7991218418638219072" xil_pn:start_ts="1392952559">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -157,7 +154,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1392866588" xil_pn:in_ck="-70802796696173802" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="5738552209802828440" xil_pn:start_ts="1392866516">
+    <transform xil_pn:end_ts="1392952644" xil_pn:in_ck="-70802796696173802" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="5738552209802828440" xil_pn:start_ts="1392952568">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -173,7 +170,7 @@
       <outfile xil_pn:name="VmodCAM_Ref_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1392866628" xil_pn:in_ck="-8100547095490273361" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-101865350027953142" xil_pn:start_ts="1392866588">
+    <transform xil_pn:end_ts="1392952684" xil_pn:in_ck="-8100547095490273361" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-101865350027953142" xil_pn:start_ts="1392952644">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -188,26 +185,29 @@
       <outfile xil_pn:name="VmodCAM_Ref_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1392866680" xil_pn:in_ck="7530829629401899686" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="1664592939731293453" xil_pn:start_ts="1392866628">
+    <transform xil_pn:end_ts="1392952739" xil_pn:in_ck="7530829629401899686" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="1664592939731293453" xil_pn:start_ts="1392952684">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="VmodCAM_Ref.bgn"/>
-      <outfile xil_pn:name="VmodCAM_Ref.bit"/>
-      <outfile xil_pn:name="VmodCAM_Ref.drc"/>
       <outfile xil_pn:name="VmodCAM_Ref.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="vmodcam_ref.bgn"/>
+      <outfile xil_pn:name="vmodcam_ref.bit"/>
+      <outfile xil_pn:name="vmodcam_ref.drc"/>
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
     <transform xil_pn:end_ts="1392867183" xil_pn:in_ck="-6426312308335071360" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="2682241697568822907" xil_pn:start_ts="1392867183">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="_impact.cmd"/>
-      <outfile xil_pn:name="_impact.log"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputRemoved"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1392866628" xil_pn:in_ck="-2487851127124242286" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1392866618">
+    <transform xil_pn:end_ts="1392952684" xil_pn:in_ck="-2487851127124242286" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1392952673">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

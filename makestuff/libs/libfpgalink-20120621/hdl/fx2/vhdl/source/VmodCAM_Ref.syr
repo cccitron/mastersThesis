@@ -1,21 +1,18 @@
-Release 14.7 - xst P.20131013 (lin64)
+Release 14.6 - xst P.68d (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> 
-Parameter TMPDIR set to xst/projnav.tmp
+--> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.12 secs
  
---> 
-Parameter xsthdpdir set to xst
+--> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.12 secs
  
---> 
-Reading design: VmodCAM_Ref.prj
+--> Reading design: VmodCAM_Ref.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -111,84 +108,84 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/ipcore_dir/fifo.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\ipcore_dir\fifo.vhd" into library work
 Parsing entity <fifo>.
 Parsing architecture <fifo_a> of entity <fifo>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_mcb_controller.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\iodrp_mcb_controller.vhd" into library work
 Parsing entity <iodrp_mcb_controller>.
 Parsing architecture <trans> of entity <iodrp_mcb_controller>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_controller.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\iodrp_controller.vhd" into library work
 Parsing entity <iodrp_controller>.
 Parsing architecture <trans> of entity <iodrp_controller>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd" into library work
 Parsing entity <mcb_soft_calibration>.
 Parsing architecture <trans> of entity <mcb_soft_calibration>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration_top.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration_top.vhd" into library work
 Parsing entity <mcb_soft_calibration_top>.
 Parsing architecture <trans> of entity <mcb_soft_calibration_top>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" into library work
 Parsing entity <mcb_raw_wrapper>.
 Parsing architecture <aarch> of entity <mcb_raw_wrapper>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/Video.vhd" into library digilent
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\Video.vhd" into library digilent
 Parsing package <Video>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd" into library digilent
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TWICtl.vhd" into library digilent
 Parsing package <TWIUtils>.
 Parsing package body <TWIUtils>.
 Parsing entity <TWICtl>.
 Parsing architecture <Behavioral> of entity <twictl>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TMDSEncoder.vhd" into library digilent
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TMDSEncoder.vhd" into library digilent
 Parsing entity <TMDSEncoder>.
 Parsing architecture <Behavioral> of entity <tmdsencoder>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/SerializerN_1.vhd" into library digilent
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\SerializerN_1.vhd" into library digilent
 Parsing entity <SerializerN_1>.
 Parsing architecture <Behavioral> of entity <serializern_1>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/LocalRst.vhd" into library digilent
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\LocalRst.vhd" into library digilent
 Parsing entity <LocalRst>.
 Parsing architecture <Behavioral> of entity <localrst>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/InputSync.vhd" into library digilent
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\InputSync.vhd" into library digilent
 Parsing entity <InputSync>.
 Parsing architecture <Behavioral> of entity <inputsync>.
 Parsing entity <InputSyncV>.
 Parsing architecture <Behavioral> of entity <inputsyncv>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" into library work
 Parsing entity <memc3_wrapper>.
 Parsing architecture <acch> of entity <memc3_wrapper>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/ipcore_dir/dcm_recfg.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\ipcore_dir\dcm_recfg.vhd" into library work
 Parsing entity <dcm_recfg>.
 Parsing architecture <xilinx> of entity <dcm_recfg>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/ipcore_dir/dcm_fixed.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\ipcore_dir\dcm_fixed.vhd" into library work
 Parsing entity <dcm_fixed>.
 Parsing architecture <xilinx> of entity <dcm_fixed>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/timer.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\timer.vhd" into library work
 Parsing entity <timer>.
 Parsing architecture <behavioural> of entity <timer>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/SysCon.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\SysCon.vhd" into library work
 Parsing entity <SysCon>.
 Parsing architecture <Behavioral> of entity <syscon>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/VideoTimingCtl.vhd" into library digilent
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\VideoTimingCtl.vhd" into library digilent
 Parsing entity <VideoTimingCtl>.
 Parsing architecture <Behavioral> of entity <videotimingctl>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/DVITransmitter.vhd" into library digilent
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\DVITransmitter.vhd" into library digilent
 Parsing entity <DVITransmitter>.
 Parsing architecture <Behavioral> of entity <dvitransmitter>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/fifo_wrapper_xilinx.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\fifo_wrapper_xilinx.vhd" into library work
 Parsing entity <fifo_wrapper>.
 Parsing architecture <behavioural> of entity <fifo_wrapper>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" into library work
 Parsing entity <FBCtl>.
 Parsing architecture <Behavioral> of entity <fbctl>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/comm_fpga_fx2.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\comm_fpga_fx2.vhd" into library work
 Parsing entity <comm_fpga_fx2>.
 Parsing architecture <behavioural> of entity <comm_fpga_fx2>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/CamCtl.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\CamCtl.vhd" into library work
 Parsing entity <CamCtl>.
 Parsing architecture <Behavioral> of entity <camctl>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" into library work
+Parsing VHDL file "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" into library work
 Parsing entity <VmodCAM_Ref>.
 Parsing architecture <Behavioral> of entity <vmodcam_ref>.
-WARNING:HDLCompiler:946 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 445: Actual for formal port red_i is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 446: Actual for formal port green_i is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 447: Actual for formal port blue_i is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" Line 456: Actual for formal port red_i is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" Line 457: Actual for formal port green_i is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" Line 458: Actual for formal port blue_i is neither a static name nor a globally static expression
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -225,44 +222,44 @@ Elaborating entity <FBCtl> (architecture <Behavioral>) with generics from librar
 Elaborating entity <memc3_wrapper> (architecture <acch>) with generics from library <work>.
 
 Elaborating entity <mcb_raw_wrapper> (architecture <aarch>) with generics from library <work>.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 577: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 581: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:871 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 620: Using initial value "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" for allzero since it is never assigned
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3120: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3408: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3670: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 3877: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 577: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 581: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:871 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 620: Using initial value "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" for allzero since it is never assigned
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 3120: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 3408: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 3670: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 3877: Comparison between arrays of unequal length always returns FALSE.
 
 Elaborating entity <mcb_soft_calibration_top> (architecture <trans>) with generics from library <work>.
 
 Elaborating entity <mcb_soft_calibration> (architecture <trans>) with generics from library <work>.
-WARNING:HDLCompiler:871 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 368: Using initial value '1' for start_broadcast since it is never assigned
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 483: Assignment to half_mv_du ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 485: Assignment to half_mv_dd ignored, since the identifier is never used
+WARNING:HDLCompiler:871 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd" Line 368: Using initial value '1' for start_broadcast since it is never assigned
+WARNING:HDLCompiler:1127 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd" Line 483: Assignment to half_mv_du ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd" Line 485: Assignment to half_mv_dd ignored, since the identifier is never used
 
 Elaborating entity <iodrp_controller> (architecture <trans>) from library <work>.
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_controller.vhd" Line 352. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\iodrp_controller.vhd" Line 352. Case statement is complete. others clause is never selected
 
 Elaborating entity <iodrp_mcb_controller> (architecture <trans>) from library <work>.
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_mcb_controller.vhd" Line 443: bit_cnt7 should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_mcb_controller.vhd" Line 467: bit_cnt7 should be on the sensitivity list of the process
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 559: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 773: Assignment to mcb_uodatavalid_u ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" Line 817: Assignment to iodrpctrlr_use_bkst ignored, since the identifier is never used
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration_top.vhd" Line 376: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6887: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6918: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6919: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6944: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6945: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6969: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6980: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6981: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6985: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd" Line 6986: Comparison between arrays of unequal length always returns FALSE.
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" Line 870. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" Line 1018. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" Line 1167. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:92 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\iodrp_mcb_controller.vhd" Line 443: bit_cnt7 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\iodrp_mcb_controller.vhd" Line 467: bit_cnt7 should be on the sensitivity list of the process
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd" Line 559: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:1127 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd" Line 773: Assignment to mcb_uodatavalid_u ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd" Line 817: Assignment to iodrpctrlr_use_bkst ignored, since the identifier is never used
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration_top.vhd" Line 376: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6887: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6918: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6919: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6944: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6945: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6969: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6980: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6981: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6985: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd" Line 6986: Comparison between arrays of unequal length always returns FALSE.
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" Line 870. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" Line 1018. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" Line 1167. Case statement is complete. others clause is never selected
 
 Elaborating entity <DVITransmitter> (architecture <Behavioral>) from library <digilent>.
 
@@ -273,50 +270,47 @@ Elaborating entity <SerializerN_1> (architecture <Behavioral>) with generics fro
 Elaborating entity <CamCtl> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <TWICtl> (architecture <Behavioral>) with generics from library <digilent>.
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd" Line 163: Assignment to fstop ignored, since the identifier is never used
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd" Line 342. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd" Line 375. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd" Line 393. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd" Line 411. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd" Line 429. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/CamCtl.vhd" Line 435. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:1127 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TWICtl.vhd" Line 163: Assignment to fstop ignored, since the identifier is never used
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TWICtl.vhd" Line 342. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TWICtl.vhd" Line 375. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TWICtl.vhd" Line 393. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TWICtl.vhd" Line 411. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TWICtl.vhd" Line 429. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\CamCtl.vhd" Line 435. Case statement is complete. others clause is never selected
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <VmodCAM_Ref>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd".
         C3_NUM_DQ_PINS = 16
         C3_MEM_ADDR_WIDTH = 13
         C3_MEM_BANKADDR_WIDTH = 3
     Set property "S = TRUE" for signal <CAMA_PCLK_I>.
     Set property "S = TRUE" for signal <CAMB_PCLK_I>.
     Set property "S = TRUE" for signal <dummy_t>.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 266: Output port <outputData_out> of the instance <write_fifo> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 266: Output port <outputValid_out> of the instance <write_fifo> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 283: Output port <inputReady_out> of the instance <read_fifo> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 331: Output port <RSEL_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 331: Output port <SW_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 331: Output port <CLK_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 359: Output port <HCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 359: Output port <VCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
-WARNING:Xst:2999 - Signal 'array0', unconnected in block 'VmodCAM_Ref', is tied to its initial value.
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <array0>, simulation mismatch.
-    Found 9x8-bit single-port Read Only RAM <Mram_array0> for signal <array0>.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" line 277: Output port <outputData_out> of the instance <write_fifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" line 277: Output port <outputValid_out> of the instance <write_fifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" line 294: Output port <inputReady_out> of the instance <read_fifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" line 342: Output port <RSEL_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" line 342: Output port <SW_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" line 342: Output port <CLK_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" line 370: Output port <HCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\VmodCAM_Ref.vhd" line 370: Output port <VCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
     Found 8-bit register for signal <count>.
-    Found 8-bit adder for signal <count[7]_GND_6_o_add_4_OUT> created at line 1241.
-    Found 8-bit 4-to-1 multiplexer for signal <_n0073> created at line 152.
+    Found 8-bit adder for signal <count[7]_GND_6_o_add_9_OUT> created at line 1241.
+    Found 8-bit 3-to-1 multiplexer for signal <readFifoInputData> created at line 235.
+    Found 8-bit 4-to-1 multiplexer for signal <_n0084> created at line 152.
 INFO:Xst:2774 - HDL ADVISOR - S property attached to signal dummy_t may hinder XST clustering optimizations.
     Summary:
-	inferred   1 RAM(s).
 	inferred   1 Adder/Subtractor(s).
 	inferred   8 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 Unit <VmodCAM_Ref> synthesized.
 
 Synthesizing Unit <comm_fpga_fx2>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/comm_fpga_fx2.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\comm_fpga_fx2.vhd".
     Found 32-bit register for signal <count>.
     Found 7-bit register for signal <chanAddr>.
     Found 1-bit register for signal <isWrite>.
@@ -351,13 +345,13 @@ Synthesizing Unit <comm_fpga_fx2>.
 Unit <comm_fpga_fx2> synthesized.
 
 Synthesizing Unit <fifo_wrapper>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/fifo_wrapper_xilinx.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\fifo_wrapper_xilinx.vhd".
     Summary:
 	no macro.
 Unit <fifo_wrapper> synthesized.
 
 Synthesizing Unit <timer>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/timer.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\timer.vhd".
         COUNTER_WIDTH = 25
         CEILING_WIDTH = 4
     Found 26-bit register for signal <count>.
@@ -370,7 +364,7 @@ Synthesizing Unit <timer>.
 Unit <timer> synthesized.
 
 Synthesizing Unit <SysCon>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/SysCon.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\SysCon.vhd".
     Set property "KEEP = TRUE" for signal <ASYNC_RST>.
     Found 1-bit register for signal <RstDbncQ<2>>.
     Found 1-bit register for signal <RstDbncQ<3>>.
@@ -420,7 +414,7 @@ Synthesizing Unit <SysCon>.
 Unit <SysCon> synthesized.
 
 Synthesizing Unit <InputSyncV_1>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/InputSync.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\InputSync.vhd".
 WARNING:Xst:1581 - Constraint "TIG" is only supported in a XCF file outside the BEGIN MODEL/END section.
 WARNING:Xst:1581 - Constraint "TIG" is only supported in a XCF file outside the BEGIN MODEL/END section.
     Set property "IOB = FALSE" for signal <D_I>.
@@ -432,7 +426,7 @@ WARNING:Xst:1581 - Constraint "TIG" is only supported in a XCF file outside the 
 Unit <InputSyncV_1> synthesized.
 
 Synthesizing Unit <InputSync>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/InputSync.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\InputSync.vhd".
 WARNING:Xst:1581 - Constraint "TIG" is only supported in a XCF file outside the BEGIN MODEL/END section.
     Set property "ASYNC_REG = TRUE" for signal <sreg>.
     Set property "shift_extract = NO" for signal <sreg>.
@@ -446,19 +440,19 @@ WARNING:Xst:1581 - Constraint "TIG" is only supported in a XCF file outside the 
 Unit <InputSync> synthesized.
 
 Synthesizing Unit <dcm_fixed>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/ipcore_dir/dcm_fixed.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\ipcore_dir\dcm_fixed.vhd".
     Summary:
 	no macro.
 Unit <dcm_fixed> synthesized.
 
 Synthesizing Unit <dcm_recfg>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/ipcore_dir/dcm_recfg.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\ipcore_dir\dcm_recfg.vhd".
     Summary:
 	no macro.
 Unit <dcm_recfg> synthesized.
 
 Synthesizing Unit <InputSyncV_2>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/InputSync.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\InputSync.vhd".
 WARNING:Xst:1581 - Constraint "TIG" is only supported in a XCF file outside the BEGIN MODEL/END section.
 WARNING:Xst:1581 - Constraint "TIG" is only supported in a XCF file outside the BEGIN MODEL/END section.
     Set property "IOB = FALSE" for signal <D_I>.
@@ -470,7 +464,7 @@ WARNING:Xst:1581 - Constraint "TIG" is only supported in a XCF file outside the 
 Unit <InputSyncV_2> synthesized.
 
 Synthesizing Unit <VideoTimingCtl>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/VideoTimingCtl.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\VideoTimingCtl.vhd".
     Found 10-bit register for signal <VCnt>.
     Found 1-bit register for signal <vde>.
     Found 1-bit register for signal <HS_O>.
@@ -493,7 +487,7 @@ Synthesizing Unit <VideoTimingCtl>.
 Unit <VideoTimingCtl> synthesized.
 
 Synthesizing Unit <LocalRst>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/LocalRst.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\LocalRst.vhd".
         RESET_PERIOD = 4
     Found 1-bit register for signal <RstQ<2>>.
     Found 1-bit register for signal <RstQ<3>>.
@@ -504,7 +498,7 @@ Synthesizing Unit <LocalRst>.
 Unit <LocalRst> synthesized.
 
 Synthesizing Unit <FBCtl>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd".
         DEBUG_EN = 0
         COLORDEPTH = 16
         C3_P0_MASK_SIZE = 4
@@ -520,38 +514,38 @@ Synthesizing Unit <FBCtl>.
         C3_NUM_DQ_PINS = 16
         C3_MEM_ADDR_WIDTH = 13
         C3_MEM_BANKADDR_WIDTH = 3
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_wr_count> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_rd_data> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_rd_count> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_rd_data> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_rd_count> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_cmd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_cmd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_wr_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_wr_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_wr_underrun> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_wr_error> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_rd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_rd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_rd_overflow> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p0_rd_error> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_cmd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_cmd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_wr_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_wr_underrun> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_rd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_rd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_rd_overflow> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p1_rd_error> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p2_cmd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p2_cmd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p2_wr_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p2_wr_underrun> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p3_cmd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p3_cmd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p3_rd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <p3_rd_overflow> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/FBCtl.vhd" line 542: Output port <selfrefresh_mode> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_wr_count> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_rd_data> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_rd_count> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_rd_data> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_rd_count> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_cmd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_cmd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_wr_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_wr_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_wr_underrun> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_wr_error> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_rd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_rd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_rd_overflow> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p0_rd_error> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_cmd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_cmd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_wr_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_wr_underrun> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_rd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_rd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_rd_overflow> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p1_rd_error> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p2_cmd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p2_cmd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p2_wr_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p2_wr_underrun> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p3_cmd_empty> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p3_cmd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p3_rd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <p3_rd_overflow> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\FBCtl.vhd" line 542: Output port <selfrefresh_mode> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <RDY_O>.
     Found 31-bit register for signal <RDADDRCNT_PROC.hCnt>.
     Found 1-bit register for signal <fVMemSource>.
@@ -624,7 +618,7 @@ INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-2012062
     | Inputs             | 3                                              |
     | Outputs            | 1                                              |
     | Clock              | CLKA (rising_edge)                             |
-    | Reset              | SCalibDoneA_p1_wr_empty_OR_167_o (positive)       |
+    | Reset              | SCalibDoneA_p1_wr_empty_OR_174_o (positive)       |
     | Reset type         | synchronous                                    |
     | Reset State        | stwridle                                       |
     | Power Up State     | stwridle                                       |
@@ -638,7 +632,7 @@ INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-2012062
     | Inputs             | 3                                              |
     | Outputs            | 1                                              |
     | Clock              | CLKB (rising_edge)                             |
-    | Reset              | SCalibDoneB_p2_wr_empty_OR_171_o (positive)       |
+    | Reset              | SCalibDoneB_p2_wr_empty_OR_178_o (positive)       |
     | Reset type         | synchronous                                    |
     | Reset State        | stwridle                                       |
     | Power Up State     | stwridle                                       |
@@ -670,7 +664,7 @@ INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-2012062
 Unit <FBCtl> synthesized.
 
 Synthesizing Unit <memc3_wrapper>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd".
         C_MEMCLK_PERIOD = 3000
         C_P0_MASK_SIZE = 4
         C_P0_DATA_PORT_SIZE = 32
@@ -747,57 +741,57 @@ Synthesizing Unit <memc3_wrapper>.
         C_MC_CALIBRATION_DELAY = "HALF"
         C_CALIB_SOFT_IP = "TRUE"
 WARNING:Xst:647 - Input <selfrefresh_enter> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p2_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p2_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p3_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <uo_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <status> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p2_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p2_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p2_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p2_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p3_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p3_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p3_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p3_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_cmd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_cmd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p4_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_cmd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_cmd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <p5_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <mcbx_dram_ddr3_rst> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <uo_data_valid> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <uo_cmd_ready_in> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <uo_refrsh_flag> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <uo_cal_start> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/memc3_wrapper.vhd" line 679: Output port <uo_sdo> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p2_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p2_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p3_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <uo_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <status> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p2_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p2_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p2_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p2_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p3_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p3_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p3_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p3_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_cmd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_cmd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p4_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_cmd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_cmd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <p5_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <mcbx_dram_ddr3_rst> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <uo_data_valid> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <uo_cmd_ready_in> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <uo_refrsh_flag> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <uo_cal_start> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\memc3_wrapper.vhd" line 679: Output port <uo_sdo> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <memc3_wrapper> synthesized.
 
 Synthesizing Unit <mcb_raw_wrapper>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_raw_wrapper.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_raw_wrapper.vhd".
         C_MEMCLK_PERIOD = 3000
         C_PORT_ENABLE = "001111"
         C_MEM_ADDR_ORDER = "ROW_BANK_COLUMN"
@@ -949,7 +943,7 @@ WARNING:Xst:653 - Signal <mcbx_dram_ddr3_rst> is used but never assigned. This s
 Unit <mcb_raw_wrapper> synthesized.
 
 Synthesizing Unit <mcb_soft_calibration_top>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration_top.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration_top.vhd".
         C_MEM_TZQINIT_MAXCNT = "1000010000"
         C_MC_CALIBRATION_MODE = "CALIBRATION"
         SKIP_IN_TERM_CAL = 0
@@ -957,13 +951,13 @@ Synthesizing Unit <mcb_soft_calibration_top>.
         SKIP_DYN_IN_TERM = 1
         C_SIMULATION = "FALSE"
         C_MEM_TYPE = "DDR2"
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration_top.vhd" line 287: Output port <Max_Value> of the instance <mcb_soft_calibration_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration_top.vhd" line 287: Output port <Max_Value> of the instance <mcb_soft_calibration_inst> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <mcb_soft_calibration_top> synthesized.
 
 Synthesizing Unit <mcb_soft_calibration>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd".
         C_MEM_TZQINIT_MAXCNT = "1000010000"
         SKIP_IN_TERM_CAL = 0
         SKIP_DYNAMIC_CAL = 0
@@ -984,8 +978,8 @@ WARNING:Xst:647 - Input <MCB_UODATA> is never used. This port will be preserved 
 WARNING:Xst:647 - Input <MCB_UODATAVALID> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <MCB_UOCMDREADY> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <MCB_UO_CAL_START> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" line 507: Output port <DRP_BKST> of the instance <iodrp_controller_inst> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/mcb_soft_calibration.vhd" line 525: Output port <read_data> of the instance <iodrp_mcb_controller_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd" line 507: Output port <DRP_BKST> of the instance <iodrp_controller_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\mcb_soft_calibration.vhd" line 525: Output port <read_data> of the instance <iodrp_mcb_controller_inst> is unconnected or connected to loadless signal.
 WARNING:Xst:2935 - Signal 'MCB_UIDQLOWERDEC', unconnected in block 'mcb_soft_calibration', is tied to its initial value (0).
 WARNING:Xst:2935 - Signal 'MCB_UIDQLOWERINC', unconnected in block 'mcb_soft_calibration', is tied to its initial value (0).
 WARNING:Xst:2935 - Signal 'MCB_UIDQUPPERDEC', unconnected in block 'mcb_soft_calibration', is tied to its initial value (0).
@@ -1105,7 +1099,7 @@ INFO:Xst:1799 - State 101010 is never reached in FSM <STATE>.
 Unit <mcb_soft_calibration> synthesized.
 
 Synthesizing Unit <iodrp_controller>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_controller.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\iodrp_controller.vhd".
     Found 8-bit register for signal <data_reg>.
     Found 1-bit register for signal <rd_not_write_reg>.
     Found 8-bit register for signal <shift_through_reg>.
@@ -1139,7 +1133,7 @@ Synthesizing Unit <iodrp_controller>.
 Unit <iodrp_controller> synthesized.
 
 Synthesizing Unit <iodrp_mcb_controller>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/iodrp_mcb_controller.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\iodrp_mcb_controller.vhd".
 WARNING:Xst:647 - Input <drp_ioi_addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 8-bit register for signal <data_reg>.
     Found 1-bit register for signal <rd_not_write_reg>.
@@ -1175,13 +1169,13 @@ WARNING:Xst:647 - Input <drp_ioi_addr> is never used. This port will be preserve
 Unit <iodrp_mcb_controller> synthesized.
 
 Synthesizing Unit <DVITransmitter>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/DVITransmitter.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\DVITransmitter.vhd".
     Summary:
 	no macro.
 Unit <DVITransmitter> synthesized.
 
 Synthesizing Unit <TMDSEncoder>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TMDSEncoder.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TMDSEncoder.vhd".
 WARNING:Xst:647 - Input <RST_I> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 5-bit register for signal <n1_d>.
     Found 8-bit register for signal <d_d>.
@@ -1232,7 +1226,7 @@ WARNING:Xst:647 - Input <RST_I> is never used. This port will be preserved and l
 Unit <TMDSEncoder> synthesized.
 
 Synthesizing Unit <SerializerN_1>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/SerializerN_1.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\SerializerN_1.vhd".
         N = 10
     Found 1-bit register for signal <gear>.
     Found 1-bit register for signal <gear_s>.
@@ -1243,12 +1237,12 @@ Synthesizing Unit <SerializerN_1>.
 Unit <SerializerN_1> synthesized.
 
 Synthesizing Unit <CamCtl>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/CamCtl.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\CamCtl.vhd".
     Set property "KEEP = TRUE" for signal <initWord>.
     Set property "KEEP = TRUE" for signal <initFb>.
     Set property "buffer_type = BUFG" for signal <PCLK_I>.
 WARNING:Xst:647 - Input <FV_I> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/CamCtl.vhd" line 265: Output port <ERRTYPE_O> of the instance <Inst_TWICtl> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\CamCtl.vhd" line 265: Output port <ERRTYPE_O> of the instance <Inst_TWICtl> is unconnected or connected to loadless signal.
 WARNING:Xst:3035 - Index value(s) does not match array range for signal <CamInitRAM>, simulation mismatch.
     Found 26x33-bit single-port RAM <Mram_CamInitRAM> for signal <CamInitRAM>.
     Found 1-bit register for signal <DV_O>.
@@ -1291,7 +1285,7 @@ WARNING:Xst:3035 - Index value(s) does not match array range for signal <CamInit
 Unit <CamCtl> synthesized.
 
 Synthesizing Unit <TWICtl>.
-    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/remote_sources/_/lib/digilent/TWICtl.vhd".
+    Related source file is "H:\Users\Connor Citron\Dropbox\GitHub\mastersThesis\makestuff\libs\libfpgalink-20120621\hdl\fx2\vhdl\source\remote_sources\_\lib\digilent\TWICtl.vhd".
         CLOCKFREQ = 24
     Set property "fsm_encoding = gray" for signal <state>.
 WARNING:Xst:2935 - Signal 'ERRTYPE_O', unconnected in block 'TWICtl', is tied to its initial value (0).
@@ -1345,9 +1339,8 @@ Unit <TWICtl> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 3
+# RAMs                                                 : 2
  26x33-bit single-port RAM                             : 2
- 9x8-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 117
  10-bit adder                                          : 2
  11-bit adder                                          : 1
@@ -1408,7 +1401,7 @@ Macro Statistics
  8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 2
  8-bit comparator not equal                            : 2
-# Multiplexers                                         : 336
+# Multiplexers                                         : 337
  1-bit 16-to-1 multiplexer                             : 2
  1-bit 2-to-1 multiplexer                              : 226
  1-bit 3-to-1 multiplexer                              : 1
@@ -1425,6 +1418,7 @@ Macro Statistics
  6-bit 2-to-1 multiplexer                              : 12
  7-bit 2-to-1 multiplexer                              : 4
  8-bit 2-to-1 multiplexer                              : 26
+ 8-bit 3-to-1 multiplexer                              : 1
  8-bit 4-to-1 multiplexer                              : 3
  9-bit 2-to-1 multiplexer                              : 5
 # Tristates                                            : 12
@@ -1561,17 +1555,6 @@ Unit <VideoTimingCtl> synthesized (advanced).
 
 Synthesizing (advanced) Unit <VmodCAM_Ref>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_array0> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 9-word x 8-bit                      |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <count>         |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
 Unit <VmodCAM_Ref> synthesized (advanced).
 
 Synthesizing (advanced) Unit <iodrp_controller>.
@@ -1598,9 +1581,8 @@ Unit <timer> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 3
+# RAMs                                                 : 2
  26x33-bit single-port distributed RAM                 : 2
- 9x8-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 45
  10-bit adder                                          : 3
  11-bit adder                                          : 1
@@ -1654,7 +1636,7 @@ Macro Statistics
  8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 2
  8-bit comparator not equal                            : 2
-# Multiplexers                                         : 341
+# Multiplexers                                         : 342
  1-bit 16-to-1 multiplexer                             : 2
  1-bit 2-to-1 multiplexer                              : 256
  1-bit 3-to-1 multiplexer                              : 1
@@ -1668,6 +1650,7 @@ Macro Statistics
  6-bit 2-to-1 multiplexer                              : 7
  7-bit 2-to-1 multiplexer                              : 4
  8-bit 2-to-1 multiplexer                              : 20
+ 8-bit 3-to-1 multiplexer                              : 1
  8-bit 4-to-1 multiplexer                              : 3
  9-bit 2-to-1 multiplexer                              : 4
 # FSMs                                                 : 12
@@ -1894,10 +1877,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <TARGET_DQS_DELAY_7>
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_WRITE_DATA_7> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <n1_d_4> (without init value) has a constant value of 0 in block <TMDSEncoder>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <n1_q_m_4> (without init value) has a constant value of 0 in block <TMDSEncoder>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <count_4> of sequential type is unconnected in block <VmodCAM_Ref>.
-WARNING:Xst:2677 - Node <count_5> of sequential type is unconnected in block <VmodCAM_Ref>.
-WARNING:Xst:2677 - Node <count_6> of sequential type is unconnected in block <VmodCAM_Ref>.
-WARNING:Xst:2677 - Node <count_7> of sequential type is unconnected in block <VmodCAM_Ref>.
 INFO:Xst:1901 - Instance Inst_pll_mcb in unit Inst_pll_mcb of type PLL_BASE has been replaced by PLL_ADV
 INFO:Xst:1901 - Instance Inst_10_1_pll in unit Inst_10_1_pll of type PLL_BASE has been replaced by PLL_ADV
 INFO:Xst:2261 - The FF/Latch <MCB_UIADDR_xilinx3_0> in Unit <mcb_soft_calibration> is equivalent to the following 3 FFs/Latches, which will be removed : <MCB_UIADDR_xilinx3_2> <MCB_UIADDR_xilinx3_3> <MCB_UIADDR_xilinx3_4> 
@@ -1990,6 +1969,12 @@ WARNING:Xst:2677 - Node <Inst_DVITransmitter/Inst_TMDSEncoder_green/n1_d_0> of s
 WARNING:Xst:2677 - Node <Inst_DVITransmitter/Inst_TMDSEncoder_blue/n1_d_1> of sequential type is unconnected in block <VmodCAM_Ref>.
 WARNING:Xst:2677 - Node <Inst_DVITransmitter/Inst_TMDSEncoder_blue/n1_d_0> of sequential type is unconnected in block <VmodCAM_Ref>.
 WARNING:Xst:1710 - FF/Latch <Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_7> (without init value) has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_2> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_3> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_4> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_5> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_6> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_7> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <Inst_camctlB/intRst> in Unit <VmodCAM_Ref> is equivalent to the following FF/Latch, which will be removed : <Inst_camctlA/intRst> 
 INFO:Xst:2261 - The FF/Latch <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_4> in Unit <VmodCAM_Ref> is equivalent to the following 4 FFs/Latches, which will be removed : <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_3> <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_2> <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_1> <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_0> 
 INFO:Xst:2261 - The FF/Latch <Inst_DVITransmitter/Inst_TMDSEncoder_red/q_out_d_9> in Unit <VmodCAM_Ref> is equivalent to the following FF/Latch, which will be removed : <Inst_DVITransmitter/Inst_TMDSEncoder_red/q_out_d_2> 
@@ -2077,8 +2062,8 @@ Unit <VmodCAM_Ref> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1022
- Flip-Flops                                            : 1022
+# Registers                                            : 1020
+ Flip-Flops                                            : 1020
 # Shift Registers                                      : 5
  2-bit shift register                                  : 4
  97-bit shift register                                 : 1
@@ -2104,29 +2089,29 @@ Top Level Output File Name         : VmodCAM_Ref.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2800
+# BELS                             : 2796
 #      GND                         : 3
 #      INV                         : 76
-#      LUT1                        : 236
-#      LUT2                        : 160
-#      LUT3                        : 325
-#      LUT4                        : 205
-#      LUT5                        : 287
+#      LUT1                        : 234
+#      LUT2                        : 161
+#      LUT3                        : 326
+#      LUT4                        : 200
+#      LUT5                        : 292
 #      LUT6                        : 589
 #      MULT_AND                    : 6
-#      MUXCY                       : 447
+#      MUXCY                       : 445
 #      MUXF7                       : 32
 #      MUXF8                       : 2
 #      VCC                         : 1
-#      XORCY                       : 431
-# FlipFlops/Latches                : 1127
+#      XORCY                       : 429
+# FlipFlops/Latches                : 1125
 #      FD                          : 241
 #      FDC                         : 8
 #      FDCE                        : 26
-#      FDE                         : 369
+#      FDE                         : 365
 #      FDP                         : 33
 #      FDR                         : 162
-#      FDRE                        : 260
+#      FDRE                        : 262
 #      FDS                         : 18
 #      FDSE                        : 8
 #      ODDR2                       : 2
@@ -2170,7 +2155,7 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1127  out of  54576     2%  
+ Number of Slice Registers:            1125  out of  54576     2%  
  Number of Slice LUTs:                 1952  out of  27288     7%  
     Number used as Logic:              1878  out of  27288     6%  
     Number used as Memory:               74  out of   6408     1%  
@@ -2179,9 +2164,9 @@ Slice Logic Utilization:
 
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:   2153
-   Number with an unused Flip Flop:    1026  out of   2153    47%  
+   Number with an unused Flip Flop:    1028  out of   2153    47%  
    Number with an unused LUT:           201  out of   2153     9%  
-   Number of fully used LUT-FF pairs:   926  out of   2153    43%  
+   Number of fully used LUT-FF pairs:   924  out of   2153    42%  
    Number of unique control sets:       104
 
 IO Utilization: 
@@ -2217,7 +2202,7 @@ Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 CAMB_PCLK_I                        | IBUF+BUFG              | 103   |
 CAMA_PCLK_I                        | IBUF+BUFG              | 103   |
-fx2Clk_in                          | BUFGP                  | 205   |
+fx2Clk_in                          | BUFGP                  | 203   |
 CLK_I                              | DCM_SP:CLKFX           | 241   |
 CLK_I                              | DCM_SP:CLKFX180        | 2     |
 Inst_SysCon/Inst_10_1_pll/CLKOUT2  | BUFG                   | 234   |
@@ -2292,7 +2277,7 @@ Delay:               4.985ns (Levels of Logic = 2)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fx2Clk_in'
   Clock period: 6.845ns (frequency: 146.082MHz)
-  Total number of paths / destination ports: 7376 / 423
+  Total number of paths / destination ports: 7321 / 419
 -------------------------------------------------------------------------
 Delay:               6.845ns (Levels of Logic = 7)
   Source:            comm_fpga_fx2/state_FSM_FFd3_1 (FF)
@@ -2456,7 +2441,7 @@ Offset:              3.619ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
-  Total number of paths / destination ports: 2108 / 278
+  Total number of paths / destination ports: 2086 / 276
 -------------------------------------------------------------------------
 Offset:              7.773ns (Levels of Logic = 8)
   Source:            fx2GotRoom_in (PAD)
@@ -2494,8 +2479,8 @@ Offset:              4.026ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             2   1.222   0.617  RESET_I_IBUF (RESET_I_IBUF)
-     LUT6:I5->O            1   0.205   0.684  Inst_SysCon/RstDbnc_RstQ[99]_OR_51_o_SW0 (N98)
-     LUT6:I4->O            7   0.203   0.773  Inst_SysCon/RstDbnc_RstQ[99]_OR_51_o (Inst_SysCon/RstDbnc_RstQ[99]_OR_51_o)
+     LUT6:I5->O            1   0.205   0.684  Inst_SysCon/RstDbnc_RstQ[99]_OR_58_o_SW0 (N98)
+     LUT6:I4->O            7   0.203   0.773  Inst_SysCon/RstDbnc_RstQ[99]_OR_58_o (Inst_SysCon/RstDbnc_RstQ[99]_OR_58_o)
      FDE:CE                    0.322          Inst_SysCon/RstQ_97
     ----------------------------------------
     Total                      4.026ns (1.952ns logic, 2.074ns route)
@@ -2537,7 +2522,7 @@ Offset:              5.047ns (Levels of Logic = 5)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IOBUF:IO->O           2   1.222   0.961  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/IOBUF_RZQ (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_IN)
-     LUT5:I0->O            1   0.203   0.580  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RZQ_IN_P_Term[5]_OR_103_o1_SW0 (N395)
+     LUT5:I0->O            1   0.203   0.580  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RZQ_IN_P_Term[5]_OR_110_o1_SW0 (N395)
      LUT6:I5->O            1   0.205   0.684  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In7 (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In7)
      LUT6:I4->O            1   0.203   0.684  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In13 (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In14)
      LUT6:I4->O            1   0.203   0.000  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In19 (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In)
@@ -2774,21 +2759,21 @@ Clock to Setup on destination clock fx2Clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
+CAMA_PCLK_I    |    2.459|         |         |         |
 fx2Clk_in      |    6.845|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 25.00 secs
-Total CPU time to Xst completion: 24.09 secs
+Total REAL time to Xst completion: 28.00 secs
+Total CPU time to Xst completion: 28.30 secs
  
 --> 
 
-
-Total memory usage is 453420 kilobytes
+Total memory usage is 310316 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  294 (   0 filtered)
-Number of infos    :  171 (   0 filtered)
+Number of infos    :  170 (   0 filtered)
 
