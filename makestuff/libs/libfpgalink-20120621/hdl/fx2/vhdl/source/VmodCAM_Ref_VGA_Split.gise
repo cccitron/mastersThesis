@@ -69,30 +69,140 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
     <file xil_pn:fileType="FILE_ASY" xil_pn:name="ipcore_dir/dcm_fixed.asy" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_UCF" xil_pn:name="ipcore_dir/dcm_fixed.ucf" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/dcm_fixed.v" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_VEO" xil_pn:name="ipcore_dir/dcm_fixed.veo" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VHDL" xil_pn:name="ipcore_dir/dcm_fixed.vhd" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHDL" xil_pn:name="ipcore_dir/dcm_fixed.vhd" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
     <file xil_pn:fileType="FILE_VHO" xil_pn:name="ipcore_dir/dcm_fixed.vho" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_ASY" xil_pn:name="ipcore_dir/dcm_recfg.asy" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_UCF" xil_pn:name="ipcore_dir/dcm_recfg.ucf" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/dcm_recfg.v" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_VEO" xil_pn:name="ipcore_dir/dcm_recfg.veo" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VHDL" xil_pn:name="ipcore_dir/dcm_recfg.vhd" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VHDL" xil_pn:name="ipcore_dir/dcm_recfg.vhd" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
     <file xil_pn:fileType="FILE_VHO" xil_pn:name="ipcore_dir/dcm_recfg.vho" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_VmodCAM_Ref_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_VmodCAM_Ref_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_VmodCAM_Ref_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="vmodcam_ref.bgn" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="vmodcam_ref.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="vmodcam_ref.drc" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1393095520" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1393095520">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1393096157" xil_pn:in_ck="5114980679068380359" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1393096157">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CamCtl.vhd"/>
+      <outfile xil_pn:name="FBCtl.vhd"/>
+      <outfile xil_pn:name="SysCon.vhd"/>
+      <outfile xil_pn:name="VmodCAM_Ref.vhd"/>
+      <outfile xil_pn:name="comm_fpga_fx2.vhd"/>
+      <outfile xil_pn:name="fifo_wrapper_xilinx.vhd"/>
+      <outfile xil_pn:name="iodrp_controller.vhd"/>
+      <outfile xil_pn:name="iodrp_mcb_controller.vhd"/>
+      <outfile xil_pn:name="mcb_raw_wrapper.vhd"/>
+      <outfile xil_pn:name="mcb_soft_calibration.vhd"/>
+      <outfile xil_pn:name="mcb_soft_calibration_top.vhd"/>
+      <outfile xil_pn:name="memc3_wrapper.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/DVITransmitter.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/InputSync.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/LocalRst.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/SerializerN_1.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/TMDSEncoder.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/TWICtl.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/Video.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/VideoTimingCtl.vhd"/>
+      <outfile xil_pn:name="tb_VmodCAM_Ref.vhd"/>
+      <outfile xil_pn:name="timer.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1393095645" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5874569148435427250" xil_pn:start_ts="1393095645">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1393095645" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5284533912720523060" xil_pn:start_ts="1393095645">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1393095624" xil_pn:in_ck="-4643706948759050730" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8423795946426957173" xil_pn:start_ts="1393095624">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/dcm_fixed.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/dcm_recfg.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/fifo.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/fifo.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1393096157" xil_pn:in_ck="-5528879111794243451" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1393096157">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CamCtl.vhd"/>
+      <outfile xil_pn:name="FBCtl.vhd"/>
+      <outfile xil_pn:name="SysCon.vhd"/>
+      <outfile xil_pn:name="VmodCAM_Ref.vhd"/>
+      <outfile xil_pn:name="comm_fpga_fx2.vhd"/>
+      <outfile xil_pn:name="fifo_wrapper_xilinx.vhd"/>
+      <outfile xil_pn:name="iodrp_controller.vhd"/>
+      <outfile xil_pn:name="iodrp_mcb_controller.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/dcm_fixed.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/dcm_recfg.vhd"/>
+      <outfile xil_pn:name="ipcore_dir/fifo.vhd"/>
+      <outfile xil_pn:name="mcb_raw_wrapper.vhd"/>
+      <outfile xil_pn:name="mcb_soft_calibration.vhd"/>
+      <outfile xil_pn:name="mcb_soft_calibration_top.vhd"/>
+      <outfile xil_pn:name="memc3_wrapper.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/DVITransmitter.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/InputSync.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/LocalRst.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/SerializerN_1.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/TMDSEncoder.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/TWICtl.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/Video.vhd"/>
+      <outfile xil_pn:name="remote_sources/_/lib/digilent/VideoTimingCtl.vhd"/>
+      <outfile xil_pn:name="tb_VmodCAM_Ref.vhd"/>
+      <outfile xil_pn:name="timer.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1393096208" xil_pn:in_ck="-5528879111794243451" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1667794510285018884" xil_pn:start_ts="1393096157">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_VmodCAM_Ref_beh.prj"/>
+      <outfile xil_pn:name="tb_VmodCAM_Ref_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1393096208" xil_pn:in_ck="5862369684733452551" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-4178230183104649527" xil_pn:start_ts="1393096208">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_VmodCAM_Ref_isim_beh.wdb"/>
+    </transform>
     <transform xil_pn:end_ts="1382684579" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1382684579">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -161,6 +271,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="VmodCAM_Ref.pcf"/>
       <outfile xil_pn:name="VmodCAM_Ref_map.map"/>
       <outfile xil_pn:name="VmodCAM_Ref_map.mrp"/>
