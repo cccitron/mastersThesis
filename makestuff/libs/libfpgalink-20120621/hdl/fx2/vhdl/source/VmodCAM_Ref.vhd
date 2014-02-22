@@ -178,10 +178,13 @@ signal readFifoOutputReady     : std_logic;                     --           rea
 
 -- Arrays
 -- first define the type of array
-type array_type is array (0 to 8) of std_logic_vector(7 downto 0);
-signal array0 : array_type := (x"fc", x"11", x"05",
-										 x"02", x"fe", x"13",
-										 x"15", x"01", x"fd");
+--type array_type is array (0 to 8) of std_logic_vector(7 downto 0);
+--signal array0 : array_type := (x"fc", x"11", x"05",
+--										 x"02", x"fe", x"13",
+--										 x"15", x"01", x"fd");
+
+type array_type is array (0 to 1) of std_logic_vector(7 downto 0);
+signal array2 : array_type := (x"0f", x"f0");
 
 -- Counter which endlessly puts items into the read FIFO for the host to read
 signal count, count_next       : std_logic_vector(7 downto 0) := (others => '0');
@@ -199,7 +202,11 @@ begin
 	process(fx2Clk_in)
 	begin
 		if ( rising_edge(fx2Clk_in) ) then
-			count <= count_next;
+			if (count = x"02") then
+				count <= x"00";
+			else
+				count <= count_next;
+			end if;
 		end if;
 	end process;
 
@@ -215,13 +222,16 @@ begin
 		'0' when writeFifoInputReady = '0' and chanAddr = "0000000"
 		else '1';
 
+	array2(0) <= FbRdData(15 downto 8);
+	array2(1) <= FbRdData(7 downto 0);
+	
 	-- Wire up read FIFO to channel 0 reads:
 	--   readFifoInputValid driven by producer_timer
 	--   flags(0) driven by readFifoInputReady
 	count_next <=
 		std_logic_vector(unsigned(count) + 1) when readFifoInputValid = '1'
 		else count;
-	readFifoInputData <= array0(TO_INTEGER(unsigned(count)));
+	readFifoInputData <= array2(TO_INTEGER(unsigned(count)));
 	f2hValid <=
 		'0' when readFifoOutputValid = '0' and chanAddr = "0000000"
 		else '1';

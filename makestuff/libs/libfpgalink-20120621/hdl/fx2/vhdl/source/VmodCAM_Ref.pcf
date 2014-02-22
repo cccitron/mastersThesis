@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Feb 19 19:23:06 2014
+// Written by: Map P.20131013 on Sat Feb 22 10:51:25 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -296,32 +296,32 @@ TIMEGRP fx2Clk_in = BEL "consumer_timer/count_0" BEL "consumer_timer/count_1"
         "producer_timer/count_20" BEL "producer_timer/count_21" BEL
         "producer_timer/count_22" BEL "producer_timer/count_23" BEL
         "producer_timer/count_24" BEL "producer_timer/count_25" BEL "count_0"
-        BEL "count_1" BEL "count_2" BEL "count_3" BEL
-        "comm_fpga_fx2/state_FSM_FFd2" BEL "comm_fpga_fx2/state_FSM_FFd3" BEL
-        "comm_fpga_fx2/state_FSM_FFd1" BEL "comm_fpga_fx2/state_FSM_FFd4" BEL
-        "comm_fpga_fx2/count_31" BEL "comm_fpga_fx2/count_30" BEL
-        "comm_fpga_fx2/count_29" BEL "comm_fpga_fx2/count_28" BEL
-        "comm_fpga_fx2/count_27" BEL "comm_fpga_fx2/count_26" BEL
-        "comm_fpga_fx2/count_25" BEL "comm_fpga_fx2/count_24" BEL
-        "comm_fpga_fx2/count_23" BEL "comm_fpga_fx2/count_22" BEL
-        "comm_fpga_fx2/count_21" BEL "comm_fpga_fx2/count_20" BEL
-        "comm_fpga_fx2/count_19" BEL "comm_fpga_fx2/count_18" BEL
-        "comm_fpga_fx2/count_17" BEL "comm_fpga_fx2/count_16" BEL
-        "comm_fpga_fx2/count_15" BEL "comm_fpga_fx2/count_14" BEL
-        "comm_fpga_fx2/count_13" BEL "comm_fpga_fx2/count_12" BEL
-        "comm_fpga_fx2/count_11" BEL "comm_fpga_fx2/count_10" BEL
-        "comm_fpga_fx2/count_9" BEL "comm_fpga_fx2/count_8" BEL
-        "comm_fpga_fx2/count_7" BEL "comm_fpga_fx2/count_6" BEL
-        "comm_fpga_fx2/count_5" BEL "comm_fpga_fx2/count_4" BEL
-        "comm_fpga_fx2/count_3" BEL "comm_fpga_fx2/count_2" BEL
-        "comm_fpga_fx2/count_1" BEL "comm_fpga_fx2/count_0" BEL
-        "comm_fpga_fx2/isWrite" BEL "comm_fpga_fx2/chanAddr_6" BEL
-        "comm_fpga_fx2/chanAddr_5" BEL "comm_fpga_fx2/chanAddr_4" BEL
-        "comm_fpga_fx2/chanAddr_3" BEL "comm_fpga_fx2/chanAddr_2" BEL
-        "comm_fpga_fx2/chanAddr_1" BEL "comm_fpga_fx2/chanAddr_0" BEL
-        "comm_fpga_fx2/isAligned" BEL "comm_fpga_fx2/state_FSM_FFd2_1" BEL
-        "comm_fpga_fx2/state_FSM_FFd3_1" BEL "comm_fpga_fx2/state_FSM_FFd1_1"
-        BEL "comm_fpga_fx2/state_FSM_FFd4_1" BEL "fx2Clk_in_BUFGP/BUFG" BEL
+        BEL "count_1" BEL "comm_fpga_fx2/state_FSM_FFd2" BEL
+        "comm_fpga_fx2/state_FSM_FFd3" BEL "comm_fpga_fx2/state_FSM_FFd1" BEL
+        "comm_fpga_fx2/state_FSM_FFd4" BEL "comm_fpga_fx2/count_31" BEL
+        "comm_fpga_fx2/count_30" BEL "comm_fpga_fx2/count_29" BEL
+        "comm_fpga_fx2/count_28" BEL "comm_fpga_fx2/count_27" BEL
+        "comm_fpga_fx2/count_26" BEL "comm_fpga_fx2/count_25" BEL
+        "comm_fpga_fx2/count_24" BEL "comm_fpga_fx2/count_23" BEL
+        "comm_fpga_fx2/count_22" BEL "comm_fpga_fx2/count_21" BEL
+        "comm_fpga_fx2/count_20" BEL "comm_fpga_fx2/count_19" BEL
+        "comm_fpga_fx2/count_18" BEL "comm_fpga_fx2/count_17" BEL
+        "comm_fpga_fx2/count_16" BEL "comm_fpga_fx2/count_15" BEL
+        "comm_fpga_fx2/count_14" BEL "comm_fpga_fx2/count_13" BEL
+        "comm_fpga_fx2/count_12" BEL "comm_fpga_fx2/count_11" BEL
+        "comm_fpga_fx2/count_10" BEL "comm_fpga_fx2/count_9" BEL
+        "comm_fpga_fx2/count_8" BEL "comm_fpga_fx2/count_7" BEL
+        "comm_fpga_fx2/count_6" BEL "comm_fpga_fx2/count_5" BEL
+        "comm_fpga_fx2/count_4" BEL "comm_fpga_fx2/count_3" BEL
+        "comm_fpga_fx2/count_2" BEL "comm_fpga_fx2/count_1" BEL
+        "comm_fpga_fx2/count_0" BEL "comm_fpga_fx2/isWrite" BEL
+        "comm_fpga_fx2/chanAddr_6" BEL "comm_fpga_fx2/chanAddr_5" BEL
+        "comm_fpga_fx2/chanAddr_4" BEL "comm_fpga_fx2/chanAddr_3" BEL
+        "comm_fpga_fx2/chanAddr_2" BEL "comm_fpga_fx2/chanAddr_1" BEL
+        "comm_fpga_fx2/chanAddr_0" BEL "comm_fpga_fx2/isAligned" BEL
+        "comm_fpga_fx2/state_FSM_FFd2_1" BEL "comm_fpga_fx2/state_FSM_FFd3_1"
+        BEL "comm_fpga_fx2/state_FSM_FFd1_1" BEL
+        "comm_fpga_fx2/state_FSM_FFd4_1" BEL "fx2Clk_in_BUFGP/BUFG" BEL
         "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_0"
         BEL
         "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_1"

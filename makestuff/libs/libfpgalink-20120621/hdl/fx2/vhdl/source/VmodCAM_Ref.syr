@@ -186,9 +186,9 @@ Parsing architecture <Behavioral> of entity <camctl>.
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" into library work
 Parsing entity <VmodCAM_Ref>.
 Parsing architecture <Behavioral> of entity <vmodcam_ref>.
-WARNING:HDLCompiler:946 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 445: Actual for formal port red_i is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 446: Actual for formal port green_i is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 447: Actual for formal port blue_i is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 455: Actual for formal port red_i is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 456: Actual for formal port green_i is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 457: Actual for formal port blue_i is neither a static name nor a globally static expression
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -293,26 +293,22 @@ Synthesizing Unit <VmodCAM_Ref>.
     Set property "S = TRUE" for signal <CAMA_PCLK_I>.
     Set property "S = TRUE" for signal <CAMB_PCLK_I>.
     Set property "S = TRUE" for signal <dummy_t>.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 266: Output port <outputData_out> of the instance <write_fifo> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 266: Output port <outputValid_out> of the instance <write_fifo> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 283: Output port <inputReady_out> of the instance <read_fifo> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 331: Output port <RSEL_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 331: Output port <SW_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 331: Output port <CLK_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 359: Output port <HCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 359: Output port <VCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
-WARNING:Xst:2999 - Signal 'array0', unconnected in block 'VmodCAM_Ref', is tied to its initial value.
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <array0>, simulation mismatch.
-    Found 9x8-bit single-port Read Only RAM <Mram_array0> for signal <array0>.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 276: Output port <outputData_out> of the instance <write_fifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 276: Output port <outputValid_out> of the instance <write_fifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 293: Output port <inputReady_out> of the instance <read_fifo> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 341: Output port <RSEL_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 341: Output port <SW_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 341: Output port <CLK_O> of the instance <Inst_SysCon> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 369: Output port <HCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" line 369: Output port <VCNT_O> of the instance <Inst_VideoTimingCtl> is unconnected or connected to loadless signal.
     Found 8-bit register for signal <count>.
-    Found 8-bit adder for signal <count[7]_GND_6_o_add_4_OUT> created at line 1241.
-    Found 8-bit 4-to-1 multiplexer for signal <_n0073> created at line 152.
+    Found 8-bit adder for signal <count[7]_GND_6_o_add_8_OUT> created at line 1241.
+    Found 8-bit 4-to-1 multiplexer for signal <_n0079> created at line 152.
 INFO:Xst:2774 - HDL ADVISOR - S property attached to signal dummy_t may hinder XST clustering optimizations.
     Summary:
-	inferred   1 RAM(s).
 	inferred   1 Adder/Subtractor(s).
 	inferred   8 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 Unit <VmodCAM_Ref> synthesized.
 
 Synthesizing Unit <comm_fpga_fx2>.
@@ -624,7 +620,7 @@ INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-2012062
     | Inputs             | 3                                              |
     | Outputs            | 1                                              |
     | Clock              | CLKA (rising_edge)                             |
-    | Reset              | SCalibDoneA_p1_wr_empty_OR_167_o (positive)       |
+    | Reset              | SCalibDoneA_p1_wr_empty_OR_174_o (positive)       |
     | Reset type         | synchronous                                    |
     | Reset State        | stwridle                                       |
     | Power Up State     | stwridle                                       |
@@ -638,7 +634,7 @@ INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-2012062
     | Inputs             | 3                                              |
     | Outputs            | 1                                              |
     | Clock              | CLKB (rising_edge)                             |
-    | Reset              | SCalibDoneB_p2_wr_empty_OR_171_o (positive)       |
+    | Reset              | SCalibDoneB_p2_wr_empty_OR_178_o (positive)       |
     | Reset type         | synchronous                                    |
     | Reset State        | stwridle                                       |
     | Power Up State     | stwridle                                       |
@@ -991,8 +987,8 @@ WARNING:Xst:2935 - Signal 'MCB_UIDQLOWERINC', unconnected in block 'mcb_soft_cal
 WARNING:Xst:2935 - Signal 'MCB_UIDQUPPERDEC', unconnected in block 'mcb_soft_calibration', is tied to its initial value (0).
 WARNING:Xst:2935 - Signal 'MCB_UIDQUPPERINC', unconnected in block 'mcb_soft_calibration', is tied to its initial value (0).
 WARNING:Xst:2935 - Signal 'MCB_RECAL', unconnected in block 'mcb_soft_calibration', is tied to its initial value (0).
-    Register <MCB_UIUDQSDEC> equivalent to <MCB_UILDQSDEC> has been removed
     Register <MCB_UIUDQSINC> equivalent to <MCB_UILDQSINC> has been removed
+    Register <MCB_UIUDQSDEC> equivalent to <MCB_UILDQSDEC> has been removed
     Found 1-bit register for signal <CKE_Train>.
     Found 1-bit register for signal <Block_Reset>.
     Found 16-bit register for signal <WAIT_200us_COUNTER>.
@@ -1070,7 +1066,7 @@ INFO:Xst:1799 - State 101010 is never reached in FSM <STATE>.
     Found 8-bit subtractor for signal <Max_Value_Delta_Up> created at line 387.
     Found 8-bit subtractor for signal <Max_Value_Delta_Dn> created at line 389.
     Found 8-bit subtractor for signal <GND_251_o_GND_251_o_sub_215_OUT<7:0>> created at line 1347.
-    Found 15-bit adder for signal <_n0708> created at line 446.
+    Found 15-bit adder for signal <_n0707> created at line 446.
     Found 15-bit adder for signal <n0429> created at line 446.
     Found 15-bit adder for signal <n0458> created at line 446.
     Found 15-bit adder for signal <_n0718> created at line 446.
@@ -1345,9 +1341,8 @@ Unit <TWICtl> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 3
+# RAMs                                                 : 2
  26x33-bit single-port RAM                             : 2
- 9x8-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 117
  10-bit adder                                          : 2
  11-bit adder                                          : 1
@@ -1408,7 +1403,7 @@ Macro Statistics
  8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 2
  8-bit comparator not equal                            : 2
-# Multiplexers                                         : 336
+# Multiplexers                                         : 337
  1-bit 16-to-1 multiplexer                             : 2
  1-bit 2-to-1 multiplexer                              : 226
  1-bit 3-to-1 multiplexer                              : 1
@@ -1424,7 +1419,7 @@ Macro Statistics
  5-bit 2-to-1 multiplexer                              : 13
  6-bit 2-to-1 multiplexer                              : 12
  7-bit 2-to-1 multiplexer                              : 4
- 8-bit 2-to-1 multiplexer                              : 26
+ 8-bit 2-to-1 multiplexer                              : 27
  8-bit 4-to-1 multiplexer                              : 3
  9-bit 2-to-1 multiplexer                              : 5
 # Tristates                                            : 12
@@ -1561,17 +1556,6 @@ Unit <VideoTimingCtl> synthesized (advanced).
 
 Synthesizing (advanced) Unit <VmodCAM_Ref>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_array0> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 9-word x 8-bit                      |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <count>         |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
 Unit <VmodCAM_Ref> synthesized (advanced).
 
 Synthesizing (advanced) Unit <iodrp_controller>.
@@ -1598,9 +1582,8 @@ Unit <timer> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 3
+# RAMs                                                 : 2
  26x33-bit single-port distributed RAM                 : 2
- 9x8-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 45
  10-bit adder                                          : 3
  11-bit adder                                          : 1
@@ -1654,7 +1637,7 @@ Macro Statistics
  8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 2
  8-bit comparator not equal                            : 2
-# Multiplexers                                         : 341
+# Multiplexers                                         : 342
  1-bit 16-to-1 multiplexer                             : 2
  1-bit 2-to-1 multiplexer                              : 256
  1-bit 3-to-1 multiplexer                              : 1
@@ -1667,7 +1650,7 @@ Macro Statistics
  5-bit 2-to-1 multiplexer                              : 10
  6-bit 2-to-1 multiplexer                              : 7
  7-bit 2-to-1 multiplexer                              : 4
- 8-bit 2-to-1 multiplexer                              : 20
+ 8-bit 2-to-1 multiplexer                              : 21
  8-bit 4-to-1 multiplexer                              : 3
  9-bit 2-to-1 multiplexer                              : 4
 # FSMs                                                 : 12
@@ -1894,10 +1877,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <TARGET_DQS_DELAY_7>
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_WRITE_DATA_7> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <n1_d_4> (without init value) has a constant value of 0 in block <TMDSEncoder>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <n1_q_m_4> (without init value) has a constant value of 0 in block <TMDSEncoder>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <count_4> of sequential type is unconnected in block <VmodCAM_Ref>.
-WARNING:Xst:2677 - Node <count_5> of sequential type is unconnected in block <VmodCAM_Ref>.
-WARNING:Xst:2677 - Node <count_6> of sequential type is unconnected in block <VmodCAM_Ref>.
-WARNING:Xst:2677 - Node <count_7> of sequential type is unconnected in block <VmodCAM_Ref>.
 INFO:Xst:1901 - Instance Inst_pll_mcb in unit Inst_pll_mcb of type PLL_BASE has been replaced by PLL_ADV
 INFO:Xst:1901 - Instance Inst_10_1_pll in unit Inst_10_1_pll of type PLL_BASE has been replaced by PLL_ADV
 INFO:Xst:2261 - The FF/Latch <MCB_UIADDR_xilinx3_0> in Unit <mcb_soft_calibration> is equivalent to the following 3 FFs/Latches, which will be removed : <MCB_UIADDR_xilinx3_2> <MCB_UIADDR_xilinx3_3> <MCB_UIADDR_xilinx3_4> 
@@ -1990,6 +1969,12 @@ WARNING:Xst:2677 - Node <Inst_DVITransmitter/Inst_TMDSEncoder_green/n1_d_0> of s
 WARNING:Xst:2677 - Node <Inst_DVITransmitter/Inst_TMDSEncoder_blue/n1_d_1> of sequential type is unconnected in block <VmodCAM_Ref>.
 WARNING:Xst:2677 - Node <Inst_DVITransmitter/Inst_TMDSEncoder_blue/n1_d_0> of sequential type is unconnected in block <VmodCAM_Ref>.
 WARNING:Xst:1710 - FF/Latch <Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_7> (without init value) has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_2> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_3> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_4> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_5> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_6> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <count_7> has a constant value of 0 in block <VmodCAM_Ref>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <Inst_camctlB/intRst> in Unit <VmodCAM_Ref> is equivalent to the following FF/Latch, which will be removed : <Inst_camctlA/intRst> 
 INFO:Xst:2261 - The FF/Latch <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_4> in Unit <VmodCAM_Ref> is equivalent to the following 4 FFs/Latches, which will be removed : <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_3> <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_2> <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_1> <Inst_DVITransmitter/Inst_clk_serializer_10_1/intDPIn_0> 
 INFO:Xst:2261 - The FF/Latch <Inst_DVITransmitter/Inst_TMDSEncoder_red/q_out_d_9> in Unit <VmodCAM_Ref> is equivalent to the following FF/Latch, which will be removed : <Inst_DVITransmitter/Inst_TMDSEncoder_red/q_out_d_2> 
@@ -2077,8 +2062,8 @@ Unit <VmodCAM_Ref> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1022
- Flip-Flops                                            : 1022
+# Registers                                            : 1020
+ Flip-Flops                                            : 1020
 # Shift Registers                                      : 5
  2-bit shift register                                  : 4
  97-bit shift register                                 : 1
@@ -2104,29 +2089,29 @@ Top Level Output File Name         : VmodCAM_Ref.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2800
+# BELS                             : 2798
 #      GND                         : 3
 #      INV                         : 76
-#      LUT1                        : 236
-#      LUT2                        : 160
+#      LUT1                        : 234
+#      LUT2                        : 161
 #      LUT3                        : 325
-#      LUT4                        : 205
+#      LUT4                        : 200
 #      LUT5                        : 287
-#      LUT6                        : 589
+#      LUT6                        : 597
 #      MULT_AND                    : 6
-#      MUXCY                       : 447
+#      MUXCY                       : 445
 #      MUXF7                       : 32
 #      MUXF8                       : 2
 #      VCC                         : 1
-#      XORCY                       : 431
-# FlipFlops/Latches                : 1127
+#      XORCY                       : 429
+# FlipFlops/Latches                : 1125
 #      FD                          : 241
 #      FDC                         : 8
 #      FDCE                        : 26
-#      FDE                         : 369
+#      FDE                         : 365
 #      FDP                         : 33
 #      FDR                         : 162
-#      FDRE                        : 260
+#      FDRE                        : 262
 #      FDS                         : 18
 #      FDSE                        : 8
 #      ODDR2                       : 2
@@ -2170,18 +2155,18 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1127  out of  54576     2%  
- Number of Slice LUTs:                 1952  out of  27288     7%  
-    Number used as Logic:              1878  out of  27288     6%  
+ Number of Slice Registers:            1125  out of  54576     2%  
+ Number of Slice LUTs:                 1954  out of  27288     7%  
+    Number used as Logic:              1880  out of  27288     6%  
     Number used as Memory:               74  out of   6408     1%  
        Number used as RAM:               66
        Number used as SRL:                8
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2153
-   Number with an unused Flip Flop:    1026  out of   2153    47%  
-   Number with an unused LUT:           201  out of   2153     9%  
-   Number of fully used LUT-FF pairs:   926  out of   2153    43%  
+ Number of LUT Flip Flop pairs used:   2155
+   Number with an unused Flip Flop:    1030  out of   2155    47%  
+   Number with an unused LUT:           201  out of   2155     9%  
+   Number of fully used LUT-FF pairs:   924  out of   2155    42%  
    Number of unique control sets:       104
 
 IO Utilization: 
@@ -2217,7 +2202,7 @@ Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 CAMB_PCLK_I                        | IBUF+BUFG              | 103   |
 CAMA_PCLK_I                        | IBUF+BUFG              | 103   |
-fx2Clk_in                          | BUFGP                  | 205   |
+fx2Clk_in                          | BUFGP                  | 203   |
 CLK_I                              | DCM_SP:CLKFX           | 241   |
 CLK_I                              | DCM_SP:CLKFX180        | 2     |
 Inst_SysCon/Inst_10_1_pll/CLKOUT2  | BUFG                   | 234   |
@@ -2292,7 +2277,7 @@ Delay:               4.985ns (Levels of Logic = 2)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fx2Clk_in'
   Clock period: 6.845ns (frequency: 146.082MHz)
-  Total number of paths / destination ports: 7376 / 423
+  Total number of paths / destination ports: 7317 / 421
 -------------------------------------------------------------------------
 Delay:               6.845ns (Levels of Logic = 7)
   Source:            comm_fpga_fx2/state_FSM_FFd3_1 (FF)
@@ -2456,7 +2441,7 @@ Offset:              3.619ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
-  Total number of paths / destination ports: 2108 / 278
+  Total number of paths / destination ports: 2118 / 284
 -------------------------------------------------------------------------
 Offset:              7.773ns (Levels of Logic = 8)
   Source:            fx2GotRoom_in (PAD)
@@ -2494,8 +2479,8 @@ Offset:              4.026ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             2   1.222   0.617  RESET_I_IBUF (RESET_I_IBUF)
-     LUT6:I5->O            1   0.205   0.684  Inst_SysCon/RstDbnc_RstQ[99]_OR_51_o_SW0 (N98)
-     LUT6:I4->O            7   0.203   0.773  Inst_SysCon/RstDbnc_RstQ[99]_OR_51_o (Inst_SysCon/RstDbnc_RstQ[99]_OR_51_o)
+     LUT6:I5->O            1   0.205   0.684  Inst_SysCon/RstDbnc_RstQ[99]_OR_58_o_SW0 (N98)
+     LUT6:I4->O            7   0.203   0.773  Inst_SysCon/RstDbnc_RstQ[99]_OR_58_o (Inst_SysCon/RstDbnc_RstQ[99]_OR_58_o)
      FDE:CE                    0.322          Inst_SysCon/RstQ_97
     ----------------------------------------
     Total                      4.026ns (1.952ns logic, 2.074ns route)
@@ -2505,7 +2490,7 @@ Offset:              4.026ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Inst_SysCon/Inst_10_1_pll/CLKOUT2'
   Total number of paths / destination ports: 95 / 24
 -------------------------------------------------------------------------
-Offset:              2.528ns (Levels of Logic = 3)
+Offset:              2.560ns (Levels of Logic = 3)
   Source:            Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0:P3RDDATA6 (PAD)
   Destination:       Inst_DVITransmitter/Inst_TMDSEncoder_green/n1_d_2 (FF)
   Destination Clock: Inst_SysCon/Inst_10_1_pll/CLKOUT2 rising
@@ -2514,14 +2499,14 @@ Offset:              2.528ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    MCB:P3RDDATA6          3   0.000   0.898  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0 (Inst_FBCtl/p3_rd_data<6>)
+    MCB:P3RDDATA6          4   0.000   0.931  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0 (Inst_FBCtl/p3_rd_data<6>)
      LUT5:I1->O            2   0.203   0.981  Inst_DVITransmitter/Inst_TMDSEncoder_green/ADDERTREE_INTERNAL_Madd_xor<0>21 (Inst_DVITransmitter/Inst_TMDSEncoder_green/ADDERTREE_INTERNAL_Madd_1)
      LUT6:I0->O            1   0.203   0.000  Inst_DVITransmitter/Inst_TMDSEncoder_green/ADDERTREE_INTERNAL_Madd2_xor<2>11_G (N591)
      MUXF7:I1->O           1   0.140   0.000  Inst_DVITransmitter/Inst_TMDSEncoder_green/ADDERTREE_INTERNAL_Madd2_xor<2>11 (Inst_DVITransmitter/Inst_TMDSEncoder_green/ADDERTREE_INTERNAL_Madd_22)
      FD:D                      0.102          Inst_DVITransmitter/Inst_TMDSEncoder_green/n1_d_2
     ----------------------------------------
-    Total                      2.528ns (0.648ns logic, 1.880ns route)
-                                       (25.6% logic, 74.4% route)
+    Total                      2.560ns (0.648ns logic, 1.912ns route)
+                                       (25.3% logic, 74.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Inst_SysCon/Inst_pll_mcb/CLKOUT2'
@@ -2537,7 +2522,7 @@ Offset:              5.047ns (Levels of Logic = 5)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IOBUF:IO->O           2   1.222   0.961  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/IOBUF_RZQ (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_IN)
-     LUT5:I0->O            1   0.203   0.580  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RZQ_IN_P_Term[5]_OR_103_o1_SW0 (N395)
+     LUT5:I0->O            1   0.203   0.580  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RZQ_IN_P_Term[5]_OR_110_o1_SW0 (N395)
      LUT6:I5->O            1   0.205   0.684  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In7 (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In7)
      LUT6:I4->O            1   0.203   0.684  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In13 (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In14)
      LUT6:I4->O            1   0.203   0.000  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In19 (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6-In)
@@ -2633,15 +2618,15 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'CAMA_PCLK_I'
   Total number of paths / destination ports: 83 / 60
 -------------------------------------------------------------------------
 Offset:              3.304ns (Levels of Logic = 1)
-  Source:            Inst_FBCtl/stateWrA_FSM_FFd1 (FF)
+  Source:            Inst_FBCtl/stateWrA_FSM_FFd2 (FF)
   Destination:       Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0:P1CMDEN (PAD)
   Source Clock:      CAMA_PCLK_I rising
 
-  Data Path: Inst_FBCtl/stateWrA_FSM_FFd1 to Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0:P1CMDEN
+  Data Path: Inst_FBCtl/stateWrA_FSM_FFd2 to Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0:P1CMDEN
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             38   0.447   1.481  Inst_FBCtl/stateWrA_FSM_FFd1 (Inst_FBCtl/stateWrA_FSM_FFd1)
+     FDR:C->Q             38   0.447   1.481  Inst_FBCtl/stateWrA_FSM_FFd2 (Inst_FBCtl/stateWrA_FSM_FFd2)
      LUT2:I0->O           24   0.203   1.172  Inst_FBCtl/stateWrA_p1_cmd_en1 (Inst_FBCtl/p1_cmd_en)
     MCB:P1CMDEN                0.000          Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0
     ----------------------------------------
@@ -2653,15 +2638,15 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'CAMB_PCLK_I'
   Total number of paths / destination ports: 89 / 60
 -------------------------------------------------------------------------
 Offset:              3.304ns (Levels of Logic = 1)
-  Source:            Inst_FBCtl/stateWrB_FSM_FFd1 (FF)
+  Source:            Inst_FBCtl/stateWrB_FSM_FFd2 (FF)
   Destination:       Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0:P2CMDEN (PAD)
   Source Clock:      CAMB_PCLK_I rising
 
-  Data Path: Inst_FBCtl/stateWrB_FSM_FFd1 to Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0:P2CMDEN
+  Data Path: Inst_FBCtl/stateWrB_FSM_FFd2 to Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0:P2CMDEN
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             38   0.447   1.481  Inst_FBCtl/stateWrB_FSM_FFd1 (Inst_FBCtl/stateWrB_FSM_FFd1)
+     FDR:C->Q             38   0.447   1.481  Inst_FBCtl/stateWrB_FSM_FFd2 (Inst_FBCtl/stateWrB_FSM_FFd2)
      LUT2:I0->O           24   0.203   1.172  Inst_FBCtl/stateWrB_p2_cmd_en1 (Inst_FBCtl/p2_cmd_en)
     MCB:P2CMDEN                0.000          Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/samc_0
     ----------------------------------------
@@ -2702,8 +2687,8 @@ Delay:               7.496ns (Levels of Logic = 5)
      IBUF:I->O             5   1.222   0.962  fx2GotRoom_in_IBUF (fx2GotRoom_in_IBUF)
      LUT4:I0->O            2   0.203   0.617  comm_fpga_fx2/state_FSM_FFd4-In31 (comm_fpga_fx2/state_FSM_FFd4-In3)
      LUT6:I5->O            9   0.205   0.934  readFifoOutputReady1 (readFifoOutputReady1)
-     LUT2:I0->O            1   0.203   0.579  comm_fpga_fx2/Mmux_dataOut22 (comm_fpga_fx2/dataOut<1>)
-     IOBUF:I->IO               2.571          fx2Data_io_1_IOBUF (fx2Data_io<1>)
+     LUT2:I0->O            1   0.203   0.579  comm_fpga_fx2/Mmux_dataOut12 (comm_fpga_fx2/dataOut<0>)
+     IOBUF:I->IO               2.571          fx2Data_io_0_IOBUF (fx2Data_io<0>)
     ----------------------------------------
     Total                      7.496ns (4.404ns logic, 3.092ns route)
                                        (58.8% logic, 41.2% route)
@@ -2738,7 +2723,7 @@ Clock to Setup on destination clock CLK_I
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK_I          |    7.208|         |         |         |
+CLK_I          |    7.310|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Inst_SysCon/Inst_10_1_pll/CLKOUT2
@@ -2770,25 +2755,26 @@ Inst_SysCon/Inst_pll_mcb/CLKOUT2|    6.074|         |         |         |
 --------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock fx2Clk_in
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-fx2Clk_in      |    6.845|         |         |         |
----------------+---------+---------+---------+---------+
+---------------------------------+---------+---------+---------+---------+
+                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------+---------+---------+---------+---------+
+Inst_SysCon/Inst_10_1_pll/CLKOUT2|    3.165|         |         |         |
+fx2Clk_in                        |    6.845|         |         |         |
+---------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 25.00 secs
-Total CPU time to Xst completion: 24.09 secs
+Total REAL time to Xst completion: 27.00 secs
+Total CPU time to Xst completion: 27.12 secs
  
 --> 
 
 
-Total memory usage is 453420 kilobytes
+Total memory usage is 453680 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  294 (   0 filtered)
-Number of infos    :  171 (   0 filtered)
+Number of infos    :  170 (   0 filtered)
 
