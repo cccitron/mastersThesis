@@ -382,21 +382,25 @@ if __name__ == "__main__":
             #print("Reading channel 6...")
             #print("Got 0x%02X" % flReadChannel(handle, 1000, 0x06))
             
-            im = Image.new("RGB", (2, 4), "black")
+            im = Image.new("RGB", (50, 100), "black")
             print(im.format, im.size, im.mode)
 
             print("Reading channel 0...")
-            for i in range(3):
-                r = flReadChannel(handle, 1000, 0x00)
-                g = flReadChannel(handle, 1000, 0x00)
-                b = flReadChannel(handle, 1000, 0x00)
-                im.putpixel((0, i), (r, g, b))
-                im.putpixel((1, 2-i), (r, g, b))
-                print("Got 0x%02X 0x%02X 0x%02X" % (r, g, b))
-                #time.sleep(1)
+            for i in range(1):
+                for j in range(50):
+                    print("")
+                    for k in range(100):
+                        r = flReadChannel(handle, 1000, 0x00)
+                        g = flReadChannel(handle, 1000, 0x00)
+                        b = flReadChannel(handle, 1000, 0x00)
+                        im.putpixel((j, k), (r, g, b))
+                        #im.putpixel((1, 2-i), (r, g, b))
+                        #print("Got 0x%02X 0x%02X 0x%02X" % (r, g, b))
+                        #print("0x%02X" % r, end=" ")
+                        #time.sleep(1)
 
-            im.putpixel((0, 3), (0, 0, 0))
-            im.putpixel((1, 3), (255, 255, 255))
+            #im.putpixel((0, 3), (0, 0, 0))
+            #im.putpixel((1, 3), (255, 255, 255))
             im.save("show.jpg")
             im.show()
 
