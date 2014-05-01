@@ -1,0 +1,574 @@
+# Digilent_Atlys_v2_2_0.xbd
+# This file is Xilinx board definition file for Atlys rev C board
+# for Xilinx Base System Builder
+# ------------------------------------------------------------
+# ------------------------------------------------------------
+# History:
+# 	Author: Albert Fazakas
+#   Contact: Albert.Fazakas@digilentinc.com
+#	3.1 Renamed cores to the corresponding names from the AXI BSB
+#	Support. Updated documentation and version number to be identical
+#   to the AXI BSB Support. Changed GPIO endianness to big endian
+# 	Author: Albert Fazakas
+#   Contact: Albert.Fazakas@digilentinc.com
+#	2.3 Added Custom Cores for Digilent USB Interface,
+#   Quad SPI Interface and 7 Segment Display Core 13AUG2011
+# ------------------------------------------------------------
+# Cores Included:
+# - Standard Cores: 4 PushButtons (except BTNS, connected to processor reset), 8 LEDs, 
+#					8 Switches, UART, Micron PSRAM in Asynchronous SRAM Mode, 
+#					Numonyx PCM FLASH, PS2 Keyboard and Mouse for USB-HID interface and
+#					Ethernetlite/Soft_Temac
+# - Custom Cores: Digilent USB-EPP interface, Quad SPI Interface, 
+#				  Seven Segment Decoder	Interface
+#
+# -------------------------------------------------------------
+ATTRIBUTE VENDOR = Digilent
+ATTRIBUTE NAME = Atlys
+ATTRIBUTE REVISION = C
+ATTRIBUTE SPEC_URL = www.digilentinc.com
+ATTRIBUTE CONTACT_INFO_URL = http://www.digilentinc.com/
+ATTRIBUTE DESC = Digilent Spartan-6 Atlys 
+ATTRIBUTE LONG_DESC = 'The Atlys board features a Xilinx Spartan-6 XC6SLX45-3CSG324C FPGA device, two input and two output HDMI ports, 1Gb (x16) DDR2 DRAM component for use with Spartan-6, 128Mbit Numonyx N25Q 128(x4) SPI Flash memory, Marvell Alaska 10/100/1000 PHY device (88E111) with GMII interface, HID Host for USB mouse, keyboard, USB-UART bridge for the serial port, AC 97 Codec with color coded jacks, 8 slide switches, 5 pushbuttons in “Gamepad” configuration, 8 LEDs and 1 reset button'
+
+BEGIN IO_INTERFACE
+  ATTRIBUTE INSTANCE = gclk
+  ATTRIBUTE IOTYPE = XIL_CLOCK_V1
+  PARAMETER CLK_FREQ = 100000000, IO_IS=clk_freq, RANGE=(100000000) # 100 Mhz Clock
+  PORT gclk = GCLK, IO_IS=ext_clk
+END
+
+BEGIN IO_INTERFACE
+  ATTRIBUTE INSTANCE = rst_1
+  ATTRIBUTE IOTYPE = XIL_RESET_V1
+  PARAMETER RST_POLARITY = 0, IO_IS = polarity, VALUE_NOTE = Active Low
+  PORT FPGA.RESET = sys_rst_n, IO_IS = ext_rst
+END
+
+
+### RS232_Uart_1
+BEGIN IO_INTERFACE
+   ATTRIBUTE INSTANCE = RS232_Uart_1
+   ATTRIBUTE IOTYPE = XIL_UART_V1
+   PORT RX = uart1_sin, IO_IS = serial_in
+   PORT TX = uart1_sout, IO_IS = serial_out
+END
+
+
+### DIP_Switches_8Bits
+### Note bit reversal for PLB bit-ordering
+BEGIN IO_INTERFACE
+  ATTRIBUTE INSTANCE = DIP_Switches_8Bits
+  ATTRIBUTE IOTYPE = XIL_GPIO_V1
+  PARAMETER C_GPIO_WIDTH = 8, IO_IS = num_bits
+  PARAMETER C_IS_DUAL = 0, IO_IS = is_dual
+  PARAMETER C_ALL_INPUTS = 1, IO_IS = all_inputs
+  PORT DIP_Switches_8Bits_I_0 = DIP_Switches_8Bits_I_7, IO_IS = gpio_data_in[0]
+  PORT DIP_Switches_8Bits_I_1 = DIP_Switches_8Bits_I_6, IO_IS = gpio_data_in[1]
+  PORT DIP_Switches_8Bits_I_2 = DIP_Switches_8Bits_I_5, IO_IS = gpio_data_in[2]
+  PORT DIP_Switches_8Bits_I_3 = DIP_Switches_8Bits_I_4, IO_IS = gpio_data_in[3]
+  PORT DIP_Switches_8Bits_I_4 = DIP_Switches_8Bits_I_3, IO_IS = gpio_data_in[4]
+  PORT DIP_Switches_8Bits_I_5 = DIP_Switches_8Bits_I_2, IO_IS = gpio_data_in[5]
+  PORT DIP_Switches_8Bits_I_6 = DIP_Switches_8Bits_I_1, IO_IS = gpio_data_in[6]
+  PORT DIP_Switches_8Bits_I_7 = DIP_Switches_8Bits_I_0, IO_IS = gpio_data_in[7]
+END
+
+
+### LEDs_8Bits
+BEGIN IO_INTERFACE
+  ATTRIBUTE INSTANCE = LEDs_8Bits
+  ATTRIBUTE IOTYPE = XIL_GPIO_V1
+  PARAMETER C_GPIO_WIDTH = 8, IO_IS = num_bits
+  PARAMETER C_IS_DUAL = 0, IO_IS = is_dual
+  PARAMETER C_ALL_INPUTS = 0, IO_IS = all_inputs
+### Endianness inversion is done at the ucf constraints
+  PORT LEDs_8Bits_O_0 = LEDs_8Bits_O_0, IO_IS = gpio_data_out[0]
+  PORT LEDs_8Bits_O_1 = LEDs_8Bits_O_1, IO_IS = gpio_data_out[1]
+  PORT LEDs_8Bits_O_2 = LEDs_8Bits_O_2, IO_IS = gpio_data_out[2]
+  PORT LEDs_8Bits_O_3 = LEDs_8Bits_O_3, IO_IS = gpio_data_out[3]
+  PORT LEDs_8Bits_O_4 = LEDs_8Bits_O_4, IO_IS = gpio_data_out[4]
+  PORT LEDs_8Bits_O_5 = LEDs_8Bits_O_5, IO_IS = gpio_data_out[5]
+  PORT LEDs_8Bits_O_6 = LEDs_8Bits_O_6, IO_IS = gpio_data_out[6]
+  PORT LEDs_8Bits_O_7 = LEDs_8Bits_O_7, IO_IS = gpio_data_out[7]
+END
+
+### Push_Buttons_5Bits
+BEGIN IO_INTERFACE
+  ATTRIBUTE INSTANCE = Push_Buttons_5Bits
+  ATTRIBUTE IOTYPE = XIL_GPIO_V1
+  PARAMETER C_GPIO_WIDTH = 5, IO_IS = num_bits
+  PARAMETER C_IS_DUAL = 0, IO_IS = is_dual
+  PARAMETER C_ALL_INPUTS = 1, IO_IS = all_inputs
+  PORT Push_Buttons_5Bits_I_0 = Push_Buttons_5Bits_I_0, IO_IS = gpio_data_in[0]
+  PORT Push_Buttons_5Bits_I_1 = Push_Buttons_5Bits_I_1, IO_IS = gpio_data_in[1]
+  PORT Push_Buttons_5Bits_I_2 = Push_Buttons_5Bits_I_2, IO_IS = gpio_data_in[2]
+  PORT Push_Buttons_5Bits_I_3 = Push_Buttons_5Bits_I_3, IO_IS = gpio_data_in[3]
+  PORT Push_Buttons_5Bits_I_4 = Push_Buttons_5Bits_I_4, IO_IS = gpio_data_in[4]
+END
+
+### MCB_DDR2
+BEGIN IO_INTERFACE
+  ATTRIBUTE IOTYPE = XIL_MEMORY_V1
+  ATTRIBUTE INSTANCE = MCB_DDR2
+  PARAMETER C_MEM_PARTNO = "EDE1116AXXX-8E", IO_IS=C_MEM_PARTNO
+  PARAMETER C_BASEADDR = 0x00000000, IO_IS = C_BASEADDR
+  PARAMETER C_HIGHADDR = 0x07ffffff, IO_IS = C_HIGHADDR
+  PARAMETER C_DDR2_DQSN_ENABLE = 1, IO_IS = C_DDR2_DQSN_ENABLE
+  PARAMETER C_MEM_DATA_WIDTH = 16, IO_IS = C_MEM_DATA_WIDTH
+  PARAMETER C_MEM_ADDR_WIDTH = 13, IO_IS = C_MEM_ADDR_WIDTH
+  PARAMETER C_MEM_BANKADDR_WIDTH = 3, IO_IS = C_MEM_BANKADDR_WIDTH
+  PARAMETER C_MEM_DQS_WIDTH = 8, IO_IS = C_MEM_DQS_WIDTH
+  PARAMETER C_MEM_DM_WIDTH = 8, IO_IS = C_MEM_DM_WIDTH
+
+  PARAMETER C_PORT_CONFIG = 1, IO_IS = C_PORT_CONFIG
+  PARAMETER C_MCB_LOC = MEMC3, IO_IS = C_MCB_LOC
+  PARAMETER C_MEM_ODT_TYPE = 3, IO_IS = C_MEM_ODT_TYPE
+
+  # Add - needed for soft calibration mode
+  PARAMETER C_MEM_CALIBRATION_SOFT_IP = TRUE, IO_IS = C_MEM_CALIBRATION_SOFT_IP
+  PARAMETER C_MEM_SKIP_IN_TERM_CAL = 0, IO_IS = C_MEM_SKIP_IN_TERM_CAL
+  PARAMETER C_MEM_SKIP_DYNAMIC_CAL = 0, IO_IS = C_MEM_SKIP_DYNAMIC_CAL
+
+  PARAMETER C_MCB_RZQ_LOC = L6, IO_IS = C_MCB_RZQ_LOC
+  PARAMETER C_MCB_ZIO_LOC = C2, IO_IS = C_MCB_ZIO_LOC
+
+  PORT mcbx_dram_addr_0 = mcbx_dram_addr_0, IO_IS = MCB_ADDRESS[0]
+  PORT mcbx_dram_addr_1 = mcbx_dram_addr_1, IO_IS = MCB_ADDRESS[1]
+  PORT mcbx_dram_addr_2 = mcbx_dram_addr_2, IO_IS = MCB_ADDRESS[2]
+  PORT mcbx_dram_addr_3 = mcbx_dram_addr_3, IO_IS = MCB_ADDRESS[3]
+  PORT mcbx_dram_addr_4 = mcbx_dram_addr_4, IO_IS = MCB_ADDRESS[4]
+  PORT mcbx_dram_addr_5 = mcbx_dram_addr_5, IO_IS = MCB_ADDRESS[5]
+  PORT mcbx_dram_addr_6 = mcbx_dram_addr_6, IO_IS = MCB_ADDRESS[6]
+  PORT mcbx_dram_addr_7 = mcbx_dram_addr_7, IO_IS = MCB_ADDRESS[7]
+  PORT mcbx_dram_addr_8 = mcbx_dram_addr_8, IO_IS = MCB_ADDRESS[8]
+  PORT mcbx_dram_addr_9 = mcbx_dram_addr_9, IO_IS = MCB_ADDRESS[9]
+  PORT mcbx_dram_addr_10 = mcbx_dram_addr_10, IO_IS = MCB_ADDRESS[10]
+  PORT mcbx_dram_addr_11 = mcbx_dram_addr_11, IO_IS = MCB_ADDRESS[11]
+  PORT mcbx_dram_addr_12 = mcbx_dram_addr_12, IO_IS = MCB_ADDRESS[12]
+  PORT mcbx_dram_ba_0 = mcbx_dram_ba_0, IO_IS = MCB_BANKADDR[0]
+  PORT mcbx_dram_ba_1 = mcbx_dram_ba_1, IO_IS = MCB_BANKADDR[1]
+  PORT mcbx_dram_ba_2 = mcbx_dram_ba_2, IO_IS = MCB_BANKADDR[2]
+  PORT mcbx_dram_ras_n = mcbx_dram_ras_n, IO_IS = MCB_ROW_ADDR_SELECT
+  PORT mcbx_dram_cas_n = mcbx_dram_cas_n, IO_IS = MCB_COL_ADDR_SELECT
+  PORT mcbx_dram_we_n = mcbx_dram_we_n, IO_IS = MCB_WRITE_ENABLE
+  PORT mcbx_dram_cke = mcbx_dram_cke, IO_IS = MCB_CLK_ENABLE
+  PORT mcbx_dram_clk = mcbx_dram_clk, IO_IS = MCB_CLK
+  PORT mcbx_dram_clk_n = mcbx_dram_clk_n, IO_IS = MCB_CLK_N
+  PORT mcbx_dram_dq_0 = mcbx_dram_dq_0, IO_IS = MCB_DQ[0]
+  PORT mcbx_dram_dq_1 = mcbx_dram_dq_1, IO_IS = MCB_DQ[1]
+  PORT mcbx_dram_dq_2 = mcbx_dram_dq_2, IO_IS = MCB_DQ[2]
+  PORT mcbx_dram_dq_3 = mcbx_dram_dq_3, IO_IS = MCB_DQ[3]
+  PORT mcbx_dram_dq_4 = mcbx_dram_dq_4, IO_IS = MCB_DQ[4]
+  PORT mcbx_dram_dq_5 = mcbx_dram_dq_5, IO_IS = MCB_DQ[5]
+  PORT mcbx_dram_dq_6 = mcbx_dram_dq_6, IO_IS = MCB_DQ[6]
+  PORT mcbx_dram_dq_7 = mcbx_dram_dq_7, IO_IS = MCB_DQ[7]
+  PORT mcbx_dram_dq_8 = mcbx_dram_dq_8, IO_IS = MCB_DQ[8]
+  PORT mcbx_dram_dq_9 = mcbx_dram_dq_9, IO_IS = MCB_DQ[9]
+  PORT mcbx_dram_dq_10 = mcbx_dram_dq_10, IO_IS = MCB_DQ[10]
+  PORT mcbx_dram_dq_11 = mcbx_dram_dq_11, IO_IS = MCB_DQ[11]
+  PORT mcbx_dram_dq_12 = mcbx_dram_dq_12, IO_IS = MCB_DQ[12]
+  PORT mcbx_dram_dq_13 = mcbx_dram_dq_13, IO_IS = MCB_DQ[13]
+  PORT mcbx_dram_dq_14 = mcbx_dram_dq_14, IO_IS = MCB_DQ[14]
+  PORT mcbx_dram_dq_15 = mcbx_dram_dq_15, IO_IS = MCB_DQ[15]
+  PORT mcbx_dram_dqs = mcbx_dram_dqs, IO_IS = MCB_DQS
+  PORT mcbx_dram_dqs_n = mcbx_dram_dqs_n, IO_IS = MCB_DQS_N
+  PORT mcbx_dram_udqs = mcbx_dram_udqs, IO_IS = MCB_UDQS
+  PORT mcbx_dram_udqs_n = mcbx_dram_udqs_n, IO_IS = MCB_UDQS_N
+  PORT mcbx_dram_udm = mcbx_dram_udm, IO_IS = MCB_UDM
+  PORT mcbx_dram_ldm = mcbx_dram_ldm, IO_IS = MCB_LDM
+  PORT mcbx_dram_odt = mcbx_dram_odt, IO_IS = MCB_ODT
+
+  PORT mcbx_dram_rzq = mcbx_dram_rzq, IO_IS = rzq
+  PORT mcbx_dram_zio = mcbx_dram_zio, IO_IS = zio
+END
+
+
+### 10/100 Ethernet MAC
+BEGIN IO_INTERFACE
+  ATTRIBUTE IOTYPE = XIL_ETHERNET_V1
+  ATTRIBUTE INSTANCE = Ethernet_Lite
+  ATTRIBUTE EXCLUSIVE = Ethernet
+
+  PORT RESET = phy_rst_n, IO_IS=PHY_RESETn, INITIALVAL = VCC
+  PORT MDINT = phy_mii_int_n, IO_IS=INTERRUPT
+  PORT CRS = phy_crs, IO_IS=ETH_CRS
+  PORT COL = phy_col, IO_IS=ETH_COL
+
+  PORT RXD3 = phy_rx_data_3, IO_IS = ETH_RXD[3]
+  PORT RXD2 = phy_rx_data_2, IO_IS = ETH_RXD[2]
+  PORT RXD1 = phy_rx_data_1, IO_IS = ETH_RXD[1]
+  PORT RXD0 = phy_rx_data_0, IO_IS = ETH_RXD[0]
+  PORT TXD3 = phy_tx_data_3, IO_IS = ETH_TXD[3]
+  PORT TXD2 = phy_tx_data_2, IO_IS = ETH_TXD[2]
+  PORT TXD1 = phy_tx_data_1, IO_IS = ETH_TXD[1]
+  PORT TXD0 = phy_tx_data_0, IO_IS = ETH_TXD[0]
+  PORT RX_DV = phy_dv, IO_IS=ETH_RXDV
+  PORT RX_ER = phy_rx_er, IO_IS=ETH_RXER
+  PORT RX_CLK = phy_rx_clk, IO_IS=ETH_RXC
+  PORT TX_EN = phy_tx_en, IO_IS=ETH_TXEN
+  PORT TX_CLK = phy_tx_clk, IO_IS=ETH_TXC
+  PORT TX_ER = phy_tx_er, IO_IS=ETH_TXER
+  PORT PHY_MDC = phy_mii_clk, IO_IS=ETH_MDC
+  PORT PHY_MDIO = phy_mii_data, IO_IS=ETH_MDIO
+END
+
+
+### Soft_TEMAC
+BEGIN IO_INTERFACE
+  ATTRIBUTE IOTYPE = XIL_TEMAC_V1
+  ATTRIBUTE INSTANCE = ETHERNET
+  ATTRIBUTE EXCLUSIVE = Ethernet
+  PARAMETER C_PHY_TYPE = 1, IO_IS=C_PHY_TYPE
+  PARAMETER C_TEMAC1_ENABLED= 0, IO_IS=C_TEMAC1_ENABLED
+  PARAMETER C_TEMAC_TYPE = 2, IO_IS=C_TEMAC_TYPE
+  PARAMETER C_TEMAC0_PHYADDR = "0b00001", IO_IS=C_TEMAC0_PHYADDR
+
+  PORT TemacPhy_RST_n = TemacPhy_RST_n_s, IO_IS = PhyResetN
+  PORT GMII_TXD_0_0 = GMII_TXD_0_s_0, IO_IS = GMII_TXD_0[0]
+  PORT GMII_TXD_0_1 = GMII_TXD_0_s_1, IO_IS = GMII_TXD_0[1]
+  PORT GMII_TXD_0_2 = GMII_TXD_0_s_2, IO_IS = GMII_TXD_0[2]
+  PORT GMII_TXD_0_3 = GMII_TXD_0_s_3, IO_IS = GMII_TXD_0[3]
+  PORT GMII_TXD_0_4 = GMII_TXD_0_s_4, IO_IS = GMII_TXD_0[4]
+  PORT GMII_TXD_0_5 = GMII_TXD_0_s_5, IO_IS = GMII_TXD_0[5]
+  PORT GMII_TXD_0_6 = GMII_TXD_0_s_6, IO_IS = GMII_TXD_0[6]
+  PORT GMII_TXD_0_7 = GMII_TXD_0_s_7, IO_IS = GMII_TXD_0[7]
+  PORT GMII_RXD_0_0 = GMII_RXD_0_s_0, IO_IS = GMII_RXD_0[0]
+  PORT GMII_RXD_0_1 = GMII_RXD_0_s_1, IO_IS = GMII_RXD_0[1]
+  PORT GMII_RXD_0_2 = GMII_RXD_0_s_2, IO_IS = GMII_RXD_0[2]
+  PORT GMII_RXD_0_3 = GMII_RXD_0_s_3, IO_IS = GMII_RXD_0[3]
+  PORT GMII_RXD_0_4 = GMII_RXD_0_s_4, IO_IS = GMII_RXD_0[4]
+  PORT GMII_RXD_0_5 = GMII_RXD_0_s_5, IO_IS = GMII_RXD_0[5]
+  PORT GMII_RXD_0_6 = GMII_RXD_0_s_6, IO_IS = GMII_RXD_0[6]
+  PORT GMII_RXD_0_7 = GMII_RXD_0_s_7, IO_IS = GMII_RXD_0[7]
+
+  PORT GMII_TX_EN_0 = GMII_TX_EN_0_s, IO_IS = GMII_TX_EN_0
+  PORT GMII_TX_ER_0 = GMII_TX_ER_0_s, IO_IS = GMII_TX_ER_0
+  PORT GMII_TX_CLK_0 = GMII_TX_CLK_0_s, IO_IS = GMII_TX_CLK_0
+
+  PORT GMII_RX_DV_0 = GMII_RX_DV_0_s, IO_IS = GMII_RX_DV_0
+  PORT GMII_RX_ER_0 = GMII_RX_ER_0_s, IO_IS = GMII_RX_ER_0
+  PORT GMII_RX_CLK_0 = GMII_RX_CLK_0_s, IO_IS = GMII_RX_CLK_0
+
+  PORT MII_TX_CLK_0 = MII_TX_CLK_0_s, IO_IS = MII_TX_CLK_0
+  PORT MDC_0 = MDC_0_s, IO_IS = MDC_0
+  PORT MDIO_0 = MDIO_0_s, IO_IS = MDIO_0
+END
+
+# PS/2 Port 1 Keyboard, Port 2 Mouse
+BEGIN IO_INTERFACE
+  ATTRIBUTE IOTYPE = XIL_PS2_V1
+  ATTRIBUTE INSTANCE = PS2_Keyboard_Mouse
+  PARAMETER C_IS_DUAL = 1, IO_IS = is_dual
+  PORT PS2_1_CLK   = ps2_1_clk,   IO_IS=ps2_1_clk
+  PORT PS2_1_DATA  = ps2_1_data,  IO_IS=ps2_1_data
+  PORT PS2_2_CLK  = ps2_2_clk,  IO_IS=ps2_2_clk
+  PORT PS2_2_DATA = ps2_2_data, IO_IS=ps2_2_data
+END
+
+### DIGILENT USB INTERFACE
+BEGIN IO_INTERFACE
+ ATTRIBUTE IOTYPE = XIL_USB_EPP
+ ATTRIBUTE INSTANCE = Digilent_Usb_Epp
+ ATTRIBUTE CORENAME = d_usb_epp_dstm
+ 
+ PARAMETER C_NUM_USER_REGS = 256, IO_IS = num_user_regs
+ #PARAMETER C_EPP_INTERRUPT_PRESENT = 1, IO_IS = epp_interrupt_present
+ 
+ PORT IFCLK = d_usb_epp_dstm_0_IFCLK, IO_IS = usb_ifclk
+ PORT STMEN = d_usb_epp_dstm_0_STMEN, IO_IS = usb_stmen
+ PORT FLAGA = d_usb_epp_dstm_0_FLAGA, IO_IS = usb_flaga
+ PORT FLAGB = d_usb_epp_dstm_0_FLAGB, IO_IS = usb_flagb
+ PORT FLAGC = d_usb_epp_dstm_0_FLAGC, IO_IS = usb_flagc
+ PORT SLRD = d_usb_epp_dstm_0_SLRD, IO_IS = usb_slrd
+ PORT SLWR = d_usb_epp_dstm_0_SLWR, IO_IS = usb_slwr
+ PORT SLOE = d_usb_epp_dstm_0_SLOE, IO_IS = usb_sloe
+ PORT FIFOADR_0 = d_usb_epp_dstm_0_FIFOADR_0, IO_IS = usb_fifoaddr[0]
+ PORT FIFOADR_1 = d_usb_epp_dstm_0_FIFOADR_1, IO_IS = usb_fifoaddr[1]
+ PORT PKTEND = d_usb_epp_dstm_0_PKTEND, IO_IS = usb_pktend
+ PORT EPPRST = d_usb_epp_dstm_0_EPPRST, IO_IS = usb_epprst
+ PORT DB0 = d_usb_epp_dstm_0_DB_0, IO_IS = usb_db[0]
+ PORT DB1 = d_usb_epp_dstm_0_DB_1, IO_IS = usb_db[1]
+ PORT DB2 = d_usb_epp_dstm_0_DB_2, IO_IS = usb_db[2]
+ PORT DB3 = d_usb_epp_dstm_0_DB_3, IO_IS = usb_db[3]
+ PORT DB4 = d_usb_epp_dstm_0_DB_4, IO_IS = usb_db[4]
+ PORT DB5 = d_usb_epp_dstm_0_DB_5, IO_IS = usb_db[5]
+ PORT DB6 = d_usb_epp_dstm_0_DB_6, IO_IS = usb_db[6]
+ PORT DB7 = d_usb_epp_dstm_0_DB_7, IO_IS = usb_db[7]
+ PORT IRQ_EPP = d_usb_epp_dstm_0_IRQ_EPP, IO_IS = usb_irq_epp, SIGIS=INTERRUPT, SENSITIVITY=LEVEL_HIGH, INTERRUPT_PRIORITY=HIGH
+ #PORT IRQ_DSTM = d_usb_epp_dstm_0_IRQ_DSTM, IO_IS = usb_irq_dstm
+END
+
+### DIGILENT QUAD SPI INTERFACE
+BEGIN IO_INTERFACE
+ ATTRIBUTE IOTYPE = D_QUAD_SPI_IF
+ ATTRIBUTE INSTANCE = Digilent_QuadSPI_Cntlr
+ ATTRIBUTE EXCLUSIVE = FLASH
+ ATTRIBUTE CORENAME = quad_spi_if
+ 
+ PORT C = Quad_SPI_FLASH_C, IO_IS = c
+ PORT S = Quad_SPI_FLASH_S, IO_IS = s
+ PORT DQ3 = Quad_SPI_FLASH_DQ_3, IO_IS = dq[3]
+ PORT DQ2 = Quad_SPI_FLASH_DQ_2, IO_IS = dq[2]
+ PORT DQ1 = Quad_SPI_FLASH_DQ_1, IO_IS = dq[1]
+ PORT DQ0 = Quad_SPI_FLASH_DQ_0, IO_IS = dq[0]
+END
+
+### SPI FLASH
+BEGIN IO_INTERFACE
+   ATTRIBUTE IOTYPE = XIL_SPI_V1
+   ATTRIBUTE INSTANCE = SPI_FLASH
+   ATTRIBUTE EXCLUSIVE = FLASH
+   PARAMETER C_NUM_SS_BITS=1, IO_IS=ss_bits
+   PARAMETER C_SCK_RATIO = 32, IO_IS = clk_freq
+   PARAMETER C_NUM_TRANSFER_BITS = 8, IO_IS = num_transfer_bits
+
+   PORT SPISEL= net_vcc, IO_IS=slave_select_n
+   PORT MISO=spi_MISO, IO_IS=data_out
+   PORT MOSI=spi_MOSI, IO_IS=data_in
+   PORT SCK=spi_SCK, IO_IS=clk_out
+   PORT SS0=spi_ss_0, IO_IS=slave_select[0]
+END
+
+### DIGILENT AC'97 INTERFACE
+BEGIN IO_INTERFACE
+ ATTRIBUTE IOTYPE = D_AC_97_IF
+ ATTRIBUTE INSTANCE = Digilent_AC97_Cntlr
+ ATTRIBUTE CORENAME = ac97_if
+ 
+ PORT BITCLK = Ac97_if_0_BITCLK, IO_IS = bitclk
+ PORT SDATA_IN = Ac97_if_0_SDATA_IN, IO_IS = sdata_in
+ PORT SDATA_OUT = Ac97_if_0_SDATA_OUT, IO_IS = sdata_out
+ PORT SYNC = Ac97_if_0_SYNC, IO_IS = sync
+ PORT RESET_N = Ac97_if_0_RESET_N, IO_IS = reset_n
+END
+
+
+BEGIN FPGA
+   ATTRIBUTE INSTANCE = fpga_0
+   ATTRIBUTE FAMILY = spartan6
+   ATTRIBUTE DEVICE = xc6slx45
+   ATTRIBUTE PACKAGE = csg324
+   ATTRIBUTE SPEED_GRADE = -2
+   ATTRIBUTE JTAG_POSITION = 1
+
+   PORT GCLK = GCLK, UCF_NET_STRING=("LOC=L15", "IOSTANDARD=LVCMOS33")
+
+   PORT EXT_RST_N = sys_rst_n, UCF_NET_STRING=("LOC=T15", "IOSTANDARD=LVCMOS33")
+
+   ### RS232_Uart_1
+   PORT RXD = uart1_sin, UCF_NET_STRING = ("LOC=A16", "IOSTANDARD=LVCMOS33")
+   PORT TXD = uart1_sout, UCF_NET_STRING = ("LOC=B16","IOSTANDARD=LVCMOS33")
+
+   ### DIP_Switches_8Bits
+   PORT DIP_Switches_8Bits_I_7 = DIP_Switches_8Bits_I_7, UCF_NET_STRING = ("LOC=A10", "IOSTANDARD=LVCMOS33")
+   PORT DIP_Switches_8Bits_I_6 = DIP_Switches_8Bits_I_6, UCF_NET_STRING = ("LOC=D14", "IOSTANDARD=LVCMOS33")
+   PORT DIP_Switches_8Bits_I_5 = DIP_Switches_8Bits_I_5, UCF_NET_STRING = ("LOC=C14", "IOSTANDARD=LVCMOS33")
+   PORT DIP_Switches_8Bits_I_4 = DIP_Switches_8Bits_I_4, UCF_NET_STRING = ("LOC=P15", "IOSTANDARD=LVCMOS33")
+   PORT DIP_Switches_8Bits_I_3 = DIP_Switches_8Bits_I_3, UCF_NET_STRING = ("LOC=P12", "IOSTANDARD=LVCMOS33") # Note Bank 2 for 3V3 or 2V5
+   PORT DIP_Switches_8Bits_I_2 = DIP_Switches_8Bits_I_2, UCF_NET_STRING = ("LOC=R5", "IOSTANDARD=LVCMOS33") # Note Bank 2 for 3V3 or 2V5
+   PORT DIP_Switches_8Bits_I_1 = DIP_Switches_8Bits_I_1, UCF_NET_STRING = ("LOC=T5", "IOSTANDARD=LVCMOS33")
+   PORT DIP_Switches_8Bits_I_0 = DIP_Switches_8Bits_I_0, UCF_NET_STRING = ("LOC=E4", "IOSTANDARD=LVCMOS18")
+
+   ### LEDs_8Bits
+   PORT LEDs_8Bits_O_7 = LEDs_8Bits_O_7, UCF_NET_STRING = ("LOC=U18", "IOSTANDARD=LVCMOS33")
+   PORT LEDs_8Bits_O_6 = LEDs_8Bits_O_6, UCF_NET_STRING = ("LOC=M14", "IOSTANDARD=LVCMOS33")
+   PORT LEDs_8Bits_O_5 = LEDs_8Bits_O_5, UCF_NET_STRING = ("LOC=N14", "IOSTANDARD=LVCMOS33")
+   PORT LEDs_8Bits_O_4 = LEDs_8Bits_O_4, UCF_NET_STRING = ("LOC=L14", "IOSTANDARD=LVCMOS33")
+   PORT LEDs_8Bits_O_3 = LEDs_8Bits_O_3, UCF_NET_STRING = ("LOC=M13", "IOSTANDARD=LVCMOS33")
+   PORT LEDs_8Bits_O_2 = LEDs_8Bits_O_2, UCF_NET_STRING = ("LOC=D4", "IOSTANDARD=LVCMOS33")
+   PORT LEDs_8Bits_O_1 = LEDs_8Bits_O_1, UCF_NET_STRING = ("LOC=P16", "IOSTANDARD=LVCMOS33")
+   PORT LEDs_8Bits_O_0 = LEDs_8Bits_O_0, UCF_NET_STRING = ("LOC=N12", "IOSTANDARD=LVCMOS33")
+
+
+   ### Push_Buttons_5Bits
+   PORT Push_Buttons_5Bits_I_4 = Push_Buttons_5Bits_I_4, UCF_NET_STRING = ("LOC=N4", "IOSTANDARD=LVCMOS18")
+   PORT Push_Buttons_5Bits_I_3 = Push_Buttons_5Bits_I_3, UCF_NET_STRING = ("LOC=P4", "IOSTANDARD=LVCMOS18")
+   PORT Push_Buttons_5Bits_I_2 = Push_Buttons_5Bits_I_2, UCF_NET_STRING = ("LOC=P3", "IOSTANDARD=LVCMOS18")
+   PORT Push_Buttons_5Bits_I_1 = Push_Buttons_5Bits_I_1, UCF_NET_STRING = ("LOC=F6", "IOSTANDARD=LVCMOS18")
+   PORT Push_Buttons_5Bits_I_0 = Push_Buttons_5Bits_I_0, UCF_NET_STRING = ("LOC=F5", "IOSTANDARD=LVCMOS18")
+
+   ### SPI FLASH
+   PORT MISO = spi_MISO, UCF_NET_STRING=("LOC=R13", "IOSTANDARD=LVCMOS33")
+   PORT MOSI = spi_MOSI, UCF_NET_STRING=("LOC=T13", "IOSTANDARD=LVCMOS33")
+   PORT SCK = spi_SCK,   UCF_NET_STRING=("LOC=R15", "IOSTANDARD=LVCMOS33")
+   PORT SS0 = spi_ss_0, UCF_NET_STRING=("LOC=V3", "IOSTANDARD=LVCMOS33")
+
+   ### MCB_DDR2
+   PORT mcbx_dram_addr_0 = mcbx_dram_addr_0, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_1 = mcbx_dram_addr_1, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_2 = mcbx_dram_addr_2, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_3 = mcbx_dram_addr_3, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_4 = mcbx_dram_addr_4, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_5 = mcbx_dram_addr_5, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_6 = mcbx_dram_addr_6, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_7 = mcbx_dram_addr_7, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_8 = mcbx_dram_addr_8, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_9 = mcbx_dram_addr_9, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_10 = mcbx_dram_addr_10, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_11 = mcbx_dram_addr_11, UCF_NET_STRING=("")
+   PORT mcbx_dram_addr_12 = mcbx_dram_addr_12, UCF_NET_STRING=("")
+   PORT mcbx_dram_ba_0 = mcbx_dram_ba_0, UCF_NET_STRING=("")
+   PORT mcbx_dram_ba_1 = mcbx_dram_ba_1, UCF_NET_STRING=("")
+   PORT mcbx_dram_ba_2 = mcbx_dram_ba_2, UCF_NET_STRING=("")
+   PORT mcbx_dram_ras_n = mcbx_dram_ras_n, UCF_NET_STRING=("")
+   PORT mcbx_dram_cas_n = mcbx_dram_cas_n, UCF_NET_STRING=("")
+   PORT mcbx_dram_we_n = mcbx_dram_we_n, UCF_NET_STRING=("")
+   PORT mcbx_dram_cke = mcbx_dram_cke, UCF_NET_STRING=("")
+   PORT mcbx_dram_clk = mcbx_dram_clk, UCF_NET_STRING=("")
+   PORT mcbx_dram_clk_n = mcbx_dram_clk_n, UCF_NET_STRING=("")
+   #PORT mcbx_dram_dq_0 = mcbx_dram_dq_0, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_1 = mcbx_dram_dq_1, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_2 = mcbx_dram_dq_2, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_3 = mcbx_dram_dq_3, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_4 = mcbx_dram_dq_4, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_5 = mcbx_dram_dq_5, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_6 = mcbx_dram_dq_6, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_7 = mcbx_dram_dq_7, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_8 = mcbx_dram_dq_8, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_9 = mcbx_dram_dq_9, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_10 = mcbx_dram_dq_10, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_11 = mcbx_dram_dq_11, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_12 = mcbx_dram_dq_12, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_13 = mcbx_dram_dq_13, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_14 = mcbx_dram_dq_14, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dq_15 = mcbx_dram_dq_15, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_50")
+   #PORT mcbx_dram_dqs = mcbx_dram_dqs, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_75")
+   #PORT mcbx_dram_dqs_n = mcbx_dram_dqs_n, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_75")
+   #PORT mcbx_dram_udqs = mcbx_dram_udqs, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_75")
+   #PORT mcbx_dram_udqs_n = mcbx_dram_udqs_n, UCF_NET_STRING=("IN_TERM=UNTUNED_SPLIT_75")
+   PORT mcbx_dram_dq_0 = mcbx_dram_dq_0, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_1 = mcbx_dram_dq_1, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_2 = mcbx_dram_dq_2, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_3 = mcbx_dram_dq_3, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_4 = mcbx_dram_dq_4, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_5 = mcbx_dram_dq_5, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_6 = mcbx_dram_dq_6, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_7 = mcbx_dram_dq_7, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_8 = mcbx_dram_dq_8, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_9 = mcbx_dram_dq_9, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_10 = mcbx_dram_dq_10, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_11 = mcbx_dram_dq_11, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_12 = mcbx_dram_dq_12, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_13 = mcbx_dram_dq_13, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_14 = mcbx_dram_dq_14, UCF_NET_STRING=("")
+   PORT mcbx_dram_dq_15 = mcbx_dram_dq_15, UCF_NET_STRING=("")
+   PORT mcbx_dram_dqs = mcbx_dram_dqs, UCF_NET_STRING=("")
+   PORT mcbx_dram_dqs_n = mcbx_dram_dqs_n, UCF_NET_STRING=("")
+   PORT mcbx_dram_udqs = mcbx_dram_udqs, UCF_NET_STRING=("")
+   PORT mcbx_dram_udqs_n = mcbx_dram_udqs_n, UCF_NET_STRING=("")
+   PORT mcbx_dram_udm = mcbx_dram_udm, UCF_NET_STRING=("")
+   PORT mcbx_dram_ldm = mcbx_dram_ldm, UCF_NET_STRING=("")
+   PORT mcbx_dram_odt = mcbx_dram_odt, UCF_NET_STRING=("")
+   # Loc not needed after rzq and zip parameters are added 
+   PORT mcbx_dram_rzq = mcbx_dram_rzq, UCF_NET_STRING=( "IOSTANDARD = LVCMOS18_JEDEC")
+   PORT mcbx_dram_zio = mcbx_dram_zio, UCF_NET_STRING=( "IOSTANDARD = LVCMOS18_JEDEC")
+   ## Add - needed for soft calibration mode
+   #PORT mcbx_dram_rzq = mcbx_dram_rzq, UCF_NET_STRING=("LOC=L6")
+   #PORT mcbx_dram_zio = mcbx_dram_zio, UCF_NET_STRING=("LOC=C2")
+
+   ### 10/100 Ethernet MAC
+   PORT PHY_RESET = phy_rst_n, UCF_NET_STRING=("LOC=G13", "TIG", "IOSTANDARD=LVCMOS33")
+   PORT PHY_MDINT = phy_mii_int_n, UCF_NET_STRING=("LOC=L16", "IOSTANDARD=LVCMOS33")
+   PORT PHY_CRS = phy_crs, UCF_NET_STRING=("LOC=C18", "IOSTANDARD=LVCMOS33")
+   PORT PHY_COL = phy_col, UCF_NET_STRING=("LOC=C17", "IOSTANDARD=LVCMOS33")
+
+   PORT PHY_RXD3 = phy_rx_data_3, UCF_NET_STRING=("LOC=F15", "IOSTANDARD=LVCMOS33")
+   PORT PHY_RXD2 = phy_rx_data_2, UCF_NET_STRING=("LOC=E16", "IOSTANDARD=LVCMOS33")
+   PORT PHY_RXD1 = phy_rx_data_1, UCF_NET_STRING=("LOC=H14", "IOSTANDARD=LVCMOS33")
+   PORT PHY_RXD0 = phy_rx_data_0, UCF_NET_STRING=("LOC=G16", "IOSTANDARD=LVCMOS33")
+
+   PORT PHY_TXD3 = phy_tx_data_3, UCF_NET_STRING=("LOC=K13", "IOSTANDARD=LVCMOS33")
+   PORT PHY_TXD2 = phy_tx_data_2, UCF_NET_STRING=("LOC=K14", "IOSTANDARD=LVCMOS33")
+   PORT PHY_TXD1 = phy_tx_data_1, UCF_NET_STRING=("LOC=H13", "IOSTANDARD=LVCMOS33")
+   PORT PHY_TXD0 = phy_tx_data_0, UCF_NET_STRING=("LOC=H16", "IOSTANDARD=LVCMOS33")
+
+   PORT PHY_RX_DV  = phy_dv, UCF_NET_STRING=("LOC=F17", "IOSTANDARD=LVCMOS33")
+   PORT PHY_RX_ER  = phy_rx_er, UCF_NET_STRING=("LOC=F18", "IOSTANDARD=LVCMOS33")
+   PORT PHY_RX_CLK = phy_rx_clk, UCF_NET_STRING=("LOC=K15", "IOSTANDARD=LVCMOS33")
+
+   PORT PHY_TX_EN = phy_tx_en, UCF_NET_STRING=("LOC=H15", "IOSTANDARD=LVCMOS33")
+   PORT PHY_TX_ER = phy_tx_er, UCF_NET_STRING=("LOC=G18", "IOSTANDARD=LVCMOS33")
+   PORT PHY_TX_CLK = phy_tx_clk, UCF_NET_STRING=("LOC=K16", "IOSTANDARD=LVCMOS33")
+
+   PORT PHY_MDC = phy_mii_clk, UCF_NET_STRING=("LOC=F16", "IOSTANDARD=LVCMOS33")
+   PORT PHY_MDIO = phy_mii_data, UCF_NET_STRING=("LOC=N17", "IOSTANDARD=LVCMOS33")
+
+
+   ### Soft_TEMAC
+   PORT PhyResetN = TemacPhy_RST_n_s, UCF_NET_STRING=("LOC=G13", "TIG", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RXD_0_7 = GMII_RXD_0_s_7, UCF_NET_STRING=("LOC=D17", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RXD_0_6 = GMII_RXD_0_s_6, UCF_NET_STRING=("LOC=D18", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RXD_0_5 = GMII_RXD_0_s_5, UCF_NET_STRING=("LOC=E18", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RXD_0_4 = GMII_RXD_0_s_4, UCF_NET_STRING=("LOC=F14", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RXD_0_3 = GMII_RXD_0_s_3, UCF_NET_STRING=("LOC=F15", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RXD_0_2 = GMII_RXD_0_s_2, UCF_NET_STRING=("LOC=E16", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RXD_0_1 = GMII_RXD_0_s_1, UCF_NET_STRING=("LOC=H14", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RXD_0_0 = GMII_RXD_0_s_0, UCF_NET_STRING=("LOC=G16", "IOSTANDARD=LVCMOS33")
+
+   PORT GMII_TXD_0_7 = GMII_TXD_0_s_7, UCF_NET_STRING=("LOC=K12", "IOSTANDARD=LVCMOS33")
+   PORT GMII_TXD_0_6 = GMII_TXD_0_s_6, UCF_NET_STRING=("LOC=H12", "IOSTANDARD=LVCMOS33")
+   PORT GMII_TXD_0_5 = GMII_TXD_0_s_5, UCF_NET_STRING=("LOC=G14", "IOSTANDARD=LVCMOS33")
+   PORT GMII_TXD_0_4 = GMII_TXD_0_s_4, UCF_NET_STRING=("LOC=J13", "IOSTANDARD=LVCMOS33")
+   PORT GMII_TXD_0_3 = GMII_TXD_0_s_3, UCF_NET_STRING=("LOC=K13", "IOSTANDARD=LVCMOS33")
+   PORT GMII_TXD_0_2 = GMII_TXD_0_s_2, UCF_NET_STRING=("LOC=K14", "IOSTANDARD=LVCMOS33")
+   PORT GMII_TXD_0_1 = GMII_TXD_0_s_1, UCF_NET_STRING=("LOC=H13", "IOSTANDARD=LVCMOS33")
+   PORT GMII_TXD_0_0 = GMII_TXD_0_s_0, UCF_NET_STRING=("LOC=H16", "IOSTANDARD=LVCMOS33")
+
+   PORT GMII_RX_DV_0 = GMII_RX_DV_0_s, UCF_NET_STRING=("LOC=F17", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RX_ER_0 = GMII_RX_ER_0_s, UCF_NET_STRING=("LOC=F18", "IOSTANDARD=LVCMOS33")
+   PORT GMII_RX_CLK_0 = GMII_RX_CLK_0_s, UCF_NET_STRING=("LOC=K15", "IOSTANDARD=LVCMOS33")
+
+   PORT GMII_TX_EN_0 = GMII_TX_EN_0_s, UCF_NET_STRING=("LOC=H15", "IOSTANDARD=LVCMOS33")
+   PORT GMII_TX_ER_0 = GMII_TX_ER_0_s, UCF_NET_STRING=("LOC=G18", "IOSTANDARD=LVCMOS33")
+   PORT GMII_TX_CLK_0 = GMII_TX_CLK_0_s, UCF_NET_STRING=("LOC=L12", "IOSTANDARD=LVCMOS33")
+
+   PORT MII_TX_CLK_0 = MII_TX_CLK_0_s, UCF_NET_STRING=("LOC=K16", "IOSTANDARD=LVCMOS33")
+   PORT MDC_0 = MDC_0_s, UCF_NET_STRING=("LOC=F16", "IOSTANDARD=LVCMOS33")
+   PORT MDIO_0 = MDIO_0_s, UCF_NET_STRING=("LOC=N17", "IOSTANDARD=LVCMOS33")
+
+
+  # PS/2 Port 1 Keyboard
+  PORT PS2_1_CLK   = ps2_1_clk,   UCF_NET_STRING=("LOC=P17", "SLEW = SLOW", "DRIVE = 2", "IOSTANDARD = LVCMOS33", "PULLUP") # Keyboard CLK
+  PORT PS2_1_DATA  = ps2_1_data,  UCF_NET_STRING=("LOC=N15", "SLEW = SLOW", "DRIVE = 2", "IOSTANDARD = LVCMOS33", "PULLUP") # Keyboard DATA
+  # PS/2 Port 2 Mouse
+  PORT PS2_2_CLK   = ps2_2_clk,   UCF_NET_STRING=("LOC=P18", "SLEW = SLOW", "DRIVE = 2", "IOSTANDARD = LVCMOS33", "PULLUP") # Mouse CLK
+  PORT PS2_2_DATA  = ps2_2_data,  UCF_NET_STRING=("LOC=N18", "SLEW = SLOW", "DRIVE = 2", "IOSTANDARD = LVCMOS33", "PULLUP") # Mouse DATA
+
+### DIGILENT USB INTERFACE
+ PORT IFCLK = d_usb_epp_dstm_0_IFCLK, UCF_NET_STRING = ("LOC = C10", "IOSTANDARD = LVCMOS33") #, "CLOCK_DEDICATED_ROUTE = FALSE")
+ PORT STMEN = d_usb_epp_dstm_0_STMEN, UCF_NET_STRING = ("LOC = B2", "IOSTANDARD = LVCMOS33")
+ PORT FLAGA = d_usb_epp_dstm_0_FLAGA, UCF_NET_STRING = ("LOC = B9", "IOSTANDARD = LVCMOS33")
+ PORT FLAGB = d_usb_epp_dstm_0_FLAGB, UCF_NET_STRING = ("LOC = A9", "IOSTANDARD = LVCMOS33")
+ PORT FLAGC = d_usb_epp_dstm_0_FLAGC, UCF_NET_STRING = ("LOC = C15", "IOSTANDARD = LVCMOS33")
+ PORT SLRD = d_usb_epp_dstm_0_SLRD, UCF_NET_STRING = ("LOC = F13", "IOSTANDARD = LVCMOS33")
+ PORT SLWR = d_usb_epp_dstm_0_SLWR, UCF_NET_STRING = ("LOC = E13", "IOSTANDARD = LVCMOS33")
+ PORT SLOE = d_usb_epp_dstm_0_SLOE, UCF_NET_STRING = ("LOC = A15", "IOSTANDARD = LVCMOS33")
+ PORT FIFOADR_0 = d_usb_epp_dstm_0_FIFOADR_0, UCF_NET_STRING = ("LOC =A14", "IOSTANDARD = LVCMOS33")
+ PORT FIFOADR_1 = d_usb_epp_dstm_0_FIFOADR_1, UCF_NET_STRING = ("LOC = B14", "IOSTANDARD = LVCMOS33")
+ PORT PKTEND = d_usb_epp_dstm_0_PKTEND, UCF_NET_STRING = ("LOC = C4", "IOSTANDARD = LVCMOS33")
+ PORT EPPRST = d_usb_epp_dstm_0_EPPRST, UCF_NET_STRING = ("LOC = A5", "IOSTANDARD = LVCMOS33")
+ PORT DB0 = d_usb_epp_dstm_0_DB_0, UCF_NET_STRING = ("LOC = A2", "IOSTANDARD = LVCMOS33")
+ PORT DB1 = d_usb_epp_dstm_0_DB_1, UCF_NET_STRING = ("LOC = D6", "IOSTANDARD = LVCMOS33")
+ PORT DB2 = d_usb_epp_dstm_0_DB_2, UCF_NET_STRING = ("LOC = C6", "IOSTANDARD = LVCMOS33")
+ PORT DB3 = d_usb_epp_dstm_0_DB_3, UCF_NET_STRING = ("LOC = B3", "IOSTANDARD = LVCMOS33")
+ PORT DB4 = d_usb_epp_dstm_0_DB_4, UCF_NET_STRING = ("LOC = A3", "IOSTANDARD = LVCMOS33")
+ PORT DB5 = d_usb_epp_dstm_0_DB_5, UCF_NET_STRING = ("LOC = B4", "IOSTANDARD = LVCMOS33")
+ PORT DB6 = d_usb_epp_dstm_0_DB_6, UCF_NET_STRING = ("LOC = A4", "IOSTANDARD = LVCMOS33")
+ PORT DB7 = d_usb_epp_dstm_0_DB_7, UCF_NET_STRING = ("LOC = C5", "IOSTANDARD = LVCMOS33")
+ 
+### DIGILENT QUAD SPI INTERFACE
+ PORT C = Quad_SPI_FLASH_C, UCF_NET_STRING = ("LOC = R15", "IOSTANDARD = LVCMOS33", "PULLUP")
+ PORT S = Quad_SPI_FLASH_S, UCF_NET_STRING = ("LOC = V3", "IOSTANDARD = LVCMOS33", "PULLUP")
+ PORT DQ3 = Quad_SPI_FLASH_DQ_3, UCF_NET_STRING = ("LOC = V14", "IOSTANDARD = LVCMOS33")
+ PORT DQ2 = Quad_SPI_FLASH_DQ_2, UCF_NET_STRING = ("LOC = T14", "IOSTANDARD = LVCMOS33")
+ PORT DQ1 = Quad_SPI_FLASH_DQ_1, UCF_NET_STRING = ("LOC = R13", "IOSTANDARD = LVCMOS33")
+ PORT DQ0 = Quad_SPI_FLASH_DQ_0, UCF_NET_STRING = ("LOC = T13", "IOSTANDARD = LVCMOS33")
+
+### DIGILENT AC'97 INTERFACE
+ PORT BITCLK = Ac97_if_0_BITCLK, UCF_NET_STRING = ("LOC = L13", "IOSTANDARD = LVCMOS33")
+ PORT SDATA_IN = Ac97_if_0_SDATA_IN, UCF_NET_STRING = ("LOC = T18", "IOSTANDARD = LVCMOS33")
+ PORT SDATA_OUT = Ac97_if_0_SDATA_OUT, UCF_NET_STRING = ("LOC = N16", "IOSTANDARD = LVCMOS33")
+ PORT SYNC = Ac97_if_0_SYNC, UCF_NET_STRING = ("LOC = U17", "IOSTANDARD = LVCMOS33")
+ PORT RESET_N = Ac97_if_0_RESET_N, UCF_NET_STRING = ("LOC = T17", "IOSTANDARD = LVCMOS33")
+
+END

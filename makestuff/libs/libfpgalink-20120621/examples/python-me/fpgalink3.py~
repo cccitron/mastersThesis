@@ -382,23 +382,95 @@ if __name__ == "__main__":
             #print("Reading channel 6...")
             #print("Got 0x%02X" % flReadChannel(handle, 1000, 0x06))
             
-            im = Image.new("RGB", (50, 100), "black")
+            im = Image.new("RGB", (640, 480), "black")
             print(im.format, im.size, im.mode)
 
+            '''
             print("Reading channel 0...")
             for i in range(1):
-                for j in range(50):
-                    print("")
-                    for k in range(100):
+                for j in range(640):
+                    print(j)
+                    for k in range(480):
                         r = flReadChannel(handle, 1000, 0x00)
                         g = flReadChannel(handle, 1000, 0x00)
                         b = flReadChannel(handle, 1000, 0x00)
                         im.putpixel((j, k), (r, g, b))
                         #im.putpixel((1, 2-i), (r, g, b))
-                        #print("Got 0x%02X 0x%02X 0x%02X" % (r, g, b))
+                        #print("x%02Xx%02Xx%02X" % (r, g, b), end=" ")
                         #print("0x%02X" % r, end=" ")
                         #time.sleep(1)
+            '''
 
+            #buffer = bytearray(307581)
+            #for ndx in range(629):
+            #    buf = flReadChannel(handle, 1000, 0x00, 489)
+                
+            
+            '''                                                
+            i = 0;
+            j = 0;
+            for i in range(640):
+                for j in range(480):
+                  buff = flReadChannel(handle, 1000, 0x00, 2)
+                  im.putpixel((i, j), (buff[0], buff[1], buff[1]))
+            
+            '''
+            time.sleep(1)
+            #buff = flReadChannel(handle, 1000, 0x00, 30000)
+            '''
+            i = 0
+            j = 0
+            count = 0
+            while count < 5000:
+                buff = flReadChannel(handle, 1000, 0x00, 50)
+                count += 50
+                end = 50 - 1
+                ndx = 0
+                while ndx < end:
+                    im.putpixel((i, j), ((buff[ndx] & 0xf8), ((buff[ndx] & 0x07) << 5) | ((buff[ndx+1] & 0xe0) >> 3), (buff[ndx+1] & 0x1f) << 3))
+                    if (j >= 49):
+                        j = 0
+                        if (i >= 99):
+                            i = 0
+                        else:
+                            i += 1
+                    else:
+                        j += 1
+                    ndx += 2
+            ''' '''
+            for i in range(640):
+                for j in range(480):
+                  buff = flReadChannel(handle, 1000, 0x00, 2)
+                  im.putpixel((i, j), ((buff[0] & 0xf8), ((buff[0] & 0x07) << 5) | ((buff[1] & 0xe0) >> 3), (buff[1] & 0x1f) << 3))
+            
+            print(buff)
+            print(len(buff))
+            '''
+            
+            ndx = 0
+            print("Start")
+            t0 = time.clock()
+            buff = flReadChannel(handle, 10000, 0x00, 1000)#614400)
+            t1 = time.clock()
+            '''for i in range(640):
+                for j in range(480):
+                  im.putpixel((i, j), ((buff[ndx] & 0xf8), ((buff[ndx] & 0x07) << 5) | ((buff[ndx+1] & 0xe0) >> 3), (buff[ndx+1] & 0x1f) << 3))
+                  #buf0 = flReadChannel(handle, 1000, 0x02, 1)
+                  #buf1 = flReadChannel(handle, 1000, 0x03, 1)
+                  #im.putpixel((i, j), ((buf0 & 0xf8), ((buf0 & 0x07) << 5) | ((buf1 & 0xe0) >> 3), (buf1 & 0x1f) << 3))
+                  #im.putpixel((i,j), (0, buff[ndx], 0))
+                  ndx += 2'''
+            t2 = time.clock()
+
+            #print("x%02X x%02X x%02X x%02X x%02X" % (buff[0], buff[1], buff[2], buff[3], buff[4]))
+            print("t0 = %f" % t0)
+            print("t1 = %f" % t1)
+            print("t2 = %f" % t2)
+            
+            for i in range(500):
+               print("buff[%d] = x%02X" % (i, buff[i]))
+
+            #print("")
             #im.putpixel((0, 3), (0, 0, 0))
             #im.putpixel((1, 3), (255, 255, 255))
             im.save("show.jpg")

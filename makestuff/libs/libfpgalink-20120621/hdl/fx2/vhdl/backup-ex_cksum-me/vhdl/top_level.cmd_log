@@ -10,3 +10,4 @@ map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off top_level_map.ncd top_level.ncd top_level.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml top_level.twx top_level.ncd -o top_level.twr top_level.pcf -ucf platform.ucf 
 bitgen -intstyle ise -f top_level.ut top_level.ncd 
+bitgen -intstyle ise -f top_level.ut top_level.ncd 

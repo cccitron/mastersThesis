@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<spirit:abstractionDefinition
+	xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4/index.xsd">
+	<spirit:vendor>xilinx.com</spirit:vendor>
+	<spirit:library>bsb_lib.rtl_busdefs</spirit:library>
+	<spirit:name>psram_cntrl_rtl</spirit:name>
+	<spirit:version>1.0</spirit:version>
+	<spirit:busType spirit:vendor="xilinx.com"
+		spirit:library="bsb_lib.rtl_busdefs" spirit:name="psram_cntrl"
+		spirit:version="1.0" />
+	<spirit:ports>
+		<spirit:port>
+			<spirit:logicalName>addr</spirit:logicalName>
+			<spirit:description>Memory Address</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>dq</spirit:logicalName>
+			<spirit:description>Memory Data</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>inout</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>inout</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>ce_n</spirit:logicalName>
+			<spirit:description>Memory Chip Enable Active Low</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>oe_n</spirit:logicalName>
+			<spirit:description>Memory Output Enable</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>we_n</spirit:logicalName>
+			<spirit:description>Memory Write Enable</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>ub</spirit:logicalName>
+			<spirit:description>Memory Upper Byte#</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>lb</spirit:logicalName>
+			<spirit:description>Memory Lower Byte#</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>adv</spirit:logicalName>
+			<spirit:description>Memory Address Valid#</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>clk</spirit:logicalName>
+			<spirit:description>Memory Clock</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>cre</spirit:logicalName>
+			<spirit:description>Memory Control Register Enable</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+	</spirit:ports>
+</spirit:abstractionDefinition>

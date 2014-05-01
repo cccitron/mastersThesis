@@ -1,0 +1,274 @@
+=====================
+Opened log file
+=====================
+Created pcores directory
+=====================
+Opened log file
+=====================
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+
+Xilinx EDK 14.7 Build EDK_P.20131013
+
+Copied /opt/Xilinx/14.7/ISE_DS/EDK/data/xflow/bitgen_spartan6.ut to etc
+directory
+Copied file /opt/Xilinx/14.7/ISE_DS/EDK/data/xflow/fast_runtime_spartan6.opt to
+etc directory
+
+Overriding IP level properties ...
+
+Computing clock values...
+
+Performing IP level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION IPLEVEL_DRC_PROC...
+
+Checking platform address map ...
+Created backup of etc/bitgen.ut to etc/bitgen.ut.virtex5
+Copied /opt/Xilinx/14.7/ISE_DS/EDK/data/xflow/bitgen_spartan6.ut to etc
+directory
+Created backup of etc/fast_runtime.opt to etc/fast_runtime.opt.virtex5
+Copied file /opt/Xilinx/14.7/ISE_DS/EDK/data/xflow/fast_runtime_spartan6.opt to
+etc directory
+No changes to be saved in MHS file
+Saved project XMP file
+Saved Make file
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+
+********************************************************************************
+At Local date and time: Thu Apr  3 16:31:43 2014
+ make -f atlysCore.make netlist started...
+****************************************************
+Creating system netlist for hardware specification..
+****************************************************
+platgen -p xc6slx45csg324-3 -lang vhdl -intstyle ise -lp /home/cccitron/mastersThesis/Atlys_BSB_Support_v_3_6/Atlys_AXI_BSB_Support/lib/  -toplevel no -ti atlysCore_i -msg __xps/ise/xmsgprops.lst atlysCore.mhs
+
+Command Line: platgen -p xc6slx45csg324-3 -lang vhdl -intstyle ise -lp
+/home/cccitron/mastersThesis/Atlys_BSB_Support_v_3_6/Atlys_AXI_BSB_Support/lib/
+-toplevel no -ti atlysCore_i -msg __xps/ise/xmsgprops.lst atlysCore.mhs 
+
+ERROR:EDK - INFO:Security:71 - If a license for part 'xc6slx45' is available, it
+   will be possible to use 'XPS_TDP' instead of 'XPS'.
+   INFO:Security:61 - The XILINXD_LICENSE_FILE environment variable is not set.
+   INFO:Security:63 - The LM_LICENSE_FILE environment variable is not set.
+   INFO:Security:68 - For more information or for assistance in obtaining 
+    a license, please run the Xilinx License Configuration Manager
+          (xlcm or "Manage Xilinx Licenses".)
+   INFO:Security:68a - user is cccitron, on host unknown.
+   WARNING:Security:9b - No 'XPS' feature version 2013.10 was available for part
+   'xc6slx45'.
+   ERROR:Security:12 - No 'xc6slx45' feature version 2013.10 was available (-5),
+        so 'XPS_TDP' may not be used.
+
+   No such feature exists.
+   Feature:       XPS
+   License path: 
+   /home/cccitron/.Xilinx/Xilinx.lic:/opt/Xilinx/14.7/ISE_DS/EDK/data/*.lic:/opt
+   /Xilinx/14.7/ISE_DS/ISE//data/*.lic:/opt/Xilinx/14.7/ISE_DS/ISE//coregen/core
+   _licenses/Xilinx.lic:/opt/Xilinx/14.7/ISE_DS/ISE//coregen/core_licenses/Xilin
+   xFree.lic:/opt/Xilinx/14.7/ISE_DS/EDK/data/core_licenses/Xilinx.lic:
+   FLEXnet Licensing error:-5,357
+   For further information, refer to the FLEXnet Licensing documentation,
+   available at "www.flexerasoftware.com".No such feature exists.
+   Feature:       xc6slx45
+   License path: 
+   /home/cccitron/.Xilinx/Xilinx.lic:/opt/Xilinx/14.7/ISE_DS/EDK/data/*.lic:/opt
+   /Xilinx/14.7/ISE_DS/ISE//data/*.lic:/opt/Xilinx/14.7/ISE_DS/ISE//coregen/core
+   _licenses/Xilinx.lic:/opt/Xilinx/14.7/ISE_DS/ISE//coregen/core_licenses/Xilin
+   xFree.lic:/opt/Xilinx/14.7/ISE_DS/EDK/data/core_licenses/Xilinx.lic:
+   FLEXnet Licensing error:-5,357
+   For further information, refer to the FLEXnet Licensing documentation,
+   available at "www.flexerasoftware.com".
+ERROR:EDK:440 - platgen failed with errors!
+make: *** [implementation/atlysCore_proc_sys_reset_0_wrapper.ngc] Error 2
+Done!
+
+********************************************************************************
+At Local date and time: Thu Apr  3 16:37:12 2014
+ make -f atlysCore.make netlist started...
+****************************************************
+Creating system netlist for hardware specification..
+****************************************************
+platgen -p xc6slx45csg324-3 -lang vhdl -intstyle ise -lp /home/cccitron/mastersThesis/Atlys_BSB_Support_v_3_6/Atlys_AXI_BSB_Support/lib/  -toplevel no -ti atlysCore_i -msg __xps/ise/xmsgprops.lst atlysCore.mhs
+
+Command Line: platgen -p xc6slx45csg324-3 -lang vhdl -intstyle ise -lp
+/home/cccitron/mastersThesis/Atlys_BSB_Support_v_3_6/Atlys_AXI_BSB_Support/lib/
+-toplevel no -ti atlysCore_i -msg __xps/ise/xmsgprops.lst atlysCore.mhs 
+
+ERROR:EDK - INFO:Security:71 - If a license for part 'xc6slx45' is available, it
+   will be possible to use 'XPS_TDP' instead of 'XPS'.
+   INFO:Security:61 - The XILINXD_LICENSE_FILE environment variable is not set.
+   INFO:Security:63 - The LM_LICENSE_FILE environment variable is not set.
+   INFO:Security:68 - For more information or for assistance in obtaining 
+    a license, please run the Xilinx License Configuration Manager
+          (xlcm or "Manage Xilinx Licenses".)
+   INFO:Security:68a - user is cccitron, on host unknown.
+   WARNING:Security:9b - No 'XPS' feature version 2013.10 was available for part
+   'xc6slx45'.
+   ERROR:Security:12 - No 'xc6slx45' feature version 2013.10 was available (-5),
+        so 'XPS_TDP' may not be used.
+
+   No such feature exists.
+   Feature:       XPS
+   License path: 
+   /home/cccitron/.Xilinx/Xilinx.lic:/opt/Xilinx/14.7/ISE_DS/EDK/data/*.lic:/opt
+   /Xilinx/14.7/ISE_DS/ISE//data/*.lic:/opt/Xilinx/14.7/ISE_DS/ISE//coregen/core
+   _licenses/Xilinx.lic:/opt/Xilinx/14.7/ISE_DS/ISE//coregen/core_licenses/Xilin
+   xFree.lic:/opt/Xilinx/14.7/ISE_DS/EDK/data/core_licenses/Xilinx.lic:
+   FLEXnet Licensing error:-5,357
+   For further information, refer to the FLEXnet Licensing documentation,
+   available at "www.flexerasoftware.com".No such feature exists.
+   Feature:       xc6slx45
+   License path: 
+   /home/cccitron/.Xilinx/Xilinx.lic:/opt/Xilinx/14.7/ISE_DS/EDK/data/*.lic:/opt
+   /Xilinx/14.7/ISE_DS/ISE//data/*.lic:/opt/Xilinx/14.7/ISE_DS/ISE//coregen/core
+   _licenses/Xilinx.lic:/opt/Xilinx/14.7/ISE_DS/ISE//coregen/core_licenses/Xilin
+   xFree.lic:/opt/Xilinx/14.7/ISE_DS/EDK/data/core_licenses/Xilinx.lic:
+   FLEXnet Licensing error:-5,357
+   For further information, refer to the FLEXnet Licensing documentation,
+   available at "www.flexerasoftware.com".
+ERROR:EDK:440 - platgen failed with errors!
+make: *** [implementation/atlysCore_proc_sys_reset_0_wrapper.ngc] Error 2
+Done!
+Writing filter settings....
+Done writing filter settings to:
+	/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/softcore/atlysCore/etc/atlysCore.filters
+Done writing Tab View settings to:
+	/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/softcore/atlysCore/etc/atlysCore.gui
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+
+********************************************************************************
+At Local date and time: Thu Apr  3 16:44:52 2014
+ make -f atlysCore.make exporttosdk started...
+psf2Edward -inp atlysCore.xmp -exit_on_error -dont_add_loginfo -make_inst_lower -edwver 1.2 -xml SDK/SDK_Export/hw/atlysCore.xml 
+Release 14.7 - psf2Edward EDK_P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Checking platform configuration ...
+IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
+IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 5 slave(s) 
+
+Checking port drivers...
+
+Performing Clock DRCs...
+
+Performing Reset DRCs...
+
+Overriding system level properties...
+INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_i_bram_ctrl -
+   tcl is overriding PARAMETER C_MASK value to 0x40000000 -
+   /opt/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_
+   v3_10_c/data/lmb_bram_if_cntlr_v2_1_0.mpd line 92 
+INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_d_bram_ctrl -
+   tcl is overriding PARAMETER C_MASK value to 0x40000000 -
+   /opt/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_bram_if_cntlr_
+   v3_10_c/data/lmb_bram_if_cntlr_v2_1_0.mpd line 92 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_D_AXI value to 1 -
+   /opt/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/microblaze_v8_50_c
+   /data/microblaze_v2_1_0.mpd line 232 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_ADDR_TAG_BITS value to 0 -
+   /opt/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/microblaze_v8_50_c
+   /data/microblaze_v2_1_0.mpd line 337 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_DCACHE_ADDR_TAG value to 0 -
+   /opt/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/microblaze_v8_50_c
+   /data/microblaze_v2_1_0.mpd line 367 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_USE_EXT_BRK value to 1 -
+   /opt/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/microblaze_v8_50_c
+   /data/microblaze_v2_1_0.mpd line 402 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_USE_EXT_NM_BRK value to 1 -
+   /opt/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/microblaze_v8_50_c
+   /data/microblaze_v2_1_0.mpd line 403 
+
+INFO: Setting C_RANGE_CHECK = ON for axi_interconnect axi4lite_0.
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4lite_0 - tcl is
+   overriding PARAMETER C_RANGE_CHECK value to 1 -
+   /opt/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_interconnect_v
+   1_06_a/data/axi_interconnect_v2_1_0.mpd line 149 
+
+Running system level update procedures...
+
+Running UPDATE Tcl procedures for OPTION SYSLEVEL_UPDATE_PROC...
+
+Running system level DRCs...
+
+Performing System level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION SYSLEVEL_DRC_PROC...
+Conversion to XML complete.
+xdsgen -inp atlysCore.xmp -report SDK/SDK_Export/hw/atlysCore.html  -make_docs_local
+Release 14.7 - xdsgen EDK_P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v3_00_a;d=proc_sy
+   s_reset.pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=lmb_v10;v=v2_00_b;d=pg087-lmb-v10.
+   pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=lmb_bram_if_cntlr;v=v3_10_c;d=pg06
+   1-lmb-bram-if-cntlr.pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=lmb_v10;v=v2_00_b;d=pg087-lmb-v10.
+   pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=lmb_bram_if_cntlr;v=v3_10_c;d=pg06
+   1-lmb-bram-if-cntlr.pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=bram_block;v=v1_00_a;d=bram_block.
+   pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=mdm;v=v2_10_a;d=pg062-mdm.pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clock_generator;v=v4_03_a;d=clock_
+   generator.pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_interconnect;v=v1_06_a;d=ds768
+   _axi_interconnect.pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_uartlite;v=v1_02_a;d=axi_uartl
+   ite_ds741.pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_gpio;v=v1_01_b;d=ds744_axi_gpi
+   o.pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_gpio;v=v1_01_b;d=ds744_axi_gpi
+   o.pdf
+WARNING:EDK:878 - Could not find IP doc
+   http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_gpio;v=v1_01_b;d=ds744_axi_gpi
+   o.pdf
+Generated Block Diagram.
+Rasterizing proc_sys_reset_0.jpg.....
+Rasterizing microblaze_0_ilmb.jpg.....
+Rasterizing microblaze_0_i_bram_ctrl.jpg.....
+Rasterizing microblaze_0_dlmb.jpg.....
+Rasterizing microblaze_0_d_bram_ctrl.jpg.....
+Rasterizing microblaze_0_bram_block.jpg.....
+Rasterizing microblaze_0.jpg.....
+Rasterizing debug_module.jpg.....
+Rasterizing clock_generator_0.jpg.....
+Rasterizing axi4lite_0.jpg.....
+Rasterizing RS232_Uart_1.jpg.....
+Rasterizing Push_Buttons_5Bits.jpg.....
+Rasterizing LEDs_8Bits.jpg.....
+Rasterizing DIP_Switches_8Bits.jpg.....
+Rasterizing atlysCore_blkd.jpg.....
+Report generated.
+Report generation completed.
+Done!
+Writing filter settings....
+Done writing filter settings to:
+	/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/softcore/atlysCore/etc/atlysCore.filters
+Done writing Tab View settings to:
+	/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/softcore/atlysCore/etc/atlysCore.gui

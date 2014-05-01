@@ -1,0 +1,23 @@
+13:15:49 **** Build of project standalone_bsp_0 ****
+make -k all 
+libgen -hw ../hw_platform_0/system.xml\
+	       \
+	       -pe microblaze_mcs \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 2013.4 Build EDK_2013.4.20131205
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../hw_platform_0/system.xml -pe microblaze_mcs -log
+libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+ERROR:EDK - standalone () - couldn't execute "mb-ar": no such file or directory 
+ERROR:EDK - Error(s) while running TCL procedure post_generate().
+make: *** [microblaze_mcs/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.

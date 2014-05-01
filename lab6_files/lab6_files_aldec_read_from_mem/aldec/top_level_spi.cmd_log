@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_aldec_read_from_mem/aldec/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_aldec_read_from_mem/aldec/top_level_spi.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-3 top_level_spi.ngc top_level_spi.ngd  

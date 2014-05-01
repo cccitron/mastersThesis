@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 455: Actual for formal port <arg fmt="%s" index="1">red_i</arg> is neither a static name nor a globally static expression
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 456: Actual for formal port <arg fmt="%s" index="1">green_i</arg> is neither a static name nor a globally static expression
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/source/VmodCAM_Ref.vhd" Line 457: Actual for formal port <arg fmt="%s" index="1">blue_i</arg> is neither a static name nor a globally static expression
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/common_modules.v" Line 260: Target &lt;<arg fmt="%s" index="1">(null)</arg>&gt; of concurrent assignment or output port connection should be a net type.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="536" delta="unknown" >"/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/MCB_WRAP.v" Line 324: Index is always out of bounds for array <arg fmt="%s" index="1">convertbin</arg>
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="532" delta="unknown" >"/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/MCB_WRAP.v" Line 324: Index &lt;<arg fmt="%d" index="1">-1</arg>&gt; is out of range [<arg fmt="%d" index="2">63</arg>:<arg fmt="%d" index="3">0</arg>] for signal &lt;<arg fmt="%s" index="4">convertbin</arg>&gt;.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="536" delta="unknown" >"/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/MCB_WRAP.v" Line 323: Index is always out of bounds for array <arg fmt="%s" index="1">convertbin</arg>
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="532" delta="unknown" >"/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/MCB_WRAP.v" Line 323: Index &lt;<arg fmt="%d" index="1">-1</arg>&gt; is out of range [<arg fmt="%d" index="2">63</arg>:<arg fmt="%d" index="3">0</arg>] for signal &lt;<arg fmt="%s" index="4">convertbin</arg>&gt;.
+</msg>
+
+</messages>
+

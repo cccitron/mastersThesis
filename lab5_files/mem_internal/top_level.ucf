@@ -1,0 +1,30 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "clk_100MHz" LOC = L15;
+
+NET "SW_I[0]" LOC = A10 |IOSTANDARD = LVCMOS33;
+NET "SW_I[1]" LOC = D14 |IOSTANDARD = LVCMOS33;
+NET "SW_I[2]" LOC = C14 |IOSTANDARD = LVCMOS33;
+NET "SW_I[3]" LOC = P15 |IOSTANDARD = LVCMOS33;
+NET "SW_I[4]" LOC = P12 |IOSTANDARD = LVCMOS33;
+NET "SW_I[5]" LOC = R5 |IOSTANDARD = LVCMOS33;
+NET "SW_I[6]" LOC = T5 |IOSTANDARD = LVCMOS33;
+NET "SW_I[7]" LOC = E4 |IOSTANDARD = LVCMOS33;
+
+NET "leds[0]" LOC = U18;
+NET "leds[1]" LOC = M14;
+NET "leds[2]" LOC = N14;
+NET "leds[3]" LOC = L14;
+NET "leds[4]" LOC = M13;
+NET "leds[5]" LOC = D4;
+NET "leds[6]" LOC = P16;
+NET "leds[7]" LOC = N12;
+
+# onBoard PUSH BUTTONS 
+NET "btn<0>" LOC = "T15"; # Bank = 2, Pin name = IO_L1N_M0_CMPMISO_2, Sch name = M0/RESET
+NET "btn<1>" LOC = "N4";  # Bank = 3, Pin name = IO_L1P, 	   		   Sch name = BTNU
+NET "btn<2>" LOC = "P4";  # Bank = 3, Pin name = IO_L2P, 	   		   Sch name = BTNL
+NET "btn<3>" LOC = "P3";  # Bank = 3, Pin name = IO_L2N, 	   		   Sch name = BTND
+NET "btn<4>" LOC = "F6";  # Bank = 3, Pin name = IO_L55P_M3A13, 	   Sch name = BTNR
+NET "btn<5>" LOC = "F5";  # Bank = 3, Pin name = IO_L55N_M3A14, 	   Sch name = BTNC

@@ -1,0 +1,23 @@
+##############################################################################
+## Filename:          D:\Digilent\Projects\Atlys\Atlys_12_2_RevC_BIST\pcores/d_usb_epp_dstm_v1_00_a/data/d_usb_epp_dstm_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Wed Sep 08 11:28:19 2010 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib d_usb_epp_dstm_v1_00_a usb_epp_dstm verilog
+lib d_usb_epp_dstm_v1_00_a usb_epp verilog
+lib d_usb_epp_dstm_v1_00_a fifo verilog
+lib d_usb_epp_dstm_v1_00_a epp_dstm_mux verilog
+lib d_usb_epp_dstm_v1_00_a dstm verilog
+lib proc_common_v3_00_a proc_common_pkg vhdl
+lib proc_common_v3_00_a or_muxcy vhdl
+lib proc_common_v3_00_a family_support vhdl
+lib proc_common_v3_00_a pselect_f vhdl
+lib proc_common_v3_00_a or_gate128 vhdl
+lib proc_common_v3_00_a ipif_pkg vhdl
+lib proc_common_v3_00_a counter_f vhdl
+lib plbv46_slave_single_v1_01_a plb_address_decoder vhdl
+lib plbv46_slave_single_v1_01_a plb_slave_attachment vhdl
+lib plbv46_slave_single_v1_01_a plbv46_slave_single vhdl
+lib d_usb_epp_dstm_v1_00_a d_usb_imp vhdl
+lib d_usb_epp_dstm_v1_00_a d_usb_epp_dstm vhdl

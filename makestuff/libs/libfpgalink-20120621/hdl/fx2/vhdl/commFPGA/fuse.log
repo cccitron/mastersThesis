@@ -1,0 +1,24 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/commFPGA/comm_fpga_fx2_tb_isim_beh.exe -prj /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/commFPGA/comm_fpga_fx2_tb_beh.prj work.comm_fpga_fx2_tb 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/commFPGA/comm_fpga_fx2.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/commFPGA/comm_fpga_fx2_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 97184 KB
+Fuse CPU Usage: 1240 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package textio
+Compiling package std_logic_textio
+Compiling architecture behavioural of entity comm_fpga_fx2 [comm_fpga_fx2_default]
+Compiling architecture behavioural of entity comm_fpga_fx2_tb
+Time Resolution for simulation is 1ps.
+Compiled 8 VHDL Units
+Built simulation executable /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/commFPGA/comm_fpga_fx2_tb_isim_beh.exe
+Fuse Memory Usage: 673064 KB
+Fuse CPU Usage: 1370 ms
+GCC CPU Usage: 3210 ms

@@ -1,0 +1,32 @@
+###################################################################
+##
+## Name     : d_usb_epp_dstm_axi_mapper
+## Desc     : Map for RTL to Hurri
+##
+###################################################################
+
+BEGIN d_usb_epp_dstm_axi_mapper
+
+# bsb options
+OPTION CORE_TEMPLATE_ASSOC = d_usb_epp_dstm_axi_template
+OPTION HURRI_DESC = d_usb_epp_dstm_axi_template component
+OPTION HURRI_VLNV = xilinx.com|bsb_lib.components|d_usb_epp_dstm_axi_template|1.0
+
+OPTION RTL_DESC = d_usb_epp_dstm_axi component
+OPTION RTL_VLNV = xilinx.com|bsb_lib.rtl_components|d_usb_epp_dstm_axi|1.00.a
+
+## Peripheral Options
+OPTION IPTYPE = PERIPHERAL
+OPTION USAGE_LEVEL = BASE_USER
+OPTION DESC = Digilent USB-EPP Interface Mapper RTL to Hurri
+OPTION LONG_DESC = Digilent USB-EPP Interface for AXI4Lite Mapper RTL to Hurri
+OPTION IP_GROUP = Digilent:MICROBLAZE
+
+## Bus Interfaces
+BUS_INTERFACE BUS = S_AXI, BUS_STD = AXI, BUS_TYPE = SLAVE, DESC = connect_0
+
+## Generics for VHDL or Parameters for Verilog
+## Ports
+PORT S_AXI_ACLK = "", DIR = I, SIGIS = CLK, DESC = clock_0
+
+END

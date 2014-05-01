@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "D:\Download\Atlys\Atlys_12_2_RevC_BIST\pcores\quad_spi_if_v1_00_a\devl\synthesis\quad_spi_if_xst.prj"
+-top quad_spi_if
+-p virtex5
+-ofn "D:\Download\Atlys\Atlys_12_2_RevC_BIST\pcores\quad_spi_if_v1_00_a\devl\synthesis\quad_spi_if_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib quad_spi_if_v1_00_a

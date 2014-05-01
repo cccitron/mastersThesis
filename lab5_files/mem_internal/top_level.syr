@@ -1,0 +1,587 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: top_level.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_level.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_level"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : top_level
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/cccitron/mastersThesis/lab5_files/mem_internal/ipcore_dir/my_bram8x8.vhd" into library work
+Parsing entity <my_bram8x8>.
+Parsing architecture <my_bram8x8_a> of entity <my_bram8x8>.
+Parsing VHDL file "/home/cccitron/mastersThesis/lab5_files/mem_internal/my_modules.vhd" into library work
+Parsing entity <rom8x8>.
+Parsing architecture <behav> of entity <rom8x8>.
+Parsing entity <ck_divider>.
+Parsing architecture <Behavioral> of entity <ck_divider>.
+Parsing VHDL file "/home/cccitron/mastersThesis/lab5_files/mem_internal/top_level.vhd" into library work
+Parsing entity <top_level>.
+Parsing architecture <Structural> of entity <top_level>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top_level> (architecture <Structural>) from library <work>.
+WARNING:HDLCompiler:871 - "/home/cccitron/mastersThesis/lab5_files/mem_internal/top_level.vhd" Line 63: Using initial value '1' for ena since it is never assigned
+
+Elaborating entity <ck_divider> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <rom8x8> (architecture <behav>) from library <work>.
+INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/lab5_files/mem_internal/my_modules.vhd" Line 31. Case statement is complete. others clause is never selected
+
+Elaborating entity <my_bram8x8> (architecture <my_bram8x8_a>) from library <work>.
+INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/lab5_files/mem_internal/top_level.vhd" Line 101. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab5_files/mem_internal/top_level.vhd" Line 127: bram_addr should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab5_files/mem_internal/top_level.vhd" Line 129: bram_addr should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab5_files/mem_internal/top_level.vhd" Line 133: bram_addr should be on the sensitivity list of the process
+WARNING:Xst:2972 - "/home/cccitron/mastersThesis/lab5_files/mem_internal/top_level.vhd" line 78. All outputs of instance <memory1> of block <rom8x8> are unconnected in block <top_level>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_level>.
+    Related source file is "/home/cccitron/mastersThesis/lab5_files/mem_internal/top_level.vhd".
+WARNING:Xst:647 - Input <btn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btn<2:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <btn<4:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/lab5_files/mem_internal/top_level.vhd" line 78: Output port <dout> of the instance <memory1> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <leds>.
+    Found 17-bit adder for signal <bram_addr[16]_GND_4_o_add_11_OUT> created at line 1241.
+    Found 17-bit subtractor for signal <GND_4_o_GND_4_o_sub_13_OUT<16:0>> created at line 1308.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <bram_addr<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   8 D-type flip-flop(s).
+	inferred  17 Latch(s).
+	inferred  35 Multiplexer(s).
+Unit <top_level> synthesized.
+
+Synthesizing Unit <ck_divider>.
+    Related source file is "/home/cccitron/mastersThesis/lab5_files/mem_internal/my_modules.vhd".
+    Found 10-bit register for signal <count1>.
+    Found 10-bit register for signal <count2>.
+    Found 10-bit register for signal <count3>.
+    Found 1-bit register for signal <D>.
+    Found 10-bit register for signal <count0>.
+    Found 10-bit adder for signal <count0[9]_GND_5_o_add_0_OUT> created at line 56.
+    Found 10-bit adder for signal <count1[9]_GND_5_o_add_2_OUT> created at line 59.
+    Found 10-bit adder for signal <count2[9]_GND_5_o_add_4_OUT> created at line 62.
+    Found 10-bit adder for signal <count3[9]_GND_5_o_add_6_OUT> created at line 65.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+Unit <ck_divider> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 10-bit adder                                          : 4
+ 17-bit adder                                          : 1
+ 17-bit subtractor                                     : 1
+# Registers                                            : 6
+ 1-bit register                                        : 1
+ 10-bit register                                       : 4
+ 8-bit register                                        : 1
+# Latches                                              : 17
+ 1-bit latch                                           : 17
+# Multiplexers                                         : 35
+ 1-bit 2-to-1 multiplexer                              : 34
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/my_bram8x8.ngc>.
+Loading core <my_bram8x8> for timing and area information for instance <memory2>.
+
+Synthesizing (advanced) Unit <ck_divider>.
+The following registers are absorbed into counter <count0>: 1 register on signal <count0>.
+The following registers are absorbed into counter <count1>: 1 register on signal <count1>.
+The following registers are absorbed into counter <count2>: 1 register on signal <count2>.
+The following registers are absorbed into counter <count3>: 1 register on signal <count3>.
+Unit <ck_divider> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 17-bit adder                                          : 1
+ 17-bit subtractor                                     : 1
+# Counters                                             : 4
+ 10-bit up counter                                     : 4
+# Registers                                            : 9
+ Flip-Flops                                            : 9
+# Multiplexers                                         : 35
+ 1-bit 2-to-1 multiplexer                              : 34
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <top_level> ...
+
+Optimizing unit <ck_divider> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 49
+ Flip-Flops                                            : 49
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top_level.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 727
+#      GND                         : 2
+#      INV                         : 22
+#      LUT1                        : 53
+#      LUT2                        : 1
+#      LUT3                        : 310
+#      LUT4                        : 39
+#      LUT5                        : 38
+#      LUT6                        : 101
+#      MUXCY                       : 68
+#      MUXF7                       : 18
+#      VCC                         : 1
+#      XORCY                       : 74
+# FlipFlops/Latches                : 73
+#      FD                          : 8
+#      FDE                         : 8
+#      FDR                         : 10
+#      FDRE                        : 30
+#      LD                          : 17
+# RAMS                             : 75
+#      RAMB16BWER                  : 75
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 19
+#      IBUF                        : 11
+#      OBUF                        : 8
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              73  out of  54576     0%  
+ Number of Slice LUTs:                  564  out of  27288     2%  
+    Number used as Logic:               564  out of  27288     2%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    571
+   Number with an unused Flip Flop:     498  out of    571    87%  
+   Number with an unused LUT:             7  out of    571     1%  
+   Number of fully used LUT-FF pairs:    66  out of    571    11%  
+   Number of unique control sets:         8
+
+IO Utilization: 
+ Number of IOs:                          23
+ Number of bonded IOBs:                  20  out of    218     9%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               75  out of    116    64%  
+    Number using Block RAM only:         75
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                                            | Clock buffer(FF name)                                                                                                             | Load  |
+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
+btn[1]_btn[3]_OR_11_o(btn[1]_btn[3]_OR_11_o<1>1:O)                                                      | NONE(*)(bram_addr_16)                                                                                                             | 17    |
+clock_divider/D                                                                                         | NONE(leds_0)                                                                                                                      | 90    |
+clk_100MHz                                                                                              | BUFGP                                                                                                                             | 41    |
+memory2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/Mmux_dout_mux_1212| NONE(memory2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[74].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 75    |
+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 6.029ns (Maximum Frequency: 165.864MHz)
+   Minimum input arrival time before clock: 3.593ns
+   Maximum output required time after clock: 3.597ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'btn[1]_btn[3]_OR_11_o'
+  Clock period: 3.997ns (frequency: 250.217MHz)
+  Total number of paths / destination ports: 306 / 17
+-------------------------------------------------------------------------
+Delay:               3.997ns (Levels of Logic = 19)
+  Source:            bram_addr_0 (LATCH)
+  Destination:       bram_addr_16 (LATCH)
+  Source Clock:      btn[1]_btn[3]_OR_11_o falling
+  Destination Clock: btn[1]_btn[3]_OR_11_o falling
+
+  Data Path: bram_addr_0 to bram_addr_16
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q              78   0.498   1.733  bram_addr_0 (bram_addr_0)
+     LUT1:I0->O            1   0.205   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<0>_rt (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<0>_rt)
+     MUXCY:S->O            1   0.172   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<0> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<1> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<2> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<3> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<4> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<5> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<6> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<7> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<8> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<9> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<10> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<11> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<12> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<13> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<14> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<14>)
+     MUXCY:CI->O           0   0.019   0.000  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<15> (Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_cy<15>)
+     XORCY:CI->O           1   0.180   0.684  Msub_GND_4_o_GND_4_o_sub_13_OUT<16:0>_xor<16> (GND_4_o_GND_4_o_sub_13_OUT<16>)
+     LUT4:I2->O            1   0.203   0.000  Mmux_bram_addr[16]_bram_addr[16]_MUX_51_o11 (bram_addr[16]_bram_addr[16]_MUX_51_o)
+     LD:D                      0.037          bram_addr_16
+    ----------------------------------------
+    Total                      3.997ns (1.580ns logic, 2.417ns route)
+                                       (39.5% logic, 60.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock_divider/D'
+  Clock period: 6.029ns (frequency: 165.864MHz)
+  Total number of paths / destination ports: 583 / 8
+-------------------------------------------------------------------------
+Delay:               6.029ns (Levels of Logic = 6)
+  Source:            memory2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe_1 (FF)
+  Destination:       leds_0 (FF)
+  Source Clock:      clock_divider/D rising
+  Destination Clock: clock_divider/D rising
+
+  Data Path: memory2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe_1 to leds_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q            299   0.447   2.299  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe_1 (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe<1>)
+     LUT3:I0->O            1   0.205   0.827  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/Mmux_dout_mux_1481 (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/Mmux_dout_mux_148)
+     LUT6:I2->O            1   0.203   0.827  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/Mmux_dout_mux_92 (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/Mmux_dout_mux_92)
+     LUT6:I2->O            1   0.203   0.000  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/Mmux_dout_mux_4 (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/Mmux_dout_mux_4)
+     MUXF7:I0->O           1   0.131   0.580  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/Mmux_dout_mux_2_f7 (douta<0>)
+     end scope: 'memory2:douta<0>'
+     LUT3:I2->O            1   0.205   0.000  Mmux_bram_dout[7]_bram_addr[7]_mux_2_OUT11 (bram_dout[7]_bram_addr[7]_mux_2_OUT<0>)
+     FD:D                      0.102          leds_0
+    ----------------------------------------
+    Total                      6.029ns (1.496ns logic, 4.533ns route)
+                                       (24.8% logic, 75.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_100MHz'
+  Clock period: 5.278ns (frequency: 189.473MHz)
+  Total number of paths / destination ports: 1861 / 112
+-------------------------------------------------------------------------
+Delay:               5.278ns (Levels of Logic = 3)
+  Source:            clock_divider/count0_0 (FF)
+  Destination:       clock_divider/count2_9 (FF)
+  Source Clock:      clk_100MHz rising
+  Destination Clock: clk_100MHz rising
+
+  Data Path: clock_divider/count0_0 to clock_divider/count2_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.447   0.961  clock_divider/count0_0 (clock_divider/count0_0)
+     LUT5:I0->O            1   0.203   0.580  clock_divider/GND_5_o_count0[9]_equal_2_o<9>_SW0 (N8)
+     LUT6:I5->O           23   0.205   1.154  clock_divider/GND_5_o_count0[9]_equal_2_o<9> (clock_divider/GND_5_o_count0[9]_equal_2_o)
+     LUT3:I2->O           20   0.205   1.092  clock_divider/_n00601 (clock_divider/_n0060)
+     FDRE:R                    0.430          clock_divider/count2_0
+    ----------------------------------------
+    Total                      5.278ns (1.490ns logic, 3.788ns route)
+                                       (28.2% logic, 71.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'btn[1]_btn[3]_OR_11_o'
+  Total number of paths / destination ports: 34 / 17
+-------------------------------------------------------------------------
+Offset:              2.759ns (Levels of Logic = 2)
+  Source:            btn<1> (PAD)
+  Destination:       bram_addr_16 (LATCH)
+  Destination Clock: btn[1]_btn[3]_OR_11_o falling
+
+  Data Path: btn<1> to bram_addr_16
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   1.222   1.297  btn_1_IBUF (btn_1_IBUF)
+     LUT4:I0->O            1   0.203   0.000  Mmux_bram_addr[16]_bram_addr[16]_MUX_54_o11 (bram_addr[16]_bram_addr[16]_MUX_54_o)
+     LD:D                      0.037          bram_addr_15
+    ----------------------------------------
+    Total                      2.759ns (1.462ns logic, 1.297ns route)
+                                       (53.0% logic, 47.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_divider/D'
+  Total number of paths / destination ports: 536 / 536
+-------------------------------------------------------------------------
+Offset:              3.593ns (Levels of Logic = 2)
+  Source:            sw_i<6> (PAD)
+  Destination:       memory2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[74].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
+  Destination Clock: clock_divider/D rising
+
+  Data Path: sw_i<6> to memory2/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[74].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           300   1.222   2.071  sw_i_6_IBUF (sw_i_6_IBUF)
+     begin scope: 'memory2:wea<1>'
+     RAMB16BWER:WEA3           0.300          U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[74].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+    ----------------------------------------
+    Total                      3.593ns (1.522ns logic, 2.071ns route)
+                                       (42.4% logic, 57.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_divider/D'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            leds_7 (FF)
+  Destination:       leds<7> (PAD)
+  Source Clock:      clock_divider/D rising
+
+  Data Path: leds_7 to leds<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.579  leds_7 (leds_7)
+     OBUF:I->O                 2.571          leds_7_OBUF (leds<7>)
+    ----------------------------------------
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock btn[1]_btn[3]_OR_11_o
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+btn[1]_btn[3]_OR_11_o|         |         |    3.997|         |
+---------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_100MHz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_100MHz     |    5.278|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clock_divider/D
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+btn[1]_btn[3]_OR_11_o|         |    4.185|         |         |
+clock_divider/D      |    6.029|         |         |         |
+---------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.06 secs
+ 
+--> 
+
+
+Total memory usage is 397728 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   25 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

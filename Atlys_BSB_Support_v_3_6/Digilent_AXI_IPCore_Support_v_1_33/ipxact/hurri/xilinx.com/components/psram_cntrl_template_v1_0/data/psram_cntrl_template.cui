@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4/index.xsd ">
+	<spirit:vendor>xilinx.com</spirit:vendor>
+	<spirit:library>bsb_lib.components</spirit:library>
+	<spirit:name>psram_cntrl_template</spirit:name>
+	<spirit:version>1.0</spirit:version>
+	
+	<spirit:busInterfaces>
+		
+		<!-- IO: PSRAM Controller -->
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>psram_cntrl_0</spirit:name>
+			<spirit:displayName>PSRAM_CNTRL</spirit:displayName>
+			<spirit:description>Pseudo-Static Random Access Memory Controller</spirit:description>
+			<spirit:busType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.busdefs" spirit:name="psram_cntrl" spirit:version="1.0" />
+			<spirit:master />
+			<spirit:connectionRequired>false</spirit:connectionRequired>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>RdWrCycle</spirit:name>
+					<spirit:displayName>Read/Write Cycle Time (ns)</spirit:displayName>
+					<spirit:description>Read/Write Cycle Time (ns)</spirit:description>
+					<spirit:value spirit:resolve="user" spirit:id="psram_cntrl_0_rdwrcycle"
+						spirit:format="string" spirit:choiceRef="C_RW_CYCLE_NS_OPTION">100</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		
+		<!-- IF: Connect Network -->
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>connect_0</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.busdefs" spirit:name="connect_network_bus_master"
+				spirit:version="1.0" />
+			<spirit:slave />
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>frequency</spirit:name>
+					<spirit:value spirit:id="connect_0_clock_frequency_id"
+						spirit:resolve="generated" spirit:format="string">0</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>interface_type</spirit:name>
+					<spirit:value spirit:format="string"
+						spirit:id="connect_0_elaborate_result_interface_type"
+						spirit:resolve="generated">MEMORY_MAPPED_LITE</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		
+		<!-- IS: CLK -->
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>clock_0</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.busdefs" spirit:name="clock" spirit:version="1.0" />
+			<spirit:slave />
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>frequency</spirit:name>
+					<spirit:value spirit:id="clock_0_clock_frequency_id"
+						spirit:resolve="generated" spirit:format="string">0</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>phase</spirit:name>
+					<spirit:value spirit:id="clock_0_phase_id"
+						spirit:resolve="generated" spirit:dataType="string">0</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>buffer</spirit:name>
+					<spirit:value spirit:id="clock_0_buffer_id"
+						spirit:resolve="generated" spirit:dataType="bool">TRUE</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>variablePhase</spirit:name>
+					<spirit:value spirit:id="clock_0_varphase_id"
+						spirit:resolve="generated" spirit:dataType="bool">FALSE</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>arbitraryGroup</spirit:name>
+					<spirit:value spirit:id="clock_0_arbgroup_id"
+						spirit:resolve="generated" spirit:dataType="string">NONE</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		
+	</spirit:busInterfaces>
+
+	<spirit:model>
+		<spirit:modelParameters>
+			<spirit:modelParameter>
+				<spirit:name>BSB_REMAP</spirit:name>
+				<spirit:description>Used to store IO interface name of board</spirit:description>
+				<spirit:value spirit:id="bsb_remap_id" spirit:resolve="generated"
+					spirit:format="string">Not_Set</spirit:value>
+			</spirit:modelParameter>
+		</spirit:modelParameters>
+	</spirit:model>
+
+	<spirit:choices>
+		<spirit:choice>
+			<spirit:name>C_RW_CYCLE_NS_OPTION</spirit:name>
+				<spirit:enumeration spirit:text="300">300</spirit:enumeration>
+				<spirit:enumeration spirit:text="250">250</spirit:enumeration>
+				<spirit:enumeration spirit:text="200">200</spirit:enumeration>
+                <spirit:enumeration spirit:text="150">150</spirit:enumeration>
+                <spirit:enumeration spirit:text="100">100</spirit:enumeration>
+				<spirit:enumeration spirit:text="50">50</spirit:enumeration>
+		</spirit:choice>
+	</spirit:choices>
+	
+	<spirit:description>AXI Pseudo-Static Random Access Memory Controller Block Template.</spirit:description>
+	<spirit:parameters>
+		<spirit:parameter spirit:id="deviceInfo"
+			spirit:resolve="generated">
+			<spirit:name>deviceInfo</spirit:name>
+			<spirit:value>NOT_SET</spirit:value>
+		</spirit:parameter>
+		<spirit:parameter spirit:id="template_type"
+			spirit:resolve="immediate">
+			<spirit:name>template_type</spirit:name>
+			<spirit:value>function_component</spirit:value>
+		</spirit:parameter>
+		<spirit:parameter spirit:id="component_type"
+			spirit:resolve="immediate">
+			<spirit:name>component_type</spirit:name>
+			<spirit:value>peripheral</spirit:value>
+		</spirit:parameter>
+		<spirit:parameter>
+			<spirit:name>component_subtype</spirit:name>
+			<spirit:value>psram_cntrl</spirit:value>
+		</spirit:parameter>
+		<spirit:parameter>
+			<spirit:name>cacheable</spirit:name>
+			<spirit:value>no</spirit:value>
+		</spirit:parameter>
+	</spirit:parameters>
+</spirit:component>

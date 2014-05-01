@@ -1,0 +1,28 @@
+# PlanAhead Generated physical constraints 
+
+NET "clk_100MHz" LOC = L15;
+NET "reset_btn" LOC = F5;
+NET "spi_din" LOC = R13; 
+NET "spi_dout" LOC = T13;
+NET "spi_cs" LOC = V3;
+NET "spi_clk" LOC = R15;
+
+# these two signals should not theoretically be necessary because
+# according to the schematic diagram of the Atlys board Write Protect
+# and Hold pins of the flash memory chip are pulled to VCC3V3 via two
+# resistors; however, it seems it matters to basically hook them
+# directly to '1';
+# link to the schematic diagram of the Atlys board (see page 8):
+# http://www.digilentinc.com/Data/Products/ATLYS/Atlys_C2_sch.pdf
+NET "spi_wp_bar" LOC = T14;
+NET "spi_hold_bar" LOC = V14;
+
+NET "leds[0]" LOC = U18;
+NET "leds[1]" LOC = M14;
+NET "leds[2]" LOC = N14;
+NET "leds[3]" LOC = L14;
+NET "leds[4]" LOC = M13;
+NET "leds[5]" LOC = D4;
+NET "leds[6]" LOC = P16;
+NET "leds[7]" LOC = N12;
+

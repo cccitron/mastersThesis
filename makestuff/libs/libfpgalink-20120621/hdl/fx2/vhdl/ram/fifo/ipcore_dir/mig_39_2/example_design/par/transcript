@@ -1,0 +1,220 @@
+# do tb_example_top.fdo 
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:24 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/data_prbs_gen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity data_prbs_gen
+# -- Compiling architecture trans of data_prbs_gen
+# End time: 17:43:24 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:24 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/v6_data_gen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity v6_data_gen
+# -- Compiling architecture trans of v6_data_gen
+# End time: 17:43:24 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:24 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/sp6_data_gen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sp6_data_gen
+# -- Compiling architecture trans of sp6_data_gen
+# End time: 17:43:25 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:25 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/afifo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity afifo
+# -- Compiling architecture trans of afifo
+# End time: 17:43:25 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:25 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/iodrp_mcb_controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity iodrp_mcb_controller
+# -- Compiling architecture trans of iodrp_mcb_controller
+# End time: 17:43:25 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:25 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/iodrp_controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity iodrp_controller
+# -- Compiling architecture trans of iodrp_controller
+# End time: 17:43:26 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:26 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/wr_data_gen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity wr_data_gen
+# -- Compiling architecture trans of wr_data_gen
+# End time: 17:43:26 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:27 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/read_posted_fifo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity read_posted_fifo
+# -- Compiling architecture trans of read_posted_fifo
+# End time: 17:43:27 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:27 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/rd_data_gen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity rd_data_gen
+# -- Compiling architecture trans of rd_data_gen
+# End time: 17:43:27 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:27 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/cmd_prbs_gen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cmd_prbs_gen
+# -- Compiling architecture trans of cmd_prbs_gen
+# End time: 17:43:27 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:27 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/mcb_soft_calibration.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mcb_soft_calibration
+# -- Compiling architecture trans of mcb_soft_calibration
+# End time: 17:43:28 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:28 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/write_data_path.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity write_data_path
+# -- Compiling architecture trans of write_data_path
+# End time: 17:43:28 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:28 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/tg_status.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity tg_status
+# -- Compiling architecture trans of tg_status
+# End time: 17:43:28 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:29 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/read_data_path.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity read_data_path
+# -- Compiling architecture trans of read_data_path
+# End time: 17:43:29 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:29 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/mcb_flow_control.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mcb_flow_control
+# -- Compiling architecture trans of mcb_flow_control
+# End time: 17:43:29 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:29 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/traffic_gen/cmd_gen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cmd_gen
+# -- Compiling architecture trans of cmd_gen
+# End time: 17:43:29 on Apr 08,2014
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 17:43:30 on Apr 08,2014
+# vcom -reportprogress 300 -explicit -93 ../rtl/mcb_soft_calibration_top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# ** Error: ../rtl/mcb_soft_calibration_top.vhd(81): Library unisim not found.
+# ** Error: ../rtl/mcb_soft_calibration_top.vhd(82): (vcom-1136) Unknown identifier "unisim".
+# 
+# ** Error: ../rtl/mcb_soft_calibration_top.vhd(84): VHDL Compiler exiting
+# Errors: 3, Warnings: 0
+# ** Error: Z:/opt/Xilinx/14.7/ISE_DS/modelsim/win32pe_edu/vcom failed.
+# Error in macro ./tb_example_top.fdo line 39
+# Z:/opt/Xilinx/14.7/ISE_DS/modelsim/win32pe_edu/vcom failed.
+#     while executing
+# "vcom -explicit  -93 "../rtl/mcb_soft_calibration_top.vhd""

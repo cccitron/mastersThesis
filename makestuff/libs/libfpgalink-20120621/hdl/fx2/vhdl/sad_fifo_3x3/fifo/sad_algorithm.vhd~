@@ -1,0 +1,44 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    22:46:35 04/20/2014 
+-- Design Name: 
+-- Module Name:    sad - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity sad_algorithm is
+    Port ( TBYTE_I : in  STD_LOGIC_VECTOR (7 downto 0);
+           SBYTE_I : in  STD_LOGIC_VECTOR (7 downto 0);
+           SAD_O   : out STD_LOGIC_VECTOR (7 downto 0));
+end sad_algorithm;
+
+architecture Behavioral of sad is
+
+begin
+
+
+end Behavioral;
+

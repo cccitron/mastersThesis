@@ -1,0 +1,18 @@
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/Microblaze_MCS/mcs_top.xst" -ofn "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/Microblaze_MCS/mcs_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc6slx45-csg324-3 mcs_top.ngc mcs_top.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mcs_top_map.ncd mcs_top.ngd mcs_top.pcf 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/Microblaze_MCS/mcs_top.xst" -ofn "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/Microblaze_MCS/mcs_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc mcs.ucf -p xc6slx45-csg324-3 mcs_top.ngc mcs_top.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mcs_top_map.ncd mcs_top.ngd mcs_top.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc mcs.ucf -p xc6slx45-csg324-3 mcs_top.ngc mcs_top.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mcs_top_map.ncd mcs_top.ngd mcs_top.pcf 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc mcs.ucf -p xc6slx45-csg324-3 mcs_top.ngc mcs_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc mcs.ucf -p xc6slx45-csg324-3 mcs_top.ngc mcs_top.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mcs_top_map.ncd mcs_top.ngd mcs_top.pcf 
+par -w -intstyle ise -ol high -mt off mcs_top_map.ncd mcs_top.ncd mcs_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mcs_top.twx mcs_top.ncd -o mcs_top.twr mcs_top.pcf -ucf mcs.ucf 
+bitgen -intstyle ise -f mcs_top.ut mcs_top.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc mcs.ucf -p xc6slx45-csg324-3 mcs_top.ngc mcs_top.ngd -bm "ipcore_dir/microblaze_mcs.bmm" 
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mcs_top_map.ncd mcs_top.ngd mcs_top.pcf 
+par -w -intstyle ise -ol high -mt off mcs_top_map.ncd mcs_top.ncd mcs_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mcs_top.twx mcs_top.ncd -o mcs_top.twr mcs_top.pcf -ucf mcs.ucf 

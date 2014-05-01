@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4/index.xsd">
+	<spirit:vendor>xilinx.com</spirit:vendor>
+	<spirit:library>bsb_lib.rtl_components</spirit:library>
+	<spirit:name>d_qspi_axi</spirit:name>
+	<spirit:version>1.00.a</spirit:version>
+
+	<spirit:busInterfaces>
+		<spirit:busInterface>
+			<spirit:name>axi_clock</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.rtl_busdefs" spirit:name="clock"
+				spirit:version="1.0" />
+			<spirit:abstractionType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.rtl_busdefs" spirit:name="clock_rtl"
+				spirit:version="1.0" />
+			<spirit:slave />
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>CLK</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_ACLK</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+		</spirit:busInterface>
+
+		<spirit:busInterface>
+			<spirit:name>axi_reset</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.rtl_busdefs" spirit:name="reset"
+				spirit:version="1.0" />
+			<spirit:abstractionType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.rtl_busdefs" spirit:name="reset_rtl"
+				spirit:version="1.0" />
+			<spirit:slave />
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RESETn</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_ARESETN</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+		</spirit:busInterface>
+
+		<spirit:busInterface>
+			<spirit:name>S_AXI</spirit:name>
+			<spirit:busType spirit:vendor="amba.com"
+				spirit:library="AMBA4" spirit:name="AXILite" spirit:version="r0p0_0" />
+			<spirit:abstractionType spirit:vendor="amba.com"
+				spirit:library="AMBA4" spirit:name="AXILite_rtl" spirit:version="r0p0_0" />
+			<spirit:slave />
+
+			<spirit:connectionRequired>true</spirit:connectionRequired>
+
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ACLK</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_ACLK</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AWADDR</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_AWADDR</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AWVALID</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_AWVALID</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>AWREADY</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_AWREADY</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WDATA</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_WDATA</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WSTRB</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_WSTRB</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WVALID</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_WVALID</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>WREADY</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_WREADY</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>BRESP</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_BRESP</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>BVALID</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_BVALID</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>BREADY</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_BREADY</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ARADDR</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_ARADDR</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ARVALID</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_ARVALID</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>ARREADY</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_ARREADY</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RDATA</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_RDATA</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RRESP</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_RRESP</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RVALID</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_RVALID</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>RREADY</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S_AXI_RREADY</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+		</spirit:busInterface>
+		
+		<!-- IO_IF -->
+		<spirit:busInterface>
+			<spirit:name>qspi_0</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.rtl_busdefs" spirit:name="d_qspi_axi"
+				spirit:version="1.0" />
+			<spirit:abstractionType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.rtl_busdefs" spirit:name="d_qspi_axi_rtl"
+				spirit:version="1.0" />
+			<spirit:master />
+			<spirit:portMaps>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>qspi_c</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>C</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>qspi_s</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>S</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>qspi_dq_o</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>DQ_O</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>qspi_dq_i</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>DQ_I</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>qspi_dq_t</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>DQ_T</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+				<spirit:portMap>
+					<spirit:logicalPort>
+						<spirit:name>qspi_dq</spirit:name>
+					</spirit:logicalPort>
+					<spirit:physicalPort>
+						<spirit:name>DQ</spirit:name>
+					</spirit:physicalPort>
+				</spirit:portMap>
+			</spirit:portMaps>
+		</spirit:busInterface>
+
+	</spirit:busInterfaces>
+
+	<spirit:model>
+
+		<!-- I/O Signals -->
+		<spirit:ports>
+			<spirit:port>
+				<spirit:name>S_AXI_ACLK</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_ARESETN</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_AWADDR</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left spirit:resolve="dependent"
+							spirit:dependency="(id('C_S_AXI_ADDR_WIDTH')-1)">0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_AWVALID</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_AWREADY</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_WDATA</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left spirit:resolve="dependent"
+							spirit:dependency="(id('C_S_AXI_DATA_WIDTH')-1)">0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_WSTRB</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left spirit:resolve="dependent"
+							spirit:dependency="((id('C_S_AXI_DATA_WIDTH') div 8)-1)">0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_WVALID</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_WREADY</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_BRESP</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+					<spirit:vector>
+						<spirit:left>1</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_BVALID</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_BREADY</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_ARADDR</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left spirit:resolve="dependent"
+							spirit:dependency="(id('C_S_AXI_ADDR_WIDTH')-1)">0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_ARVALID</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_ARREADY</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_RDATA</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+					<spirit:vector>
+						<spirit:left spirit:resolve="dependent"
+							spirit:dependency="(id('C_S_AXI_DATA_WIDTH')-1)">0</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_RRESP</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+					<spirit:vector>
+						<spirit:left>1</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_RVALID</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S_AXI_RREADY</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>DQ</spirit:name>
+				<spirit:wire>
+					<spirit:direction>inout</spirit:direction>
+					<spirit:vector>
+						<spirit:left>3</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>DQ_I</spirit:name>
+				<spirit:wire>
+					<spirit:direction>in</spirit:direction>
+					<spirit:vector>
+						<spirit:left>3</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>DQ_T</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+					<spirit:vector>
+						<spirit:left>3</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>DQ_O</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+					<spirit:vector>
+						<spirit:left>3</spirit:left>
+						<spirit:right>0</spirit:right>
+					</spirit:vector>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>S</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+			<spirit:port>
+				<spirit:name>C</spirit:name>
+				<spirit:wire>
+					<spirit:direction>out</spirit:direction>
+				</spirit:wire>
+			</spirit:port>
+		</spirit:ports>
+
+		<spirit:modelParameters>
+			<spirit:modelParameter spirit:dataType="INTEGER">
+				<spirit:name>C_S_AXI_DATA_WIDTH</spirit:name>
+				<spirit:value spirit:id="C_S_AXI_DATA_WIDTH"
+					spirit:resolve="user">32</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="INTEGER">
+				<spirit:name>C_S_AXI_ADDR_WIDTH</spirit:name>
+				<spirit:value spirit:id="C_S_AXI_ADDR_WIDTH"
+					spirit:resolve="user">32</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="STD_LOGIC_VECTOR(31 DOWNTO 0)">
+				<spirit:name>C_S_AXI_MIN_SIZE</spirit:name>
+				<spirit:value spirit:id="C_S_AXI_MIN_SIZE"
+					spirit:resolve="user" spirit:minimum="0x00000000" 
+					spirit:maximum="0xFFFFFFFF"
+					spirit:rangeType="int">0x1ff</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="INTEGER">
+				<spirit:name>C_USE_WSTRB</spirit:name>
+				<spirit:value spirit:resolve="user" 
+					spirit:minimum="0" spirit:maximum="1"
+					spirit:id="C_USE_WSTRB" spirit:rangeType="int">0</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="INTEGER">
+				<spirit:name>C_DPHASE_TIMEOUT</spirit:name>
+				<spirit:value spirit:resolve="user" 
+					spirit:minimum="0x00" spirit:maximum="0xFF"
+					spirit:id="C_DPHASE_TIMEOUT" spirit:rangeType="int">8</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="STD_LOGIC_VECTOR(31 DOWNTO 0)">
+				<spirit:name>C_BASEADDR</spirit:name>
+				<spirit:value spirit:id="C_BASEADDR"
+					spirit:resolve="user" spirit:minimum="0x00000000" 
+					spirit:maximum="0xFFFFFFFF"
+					spirit:rangeType="int">0xFFFFFFFF</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="STD_LOGIC_VECTOR(31 DOWNTO 0)">
+				<spirit:name>C_HIGHADDR</spirit:name>
+				<spirit:value spirit:id="C_HIGHADDR"
+					spirit:resolve="user" spirit:minimum="0x00000000" 
+					spirit:maximum="0xFFFFFFFF"
+					spirit:rangeType="int">0x00000000</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="STRING">
+				<spirit:name>C_FAMILY</spirit:name>
+				<spirit:value spirit:id="C_FAMILY" spirit:resolve="user"
+					spirit:format="string">SPARTAN6</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="INTEGER">
+				<spirit:name>C_NUM_REG</spirit:name>
+				<spirit:value spirit:resolve="user" 
+					spirit:minimum="0" spirit:maximum="1"
+					spirit:id="C_NUM_REG" spirit:rangeType="int">1</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="INTEGER">
+				<spirit:name>C_NUM_MEM</spirit:name>
+				<spirit:value spirit:resolve="user" 
+					spirit:minimum="0" spirit:maximum="1"
+					spirit:id="C_NUM_MEM" spirit:rangeType="int">1</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="INTEGER">
+				<spirit:name>C_SLV_DWIDTH</spirit:name>
+				<spirit:value spirit:id="C_SLV_DWIDTH"
+					spirit:resolve="user">32</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="INTEGER">
+				<spirit:name>C_SLV_AWIDTH</spirit:name>
+				<spirit:value spirit:id="C_SLV_AWIDTH"
+					spirit:resolve="user">32</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter spirit:dataType="STRING">
+				<spirit:name>C_S_AXI_PROTOCOL</spirit:name>
+				<spirit:value spirit:id="C_S_AXI_PROTOCOL" spirit:resolve="user"
+					spirit:format="string">AXI4LITE</spirit:value>
+			</spirit:modelParameter>
+		</spirit:modelParameters>
+	</spirit:model>
+
+	<spirit:parameters>
+		<spirit:parameter>
+			<spirit:name>CORE_TEMPLATE_ASSOC</spirit:name>
+			<spirit:value>d_qspi_axi_template</spirit:value>
+		</spirit:parameter>
+	</spirit:parameters>
+
+</spirit:component>

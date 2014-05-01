@@ -1,0 +1,28 @@
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc abs.ucf -p xc6slx45-csg324-3 absDiff.ngc absDiff.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o absDiff_map.ncd absDiff.ngd absDiff.pcf 
+par -w -intstyle ise -ol high -mt off absDiff_map.ncd absDiff.ncd absDiff.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml absDiff.twx absDiff.ncd -o absDiff.twr absDiff.pcf -ucf abs.ucf 
+bitgen -intstyle ise -f absDiff.ut absDiff.ncd 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc abs.ucf -p xc6slx45-csg324-3 absDiff.ngc absDiff.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o absDiff_map.ncd absDiff.ngd absDiff.pcf 
+par -w -intstyle ise -ol high -mt off absDiff_map.ncd absDiff.ncd absDiff.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml absDiff.twx absDiff.ncd -o absDiff.twr absDiff.pcf -ucf abs.ucf 
+bitgen -intstyle ise -f absDiff.ut absDiff.ncd 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/absDiff/absDiff.xst" -ofn "/home/cccitron/mastersThesis/absDiff/absDiff.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc abs.ucf -p xc6slx45-csg324-3 absDiff.ngc absDiff.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o absDiff_map.ncd absDiff.ngd absDiff.pcf 
+par -w -intstyle ise -ol high -mt off absDiff_map.ncd absDiff.ncd absDiff.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml absDiff.twx absDiff.ncd -o absDiff.twr absDiff.pcf -ucf abs.ucf 
+bitgen -intstyle ise -f absDiff.ut absDiff.ncd 

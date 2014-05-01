@@ -1,0 +1,885 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Mapping Report File for Design 'example_top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
+-pr off -lc off -power off -o example_top_map.ncd example_top.ngd
+example_top.pcf 
+Target Device  : xc6slx45
+Target Package : csg324
+Target Speed   : -3
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Wed Apr 16 11:57:43 2014
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    0
+Slice Logic Utilization:
+  Number of Slice Registers:                   334 out of  54,576    1%
+    Number used as Flip Flops:                 334
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        424 out of  27,288    1%
+    Number used as logic:                      417 out of  27,288    1%
+      Number using O6 output only:             284
+      Number using O5 output only:              26
+      Number using O5 and O6:                  107
+      Number used as ROM:                        0
+    Number used as Memory:                       1 out of   6,408    1%
+      Number used as Dual Port RAM:              0
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:             1
+        Number using O6 output only:             1
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:      6
+      Number with same-slice register load:      2
+      Number with same-slice carry load:         4
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   192 out of   6,822    2%
+  Number of MUXCYs used:                        84 out of  13,644    1%
+  Number of LUT Flip Flop pairs used:          499
+    Number with an unused Flip Flop:           181 out of     499   36%
+    Number with an unused LUT:                  75 out of     499   15%
+    Number of fully used LUT-FF pairs:         243 out of     499   48%
+    Number of unique control sets:              49
+    Number of slice register sites lost
+      to control set restrictions:             201 out of  54,576    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        67 out of     218   30%
+    Number of LOCed IOBs:                       67 out of      67  100%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of     116    0%
+  Number of RAMB8BWERs:                          0 out of     232    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
+    Number used as BUFIO2s:                      1
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       3 out of      16   18%
+    Number used as BUFGs:                        2
+    Number used as BUFGMUX:                      1
+  Number of DCM/DCM_CLKGENs:                     0 out of       8    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     376    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:        24 out of     376    6%
+    Number used as IODELAY2s:                    0
+    Number used as IODRP2s:                      2
+    Number used as IODRP2_MCBs:                 22
+  Number of OLOGIC2/OSERDES2s:                  45 out of     376   11%
+    Number used as OLOGIC2s:                     0
+    Number used as OSERDES2s:                   45
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     256    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         1 out of       4   25%
+  Number of DSP48A1s:                            0 out of      58    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                1 out of       2   50%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            1 out of       4   25%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.39
+
+Peak Memory Usage:  752 MB
+Total REAL time to MAP completion:  24 secs 
+Total CPU time to MAP completion:   20 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network N24 has no load.
+INFO:LIT:395 - The above info message is repeated 291 more times for the
+   following (max. 5 shown):
+   N25,
+   N26,
+   N27,
+   N28,
+   N29
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  27 block(s) removed
+  10 block(s) optimized away
+ 287 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "memc3_infrastructure_inst/rst_tmp" is sourceless and has been
+removed.
+ Sourceless block "memc3_infrastructure_inst/rst0_sync_r_0" (FF) removed.
+  The signal "memc3_infrastructure_inst/rst0_sync_r<0>" is sourceless and has been
+removed.
+   Sourceless block "memc3_infrastructure_inst/rst0_sync_r_1" (FF) removed.
+    The signal "memc3_infrastructure_inst/rst0_sync_r<1>" is sourceless and has been
+removed.
+     Sourceless block "memc3_infrastructure_inst/rst0_sync_r_2" (FF) removed.
+      The signal "memc3_infrastructure_inst/rst0_sync_r<2>" is sourceless and has been
+removed.
+       Sourceless block "memc3_infrastructure_inst/rst0_sync_r_3" (FF) removed.
+        The signal "memc3_infrastructure_inst/rst0_sync_r<3>" is sourceless and has been
+removed.
+         Sourceless block "memc3_infrastructure_inst/rst0_sync_r_4" (FF) removed.
+          The signal "memc3_infrastructure_inst/rst0_sync_r<4>" is sourceless and has been
+removed.
+           Sourceless block "memc3_infrastructure_inst/rst0_sync_r_5" (FF) removed.
+            The signal "memc3_infrastructure_inst/rst0_sync_r<5>" is sourceless and has been
+removed.
+             Sourceless block "memc3_infrastructure_inst/rst0_sync_r_6" (FF) removed.
+              The signal "memc3_infrastructure_inst/rst0_sync_r<6>" is sourceless and has been
+removed.
+               Sourceless block "memc3_infrastructure_inst/rst0_sync_r_7" (FF) removed.
+                The signal "memc3_infrastructure_inst/rst0_sync_r<7>" is sourceless and has been
+removed.
+                 Sourceless block "memc3_infrastructure_inst/rst0_sync_r_8" (FF) removed.
+                  The signal "memc3_infrastructure_inst/rst0_sync_r<8>" is sourceless and has been
+removed.
+                   Sourceless block "memc3_infrastructure_inst/rst0_sync_r_9" (FF) removed.
+                    The signal "memc3_infrastructure_inst/rst0_sync_r<9>" is sourceless and has been
+removed.
+                     Sourceless block "memc3_infrastructure_inst/rst0_sync_r_10" (FF) removed.
+                      The signal "memc3_infrastructure_inst/rst0_sync_r<10>" is sourceless and has
+been removed.
+                       Sourceless block "memc3_infrastructure_inst/rst0_sync_r_11" (FF) removed.
+                        The signal "memc3_infrastructure_inst/rst0_sync_r<11>" is sourceless and has
+been removed.
+                         Sourceless block "memc3_infrastructure_inst/rst0_sync_r_12" (FF) removed.
+                          The signal "memc3_infrastructure_inst/rst0_sync_r<12>" is sourceless and has
+been removed.
+                           Sourceless block "memc3_infrastructure_inst/rst0_sync_r_13" (FF) removed.
+                            The signal "memc3_infrastructure_inst/rst0_sync_r<13>" is sourceless and has
+been removed.
+                             Sourceless block "memc3_infrastructure_inst/rst0_sync_r_14" (FF) removed.
+                              The signal "memc3_infrastructure_inst/rst0_sync_r<14>" is sourceless and has
+been removed.
+                               Sourceless block "memc3_infrastructure_inst/rst0_sync_r_15" (FF) removed.
+                                The signal "memc3_infrastructure_inst/rst0_sync_r<15>" is sourceless and has
+been removed.
+                                 Sourceless block "memc3_infrastructure_inst/rst0_sync_r_16" (FF) removed.
+                                  The signal "memc3_infrastructure_inst/rst0_sync_r<16>" is sourceless and has
+been removed.
+                                   Sourceless block "memc3_infrastructure_inst/rst0_sync_r_17" (FF) removed.
+                                    The signal "memc3_infrastructure_inst/rst0_sync_r<17>" is sourceless and has
+been removed.
+                                     Sourceless block "memc3_infrastructure_inst/rst0_sync_r_18" (FF) removed.
+                                      The signal "memc3_infrastructure_inst/rst0_sync_r<18>" is sourceless and has
+been removed.
+                                       Sourceless block "memc3_infrastructure_inst/rst0_sync_r_19" (FF) removed.
+                                        The signal "memc3_infrastructure_inst/rst0_sync_r<19>" is sourceless and has
+been removed.
+                                         Sourceless block "memc3_infrastructure_inst/rst0_sync_r_20" (FF) removed.
+                                          The signal "memc3_infrastructure_inst/rst0_sync_r<20>" is sourceless and has
+been removed.
+                                           Sourceless block "memc3_infrastructure_inst/rst0_sync_r_21" (FF) removed.
+                                            The signal "memc3_infrastructure_inst/rst0_sync_r<21>" is sourceless and has
+been removed.
+                                             Sourceless block "memc3_infrastructure_inst/rst0_sync_r_22" (FF) removed.
+                                              The signal "memc3_infrastructure_inst/rst0_sync_r<22>" is sourceless and has
+been removed.
+                                               Sourceless block "memc3_infrastructure_inst/rst0_sync_r_23" (FF) removed.
+                                                The signal "memc3_infrastructure_inst/rst0_sync_r<23>" is sourceless and has
+been removed.
+                                                 Sourceless block "memc3_infrastructure_inst/rst0_sync_r_24" (FF) removed.
+*The signal "memc3_infrastructure_inst/rst0_sync_r<24>" is sourceless and has
+been removed.
+The signal "memc3_infrastructure_inst/syn_clk0_powerup_pll_locked" is sourceless
+and has been removed.
+ Sourceless block "memc3_infrastructure_inst/rst_tmp1" (ROM) removed.
+The signal "memc3_wrapper_inst/p0_wr_count<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_wr_count<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_wr_count<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_wr_count<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_wr_count<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_wr_count<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_wr_count<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<31>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<30>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<29>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<28>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<27>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<26>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<25>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<24>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<23>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<22>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<21>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<20>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<19>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<18>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<17>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<16>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<15>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<14>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<13>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<12>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<11>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<10>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<9>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<8>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<7>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_data<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_count<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_count<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_count<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_count<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_count<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_count<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_count<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_wr_count<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_wr_count<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_wr_count<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_wr_count<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_wr_count<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_wr_count<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_wr_count<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<31>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<30>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<29>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<28>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<27>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<26>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<25>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<24>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<23>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<22>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<21>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<20>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<19>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<18>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<17>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<16>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<15>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<14>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<13>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<12>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<11>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<10>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<9>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_data<8>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_count<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_count<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_count<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_count<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_count<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_count<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_count<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_wr_count<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_wr_count<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_wr_count<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_wr_count<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_wr_count<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_wr_count<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_wr_count<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<31>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<30>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<29>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<28>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<27>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<26>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<25>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<24>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<23>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<22>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<21>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<20>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<19>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<18>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<17>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<16>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<15>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<14>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<13>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<12>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<11>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<10>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<9>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<8>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<7>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_data<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_count<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_count<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_count<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_count<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_count<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_count<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_count<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_wr_count<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_wr_count<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_wr_count<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_wr_count<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_wr_count<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_wr_count<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_wr_count<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<31>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<30>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<29>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<28>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<27>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<26>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<25>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<24>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<23>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<22>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<21>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<20>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<19>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<18>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<17>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<16>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<15>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<14>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<13>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<12>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<11>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<10>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<9>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<8>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<7>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_data<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_count<6>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_count<5>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_count<4>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_count<3>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_count<2>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_count<1>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_count<0>" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_cmd_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p0_cmd_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p0_wr_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p0_wr_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p0_wr_underrun" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_wr_error" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p0_rd_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p0_rd_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p0_rd_overflow" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p0_rd_error" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p1_cmd_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p1_cmd_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p1_wr_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p1_wr_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p1_wr_underrun" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_wr_error" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p1_rd_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p1_rd_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p1_rd_overflow" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p1_rd_error" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p2_cmd_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p2_cmd_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p2_wr_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p2_wr_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p2_wr_underrun" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_wr_error" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p2_rd_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p2_rd_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p2_rd_overflow" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p2_rd_error" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p3_cmd_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p3_cmd_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p3_wr_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p3_wr_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p3_wr_underrun" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_wr_error" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p3_rd_full" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p3_rd_empty" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/p3_rd_overflow" is sourceless and has been
+removed.
+The signal "memc3_wrapper_inst/p3_rd_error" is sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<31>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<30>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<29>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<28>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<27>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<26>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<25>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<24>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<23>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<22>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<21>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<20>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<19>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<18>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<17>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<16>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<15>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<14>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<13>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<12>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<11>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<10>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<9>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<8>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<7>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<6>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<5>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<4>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<3>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<2>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<1>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/status<0>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_data<7>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_data<6>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_data<5>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_data<4>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_data<3>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_data<2>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_data<1>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_data<0>" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_cal_start" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_cmd_ready_in" is
+sourceless and has been removed.
+The signal "memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/uo_data_valid" is
+sourceless and has been removed.
+The signal
+"memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibrati
+on_top_inst/N1" is sourceless and has been removed.
+Unused block "memc3_infrastructure_inst/syn_clk0_powerup_pll_locked" (FF)
+removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+GND 		memc3_infrastructure_inst/XST_GND
+VCC 		memc3_infrastructure_inst/XST_VCC
+GND 		memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/XST_GND
+VCC 		memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/XST_VCC
+GND
+		memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibrat
+ion_top_inst/XST_GND
+VCC
+		memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibrat
+ion_top_inst/XST_VCC
+GND
+		memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibrat
+ion_top_inst/mcb_soft_calibration_inst/XST_GND
+VCC
+		memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibrat
+ion_top_inst/mcb_soft_calibration_inst/XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CLK_I                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RESET_I                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| c3_sys_clk                         | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| c3_sys_rst_i                       | IOB              | INPUT     | LVCMOS18             |       |          |      |              |          |          |
+| led_out<0>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led_out<1>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led_out<2>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led_out<3>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led_out<4>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led_out<5>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led_out<6>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| led_out<7>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| mcb3_dram_a<0>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<1>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<2>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<3>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<4>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<5>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<6>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<7>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<8>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<9>                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<10>                    | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<11>                    | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_a<12>                    | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ba<0>                    | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ba<1>                    | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ba<2>                    | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_cas_n                    | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ck                       | IOB              | OUTPUT    | DIFF_SSTL18_II       |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ck_n                     | IOB              | OUTPUT    | DIFF_SSTL18_II       |       |          |      | OSERDES      |          |          |
+| mcb3_dram_cke                      | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_dm                       | IOB              | OUTPUT    | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<0>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<1>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<2>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<3>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<4>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<5>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<6>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<7>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<8>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<9>                    | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<10>                   | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<11>                   | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<12>                   | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<13>                   | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<14>                   | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dq<15>                   | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_dqs                      | IOB              | BIDIR     | DIFF_SSTL18_II       |       |          |      |              | PULLDOWN |          |
+| mcb3_dram_dqs_n                    | IOB              | BIDIR     | DIFF_SSTL18_II       |       |          |      |              | PULLUP   |          |
+| mcb3_dram_odt                      | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_ras_n                    | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_dram_udm                      | IOB              | OUTPUT    | SSTL18_II            |       |          |      |              |          |          |
+| mcb3_dram_udqs                     | IOB              | BIDIR     | DIFF_SSTL18_II       |       |          |      |              | PULLDOWN |          |
+| mcb3_dram_udqs_n                   | IOB              | BIDIR     | DIFF_SSTL18_II       |       |          |      |              | PULLUP   |          |
+| mcb3_dram_we_n                     | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OSERDES      |          |          |
+| mcb3_rzq                           | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          | DEFAULT  |
+| mcb3_zio                           | IOB              | BIDIR     | SSTL18_II            |       |          |      |              |          | DEFAULT  |
+| sw_in<0>                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| sw_in<1>                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| sw_in<2>                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| sw_in<3>                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| sw_in<4>                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| sw_in<5>                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| sw_in<6>                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| sw_in<7>                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

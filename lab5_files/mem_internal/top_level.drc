@@ -1,0 +1,12 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Sun Apr  6 10:01:13 2014
+
+drc -z top_level.ncd top_level.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net btn[1]_btn[3]_OR_11_o is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.
