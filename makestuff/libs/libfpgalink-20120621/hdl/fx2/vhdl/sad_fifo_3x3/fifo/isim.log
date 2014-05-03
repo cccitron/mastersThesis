@@ -13,7 +13,75 @@ Simulator is doing circuit initialization process.
 at 0 ps, Instance /tb_top_level/uut/producer_timer/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 at 0 ps, Instance /tb_top_level/uut/consumer_timer/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 Finished circuit initialization process.
-250 ns sadArray(0, 0): XXXXXXXX
-310 ns sadArray(0, 1): XXXXXXXX
-370 ns sadArray(0, 2): 11111111
+210 ns sadArray(0, 0): 00010100
+230 ns sadArray(0, 1): 00011001
+250 ns sadArray(0, 2): 00010001
+270 ns sadArray(0, 3): 00011110
+290 ns sadArray(0, 4): 00100011
+310 ns sadArray(0, 5): 00011001
+330 ns sadArray(0, 6): 00010100
+350 ns sadArray(0, 7): 00011001
+370 ns sadArray(0, 8): 00010001
+390 ns sadArray(0, 9): 00011110
+410 ns sadArray(0, a): 00100011
+430 ns sadArray(0, b): 00011001
+450 ns sadArray(0, c): 00010100
+470 ns sadArray(0, d): 00011001
+490 ns sadArray(0, e): 00010001
+510 ns sadArray(0, f): 00011110
+530 ns sadArray(1, 0): 00011000
+550 ns sadArray(1, 1): 00011000
+570 ns sadArray(1, 2): 00011011
+590 ns x13 minSad(0, 0): 00010100 x14 minPos(0, 0): 00000000
+630 ns x15 minSad(0, 1): 00010001 x16 minPos(0, 1): 00000010
+670 ns x17 minSad(0, 2): 00011001 x18 minPos(0, 2): 00000101
+710 ns x19 minSad(0, 3): 00010100 x1a minPos(0, 3): 00000110
+750 ns x1b minSad(0, 4): 00010001 x1c minPos(0, 4): 00001000
+790 ns x1d minSad(0, 5): 00011001 x1e minPos(0, 5): 00001011
+830 ns x1f minSad(0, 6): 00010100 x20 minPos(0, 6): 00001100
+870 ns x21 minSad(0, 7): 00010001 x22 minPos(0, 7): 00001110
+910 ns x23 minSad(0, 8): 00010001 x24 minPos(0, 8): 00000010
+950 ns x25 minSad(0, 9): 00000010 x26 minPos(0, 9): 00000110
+# restart
+# run 1.50us
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_top_level/uut/producer_timer/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_top_level/uut/consumer_timer/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+210 ns sadArray(0, 0): 00010100
+230 ns sadArray(0, 1): 00011001
+250 ns sadArray(0, 2): 00010001
+270 ns sadArray(0, 3): 00011110
+290 ns sadArray(0, 4): 00100011
+310 ns sadArray(0, 5): 00011001
+330 ns sadArray(0, 6): 00010100
+350 ns sadArray(0, 7): 00011001
+370 ns sadArray(0, 8): 00010001
+390 ns sadArray(0, 9): 00011110
+410 ns sadArray(0, a): 00100011
+430 ns sadArray(0, b): 00011001
+450 ns sadArray(0, c): 00010100
+470 ns sadArray(0, d): 00011001
+490 ns sadArray(0, e): 00010001
+510 ns sadArray(0, f): 00011110
+530 ns sadArray(1, 0): 00011000
+550 ns sadArray(1, 1): 00011000
+570 ns sadArray(1, 2): 00011011
+590 ns x13 minSad(0, 0): 00010100 x14 minPos(0, 0): 00000000
+630 ns x15 minSad(0, 1): 00010001 x16 minPos(0, 1): 00000010
+670 ns x17 minSad(0, 2): 00011001 x18 minPos(0, 2): 00000101
+710 ns x19 minSad(0, 3): 00010100 x1a minPos(0, 3): 00000110
+750 ns x1b minSad(0, 4): 00010001 x1c minPos(0, 4): 00001000
+790 ns x1d minSad(0, 5): 00011001 x1e minPos(0, 5): 00001011
+830 ns x1f minSad(0, 6): 00010100 x20 minPos(0, 6): 00001100
+870 ns x21 minSad(0, 7): 00010001 x22 minPos(0, 7): 00001110
+910 ns x23 minSad(0, 8): 00010001 x24 minPos(0, 8): 00000010
+950 ns x25 minSad(0, 9): 00000010 x26 minPos(0, 9): 00000110
+990 ns x27 minSad(0, 10): 00010001 x28 minPos(0, 10): 00001000
+1030 ns x29 minSad(0, 11): 00010001 x2a minPos(0, 11): 00001110
+1070 ns x2b minSad(0, 12): 00010001 x2c minPos(0, 12): 00000010
+1110 ns x2d minSad(0, 13): 00010001 x2e minPos(0, 13): 00001000
+1150 ns x2f minSad(0, 14): 00010001 x30 minPos(0, 14): 00000010
+1190 ns x31 disparityArray(0): 00000010
+1210 ns x32 disparityArray(1): 00000101
 # exit 0

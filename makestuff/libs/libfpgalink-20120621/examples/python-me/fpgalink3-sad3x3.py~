@@ -446,8 +446,8 @@ if __name__ == "__main__":
 
             print("Reading:")
             #flWriteChannel(handle, 1000, 0x01, 0x65)
-            for i in range (2):
-                buff = flReadChannel(handle, 1000, 0x00, 4)
+            #for i in range (2):
+            buff = flReadChannel(handle, 1000, 0x00, 10)
             print(buff)
             print("")
             #print(len(buff))

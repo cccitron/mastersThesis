@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Apr 30 12:59:20 2014
+// Written by: Map P.20131013 on Thu May 01 23:28:45 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -16,15 +16,13 @@ COMP "fx2Data_io<7>" LOCATE = SITE "C5" LEVEL 1;
 COMP "fx2Read_out" LOCATE = SITE "F13" LEVEL 1;
 COMP "fx2GotData_in" LOCATE = SITE "C15" LEVEL 1;
 COMP "fx2GotRoom_in" LOCATE = SITE "A9" LEVEL 1;
+COMP "led_out<6>" LOCATE = SITE "P16" LEVEL 1;
+COMP "led_out<7>" LOCATE = SITE "N12" LEVEL 1;
+COMP "fx2Write_out" LOCATE = SITE "E13" LEVEL 1;
 COMP "led_out<0>" LOCATE = SITE "U18" LEVEL 1;
 COMP "led_out<1>" LOCATE = SITE "M14" LEVEL 1;
 COMP "led_out<2>" LOCATE = SITE "N14" LEVEL 1;
 COMP "led_out<3>" LOCATE = SITE "L14" LEVEL 1;
-COMP "led_out<4>" LOCATE = SITE "M13" LEVEL 1;
-COMP "led_out<5>" LOCATE = SITE "D4" LEVEL 1;
-COMP "led_out<6>" LOCATE = SITE "P16" LEVEL 1;
-COMP "led_out<7>" LOCATE = SITE "N12" LEVEL 1;
-COMP "fx2Write_out" LOCATE = SITE "E13" LEVEL 1;
 COMP "sw_in<0>" LOCATE = SITE "A10" LEVEL 1;
 COMP "sw_in<1>" LOCATE = SITE "D14" LEVEL 1;
 COMP "sw_in<2>" LOCATE = SITE "C14" LEVEL 1;
@@ -33,6 +31,8 @@ COMP "sw_in<4>" LOCATE = SITE "P12" LEVEL 1;
 COMP "sw_in<5>" LOCATE = SITE "R5" LEVEL 1;
 COMP "sw_in<6>" LOCATE = SITE "T5" LEVEL 1;
 COMP "sw_in<7>" LOCATE = SITE "E4" LEVEL 1;
+COMP "led_out<4>" LOCATE = SITE "M13" LEVEL 1;
+COMP "led_out<5>" LOCATE = SITE "D4" LEVEL 1;
 COMP "fx2PktEnd_out" LOCATE = SITE "C4" LEVEL 1;
 COMP "fx2Addr_out<0>" LOCATE = SITE "A14" LEVEL 1;
 COMP "fx2Addr_out<1>" LOCATE = SITE "B14" LEVEL 1;
@@ -47,39 +47,38 @@ PIN
         = BEL
         "read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram"
         PINNAME CLKBRDCLK;
-TIMEGRP fx2Clk_in = BEL "pos_0" BEL "pos_1" BEL "count_0" BEL "count_1" BEL
-        "count_2" BEL "count_3" BEL "count_4" BEL "producer_timer/count_0" BEL
-        "producer_timer/count_1" BEL "producer_timer/count_2" BEL
-        "producer_timer/count_3" BEL "producer_timer/count_4" BEL
-        "producer_timer/count_5" BEL "producer_timer/count_6" BEL
-        "producer_timer/count_7" BEL "producer_timer/count_8" BEL
-        "producer_timer/count_9" BEL "producer_timer/count_10" BEL
-        "comm_fpga_fx2/state_FSM_FFd2" BEL "comm_fpga_fx2/state_FSM_FFd3" BEL
-        "comm_fpga_fx2/state_FSM_FFd1" BEL "comm_fpga_fx2/state_FSM_FFd4" BEL
-        "comm_fpga_fx2/count_31" BEL "comm_fpga_fx2/count_30" BEL
-        "comm_fpga_fx2/count_29" BEL "comm_fpga_fx2/count_28" BEL
-        "comm_fpga_fx2/count_27" BEL "comm_fpga_fx2/count_26" BEL
-        "comm_fpga_fx2/count_25" BEL "comm_fpga_fx2/count_24" BEL
-        "comm_fpga_fx2/count_23" BEL "comm_fpga_fx2/count_22" BEL
-        "comm_fpga_fx2/count_21" BEL "comm_fpga_fx2/count_20" BEL
-        "comm_fpga_fx2/isWrite" BEL "comm_fpga_fx2/chanAddr_6" BEL
-        "comm_fpga_fx2/chanAddr_5" BEL "comm_fpga_fx2/chanAddr_4" BEL
-        "comm_fpga_fx2/chanAddr_3" BEL "comm_fpga_fx2/chanAddr_2" BEL
-        "comm_fpga_fx2/chanAddr_1" BEL "comm_fpga_fx2/chanAddr_0" BEL
-        "comm_fpga_fx2/isAligned" BEL "comm_fpga_fx2/count_13" BEL
+TIMEGRP fx2Clk_in = BEL "count_0" BEL "count_1" BEL "count_2" BEL
+        "producer_timer/count_0" BEL "producer_timer/count_1" BEL
+        "producer_timer/count_2" BEL "producer_timer/count_3" BEL
+        "producer_timer/count_4" BEL "producer_timer/count_5" BEL
+        "producer_timer/count_6" BEL "producer_timer/count_7" BEL
+        "producer_timer/count_8" BEL "producer_timer/count_9" BEL
+        "producer_timer/count_10" BEL "comm_fpga_fx2/state_FSM_FFd2" BEL
+        "comm_fpga_fx2/state_FSM_FFd3" BEL "comm_fpga_fx2/state_FSM_FFd1" BEL
+        "comm_fpga_fx2/state_FSM_FFd4" BEL "comm_fpga_fx2/count_31" BEL
+        "comm_fpga_fx2/count_30" BEL "comm_fpga_fx2/count_29" BEL
+        "comm_fpga_fx2/count_28" BEL "comm_fpga_fx2/count_27" BEL
+        "comm_fpga_fx2/count_26" BEL "comm_fpga_fx2/count_25" BEL
+        "comm_fpga_fx2/count_24" BEL "comm_fpga_fx2/count_23" BEL
+        "comm_fpga_fx2/count_22" BEL "comm_fpga_fx2/count_21" BEL
+        "comm_fpga_fx2/count_20" BEL "comm_fpga_fx2/count_19" BEL
+        "comm_fpga_fx2/count_18" BEL "comm_fpga_fx2/count_17" BEL
+        "comm_fpga_fx2/count_16" BEL "comm_fpga_fx2/count_15" BEL
+        "comm_fpga_fx2/count_14" BEL "comm_fpga_fx2/count_13" BEL
         "comm_fpga_fx2/count_12" BEL "comm_fpga_fx2/count_11" BEL
         "comm_fpga_fx2/count_10" BEL "comm_fpga_fx2/count_9" BEL
         "comm_fpga_fx2/count_8" BEL "comm_fpga_fx2/count_7" BEL
         "comm_fpga_fx2/count_6" BEL "comm_fpga_fx2/count_5" BEL
         "comm_fpga_fx2/count_4" BEL "comm_fpga_fx2/count_3" BEL
         "comm_fpga_fx2/count_2" BEL "comm_fpga_fx2/count_1" BEL
-        "comm_fpga_fx2/count_0" BEL "comm_fpga_fx2/count_14" BEL
-        "comm_fpga_fx2/count_15" BEL "comm_fpga_fx2/count_16" BEL
-        "comm_fpga_fx2/count_17" BEL "comm_fpga_fx2/count_18" BEL
-        "comm_fpga_fx2/count_19" BEL "comm_fpga_fx2/state_FSM_FFd3_1" BEL
-        "comm_fpga_fx2/state_FSM_FFd2_1" BEL "comm_fpga_fx2/state_FSM_FFd1_1"
-        BEL "comm_fpga_fx2/state_FSM_FFd4_1" BEL
-        "comm_fpga_fx2/state_FSM_FFd1_2" BEL "fx2Clk_in_BUFGP/BUFG" BEL
+        "comm_fpga_fx2/count_0" BEL "comm_fpga_fx2/isWrite" BEL
+        "comm_fpga_fx2/chanAddr_6" BEL "comm_fpga_fx2/chanAddr_5" BEL
+        "comm_fpga_fx2/chanAddr_4" BEL "comm_fpga_fx2/chanAddr_3" BEL
+        "comm_fpga_fx2/chanAddr_2" BEL "comm_fpga_fx2/chanAddr_1" BEL
+        "comm_fpga_fx2/chanAddr_0" BEL "switch" BEL "comm_fpga_fx2/isAligned"
+        BEL "pos_1" BEL "comm_fpga_fx2/state_FSM_FFd2_1" BEL
+        "comm_fpga_fx2/state_FSM_FFd1_1" BEL "comm_fpga_fx2/state_FSM_FFd3_1"
+        BEL "fx2Clk_in_BUFGP/BUFG" BEL
         "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_0"
         BEL
         "write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_1"

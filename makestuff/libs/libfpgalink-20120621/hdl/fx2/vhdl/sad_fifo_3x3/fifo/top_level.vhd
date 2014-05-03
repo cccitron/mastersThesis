@@ -92,6 +92,39 @@ architecture behavioural of top_level is
 	signal producerSpeed           : std_logic_vector(3 downto 0);
 	signal consumerSpeed           : std_logic_vector(3 downto 0);
    
+   -- BRAM stuff for right & left images
+   
+   COMPONENT BRAM_right_image
+      PORT (
+         clka  : IN  STD_LOGIC;
+         ena   : IN  STD_LOGIC;
+         wea   : IN  STD_LOGIC_VECTOR(0 DOWNTO 0);
+         addra : IN  STD_LOGIC_VECTOR(5 DOWNTO 0);
+         dina  : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+         douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+      );
+   END COMPONENT;
+   
+   COMPONENT BRAM_left_image
+      PORT (
+         clka  : IN  STD_LOGIC;
+         ena   : IN  STD_LOGIC;
+         wea   : IN  STD_LOGIC_VECTOR(0 DOWNTO 0);
+         addra : IN  STD_LOGIC_VECTOR(5 DOWNTO 0);
+         dina  : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+         douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+      );
+   END COMPONENT;
+   
+   SIGNAL clkR,  clkL  : STD_LOGIC := '0';
+   SIGNAL enR,   enL   : STD_LOGIC := '1';
+   SIGNAL weR,   weL   : STD_LOGIC_VECTOR(0 DOWNTO 0) := "0";
+   SIGNAL addrR, addrL : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000000";
+   SIGNAL dinR,  dinL  : STD_LOGIC_VECTOR(7 DOWNTO 0);
+   SIGNAL doutR, doutL : STD_LOGIC_VECTOR(7 DOWNTO 0);
+   
+   -- SAD & min comp stuff
+   
    signal clkImg, clkDisp, clkTempl, clkMin : std_logic := '0';
    signal clkSAD0, clkSAD1, clkSAD2 : std_logic := '0';
    signal ena, enTempl, enaMin, enOut : std_logic := '1';
@@ -171,8 +204,12 @@ architecture behavioural of top_level is
    
    -- Currently for output of values over fpgalink
 --   signal pos : std_logic_vector(1 downto 0) := "00";
-   SIGNAL pos      : INTEGER RANGE 0 to 3 := 0;
-   SIGNAL pos_next : INTEGER RANGE 0 to 3 := 0;
+   SIGNAL pos         : INTEGER := 0; -- RANGE 0 to 3 := 0;
+   SIGNAL pos_next    : INTEGER := 0; -- RANGE 0 to 3 := 0;
+   SIGNAL switch      : STD_LOGIC := '0';
+   SIGNAL switch_next : STD_LOGIC := '0';
+   
+   SIGNAL outlink : STD_LOGIC_VECTOR(7 DOWNTO 0);
    
 --   type array_type_add is array (0 to 2) of std_logic_vector(71 downto 0);
 --   signal b : array_type_add := (x"020705010704080406", x"070508070402040608", x"050806040207060805");
@@ -185,15 +222,31 @@ architecture behavioural of top_level is
    SIGNAL summer : array_type_signed;
    
 begin                                                                     --BEGIN_SNIPPET(fifos)
+--	-- Infer registers
+--	process(fx2Clk_in)
+--	begin
+--		if ( rising_edge(fx2Clk_in) ) then
+--			count <= count_next;
+--         IF (pos = 3) THEN
+--            pos <= 0;
+--         ELSE
+--            pos <= pos_next;
+--         END IF;
+--		end if;
+--	end process;
+
 	-- Infer registers
 	process(fx2Clk_in)
 	begin
 		if ( rising_edge(fx2Clk_in) ) then
 			count <= count_next;
-         IF (pos = 3) THEN
+--         switch <= switch_next;
+         IF (pos = 2) THEN
             pos <= 0;
+            switch <= NOT(switch);
          ELSE
             pos <= pos_next;
+            switch <= switch;
          END IF;
 		end if;
 	end process;
@@ -215,12 +268,54 @@ begin                                                                     --BEGI
 	--   flags(0) driven by readFifoInputReady
 	
    -- Ideally, count_next will get the next vector from disparityArray when readFifoInpuValid = '1'
-   count_next <= sadArray(0, pos+1) when readFifoInputValid = '1'
-		else sadArray(0, pos);
+--   count_next <= sadArray(0, pos+1) when readFifoInputValid = '1'
+--		else sadArray(0, pos);
+
+--   count_next <= templateArray((pos*ncol) + 1) when switch = '1'
+--		else "0000" & disparityArray(pos);
+
+--   count_next <= outlink when readFifoInputValid = '1'
+--		else outlink;
+
+--   count_next <= templateArray(ncol + 2 + pos) when readFifoInputValid = '1'
+--		else templateArray(ncol + 1 + pos);
+--      
+--   count_next <= "0000" & disparityArray(pos + 1) when readFifoInputValid = '1'
+--		else "0000" & disparityArray(pos);
       
+   output : PROCESS(readFifoInputValid, switch) IS
+   BEGIN
+      IF (readFifoInputValid = '1') THEN
+         IF (switch = '0') THEN
+            count_next <= templateArray(ncol + 2 + pos);
+--            switch_next <= NOT(switch);
+         ELSE
+            count_next <= "0000" & disparityArray(pos + 1);
+--            switch_next <= NOT(switch);
+         END IF;
+      ELSE
+         IF (switch = '0') THEN
+            count_next <= templateArray(ncol + 1 + pos);
+--            switch_next <= NOT(switch);
+         ELSE
+            count_next <= "0000" & disparityArray(pos);
+--            switch_next <= NOT(switch);
+         END IF;
+      END IF;
+   END PROCESS output;
+
    pos_next <= pos+1 WHEN readFifoInputValid = '1'
       ELSE pos;
+   
+--   switch_next <= NOT(switch) WHEN readFifoInputValid = '1'
+--      ELSE switch;
       
+      
+--   with switch select outlink <=
+--		templateArray((pos*ncol) + 1) when '0',  -- get data from read FIFO
+--		"0000" & disparityArray(pos)  when '1',  -- read the depth of the write FIFO
+--		x"ff"                         when others;
+   
 --   count_next <= sadArray(0, to_integer(unsigned(pos)));
 --   pos <= std_logic_vector(unsigned(pos) + 1) when readFifoInputValid = '1'
 --		else pos;
@@ -333,6 +428,8 @@ begin                                                                     --BEGI
       clkDisp  <= NOT(clkDisp);
       clkTempl <= NOT(clkTempl);
       clkMin   <= NOT(clkMin);
+      clkR     <= NOT(clkR);
+      clkL     <= NOT(clkL);
    END PROCESS clocks;
 
    -- LED output for SAD and disparity values, display dependent on switches
@@ -392,6 +489,42 @@ begin                                                                     --BEGI
       "0000" & disparityArray(0)       WHEN x"31",
       "0000" & disparityArray(1)       WHEN x"32",
 		x"00"                            WHEN OTHERS;
+
+--------------------------------------------------------------------------------
+-- Sum of the Absolute Differences Algorithm
+--------------------------------------------------------------------------------
+
+--   -- BRAM for Right Image
+--   rightImgBRAM : BRAM_right_image
+--      PORT MAP (
+--         clka  => clkR,
+--         ena   => enR,
+--         wea   => weR,
+--         addra => addrR,
+--         dina  => dinR,
+--         douta => doutR
+--   );
+--
+--   -- BRAM for Left Image
+--   leftImgBRAM : BRAM_left_image
+--      PORT MAP (
+--         clka  => clkL,
+--         ena   => enL,
+--         wea   => weL,
+--         addra => addrL,
+--         dina  => dinL,
+--         douta => doutL
+--   );
+--   
+--   readRightBRAM : PROCESS(clkR) IS
+--   BEGIN
+--      IF (RISING_EDGE(clkR)) THEN
+--         
+--      ELSE
+--         
+--      END IF;
+--   END PROCESS readRightBRAM;
+--   
 
 --------------------------------------------------------------------------------
 -- Sum of the Absolute Differences Algorithm

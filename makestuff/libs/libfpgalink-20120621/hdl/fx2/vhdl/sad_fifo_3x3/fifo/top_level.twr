@@ -29,19 +29,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 3894 paths analyzed, 695 endpoints analyzed, 0 failing endpoints
+ 3578 paths analyzed, 737 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  11.296ns.
+ Minimum period is  12.122ns.
 --------------------------------------------------------------------------------
 
-Paths for end point comm_fpga_fx2/count_31 (SLICE_X26Y122.A6), 32 paths
+Paths for end point comm_fpga_fx2/state_FSM_FFd3_1 (SLICE_X4Y121.DX), 39 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     8.704ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               comm_fpga_fx2/count_18 (FF)
-  Destination:          comm_fpga_fx2/count_31 (FF)
+Slack (setup path):     7.878ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga_fx2/count_24 (FF)
+  Destination:          comm_fpga_fx2/state_FSM_FFd3_1 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      11.252ns (Levels of Logic = 5)
-  Clock Path Skew:      -0.009ns (0.147 - 0.156)
+  Data Path Delay:      12.069ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.018ns (0.145 - 0.163)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -52,40 +52,35 @@ Slack (setup path):     8.704ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/count_18 to comm_fpga_fx2/count_31
+  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/count_24 to comm_fpga_fx2/state_FSM_FFd3_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X27Y122.AQ     Tcko                  0.391   comm_fpga_fx2/count<19>
-                                                       comm_fpga_fx2/count_18
-    SLICE_X6Y119.C4      net (fanout=4)        5.033   comm_fpga_fx2/count<18>
-    SLICE_X6Y119.COUT    Topcyc                0.277   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<19>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_lut<18>_INV_0
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<19>
-    SLICE_X6Y120.CIN     net (fanout=1)        0.082   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<19>
-    SLICE_X6Y120.COUT    Tbyp                  0.076   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<23>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<23>
-    SLICE_X6Y121.CIN     net (fanout=1)        0.003   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<23>
-    SLICE_X6Y121.COUT    Tbyp                  0.076   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<27>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<27>
-    SLICE_X6Y122.CIN     net (fanout=1)        0.003   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<27>
-    SLICE_X6Y122.DMUX    Tcind                 0.302   comm_fpga_fx2/GND_5_o_GND_5_o_sub_18_OUT<31>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_xor<31>
-    SLICE_X26Y122.A6     net (fanout=1)        4.720   comm_fpga_fx2/GND_5_o_GND_5_o_sub_18_OUT<31>
-    SLICE_X26Y122.CLK    Tas                   0.289   comm_fpga_fx2/count<31>
-                                                       comm_fpga_fx2/Mmux_count_next39
-                                                       comm_fpga_fx2/count_31
+    SLICE_X4Y125.CQ      Tcko                  0.408   comm_fpga_fx2/count<24>
+                                                       comm_fpga_fx2/count_24
+    SLICE_X27Y123.D1     net (fanout=3)        5.288   comm_fpga_fx2/count<24>
+    SLICE_X27Y123.D      Tilo                  0.259   comm_fpga_fx2/state_FSM_FFd3
+                                                       comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>3
+    SLICE_X27Y123.A2     net (fanout=1)        0.684   comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>2
+    SLICE_X27Y123.A      Tilo                  0.259   comm_fpga_fx2/state_FSM_FFd3
+                                                       comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>6
+    SLICE_X27Y123.C2     net (fanout=4)        0.444   comm_fpga_fx2/count[31]_GND_5_o_equal_19_o
+    SLICE_X27Y123.C      Tilo                  0.259   comm_fpga_fx2/state_FSM_FFd3
+                                                       comm_fpga_fx2/state_FSM_FFd3-In1
+    SLICE_X4Y121.DX      net (fanout=1)        4.332   comm_fpga_fx2/state_FSM_FFd3-In
+    SLICE_X4Y121.CLK     Tdick                 0.136   comm_fpga_fx2/state_FSM_FFd3_1
+                                                       comm_fpga_fx2/state_FSM_FFd3_1
     -------------------------------------------------  ---------------------------
-    Total                                     11.252ns (1.411ns logic, 9.841ns route)
-                                                       (12.5% logic, 87.5% route)
+    Total                                     12.069ns (1.321ns logic, 10.748ns route)
+                                                       (10.9% logic, 89.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     9.062ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               comm_fpga_fx2/count_20 (FF)
-  Destination:          comm_fpga_fx2/count_31 (FF)
+Slack (setup path):     8.181ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga_fx2/count_10 (FF)
+  Destination:          comm_fpga_fx2/state_FSM_FFd3_1 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.897ns (Levels of Logic = 4)
-  Clock Path Skew:      -0.006ns (0.147 - 0.153)
+  Data Path Delay:      11.778ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.006ns (0.145 - 0.151)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -96,37 +91,35 @@ Slack (setup path):     9.062ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/count_20 to comm_fpga_fx2/count_31
+  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/count_10 to comm_fpga_fx2/state_FSM_FFd3_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X26Y121.AQ     Tcko                  0.447   comm_fpga_fx2/count<21>
-                                                       comm_fpga_fx2/count_20
-    SLICE_X6Y120.A2      net (fanout=3)        4.678   comm_fpga_fx2/count<20>
-    SLICE_X6Y120.COUT    Topcya                0.379   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<23>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_lut<20>_INV_0
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<23>
-    SLICE_X6Y121.CIN     net (fanout=1)        0.003   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<23>
-    SLICE_X6Y121.COUT    Tbyp                  0.076   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<27>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<27>
-    SLICE_X6Y122.CIN     net (fanout=1)        0.003   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<27>
-    SLICE_X6Y122.DMUX    Tcind                 0.302   comm_fpga_fx2/GND_5_o_GND_5_o_sub_18_OUT<31>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_xor<31>
-    SLICE_X26Y122.A6     net (fanout=1)        4.720   comm_fpga_fx2/GND_5_o_GND_5_o_sub_18_OUT<31>
-    SLICE_X26Y122.CLK    Tas                   0.289   comm_fpga_fx2/count<31>
-                                                       comm_fpga_fx2/Mmux_count_next39
-                                                       comm_fpga_fx2/count_31
+    SLICE_X5Y120.AQ      Tcko                  0.391   comm_fpga_fx2/count<11>
+                                                       comm_fpga_fx2/count_10
+    SLICE_X4Y121.A2      net (fanout=3)        0.808   comm_fpga_fx2/count<10>
+    SLICE_X4Y121.A       Tilo                  0.205   comm_fpga_fx2/state_FSM_FFd3_1
+                                                       comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>5
+    SLICE_X27Y123.A1     net (fanout=1)        4.944   comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>4
+    SLICE_X27Y123.A      Tilo                  0.259   comm_fpga_fx2/state_FSM_FFd3
+                                                       comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>6
+    SLICE_X27Y123.C2     net (fanout=4)        0.444   comm_fpga_fx2/count[31]_GND_5_o_equal_19_o
+    SLICE_X27Y123.C      Tilo                  0.259   comm_fpga_fx2/state_FSM_FFd3
+                                                       comm_fpga_fx2/state_FSM_FFd3-In1
+    SLICE_X4Y121.DX      net (fanout=1)        4.332   comm_fpga_fx2/state_FSM_FFd3-In
+    SLICE_X4Y121.CLK     Tdick                 0.136   comm_fpga_fx2/state_FSM_FFd3_1
+                                                       comm_fpga_fx2/state_FSM_FFd3_1
     -------------------------------------------------  ---------------------------
-    Total                                     10.897ns (1.493ns logic, 9.404ns route)
-                                                       (13.7% logic, 86.3% route)
+    Total                                     11.778ns (1.250ns logic, 10.528ns route)
+                                                       (10.6% logic, 89.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     9.200ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     8.307ns (requirement - (data path - clock path skew + uncertainty))
   Source:               comm_fpga_fx2/count_13 (FF)
-  Destination:          comm_fpga_fx2/count_31 (FF)
+  Destination:          comm_fpga_fx2/state_FSM_FFd3_1 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.761ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.004ns (0.147 - 0.151)
+  Data Path Delay:      11.644ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.014ns (0.233 - 0.247)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -137,46 +130,38 @@ Slack (setup path):     9.200ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/count_13 to comm_fpga_fx2/count_31
+  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/count_13 to comm_fpga_fx2/state_FSM_FFd3_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X26Y120.DQ     Tcko                  0.447   comm_fpga_fx2/count<13>
+    SLICE_X2Y121.CQ      Tcko                  0.447   comm_fpga_fx2/count<13>
                                                        comm_fpga_fx2/count_13
-    SLICE_X6Y118.B2      net (fanout=4)        4.304   comm_fpga_fx2/count<13>
-    SLICE_X6Y118.COUT    Topcyb                0.380   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<15>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_lut<13>_INV_0
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<15>
-    SLICE_X6Y119.CIN     net (fanout=1)        0.003   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<15>
-    SLICE_X6Y119.COUT    Tbyp                  0.076   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<19>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<19>
-    SLICE_X6Y120.CIN     net (fanout=1)        0.082   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<19>
-    SLICE_X6Y120.COUT    Tbyp                  0.076   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<23>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<23>
-    SLICE_X6Y121.CIN     net (fanout=1)        0.003   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<23>
-    SLICE_X6Y121.COUT    Tbyp                  0.076   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<27>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<27>
-    SLICE_X6Y122.CIN     net (fanout=1)        0.003   comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_cy<27>
-    SLICE_X6Y122.DMUX    Tcind                 0.302   comm_fpga_fx2/GND_5_o_GND_5_o_sub_18_OUT<31>
-                                                       comm_fpga_fx2/Msub_GND_5_o_GND_5_o_sub_18_OUT<31:0>_xor<31>
-    SLICE_X26Y122.A6     net (fanout=1)        4.720   comm_fpga_fx2/GND_5_o_GND_5_o_sub_18_OUT<31>
-    SLICE_X26Y122.CLK    Tas                   0.289   comm_fpga_fx2/count<31>
-                                                       comm_fpga_fx2/Mmux_count_next39
-                                                       comm_fpga_fx2/count_31
+    SLICE_X4Y121.A4      net (fanout=3)        0.618   comm_fpga_fx2/count<13>
+    SLICE_X4Y121.A       Tilo                  0.205   comm_fpga_fx2/state_FSM_FFd3_1
+                                                       comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>5
+    SLICE_X27Y123.A1     net (fanout=1)        4.944   comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>4
+    SLICE_X27Y123.A      Tilo                  0.259   comm_fpga_fx2/state_FSM_FFd3
+                                                       comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>6
+    SLICE_X27Y123.C2     net (fanout=4)        0.444   comm_fpga_fx2/count[31]_GND_5_o_equal_19_o
+    SLICE_X27Y123.C      Tilo                  0.259   comm_fpga_fx2/state_FSM_FFd3
+                                                       comm_fpga_fx2/state_FSM_FFd3-In1
+    SLICE_X4Y121.DX      net (fanout=1)        4.332   comm_fpga_fx2/state_FSM_FFd3-In
+    SLICE_X4Y121.CLK     Tdick                 0.136   comm_fpga_fx2/state_FSM_FFd3_1
+                                                       comm_fpga_fx2/state_FSM_FFd3_1
     -------------------------------------------------  ---------------------------
-    Total                                     10.761ns (1.646ns logic, 9.115ns route)
-                                                       (15.3% logic, 84.7% route)
+    Total                                     11.644ns (1.306ns logic, 10.338ns route)
+                                                       (11.2% logic, 88.8% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point comm_fpga_fx2/count_22 (SLICE_X6Y125.CE), 12 paths
+Paths for end point write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4 (SLICE_X4Y115.CE), 15 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     9.019ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               comm_fpga_fx2/chanAddr_4 (FF)
-  Destination:          comm_fpga_fx2/count_22 (FF)
+Slack (setup path):     9.951ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga_fx2/chanAddr_2 (FF)
+  Destination:          write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.933ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.241 - 0.254)
+  Data Path Delay:      10.010ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.004ns (0.240 - 0.244)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -187,35 +172,35 @@ Slack (setup path):     9.019ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_4 to comm_fpga_fx2/count_22
+  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_2 to write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y114.AQ      Tcko                  0.447   comm_fpga_fx2/chanAddr<6>
-                                                       comm_fpga_fx2/chanAddr_4
-    SLICE_X7Y112.D3      net (fanout=2)        0.512   comm_fpga_fx2/chanAddr<4>
-    SLICE_X7Y112.D       Tilo                  0.259   N4
-                                                       GND_4_o_chanAddr[6]_equal_7_o<6>_SW0
-    SLICE_X24Y111.C2     net (fanout=4)        3.233   N4
-    SLICE_X24Y111.C      Tilo                  0.205   N94
-                                                       comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o1
-    SLICE_X26Y120.C4     net (fanout=2)        1.088   comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o
-    SLICE_X26Y120.C      Tilo                  0.204   comm_fpga_fx2/count<13>
-                                                       comm_fpga_fx2/_n0223_inv1
-    SLICE_X6Y125.CE      net (fanout=18)       4.654   comm_fpga_fx2/_n0223_inv
-    SLICE_X6Y125.CLK     Tceck                 0.331   comm_fpga_fx2/count<23>
-                                                       comm_fpga_fx2/count_22
+    SLICE_X4Y120.CQ      Tcko                  0.408   comm_fpga_fx2/chanAddr<3>
+                                                       comm_fpga_fx2/chanAddr_2
+    SLICE_X4Y121.B2      net (fanout=2)        0.986   comm_fpga_fx2/chanAddr<2>
+    SLICE_X4Y121.B       Tilo                  0.205   comm_fpga_fx2/state_FSM_FFd3_1
+                                                       readFifoOutputReady111
+    SLICE_X24Y110.D6     net (fanout=5)        3.696   readFifoOutputReady11
+    SLICE_X24Y110.D      Tilo                  0.205   writeFifoInputValid
+                                                       writeFifoInputValid
+    SLICE_X25Y110.A1     net (fanout=2)        0.542   writeFifoInputValid
+    SLICE_X25Y110.AMUX   Tilo                  0.313   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/Mxor_cntr_en_xo<0>1
+    SLICE_X4Y115.CE      net (fanout=2)        3.320   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/cntr_en
+    SLICE_X4Y115.CLK     Tceck                 0.335   fifoCount<15>
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4
     -------------------------------------------------  ---------------------------
-    Total                                     10.933ns (1.446ns logic, 9.487ns route)
-                                                       (13.2% logic, 86.8% route)
+    Total                                     10.010ns (1.466ns logic, 8.544ns route)
+                                                       (14.6% logic, 85.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     9.100ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               comm_fpga_fx2/chanAddr_5 (FF)
-  Destination:          comm_fpga_fx2/count_22 (FF)
+Slack (setup path):     10.136ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga_fx2/chanAddr_1 (FF)
+  Destination:          write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.852ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.241 - 0.254)
+  Data Path Delay:      9.825ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.004ns (0.240 - 0.244)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -226,35 +211,35 @@ Slack (setup path):     9.100ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_5 to comm_fpga_fx2/count_22
+  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_1 to write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y114.BQ      Tcko                  0.447   comm_fpga_fx2/chanAddr<6>
-                                                       comm_fpga_fx2/chanAddr_5
-    SLICE_X7Y112.D4      net (fanout=2)        0.431   comm_fpga_fx2/chanAddr<5>
-    SLICE_X7Y112.D       Tilo                  0.259   N4
-                                                       GND_4_o_chanAddr[6]_equal_7_o<6>_SW0
-    SLICE_X24Y111.C2     net (fanout=4)        3.233   N4
-    SLICE_X24Y111.C      Tilo                  0.205   N94
-                                                       comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o1
-    SLICE_X26Y120.C4     net (fanout=2)        1.088   comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o
-    SLICE_X26Y120.C      Tilo                  0.204   comm_fpga_fx2/count<13>
-                                                       comm_fpga_fx2/_n0223_inv1
-    SLICE_X6Y125.CE      net (fanout=18)       4.654   comm_fpga_fx2/_n0223_inv
-    SLICE_X6Y125.CLK     Tceck                 0.331   comm_fpga_fx2/count<23>
-                                                       comm_fpga_fx2/count_22
+    SLICE_X4Y120.BQ      Tcko                  0.408   comm_fpga_fx2/chanAddr<3>
+                                                       comm_fpga_fx2/chanAddr_1
+    SLICE_X24Y109.C1     net (fanout=12)       4.132   comm_fpga_fx2/chanAddr<1>
+    SLICE_X24Y109.C      Tilo                  0.205   write_fifo/inputFull
+                                                       writeFifoInputValid_SW0
+    SLICE_X24Y110.D5     net (fanout=1)        0.365   N18
+    SLICE_X24Y110.D      Tilo                  0.205   writeFifoInputValid
+                                                       writeFifoInputValid
+    SLICE_X25Y110.A1     net (fanout=2)        0.542   writeFifoInputValid
+    SLICE_X25Y110.AMUX   Tilo                  0.313   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/Mxor_cntr_en_xo<0>1
+    SLICE_X4Y115.CE      net (fanout=2)        3.320   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/cntr_en
+    SLICE_X4Y115.CLK     Tceck                 0.335   fifoCount<15>
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4
     -------------------------------------------------  ---------------------------
-    Total                                     10.852ns (1.446ns logic, 9.406ns route)
-                                                       (13.3% logic, 86.7% route)
+    Total                                      9.825ns (1.466ns logic, 8.359ns route)
+                                                       (14.9% logic, 85.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     9.178ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               comm_fpga_fx2/chanAddr_6 (FF)
-  Destination:          comm_fpga_fx2/count_22 (FF)
+Slack (setup path):     10.318ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga_fx2/chanAddr_3 (FF)
+  Destination:          write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.774ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.241 - 0.254)
+  Data Path Delay:      9.643ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.004ns (0.240 - 0.244)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -265,38 +250,38 @@ Slack (setup path):     9.178ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_6 to comm_fpga_fx2/count_22
+  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_3 to write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y114.CQ      Tcko                  0.447   comm_fpga_fx2/chanAddr<6>
-                                                       comm_fpga_fx2/chanAddr_6
-    SLICE_X24Y111.D1     net (fanout=5)        3.522   comm_fpga_fx2/chanAddr<6>
-    SLICE_X24Y111.D      Tilo                  0.205   N94
-                                                       GND_4_o_chanAddr[6]_equal_7_o<6>_SW3
-    SLICE_X24Y111.C6     net (fanout=1)        0.118   N94
-    SLICE_X24Y111.C      Tilo                  0.205   N94
-                                                       comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o1
-    SLICE_X26Y120.C4     net (fanout=2)        1.088   comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o
-    SLICE_X26Y120.C      Tilo                  0.204   comm_fpga_fx2/count<13>
-                                                       comm_fpga_fx2/_n0223_inv1
-    SLICE_X6Y125.CE      net (fanout=18)       4.654   comm_fpga_fx2/_n0223_inv
-    SLICE_X6Y125.CLK     Tceck                 0.331   comm_fpga_fx2/count<23>
-                                                       comm_fpga_fx2/count_22
+    SLICE_X4Y120.DQ      Tcko                  0.408   comm_fpga_fx2/chanAddr<3>
+                                                       comm_fpga_fx2/chanAddr_3
+    SLICE_X4Y121.B1      net (fanout=2)        0.619   comm_fpga_fx2/chanAddr<3>
+    SLICE_X4Y121.B       Tilo                  0.205   comm_fpga_fx2/state_FSM_FFd3_1
+                                                       readFifoOutputReady111
+    SLICE_X24Y110.D6     net (fanout=5)        3.696   readFifoOutputReady11
+    SLICE_X24Y110.D      Tilo                  0.205   writeFifoInputValid
+                                                       writeFifoInputValid
+    SLICE_X25Y110.A1     net (fanout=2)        0.542   writeFifoInputValid
+    SLICE_X25Y110.AMUX   Tilo                  0.313   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/Mxor_cntr_en_xo<0>1
+    SLICE_X4Y115.CE      net (fanout=2)        3.320   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/cntr_en
+    SLICE_X4Y115.CLK     Tceck                 0.335   fifoCount<15>
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_4
     -------------------------------------------------  ---------------------------
-    Total                                     10.774ns (1.392ns logic, 9.382ns route)
-                                                       (12.9% logic, 87.1% route)
+    Total                                      9.643ns (1.466ns logic, 8.177ns route)
+                                                       (15.2% logic, 84.8% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point comm_fpga_fx2/count_23 (SLICE_X6Y125.CE), 12 paths
+Paths for end point write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7 (SLICE_X4Y115.CE), 15 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     9.059ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               comm_fpga_fx2/chanAddr_4 (FF)
-  Destination:          comm_fpga_fx2/count_23 (FF)
+Slack (setup path):     9.971ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga_fx2/chanAddr_2 (FF)
+  Destination:          write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.893ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.241 - 0.254)
+  Data Path Delay:      9.990ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.004ns (0.240 - 0.244)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -307,35 +292,35 @@ Slack (setup path):     9.059ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_4 to comm_fpga_fx2/count_23
+  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_2 to write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y114.AQ      Tcko                  0.447   comm_fpga_fx2/chanAddr<6>
-                                                       comm_fpga_fx2/chanAddr_4
-    SLICE_X7Y112.D3      net (fanout=2)        0.512   comm_fpga_fx2/chanAddr<4>
-    SLICE_X7Y112.D       Tilo                  0.259   N4
-                                                       GND_4_o_chanAddr[6]_equal_7_o<6>_SW0
-    SLICE_X24Y111.C2     net (fanout=4)        3.233   N4
-    SLICE_X24Y111.C      Tilo                  0.205   N94
-                                                       comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o1
-    SLICE_X26Y120.C4     net (fanout=2)        1.088   comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o
-    SLICE_X26Y120.C      Tilo                  0.204   comm_fpga_fx2/count<13>
-                                                       comm_fpga_fx2/_n0223_inv1
-    SLICE_X6Y125.CE      net (fanout=18)       4.654   comm_fpga_fx2/_n0223_inv
-    SLICE_X6Y125.CLK     Tceck                 0.291   comm_fpga_fx2/count<23>
-                                                       comm_fpga_fx2/count_23
+    SLICE_X4Y120.CQ      Tcko                  0.408   comm_fpga_fx2/chanAddr<3>
+                                                       comm_fpga_fx2/chanAddr_2
+    SLICE_X4Y121.B2      net (fanout=2)        0.986   comm_fpga_fx2/chanAddr<2>
+    SLICE_X4Y121.B       Tilo                  0.205   comm_fpga_fx2/state_FSM_FFd3_1
+                                                       readFifoOutputReady111
+    SLICE_X24Y110.D6     net (fanout=5)        3.696   readFifoOutputReady11
+    SLICE_X24Y110.D      Tilo                  0.205   writeFifoInputValid
+                                                       writeFifoInputValid
+    SLICE_X25Y110.A1     net (fanout=2)        0.542   writeFifoInputValid
+    SLICE_X25Y110.AMUX   Tilo                  0.313   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/Mxor_cntr_en_xo<0>1
+    SLICE_X4Y115.CE      net (fanout=2)        3.320   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/cntr_en
+    SLICE_X4Y115.CLK     Tceck                 0.315   fifoCount<15>
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7
     -------------------------------------------------  ---------------------------
-    Total                                     10.893ns (1.406ns logic, 9.487ns route)
-                                                       (12.9% logic, 87.1% route)
+    Total                                      9.990ns (1.446ns logic, 8.544ns route)
+                                                       (14.5% logic, 85.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     9.140ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               comm_fpga_fx2/chanAddr_5 (FF)
-  Destination:          comm_fpga_fx2/count_23 (FF)
+Slack (setup path):     10.156ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga_fx2/chanAddr_1 (FF)
+  Destination:          write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.812ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.241 - 0.254)
+  Data Path Delay:      9.805ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.004ns (0.240 - 0.244)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -346,35 +331,35 @@ Slack (setup path):     9.140ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_5 to comm_fpga_fx2/count_23
+  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_1 to write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y114.BQ      Tcko                  0.447   comm_fpga_fx2/chanAddr<6>
-                                                       comm_fpga_fx2/chanAddr_5
-    SLICE_X7Y112.D4      net (fanout=2)        0.431   comm_fpga_fx2/chanAddr<5>
-    SLICE_X7Y112.D       Tilo                  0.259   N4
-                                                       GND_4_o_chanAddr[6]_equal_7_o<6>_SW0
-    SLICE_X24Y111.C2     net (fanout=4)        3.233   N4
-    SLICE_X24Y111.C      Tilo                  0.205   N94
-                                                       comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o1
-    SLICE_X26Y120.C4     net (fanout=2)        1.088   comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o
-    SLICE_X26Y120.C      Tilo                  0.204   comm_fpga_fx2/count<13>
-                                                       comm_fpga_fx2/_n0223_inv1
-    SLICE_X6Y125.CE      net (fanout=18)       4.654   comm_fpga_fx2/_n0223_inv
-    SLICE_X6Y125.CLK     Tceck                 0.291   comm_fpga_fx2/count<23>
-                                                       comm_fpga_fx2/count_23
+    SLICE_X4Y120.BQ      Tcko                  0.408   comm_fpga_fx2/chanAddr<3>
+                                                       comm_fpga_fx2/chanAddr_1
+    SLICE_X24Y109.C1     net (fanout=12)       4.132   comm_fpga_fx2/chanAddr<1>
+    SLICE_X24Y109.C      Tilo                  0.205   write_fifo/inputFull
+                                                       writeFifoInputValid_SW0
+    SLICE_X24Y110.D5     net (fanout=1)        0.365   N18
+    SLICE_X24Y110.D      Tilo                  0.205   writeFifoInputValid
+                                                       writeFifoInputValid
+    SLICE_X25Y110.A1     net (fanout=2)        0.542   writeFifoInputValid
+    SLICE_X25Y110.AMUX   Tilo                  0.313   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/Mxor_cntr_en_xo<0>1
+    SLICE_X4Y115.CE      net (fanout=2)        3.320   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/cntr_en
+    SLICE_X4Y115.CLK     Tceck                 0.315   fifoCount<15>
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7
     -------------------------------------------------  ---------------------------
-    Total                                     10.812ns (1.406ns logic, 9.406ns route)
-                                                       (13.0% logic, 87.0% route)
+    Total                                      9.805ns (1.446ns logic, 8.359ns route)
+                                                       (14.7% logic, 85.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     9.218ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               comm_fpga_fx2/chanAddr_6 (FF)
-  Destination:          comm_fpga_fx2/count_23 (FF)
+Slack (setup path):     10.338ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               comm_fpga_fx2/chanAddr_3 (FF)
+  Destination:          write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      10.734ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.241 - 0.254)
+  Data Path Delay:      9.623ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.004ns (0.240 - 0.244)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -385,112 +370,111 @@ Slack (setup path):     9.218ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_6 to comm_fpga_fx2/count_23
+  Maximum Data Path at Slow Process Corner: comm_fpga_fx2/chanAddr_3 to write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y114.CQ      Tcko                  0.447   comm_fpga_fx2/chanAddr<6>
-                                                       comm_fpga_fx2/chanAddr_6
-    SLICE_X24Y111.D1     net (fanout=5)        3.522   comm_fpga_fx2/chanAddr<6>
-    SLICE_X24Y111.D      Tilo                  0.205   N94
-                                                       GND_4_o_chanAddr[6]_equal_7_o<6>_SW3
-    SLICE_X24Y111.C6     net (fanout=1)        0.118   N94
-    SLICE_X24Y111.C      Tilo                  0.205   N94
-                                                       comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o1
-    SLICE_X26Y120.C4     net (fanout=2)        1.088   comm_fpga_fx2/fx2GotData_in_h2fReady_in_AND_11_o
-    SLICE_X26Y120.C      Tilo                  0.204   comm_fpga_fx2/count<13>
-                                                       comm_fpga_fx2/_n0223_inv1
-    SLICE_X6Y125.CE      net (fanout=18)       4.654   comm_fpga_fx2/_n0223_inv
-    SLICE_X6Y125.CLK     Tceck                 0.291   comm_fpga_fx2/count<23>
-                                                       comm_fpga_fx2/count_23
+    SLICE_X4Y120.DQ      Tcko                  0.408   comm_fpga_fx2/chanAddr<3>
+                                                       comm_fpga_fx2/chanAddr_3
+    SLICE_X4Y121.B1      net (fanout=2)        0.619   comm_fpga_fx2/chanAddr<3>
+    SLICE_X4Y121.B       Tilo                  0.205   comm_fpga_fx2/state_FSM_FFd3_1
+                                                       readFifoOutputReady111
+    SLICE_X24Y110.D6     net (fanout=5)        3.696   readFifoOutputReady11
+    SLICE_X24Y110.D      Tilo                  0.205   writeFifoInputValid
+                                                       writeFifoInputValid
+    SLICE_X25Y110.A1     net (fanout=2)        0.542   writeFifoInputValid
+    SLICE_X25Y110.AMUX   Tilo                  0.313   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_wr_en
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/Mxor_cntr_en_xo<0>1
+    SLICE_X4Y115.CE      net (fanout=2)        3.320   write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/cntr_en
+    SLICE_X4Y115.CLK     Tceck                 0.315   fifoCount<15>
+                                                       write_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gdcf.dc/dc/count_7
     -------------------------------------------------  ---------------------------
-    Total                                     10.734ns (1.352ns logic, 9.382ns route)
-                                                       (12.6% logic, 87.4% route)
+    Total                                      9.623ns (1.446ns logic, 8.177ns route)
+                                                       (15.0% logic, 85.0% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X0Y49.DIADI9), 1 path
+Paths for end point read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X0Y57.ADDRAWRADDR11), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.396ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               count_3 (FF)
+Slack (hold path):      0.391ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_6 (FF)
   Destination:          read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.401ns (Levels of Logic = 0)
-  Clock Path Skew:      0.005ns (0.076 - 0.071)
+  Data Path Delay:      0.393ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.076 - 0.074)
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: count_3 to read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X5Y98.BQ       Tcko                  0.198   count<4>
-                                                       count_3
-    RAMB8_X0Y49.DIADI9   net (fanout=1)        0.256   count<3>
-    RAMB8_X0Y49.CLKAWRCLKTrckd_DIA   (-Th)     0.053   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
-                                                       read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
-    -------------------------------------------------  ---------------------------
-    Total                                      0.401ns (0.145ns logic, 0.256ns route)
-                                                       (36.2% logic, 63.8% route)
+  Minimum Data Path at Fast Process Corner: read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_6 to read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X5Y112.CQ           Tcko                  0.198   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1<6>
+                                                            read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_6
+    RAMB8_X0Y57.ADDRAWRADDR11 net (fanout=3)        0.261   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1<6>
+    RAMB8_X0Y57.CLKAWRCLK     Trckc_ADDRA (-Th)     0.066   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+                                                            read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.393ns (0.132ns logic, 0.261ns route)
+                                                            (33.6% logic, 66.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X0Y49.ADDRBRDADDR8), 1 path
+Paths for end point read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X0Y57.ADDRAWRADDR9), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.431ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_3 (FF)
+Slack (hold path):      0.401ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_4 (FF)
   Destination:          read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.435ns (Levels of Logic = 0)
-  Clock Path Skew:      0.004ns (0.076 - 0.072)
+  Data Path Delay:      0.403ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.076 - 0.074)
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_3 to read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+  Minimum Data Path at Fast Process Corner: read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_4 to read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
     Location                 Delay type         Delay(ns)  Physical Resource
                                                            Logical Resource(s)
     -----------------------------------------------------  -------------------
-    SLICE_X7Y98.DQ           Tcko                  0.198   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1<3>
-                                                           read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_3
-    RAMB8_X0Y49.ADDRBRDADDR8 net (fanout=3)        0.303   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1<3>
-    RAMB8_X0Y49.CLKBRDCLK    Trckc_ADDRB (-Th)     0.066   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    SLICE_X5Y112.AQ          Tcko                  0.198   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1<6>
+                                                           read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_4
+    RAMB8_X0Y57.ADDRAWRADDR9 net (fanout=3)        0.271   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1<4>
+    RAMB8_X0Y57.CLKAWRCLK    Trckc_ADDRA (-Th)     0.066   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
                                                            read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
     -----------------------------------------------------  ---------------------------
-    Total                                          0.435ns (0.132ns logic, 0.303ns route)
-                                                           (30.3% logic, 69.7% route)
+    Total                                          0.403ns (0.132ns logic, 0.271ns route)
+                                                           (32.8% logic, 67.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point comm_fpga_fx2/count_27 (SLICE_X7Y122.A6), 1 path
+Paths for end point read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X0Y57.ADDRAWRADDR8), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.435ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               comm_fpga_fx2/count_27 (FF)
-  Destination:          comm_fpga_fx2/count_27 (FF)
+Slack (hold path):      0.403ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_3 (FF)
+  Destination:          read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.435ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.439ns (Levels of Logic = 0)
+  Clock Path Skew:      0.036ns (0.231 - 0.195)
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: comm_fpga_fx2/count_27 to comm_fpga_fx2/count_27
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y122.AQ      Tcko                  0.198   comm_fpga_fx2/count<30>
-                                                       comm_fpga_fx2/count_27
-    SLICE_X7Y122.A6      net (fanout=3)        0.022   comm_fpga_fx2/count<27>
-    SLICE_X7Y122.CLK     Tah         (-Th)    -0.215   comm_fpga_fx2/count<30>
-                                                       comm_fpga_fx2/Mmux_count_next34
-                                                       comm_fpga_fx2/count_27
-    -------------------------------------------------  ---------------------------
-    Total                                      0.435ns (0.413ns logic, 0.022ns route)
-                                                       (94.9% logic, 5.1% route)
+  Minimum Data Path at Fast Process Corner: read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_3 to read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    SLICE_X4Y111.DQ          Tcko                  0.200   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1<3>
+                                                           read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_3
+    RAMB8_X0Y57.ADDRAWRADDR8 net (fanout=3)        0.305   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1<3>
+    RAMB8_X0Y57.CLKAWRCLK    Trckc_ADDRA (-Th)     0.066   read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+                                                           read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    -----------------------------------------------------  ---------------------------
+    Total                                          0.439ns (0.134ns logic, 0.305ns route)
+                                                           (30.5% logic, 69.5% route)
 
 --------------------------------------------------------------------------------
 
@@ -501,7 +485,7 @@ Slack: 16.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
   Physical resource: read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
   Logical resource: read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
-  Location pin: RAMB8_X0Y49.CLKAWRCLK
+  Location pin: RAMB8_X0Y57.CLKAWRCLK
   Clock network: fx2Clk_in_BUFGP
 --------------------------------------------------------------------------------
 Slack: 16.876ns (period - min period limit)
@@ -509,7 +493,7 @@ Slack: 16.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKB(Fmax))
   Physical resource: read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKBRDCLK
   Logical resource: read_fifo/fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/blk_mem_generator/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKBRDCLK
-  Location pin: RAMB8_X0Y49.CLKBRDCLK
+  Location pin: RAMB8_X0Y57.CLKBRDCLK
   Clock network: fx2Clk_in_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.270ns (period - min period limit)
@@ -534,7 +518,7 @@ Clock to Setup on destination clock fx2Clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fx2Clk_in      |   11.296|         |         |         |
+fx2Clk_in      |   12.122|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -543,16 +527,16 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 3894 paths, 0 nets, and 969 connections
+Constraints cover 3578 paths, 0 nets, and 942 connections
 
 Design statistics:
-   Minimum period:  11.296ns{1}   (Maximum frequency:  88.527MHz)
+   Minimum period:  12.122ns{1}   (Maximum frequency:  82.495MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Wed Apr 30 12:59:55 2014 
+Analysis completed Thu May  1 23:29:14 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:

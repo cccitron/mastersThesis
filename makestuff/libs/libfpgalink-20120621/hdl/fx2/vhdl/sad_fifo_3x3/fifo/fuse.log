@@ -5,7 +5,6 @@ Turning on mult-threading, number of parallel sub-compilation jobs: 8
 Determining compilation order of HDL files
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_fifo_3x3/fifo/ipcore_dir/fifo.vhd" into library work
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_fifo_3x3/fifo/timer.vhd" into library work
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_fifo_3x3/fifo/sad_algorithm_3x3.vhd" into library work
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_fifo_3x3/fifo/minComparator.vhd" into library work
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_fifo_3x3/fifo/fifo_wrapper_xilinx.vhd" into library work
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_fifo_3x3/fifo/comm_fpga_fx2.vhd" into library work
@@ -13,8 +12,8 @@ Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_fifo_3x3/fifo/tb_top_level.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 102392 KB
-Fuse CPU Usage: 1430 ms
+Fuse Memory Usage: 103080 KB
+Fuse CPU Usage: 1300 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package textio
@@ -30,14 +29,12 @@ Compiling architecture behavioral of entity fifo_generator_v8_1 [\fifo_generator
 Compiling architecture fifo_a of entity fifo [fifo_default]
 Compiling architecture behavioural of entity fifo_wrapper [fifo_wrapper_default]
 Compiling architecture behavioural of entity timer [timer_default]
-Compiling architecture behavioral of entity sad_algorithm_3x3 [sad_algorithm_3x3_default]
 Compiling architecture behavioral of entity minComparator [mincomparator_default]
 Compiling architecture behavioural of entity top_level [top_level_default]
 Compiling architecture behavior of entity tb_top_level
 Time Resolution for simulation is 1ps.
-Waiting for 4 sub-compilation(s) to finish...
-Compiled 30 VHDL Units
+Compiled 28 VHDL Units
 Built simulation executable /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_fifo_3x3/fifo/tb_top_level_isim_beh.exe
-Fuse Memory Usage: 682260 KB
-Fuse CPU Usage: 1750 ms
-GCC CPU Usage: 2010 ms
+Fuse Memory Usage: 683820 KB
+Fuse CPU Usage: 1620 ms
+GCC CPU Usage: 2530 ms
