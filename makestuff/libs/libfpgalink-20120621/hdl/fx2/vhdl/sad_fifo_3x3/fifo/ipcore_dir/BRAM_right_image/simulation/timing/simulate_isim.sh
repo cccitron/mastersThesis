@@ -46,7 +46,6 @@
 # PART OF THIS FILE AT ALL TIMES.
 #--------------------------------------------------------------------------------
 
-cp ../../../BRAM_right_image.mif .
 
 
 echo "Compiling Core VHDL UNISIM/Behavioral model"

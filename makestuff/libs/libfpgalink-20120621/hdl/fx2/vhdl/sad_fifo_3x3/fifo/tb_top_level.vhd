@@ -44,6 +44,7 @@ ARCHITECTURE behavior OF tb_top_level IS
     COMPONENT top_level
     PORT(
          clk : IN  std_logic;
+         reset : IN STD_LOGIC;
          fx2Clk_in : IN  std_logic;
          fx2Addr_out : OUT  std_logic_vector(1 downto 0);
          fx2Data_io : INOUT  std_logic_vector(7 downto 0);
@@ -61,6 +62,7 @@ ARCHITECTURE behavior OF tb_top_level IS
 
    --Inputs
    signal clk : std_logic := '0';
+   signal reset : std_logic := '0';
    signal fx2Clk_in : std_logic := '0';
    signal fx2GotData_in : std_logic := '0';
    signal fx2GotRoom_in : std_logic := '0';
@@ -85,6 +87,7 @@ BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: top_level PORT MAP (
           clk => clk,
+          reset => reset,
           fx2Clk_in => fx2Clk_in,
           fx2Addr_out => fx2Addr_out,
           fx2Data_io => fx2Data_io,
@@ -121,6 +124,7 @@ BEGIN
       wait for clk_period*10;
 
       -- insert stimulus here 
+      wait for 400 ns;
       sw_in <= x"00";
       wait for 10 ns;
       write(line_out, now);

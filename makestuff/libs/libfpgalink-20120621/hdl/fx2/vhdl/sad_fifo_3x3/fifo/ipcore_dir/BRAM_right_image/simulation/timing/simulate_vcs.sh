@@ -45,7 +45,6 @@
 # PART OF THIS FILE AT ALL TIMES.
 #--------------------------------------------------------------------------------
 #!/bin/sh
-cp ../../../BRAM_right_image.mif .
 
 rm -rf simv* csrc DVEfiles AN.DB
 

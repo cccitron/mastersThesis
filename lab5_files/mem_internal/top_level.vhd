@@ -48,31 +48,73 @@ end component;
 -- This component is created using the Core Generator. Its VHDL description
 -- is inside ipcore_dir/my_bram8x8.vhd, which was created during the use
 -- Core Generator as explained in the lab.
-component my_bram8x8 -- It is now a 16x640
+
+COMPONENT my_bram8x8
   PORT (
     clka : IN STD_LOGIC;
     ena : IN STD_LOGIC;
-    wea : IN STD_LOGIC_VECTOR(1 DOWNTO 0); 
-    addra : IN STD_LOGIC_VECTOR(16 DOWNTO 0); --(2 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0); --(7 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) --(7 DOWNTO 0)
+    wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
-end component;
+END COMPONENT;
+
+--SIGNAL clkR,  clkL  : STD_LOGIC := '0';
+--SIGNAL enR,   enL   : STD_LOGIC := '1';
+--SIGNAL weR,   weL   : STD_LOGIC_VECTOR(0 DOWNTO 0) := "0";
+--SIGNAL addrR, addrL : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000000";
+--SIGNAL dinR,  dinL  : STD_LOGIC_VECTOR(7 DOWNTO 0);
+--SIGNAL doutR, doutL : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 signal clk_1Hz : STD_LOGIC;
 signal ena : std_logic := '1';
 signal my_addr_counter : STD_LOGIC_VECTOR (2 downto 0) := "000";
-signal bram_addr : std_logic_vector (16 downto 0) := "00000000000000000";
+signal bram_addr : std_logic_vector (5 downto 0) := "000000";
 signal dout_rom8x8 : STD_LOGIC_VECTOR (7 downto 0);
-signal bram_dout : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
+signal bram_dout : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
 -- for the time being, we'll only read from this block RAM, so
 -- let's set all data ins to zero;
 signal dina : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
-signal bram_dina : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
-signal wea : STD_LOGIC_VECTOR(1 DOWNTO 0) := "00"; -- no need for writing in this example
+signal bram_dina : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
+signal wea : STD_LOGIC_VECTOR(0 DOWNTO 0) := "0"; -- no need for writing in this example
 signal we : std_logic := '0';
 
+type array_type_templ is array (0 to 56) of std_logic_vector(7 downto 0);
+signal templateArray : array_type_templ;
+
+   TYPE state_type_right IS (read_bramR, hold_bramR); --write_bramR, hold_bramR);
+   SIGNAL stateR_PS_v : state_type_right := read_bramR;
+   SIGNAL stateR_NS_v : state_type_right := read_bramR;
+
 begin
+
+   sync_readRightBRAM : PROCESS(clk_100MHz) IS
+   BEGIN
+      IF (RISING_EDGE(clk_100MHz)) THEN
+         stateR_PS_v <= stateR_NS_v;
+      END IF;
+   END PROCESS sync_readRightBRAM;
+
+   readRightBRAM : PROCESS(stateR_PS_v) IS
+   BEGIN
+        
+      CASE stateR_PS_v IS
+         WHEN read_bramR =>
+            templateArray(TO_INTEGER(UNSIGNED(bram_addr))) <= bram_dout;
+            stateR_NS_v <= hold_bramR;
+            bram_addr <= "000000"; 
+         WHEN hold_bramR =>
+            --templateArray <= templateArray;
+            stateR_NS_v <= hold_bramR;
+            bram_addr <= "000000";
+         WHEN OTHERS =>
+            --templateArray <= templateArray;
+            stateR_NS_v <= hold_bramR;
+            bram_addr <= "000000";
+      END CASE;
+   END PROCESS readRightBRAM;
+
 
 clock_divider : ck_divider port map (clk_100MHz, clk_1Hz); -- poor instantiation
 memory1 : rom8x8 port map (
@@ -90,15 +132,16 @@ memory2 : my_bram8x8 port map (
       douta => bram_dout --8 bit data output to the RAM
    );
 
-multiplex_out : process (clk_1Hz) is
+multiplex_out : process (clk_100MHz) is
 begin
-	if (clk_1Hz'event and clk_1Hz = '1') then
+	if (clk_100MHz'event and clk_100MHz = '1') then
 		case sw_i(7) is
 			when '0' =>
-				leds <= bram_addr(7 downto 0); --dout_rom8x8;
+				leds <= "00" & bram_addr; --dout_rom8x8;
 			when '1' =>
-				leds <= bram_dout(7 downto 0);
-			when others => NULL; 
+				leds <= templateArray(0);
+			when others => 
+            leds <= x"ff"; 
 		end case;
 		my_addr_counter <= std_logic_vector( unsigned(my_addr_counter) + 1);
       dina <= std_logic_vector( unsigned(dina) + 1);
@@ -106,33 +149,33 @@ begin
 	end if;
 end process;
 
-bram_dina <= "0000000000" & sw_i(5 downto 0);
-
--- Enable writing to bram when switch(1) is high
-process (sw_i(6))
-begin
-   case sw_i(6) is
-      when '1' =>
-         wea <= "11";
-      when others =>
-         wea <= "00";
-   end case;
-end process;
-
--- Increase bram addr position when btn(1) (top button) is pressed
--- Decrease bram addr position when btn(3) (bottom button) is pressed
-process (btn)
-begin
-   if (btn(1) = '1') then
-      bram_addr <= std_logic_vector(unsigned(bram_addr) + 1);
-   elsif (btn(3) = '1') then
-      bram_addr <= std_logic_vector(unsigned(bram_addr) - 1);
-   elsif (btn(5) = '1') then
-      bram_addr <= "00000000000000000";
-   else
-      bram_addr <= bram_addr;
-   end if;
-end process;
+--bram_dina <= "00" & sw_i(5 downto 0);
+--
+---- Enable writing to bram when switch(1) is high
+--process (sw_i(6))
+--begin
+--   case sw_i(6) is
+--      when '1' =>
+--         wea <= "1";
+--      when others =>
+--         wea <= "0";
+--   end case;
+--end process;
+--
+---- Increase bram addr position when btn(1) (top button) is pressed
+---- Decrease bram addr position when btn(3) (bottom button) is pressed
+--process (btn)
+--begin
+--   if (btn(1) = '1') then
+--      bram_addr <= std_logic_vector(unsigned(bram_addr) + 1);
+--   elsif (btn(3) = '1') then
+--      bram_addr <= std_logic_vector(unsigned(bram_addr) - 1);
+--   elsif (btn(5) = '1') then
+--      bram_addr <= "000000";
+--   else
+--      bram_addr <= bram_addr;
+--   end if;
+--end process;
 
 end Structural;
 

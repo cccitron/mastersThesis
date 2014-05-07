@@ -45,6 +45,7 @@
 # THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
 # PART OF THIS FILE AT ALL TIMES.
 #--------------------------------------------------------------------------------
+cp ../../../my_bram8x8.mif .
 
 
 mkdir work

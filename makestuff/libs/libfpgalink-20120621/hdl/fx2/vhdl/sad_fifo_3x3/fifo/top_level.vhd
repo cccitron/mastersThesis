@@ -22,6 +22,7 @@ use ieee.numeric_std.all;
 entity top_level is
 	port(
       clk           : in std_logic;
+      reset         : IN STD_LOGIC;
 --      rst_n         : in std_logic;
    
 		-- FX2 interface -----------------------------------------------------------------------------
@@ -118,7 +119,8 @@ architecture behavioural of top_level is
    
    SIGNAL clkR,  clkL  : STD_LOGIC := '0';
    SIGNAL enR,   enL   : STD_LOGIC := '1';
-   SIGNAL weR,   weL   : STD_LOGIC_VECTOR(0 DOWNTO 0) := "0";
+   --SIGNAL weR,   weL   : STD_LOGIC_VECTOR(0 DOWNTO 0) := "0";
+   SIGNAL weR,   weL   : STD_LOGIC := '0';
    SIGNAL addrR, addrL : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000000";
    SIGNAL dinR,  dinL  : STD_LOGIC_VECTOR(7 DOWNTO 0);
    SIGNAL doutR, doutL : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -151,14 +153,20 @@ architecture behavioural of top_level is
 	-- first define the type of array
    -- Array to represent 3x3 template
 	type array_type_templ is array (0 to 56) of std_logic_vector(7 downto 0);
-	signal templateArray : array_type_templ := (x"02", x"05", x"05", x"03", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
-                                               x"04", x"00", x"07", x"01", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
-                                               x"07", x"05", x"09", x"06", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff");
+	signal templateArray : array_type_templ;-- := (x"02", x"05", x"05", x"03", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
+                                           --    x"04", x"00", x"07", x"01", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
+                                           --    x"07", x"05", x"09", x"06", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff");
    -- Array to represent 3x5 search image 
    type array_type_search is array (0 to 56) of std_logic_vector(7 downto 0);
 	signal searchArray : array_type_search := (x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"00",
                                               x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"00",
                                               x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"00");
+
+   SIGNAL read_bramR_PS : STD_LOGIC := '1';
+   SIGNAL read_bramR_NS : STD_LOGIC;
+--   TYPE state_type_right IS (read_bramR, hold_bramR); --write_bramR, hold_bramR);
+--   SIGNAL stateR_PS_v : state_type_right := read_bramR;
+--   SIGNAL stateR_NS_v : state_type_right;
    
 --   signal img3x3_0 : std_logic_vector(71 downto 0) := x"020705010704080406";
 --   signal img3x3_1 : std_logic_vector(71 downto 0) := x"070508070402040608";
@@ -181,9 +189,9 @@ architecture behavioural of top_level is
    -- Index locations for each array above
    --signal ndxTempl, ndxImg, ndxDisp : integer := 0; -- WHAT IS THEIR RANGE?
    -- Number of columns in the search image
-   CONSTANT ncol : INTEGER := 19;     
+   CONSTANT ncol_c : INTEGER := 19;     
    -- Number of rows in the search image
-   CONSTANT nrow : INTEGER := 3;
+   CONSTANT nrow_c : INTEGER := 3;
    
 --   signal template3x3 : std_logic_vector(71 downto 0) := x"020505040007070509";
    --signal template3x3_1 : std_logic_vector(71 downto 0) := x"020505040007070509";
@@ -220,6 +228,9 @@ architecture behavioural of top_level is
    -- 2D array of signed values that are outputed from the SAD algorithm
    type array_type_signed is array (0 to 1, 0 to 15) of SIGNED(8 downto 0);
    SIGNAL summer : array_type_signed;
+   
+   SIGNAL readRight : STD_LOGIC := '0';
+   SIGNAL buff      : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000000";
    
 begin                                                                     --BEGIN_SNIPPET(fifos)
 --	-- Infer registers
@@ -271,14 +282,14 @@ begin                                                                     --BEGI
 --   count_next <= sadArray(0, pos+1) when readFifoInputValid = '1'
 --		else sadArray(0, pos);
 
---   count_next <= templateArray((pos*ncol) + 1) when switch = '1'
+--   count_next <= templateArray((pos*ncol_c) + 1) when switch = '1'
 --		else "0000" & disparityArray(pos);
 
 --   count_next <= outlink when readFifoInputValid = '1'
 --		else outlink;
 
---   count_next <= templateArray(ncol + 2 + pos) when readFifoInputValid = '1'
---		else templateArray(ncol + 1 + pos);
+--   count_next <= templateArray(ncol_c + 2 + pos) when readFifoInputValid = '1'
+--		else templateArray(ncol_c + 1 + pos);
 --      
 --   count_next <= "0000" & disparityArray(pos + 1) when readFifoInputValid = '1'
 --		else "0000" & disparityArray(pos);
@@ -287,7 +298,7 @@ begin                                                                     --BEGI
    BEGIN
       IF (readFifoInputValid = '1') THEN
          IF (switch = '0') THEN
-            count_next <= templateArray(ncol + 2 + pos);
+            count_next <= templateArray(ncol_c + 2 + pos);
 --            switch_next <= NOT(switch);
          ELSE
             count_next <= "0000" & disparityArray(pos + 1);
@@ -295,7 +306,7 @@ begin                                                                     --BEGI
          END IF;
       ELSE
          IF (switch = '0') THEN
-            count_next <= templateArray(ncol + 1 + pos);
+            count_next <= templateArray(ncol_c + 1 + pos);
 --            switch_next <= NOT(switch);
          ELSE
             count_next <= "0000" & disparityArray(pos);
@@ -312,7 +323,7 @@ begin                                                                     --BEGI
       
       
 --   with switch select outlink <=
---		templateArray((pos*ncol) + 1) when '0',  -- get data from read FIFO
+--		templateArray((pos*ncol_c) + 1) when '0',  -- get data from read FIFO
 --		"0000" & disparityArray(pos)  when '1',  -- read the depth of the write FIFO
 --		x"ff"                         when others;
    
@@ -488,13 +499,124 @@ begin                                                                     --BEGI
       
       "0000" & disparityArray(0)       WHEN x"31",
       "0000" & disparityArray(1)       WHEN x"32",
+      buff                             WHEN x"33",
 		x"00"                            WHEN OTHERS;
 
 --------------------------------------------------------------------------------
 -- Sum of the Absolute Differences Algorithm
 --------------------------------------------------------------------------------
 
---   -- BRAM for Right Image
+   bram_right : entity work.bram_single
+      port map (
+         Clk      => clkR,
+         address  => addr,
+         we       => weR,
+         data_i   => dinR,
+         data_o   => doutR
+   );
+
+   PROCESS (clk) IS
+   BEGIN
+      weR <= weR;
+      --output <= output;
+      step <= step;
+      templateArray <= templateArray;
+      IF (RISING_EDGE(clk)) THEN
+         IF (weR = '1' AND addr < 57 AND step = "00") THEN
+            dinR <= searchArray(addr);
+            addr_out <= x"00";
+            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
+            led_out <= x"00";
+            step_out <= "00";
+         ELSIF (addr < 57 AND step = "01") THEN
+            templateArray(addr) <= doutR;--searchArray(TO_INTEGER(UNSIGNED(addr)));
+            addr_out <= x"00";
+            led_out <= x"ff";
+            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
+            step_out <= "01";
+         ELSIF (addr < 57 AND step = "10") THEN
+            led_out <= templateArray(addr);--searchArray(TO_INTEGER(UNSIGNED(addr)));
+            addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
+            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
+            step_out <= "10";
+         ELSE
+            led_out <= templateArray(56);--addr-1);--x"ff"; --NULL;
+            addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
+            addr <= 0;
+            step_out <= "11";
+--            addr_out <= x"00";
+            weR <= NOT(weR);
+            --output <= '1';
+            step <= STD_LOGIC_VECTOR(UNSIGNED(step) + 1);
+            IF (step = "11") THEN
+               step <= "00";
+               weR <= '1';
+            END IF;
+         END IF;
+      END IF;
+   END PROCESS;
+
+
+
+--   bram_right : entity work.bram_right_single
+--      port map(
+--         a_clk  => clkR,
+--         a_wr   => weR, 
+--         a_addr => addrR,
+--         a_din  => dinR,
+--         a_dout => doutR
+--   );
+--   
+--   readRightBRAM : PROCESS(clk) IS
+--   BEGIN
+--      IF (RISING_EDGE(clk)) THEN
+--            IF (addrR < "111001") THEN
+--               templateArray(TO_INTEGER(UNSIGNED(addrR))) <= doutR;
+--               addrR <= STD_LOGIC_VECTOR(UNSIGNED(addrR) + 1);
+--               readRight <= '0';
+--            ELSE
+--               addrR <= addrR;
+--               templateArray <= templateArray;
+--               readRight <= '1';
+--            END IF;
+--      END IF;
+--   END PROCESS readRightBRAM;
+   
+   
+   
+   
+   
+--   readRightBRAM : PROCESS(clkR) IS
+--   BEGIN
+--      IF (RISING_EDGE(clkR)) THEN
+--         IF (weR = '1') THEN
+--            dinR <= "00010001";
+--            buff <= buff;
+--         ELSE
+--            buff <= doutR;
+--         END IF;
+--         
+----         IF (addrR < "111001") THEN -- 57 in hex?
+----            buff <= doutR;
+----            addrR     <= STD_LOGIC_VECTOR(UNSIGNED(addrR) + 1);
+----            readRight <= '0';
+----         ELSE
+----            buff <= buff;
+----            dinR <= "00010001";
+----            --templateArray(TO_INTEGER(UNSIGNED(addrR))) <= templateArray(TO_INTEGER(UNSIGNED(addrR)));
+----            addrR    <= addrR;
+----            readRight <= '1';
+--        -- END IF;
+--      END IF;
+--   END PROCESS readRightBRAM;
+   
+--   process(buff) IS
+--   BEGIN
+--      templateArray <= templateArray;
+--      templateArray(0) <= buff;
+--   END PROCESS;
+   
+   -- BRAM for Right Image
 --   rightImgBRAM : BRAM_right_image
 --      PORT MAP (
 --         clka  => clkR,
@@ -504,7 +626,91 @@ begin                                                                     --BEGI
 --         dina  => dinR,
 --         douta => doutR
 --   );
---
+--   
+--   sync_readRightBRAM : PROCESS(clkR) IS
+--   BEGIN
+--      IF (RISING_EDGE(clkR)) THEN
+--         --read_bramR_PS <= read_bramR_NS;
+----         IF (addrR < x"39") THEN -- 57 in hex?
+----            templateArray(TO_INTEGER(UNSIGNED(addrR))) <= doutR;
+----            --read_bramR_NS <= '1';
+----            addrR         <= STD_LOGIC_VECTOR(UNSIGNED(addrR) + 1);
+----         ELSE
+----            addrR    <= "000000";
+----            --read_bramR_NS <= '0';
+----         END IF;
+--         templateArray(TO_INTEGER(UNSIGNED(addrR))) <= doutR;
+--      END IF;
+--   END PROCESS sync_readRightBRAM;
+      
+--   readRightBRAM : PROCESS(read_bramR_PS) IS
+--   BEGIN
+--      IF (read_bramR_PS = '1') THEN
+--         IF (addrR < x"39") THEN -- 57 in hex?
+--            templateArray(TO_INTEGER(UNSIGNED(addrR))) <= doutR;
+--            read_bramR_NS <= '1';
+--            addrR         <= STD_LOGIC_VECTOR(UNSIGNED(addrR) + 1);
+--         ELSE
+--            addrR    <= "000000";
+--            read_bramR_NS <= '0';
+--         END IF;
+--      END IF;
+--   END PROCESS readRightBRAM;
+   
+--   -- BRAM for template array
+--   readRightBRAM : PROCESS(stateR_PS_v) IS
+--   BEGIN
+----      IF (reset = '1') THEN
+----         addrR <= (OTHERS => '0');
+----         enR   <= '1';
+----         weR   <= "0";
+----         stateR_v <= read_bramR;
+----         enR <= '1';
+----         weR <= "0";
+--         
+--         CASE stateR_PS_v IS
+--            -- read from BRAM
+--            WHEN read_bramR  =>
+----               IF (addrR < "001000") THEN -- 57 in hex?
+----                  --templateArray(0) <= dinR;
+----                  templateArray(TO_INTEGER(UNSIGNED(addrR))) <= doutR;
+----                  addrR    <= STD_LOGIC_VECTOR(UNSIGNED(addrR) + 1);
+----                  
+----                  stateR_NS_v <= read_bramR;
+----               ELSE
+----                  addrR    <= "000000";
+----                  templateArray <= templateArray;
+----                  stateR_NS_v <= hold_bramR;
+----               END IF;
+--               addrR    <= "000000";
+--               stateR_NS_v <= hold_bramR;
+--            WHEN hold_bramR =>
+--               addrR    <= "000001";
+--               stateR_NS_v <= read_bramR;
+----               addrR    <= addrR;
+----               templateArray <= templateArray;
+--            -- write to BRAM
+----            WHEN write_bramR =>
+----               IF (addrR < x"39") THEN -- 57 in hex?
+----                  weR      <= "1";
+----                  dinR     <= templateArray(TO_INTEGER(UNSIGNED(addrR)));
+----                  stateR_v := hold_bramR;
+----                  addrR    <= STD_LOGIC_VECTOR(UNSIGNED(addrR) + 1);
+----               ELSE
+----                  addrR    <= "000000";
+----                  stateR_v := hold_bramR;
+----               END IF;
+----            -- wait for commmand to go to next state
+----            WHEN hold_bramR  =>
+----               stateR_v := hold_bramR;
+--            WHEN OTHERS =>
+--               stateR_NS_v <= hold_bramR;
+----               addrR    <= addrR;
+----               templateArray <= templateArray;
+--         END CASE;
+----      ELSE
+--   END PROCESS readRightBRAM;
+   
 --   -- BRAM for Left Image
 --   leftImgBRAM : BRAM_left_image
 --      PORT MAP (
@@ -516,37 +722,79 @@ begin                                                                     --BEGI
 --         douta => doutL
 --   );
 --   
---   readRightBRAM : PROCESS(clkR) IS
+--   
+--   -- BRAM for template array
+--   readLeftBRAM : PROCESS(clkL, reset) IS
+--      TYPE state_type_left IS (read_bramL, hold_bramL);-- write_bramL, hold_bramL);
+--      VARIABLE stateL_v : state_type_left;
 --   BEGIN
---      IF (RISING_EDGE(clkR)) THEN
+--      IF (reset = '1') THEN
+--         addrL <= (OTHERS => '0');
+--         enL   <= '1';
+--         weL   <= "0";
+--         stateL_v := read_bramL;
+--      ELSIF (RISING_EDGE(clkL)) THEN
+--         enL <= '1';
+--         weL <= "0";
 --         
---      ELSE
+--         CASE stateL_v IS
+--            -- read from BRAM
+--            WHEN read_bramL  =>
+--               IF (addrL < x"39") THEN -- 57 in hex?
+--                  searchArray(TO_INTEGER(UNSIGNED(addrL))) <= doutL;
+--                  stateL_v := read_bramL;
+--                  addrL    <= STD_LOGIC_VECTOR(UNSIGNED(addrL) + 1);
+--               ELSE
+--                  addrL    <= "000000";
+--                  stateL_v := hold_bramL;
+--               END IF;
+--            -- write to BRAM
+----            WHEN write_bramL =>
+----               IF (addrL < x"39") THEN -- 57 in hex?
+----                  weL      <= "1";
+----                  dinL     <= searchArray(TO_INTEGER(UNSIGNED(addrL)));
+----                  stateL_v := hold_bramL;
+----                  addrL    <= STD_LOGIC_VECTOR(UNSIGNED(addrL) + 1);
+----               ELSE
+----                  addrL    <= "000000";
+----                  stateL_v := hold_bramL;
+----               END IF;
+----            -- wait for commmand to go to next state
+----            WHEN hold_bramL  =>
+----               stateL_v := hold_bramL;
+--            WHEN OTHERS =>
+--               stateL_v := hold_bramL;
+--         END CASE;
+----      ELSE
 --         
 --      END IF;
---   END PROCESS readRightBRAM;
---   
+--   END PROCESS readLeftBRAM;
 
 --------------------------------------------------------------------------------
 -- Sum of the Absolute Differences Algorithm
 --------------------------------------------------------------------------------
    -- Sum of the Absolute Difference between the template 3x3 and search 3x3, range 0 to 2
    -- It currently does two sets of three SADs at the same time
-   sum_abs_diff : PROCESS(templateArray, searchArray)
+   sum_abs_diff : PROCESS(templateArray, searchArray, readRight)
    BEGIN
+--    IF (readRight = '1') THEN
       FOR i IN 0 TO 1 LOOP     -- For each center template pixel/group of SADs
          FOR j IN 0 TO 15 LOOP -- For the 16 SAD values to compare for disparity
             summer(i, j) <= 
                abs(SIGNED('0' & templateArray(0+i))           - SIGNED('0' & searchArray(0+i+j))) + 
                abs(SIGNED('0' & templateArray(1+i))           - SIGNED('0' & searchArray(1+i+j))) + 
                abs(SIGNED('0' & templateArray(2+i))           - SIGNED('0' & searchArray(2+i+j))) + 
-               abs(SIGNED('0' & templateArray(0+ncol+i))      - SIGNED('0' & searchArray(0+ncol+i+j))) +
-               abs(SIGNED('0' & templateArray(1+ncol+i))      - SIGNED('0' & searchArray(1+ncol+i+j))) +
-               abs(SIGNED('0' & templateArray(2+ncol+i))      - SIGNED('0' & searchArray(2+ncol+i+j))) +
-               abs(SIGNED('0' & templateArray(0+ncol+ncol+i)) - SIGNED('0' & searchArray(0+ncol+ncol+i+j))) +
-               abs(SIGNED('0' & templateArray(1+ncol+ncol+i)) - SIGNED('0' & searchArray(1+ncol+ncol+i+j))) +
-               abs(SIGNED('0' & templateArray(2+ncol+ncol+i)) - SIGNED('0' & searchArray(2+ncol+ncol+i+j)));
+               abs(SIGNED('0' & templateArray(0+ncol_c+i))      - SIGNED('0' & searchArray(0+ncol_c+i+j))) +
+               abs(SIGNED('0' & templateArray(1+ncol_c+i))      - SIGNED('0' & searchArray(1+ncol_c+i+j))) +
+               abs(SIGNED('0' & templateArray(2+ncol_c+i))      - SIGNED('0' & searchArray(2+ncol_c+i+j))) +
+               abs(SIGNED('0' & templateArray(0+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(0+ncol_c+ncol_c+i+j))) +
+               abs(SIGNED('0' & templateArray(1+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(1+ncol_c+ncol_c+i+j))) +
+               abs(SIGNED('0' & templateArray(2+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(2+ncol_c+ncol_c+i+j)));
          END LOOP;
       END LOOP;
+--    ELSE
+--      summer <= summer;
+--    END IF;
    END PROCESS sum_abs_diff;
 
    -- Assigns the values from summer array to sad array

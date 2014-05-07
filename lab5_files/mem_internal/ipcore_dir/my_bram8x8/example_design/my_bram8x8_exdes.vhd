@@ -90,12 +90,12 @@ ENTITY my_bram8x8_exdes IS
       --Inputs - Port A
     ENA            : IN STD_LOGIC;  --opt port
   
-    WEA            : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-    ADDRA          : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+    WEA            : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    ADDRA          : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
   
-    DINA           : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    DINA           : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
   
-    DOUTA          : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    DOUTA          : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     CLKA       : IN STD_LOGIC
 
 
@@ -118,12 +118,12 @@ ARCHITECTURE xilinx OF my_bram8x8_exdes IS
       --Port A
     ENA        : IN STD_LOGIC;  --opt port
   
-    WEA        : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-    ADDRA      : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
+    WEA        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+    ADDRA      : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
   
-    DINA       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    DINA       : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
   
-    DOUTA      : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    DOUTA      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 
     CLKA       : IN STD_LOGIC
 

@@ -89,6 +89,11 @@ BEGIN
       wait for clk_100MHz_period*10;
 
       -- insert stimulus here 
+--      sw_i <= x"00";
+--      
+--      wait for 50 ns;
+--      sw_i <= x"ff";
+      
       sw_i <= "11010101";
       
       wait for 10 ns;
@@ -120,3 +125,4 @@ BEGIN
    end process;
 
 END;
+

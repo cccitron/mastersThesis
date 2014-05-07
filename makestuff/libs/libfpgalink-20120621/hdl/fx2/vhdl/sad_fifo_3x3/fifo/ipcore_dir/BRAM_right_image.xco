@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Thu May  1 23:52:09 2014
+# Date: Sun May  4 07:27:49 2014
 #
 ##############################################################
 #
@@ -46,7 +46,7 @@ CSET axi_id_width=4
 CSET axi_slave_type=Memory_Slave
 CSET axi_type=AXI4_Full
 CSET byte_size=8
-CSET coe_file=/home/cccitron/mastersThesis/pythonScriptImageToBRAM/arrayToBRAM/template57BRAM.coe
+CSET coe_file=no_coe_file_loaded
 CSET collision_warnings=ALL
 CSET component_name=BRAM_right_image
 CSET disable_collision_warnings=false
@@ -57,9 +57,9 @@ CSET enable_32bit_address=false
 CSET enable_a=Use_ENA_Pin
 CSET enable_b=Always_Enabled
 CSET error_injection_type=Single_Bit_Error_Injection
-CSET fill_remaining_memory_locations=false
+CSET fill_remaining_memory_locations=true
 CSET interface_type=Native
-CSET load_init_file=true
+CSET load_init_file=false
 CSET mem_file=no_Mem_file_loaded
 CSET memory_type=Single_Port_RAM
 CSET operating_mode_a=READ_FIRST
@@ -105,4 +105,4 @@ CSET write_width_b=8
 MISC pkg_timestamp=2012-11-19T16:22:25Z
 # END Extra information
 GENERATE
-# CRC: f80a97f3
+# CRC:  ccd5810

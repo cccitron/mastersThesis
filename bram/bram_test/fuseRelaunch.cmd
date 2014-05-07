@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/cccitron/mastersThesis/bram/bram_test/tb_top_level_isim_beh.exe" -prj "/home/cccitron/mastersThesis/bram/bram_test/tb_top_level_beh.prj" "work.tb_top_level" 

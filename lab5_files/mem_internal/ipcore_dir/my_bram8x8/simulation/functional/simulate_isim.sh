@@ -46,6 +46,7 @@
 # PART OF THIS FILE AT ALL TIMES.
 #--------------------------------------------------------------------------------
 
+cp ../../../my_bram8x8.mif .
 
 
 echo "Compiling Core VHDL UNISIM/Behavioral model"

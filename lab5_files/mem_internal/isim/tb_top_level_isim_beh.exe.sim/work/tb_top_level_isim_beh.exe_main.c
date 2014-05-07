@@ -37,11 +37,11 @@ int main(int argc, char **argv)
     ieee_p_3499444699_init();
     ieee_p_3620187407_init();
     ieee_p_3564397177_init();
-    xilinxcorelib_a_1092154682_2959432447_init();
-    xilinxcorelib_a_3760288212_2959432447_init();
-    xilinxcorelib_a_4282816042_1709443946_init();
-    xilinxcorelib_a_3026160238_0543512595_init();
-    xilinxcorelib_a_3330926487_3212880686_init();
+    xilinxcorelib_a_4168659944_2959432447_init();
+    xilinxcorelib_a_1497446150_2959432447_init();
+    xilinxcorelib_a_2905652524_1709443946_init();
+    xilinxcorelib_a_2968145193_0543512595_init();
+    xilinxcorelib_a_1577002908_3212880686_init();
     work_a_3899460419_1777871495_init();
     work_a_0178362298_1181938964_init();
     work_a_2333963519_2372691052_init();
