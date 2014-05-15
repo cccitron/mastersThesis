@@ -37,7 +37,7 @@ entity top_level is
       led_out       : out   std_logic_vector(7 downto 0); -- eight LEDs
       sw_in         : in    std_logic_vector(7 downto 0);  -- eight switches
       
-      step_out      : out   std_logic_vector(1 downto 0);
+      step_out      : out   std_logic_vector(3 downto 0);
       addr_out      : out   std_logic_vector(7 downto 0);
       sum_out       : out   std_logic_vector(7 downto 0);
       ndx_out       : out   std_logic_vector(5 downto 0);
@@ -56,19 +56,19 @@ architecture Behavioral of top_level is
    SIGNAL doutR, doutL : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
    type array_type_templ is array (0 to 56) of std_logic_vector(7 downto 0);
-	signal templateArray : array_type_templ := (others => (others => '0'));
+	signal templateArray, templArray_next : array_type_templ := (others => (others => '0'));
    
    SIGNAL buff : STD_LOGIC_VECTOR(7 DOWNTO 0);
    
    type array_type_search is array (0 to 56) of std_logic_vector(7 downto 0);
-	signal searchArray : array_type_search := (x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"00",
-                                              x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"00",
-                                              x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"00");
+	signal searchArray : array_type_search;-- := (x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"00",
+                                          --    x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"00",
+                                          --    x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"00");
    
    type mem_type is array ( 0 to 56 ) of std_logic_vector(7 downto 0);
-   signal mem : mem_type := (x"02", x"05", x"05", x"03", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
-                             x"04", x"00", x"07", x"01", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
-                             x"07", x"05", x"09", x"06", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff");
+   signal mem : mem_type;-- := (x"02", x"05", x"05", x"03", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
+                         --    x"04", x"00", x"07", x"01", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
+                         --    x"07", x"05", x"09", x"06", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff");
 
 
    SIGNAL nxt : STD_LOGIC := '0';
@@ -77,7 +77,7 @@ architecture Behavioral of top_level is
    
    SIGNAL step : STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
    
-   SIGNAL addr : INTEGER := 0;
+   SIGNAL addr, addr_next : INTEGER := 0;
    SIGNAL ndx : INTEGER := 0;
    SIGNAL output : STD_LOGIC := '0';
    
@@ -108,19 +108,34 @@ architecture Behavioral of top_level is
    
    -- 2D array of signed values that are outputed from the SAD algorithm
    type array_type_signed is array (0 to 1, 0 to 15) of SIGNED(8 downto 0);
-   SIGNAL summer : array_type_signed;
+   SIGNAL summer, summer_next : array_type_signed;
    
    -- Array to represent SAD values, total of 16 SAD values to compare for each pixel
    type array_type_sad is array (0 to 1, 0 to 15) of std_logic_vector(7 downto 0);
-	signal sadArray : array_type_sad;
+	signal sadArray, sadArray_next : array_type_sad;
    
    SIGNAL templDone : STD_LOGIC := '0';
    SIGNAL sumDone : STD_LOGIC := '0';
    SIGNAL sadDone : STD_LOGIC := '0';
    
+   -- State Diagram Stuff
+   TYPE state_type IS (init, writeToBram, readFromBram, templToLED, sadCalc, assignSad, sadToLED, idle); --minCalc);
+   SIGNAL present_state, next_state : state_type;
+
+   SIGNAL ready : STD_LOGIC := '0';
+   
 begin
 
-      -- Drives other internal clocks with fx2Clk_in
+   searchArray <= (x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"00",
+                   x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"00",
+                   x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"00");
+
+   mem         <= (x"02", x"05", x"05", x"03", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
+                   x"04", x"00", x"07", x"01", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
+                   x"07", x"05", x"09", x"06", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff");
+
+
+   -- Drives other internal clocks with fx2Clk_in
    clocks : PROCESS (clk)
    BEGIN
       clkR     <= NOT(clkR);
@@ -265,160 +280,500 @@ begin
    --enR <= '1';
    --weR <= "1";
 
-
-
-
-
-
-
-
-
-
-   -- WORKS -- puts values from mem array into bram and then reads values from bram to
-   --       --     template array and then outputs all 57 values in template array to LEDs
-   PROCESS (clk)
-   BEGIN
-      weR <= weR;
-      --output <= output;
-      step <= step;
-      templateArray <= templateArray;
-      templDone <= templDone;
-      IF (RISING_EDGE(clk)) THEN
-         IF (weR = '1' AND addr < 57 AND step = "00") THEN
-            dinR <= mem(addr);
-            addr_out <= x"00";
-            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
-            led_out <= x"00";
-            step_out <= "00";
-         ELSIF (addr < 57 AND step = "01") THEN
-            templateArray(addr) <= doutR;--searchArray(TO_INTEGER(UNSIGNED(addr)));
-            addr_out <= x"00";
-            led_out <= x"ff";
-            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
-            step_out <= "01";
-         ELSIF (addr < 57 AND step = "10") THEN
-            led_out <= templateArray(addr);--searchArray(TO_INTEGER(UNSIGNED(addr)));
-            addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
-            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
-            step_out <= "10";
-            templDone <= '1';
-         ELSE
-            led_out <= templateArray(56);--addr-1);--x"ff"; --NULL;
-            addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
-            addr <= 0;
-            step_out <= "11";
---            addr_out <= x"00";
-            weR <= NOT(weR);
-            --output <= '1';
-            step <= STD_LOGIC_VECTOR(UNSIGNED(step) + 1);
-            IF (step = "11") THEN
-               step <= "00";
-               weR <= '1';
-            END IF;
-         END IF;
-      END IF;
-   END PROCESS;
-   
-   sum_abs_diff : PROCESS(templateArray, searchArray, templDone)
-   BEGIN
---    IF (templDone = '1') THEN
-      FOR i IN 0 TO 1 LOOP     -- For each center template pixel/group of SADs
-         FOR j IN 0 TO 15 LOOP -- For the 16 SAD values to compare for disparity
-            summer(i, j) <= 
-               abs(SIGNED('0' & templateArray(0+i))               - SIGNED('0' & searchArray(0+i+j))) + 
-               abs(SIGNED('0' & templateArray(1+i))               - SIGNED('0' & searchArray(1+i+j))) + 
-               abs(SIGNED('0' & templateArray(2+i))               - SIGNED('0' & searchArray(2+i+j))) + 
-               abs(SIGNED('0' & templateArray(0+ncol_c+i))        - SIGNED('0' & searchArray(0+ncol_c+i+j))) +
-               abs(SIGNED('0' & templateArray(1+ncol_c+i))        - SIGNED('0' & searchArray(1+ncol_c+i+j))) +
-               abs(SIGNED('0' & templateArray(2+ncol_c+i))        - SIGNED('0' & searchArray(2+ncol_c+i+j))) +
-               abs(SIGNED('0' & templateArray(0+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(0+ncol_c+ncol_c+i+j))) +
-               abs(SIGNED('0' & templateArray(1+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(1+ncol_c+ncol_c+i+j))) +
-               abs(SIGNED('0' & templateArray(2+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(2+ncol_c+ncol_c+i+j)));
-         END LOOP;
-      END LOOP;
-      sumDone <= '1';
---    ELSE
---      summer <= summer;
---      sumDone <= sumDone;
---    END IF;
-   END PROCESS sum_abs_diff;
-   
-   sad_assign : PROCESS(summer, sumDone)
-   BEGIN
---      IF (sumDone = '1') THEN
-         --sadDone <= '0';
-         FOR i IN 0 TO 1 LOOP
-            FOR j IN 0 TO 15 LOOP
-               sadArray(i, j) <= STD_LOGIC_VECTOR(summer(i, j)(7 DOWNTO 0));
-            END LOOP;
-            --sadArray(i, 3) <= x"ff"; -- Figure out better way to do/get rid of this if still needed
-         END LOOP;
-         sadDone <= NOT(sadDone);
---      ELSE
---         sadArray <= sadArray;
---         sadDone <= sadDone;
+   -- Synchronously assign next state to present state
+--   sync_p : PROCESS (clk)
+--   BEGIN
+--      IF (RISING_EDGE(clk)) THEN
+--         present_state <= next_state;
+--         summer        <= summer_next;
+--         sadArray      <= sadArray_next;
+--         templateArray <= templArray_next;
+--         addr          <= addr_next;
 --      END IF;
-   END PROCESS sad_assign;
+--   END PROCESS sync_p;
+
+   -- The State Machine
+   comb_p : PROCESS (clk)--, present_state) --, summer, sadArray, templateArray, wer, mem, addr, doutR, searchArray)
+   BEGIN
+   
+      IF (RISING_EDGE(clk)) THEN
+         present_state <= next_state;
+         summer        <= summer_next;
+         sadArray      <= sadArray_next;
+         templateArray <= templArray_next;
+         addr          <= addr_next;
+      END IF;
+   
+      CASE present_state IS
+      
+      -- STATE: the initialization cycle ---------------------------------------
+         WHEN init =>     
+
+            -- internal signals
+            weR           <= '1';
+            addr_next     <= 0;
+            dinR          <= x"00";
+            --templateArray <= (OTHERS => (OTHERS => '0'));
+            templArray_next <= (OTHERS => (OTHERS => '0'));
+            --summer        <= ((OTHERS => (OTHERS => '0')), (OTHERS => (OTHERS => '0')));
+            summer_next   <= ((OTHERS => (OTHERS => '0')), (OTHERS => (OTHERS => '0')));
+            --sadArray      <= ((OTHERS => (OTHERS => '0')), (OTHERS => (OTHERS => '0')));
+            sadArray_next <= ((OTHERS => (OTHERS => '0')), (OTHERS => (OTHERS => '0')));
+            
+            -- actual outputs
+            addr_out <= x"00";
+            led_out  <= x"00";
+            step_out <= x"0";
+   
+            --IF (ready = '1') THEN
+            next_state <= writeToBram;
+            --ELSE
+            --   next_state <= init;
+            --END IF;
+      --------------------------------------------------------------------------
+
+      -- STATE: write from array to BRAM ---------------------------------------
+         WHEN writeToBram =>
+--            IF (weR = '1' AND addr < 57 AND step = "00") THEN
+--            dinR <= mem(addr);
+--            addr_out <= x"00";
+--            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
+--            led_out <= x"00";
+--            step_out <= "00";
+
+            -- internal signals
+--            weR           <= '1';
+--            addr          <= 0;
+--            dinR          <= x"00";
+            templArray_next <= templateArray;
+            summer_next     <= summer;
+            sadArray_next   <= sadArray;
+            
+            -- actual outputs
+--            addr_out <= x"00";
+            led_out  <= x"80";
+            step_out <= x"1";
+
+            IF (weR = '1' AND addr < 57) THEN
+               dinR <= mem(addr);
+               addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
+               addr_next <= addr + 1;
+               next_state <= writeToBram;
+               weR <= '1';
+            ELSE
+               dinR <= doutR;--mem(addr);
+               addr_out <= x"f1";
+               addr_next <= 0;
+               next_state <= readFromBram;
+               weR <= '0';
+            END IF;
+            
+--            IF (ready = '1') THEN
+--               next_state <= readFromBram;
+--            ELSE
+--               next_state <= writeToBram;
+--            END IF;
+      --------------------------------------------------------------------------
+
+      -- STATE: write from BRAM to array ---------------------------------------
+         WHEN readFromBram =>
+--            ELSIF (addr < 57 AND step = "01") THEN
+--            templateArray(addr) <= doutR;--searchArray(TO_INTEGER(UNSIGNED(addr)));
+--            addr_out <= x"00";
+--            led_out <= x"ff";
+--            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
+--            step_out <= "01";
+
+            -- internal signals
+            weR           <= '0';
+            --addr          <= 0;
+            dinR          <= doutR;
+            templArray_next <= templateArray;
+            summer_next     <= summer;
+            sadArray_next   <= sadArray;
+            
+            -- actual outputs
+            --addr_out <= x"00";
+            led_out  <= x"c0";
+            step_out <= x"2";
+            
+            IF (addr < 57) THEN
+               templArray_next(addr) <= doutR;
+               addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
+               addr_next <= addr + 1;
+               next_state <= readFromBram;
+            ELSE
+               addr_out <= x"f2";
+               addr_next <= 0;
+               next_state <= templToLED;
+            END IF;
+            
+--            IF (ready = '1') THEN
+--               next_state <= templToLED;
+--            ELSE
+--               next_state <= readFromBram;
+--            END IF;
+      --------------------------------------------------------------------------
+
+      -- STATE: from templ array to leds ---------------------------------------
+         WHEN templToLED =>
+--            ELSIF (addr < 57 AND step = "10") THEN
+--            led_out <= templateArray(addr);--searchArray(TO_INTEGER(UNSIGNED(addr)));
+--            addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
+--            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
+--            step_out <= "10";
+--            templDone <= '1';
+
+            -- internal signals
+            weR           <= '0';
+            --addr          <= 0;
+            dinR          <= doutR;
+            templArray_next <= templateArray;
+            summer_next     <= summer;
+            sadArray_next   <= sadArray;
+            
+            -- actual outputs
+            addr_out <= x"00";
+--            led_out  <= x"00";
+            step_out <= x"3";
+            
+            IF (addr < 57) THEN
+               led_out <= templateArray(addr);
+               addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
+               addr_next <= addr + 1;
+               next_state <= templToLED;
+            ELSE
+               led_out  <= x"e0";
+               addr_out <= x"f3";
+               addr_next <= 0;
+               next_state <= sadCalc;
+            END IF;
+            
+--            IF (ready = '1') THEN
+--               next_state <= sadCalc;
+--            ELSE
+--               next_state <= templToLED;
+--            END IF;
+      --------------------------------------------------------------------------
+
+      -- STATE: perform SAD calculations ---------------------------------------
+         WHEN sadCalc =>
+            
+            -- internal signals
+            weR           <= '0';
+            addr_next     <= 0;
+            dinR          <= doutR;
+            templArray_next <= templateArray;
+            --summer_next     <= summer;
+            sadArray_next   <= sadArray;
+            
+            -- actual outputs
+            addr_out <= x"f4";
+            led_out  <= x"f0";
+            step_out <= x"4";
+            
+            FOR i IN 0 TO 1 LOOP     -- For each center template pixel/group of SADs
+               FOR j IN 0 TO 15 LOOP -- For the 16 SAD values to compare for disparity
+                  summer_next(i, j) <= 
+                     abs(SIGNED('0' & templateArray(0+i))               - SIGNED('0' & searchArray(0+i+j))) + 
+                     abs(SIGNED('0' & templateArray(1+i))               - SIGNED('0' & searchArray(1+i+j))) + 
+                     abs(SIGNED('0' & templateArray(2+i))               - SIGNED('0' & searchArray(2+i+j))) + 
+                     abs(SIGNED('0' & templateArray(0+ncol_c+i))        - SIGNED('0' & searchArray(0+ncol_c+i+j))) +
+                     abs(SIGNED('0' & templateArray(1+ncol_c+i))        - SIGNED('0' & searchArray(1+ncol_c+i+j))) +
+                     abs(SIGNED('0' & templateArray(2+ncol_c+i))        - SIGNED('0' & searchArray(2+ncol_c+i+j))) +
+                     abs(SIGNED('0' & templateArray(0+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(0+ncol_c+ncol_c+i+j))) +
+                     abs(SIGNED('0' & templateArray(1+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(1+ncol_c+ncol_c+i+j))) +
+                     abs(SIGNED('0' & templateArray(2+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(2+ncol_c+ncol_c+i+j)));
+               END LOOP;
+            END LOOP;
+            
+--            IF (ready = '1') THEN
+            next_state <= assignSad;
+--            ELSE
+--               next_state <= sadCalc;
+--            END IF;
+      --------------------------------------------------------------------------
+
+      -- STATE: assign SAD calc to array ---------------------------------------
+         WHEN assignSad =>
+            
+            -- internal signals
+            weR           <= '0';
+            addr_next     <= 0;
+            dinR          <= doutR;
+            templArray_next <= templateArray;
+            summer_next     <= summer;
+            --sadArray_next   <= sadArray;
+            
+            -- actual outputs
+            addr_out <= x"f5";
+            led_out  <= x"f8";
+            step_out <= x"5";
+            
+            FOR i IN 0 TO 1 LOOP
+               FOR j IN 0 TO 15 LOOP
+                  sadArray_next(i, j) <= STD_LOGIC_VECTOR(summer(i, j)(7 DOWNTO 0));
+               END LOOP;
+            END LOOP;
+            
+--            IF (ready = '1') THEN
+            next_state <= sadToLED;
+--            ELSE
+--               next_state <= assignSad;
+--            END IF;
+      --------------------------------------------------------------------------
+
+      -- STATE: SAD values output to LED ---------------------------------------
+         WHEN sadToLED =>
+            -- internal signals
+            weR           <= '0';
+--            addr          <= 0;
+            dinR          <= doutR;
+            templArray_next <= templateArray;
+            summer_next     <= summer;
+            sadArray_next   <= sadArray;
+            
+            -- actual outputs
+--            addr_out <= x"f6";
+--            led_out  <= x"fc";
+            step_out <= x"6";
+            
+            IF (addr < 16) THEN
+               led_out    <= sadArray(0, addr);
+               addr_out   <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
+               addr_next  <= addr + 1;
+               next_state <= sadToLED;
+            ELSE
+               led_out    <= x"fc";
+               addr_out   <= x"f6";
+               addr_next  <= 0;
+               next_state <= idle;
+            END IF;
+         
+--            IF (ready = '1') THEN
+--               next_state <= idle;
+--            ELSE
+--               next_state <= sadToLED;
+--            END IF;
+      --------------------------------------------------------------------------
+
+      -- STATE: idle for now             ---------------------------------------
+         WHEN idle =>
+            -- internal signals
+            weR           <= '0';
+            addr_next     <= 0;
+            dinR          <= doutR;
+            templArray_next <= templateArray;
+            summer_next     <= summer;
+            sadArray_next   <= sadArray;
+            
+            -- actual outputs
+            addr_out <= x"f7";
+            led_out  <= x"fe";
+            step_out <= x"7";
+            
+            -- not this part yet
+         
+            next_state <= idle;
+--            IF (ready = '1') THEN
+--               next_state <= init;
+--            ELSE
+--               next_state <= minCalc;
+--            END IF;
+      --------------------------------------------------------------------------
+
+--      -- STATE: perform Min calculations ---------------------------------------
+--         WHEN minCalc =>
+--            -- internal signals
+--            weR           <= weR;
+--            addr          <= 0;
+--            dinR          <= x"00";
+--            templateArray <= templateArray;
+--            summer        <= summer;
+--            sadArray      <= sadArray;
+--            
+--            -- actual outputs
+--            addr_out <= x"00";
+--            led_out  <= x"00";
+--            step_out <= x"0";
+--            
+--            -- not this part yet
+--         
+--            IF (ready = '1') THEN
+--               next_state <= init;
+--            ELSE
+--               next_state <= minCalc;
+--            END IF;
+--      --------------------------------------------------------------------------
+
+         --WHEN writeToBram =>
+            
+      END CASE;
+   END PROCESS comb_p;
 
 
-   -- LED output for SAD and disparity values, display dependent on switches
-   WITH sw_in SELECT sum_out <=
-      sadArray(0, 0)                   WHEN x"00",
-      sadArray(0, 1)                   WHEN x"01",
-      sadArray(0, 2)                   WHEN x"02",
-      sadArray(0, 3)                   WHEN x"03",
-      sadArray(0, 4)                   WHEN x"04",
-      sadArray(0, 5)                   WHEN x"05",
-      sadArray(0, 6)                   WHEN x"06",
-      sadArray(0, 7)                   WHEN x"07",
-      sadArray(0, 8)                   WHEN x"08",
-      sadArray(0, 9)                   WHEN x"09",
-      sadArray(0, 10)                  WHEN x"0a",
-      sadArray(0, 11)                  WHEN x"0b",
-      sadArray(0, 12)                  WHEN x"0c",
-      sadArray(0, 13)                  WHEN x"0d",
-      sadArray(0, 14)                  WHEN x"0e",
-      sadArray(0, 15)                  WHEN x"0f",
-      
-      sadArray(1, 0)                   WHEN x"10",
-      sadArray(1, 1)                   WHEN x"11",
-      sadArray(1, 2)                   WHEN x"12",
-      
---      minSad(0, 0)                     WHEN x"13",
---      "0000" & minPos(0, 0)            WHEN x"14",
---      minSad(0, 1)                     WHEN x"15",
---      "0000" & minPos(0, 1)            WHEN x"16",
---      minSad(0, 2)                     WHEN x"17",
---      "0000" & minPos(0, 2)            WHEN x"18",
---      minSad(0, 3)                     WHEN x"19",
---      "0000" & minPos(0, 3)            WHEN x"1a",
---      minSad(0, 4)                     WHEN x"1b",
---      "0000" & minPos(0, 4)            WHEN x"1c",
---      minSad(0, 5)                     WHEN x"1d",
---      "0000" & minPos(0, 5)            WHEN x"1e",
---      minSad(0, 6)                     WHEN x"1f",
---      "0000" & minPos(0, 6)            WHEN x"20",
---      minSad(0, 7)                     WHEN x"21",
---      "0000" & minPos(0, 7)            WHEN x"22",
---      minSad(0, 8)                     WHEN x"23",
---      "0000" & minPos(0, 8)            WHEN x"24",
---      minSad(0, 9)                     WHEN x"25",
---      "0000" & minPos(0, 9)            WHEN x"26",
---      minSad(0, 10)                    WHEN x"27",
---      "0000" & minPos(0, 10)           WHEN x"28",
---      minSad(0, 11)                    WHEN x"29",
---      "0000" & minPos(0, 11)           WHEN x"2a",
---      minSad(0, 12)                    WHEN x"2b",
---      "0000" & minPos(0, 12)           WHEN x"2c",
---      minSad(0, 13)                    WHEN x"2d",
---      "0000" & minPos(0, 13)           WHEN x"2e",
---      minSad(0, 14)                    WHEN x"2f",
---      "0000" & minPos(0, 14)           WHEN x"30",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--   -- WORKS -- puts values from mem array into bram and then reads values from bram to
+--   --       --     template array and then outputs all 57 values in template array to LEDs
+--   PROCESS (clk)
+--   BEGIN
+--      weR <= weR;
+--      --output <= output;
+--      step <= step;
+--      templateArray <= templateArray;
+--      templDone <= templDone;
+--      IF (RISING_EDGE(clk)) THEN
+--         IF (weR = '1' AND addr < 57 AND step = "00") THEN
+--            dinR <= mem(addr);
+--            addr_out <= x"00";
+--            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
+--            led_out <= x"00";
+--            step_out <= "00";
+--         ELSIF (addr < 57 AND step = "01") THEN
+--            templateArray(addr) <= doutR;--searchArray(TO_INTEGER(UNSIGNED(addr)));
+--            addr_out <= x"00";
+--            led_out <= x"ff";
+--            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
+--            step_out <= "01";
+--         ELSIF (addr < 57 AND step = "10") THEN
+--            led_out <= templateArray(addr);--searchArray(TO_INTEGER(UNSIGNED(addr)));
+--            addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
+--            addr <= addr + 1; --STD_LOGIC_VECTOR(UNSIGNED(addr) + 1);
+--            step_out <= "10";
+--            templDone <= '1';
+--         ELSE
+--            led_out <= templateArray(56);--addr-1);--x"ff"; --NULL;
+--            addr_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(addr, 8));
+--            addr <= 0;
+--            step_out <= "11";
+----            addr_out <= x"00";
+--            weR <= NOT(weR);
+--            --output <= '1';
+--            step <= STD_LOGIC_VECTOR(UNSIGNED(step) + 1);
+--            IF (step = "11") THEN
+--               step <= "00";
+--               weR <= '1';
+--            END IF;
+--         END IF;
+--      END IF;
+--   END PROCESS;
+--   
+--   sum_abs_diff : PROCESS(templateArray, searchArray, templDone)
+--   BEGIN
+----    IF (templDone = '1') THEN
+--      FOR i IN 0 TO 1 LOOP     -- For each center template pixel/group of SADs
+--         FOR j IN 0 TO 15 LOOP -- For the 16 SAD values to compare for disparity
+--            summer(i, j) <= 
+--               abs(SIGNED('0' & templateArray(0+i))               - SIGNED('0' & searchArray(0+i+j))) + 
+--               abs(SIGNED('0' & templateArray(1+i))               - SIGNED('0' & searchArray(1+i+j))) + 
+--               abs(SIGNED('0' & templateArray(2+i))               - SIGNED('0' & searchArray(2+i+j))) + 
+--               abs(SIGNED('0' & templateArray(0+ncol_c+i))        - SIGNED('0' & searchArray(0+ncol_c+i+j))) +
+--               abs(SIGNED('0' & templateArray(1+ncol_c+i))        - SIGNED('0' & searchArray(1+ncol_c+i+j))) +
+--               abs(SIGNED('0' & templateArray(2+ncol_c+i))        - SIGNED('0' & searchArray(2+ncol_c+i+j))) +
+--               abs(SIGNED('0' & templateArray(0+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(0+ncol_c+ncol_c+i+j))) +
+--               abs(SIGNED('0' & templateArray(1+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(1+ncol_c+ncol_c+i+j))) +
+--               abs(SIGNED('0' & templateArray(2+ncol_c+ncol_c+i)) - SIGNED('0' & searchArray(2+ncol_c+ncol_c+i+j)));
+--         END LOOP;
+--      END LOOP;
+--      sumDone <= '1';
+----    ELSE
+----      summer <= summer;
+----      sumDone <= sumDone;
+----    END IF;
+--   END PROCESS sum_abs_diff;
+--   
+--   sad_assign : PROCESS(summer, sumDone)
+--   BEGIN
+----      IF (sumDone = '1') THEN
+--         --sadDone <= '0';
+--         FOR i IN 0 TO 1 LOOP
+--            FOR j IN 0 TO 15 LOOP
+--               sadArray(i, j) <= STD_LOGIC_VECTOR(summer(i, j)(7 DOWNTO 0));
+--            END LOOP;
+--            --sadArray(i, 3) <= x"ff"; -- Figure out better way to do/get rid of this if still needed
+--         END LOOP;
+--         sadDone <= NOT(sadDone);
+----      ELSE
+----         sadArray <= sadArray;
+----         sadDone <= sadDone;
+----      END IF;
+--   END PROCESS sad_assign;
+--
+--
+--   -- LED output for SAD and disparity values, display dependent on switches
+--   WITH sw_in SELECT sum_out <=
+--      sadArray(0, 0)                   WHEN x"00",
+--      sadArray(0, 1)                   WHEN x"01",
+--      sadArray(0, 2)                   WHEN x"02",
+--      sadArray(0, 3)                   WHEN x"03",
+--      sadArray(0, 4)                   WHEN x"04",
+--      sadArray(0, 5)                   WHEN x"05",
+--      sadArray(0, 6)                   WHEN x"06",
+--      sadArray(0, 7)                   WHEN x"07",
+--      sadArray(0, 8)                   WHEN x"08",
+--      sadArray(0, 9)                   WHEN x"09",
+--      sadArray(0, 10)                  WHEN x"0a",
+--      sadArray(0, 11)                  WHEN x"0b",
+--      sadArray(0, 12)                  WHEN x"0c",
+--      sadArray(0, 13)                  WHEN x"0d",
+--      sadArray(0, 14)                  WHEN x"0e",
+--      sadArray(0, 15)                  WHEN x"0f",
 --      
---      "0000" & disparityArray(0)       WHEN x"31",
---      "0000" & disparityArray(1)       WHEN x"32",
---      buff                             WHEN x"33",
-		x"00"                            WHEN OTHERS;
+--      sadArray(1, 0)                   WHEN x"10",
+--      sadArray(1, 1)                   WHEN x"11",
+--      sadArray(1, 2)                   WHEN x"12",
+--      
+----      minSad(0, 0)                     WHEN x"13",
+----      "0000" & minPos(0, 0)            WHEN x"14",
+----      minSad(0, 1)                     WHEN x"15",
+----      "0000" & minPos(0, 1)            WHEN x"16",
+----      minSad(0, 2)                     WHEN x"17",
+----      "0000" & minPos(0, 2)            WHEN x"18",
+----      minSad(0, 3)                     WHEN x"19",
+----      "0000" & minPos(0, 3)            WHEN x"1a",
+----      minSad(0, 4)                     WHEN x"1b",
+----      "0000" & minPos(0, 4)            WHEN x"1c",
+----      minSad(0, 5)                     WHEN x"1d",
+----      "0000" & minPos(0, 5)            WHEN x"1e",
+----      minSad(0, 6)                     WHEN x"1f",
+----      "0000" & minPos(0, 6)            WHEN x"20",
+----      minSad(0, 7)                     WHEN x"21",
+----      "0000" & minPos(0, 7)            WHEN x"22",
+----      minSad(0, 8)                     WHEN x"23",
+----      "0000" & minPos(0, 8)            WHEN x"24",
+----      minSad(0, 9)                     WHEN x"25",
+----      "0000" & minPos(0, 9)            WHEN x"26",
+----      minSad(0, 10)                    WHEN x"27",
+----      "0000" & minPos(0, 10)           WHEN x"28",
+----      minSad(0, 11)                    WHEN x"29",
+----      "0000" & minPos(0, 11)           WHEN x"2a",
+----      minSad(0, 12)                    WHEN x"2b",
+----      "0000" & minPos(0, 12)           WHEN x"2c",
+----      minSad(0, 13)                    WHEN x"2d",
+----      "0000" & minPos(0, 13)           WHEN x"2e",
+----      minSad(0, 14)                    WHEN x"2f",
+----      "0000" & minPos(0, 14)           WHEN x"30",
+----      
+----      "0000" & disparityArray(0)       WHEN x"31",
+----      "0000" & disparityArray(1)       WHEN x"32",
+----      buff                             WHEN x"33",
+--		x"00"                            WHEN OTHERS;
    
 --   PROCESS (sadArray, sadDone)
 --   BEGIN

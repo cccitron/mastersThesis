@@ -47,7 +47,7 @@ ARCHITECTURE behavior OF tb_top_level IS
          reset : IN  std_logic;
          led_out : OUT  std_logic_vector(7 downto 0);
          sw_in : IN  std_logic_vector(7 downto 0);
-         step_out : OUT  std_logic_vector(1 downto 0);
+         step_out : OUT  std_logic_vector(3 downto 0);
          addr_out : OUT  std_logic_vector(7 downto 0);
          sum_out : OUT  std_logic_vector(7 downto 0);
          ndx_out : OUT  std_logic_vector(5 downto 0);
@@ -63,7 +63,7 @@ ARCHITECTURE behavior OF tb_top_level IS
 
  	--Outputs
    signal led_out : std_logic_vector(7 downto 0);
-   signal step_out : std_logic_vector(1 downto 0);
+   signal step_out : std_logic_vector(3 downto 0);
    signal addr_out : std_logic_vector(7 downto 0);
    signal sum_out : std_logic_vector(7 downto 0);
    signal ndx_out : std_logic_vector(5 downto 0);
@@ -110,104 +110,104 @@ BEGIN
       wait for clk_period*10;
 
       -- insert stimulus here 
-      wait for 2000 ns;
-      sw_in <= x"00";
-      wait for 10 ns;
-      write(line_out, now);
-      write(line_out, string'(" sadArray(0, 0): "));
-      write(line_out, led_out);
-      writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"01"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, 1): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"02"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, 2): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"03"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, 3): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"04"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, 4): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"05"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, 5): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"06"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, 6): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"07"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, 7): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"08"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, 8): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"09"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, 9): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"0a"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, a): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"0b"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, b): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"0c"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, c): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"0d"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, d): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"0e"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, e): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"0f"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(0, f): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      
-      wait for 10 ns;
-      sw_in <= x"10"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(1, 0): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"11"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(1, 1): ")); 
-      write(line_out, led_out); writeline(output, line_out);
-      
-      wait for 10 ns;
-      sw_in <= x"12"; wait for 10 ns; write(line_out, now);
-      write(line_out, string'(" sadArray(1, 2): ")); 
-      write(line_out, led_out); writeline(output, line_out);
+--      wait for 2000 ns;
+--      sw_in <= x"00";
+--      wait for 10 ns;
+--      write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 0): "));
+--      write(line_out, led_out);
+--      writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"01"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 1): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"02"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 2): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"03"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 3): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"04"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 4): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"05"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 5): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"06"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 6): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"07"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 7): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"08"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 8): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"09"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, 9): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"0a"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, a): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"0b"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, b): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"0c"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, c): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"0d"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, d): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"0e"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, e): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"0f"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(0, f): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      
+--      wait for 10 ns;
+--      sw_in <= x"10"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(1, 0): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"11"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(1, 1): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
+--      
+--      wait for 10 ns;
+--      sw_in <= x"12"; wait for 10 ns; write(line_out, now);
+--      write(line_out, string'(" sadArray(1, 2): ")); 
+--      write(line_out, led_out); writeline(output, line_out);
 
       wait;
    end process;
