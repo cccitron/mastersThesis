@@ -52,7 +52,7 @@
 :: \   \   \/     Version               : 3.6.1
 ::  \   \         Application           : MIG
 ::  /   /         Filename              : readme.txt
-:: /___/   /\     Date Last Modified    : $Date: 2010/10/27 17:40:08 $
+:: /___/   /\     Date Last Modified    : $Date: 2010/11/26 18:25:45 $
 :: \   \  /  \    Date Created          : Fri Feb 06 2009
 ::  \___\/\___\
 ::

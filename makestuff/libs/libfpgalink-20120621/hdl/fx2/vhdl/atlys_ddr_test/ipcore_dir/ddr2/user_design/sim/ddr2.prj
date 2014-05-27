@@ -26,7 +26,7 @@ verilog  work  ./memc_tb_top.v
 
 verilog  work  $XILINX/verilog/src/glbl.v
 verilog  work  ./sim_tb_top.v
-verilog  work  ./ddr2_model_c3.v -d x1Gb -d sg25 -d x16 -i ./
+verilog  work  ./ede1116_8e_1110_ms.vp -d pwup_off -i ./
 
 
 

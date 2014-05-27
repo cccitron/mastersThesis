@@ -145,20 +145,20 @@ module atlys_ddr_test(
 			end
 		1: begin
 			c3_p0_wr_en <= 1;
-			c3_p0_wr_data <= 64'd1;
+			c3_p0_wr_data <= 64'd5;//1;
 			state <= 2;
 			count <= 12'd0;
 			end
 		2: begin
-			c3_p0_wr_data <= 64'd2;
+			c3_p0_wr_data <= 64'd5;//2;
 			state <= 3;
 			end
 		3: begin
-			c3_p0_wr_data <= 64'd3;
+			c3_p0_wr_data <= 64'd5;//3;
 			state <= 4;
 			end
 		4: begin
-			c3_p0_wr_data <= 64'd4;
+			c3_p0_wr_data <= 64'd5;//4;
 			state <= 5;
 			end
 		5: begin
@@ -166,7 +166,7 @@ module atlys_ddr_test(
 			state <= 6;
 			end
 		6: begin
-			c3_p0_wr_data <= 64'd6;
+			c3_p0_wr_data <= 64'd5;//6;
 			state <= 7;
 			end
 		7: begin

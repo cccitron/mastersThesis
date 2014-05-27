@@ -52,7 +52,7 @@
 // \   \   \/     Version: %version
 //  \   \         Application: MIG
 //  /   /         Filename: init_mem_pattern_ctr.v
-// /___/   /\     Date Last Modified: $Date: 2010/10/27 17:39:43 $
+// /___/   /\     Date Last Modified: $Date: 2010/11/26 18:25:40 $
 // \   \  /  \    Date Created: Fri Sep 01 2006
 //  \___\/\___\
 //
@@ -397,15 +397,10 @@ assign tst_matched = upper_end_matched & lower_end_matched;
 assign   fixed_addr_o = 32'h00001234;
 
 
-  //mcb_init_done_i is clocked by calibration clock
-reg           mcb_init_done_i_r1;
-reg           mcb_init_done_i_r2;
 
  always @ (posedge clk_i)
  begin
-      mcb_init_done_i_r1 <= mcb_init_done_i;
-      mcb_init_done_i_r2 <= mcb_init_done_i_r1;
-      mcb_init_done_reg  <= mcb_init_done_i_r2;
+      mcb_init_done_reg <= mcb_init_done_i;
 end
 
  always @ (posedge clk_i)

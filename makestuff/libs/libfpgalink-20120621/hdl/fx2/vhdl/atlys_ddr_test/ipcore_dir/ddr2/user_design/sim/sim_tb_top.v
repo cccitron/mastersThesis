@@ -52,7 +52,7 @@
 // \   \   \/    Version            : 3.6.1
 //  \   \        Application        : MIG
 //  /   /        Filename           : sim_tb_top.v
-// /___/   /\    Date Last Modified : $Date: 2010/10/27 17:40:08 $
+// /___/   /\    Date Last Modified : $Date: 2010/11/26 18:25:45 $
 // \   \  /  \   Date Created	    : Mon Mar 2 2009
 //  \___\/\___\
 //
@@ -78,7 +78,7 @@ module sim_tb_top;
    localparam C3_P4_PORT_MODE             =  "NONE";
    localparam C3_P5_PORT_MODE             =  "NONE";
    localparam C3_PORT_ENABLE              = 6'b000011;
-   localparam C3_PORT_CONFIG             =  "B32_B32_R32_R32_R32_R32";
+   localparam C3_PORT_CONFIG             =  "B64_B64";
    	parameter C3_MEMCLK_PERIOD     = 3200;
    parameter C3_RST_ACT_LOW        = 0;
    parameter C3_INPUT_CLK_TYPE     = "SINGLE_ENDED";
@@ -86,45 +86,45 @@ module sim_tb_top;
    parameter C3_MEM_ADDR_WIDTH     = 13;
    parameter C3_MEM_BANKADDR_WIDTH = 3;   
    parameter C3_MEM_ADDR_ORDER     = "ROW_BANK_COLUMN"; 
-      parameter C3_P0_MASK_SIZE       = 4;
-   parameter C3_P0_DATA_PORT_SIZE  = 32;  
-   parameter C3_P1_MASK_SIZE       = 4;
-   parameter C3_P1_DATA_PORT_SIZE  = 32;
+      parameter C3_P0_MASK_SIZE       = 8;
+   parameter C3_P0_DATA_PORT_SIZE  = 64;  
+   parameter C3_P1_MASK_SIZE       = 8;
+   parameter C3_P1_DATA_PORT_SIZE  = 64;
    parameter C3_MEM_BURST_LEN	  = 4;
    parameter C3_MEM_NUM_COL_BITS   = 10;
    parameter C3_CALIB_SOFT_IP      = "TRUE";  
    parameter C3_SIMULATION      = "TRUE";
    parameter C3_HW_TESTING      = "FALSE";
-   localparam C3_p0_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p0_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000200;
    localparam C3_p0_DATA_MODE                       = 4'b0010;
-   localparam C3_p0_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p0_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p0_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
-   localparam C3_p1_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h03000000:32'h00000300;
+   localparam C3_p0_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000003ff;
+   localparam C3_p0_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffff800;
+   localparam C3_p0_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000200;
+   localparam C3_p1_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h03000000:32'h00000400;
    localparam C3_p1_DATA_MODE                       = 4'b0010;
-   localparam C3_p1_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h04ffffff:32'h000004ff;
-   localparam C3_p1_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff800;
-   localparam C3_p1_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h03000000:32'h00000300;
-   localparam C3_p2_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p1_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h04ffffff:32'h000005ff;
+   localparam C3_p1_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff000;
+   localparam C3_p1_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h03000000:32'h00000400;
+   localparam C3_p2_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000600;
    localparam C3_p2_DATA_MODE                       = 4'b0010;
-   localparam C3_p2_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p2_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p2_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
-   localparam C3_p3_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p2_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h06ffffff:32'h000007ff;
+   localparam C3_p2_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff000;
+   localparam C3_p2_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000600;
+   localparam C3_p3_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000700;
    localparam C3_p3_DATA_MODE                       = 4'b0010;
-   localparam C3_p3_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p3_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p3_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
-   localparam C3_p4_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p3_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000008ff;
+   localparam C3_p3_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffff000;
+   localparam C3_p3_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000700;
+   localparam C3_p4_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000500;
    localparam C3_p4_DATA_MODE                       = 4'b0010;
-   localparam C3_p4_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p4_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p4_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
-   localparam C3_p5_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p4_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h06ffffff:32'h000006ff;
+   localparam C3_p4_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff800;
+   localparam C3_p4_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000500;
+   localparam C3_p5_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000500;
    localparam C3_p5_DATA_MODE                       = 4'b0010;
-   localparam C3_p5_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p5_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p5_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p5_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h06ffffff:32'h000006ff;
+   localparam C3_p5_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff800;
+   localparam C3_p5_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000500;
 // ========================================================================== //
 // Signal Declarations                                                        //
 // ========================================================================== //
@@ -685,9 +685,8 @@ design_top (
 // Memory model instances                                                     // 
 // ========================================================================== //
 
-   generate
-      if(C3_NUM_DQ_PINS == 16) begin : MEM_INST3
-     ddr2_model_c3 u_mem_c3(
+   
+     ede1116 u_mem_c3(
         .ck         (mcb3_dram_ck),
         .ck_n       (mcb3_dram_ck_n),
         .cke        (mcb3_dram_cke),
@@ -695,35 +694,18 @@ design_top (
         .ras_n      (mcb3_dram_ras_n),
         .cas_n      (mcb3_dram_cas_n),
         .we_n       (mcb3_dram_we_n),
-        .dm_rdqs    ({mcb3_dram_udm,mcb3_dram_dm}),
+        .ldm        (mcb3_dram_dm),
+        .udm        (mcb3_dram_udm),
         .ba         (mcb3_dram_ba),
-        .addr       (mcb3_dram_a),
+        .a          (mcb3_dram_a),
         .dq         (mcb3_dram_dq),
-        .dqs        ({mcb3_dram_udqs,mcb3_dram_dqs}),
-        .dqs_n      ({mcb3_dram_udqs_n,mcb3_dram_dqs_n}),
-        .rdqs_n     (),
+        .ldqs       (mcb3_dram_dqs),
+        .udqs       (mcb3_dram_udqs),
+        .ldqs_n     (mcb3_dram_dqs_n),
+        .udqs_n     (mcb3_dram_udqs_n),
         .odt        (mcb3_dram_odt)
       );
-      end else begin
-     ddr2_model_c3 u_mem_c3(
-        .ck         (mcb3_dram_ck),
-        .ck_n       (mcb3_dram_ck_n),
-        .cke        (mcb3_dram_cke),
-        .cs_n       (1'b0),
-        .ras_n      (mcb3_dram_ras_n),
-        .cas_n      (mcb3_dram_cas_n),
-        .we_n       (mcb3_dram_we_n),
-        .dm_rdqs    (mcb3_dram_dm),
-        .ba         (mcb3_dram_ba),
-        .addr       (mcb3_dram_a),
-        .dq         (mcb3_dram_dq),
-        .dqs        (mcb3_dram_dqs),
-        .dqs_n      (mcb3_dram_dqs_n),
-        .rdqs_n     (),
-        .odt        (mcb3_dram_odt)
-      );
-     end
-   endgenerate
+
 
 // ========================================================================== //
 // Reporting the test case status 

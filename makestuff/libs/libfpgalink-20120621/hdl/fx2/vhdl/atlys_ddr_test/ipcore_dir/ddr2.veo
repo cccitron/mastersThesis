@@ -52,7 +52,7 @@
 // \   \   \/    Version            : 3.6.1
 //  \   \        Application        : MIG
 //  /   /        Filename           : ddr2.veo
-// /___/   /\    Date Last Modified : $Date: 2010/10/27 17:41:04 $
+// /___/   /\    Date Last Modified : $Date: 2010/11/26 18:26:31 $
 // \   \  /  \   Date Created       : Fri Aug 7 2009
 //  \___\/\___\
 //
@@ -68,10 +68,10 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 
  ddr2 # (
-    .C3_P0_MASK_SIZE(4),
-    .C3_P0_DATA_PORT_SIZE(32),
-    .C3_P1_MASK_SIZE(4),
-    .C3_P1_DATA_PORT_SIZE(32),
+    .C3_P0_MASK_SIZE(8),
+    .C3_P0_DATA_PORT_SIZE(64),
+    .C3_P1_MASK_SIZE(8),
+    .C3_P1_DATA_PORT_SIZE(64),
     .DEBUG_EN(0),
     .C3_MEMCLK_PERIOD(3200),
     .C3_CALIB_SOFT_IP("TRUE"),

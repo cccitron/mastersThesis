@@ -52,7 +52,7 @@
 // \   \   \/     Version            : 3.6.1
 //  \   \         Application        : MIG
 //  /   /         Filename           : example_top #.v
-// /___/   /\     Date Last Modified : $Date: 2010/10/27 17:40:11 $
+// /___/   /\     Date Last Modified : $Date: 2010/11/26 18:25:49 $
 // \   \  /  \    Date Created       : Tue Feb 23 2010
 //  \___\/\___\
 //
@@ -66,13 +66,13 @@
 //*****************************************************************************
 `timescale 1ns/1ps
 
-(* X_CORE_INFO = "mig_v3_61_ddr2_s6, Coregen 12.4" , CORE_GENERATION_INFO = "ddr2_s6,mig_v3_61,{component_name=ddr2, C3_MEM_INTERFACE_TYPE=DDR2_SDRAM, C3_CLK_PERIOD=3200, C3_MEMORY_PART=mt47h64m16xx-25, C3_OUTPUT_DRV=FULL, C3_RTT_NOM=50OHMS, C3_DQS#_ENABLE=YES, C3_HIGH_TEMP_SR=NORMAL, C3_PORT_CONFIG=Two 32-bit bi-directional and four 32-bit unidirectional ports, C3_MEM_ADDR_ORDER=ROW_BANK_COLUMN, C3_PORT_ENABLE=Port0_Port1, C3_CLASS_ADDR=II, C3_CLASS_DATA=II, C3_INPUT_PIN_TERMINATION=CALIB_TERM, C3_DATA_TERMINATION=25 Ohms, C3_CLKFBOUT_MULT_F=2, C3_CLKOUT_DIVIDE=1, C3_DEBUG_PORT=0, INPUT_CLK_TYPE=Single-Ended, LANGUAGE=Verilog, SYNTHESIS_TOOL=ISE, NO_OF_CONTROLLERS=1}" *)
+(* X_CORE_INFO = "mig_v3_61_ddr2_s6, Coregen 12.4" , CORE_GENERATION_INFO = "ddr2_s6,mig_v3_61,{component_name=ddr2, C3_MEM_INTERFACE_TYPE=DDR2_SDRAM, C3_CLK_PERIOD=3200, C3_MEMORY_PART=ede1116axxx-8e, C3_OUTPUT_DRV=FULL, C3_RTT_NOM=50OHMS, C3_DQS#_ENABLE=YES, C3_HIGH_TEMP_SR=NORMAL, C3_PORT_CONFIG=Two 64-bit bi-directional ports, C3_MEM_ADDR_ORDER=ROW_BANK_COLUMN, C3_PORT_ENABLE=Port0_Port1, C3_CLASS_ADDR=II, C3_CLASS_DATA=II, C3_INPUT_PIN_TERMINATION=CALIB_TERM, C3_DATA_TERMINATION=25 Ohms, C3_CLKFBOUT_MULT_F=2, C3_CLKOUT_DIVIDE=1, C3_DEBUG_PORT=0, INPUT_CLK_TYPE=Single-Ended, LANGUAGE=Verilog, SYNTHESIS_TOOL=ISE, NO_OF_CONTROLLERS=1}" *)
 module example_top #
 (
-   parameter C3_P0_MASK_SIZE           = 4,
-   parameter C3_P0_DATA_PORT_SIZE      = 32,
-   parameter C3_P1_MASK_SIZE           = 4,
-   parameter C3_P1_DATA_PORT_SIZE      = 32,
+   parameter C3_P0_MASK_SIZE           = 8,
+   parameter C3_P0_DATA_PORT_SIZE      = 64,
+   parameter C3_P1_MASK_SIZE           = 8,
+   parameter C3_P1_DATA_PORT_SIZE      = 64,
    parameter DEBUG_EN                = 0,       
    parameter C3_MEMCLK_PERIOD        = 3200,       
    parameter C3_CALIB_SOFT_IP        = "TRUE",       
@@ -119,7 +119,7 @@ module example_top #
 // port-5 in Config-4: Two 64-bit bi-directional ports. Please look into the 
 // Chapter-2 of ug388.pdf in the /docs directory for further details.
    localparam C3_PORT_ENABLE              = 6'b000011;
-   localparam C3_PORT_CONFIG             =  "B32_B32_R32_R32_R32_R32";
+   localparam C3_PORT_CONFIG             =  "B64_B64";
    localparam C3_P0_PORT_MODE             =  "BI_MODE";
    localparam C3_P1_PORT_MODE             =  "BI_MODE";
    localparam C3_P2_PORT_MODE             =  "NONE";
@@ -134,23 +134,23 @@ module example_top #
    localparam C3_DIVCLK_DIVIDE        = 1;       
    localparam C3_ARB_ALGORITHM        = 0;       
    localparam C3_ARB_NUM_TIME_SLOTS   = 12;       
-   localparam C3_ARB_TIME_SLOT_0      = 6'o01;       
-   localparam C3_ARB_TIME_SLOT_1      = 6'o10;       
-   localparam C3_ARB_TIME_SLOT_2      = 6'o01;       
-   localparam C3_ARB_TIME_SLOT_3      = 6'o10;       
-   localparam C3_ARB_TIME_SLOT_4      = 6'o01;       
-   localparam C3_ARB_TIME_SLOT_5      = 6'o10;       
-   localparam C3_ARB_TIME_SLOT_6      = 6'o01;       
-   localparam C3_ARB_TIME_SLOT_7      = 6'o10;       
-   localparam C3_ARB_TIME_SLOT_8      = 6'o01;       
-   localparam C3_ARB_TIME_SLOT_9      = 6'o10;       
-   localparam C3_ARB_TIME_SLOT_10     = 6'o01;       
-   localparam C3_ARB_TIME_SLOT_11     = 6'o10;       
-   localparam C3_MEM_TRAS             = 40000;       
-   localparam C3_MEM_TRCD             = 15000;       
+   localparam C3_ARB_TIME_SLOT_0      = 6'o02;       
+   localparam C3_ARB_TIME_SLOT_1      = 6'o20;       
+   localparam C3_ARB_TIME_SLOT_2      = 6'o02;       
+   localparam C3_ARB_TIME_SLOT_3      = 6'o20;       
+   localparam C3_ARB_TIME_SLOT_4      = 6'o02;       
+   localparam C3_ARB_TIME_SLOT_5      = 6'o20;       
+   localparam C3_ARB_TIME_SLOT_6      = 6'o02;       
+   localparam C3_ARB_TIME_SLOT_7      = 6'o20;       
+   localparam C3_ARB_TIME_SLOT_8      = 6'o02;       
+   localparam C3_ARB_TIME_SLOT_9      = 6'o20;       
+   localparam C3_ARB_TIME_SLOT_10     = 6'o02;       
+   localparam C3_ARB_TIME_SLOT_11     = 6'o20;       
+   localparam C3_MEM_TRAS             = 45000;       
+   localparam C3_MEM_TRCD             = 12500;       
    localparam C3_MEM_TREFI            = 7800000;       
    localparam C3_MEM_TRFC             = 127500;       
-   localparam C3_MEM_TRP              = 15000;       
+   localparam C3_MEM_TRP              = 12500;       
    localparam C3_MEM_TWR              = 15000;       
    localparam C3_MEM_TRTP             = 7500;       
    localparam C3_MEM_TWTR             = 7500;       
@@ -198,36 +198,36 @@ module example_top #
    localparam C3_DQ15_TAP_DELAY_VAL   = 0;       
    localparam C3_MCB_USE_EXTERNAL_BUFPLL  = 1;       
    localparam C3_INCLK_PERIOD         = ((C3_MEMCLK_PERIOD * C3_CLKFBOUT_MULT) / (C3_DIVCLK_DIVIDE * C3_CLKOUT0_DIVIDE * 2));       
-   localparam C3_p0_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p0_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000200;
    localparam C3_p0_DATA_MODE                       = 4'b0010;
-   localparam C3_p0_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p0_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p0_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
-   localparam C3_p1_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h03000000:32'h00000300;
+   localparam C3_p0_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000003ff;
+   localparam C3_p0_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffff800;
+   localparam C3_p0_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000200;
+   localparam C3_p1_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h03000000:32'h00000400;
    localparam C3_p1_DATA_MODE                       = 4'b0010;
-   localparam C3_p1_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h04ffffff:32'h000004ff;
-   localparam C3_p1_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff800;
-   localparam C3_p1_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h03000000:32'h00000300;
-   localparam C3_p2_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p1_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h04ffffff:32'h000005ff;
+   localparam C3_p1_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff000;
+   localparam C3_p1_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h03000000:32'h00000400;
+   localparam C3_p2_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000600;
    localparam C3_p2_DATA_MODE                       = 4'b0010;
-   localparam C3_p2_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p2_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p2_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
-   localparam C3_p3_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p2_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h06ffffff:32'h000007ff;
+   localparam C3_p2_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff000;
+   localparam C3_p2_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000600;
+   localparam C3_p3_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000700;
    localparam C3_p3_DATA_MODE                       = 4'b0010;
-   localparam C3_p3_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p3_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p3_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
-   localparam C3_p4_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p3_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000008ff;
+   localparam C3_p3_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffff000;
+   localparam C3_p3_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000700;
+   localparam C3_p4_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000500;
    localparam C3_p4_DATA_MODE                       = 4'b0010;
-   localparam C3_p4_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p4_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p4_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
-   localparam C3_p5_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p4_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h06ffffff:32'h000006ff;
+   localparam C3_p4_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff800;
+   localparam C3_p4_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000500;
+   localparam C3_p5_BEGIN_ADDRESS                   = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000500;
    localparam C3_p5_DATA_MODE                       = 4'b0010;
-   localparam C3_p5_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h02ffffff:32'h000002ff;
-   localparam C3_p5_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hfc000000:32'hfffffc00;
-   localparam C3_p5_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h01000000:32'h00000100;
+   localparam C3_p5_END_ADDRESS                     = (C3_HW_TESTING == "TRUE") ? 32'h06ffffff:32'h000006ff;
+   localparam C3_p5_PRBS_EADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'hf8000000:32'hfffff800;
+   localparam C3_p5_PRBS_SADDR_MASK_POS             = (C3_HW_TESTING == "TRUE") ? 32'h05000000:32'h00000500;
    localparam C3_ARB_TIME0_SLOT  = {3'b111, 3'b111, 3'b111, 3'b111, C3_ARB_TIME_SLOT_0[2:0], C3_ARB_TIME_SLOT_0[5:3]};
    localparam C3_ARB_TIME1_SLOT  = {3'b111, 3'b111, 3'b111, 3'b111, C3_ARB_TIME_SLOT_1[2:0], C3_ARB_TIME_SLOT_1[5:3]};
    localparam C3_ARB_TIME2_SLOT  = {3'b111, 3'b111, 3'b111, 3'b111, C3_ARB_TIME_SLOT_2[2:0], C3_ARB_TIME_SLOT_2[5:3]};
@@ -257,8 +257,8 @@ module example_top #
   wire                              c3_cmp_error;
   wire                              c3_cmp_data_valid;
   wire                              c3_vio_modify_enable;
-  wire  [127:0]                                 c3_p0_error_status;
-  wire  [127:0]                                 c3_p1_error_status;
+  wire  [191:0]                                 c3_p0_error_status;
+  wire  [191:0]                                 c3_p1_error_status;
   wire  [127:0]                                 c3_p2_error_status;
   wire  [127:0]                                 c3_p3_error_status;
   wire  [127:0]                                 c3_p4_error_status;

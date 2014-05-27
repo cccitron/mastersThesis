@@ -19,8 +19,8 @@ Controller Options :
    Memory                  : DDR2_SDRAM
    Design Clock Frequency  : 3200 ps (312.50 MHz)
    Memory Type             : Components
-   Memory Part             : MT47H64M16XX-25
-   Equivalent Part(s)      : MT47H64M16HR-25
+   Memory Part             : EDE1116AXXX-8E
+   Equivalent Part(s)      : EDE1116AEBG-8E
    Row Address             : 13
    Column Address          : 10
    Bank Address            : 3
@@ -40,7 +40,7 @@ Memory Options :
    High Temparature Self Refresh Rate : Disable
 
 User Interface Parameters :
-   Configuration Type     : Two 32-bit bi-directional and four 32-bit unidirectional ports
+   Configuration Type     : Two 64-bit bi-directional ports
    Ports Selected         : Port0, Port1
    Memory Address Mapping : ROW_BANK_COLUMN
 

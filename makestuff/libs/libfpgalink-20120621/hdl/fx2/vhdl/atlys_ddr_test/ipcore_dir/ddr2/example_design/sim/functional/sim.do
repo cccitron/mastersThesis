@@ -52,7 +52,7 @@
 ## \   \   \/     Version            : 3.6.1
 ##  \   \         Application	     : MIG
 ##  /   /         Filename           : sim.do
-## /___/   /\     Date Last Modified : $Date: 2010/10/27 17:40:08 $
+## /___/   /\     Date Last Modified : $Date: 2010/11/26 18:25:45 $
 ## \   \  /  \    Date Created       : Mon Mar 2 2009
 ##  \___\/\___\
 ##
@@ -91,7 +91,7 @@ vlog  $env(XILINX)/verilog/src/glbl.v
 vlog  ../functional/*.v
 
 #Pass the parameters for memory model parameter file#
-vlog  +incdir+. +define+x1Gb +define+sg25 +define+x16 ddr2_model_c3.v
+vlog  +incdir+.  +define+pwup_off ede1116_8e_1110_ms.vp
 
 #Load the design. Use required libraries.#
 vsim -t ps -novopt +notimingchecks -L unisims_ver -L secureip work.sim_tb_top glbl

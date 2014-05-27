@@ -52,7 +52,7 @@
 // \   \   \/    Version            : 3.6.1
 //  \   \        Application        : MIG
 //  /   /        Filename           : sim_tb_top.v
-// /___/   /\    Date Last Modified : $Date: 2010/10/27 17:40:08 $
+// /___/   /\    Date Last Modified : $Date: 2010/11/26 18:25:45 $
 // \   \  /  \   Date Created	    : Mon Mar 2 2009
 //  \___\/\___\
 //
@@ -78,10 +78,10 @@ module sim_tb_top;
    parameter C3_MEM_ADDR_WIDTH     = 13;
    parameter C3_MEM_BANKADDR_WIDTH = 3;
    parameter C3_MEM_ADDR_ORDER     = "ROW_BANK_COLUMN"; 
-      parameter C3_P0_MASK_SIZE       = 4;
-   parameter C3_P0_DATA_PORT_SIZE  = 32;  
-   parameter C3_P1_MASK_SIZE       = 4;
-   parameter C3_P1_DATA_PORT_SIZE  = 32;
+      parameter C3_P0_MASK_SIZE       = 8;
+   parameter C3_P0_DATA_PORT_SIZE  = 64;  
+   parameter C3_P1_MASK_SIZE       = 8;
+   parameter C3_P1_DATA_PORT_SIZE  = 64;
    parameter C3_CALIB_SOFT_IP      = "TRUE";
    parameter C3_SIMULATION      = "TRUE";
    parameter C3_HW_TESTING      = "FALSE";
@@ -221,9 +221,8 @@ design_top (
 // Memory model instances                                                     // 
 // ========================================================================== //
 
-   generate
-      if(C3_NUM_DQ_PINS == 16) begin : MEM_INST3
-     ddr2_model_c3 u_mem_c3(
+   
+     ede1116 u_mem_c3(
         .ck         (mcb3_dram_ck),
         .ck_n       (mcb3_dram_ck_n),
         .cke        (mcb3_dram_cke),
@@ -231,35 +230,18 @@ design_top (
         .ras_n      (mcb3_dram_ras_n),
         .cas_n      (mcb3_dram_cas_n),
         .we_n       (mcb3_dram_we_n),
-        .dm_rdqs    ({mcb3_dram_udm,mcb3_dram_dm}),
+        .ldm        (mcb3_dram_dm),
+        .udm        (mcb3_dram_udm),
         .ba         (mcb3_dram_ba),
-        .addr       (mcb3_dram_a),
+        .a          (mcb3_dram_a),
         .dq         (mcb3_dram_dq),
-        .dqs        ({mcb3_dram_udqs,mcb3_dram_dqs}),
-        .dqs_n      ({mcb3_dram_udqs_n,mcb3_dram_dqs_n}),
-        .rdqs_n     (),
+        .ldqs       (mcb3_dram_dqs),
+        .udqs       (mcb3_dram_udqs),
+        .ldqs_n     (mcb3_dram_dqs_n),
+        .udqs_n     (mcb3_dram_udqs_n),
         .odt        (mcb3_dram_odt)
       );
-      end else begin
-     ddr2_model_c3 u_mem_c3(
-        .ck         (mcb3_dram_ck),
-        .ck_n       (mcb3_dram_ck_n),
-        .cke        (mcb3_dram_cke),
-        .cs_n       (1'b0),
-        .ras_n      (mcb3_dram_ras_n),
-        .cas_n      (mcb3_dram_cas_n),
-        .we_n       (mcb3_dram_we_n),
-        .dm_rdqs    (mcb3_dram_dm),
-        .ba         (mcb3_dram_ba),
-        .addr       (mcb3_dram_a),
-        .dq         (mcb3_dram_dq),
-        .dqs        (mcb3_dram_dqs),
-        .dqs_n      (mcb3_dram_dqs_n),
-        .rdqs_n     (),
-        .odt        (mcb3_dram_odt)
-      );
-     end
-   endgenerate
+
 
 // ========================================================================== //
 // Reporting the test case status 
