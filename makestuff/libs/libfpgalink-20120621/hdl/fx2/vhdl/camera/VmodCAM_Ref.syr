@@ -548,7 +548,6 @@ INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-2012062
 INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/camera/FBCtl.vhd" line 543: Output port <p3_rd_full> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/camera/FBCtl.vhd" line 543: Output port <p3_rd_overflow> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/camera/FBCtl.vhd" line 543: Output port <selfrefresh_mode> of the instance <mcb_ddr2> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <CALIBRATION> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 1-bit register for signal <RDY_O>.
     Found 31-bit register for signal <RDADDRCNT_PROC.hCnt>.
     Found 1-bit register for signal <fVMemSource>.
@@ -2084,9 +2083,9 @@ Top Level Output File Name         : VmodCAM_Ref.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2806
+# BELS                             : 2807
 #      GND                         : 3
-#      INV                         : 76
+#      INV                         : 77
 #      LUT1                        : 239
 #      LUT2                        : 160
 #      LUT3                        : 325
@@ -2151,17 +2150,17 @@ Selected Device : 6slx45csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:            1131  out of  54576     2%  
- Number of Slice LUTs:                 1950  out of  27288     7%  
-    Number used as Logic:              1876  out of  27288     6%  
+ Number of Slice LUTs:                 1951  out of  27288     7%  
+    Number used as Logic:              1877  out of  27288     6%  
     Number used as Memory:               74  out of   6408     1%  
        Number used as RAM:               66
        Number used as SRL:                8
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2152
-   Number with an unused Flip Flop:    1021  out of   2152    47%  
-   Number with an unused LUT:           202  out of   2152     9%  
-   Number of fully used LUT-FF pairs:   929  out of   2152    43%  
+ Number of LUT Flip Flop pairs used:   2153
+   Number with an unused Flip Flop:    1022  out of   2153    47%  
+   Number with an unused LUT:           202  out of   2153     9%  
+   Number of fully used LUT-FF pairs:   929  out of   2153    43%  
    Number of unique control sets:       104
 
 IO Utilization: 
@@ -2527,6 +2526,26 @@ Offset:              5.047ns (Levels of Logic = 5)
                                        (42.4% logic, 57.6% route)
 
 =========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Inst_SysCon/Inst_pll_mcb/CLKOUT2'
+  Total number of paths / destination ports: 81 / 73
+-------------------------------------------------------------------------
+Offset:              4.735ns (Levels of Logic = 2)
+  Source:            Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DONE_SOFTANDHARD_CAL (FF)
+  Destination:       LED_O<1> (PAD)
+  Source Clock:      Inst_SysCon/Inst_pll_mcb/CLKOUT2 rising
+
+  Data Path: Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DONE_SOFTANDHARD_CAL to LED_O<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              13   0.447   0.932  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DONE_SOFTANDHARD_CAL (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DONE_SOFTANDHARD_CAL)
+     INV:I->O              1   0.206   0.579  LED_O<1>1_INV_0 (LED_O_1_OBUF)
+     OBUF:I->O                 2.571          LED_O_1_OBUF (LED_O<1>)
+    ----------------------------------------
+    Total                      4.735ns (3.224ns logic, 1.511ns route)
+                                       (68.1% logic, 31.9% route)
+
+=========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
   Total number of paths / destination ports: 260 / 13
 -------------------------------------------------------------------------
@@ -2569,27 +2588,6 @@ Offset:              4.420ns (Levels of Logic = 3)
     ----------------------------------------
     Total                      4.420ns (1.063ns logic, 3.357ns route)
                                        (24.0% logic, 76.0% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'Inst_SysCon/Inst_pll_mcb/CLKOUT2'
-  Total number of paths / destination ports: 79 / 71
--------------------------------------------------------------------------
-Offset:              3.302ns (Levels of Logic = 2)
-  Source:            Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/syn_uiclk_pll_lock (FF)
-  Destination:       Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/IODRP2_RZQ:T (PAD)
-  Source Clock:      Inst_SysCon/Inst_pll_mcb/CLKOUT2 rising
-
-  Data Path: Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/syn_uiclk_pll_lock to Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/IODRP2_RZQ:T
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.721  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/syn_uiclk_pll_lock (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/syn_uiclk_pll_lock)
-     LUT2:I0->O           77   0.203   1.725  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/int_sys_rst1 (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/int_sys_rst)
-     INV:I->O              0   0.206   0.000  Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_ZIO_ODATAIN1_INV_0 (Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_ZIO_ODATAIN)
-    IODRP2:ODATAIN             0.000          Inst_FBCtl/mcb_ddr2/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/gen_zio.IODRP2_ZIO
-    ----------------------------------------
-    Total                      3.302ns (0.856ns logic, 2.446ns route)
-                                       (25.9% logic, 74.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CAMA_PCLK_I'
@@ -2703,7 +2701,7 @@ Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
 CAMA_PCLK_I                     |    4.985|         |         |         |
 CLK_I                           |    3.704|         |         |         |
-Inst_SysCon/Inst_pll_mcb/CLKOUT2|    2.876|         |         |         |
+Inst_SysCon/Inst_pll_mcb/CLKOUT2|    2.926|         |         |         |
 --------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock CAMB_PCLK_I
@@ -2713,7 +2711,7 @@ Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
 CAMB_PCLK_I                     |    4.985|         |         |         |
 CLK_I                           |    3.704|         |         |         |
-Inst_SysCon/Inst_pll_mcb/CLKOUT2|    2.876|         |         |         |
+Inst_SysCon/Inst_pll_mcb/CLKOUT2|    2.926|         |         |         |
 --------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock CLK_I
@@ -2731,7 +2729,7 @@ Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------------+---------+---------+---------+---------+
 CLK_I                            |    3.602|         |         |         |
 Inst_SysCon/Inst_10_1_pll/CLKOUT2|    5.863|         |         |         |
-Inst_SysCon/Inst_pll_mcb/CLKOUT2 |    2.750|         |         |         |
+Inst_SysCon/Inst_pll_mcb/CLKOUT2 |    2.800|         |         |         |
 ---------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Inst_SysCon/Inst_10_1_pll/CLKOUT3
@@ -2763,15 +2761,15 @@ fx2Clk_in      |    6.845|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 27.00 secs
-Total CPU time to Xst completion: 27.41 secs
+Total REAL time to Xst completion: 30.00 secs
+Total CPU time to Xst completion: 27.28 secs
  
 --> 
 
 
-Total memory usage is 453756 kilobytes
+Total memory usage is 449568 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  289 (   0 filtered)
+Number of warnings :  288 (   0 filtered)
 Number of infos    :  170 (   0 filtered)
 

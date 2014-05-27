@@ -1,0 +1,121 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -uc mig_39_2.ucf -p xc6slx45-csg324-3 mig_39_2.ngc
+mig_39_2.ngd
+
+Reading NGO file
+"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/e
+x_fifo-me/fifo/ipcore_dir/mig_39_2/user_design/par/mig_39_2.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "mig_39_2.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK3', used in period specification
+   'TS_SYS_CLK3', was traced into PLL_ADV instance u_pll_adv. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT3: <TIMESPEC TS_memc3_infrastructure_inst_mcb_drp_clk_bufg_in = PERIOD
+   "memc3_infrastructure_inst_mcb_drp_clk_bufg_in" TS_SYS_CLK3 / 0.25 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK3', used in period specification
+   'TS_SYS_CLK3', was traced into PLL_ADV instance u_pll_adv. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT1: <TIMESPEC TS_memc3_infrastructure_inst_clk_2x_180 = PERIOD
+   "memc3_infrastructure_inst_clk_2x_180" TS_SYS_CLK3 / 2 PHASE 0.75 ns HIGH
+   50%>
+
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK3', used in period specification
+   'TS_SYS_CLK3', was traced into PLL_ADV instance u_pll_adv. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT0: <TIMESPEC TS_memc3_infrastructure_inst_clk_2x_0 = PERIOD
+   "memc3_infrastructure_inst_clk_2x_0" TS_SYS_CLK3 / 2 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK3', used in period specification
+   'TS_SYS_CLK3', was traced into PLL_ADV instance u_pll_adv. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT2: <TIMESPEC TS_memc3_infrastructure_inst_clk0_bufg_in = PERIOD
+   "memc3_infrastructure_inst_clk0_bufg_in" TS_SYS_CLK3 / 0.125 HIGH 50%>
+
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'N26' has no driver
+WARNING:NgdBuild:452 - logical net 'N27' has no driver
+WARNING:NgdBuild:452 - logical net 'N28' has no driver
+WARNING:NgdBuild:452 - logical net 'N29' has no driver
+WARNING:NgdBuild:452 - logical net 'N30' has no driver
+WARNING:NgdBuild:452 - logical net 'N31' has no driver
+WARNING:NgdBuild:452 - logical net 'N32' has no driver
+WARNING:NgdBuild:452 - logical net 'N33' has no driver
+WARNING:NgdBuild:452 - logical net 'N34' has no driver
+WARNING:NgdBuild:452 - logical net 'N35' has no driver
+WARNING:NgdBuild:452 - logical net 'N36' has no driver
+WARNING:NgdBuild:452 - logical net 'N37' has no driver
+WARNING:NgdBuild:452 - logical net 'N38' has no driver
+WARNING:NgdBuild:452 - logical net 'N39' has no driver
+WARNING:NgdBuild:452 - logical net 'N40' has no driver
+WARNING:NgdBuild:452 - logical net 'N41' has no driver
+WARNING:NgdBuild:452 - logical net 'N42' has no driver
+WARNING:NgdBuild:452 - logical net 'N43' has no driver
+WARNING:NgdBuild:452 - logical net 'N44' has no driver
+WARNING:NgdBuild:452 - logical net 'N45' has no driver
+WARNING:NgdBuild:452 - logical net 'N46' has no driver
+WARNING:NgdBuild:452 - logical net 'N47' has no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p0_cmd_byte_addr<29>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p0_cmd_byte_addr<28>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p0_cmd_byte_addr<27>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p0_cmd_byte_addr<0>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p1_cmd_byte_addr<29>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p1_cmd_byte_addr<28>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p1_cmd_byte_addr<27>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p1_cmd_byte_addr<0>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p2_cmd_byte_addr<29>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p2_cmd_byte_addr<28>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p2_cmd_byte_addr<27>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p2_cmd_byte_addr<0>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p3_cmd_byte_addr<29>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p3_cmd_byte_addr<28>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p3_cmd_byte_addr<27>' has
+   no driver
+WARNING:NgdBuild:452 - logical net 'memc3_wrapper_inst/p3_cmd_byte_addr<0>' has
+   no driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:  38
+
+Total memory usage is 412656 kilobytes
+
+Writing NGD file "mig_39_2.ngd" ...
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   5 sec
+
+Writing NGDBUILD log file "mig_39_2.bld"...

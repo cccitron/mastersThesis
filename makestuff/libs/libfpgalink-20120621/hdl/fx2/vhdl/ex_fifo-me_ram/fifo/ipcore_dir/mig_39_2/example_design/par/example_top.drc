@@ -1,0 +1,105 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Wed Mar 26 17:02:27 2014
+
+drc -z example_top.ncd example_top.pcf
+
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p2/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem1_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p2/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem2_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p2/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem3_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p2/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem4_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p2/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem5_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p2/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem6_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p0/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem1_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p0/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem2_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p0/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem3_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p0/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem4_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p0/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem5_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p0/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem6_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p3/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem1_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p3/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem2_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p3/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem6_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p3/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem5_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p1/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem4_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p1/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem5_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p3/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem3_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p3/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem4_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p1/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem2_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p1/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem3_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p1/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem1_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <memc3_tb_top_inst/m_traffic_gen_p1/RD_PATH.read_data_path_inst/read_postedfi
+   fo/rd_fifo/Mram_mem6_RAMD_D1_O> is incomplete. The signal does not drive any
+   load pins in the design.
+DRC detected 0 errors and 24 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

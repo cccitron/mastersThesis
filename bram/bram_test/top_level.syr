@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: top_level.prj
@@ -120,62 +120,14 @@ Parsing architecture <Behavioral> of entity <top_level>.
 =========================================================================
 
 Elaborating entity <top_level> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 129: Assignment to searcharray ignored, since the identifier is never used
 WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 141: clkr should be on the sensitivity list of the process
 
 Elaborating entity <bram_right_single> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 307: present_state should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 348: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 349: summer should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 350: sadarray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 357: wer should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 358: mem should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 359: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 360: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 364: doutr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 390: doutr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 391: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 392: summer should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 393: sadarray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 400: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 401: doutr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 402: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 403: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 430: doutr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 431: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 432: summer should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 433: sadarray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 440: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 441: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 442: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 443: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 465: doutr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 466: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 468: sadarray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 478: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 479: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 480: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 481: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 482: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 483: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 484: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 485: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 486: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 503: doutr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 504: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 505: summer should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 515: summer should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 531: doutr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 532: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 533: summer should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 534: sadarray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 541: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 542: sadarray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 543: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 544: addr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 565: doutr should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 566: templatearray should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 567: summer should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 568: sadarray should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 636: wer should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 638: step should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 639: templatearray should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" Line 640: templdone should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -183,263 +135,29 @@ WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/bram/bram_test/top_level.
 
 Synthesizing Unit <top_level>.
     Related source file is "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd".
-WARNING:Xst:647 - Input <sw_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 9-bit register for signal <summer<0><0>>.
-    Found 9-bit register for signal <summer<0><1>>.
-    Found 9-bit register for signal <summer<0><2>>.
-    Found 9-bit register for signal <summer<0><3>>.
-    Found 9-bit register for signal <summer<0><4>>.
-    Found 9-bit register for signal <summer<0><5>>.
-    Found 9-bit register for signal <summer<0><6>>.
-    Found 9-bit register for signal <summer<0><7>>.
-    Found 9-bit register for signal <summer<0><8>>.
-    Found 9-bit register for signal <summer<0><9>>.
-    Found 9-bit register for signal <summer<0><10>>.
-    Found 9-bit register for signal <summer<0><11>>.
-    Found 9-bit register for signal <summer<0><12>>.
-    Found 9-bit register for signal <summer<0><13>>.
-    Found 9-bit register for signal <summer<0><14>>.
-    Found 9-bit register for signal <summer<0><15>>.
-    Found 8-bit register for signal <sadArray<0><0>>.
-    Found 8-bit register for signal <sadArray<0><1>>.
-    Found 8-bit register for signal <sadArray<0><2>>.
-    Found 8-bit register for signal <sadArray<0><3>>.
-    Found 8-bit register for signal <sadArray<0><4>>.
-    Found 8-bit register for signal <sadArray<0><5>>.
-    Found 8-bit register for signal <sadArray<0><6>>.
-    Found 8-bit register for signal <sadArray<0><7>>.
-    Found 8-bit register for signal <sadArray<0><8>>.
-    Found 8-bit register for signal <sadArray<0><9>>.
-    Found 8-bit register for signal <sadArray<0><10>>.
-    Found 8-bit register for signal <sadArray<0><11>>.
-    Found 8-bit register for signal <sadArray<0><12>>.
-    Found 8-bit register for signal <sadArray<0><13>>.
-    Found 8-bit register for signal <sadArray<0><14>>.
-    Found 8-bit register for signal <sadArray<0><15>>.
+    Found 8-bit register for signal <addr_out>.
+    Found 32-bit register for signal <addr>.
+    Found 4-bit register for signal <step_out>.
     Found 8-bit register for signal <templateArray<0>>.
     Found 8-bit register for signal <templateArray<1>>.
     Found 8-bit register for signal <templateArray<2>>.
     Found 8-bit register for signal <templateArray<3>>.
     Found 8-bit register for signal <templateArray<4>>.
-    Found 8-bit register for signal <templateArray<5>>.
-    Found 8-bit register for signal <templateArray<6>>.
-    Found 8-bit register for signal <templateArray<7>>.
-    Found 8-bit register for signal <templateArray<8>>.
-    Found 8-bit register for signal <templateArray<9>>.
-    Found 8-bit register for signal <templateArray<10>>.
-    Found 8-bit register for signal <templateArray<11>>.
-    Found 8-bit register for signal <templateArray<12>>.
-    Found 8-bit register for signal <templateArray<13>>.
-    Found 8-bit register for signal <templateArray<14>>.
-    Found 8-bit register for signal <templateArray<15>>.
-    Found 8-bit register for signal <templateArray<16>>.
-    Found 8-bit register for signal <templateArray<17>>.
-    Found 8-bit register for signal <templateArray<18>>.
-    Found 8-bit register for signal <templateArray<19>>.
-    Found 8-bit register for signal <templateArray<20>>.
-    Found 8-bit register for signal <templateArray<21>>.
-    Found 8-bit register for signal <templateArray<22>>.
-    Found 8-bit register for signal <templateArray<23>>.
-    Found 8-bit register for signal <templateArray<24>>.
-    Found 8-bit register for signal <templateArray<25>>.
-    Found 8-bit register for signal <templateArray<26>>.
-    Found 8-bit register for signal <templateArray<27>>.
-    Found 8-bit register for signal <templateArray<28>>.
-    Found 8-bit register for signal <templateArray<29>>.
-    Found 8-bit register for signal <templateArray<30>>.
-    Found 8-bit register for signal <templateArray<31>>.
-    Found 8-bit register for signal <templateArray<32>>.
-    Found 8-bit register for signal <templateArray<33>>.
-    Found 8-bit register for signal <templateArray<34>>.
-    Found 8-bit register for signal <templateArray<35>>.
-    Found 8-bit register for signal <templateArray<36>>.
-    Found 8-bit register for signal <templateArray<37>>.
-    Found 8-bit register for signal <templateArray<38>>.
-    Found 8-bit register for signal <templateArray<39>>.
-    Found 8-bit register for signal <templateArray<40>>.
-    Found 8-bit register for signal <templateArray<41>>.
-    Found 8-bit register for signal <templateArray<42>>.
-    Found 8-bit register for signal <templateArray<43>>.
-    Found 8-bit register for signal <templateArray<44>>.
-    Found 8-bit register for signal <templateArray<45>>.
-    Found 8-bit register for signal <templateArray<46>>.
-    Found 8-bit register for signal <templateArray<47>>.
-    Found 8-bit register for signal <templateArray<48>>.
-    Found 8-bit register for signal <templateArray<49>>.
-    Found 8-bit register for signal <templateArray<50>>.
-    Found 8-bit register for signal <templateArray<51>>.
-    Found 8-bit register for signal <templateArray<52>>.
-    Found 8-bit register for signal <templateArray<53>>.
-    Found 8-bit register for signal <templateArray<54>>.
-    Found 8-bit register for signal <templateArray<55>>.
-    Found 8-bit register for signal <templateArray<56>>.
-    Found 32-bit register for signal <addr>.
-    Found 3-bit register for signal <present_state>.
-    Found finite state machine <FSM_0> for signal <present_state>.
-    -----------------------------------------------------------------------
-    | States             | 8                                              |
-    | Transitions        | 13                                             |
-    | Inputs             | 3                                              |
-    | Outputs            | 6                                              |
-    | Clock              | clk (rising_edge)                              |
-    | Power Up State     | init                                           |
-    | Encoding           | auto                                           |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-    Found 9-bit adder for signal <n1464> created at line 482.
-    Found 9-bit adder for signal <n1476> created at line 484.
-    Found 9-bit adder for signal <n1509> created at line 481.
-    Found 9-bit adder for signal <n1539> created at line 486.
-    Found 9-bit adder for signal <n1572> created at line 483.
-    Found 9-bit adder for signal <n1584> created at line 485.
-    Found 32-bit adder for signal <addr[31]_GND_4_o_add_1205_OUT> created at line 544.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_372_OUT<8:0>> created at line 478.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_374_OUT<8:0>> created at line 479.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_377_OUT<8:0>> created at line 480.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_380_OUT<8:0>> created at line 481.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_383_OUT<8:0>> created at line 482.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_386_OUT<8:0>> created at line 483.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_389_OUT<8:0>> created at line 484.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_392_OUT<8:0>> created at line 485.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_395_OUT<8:0>> created at line 486.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_398_OUT<8:0>> created at line 478.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_400_OUT<8:0>> created at line 479.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_403_OUT<8:0>> created at line 480.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_406_OUT<8:0>> created at line 481.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_409_OUT<8:0>> created at line 482.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_412_OUT<8:0>> created at line 483.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_415_OUT<8:0>> created at line 484.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_418_OUT<8:0>> created at line 485.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_421_OUT<8:0>> created at line 486.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_424_OUT<8:0>> created at line 478.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_426_OUT<8:0>> created at line 479.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_429_OUT<8:0>> created at line 480.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_432_OUT<8:0>> created at line 481.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_435_OUT<8:0>> created at line 482.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_438_OUT<8:0>> created at line 483.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_441_OUT<8:0>> created at line 484.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_444_OUT<8:0>> created at line 485.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_447_OUT<8:0>> created at line 486.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_450_OUT<8:0>> created at line 478.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_452_OUT<8:0>> created at line 479.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_458_OUT<8:0>> created at line 481.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_464_OUT<8:0>> created at line 483.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_470_OUT<8:0>> created at line 485.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_473_OUT<8:0>> created at line 486.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_476_OUT<8:0>> created at line 478.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_481_OUT<8:0>> created at line 480.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_487_OUT<8:0>> created at line 482.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_490_OUT<8:0>> created at line 483.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_493_OUT<8:0>> created at line 484.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_496_OUT<8:0>> created at line 485.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_504_OUT<8:0>> created at line 479.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_507_OUT<8:0>> created at line 480.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_510_OUT<8:0>> created at line 481.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_513_OUT<8:0>> created at line 482.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_519_OUT<8:0>> created at line 484.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_525_OUT<8:0>> created at line 486.
-    Found 9-bit adder for signal <_n1825> created at line 478.
-    Found 9-bit adder for signal <_n1826> created at line 478.
-    Found 9-bit adder for signal <_n1827> created at line 478.
-    Found 9-bit adder for signal <_n1828> created at line 478.
-    Found 9-bit adder for signal <_n1829> created at line 478.
-    Found 9-bit adder for signal <_n1830> created at line 478.
-    Found 9-bit adder for signal <_n1831> created at line 478.
-    Found 9-bit adder for signal <_n1832> created at line 478.
-    Found 9-bit adder for signal <_n1833> created at line 478.
-    Found 9-bit adder for signal <_n1834> created at line 478.
-    Found 9-bit adder for signal <_n1835> created at line 478.
-    Found 9-bit adder for signal <_n1836> created at line 478.
-    Found 9-bit adder for signal <_n1837> created at line 478.
-    Found 9-bit adder for signal <GND_4_o_GND_4_o_add_526_OUT> created at line 478.
-    Found 9-bit adder for signal <_n1839> created at line 478.
-    Found 9-bit adder for signal <_n1840> created at line 478.
-    Found 9-bit adder for signal <_n1841> created at line 478.
-    Found 9-bit adder for signal <_n1842> created at line 478.
-    Found 9-bit adder for signal <_n1843> created at line 478.
-    Found 9-bit adder for signal <_n1844> created at line 478.
-    Found 9-bit adder for signal <_n1845> created at line 478.
-    Found 9-bit adder for signal <_n1846> created at line 478.
-    Found 9-bit adder for signal <_n1847> created at line 478.
-    Found 9-bit adder for signal <_n1848> created at line 478.
-    Found 9-bit adder for signal <_n1849> created at line 478.
-    Found 9-bit adder for signal <_n1850> created at line 478.
-    Found 9-bit adder for signal <_n1851> created at line 478.
-    Found 9-bit adder for signal <_n1852> created at line 478.
-    Found 9-bit adder for signal <GND_4_o_GND_4_o_add_448_OUT> created at line 478.
-    Found 9-bit adder for signal <_n1854> created at line 478.
-    Found 9-bit adder for signal <_n1855> created at line 478.
-    Found 9-bit adder for signal <_n1856> created at line 478.
-    Found 9-bit adder for signal <_n1857> created at line 478.
-    Found 9-bit adder for signal <_n1858> created at line 478.
-    Found 9-bit adder for signal <_n1859> created at line 478.
-    Found 9-bit adder for signal <_n1860> created at line 478.
-    Found 9-bit adder for signal <_n1861> created at line 478.
-    Found 9-bit adder for signal <_n1862> created at line 478.
-    Found 9-bit adder for signal <_n1863> created at line 478.
-    Found 9-bit adder for signal <_n1864> created at line 478.
-    Found 9-bit adder for signal <_n1865> created at line 478.
-    Found 9-bit adder for signal <_n1866> created at line 478.
-    Found 9-bit adder for signal <_n1867> created at line 478.
-    Found 9-bit adder for signal <GND_4_o_GND_4_o_add_396_OUT> created at line 478.
-    Found 9-bit adder for signal <_n1869> created at line 478.
-    Found 9-bit adder for signal <_n1870> created at line 478.
-    Found 9-bit adder for signal <_n1871> created at line 478.
-    Found 9-bit adder for signal <_n1872> created at line 478.
-    Found 9-bit adder for signal <_n1873> created at line 478.
-    Found 9-bit adder for signal <_n1874> created at line 478.
-    Found 9-bit adder for signal <_n1875> created at line 478.
-    Found 9-bit adder for signal <_n1876> created at line 478.
-    Found 9-bit adder for signal <_n1877> created at line 478.
-    Found 9-bit adder for signal <_n1878> created at line 478.
-    Found 9-bit adder for signal <_n1879> created at line 478.
-    Found 9-bit adder for signal <_n1880> created at line 478.
-    Found 9-bit adder for signal <_n1881> created at line 478.
-    Found 9-bit adder for signal <_n1882> created at line 478.
-    Found 9-bit adder for signal <GND_4_o_GND_4_o_add_422_OUT> created at line 478.
-    Found 9-bit adder for signal <_n1884> created at line 478.
-    Found 9-bit adder for signal <_n1885> created at line 478.
-    Found 9-bit adder for signal <_n1886> created at line 478.
-    Found 9-bit adder for signal <_n1887> created at line 478.
-    Found 9-bit adder for signal <_n1888> created at line 478.
-    Found 9-bit adder for signal <_n1889> created at line 478.
-    Found 9-bit adder for signal <_n1890> created at line 478.
-    Found 9-bit adder for signal <_n1891> created at line 478.
-    Found 9-bit adder for signal <_n1892> created at line 478.
-    Found 9-bit adder for signal <_n1893> created at line 478.
-    Found 9-bit adder for signal <_n1894> created at line 478.
-    Found 9-bit adder for signal <_n1895> created at line 478.
-    Found 9-bit adder for signal <_n1896> created at line 478.
-    Found 9-bit adder for signal <GND_4_o_GND_4_o_add_500_OUT> created at line 478.
-    Found 9-bit adder for signal <_n1898> created at line 478.
-    Found 9-bit adder for signal <_n1899> created at line 478.
-    Found 9-bit adder for signal <_n1901> created at line 478.
-    Found 9-bit adder for signal <_n1902> created at line 478.
-    Found 9-bit adder for signal <_n1903> created at line 478.
-    Found 9-bit adder for signal <_n1904> created at line 478.
-    Found 9-bit adder for signal <_n1905> created at line 478.
-    Found 9-bit adder for signal <_n1906> created at line 478.
-    Found 9-bit adder for signal <_n1907> created at line 478.
-    Found 9-bit adder for signal <_n1908> created at line 478.
-    Found 9-bit adder for signal <_n1909> created at line 478.
-    Found 9-bit adder for signal <_n1910> created at line 478.
-    Found 9-bit adder for signal <_n1911> created at line 478.
-    Found 9-bit adder for signal <GND_4_o_GND_4_o_add_474_OUT> created at line 478.
-    Found 64x8-bit Read Only RAM for signal <addr[5]_X_4_o_wide_mux_238_OUT>
-INFO:Xst:3019 - HDL ADVISOR - 512 flip-flops were inferred for signal <templateArray>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
-    Found 8-bit 57-to-1 multiplexer for signal <addr[5]_X_4_o_wide_mux_365_OUT> created at line 441.
-    Found 8-bit 16-to-1 multiplexer for signal <addr[3]_sadArray[0][15][7]_wide_mux_1204_OUT> created at line 542.
-    Found 8-bit 8-to-1 multiplexer for signal <addr_out> created at line 307.
-    Found 32-bit comparator greater for signal <GND_4_o_addr[31]_LessThan_245_o> created at line 440
-    Found 32-bit comparator greater for signal <GND_4_o_addr[31]_LessThan_1204_o> created at line 541
+    Found 1-bit register for signal <weR>.
+    Found 2-bit register for signal <step>.
+    Found 8-bit register for signal <dinR>.
+    Found 32-bit adder for signal <addr[31]_GND_4_o_add_181_OUT> created at line 657.
+    Found 2-bit adder for signal <step[1]_GND_4_o_add_182_OUT> created at line 1241.
+    Found 64x8-bit Read Only RAM for signal <addr[5]_X_4_o_wide_mux_116_OUT>
+    Found 8-bit 7-to-1 multiplexer for signal <_n0568> created at line 37.
+    Found 32-bit comparator greater for signal <GND_4_o_addr[31]_LessThan_180_o> created at line 654
     Summary:
 	inferred   1 RAM(s).
-	inferred 139 Adder/Subtractor(s).
-	inferred 760 D-type flip-flop(s).
-	inferred   2 Comparator(s).
-	inferred 113 Multiplexer(s).
-	inferred   1 Finite State Machine(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  95 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   4 Multiplexer(s).
 Unit <top_level> synthesized.
 
 Synthesizing Unit <bram_right_single>.
@@ -459,27 +177,21 @@ Macro Statistics
 # RAMs                                                 : 2
  256x8-bit single-port RAM                             : 1
  64x8-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 139
+# Adders/Subtractors                                   : 2
+ 2-bit adder                                           : 1
  32-bit adder                                          : 1
- 9-bit adder                                           : 93
- 9-bit subtractor                                      : 45
-# Registers                                            : 91
+# Registers                                            : 12
+ 1-bit register                                        : 1
+ 2-bit register                                        : 1
  32-bit register                                       : 1
- 8-bit register                                        : 74
- 9-bit register                                        : 16
-# Comparators                                          : 2
- 32-bit comparator greater                             : 2
-# Multiplexers                                         : 113
- 1-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 8
- 8-bit 16-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 83
- 8-bit 57-to-1 multiplexer                             : 1
- 8-bit 8-to-1 multiplexer                              : 1
- 9-bit 2-to-1 multiplexer                              : 16
-# FSMs                                                 : 1
-# Xors                                                 : 384
- 1-bit xor2                                            : 384
+ 4-bit register                                        : 1
+ 8-bit register                                        : 8
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 4
+ 4-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
+ 8-bit 7-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -487,37 +199,29 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:2677 - Node <summer<0>_3_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_9_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_15_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_1_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_0_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_2_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_4_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_7_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_5_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_6_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_8_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_10_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_13_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_11_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_12_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_14_8> of sequential type is unconnected in block <top_level>.
+
+Synthesizing (advanced) Unit <bram_right_single>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <data_o>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <Clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <data_i>        |          |
+    |     doA            | connected to signal <data_o>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <bram_right_single> synthesized (advanced).
 
 Synthesizing (advanced) Unit <top_level>.
-	The following adders/subtractors are grouped into adder tree <Madd__n18361> :
- 	<Madd__n1827> in block <top_level>, 	<Madd__n1828_Madd> in block <top_level>, 	<Madd__n1829_Madd> in block <top_level>, 	<Madd__n1830> in block <top_level>, 	<Madd__n1831> in block <top_level>, 	<Madd__n1833> in block <top_level>, 	<Madd__n1834> in block <top_level>.
-	The following adders/subtractors are grouped into adder tree <Madd__n18951> :
- 	<Madd__n1886> in block <top_level>, 	<Madd__n1887_Madd> in block <top_level>, 	<Madd__n1888_Madd> in block <top_level>, 	<Madd__n1889> in block <top_level>, 	<Madd__n1890> in block <top_level>, 	<Madd__n1892> in block <top_level>, 	<Madd__n1893> in block <top_level>.
-	The following adders/subtractors are grouped into adder tree <Madd__n18661> :
- 	<Madd__n1857> in block <top_level>, 	<Madd__n1858_Madd> in block <top_level>, 	<Madd__n1854> in block <top_level>, 	<Madd__n1859_Madd> in block <top_level>, 	<Madd__n1860> in block <top_level>, 	<Madd__n1861> in block <top_level>, 	<Madd__n1863> in block <top_level>, 	<Madd__n1864> in block <top_level>.
-	The following adders/subtractors are grouped into adder tree <Madd__n18811> :
- 	<Madd__n1872> in block <top_level>, 	<Madd__n1873_Madd> in block <top_level>, 	<Madd__n1869> in block <top_level>, 	<Madd__n1874_Madd> in block <top_level>, 	<Madd__n1875> in block <top_level>, 	<Madd__n1876> in block <top_level>, 	<Madd__n1878> in block <top_level>, 	<Madd__n1879> in block <top_level>.
-	The following adders/subtractors are grouped into adder tree <Madd__n18511> :
- 	<Madd__n1842> in block <top_level>, 	<Madd__n1843_Madd> in block <top_level>, 	<Madd__n1839> in block <top_level>, 	<Madd__n1844_Madd> in block <top_level>, 	<Madd__n1845> in block <top_level>, 	<Madd__n1846> in block <top_level>, 	<Madd__n1848> in block <top_level>, 	<Madd__n1849> in block <top_level>.
-	The following adders/subtractors are grouped into adder tree <Madd__n19101> :
- 	<Madd__n1899_Madd> in block <top_level>, 	<Madd__n1901> in block <top_level>, 	<Madd__n1903_Madd> in block <top_level>, 	<Madd__n1904> in block <top_level>, 	<Madd__n1905> in block <top_level>, 	<Madd__n1907> in block <top_level>, 	<Madd__n1908> in block <top_level>.
-INFO:Xst:3231 - The small RAM <Mram_addr[5]_X_4_o_wide_mux_238_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+The following registers are absorbed into counter <addr>: 1 register on signal <addr>.
+The following registers are absorbed into counter <step>: 1 register on signal <step>.
+INFO:Xst:3231 - The small RAM <Mram_addr[5]_X_4_o_wide_mux_116_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -528,38 +232,7 @@ INFO:Xst:3231 - The small RAM <Mram_addr[5]_X_4_o_wide_mux_238_OUT> will be impl
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3226 - The RAM <bram_right/Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <bram_right/data_o>
-    -----------------------------------------------------------------------
-    | ram_type           | Block                               |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 256-word x 8-bit                    |          |
-    |     mode           | read-first                          |          |
-    |     clkA           | connected to signal <clkR>          | rise     |
-    |     weA            | connected to signal <weR>           | high     |
-    |     addrA          | connected to signal <addr<7:0>>     |          |
-    |     diA            | connected to signal <dinR>          |          |
-    |     doA            | connected to signal <doutR>         |          |
-    -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
-    -----------------------------------------------------------------------
 Unit <top_level> synthesized (advanced).
-WARNING:Xst:2677 - Node <summer<0>_1_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_0_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_4_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_2_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_3_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_7_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_5_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_6_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_8_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_9_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_12_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_10_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_11_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_13_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_14_8> of sequential type is unconnected in block <top_level>.
-WARNING:Xst:2677 - Node <summer<0>_15_8> of sequential type is unconnected in block <top_level>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -568,150 +241,30 @@ Macro Statistics
 # RAMs                                                 : 2
  256x8-bit single-port block RAM                       : 1
  64x8-bit single-port distributed Read Only RAM        : 1
-# Adders/Subtractors                                   : 64
- 32-bit adder                                          : 1
- 9-bit adder                                           : 18
- 9-bit subtractor                                      : 45
-# Adder Trees                                          : 6
- 9-bit / 11-inputs adder tree                          : 3
- 9-bit / 12-inputs adder tree                          : 3
-# Registers                                            : 744
- Flip-Flops                                            : 744
-# Comparators                                          : 2
- 32-bit comparator greater                             : 2
-# Multiplexers                                         : 113
- 1-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 8
- 8-bit 16-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 83
- 8-bit 57-to-1 multiplexer                             : 1
- 8-bit 8-to-1 multiplexer                              : 1
- 9-bit 2-to-1 multiplexer                              : 16
-# FSMs                                                 : 1
-# Xors                                                 : 384
- 1-bit xor2                                            : 384
+# Counters                                             : 2
+ 2-bit up counter                                      : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 61
+ Flip-Flops                                            : 61
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 4
+ 4-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 2
+ 8-bit 7-to-1 multiplexer                              : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <present_state[1:3]> with user encoding.
---------------------------
- State        | Encoding
---------------------------
- init         | 000
- writetobram  | 001
- readfrombram | 010
- templtoled   | 011
- sadcalc      | 100
- assignsad    | 101
- sadtoled     | 110
- idle         | 111
---------------------------
-INFO:Xst:2261 - The FF/Latch <summer<0>_1_0> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_7_0> <summer<0>_13_0> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_1_1> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_7_1> <summer<0>_13_1> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_1_2> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_7_2> <summer<0>_13_2> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_1_3> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_7_3> <summer<0>_13_3> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_1_4> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_7_4> <summer<0>_13_4> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_1_5> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_7_5> <summer<0>_13_5> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_0_0> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_6_0> <summer<0>_12_0> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_1_6> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_7_6> <summer<0>_13_6> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_0_1> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_6_1> <summer<0>_12_1> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_1_7> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_7_7> <summer<0>_13_7> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_0_2> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_6_2> <summer<0>_12_2> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_0_3> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_6_3> <summer<0>_12_3> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_0_4> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_6_4> <summer<0>_12_4> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_0_5> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_6_5> <summer<0>_12_5> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_0_6> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_6_6> <summer<0>_12_6> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_0_7> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_6_7> <summer<0>_12_7> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_5_0> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_11_0> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_5_1> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_11_1> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_5_2> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_11_2> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_5_3> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_11_3> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_5_4> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_11_4> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_5_5> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_11_5> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_5_6> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_11_6> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_5_7> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_11_7> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_4_0> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_10_0> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_4_1> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_10_1> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_4_2> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_10_2> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_4_3> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_10_3> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_4_4> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_10_4> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_4_5> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_10_5> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_4_6> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_10_6> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_4_7> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <summer<0>_10_7> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_3_0> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_9_0> <summer<0>_15_0> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_3_1> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_9_1> <summer<0>_15_1> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_3_2> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_9_2> <summer<0>_15_2> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_3_3> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_9_3> <summer<0>_15_3> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_3_4> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_9_4> <summer<0>_15_4> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_3_5> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_9_5> <summer<0>_15_5> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_3_6> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_9_6> <summer<0>_15_6> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_3_7> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_9_7> <summer<0>_15_7> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_2_0> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_8_0> <summer<0>_14_0> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_2_1> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_8_1> <summer<0>_14_1> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_2_2> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_8_2> <summer<0>_14_2> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_2_3> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_8_3> <summer<0>_14_3> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_2_4> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_8_4> <summer<0>_14_4> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_2_5> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_8_5> <summer<0>_14_5> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_2_6> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_8_6> <summer<0>_14_6> 
-INFO:Xst:2261 - The FF/Latch <summer<0>_2_7> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <summer<0>_8_7> <summer<0>_14_7> 
-WARNING:Xst:2170 - Unit top_level : the following signal(s) form a combinatorial loop: weR_GND_4_o_AND_3_o, PWR_4_o_addr[7]_mux_241_OUT<7>, weR, addr_out<7>.
+WARNING:Xst:1710 - FF/Latch <step_out_2> (without init value) has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <step_out_3> (without init value) has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2170 - Unit top_level : the following signal(s) form a combinatorial loop: clkR.
 WARNING:Xst:2016 - Found a loop when searching source clock on port 'clkR:clkR'
 Last warning will be issued only once.
 
 Optimizing unit <top_level> ...
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_1_0> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_7_0> <sadArray<0>_13_0> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_1_1> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_7_1> <sadArray<0>_13_1> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_1_2> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_7_2> <sadArray<0>_13_2> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_1_3> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_7_3> <sadArray<0>_13_3> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_1_4> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_7_4> <sadArray<0>_13_4> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_1_5> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_7_5> <sadArray<0>_13_5> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_1_6> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_7_6> <sadArray<0>_13_6> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_1_7> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_7_7> <sadArray<0>_13_7> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_5_0> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_11_0> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_5_1> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_11_1> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_0_0> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_6_0> <sadArray<0>_12_0> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_5_2> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_11_2> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_0_1> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_6_1> <sadArray<0>_12_1> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_5_3> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_11_3> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_0_2> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_6_2> <sadArray<0>_12_2> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_5_4> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_11_4> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_0_3> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_6_3> <sadArray<0>_12_3> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_5_5> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_11_5> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_0_4> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_6_4> <sadArray<0>_12_4> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_5_6> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_11_6> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_0_5> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_6_5> <sadArray<0>_12_5> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_5_7> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_11_7> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_0_6> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_6_6> <sadArray<0>_12_6> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_0_7> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_6_7> <sadArray<0>_12_7> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_4_0> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_10_0> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_4_1> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_10_1> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_4_2> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_10_2> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_4_3> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_10_3> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_4_4> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_10_4> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_4_5> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_10_5> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_4_6> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_10_6> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_4_7> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <sadArray<0>_10_7> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_3_0> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_9_0> <sadArray<0>_15_0> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_3_1> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_9_1> <sadArray<0>_15_1> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_3_2> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_9_2> <sadArray<0>_15_2> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_3_3> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_9_3> <sadArray<0>_15_3> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_3_4> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_9_4> <sadArray<0>_15_4> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_3_5> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_9_5> <sadArray<0>_15_5> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_3_6> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_9_6> <sadArray<0>_15_6> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_3_7> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_9_7> <sadArray<0>_15_7> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_2_0> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_8_0> <sadArray<0>_14_0> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_2_1> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_8_1> <sadArray<0>_14_1> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_2_2> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_8_2> <sadArray<0>_14_2> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_2_3> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_8_3> <sadArray<0>_14_3> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_2_4> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_8_4> <sadArray<0>_14_4> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_2_5> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_8_5> <sadArray<0>_14_5> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_2_6> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_8_6> <sadArray<0>_14_6> 
-INFO:Xst:2261 - The FF/Latch <sadArray<0>_2_7> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <sadArray<0>_8_7> <sadArray<0>_14_7> 
 WARNING:Xst:1293 - FF/Latch <addr_31> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <addr_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <addr_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
@@ -738,75 +291,13 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <addr_9> has a const
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <addr_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <addr_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <addr_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_out_7> (without init value) has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_out_6> (without init value) has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:3203 - The FF/Latch <weR> in Unit <top_level> is the opposite to the following FF/Latch, which will be removed : <step_0> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 6.
-FlipFlop templateArray_0_0 has been replicated 1 time(s)
-FlipFlop templateArray_0_1 has been replicated 2 time(s)
-FlipFlop templateArray_0_2 has been replicated 2 time(s)
-FlipFlop templateArray_0_3 has been replicated 2 time(s)
-FlipFlop templateArray_0_4 has been replicated 2 time(s)
-FlipFlop templateArray_0_5 has been replicated 2 time(s)
-FlipFlop templateArray_0_6 has been replicated 1 time(s)
-FlipFlop templateArray_0_7 has been replicated 1 time(s)
-FlipFlop templateArray_19_0 has been replicated 1 time(s)
-FlipFlop templateArray_19_1 has been replicated 1 time(s)
-FlipFlop templateArray_19_2 has been replicated 1 time(s)
-FlipFlop templateArray_19_3 has been replicated 1 time(s)
-FlipFlop templateArray_19_4 has been replicated 1 time(s)
-FlipFlop templateArray_19_5 has been replicated 1 time(s)
-FlipFlop templateArray_19_6 has been replicated 1 time(s)
-FlipFlop templateArray_19_7 has been replicated 1 time(s)
-FlipFlop templateArray_1_0 has been replicated 1 time(s)
-FlipFlop templateArray_1_1 has been replicated 2 time(s)
-FlipFlop templateArray_1_2 has been replicated 2 time(s)
-FlipFlop templateArray_1_3 has been replicated 2 time(s)
-FlipFlop templateArray_1_4 has been replicated 2 time(s)
-FlipFlop templateArray_1_5 has been replicated 2 time(s)
-FlipFlop templateArray_1_6 has been replicated 1 time(s)
-FlipFlop templateArray_1_7 has been replicated 1 time(s)
-FlipFlop templateArray_20_0 has been replicated 1 time(s)
-FlipFlop templateArray_20_3 has been replicated 1 time(s)
-FlipFlop templateArray_20_4 has been replicated 1 time(s)
-FlipFlop templateArray_20_6 has been replicated 1 time(s)
-FlipFlop templateArray_20_7 has been replicated 1 time(s)
-FlipFlop templateArray_21_0 has been replicated 1 time(s)
-FlipFlop templateArray_21_1 has been replicated 1 time(s)
-FlipFlop templateArray_21_2 has been replicated 1 time(s)
-FlipFlop templateArray_21_3 has been replicated 1 time(s)
-FlipFlop templateArray_21_4 has been replicated 1 time(s)
-FlipFlop templateArray_21_5 has been replicated 1 time(s)
-FlipFlop templateArray_21_6 has been replicated 1 time(s)
-FlipFlop templateArray_21_7 has been replicated 1 time(s)
-FlipFlop templateArray_2_0 has been replicated 1 time(s)
-FlipFlop templateArray_2_1 has been replicated 2 time(s)
-FlipFlop templateArray_2_2 has been replicated 1 time(s)
-FlipFlop templateArray_2_3 has been replicated 2 time(s)
-FlipFlop templateArray_2_4 has been replicated 2 time(s)
-FlipFlop templateArray_2_5 has been replicated 1 time(s)
-FlipFlop templateArray_2_6 has been replicated 1 time(s)
-FlipFlop templateArray_2_7 has been replicated 1 time(s)
-FlipFlop templateArray_38_1 has been replicated 1 time(s)
-FlipFlop templateArray_38_2 has been replicated 1 time(s)
-FlipFlop templateArray_38_3 has been replicated 1 time(s)
-FlipFlop templateArray_38_4 has been replicated 1 time(s)
-FlipFlop templateArray_38_5 has been replicated 1 time(s)
-FlipFlop templateArray_39_0 has been replicated 1 time(s)
-FlipFlop templateArray_39_1 has been replicated 1 time(s)
-FlipFlop templateArray_39_2 has been replicated 1 time(s)
-FlipFlop templateArray_39_3 has been replicated 1 time(s)
-FlipFlop templateArray_39_4 has been replicated 1 time(s)
-FlipFlop templateArray_39_5 has been replicated 1 time(s)
-FlipFlop templateArray_39_6 has been replicated 1 time(s)
-FlipFlop templateArray_39_7 has been replicated 1 time(s)
-FlipFlop templateArray_40_1 has been replicated 1 time(s)
-FlipFlop templateArray_40_2 has been replicated 1 time(s)
-FlipFlop templateArray_40_3 has been replicated 1 time(s)
-FlipFlop templateArray_40_4 has been replicated 2 time(s)
-FlipFlop templateArray_40_5 has been replicated 1 time(s)
-FlipFlop templateArray_40_6 has been replicated 1 time(s)
-FlipFlop templateArray_40_7 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 0.
 
 Final Macro Processing ...
 
@@ -814,8 +305,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 640
- Flip-Flops                                            : 640
+# Registers                                            : 64
+ Flip-Flops                                            : 64
 
 =========================================================================
 
@@ -838,28 +329,28 @@ Top Level Output File Name         : top_level.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2022
+# BELS                             : 125
 #      GND                         : 1
 #      INV                         : 2
 #      LUT1                        : 6
-#      LUT2                        : 193
-#      LUT3                        : 285
-#      LUT4                        : 289
-#      LUT5                        : 171
-#      LUT6                        : 530
-#      MUXCY                       : 249
-#      MUXF7                       : 20
-#      MUXF8                       : 8
+#      LUT2                        : 4
+#      LUT3                        : 7
+#      LUT4                        : 13
+#      LUT5                        : 51
+#      LUT6                        : 21
+#      MUXCY                       : 13
 #      VCC                         : 1
-#      XORCY                       : 267
-# FlipFlops/Latches                : 640
-#      FD                          : 9
-#      FDE                         : 631
+#      XORCY                       : 6
+# FlipFlops/Latches                : 64
+#      FD                          : 56
+#      FDR                         : 7
+#      FDS                         : 1
 # RAMS                             : 1
 #      RAMB8BWER                   : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 20
+# IO Buffers                       : 28
+#      IBUF                        : 8
 #      OBUF                        : 20
 
 Device utilization summary:
@@ -869,20 +360,20 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             640  out of  54576     1%  
- Number of Slice LUTs:                 1476  out of  27288     5%  
-    Number used as Logic:              1476  out of  27288     5%  
+ Number of Slice Registers:              64  out of  54576     0%  
+ Number of Slice LUTs:                  104  out of  27288     0%  
+    Number used as Logic:               104  out of  27288     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1793
-   Number with an unused Flip Flop:    1153  out of   1793    64%  
-   Number with an unused LUT:           317  out of   1793    17%  
-   Number of fully used LUT-FF pairs:   323  out of   1793    18%  
-   Number of unique control sets:        60
+ Number of LUT Flip Flop pairs used:    104
+   Number with an unused Flip Flop:      40  out of    104    38%  
+   Number with an unused LUT:             0  out of    104     0%  
+   Number of fully used LUT-FF pairs:    64  out of    104    61%  
+   Number of unique control sets:         3
 
 IO Utilization: 
  Number of IOs:                          45
- Number of bonded IOBs:                  21  out of    218     9%  
+ Number of bonded IOBs:                  29  out of    218    13%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of    116     0%  
@@ -910,7 +401,7 @@ Clock Information:
 -----------------------------------+-----------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)       | Load  |
 -----------------------------------+-----------------------------+-------+
-clk                                | BUFGP                       | 640   |
+clk                                | BUFGP                       | 64    |
 clkR(clkR_INV_0:O)                 | NONE(*)(bram_right/Mram_ram)| 1     |
 -----------------------------------+-----------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
@@ -926,10 +417,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 11.167ns (Maximum Frequency: 89.548MHz)
+   Minimum period: 4.192ns (Maximum Frequency: 238.547MHz)
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 10.276ns
-   Maximum combinational path delay: No path found
+   Maximum output required time after clock: 5.449ns
+   Maximum combinational path delay: 6.868ns
 
 Timing Details:
 ---------------
@@ -937,94 +428,74 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 11.167ns (frequency: 89.548MHz)
-  Total number of paths / destination ports: 1637901 / 1271
+  Clock period: 4.192ns (frequency: 238.547MHz)
+  Total number of paths / destination ports: 1205 / 72
 -------------------------------------------------------------------------
-Delay:               11.167ns (Levels of Logic = 18)
-  Source:            templateArray_19_1 (FF)
-  Destination:       summer<0>_5_7 (FF)
+Delay:               4.192ns (Levels of Logic = 9)
+  Source:            addr_0 (FF)
+  Destination:       addr_out_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: templateArray_19_1 to summer<0>_5_7
+  Data Path: addr_0 to addr_out_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             19   0.447   1.176  templateArray_19_1 (templateArray_19_1)
-     LUT3:I1->O           13   0.203   0.933  Msub_GND_4_o_GND_4_o_sub_380_OUT<8:0>_cy<2>1 (Msub_GND_4_o_GND_4_o_sub_380_OUT<8:0>_cy<2>)
-     LUT6:I5->O            5   0.205   0.819  Msub_GND_4_o_GND_4_o_sub_510_OUT<8:0>_cy<7>11 (Msub_GND_4_o_GND_4_o_sub_510_OUT<8:0>_cy<7>)
-     LUT6:I4->O            1   0.203   0.580  ADDERTREE_INTERNAL_Madd6 (ADDERTREE_INTERNAL_Madd6)
-     LUT4:I3->O            1   0.205   0.000  ADDERTREE_INTERNAL_Madd6_lut<0>1 (ADDERTREE_INTERNAL_Madd6_lut<0>1)
-     MUXCY:S->O            1   0.172   0.000  ADDERTREE_INTERNAL_Madd6_cy<0>_0 (ADDERTREE_INTERNAL_Madd6_cy<0>1)
-     XORCY:CI->O           2   0.180   0.617  ADDERTREE_INTERNAL_Madd6_xor<0>_1 (ADDERTREE_INTERNAL_Madd_26)
-     LUT3:I2->O            1   0.205   0.580  ADDERTREE_INTERNAL_Madd82 (ADDERTREE_INTERNAL_Madd82)
-     LUT4:I3->O            1   0.205   0.000  ADDERTREE_INTERNAL_Madd8_lut<0>3 (ADDERTREE_INTERNAL_Madd8_lut<0>3)
-     MUXCY:S->O            1   0.172   0.000  ADDERTREE_INTERNAL_Madd8_cy<0>_2 (ADDERTREE_INTERNAL_Madd8_cy<0>3)
-     XORCY:CI->O           2   0.180   0.721  ADDERTREE_INTERNAL_Madd8_xor<0>_3 (ADDERTREE_INTERNAL_Madd_48)
-     LUT3:I1->O            1   0.203   0.580  Madd__n18374 (Madd__n18374)
-     LUT4:I3->O            1   0.205   0.000  Madd__n1837_lut<0>5 (Madd__n1837_lut<0>5)
-     MUXCY:S->O            1   0.172   0.000  Madd__n1837_cy<0>_4 (Madd__n1837_cy<0>5)
-     XORCY:CI->O           1   0.180   0.580  Madd__n1837_xor<0>_5 (_n1837<6>)
-     LUT6:I5->O            1   0.205   0.000  Madd_GND_4_o_GND_4_o_add_526_OUT_lut<6> (Madd_GND_4_o_GND_4_o_add_526_OUT_lut<6>)
-     MUXCY:S->O            0   0.172   0.000  Madd_GND_4_o_GND_4_o_add_526_OUT_cy<6> (Madd_GND_4_o_GND_4_o_add_526_OUT_cy<6>)
-     XORCY:CI->O           1   0.180   0.580  Madd_GND_4_o_GND_4_o_add_526_OUT_xor<7> (GND_4_o_GND_4_o_add_526_OUT<7>)
-     LUT2:I1->O            1   0.205   0.000  summer_next<0><11><7>1 (summer_next<0><11><7>)
-     FDE:D                     0.102          summer<0>_5_7
+     FD:C->Q              14   0.447   1.302  addr_0 (addr_0)
+     LUT5:I0->O            1   0.203   0.000  Mcompar_GND_4_o_addr[31]_LessThan_180_o_lut<0> (Mcompar_GND_4_o_addr[31]_LessThan_180_o_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<0> (Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<1> (Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<2> (Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<3> (Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<4> (Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<5> (Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<5>)
+     MUXCY:CI->O          65   0.019   1.647  Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<6> (Mcompar_GND_4_o_addr[31]_LessThan_180_o_cy<6>)
+     LUT2:I1->O            1   0.205   0.000  step_out_0_rstpot (step_out_0_rstpot)
+     FD:D                      0.102          step_out_0
     ----------------------------------------
-    Total                     11.167ns (4.001ns logic, 7.166ns route)
-                                       (35.8% logic, 64.2% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'clkR'
-  Clock period: 3.713ns (frequency: 269.317MHz)
-  Total number of paths / destination ports: 8 / 8
--------------------------------------------------------------------------
-Delay:               3.713ns (Levels of Logic = 1)
-  Source:            bram_right/Mram_ram (RAM)
-  Destination:       bram_right/Mram_ram (RAM)
-  Source Clock:      clkR falling
-  Destination Clock: clkR falling
-
-  Data Path: bram_right/Mram_ram to bram_right/Mram_ram
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     RAMB8BWER:CLKAWRCLK->DOADO7    2   1.650   0.981  bram_right/Mram_ram (doutR<7>)
-     LUT6:I0->O            1   0.203   0.579  Mmux_dinR81 (dinR<7>)
-     RAMB8BWER:DIADI7          0.300          bram_right/Mram_ram
-    ----------------------------------------
-    Total                      3.713ns (2.153ns logic, 1.560ns route)
-                                       (58.0% logic, 42.0% route)
+    Total                      4.192ns (1.243ns logic, 2.949ns route)
+                                       (29.7% logic, 70.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 1376 / 19
+  Total number of paths / destination ports: 48 / 16
 -------------------------------------------------------------------------
-Offset:              10.276ns (Levels of Logic = 12)
-  Source:            addr_0 (FF)
-  Destination:       addr_out<5> (PAD)
+Offset:              5.449ns (Levels of Logic = 3)
+  Source:            templateArray_1_7 (FF)
+  Destination:       led_out<7> (PAD)
   Source Clock:      clk rising
 
-  Data Path: addr_0 to addr_out<5>
+  Data Path: templateArray_1_7 to led_out<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q             181   0.447   2.381  addr_0 (addr_0)
-     LUT5:I0->O            1   0.203   0.000  Mcompar_GND_4_o_addr[31]_LessThan_245_o_lut<0> (Mcompar_GND_4_o_addr[31]_LessThan_245_o_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<0> (Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<1> (Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<2> (Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<3> (Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<4> (Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<5> (Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<5>)
-     MUXCY:CI->O          23   0.213   1.258  Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<6> (Mcompar_GND_4_o_addr[31]_LessThan_245_o_cy<6>)
-     LUT2:I0->O           14   0.203   1.062  weR_GND_4_o_AND_3_o1 (weR_GND_4_o_AND_3_o)
-     LUT6:I4->O            4   0.203   0.684  Mmux_addr_out521 (addr_out_7_OBUF)
-     LUT4:I3->O            1   0.205   0.579  Mmux_addr_out51 (addr_out_4_OBUF)
-     OBUF:I->O                 2.571          addr_out_4_OBUF (addr_out<4>)
+     FD:C->Q               2   0.447   0.864  templateArray_1_7 (templateArray_1_7)
+     LUT6:I2->O            1   0.203   0.580  Mmux_led_out161 (Mmux_led_out16)
+     LUT6:I5->O            1   0.205   0.579  Mmux_led_out162 (led_out_7_OBUF)
+     OBUF:I->O                 2.571          led_out_7_OBUF (led_out<7>)
     ----------------------------------------
-    Total                     10.276ns (4.312ns logic, 5.964ns route)
-                                       (42.0% logic, 58.0% route)
+    Total                      5.449ns (3.426ns logic, 2.023ns route)
+                                       (62.9% logic, 37.1% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 80 / 8
+-------------------------------------------------------------------------
+Delay:               6.868ns (Levels of Logic = 4)
+  Source:            sw_in<6> (PAD)
+  Destination:       led_out<7> (PAD)
+
+  Data Path: sw_in<6> to led_out<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.924  sw_in_6_IBUF (sw_in_6_IBUF)
+     LUT5:I0->O            8   0.203   1.167  Mmux_led_out1011 (Mmux_led_out101)
+     LUT6:I0->O            1   0.203   0.579  Mmux_led_out102 (led_out_4_OBUF)
+     OBUF:I->O                 2.571          led_out_4_OBUF (led_out<4>)
+    ----------------------------------------
+    Total                      6.868ns (4.199ns logic, 2.669ns route)
+                                       (61.1% logic, 38.9% route)
 
 =========================================================================
 
@@ -1036,8 +507,8 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   11.167|         |         |         |
-clkR           |         |    2.574|         |         |
+clk            |    4.192|         |         |         |
+clkR           |         |    3.014|         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clkR
@@ -1045,22 +516,21 @@ Clock to Setup on destination clock clkR
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    7.116|         |
-clkR           |         |         |    3.713|         |
+clk            |         |         |    1.931|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 20.00 secs
-Total CPU time to Xst completion: 20.15 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.22 secs
  
 --> 
 
 
-Total memory usage is 405072 kilobytes
+Total memory usage is 389432 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  117 (   0 filtered)
-Number of infos    :  100 (   0 filtered)
+Number of warnings :   39 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

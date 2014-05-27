@@ -1,0 +1,18 @@
+
+NET "CLK_I" TNM_NET = "CLK_I";
+TIMESPEC TS_CLK_I = PERIOD "CLK_I" 99.99 MHz HIGH 50 %; #ISE 13.1 bug workaround, should be 100
+
+#Created by Constraints Editor (xc6slx45-csg324-3) - 2011/04/06
+NET "Inst_SysCon/ASYNC_RST" TIG;
+
+#Created by Constraints Editor (xc6slx45-csg324-2) - 2011/03/22
+NET "CAMA_PCLK_I" TNM_NET = "CAMA_PCLK_I";
+TIMESPEC TS_CAMA_PCLK_I = PERIOD "CAMA_PCLK_I" 80 MHz HIGH 50 %;
+NET "CAMB_PCLK_I" TNM_NET = "CAMB_PCLK_I";
+TIMESPEC TS_CAMB_PCLK_I = PERIOD "CAMB_PCLK_I" 80 MHz HIGH 50 %;
+
+#Created by Constraints Editor (xc6slx45-csg324-2) - 2011/03/29
+
+OFFSET = IN 1.25 ns VALID 7.5 ns BEFORE "CAMA_PCLK_I" RISING;
+OFFSET = IN 1.25 ns VALID 7.5 ns BEFORE "CAMB_PCLK_I" RISING;
+

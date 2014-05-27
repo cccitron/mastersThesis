@@ -8,8 +8,8 @@ Parsing VHDL file "/home/cccitron/mastersThesis/bram/bram_test/top_level.vhd" in
 Parsing VHDL file "/home/cccitron/mastersThesis/bram/bram_test/tb_top_level.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 97292 KB
-Fuse CPU Usage: 1360 ms
+Fuse Memory Usage: 97236 KB
+Fuse CPU Usage: 1160 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package textio
@@ -19,9 +19,8 @@ Compiling architecture behavioral of entity bram_right_single [bram_right_single
 Compiling architecture behavioral of entity top_level [top_level_default]
 Compiling architecture behavior of entity tb_top_level
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 Compiled 10 VHDL Units
 Built simulation executable /home/cccitron/mastersThesis/bram/bram_test/tb_top_level_isim_beh.exe
-Fuse Memory Usage: 673400 KB
-Fuse CPU Usage: 1520 ms
-GCC CPU Usage: 630 ms
+Fuse Memory Usage: 673180 KB
+Fuse CPU Usage: 1280 ms
+GCC CPU Usage: 420 ms

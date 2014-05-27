@@ -1,0 +1,77 @@
+Release 12.4 - ngc2edif M.81d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+Reading design atlys_ddr_test.ngc ...
+WARNING:NetListWriters:298 - No output is written to atlys_ddr_test.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus c3_p0_cmd_bl<4 : 0> on block
+   atlys_ddr_test is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE<
+   5 : 0> on block atlys_ddr_test is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1777
+   <8 : 1> on block atlys_ddr_test is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/IODRPC
+   TRLR_MEMCELL_ADDR<7 : 0> on block atlys_ddr_test is not reconstructed,
+   because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_
+   controller/memcell_addr_reg<7 : 0> on block atlys_ddr_test is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_
+   mcb_controller/memcell_addr_reg<7 : 0> on block atlys_ddr_test is not
+   reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file atlys_ddr_test.edif ...
+ngc2edif: Total memory usage is 54972 kilobytes
+
+Release 12.4 - ngc2edif M.81d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+Reading design atlys_ddr_test.ngc ...
+WARNING:NetListWriters:298 - No output is written to atlys_ddr_test.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE<
+   5 : 0> on block atlys_ddr_test is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1777
+   <8 : 1> on block atlys_ddr_test is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/IODRPC
+   TRLR_MEMCELL_ADDR<7 : 0> on block atlys_ddr_test is not reconstructed,
+   because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_
+   controller/memcell_addr_reg<7 : 0> on block atlys_ddr_test is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/
+   gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_
+   mcb_controller/memcell_addr_reg<7 : 0> on block atlys_ddr_test is not
+   reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file atlys_ddr_test.edif ...
+ngc2edif: Total memory usage is 54780 kilobytes
+

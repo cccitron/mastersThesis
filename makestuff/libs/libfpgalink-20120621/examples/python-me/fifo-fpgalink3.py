@@ -382,8 +382,8 @@ if __name__ == "__main__":
             #print("Reading channel 6...")
             #print("Got 0x%02X" % flReadChannel(handle, 1000, 0x06))
             
-            #im = Image.new("RGB", (100, 50), "black")
-            #print(im.format, im.size, im.mode)
+            im = Image.new("RGB", (640, 480), "black")
+            print(im.format, im.size, im.mode)
 
             '''
             print("Reading channel 0...")
@@ -415,9 +415,9 @@ if __name__ == "__main__":
                   im.putpixel((i, j), (buff[0], buff[1], buff[1]))
             
             '''
-        '''    time.sleep(1)
+            time.sleep(1)
             #buff = flReadChannel(handle, 1000, 0x00, 30000)
-            
+            '''
             i = 0
             j = 0
             count = 0
@@ -437,20 +437,20 @@ if __name__ == "__main__":
                     else:
                         j += 1
                     ndx += 2
-            ''' '''
+            ''' 
             for i in range(640):
                 for j in range(480):
                   buff = flReadChannel(handle, 1000, 0x00, 2)
                   im.putpixel((i, j), ((buff[0] & 0xf8), ((buff[0] & 0x07) << 5) | ((buff[1] & 0xe0) >> 3), (buff[1] & 0x1f) << 3))
-            '''
+            
             #print(buff)
             #print(len(buff))
 
-            #print("")
-            #im.putpixel((0, 3), (0, 0, 0))
-            #im.putpixel((1, 3), (255, 255, 255))
-            #im.save("show.jpg")
-            #im.show()
+            print("")
+            im.putpixel((0, 3), (0, 0, 0))
+            im.putpixel((1, 3), (255, 255, 255))
+            im.save("show.jpg")
+            im.show()
 
     except FLException as ex:
         print(ex)

@@ -32,39 +32,46 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock clk_100MHz
-------------+------------+------------+------------+------------+------------------+--------+
-            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
-Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
-------------+------------+------------+------------+------------+------------------+--------+
-sw_i<7>     |    9.929(R)|      SLOW  |   -1.893(R)|      SLOW  |clk_100MHz_BUFGP  |   0.000|
-------------+------------+------------+------------+------------+------------------+--------+
+Clock to Setup on destination clock btn<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+btn<1>         |         |         |    1.981|    3.570|
+btn<3>         |         |         |    2.196|    3.570|
+btn<5>         |         |         |         |    3.570|
+---------------+---------+---------+---------+---------+
 
-Clock clk_100MHz to Pad
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
-Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
-------------+-----------------+------------+-----------------+------------+------------------+--------+
-leds<0>     |         6.475(R)|      SLOW  |         3.070(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
-leds<1>     |         6.478(R)|      SLOW  |         3.073(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
-leds<2>     |         6.478(R)|      SLOW  |         3.073(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
-leds<3>     |         6.484(R)|      SLOW  |         3.079(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
-leds<4>     |         6.484(R)|      SLOW  |         3.079(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
-leds<5>     |         6.598(R)|      SLOW  |         3.193(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
-leds<6>     |         6.510(R)|      SLOW  |         3.105(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
-leds<7>     |         6.591(R)|      SLOW  |         3.186(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
-------------+-----------------+------------+-----------------+------------+------------------+--------+
+Clock to Setup on destination clock btn<3>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+btn<1>         |         |         |    2.070|    3.570|
+btn<3>         |         |         |    2.285|    3.570|
+btn<5>         |         |         |         |    3.570|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock btn<5>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+btn<1>         |         |         |    0.971|    3.570|
+btn<3>         |         |         |    1.186|    3.570|
+btn<5>         |         |         |         |    3.570|
+---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk_100MHz
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100MHz     |    3.641|         |         |         |
+clk_100MHz     |    3.537|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sun May  4 14:06:26 2014 
+Analysis completed Fri May 16 11:30:21 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
