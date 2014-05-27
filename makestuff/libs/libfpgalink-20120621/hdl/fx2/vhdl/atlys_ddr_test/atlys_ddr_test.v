@@ -18,32 +18,34 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module atlys_ddr_test(
+module atlys_ddr_test (
+      output DDR2CLK_P,
+      output DDR2CLK_N,
+      output DDR2CKE,
+      output DDR2RASN,
+      output DDR2CASN,
+      output DDR2WEN,
+      inout DDR2RZQ,
+      inout DDR2ZIO,
+      output [2:0] DDR2BA,
 
-	output DDR2CLK_P,
-	output DDR2CLK_N,
-	output DDR2CKE,
-	output DDR2RASN,
-	output DDR2CASN,
-	output DDR2WEN,
-	inout DDR2RZQ,
-	inout DDR2ZIO,
-	output [2:0] DDR2BA,
+      output [12:0] DDR2A,
+      inout [15:0] DDR2DQ,
 
-	output [12:0] DDR2A,
-	inout [15:0] DDR2DQ,
+      inout DDR2UDQS_P,
+      inout DDR2UDQS_N,
+      inout DDR2LDQS_P,
+      inout DDR2LDQS_N,
+      output DDR2LDM,
+      output DDR2UDM,
+      output DDR2ODT,
 
-	inout DDR2UDQS_P,
-	inout DDR2UDQS_N,
-	inout DDR2LDQS_P,
-	inout DDR2LDQS_N,
-	output DDR2LDM,
-	output DDR2UDM,
-	output DDR2ODT,
-
-	input clk, // 100 MHz oscillator = 10ns period (top level pin)
-   output [7:0] leds
-    );
+      input clk, // 100 MHz oscillator = 10ns period (top level pin)
+      //output [7:0] leds
+      
+      output [1:0] CALIBRATION,
+      output [63:0] p0_rd_data
+   );
 	 
 	 
 	reg [2:0] c3_p0_cmd_instr;
@@ -131,8 +133,10 @@ module atlys_ddr_test(
 		calib_done <= {calib_done[0], c3_calib_done};
       
    //always @(posedge clk)
-   assign leds[7:2] = c3_p0_rd_data[5:0]; //6'b110000;
-   assign leds[1:0] = calib_done;
+//   assign leds[7:2] = c3_p0_rd_data[5:0]; //6'b110000;
+//   assign leds[1:0] = calib_done;
+   assign CALIBRATION = calib_done;
+   assign p0_rd_data = c3_p0_rd_data;
 
 	reg [4:0] state = 0;
 	reg [11:0] count;

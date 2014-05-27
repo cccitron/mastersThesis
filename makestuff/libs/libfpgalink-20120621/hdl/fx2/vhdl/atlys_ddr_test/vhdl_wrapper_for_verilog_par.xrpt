@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Tue May 27 14:51:26 2014">
+  <application stringID="par" timeStamp="Tue May 27 15:26:52 2014">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -59,12 +59,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="15 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="15 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="13 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="14 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="15 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="15 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="14 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="14 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
@@ -83,7 +83,7 @@
             <item label="Routed" stringID="ROUTED" value="ROUTED"/>
             <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y3"/>
             <item label="Locked" stringID="LOCKED" value="No"/>
-            <item dataType="float" label="Fanout" stringID="FANOUT" value="132.000000"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="127.000000"/>
             <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.066000"/>
             <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.299000"/>
           </row>
@@ -2531,7 +2531,7 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Tue May 27 14:51:26 2014">
+  <application stringID="Par" timeStamp="Tue May 27 15:26:52 2014">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -2571,7 +2571,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i5-2430M CPU @ 2.40GHz"/>
-          <item stringID="speed" value="2400.000 MHz"/>
+          <item stringID="speed" value="1400.000 MHz"/>
         </row>
       </table>
     </section>
@@ -2611,10 +2611,10 @@
           <item AVAILABLE="1602" dataType="int" stringID="PAR_NUM_SLICEM" value="1"/>
           <item AVAILABLE="3411" dataType="int" stringID="PAR_NUM_SLICEX" value="162"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="540">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="281"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="53"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="206"/>
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="543">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="284"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="56"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="203"/>
         </item>
       </section>
       <section stringID="PAR_IOB_REPORTING">

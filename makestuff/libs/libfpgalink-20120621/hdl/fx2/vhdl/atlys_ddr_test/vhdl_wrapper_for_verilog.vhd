@@ -84,9 +84,15 @@ architecture Behavioral of vhdl_wrapper_for_verilog is
          DDR2ODT    : OUT STD_LOGIC;
 
          clk : IN STD_LOGIC; -- 100 MHz oscillator = 10ns period (top level pin)
-         leds : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+         --leds : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+         
+         CALIBRATION : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+         p0_rd_data : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
       );
    END COMPONENT;
+   
+   SIGNAL CALIBRATION : STD_LOGIC_VECTOR(1 DOWNTO 0);
+   SIGNAL p0_rd_data : STD_LOGIC_VECTOR(63 DOWNTO 0);
    
 begin
 
@@ -115,8 +121,12 @@ begin
          DDR2ODT,
 
          clk, -- 100 MHz oscillator = 10ns period (top level pin)
-         leds
+         
+         CALIBRATION,
+         p0_rd_data
       );
+
+   leds <= p0_rd_data(5 DOWNTO 0) & CALIBRATION;
 
 --   ddr : atlys_ddr_test
 --      PORT MAP(

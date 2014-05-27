@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: vhdl_wrapper_for_verilog.prj
@@ -663,22 +663,22 @@ WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgal
 WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ddr_interface.v" Line 172: Assignment to c3_p1_rd_overflow ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ddr_interface.v" Line 173: Assignment to c3_p1_rd_error ignored, since the identifier is never used
 WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ddr_interface.v" Line 151: Net <c3_p1_cmd_en> does not have a driver.
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 105: Assignment to c3_p0_wr_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 107: Assignment to c3_p0_rd_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 109: Assignment to c3_p0_rd_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 115: Assignment to c3_p1_wr_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 117: Assignment to c3_p1_rd_data ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 118: Assignment to c3_p1_rd_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 120: Assignment to c3_p1_rd_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 52: Net <c3_p0_wr_mask[7]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 54: Net <c3_p0_rd_en> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 56: Net <c3_p1_cmd_instr[2]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 57: Net <c3_p1_cmd_bl[5]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 58: Net <c3_p1_cmd_byte_addr[29]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 59: Net <c3_p1_wr_mask[7]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 60: Net <c3_p1_wr_data[63]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 61: Net <c3_p1_rd_en> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 62: Net <c3_p1_wr_en> does not have a driver.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 107: Assignment to c3_p0_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 109: Assignment to c3_p0_rd_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 111: Assignment to c3_p0_rd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 117: Assignment to c3_p1_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 119: Assignment to c3_p1_rd_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 120: Assignment to c3_p1_rd_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 122: Assignment to c3_p1_rd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 54: Net <c3_p0_wr_mask[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 56: Net <c3_p0_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 58: Net <c3_p1_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 59: Net <c3_p1_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 60: Net <c3_p1_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 61: Net <c3_p1_wr_mask[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 62: Net <c3_p1_wr_data[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 63: Net <c3_p1_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 64: Net <c3_p1_wr_en> does not have a driver.
 Back to vhdl to continue elaboration
 
 =========================================================================
@@ -693,13 +693,13 @@ Unit <vhdl_wrapper_for_verilog> synthesized.
 
 Synthesizing Unit <atlys_ddr_test>.
     Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v".
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 80: Output port <c3_p0_wr_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 80: Output port <c3_p0_rd_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 80: Output port <c3_p1_wr_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 80: Output port <c3_p1_rd_data> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 80: Output port <c3_p1_rd_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 80: Output port <c3_p0_rd_empty> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 80: Output port <c3_p1_rd_empty> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p0_wr_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p0_rd_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p1_wr_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p1_rd_data> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p1_rd_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p0_rd_empty> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p1_rd_empty> of the instance <ddr_interface> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <c3_p0_wr_mask> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <c3_p1_cmd_instr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <c3_p1_cmd_bl> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -730,7 +730,7 @@ WARNING:Xst:653 - Signal <c3_p1_wr_en> is used but never assigned. This sourcele
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 12-bit adder for signal <count[11]_GND_5_o_add_6_OUT> created at line 185.
+    Found 12-bit adder for signal <count[11]_GND_5_o_add_6_OUT> created at line 189.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 120 D-type flip-flop(s).
@@ -2002,7 +2002,7 @@ INFO:Xst:1799 - State 101010 is never reached in FSM <STATE>.
     Found 8-bit adder for signal <counter_inc[7]_GND_19_o_add_155_OUT> created at line 1194.
     Found 8-bit adder for signal <DQS_DELAY[7]_GND_19_o_add_158_OUT> created at line 1199.
     Found 8-bit adder for signal <counter_dec[7]_GND_19_o_add_169_OUT> created at line 1219.
-    Found 12-bit adder for signal <_n0709> created at line 437.
+    Found 12-bit adder for signal <_n0710> created at line 437.
     Found 12-bit adder for signal <n0420> created at line 437.
     Found 13-bit adder for signal <_n0713> created at line 437.
     Found 13-bit adder for signal <n0414> created at line 437.
@@ -2165,11 +2165,11 @@ Macro Statistics
 =========================================================================
 
 INFO:Xst:2261 - The FF/Latch <IODRPCTRLR_MEMCELL_ADDR_2> in Unit <mcb_soft_calibration_inst> is equivalent to the following 3 FFs/Latches, which will be removed : <IODRPCTRLR_MEMCELL_ADDR_4> <IODRPCTRLR_MEMCELL_ADDR_5> <IODRPCTRLR_MEMCELL_ADDR_6> 
-INFO:Xst:2261 - The FF/Latch <c3_p0_cmd_instr_1> in Unit <ddr_wrapper> is equivalent to the following 4 FFs/Latches, which will be removed : <c3_p0_cmd_instr_2> <c3_p0_cmd_bl_0> <c3_p0_cmd_bl_3> <c3_p0_cmd_bl_5> 
-INFO:Xst:2261 - The FF/Latch <c3_p0_wr_data_1> in Unit <ddr_wrapper> is equivalent to the following 61 FFs/Latches, which will be removed : <c3_p0_wr_data_3> <c3_p0_wr_data_4> <c3_p0_wr_data_5> <c3_p0_wr_data_6> <c3_p0_wr_data_7> <c3_p0_wr_data_8> <c3_p0_wr_data_9> <c3_p0_wr_data_10> <c3_p0_wr_data_11> <c3_p0_wr_data_12> <c3_p0_wr_data_13> <c3_p0_wr_data_14> <c3_p0_wr_data_15> <c3_p0_wr_data_16> <c3_p0_wr_data_17> <c3_p0_wr_data_18> <c3_p0_wr_data_19> <c3_p0_wr_data_20> <c3_p0_wr_data_21> <c3_p0_wr_data_22> <c3_p0_wr_data_23> <c3_p0_wr_data_24> <c3_p0_wr_data_25> <c3_p0_wr_data_26> <c3_p0_wr_data_27> <c3_p0_wr_data_28> <c3_p0_wr_data_29> <c3_p0_wr_data_30> <c3_p0_wr_data_31> <c3_p0_wr_data_32> <c3_p0_wr_data_33> <c3_p0_wr_data_34> <c3_p0_wr_data_35> <c3_p0_wr_data_36> <c3_p0_wr_data_37> <c3_p0_wr_data_38> <c3_p0_wr_data_39> <c3_p0_wr_data_40> <c3_p0_wr_data_41> <c3_p0_wr_data_42> <c3_p0_wr_data_43> <c3_p0_wr_data_44> <c3_p0_wr_data_45> <c3_p0_wr_data_46> <c3_p0_wr_data_47> <c3_p0_wr_data_48>
-   <c3_p0_wr_data_49> <c3_p0_wr_data_50> <c3_p0_wr_data_51> <c3_p0_wr_data_52> <c3_p0_wr_data_53> <c3_p0_wr_data_54> <c3_p0_wr_data_55> <c3_p0_wr_data_56> <c3_p0_wr_data_57> <c3_p0_wr_data_58> <c3_p0_wr_data_59> <c3_p0_wr_data_60> <c3_p0_wr_data_61> <c3_p0_wr_data_62> <c3_p0_wr_data_63> 
 INFO:Xst:2261 - The FF/Latch <c3_p0_cmd_byte_addr_0> in Unit <ddr_wrapper> is equivalent to the following 28 FFs/Latches, which will be removed : <c3_p0_cmd_byte_addr_1> <c3_p0_cmd_byte_addr_2> <c3_p0_cmd_byte_addr_3> <c3_p0_cmd_byte_addr_5> <c3_p0_cmd_byte_addr_6> <c3_p0_cmd_byte_addr_7> <c3_p0_cmd_byte_addr_8> <c3_p0_cmd_byte_addr_9> <c3_p0_cmd_byte_addr_10> <c3_p0_cmd_byte_addr_11> <c3_p0_cmd_byte_addr_12> <c3_p0_cmd_byte_addr_13> <c3_p0_cmd_byte_addr_14> <c3_p0_cmd_byte_addr_15> <c3_p0_cmd_byte_addr_16> <c3_p0_cmd_byte_addr_17> <c3_p0_cmd_byte_addr_18> <c3_p0_cmd_byte_addr_19> <c3_p0_cmd_byte_addr_20> <c3_p0_cmd_byte_addr_21> <c3_p0_cmd_byte_addr_22> <c3_p0_cmd_byte_addr_23> <c3_p0_cmd_byte_addr_24> <c3_p0_cmd_byte_addr_25> <c3_p0_cmd_byte_addr_26> <c3_p0_cmd_byte_addr_27> <c3_p0_cmd_byte_addr_28> <c3_p0_cmd_byte_addr_29> 
 INFO:Xst:2261 - The FF/Latch <c3_p0_wr_data_0> in Unit <ddr_wrapper> is equivalent to the following FF/Latch, which will be removed : <c3_p0_wr_data_2> 
+INFO:Xst:2261 - The FF/Latch <c3_p0_wr_data_1> in Unit <ddr_wrapper> is equivalent to the following 61 FFs/Latches, which will be removed : <c3_p0_wr_data_3> <c3_p0_wr_data_4> <c3_p0_wr_data_5> <c3_p0_wr_data_6> <c3_p0_wr_data_7> <c3_p0_wr_data_8> <c3_p0_wr_data_9> <c3_p0_wr_data_10> <c3_p0_wr_data_11> <c3_p0_wr_data_12> <c3_p0_wr_data_13> <c3_p0_wr_data_14> <c3_p0_wr_data_15> <c3_p0_wr_data_16> <c3_p0_wr_data_17> <c3_p0_wr_data_18> <c3_p0_wr_data_19> <c3_p0_wr_data_20> <c3_p0_wr_data_21> <c3_p0_wr_data_22> <c3_p0_wr_data_23> <c3_p0_wr_data_24> <c3_p0_wr_data_25> <c3_p0_wr_data_26> <c3_p0_wr_data_27> <c3_p0_wr_data_28> <c3_p0_wr_data_29> <c3_p0_wr_data_30> <c3_p0_wr_data_31> <c3_p0_wr_data_32> <c3_p0_wr_data_33> <c3_p0_wr_data_34> <c3_p0_wr_data_35> <c3_p0_wr_data_36> <c3_p0_wr_data_37> <c3_p0_wr_data_38> <c3_p0_wr_data_39> <c3_p0_wr_data_40> <c3_p0_wr_data_41> <c3_p0_wr_data_42> <c3_p0_wr_data_43> <c3_p0_wr_data_44> <c3_p0_wr_data_45> <c3_p0_wr_data_46> <c3_p0_wr_data_47> <c3_p0_wr_data_48>
+   <c3_p0_wr_data_49> <c3_p0_wr_data_50> <c3_p0_wr_data_51> <c3_p0_wr_data_52> <c3_p0_wr_data_53> <c3_p0_wr_data_54> <c3_p0_wr_data_55> <c3_p0_wr_data_56> <c3_p0_wr_data_57> <c3_p0_wr_data_58> <c3_p0_wr_data_59> <c3_p0_wr_data_60> <c3_p0_wr_data_61> <c3_p0_wr_data_62> <c3_p0_wr_data_63> 
+INFO:Xst:2261 - The FF/Latch <c3_p0_cmd_instr_1> in Unit <ddr_wrapper> is equivalent to the following 4 FFs/Latches, which will be removed : <c3_p0_cmd_instr_2> <c3_p0_cmd_bl_0> <c3_p0_cmd_bl_3> <c3_p0_cmd_bl_5> 
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_instr_1> (without init value) has a constant value of 0 in block <ddr_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <reset> has a constant value of 0 in block <ddr_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_byte_addr_4> (without init value) has a constant value of 1 in block <ddr_wrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -2212,7 +2212,7 @@ The following registers are absorbed into counter <DQS_DELAY>: 1 register on sig
 The following registers are absorbed into counter <counter_inc>: 1 register on signal <counter_inc>.
 The following registers are absorbed into counter <counter_dec>: 1 register on signal <counter_dec>.
 	The following adders/subtractors are grouped into adder tree <Madd_n0420_Madd1> :
- 	<Madd_n0610[8:0]> in block <mcb_soft_calibration>, 	<Madd_n0613[9:0]> in block <mcb_soft_calibration>, 	<Madd_n0616[10:0]_Madd> in block <mcb_soft_calibration>, 	<Madd__n0709_Madd> in block <mcb_soft_calibration>.
+ 	<Madd_n0610[8:0]> in block <mcb_soft_calibration>, 	<Madd_n0613[9:0]> in block <mcb_soft_calibration>, 	<Madd_n0616[10:0]_Madd> in block <mcb_soft_calibration>, 	<Madd__n0710_Madd> in block <mcb_soft_calibration>.
 	The following adders/subtractors are grouped into adder tree <Madd_n0592[9:0]1> :
  	<Madd_n0586[7:0]> in block <mcb_soft_calibration>, 	<Madd_n0589[8:0]> in block <mcb_soft_calibration>, 	<Madd_n0592[9:0]> in block <mcb_soft_calibration>.
 Unit <mcb_soft_calibration> synthesized (advanced).
@@ -2677,13 +2677,13 @@ clk            |    5.831|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 18.89 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 17.87 secs
  
 --> 
 
 
-Total memory usage is 426268 kilobytes
+Total memory usage is 426340 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 1089 (   0 filtered)
