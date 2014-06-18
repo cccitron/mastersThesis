@@ -1,6 +1,6 @@
 -- This version is able to have one byte at a time written to it and stored in temp_array to be
 -- displayed on the LEDs. It is also able to have the values stored in the templ_array read back
--- to the comp. Can sum two values from comp and return it through reg3.
+-- to the comp.
 
 --
 -- Copyright (C) 2009-2012 Chris McClelland

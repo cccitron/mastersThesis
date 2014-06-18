@@ -509,10 +509,16 @@ if __name__ == "__main__":
                 print(buf, end=" ")
             print("")
 
-            print("begin second read")            
+            '''print("begin second read")            
             for ndx in range(1):
                 buf = flReadChannel(handle, 1000, 0x01, 5760)
             print(buf)
+            print("")'''
+
+            print("reading from sad array")            
+            for ndx in range(1):
+                buf = flReadChannel(handle, 1000, 0x03, 1)
+            print(buf, end=" ")
             print("")
 
             #print("")

@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-cccitron-700Z3A-700Z4A-700Z5A-700Z5B::  Tue Jun 17 16:02:38 2014
+cccitron-700Z3A-700Z4A-700Z5A-700Z5B::  Wed Jun 18 11:39:07 2014
 
 par -w -intstyle ise -ol high -mt off top_level_map.ncd top_level.ncd
 top_level.pcf 
@@ -22,16 +22,16 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   228 out of  54,576    1%
-    Number used as Flip Flops:                 156
+  Number of Slice Registers:                   231 out of  54,576    1%
+    Number used as Flip Flops:                 159
     Number used as Latches:                     72
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        281 out of  27,288    1%
-    Number used as logic:                      275 out of  27,288    1%
-      Number using O6 output only:             216
+  Number of Slice LUTs:                        288 out of  27,288    1%
+    Number used as logic:                      282 out of  27,288    1%
+      Number using O6 output only:             226
       Number using O5 output only:               5
-      Number using O5 and O6:                   54
+      Number using O5 and O6:                   51
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   6,408    0%
     Number used exclusively as route-thrus:      6
@@ -40,12 +40,12 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   121 out of   6,822    1%
-  Number of MUXCYs used:                        40 out of  13,644    1%
-  Number of LUT Flip Flop pairs used:          382
-    Number with an unused Flip Flop:           158 out of     382   41%
-    Number with an unused LUT:                 101 out of     382   26%
-    Number of fully used LUT-FF pairs:         123 out of     382   32%
+  Number of occupied Slices:                   140 out of   6,822    2%
+  Number of MUXCYs used:                        56 out of  13,644    1%
+  Number of LUT Flip Flop pairs used:          412
+    Number with an unused Flip Flop:           193 out of     412   46%
+    Number with an unused LUT:                 124 out of     412   30%
+    Number of fully used LUT-FF pairs:          95 out of     412   23%
     Number of slice register sites lost
       to control set restrictions:               0 out of  54,576    0%
 
@@ -96,27 +96,27 @@ Starting Router
 
 Phase  1  : 1661 unrouted;      REAL time: 7 secs 
 
-Phase  2  : 1549 unrouted;      REAL time: 8 secs 
+Phase  2  : 1540 unrouted;      REAL time: 8 secs 
 
-Phase  3  : 649 unrouted;      REAL time: 10 secs 
+Phase  3  : 664 unrouted;      REAL time: 16 secs 
 
-Phase  4  : 649 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 12 secs 
+Phase  4  : 664 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 18 secs 
 
 Updating file: top_level.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 14 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 14 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 14 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 14 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 14 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 14 secs 
-Total REAL time to Router completion: 14 secs 
-Total CPU time to Router completion: 14 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
+Total REAL time to Router completion: 21 secs 
+Total CPU time to Router completion: 21 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -134,34 +134,34 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|     fx2Clk_in_BUFGP |  BUFGMUX_X3Y7| No   |   52 |  0.053     |  1.273      |
+|     fx2Clk_in_BUFGP |  BUFGMUX_X3Y7| No   |   56 |  0.051     |  1.271      |
 +---------------------+--------------+------+------+------------+-------------+
-|ndx[3]_Decoder_35_OU |              |      |      |            |             |
-|                T<5> |         Local|      |    2 |  0.503     |  0.977      |
+|ndx_t[3]_Decoder_36_ |              |      |      |            |             |
+|              OUT<7> |         Local|      |    2 |  0.077     |  0.892      |
 +---------------------+--------------+------+------+------------+-------------+
-|ndx[3]_Decoder_35_OU |              |      |      |            |             |
-|                T<4> |         Local|      |    2 |  0.455     |  1.229      |
+|ndx_t[3]_Decoder_36_ |              |      |      |            |             |
+|              OUT<6> |         Local|      |    2 |  0.336     |  0.840      |
 +---------------------+--------------+------+------+------------+-------------+
-|ndx[3]_Decoder_35_OU |              |      |      |            |             |
-|                T<3> |         Local|      |    2 |  0.228     |  0.705      |
+|ndx_t[3]_Decoder_36_ |              |      |      |            |             |
+|              OUT<0> |         Local|      |    2 |  0.292     |  0.973      |
 +---------------------+--------------+------+------+------------+-------------+
-|ndx[3]_Decoder_35_OU |              |      |      |            |             |
-|                T<2> |         Local|      |    2 |  0.448     |  0.766      |
+|ndx_t[3]_Decoder_36_ |              |      |      |            |             |
+|              OUT<8> |         Local|      |    2 |  0.070     |  0.758      |
 +---------------------+--------------+------+------+------------+-------------+
-|ndx[3]_Decoder_35_OU |              |      |      |            |             |
-|                T<0> |         Local|      |    2 |  0.728     |  1.431      |
+|ndx_t[3]_Decoder_36_ |              |      |      |            |             |
+|              OUT<1> |         Local|      |    2 |  0.102     |  0.813      |
 +---------------------+--------------+------+------+------------+-------------+
-|ndx[3]_Decoder_35_OU |              |      |      |            |             |
-|                T<8> |         Local|      |    2 |  0.155     |  1.116      |
+|ndx_t[3]_Decoder_36_ |              |      |      |            |             |
+|              OUT<3> |         Local|      |    2 |  0.106     |  0.790      |
 +---------------------+--------------+------+------+------------+-------------+
-|ndx[3]_Decoder_35_OU |              |      |      |            |             |
-|                T<7> |         Local|      |    2 |  0.069     |  0.517      |
+|ndx_t[3]_Decoder_36_ |              |      |      |            |             |
+|              OUT<2> |         Local|      |    2 |  0.368     |  0.908      |
 +---------------------+--------------+------+------+------------+-------------+
-|ndx[3]_Decoder_35_OU |              |      |      |            |             |
-|                T<6> |         Local|      |    2 |  0.439     |  0.937      |
+|ndx_t[3]_Decoder_36_ |              |      |      |            |             |
+|              OUT<5> |         Local|      |    2 |  0.471     |  1.021      |
 +---------------------+--------------+------+------+------------+-------------+
-|ndx[3]_Decoder_35_OU |              |      |      |            |             |
-|                T<1> |         Local|      |    2 |  0.203     |  0.719      |
+|ndx_t[3]_Decoder_36_ |              |      |      |            |             |
+|              OUT<4> |         Local|      |    2 |  0.455     |  0.928      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -181,8 +181,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns | SETUP       |    15.202ns|     4.798ns|       0|           0
-   HIGH 50%                                 | HOLD        |     0.412ns|            |       0|           0
+  TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns | SETUP       |     8.812ns|    11.188ns|       0|           0
+   HIGH 50%                                 | HOLD        |     0.381ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -193,8 +193,8 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 15 secs 
-Total CPU time to PAR completion: 14 secs 
+Total REAL time to PAR completion: 22 secs 
+Total CPU time to PAR completion: 22 secs 
 
 Peak Memory Usage:  690 MB
 
