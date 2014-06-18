@@ -1,0 +1,99 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue Jun 17 16:02:35 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "fx2Clk_in" LOCATE = SITE "C10" LEVEL 1;
+COMP "fx2Data_io<0>" LOCATE = SITE "A2" LEVEL 1;
+COMP "fx2Data_io<1>" LOCATE = SITE "D6" LEVEL 1;
+COMP "fx2Data_io<2>" LOCATE = SITE "C6" LEVEL 1;
+COMP "fx2Data_io<3>" LOCATE = SITE "B3" LEVEL 1;
+COMP "fx2Data_io<4>" LOCATE = SITE "A3" LEVEL 1;
+COMP "fx2Data_io<5>" LOCATE = SITE "B4" LEVEL 1;
+COMP "fx2Data_io<6>" LOCATE = SITE "A4" LEVEL 1;
+COMP "fx2Data_io<7>" LOCATE = SITE "C5" LEVEL 1;
+COMP "fx2Read_out" LOCATE = SITE "F13" LEVEL 1;
+COMP "fx2GotData_in" LOCATE = SITE "C15" LEVEL 1;
+COMP "fx2GotRoom_in" LOCATE = SITE "A9" LEVEL 1;
+COMP "led_out<0>" LOCATE = SITE "U18" LEVEL 1;
+COMP "led_out<1>" LOCATE = SITE "M14" LEVEL 1;
+COMP "led_out<2>" LOCATE = SITE "N14" LEVEL 1;
+COMP "led_out<3>" LOCATE = SITE "L14" LEVEL 1;
+COMP "led_out<4>" LOCATE = SITE "M13" LEVEL 1;
+COMP "led_out<5>" LOCATE = SITE "D4" LEVEL 1;
+COMP "led_out<6>" LOCATE = SITE "P16" LEVEL 1;
+COMP "led_out<7>" LOCATE = SITE "N12" LEVEL 1;
+COMP "fx2Write_out" LOCATE = SITE "E13" LEVEL 1;
+COMP "sw_in<0>" LOCATE = SITE "A10" LEVEL 1;
+COMP "sw_in<1>" LOCATE = SITE "D14" LEVEL 1;
+COMP "sw_in<2>" LOCATE = SITE "C14" LEVEL 1;
+COMP "sw_in<3>" LOCATE = SITE "P15" LEVEL 1;
+COMP "sw_in<4>" LOCATE = SITE "P12" LEVEL 1;
+COMP "sw_in<5>" LOCATE = SITE "R5" LEVEL 1;
+COMP "sw_in<6>" LOCATE = SITE "T5" LEVEL 1;
+COMP "sw_in<7>" LOCATE = SITE "E4" LEVEL 1;
+COMP "fx2PktEnd_out" LOCATE = SITE "C4" LEVEL 1;
+COMP "fx2Addr_out<0>" LOCATE = SITE "A14" LEVEL 1;
+COMP "fx2Addr_out<1>" LOCATE = SITE "B14" LEVEL 1;
+COMP "fx2OE_out" LOCATE = SITE "A15" LEVEL 1;
+TIMEGRP fx2Clk_in = BEL "temp_array_8_0" BEL "temp_array_8_1" BEL
+        "temp_array_8_2" BEL "temp_array_8_3" BEL "temp_array_8_4" BEL
+        "temp_array_8_5" BEL "temp_array_8_6" BEL "temp_array_8_7" BEL
+        "reg3_0" BEL "reg3_1" BEL "reg3_2" BEL "reg3_3" BEL "reg3_4" BEL
+        "reg3_5" BEL "reg3_6" BEL "reg3_7" BEL "reg2_0" BEL "reg2_1" BEL
+        "reg2_2" BEL "reg2_3" BEL "reg2_4" BEL "reg2_5" BEL "reg2_6" BEL
+        "reg2_7" BEL "temp_array_7_0" BEL "temp_array_7_1" BEL
+        "temp_array_7_2" BEL "temp_array_7_3" BEL "temp_array_7_4" BEL
+        "temp_array_7_5" BEL "temp_array_7_6" BEL "temp_array_7_7" BEL
+        "temp_array_6_0" BEL "temp_array_6_1" BEL "temp_array_6_2" BEL
+        "temp_array_6_3" BEL "temp_array_6_4" BEL "temp_array_6_5" BEL
+        "temp_array_6_6" BEL "temp_array_6_7" BEL "temp_array_5_0" BEL
+        "temp_array_5_1" BEL "temp_array_5_2" BEL "temp_array_5_3" BEL
+        "temp_array_5_4" BEL "temp_array_5_5" BEL "temp_array_5_6" BEL
+        "temp_array_5_7" BEL "temp_array_4_0" BEL "temp_array_4_1" BEL
+        "temp_array_4_2" BEL "temp_array_4_3" BEL "temp_array_4_4" BEL
+        "temp_array_4_5" BEL "temp_array_4_6" BEL "temp_array_4_7" BEL
+        "temp_array_3_0" BEL "temp_array_3_1" BEL "temp_array_3_2" BEL
+        "temp_array_3_3" BEL "temp_array_3_4" BEL "temp_array_3_5" BEL
+        "temp_array_3_6" BEL "temp_array_3_7" BEL "temp_array_2_0" BEL
+        "temp_array_2_1" BEL "temp_array_2_2" BEL "temp_array_2_3" BEL
+        "temp_array_2_4" BEL "temp_array_2_5" BEL "temp_array_2_6" BEL
+        "temp_array_2_7" BEL "temp_array_1_0" BEL "temp_array_1_1" BEL
+        "temp_array_1_2" BEL "temp_array_1_3" BEL "temp_array_1_4" BEL
+        "temp_array_1_5" BEL "temp_array_1_6" BEL "temp_array_1_7" BEL
+        "temp_array_0_0" BEL "temp_array_0_1" BEL "temp_array_0_2" BEL
+        "temp_array_0_3" BEL "temp_array_0_4" BEL "temp_array_0_5" BEL
+        "temp_array_0_6" BEL "temp_array_0_7" BEL "reg1_0" BEL "reg1_1" BEL
+        "reg1_2" BEL "reg1_3" BEL "reg1_4" BEL "reg1_5" BEL "reg1_6" BEL
+        "reg1_7" BEL "f2h_rd_0" BEL "f2h_rd_1" BEL "f2h_rd_2" BEL "f2h_rd_3"
+        BEL "ndx_0" BEL "ndx_1" BEL "ndx_2" BEL "ndx_3" BEL
+        "comm_fpga_fx2/state_FSM_FFd2" BEL "comm_fpga_fx2/state_FSM_FFd3" BEL
+        "comm_fpga_fx2/state_FSM_FFd1" BEL "comm_fpga_fx2/state_FSM_FFd4" BEL
+        "comm_fpga_fx2/count_31" BEL "comm_fpga_fx2/count_30" BEL
+        "comm_fpga_fx2/count_29" BEL "comm_fpga_fx2/count_28" BEL
+        "comm_fpga_fx2/count_27" BEL "comm_fpga_fx2/count_26" BEL
+        "comm_fpga_fx2/count_25" BEL "comm_fpga_fx2/count_24" BEL
+        "comm_fpga_fx2/count_23" BEL "comm_fpga_fx2/count_22" BEL
+        "comm_fpga_fx2/count_21" BEL "comm_fpga_fx2/count_20" BEL
+        "comm_fpga_fx2/count_19" BEL "comm_fpga_fx2/count_18" BEL
+        "comm_fpga_fx2/count_17" BEL "comm_fpga_fx2/count_16" BEL
+        "comm_fpga_fx2/count_15" BEL "comm_fpga_fx2/count_14" BEL
+        "comm_fpga_fx2/count_13" BEL "comm_fpga_fx2/count_12" BEL
+        "comm_fpga_fx2/count_11" BEL "comm_fpga_fx2/count_10" BEL
+        "comm_fpga_fx2/count_9" BEL "comm_fpga_fx2/count_8" BEL
+        "comm_fpga_fx2/count_7" BEL "comm_fpga_fx2/count_6" BEL
+        "comm_fpga_fx2/count_5" BEL "comm_fpga_fx2/count_4" BEL
+        "comm_fpga_fx2/count_3" BEL "comm_fpga_fx2/count_2" BEL
+        "comm_fpga_fx2/count_1" BEL "comm_fpga_fx2/count_0" BEL
+        "comm_fpga_fx2/isWrite" BEL "comm_fpga_fx2/chanAddr_6" BEL
+        "comm_fpga_fx2/chanAddr_5" BEL "comm_fpga_fx2/chanAddr_4" BEL
+        "comm_fpga_fx2/chanAddr_3" BEL "comm_fpga_fx2/chanAddr_2" BEL
+        "comm_fpga_fx2/chanAddr_1" BEL "comm_fpga_fx2/chanAddr_0" BEL
+        "comm_fpga_fx2/isAligned" BEL "comm_fpga_fx2/state_FSM_FFd3_1" BEL
+        "comm_fpga_fx2/state_FSM_FFd2_1" BEL "comm_fpga_fx2/state_FSM_FFd1_1"
+        BEL "comm_fpga_fx2/state_FSM_FFd3_2" BEL
+        "comm_fpga_fx2/state_FSM_FFd2_2" BEL "comm_fpga_fx2/state_FSM_FFd1_2"
+        BEL "comm_fpga_fx2/state_FSM_FFd4_1" BEL "fx2Clk_in_BUFGP/BUFG";
+TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
+SCHEMATIC END;
+

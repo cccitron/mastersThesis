@@ -4,3 +4,45 @@ map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off top_level_spi_map.ncd top_level_spi.ncd top_level_spi.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml top_level_spi.twx top_level_spi.ncd -o top_level_spi.twr top_level_spi.pcf -ucf top_level_spi.ucf 
 bitgen -intstyle ise -f top_level_spi.ut top_level_spi.ncd 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-3 top_level_spi.ngc top_level_spi.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_level_spi_map.ncd top_level_spi.ngd top_level_spi.pcf 
+par -w -intstyle ise -ol high -mt off top_level_spi_map.ncd top_level_spi.ncd top_level_spi.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml top_level_spi.twx top_level_spi.ncd -o top_level_spi.twr top_level_spi.pcf -ucf top_level_spi.ucf 
+bitgen -intstyle ise -f top_level_spi.ut top_level_spi.ncd 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-2 top_level_spi.ngc top_level_spi.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_level_spi_map.ncd top_level_spi.ngd top_level_spi.pcf 
+par -w -intstyle ise -ol high -mt off top_level_spi_map.ncd top_level_spi.ncd top_level_spi.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top_level_spi.twx top_level_spi.ncd -o top_level_spi.twr top_level_spi.pcf -ucf top_level_spi.ucf 
+bitgen -intstyle ise -f top_level_spi.ut top_level_spi.ncd 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.syr" 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-2 top_level_spi.ngc top_level_spi.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_level_spi_map.ncd top_level_spi.ngd top_level_spi.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-2 top_level_spi.ngc top_level_spi.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_level_spi_map.ncd top_level_spi.ngd top_level_spi.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-2 top_level_spi.ngc top_level_spi.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_level_spi_map.ncd top_level_spi.ngd top_level_spi.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-2 top_level_spi.ngc top_level_spi.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_level_spi_map.ncd top_level_spi.ngd top_level_spi.pcf 
+par -w -intstyle ise -ol high -mt off top_level_spi_map.ncd top_level_spi.ncd top_level_spi.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top_level_spi.twx top_level_spi.ncd -o top_level_spi.twr top_level_spi.pcf -ucf top_level_spi.ucf 
+bitgen -intstyle ise -f top_level_spi.ut top_level_spi.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-2 top_level_spi.ngc top_level_spi.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_level_spi_map.ncd top_level_spi.ngd top_level_spi.pcf 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-2 top_level_spi.ngc top_level_spi.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_level_spi_map.ncd top_level_spi.ngd top_level_spi.pcf 
+par -w -intstyle ise -ol high -mt off top_level_spi_map.ncd top_level_spi.ncd top_level_spi.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top_level_spi.twx top_level_spi.ncd -o top_level_spi.twr top_level_spi.pcf -ucf top_level_spi.ucf 
+bitgen -intstyle ise -f top_level_spi.ut top_level_spi.ncd 
+xst -intstyle ise -ifn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.xst" -ofn "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top_level_spi.ucf -p xc6slx45-csg324-2 top_level_spi.ngc top_level_spi.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_level_spi_map.ncd top_level_spi.ngd top_level_spi.pcf 
+par -w -intstyle ise -ol high -mt off top_level_spi_map.ncd top_level_spi.ncd top_level_spi.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top_level_spi.twx top_level_spi.ncd -o top_level_spi.twr top_level_spi.pcf -ucf top_level_spi.ucf 
+bitgen -intstyle ise -f top_level_spi.ut top_level_spi.ncd 

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Reading design: top_level_spi.prj
@@ -49,7 +49,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "top_level_spi"
 Output Format                      : NGC
-Target Device                      : xc6slx45-3-csg324
+Target Device                      : xc6slx45-2-csg324
 
 ---- Source Options
 Top Module Name                    : top_level_spi
@@ -115,15 +115,18 @@ Parsing architecture <rtl> of entity <spi_ctrl>.
 Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/debounce.vhd" into library work
 Parsing entity <debounce>.
 Parsing architecture <fsmd_arch> of entity <debounce>.
+Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/comm_fpga_fx2.vhdl" into library work
+Parsing entity <comm_fpga_fx2>.
+Parsing architecture <behavioural> of entity <comm_fpga_fx2>.
 Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/clk_divider.vhd" into library work
 Parsing entity <clk_divider>.
 Parsing architecture <arch> of entity <clk_divider>.
 Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" into library work
 Parsing entity <top_level_spi>.
-INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 22. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
-INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 24. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 23. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 25. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
 Parsing architecture <rtl> of entity <top_level_spi>.
-INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 39. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 55. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -131,18 +134,20 @@ INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_
 
 Elaborating entity <top_level_spi> (architecture <rtl>) from library <work>.
 
+Elaborating entity <comm_fpga_fx2> (architecture <behavioural>) from library <work>.
+
 Elaborating entity <clk_divider> (architecture <arch>) with generics from library <work>.
 
 Elaborating entity <debounce> (architecture <fsmd_arch>) from library <work>.
 
 Elaborating entity <spi_ctrl> (architecture <rtl>) from library <work>.
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 202: d_out should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 234: d_out should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 270: start_address should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 280: start_address should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 290: start_address should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 309: d_out should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 332: locations_cnt should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 320: d_out should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 352: d_out should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 388: start_address should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 398: start_address should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 408: start_address should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 427: d_out should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 450: locations_cnt should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -150,11 +155,17 @@ WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE
 
 Synthesizing Unit <top_level_spi>.
     Related source file is "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd".
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" line 142: Output port <db_tick> of the instance <dut_reset_debounce> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" line 147: Output port <clk_enable> of the instance <dut_spi_ctrl> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" line 218: Output port <f2hReady_out> of the instance <comm_fpga_fx2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" line 260: Output port <db_tick> of the instance <dut_reset_debounce> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" line 265: Output port <clk_enable> of the instance <dut_spi_ctrl> is unconnected or connected to loadless signal.
     Found 4-bit register for signal <locations_cnt>.
     Found 4-bit register for signal <state>.
-    Found 8-bit register for signal <leds>.
+    Found 7-bit register for signal <leds>.
+    Found 8-bit register for signal <reg0>.
+    Found 8-bit register for signal <reg1>.
+    Found 8-bit register for signal <reg2>.
+    Found 1-bit register for signal <pos>.
+    Found 7-bit register for signal <reg3>.
     Found 1-bit register for signal <spi_clk_cnt<5>>.
     Found 1-bit register for signal <spi_clk_cnt<4>>.
     Found 1-bit register for signal <spi_clk_cnt<3>>.
@@ -175,28 +186,65 @@ INFO:Xst:3210 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_fro
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 6-bit adder for signal <spi_clk_cnt_next> created at line 192.
-    Found 4-bit adder for signal <locations_cnt_next> created at line 206.
-    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_GND_5_o_LessThan_14_o> created at line 261
-    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_GND_5_o_LessThan_16_o> created at line 271
-    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_GND_5_o_LessThan_18_o> created at line 281
-    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_PWR_5_o_LessThan_20_o> created at line 291
-    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_PWR_5_o_LessThan_22_o> created at line 298
-    Found 4-bit comparator greater for signal <locations_cnt[3]_howmany_locations_to_read[3]_LessThan_25_o> created at line 332
+    Found 6-bit adder for signal <spi_clk_cnt_next> created at line 1241.
+    Found 4-bit adder for signal <locations_cnt_next> created at line 1241.
+    Found 8-bit 4-to-1 multiplexer for signal <_n0131> created at line 143.
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_GND_4_o_LessThan_36_o> created at line 379
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_GND_4_o_LessThan_38_o> created at line 389
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_GND_4_o_LessThan_40_o> created at line 399
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_PWR_4_o_LessThan_42_o> created at line 409
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_PWR_4_o_LessThan_44_o> created at line 416
+    Found 4-bit comparator greater for signal <locations_cnt[3]_howmany_locations_to_read[3]_LessThan_47_o> created at line 450
+    WARNING:Xst:2404 -  FFs/Latches <reg3<7:7>> (without init value) have a constant value of 0 in block <top_level_spi>.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred  18 D-type flip-flop(s).
+	inferred  49 D-type flip-flop(s).
 	inferred   6 Comparator(s).
-	inferred   1 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <top_level_spi> synthesized.
+
+Synthesizing Unit <comm_fpga_fx2>.
+    Related source file is "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/comm_fpga_fx2.vhdl".
+    Found 32-bit register for signal <count>.
+    Found 7-bit register for signal <chanAddr>.
+    Found 1-bit register for signal <isWrite>.
+    Found 1-bit register for signal <isAligned>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 21                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 8                                              |
+    | Clock              | fx2Clk_in (rising_edge)                        |
+    | Power Up State     | s_idle                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_18_OUT<31:0>> created at line 1308.
+    Found 1-bit tristate buffer for signal <fx2Data_io<7>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<6>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<5>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<4>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<3>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<2>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<1>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<0>> created at line 222
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred  48 Multiplexer(s).
+	inferred   8 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <comm_fpga_fx2> synthesized.
 
 Synthesizing Unit <clk_divider>.
     Related source file is "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/clk_divider.vhd".
         N = 8
     Found 3-bit register for signal <counter>.
     Found 1-bit register for signal <clkout_reg>.
-    Found 3-bit adder for signal <counter[2]_GND_6_o_add_3_OUT> created at line 34.
+    Found 3-bit adder for signal <counter[2]_GND_14_o_add_3_OUT> created at line 34.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   4 D-type flip-flop(s).
@@ -207,7 +255,7 @@ Synthesizing Unit <debounce>.
     Related source file is "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/debounce.vhd".
     Found 21-bit register for signal <q_reg>.
     Found 2-bit register for signal <state_reg>.
-    Found finite state machine <FSM_1> for signal <state_reg>.
+    Found finite state machine <FSM_2> for signal <state_reg>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
     | Transitions        | 10                                             |
@@ -218,7 +266,7 @@ Synthesizing Unit <debounce>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 21-bit subtractor for signal <GND_8_o_GND_8_o_sub_5_OUT<20:0>> created at line 1308.
+    Found 21-bit subtractor for signal <GND_15_o_GND_15_o_sub_5_OUT<20:0>> created at line 1308.
     Found 21-bit 4-to-1 multiplexer for signal <q_next> created at line 33.
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -267,7 +315,7 @@ Synthesizing Unit <spi_ctrl>.
     Found 1-bit register for signal <tx_sreg<2>>.
     Found 1-bit register for signal <tx_sreg<1>>.
     Found 1-bit register for signal <tx_sreg<0>>.
-    Found finite state machine <FSM_2> for signal <state>.
+    Found finite state machine <FSM_3> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 17                                             |
     | Transitions        | 71                                             |
@@ -281,12 +329,12 @@ Synthesizing Unit <spi_ctrl>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 2-bit adder for signal <clk_cnt[1]_GND_9_o_add_4_OUT> created at line 123.
-    Found 4-bit adder for signal <tx_bit_cnt[3]_GND_9_o_add_110_OUT> created at line 529.
-    Found 4-bit adder for signal <rx_bit_cnt[3]_GND_9_o_add_118_OUT> created at line 618.
+    Found 2-bit adder for signal <clk_cnt[1]_GND_18_o_add_4_OUT> created at line 123.
+    Found 4-bit adder for signal <tx_bit_cnt[3]_GND_18_o_add_110_OUT> created at line 529.
+    Found 4-bit adder for signal <rx_bit_cnt[3]_GND_18_o_add_118_OUT> created at line 618.
     Found 32x10-bit Read Only RAM for signal <_n0424>
-    Found 4-bit comparator greater for signal <rx_bit_cnt[3]_GND_9_o_LessThan_87_o> created at line 394
-    Found 4-bit comparator greater for signal <tx_bit_cnt[3]_GND_9_o_LessThan_95_o> created at line 405
+    Found 4-bit comparator greater for signal <rx_bit_cnt[3]_GND_18_o_LessThan_87_o> created at line 394
+    Found 4-bit comparator greater for signal <tx_bit_cnt[3]_GND_18_o_LessThan_95_o> created at line 405
     Summary:
 	inferred   1 RAM(s).
 	inferred   3 Adder/Subtractor(s).
@@ -302,31 +350,38 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  32x10-bit single-port Read Only RAM                   : 1
-# Adders/Subtractors                                   : 7
+# Adders/Subtractors                                   : 8
  2-bit adder                                           : 1
  21-bit subtractor                                     : 1
  3-bit adder                                           : 1
+ 32-bit subtractor                                     : 1
  4-bit adder                                           : 3
  6-bit adder                                           : 1
-# Registers                                            : 48
- 1-bit register                                        : 35
+# Registers                                            : 57
+ 1-bit register                                        : 38
  2-bit register                                        : 1
  21-bit register                                       : 1
  3-bit register                                        : 1
+ 32-bit register                                       : 1
  4-bit register                                        : 3
- 8-bit register                                        : 7
+ 7-bit register                                        : 3
+ 8-bit register                                        : 9
 # Comparators                                          : 8
  4-bit comparator greater                              : 3
  6-bit comparator greater                              : 5
-# Multiplexers                                         : 73
- 1-bit 2-to-1 multiplexer                              : 57
- 2-bit 2-to-1 multiplexer                              : 2
+# Multiplexers                                         : 123
+ 1-bit 2-to-1 multiplexer                              : 91
+ 2-bit 2-to-1 multiplexer                              : 9
  21-bit 2-to-1 multiplexer                             : 4
  21-bit 4-to-1 multiplexer                             : 1
  3-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 5
  4-bit 2-to-1 multiplexer                              : 5
- 8-bit 2-to-1 multiplexer                              : 2
-# FSMs                                                 : 3
+ 8-bit 2-to-1 multiplexer                              : 5
+ 8-bit 4-to-1 multiplexer                              : 1
+# Tristates                                            : 8
+ 1-bit tristate buffer                                 : 8
+# FSMs                                                 : 4
 
 =========================================================================
 
@@ -334,6 +389,8 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1293 - FF/Latch <reg2_7> has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <rx_data_7> of sequential type is unconnected in block <dut_spi_ctrl>.
 
 Synthesizing (advanced) Unit <spi_ctrl>.
 The following registers are absorbed into counter <tx_bit_cnt>: 1 register on signal <tx_bit_cnt>.
@@ -360,34 +417,39 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  32x10-bit single-port distributed Read Only RAM       : 1
-# Adders/Subtractors                                   : 5
+# Adders/Subtractors                                   : 6
  2-bit adder                                           : 1
  21-bit subtractor                                     : 1
  3-bit adder                                           : 1
+ 32-bit subtractor                                     : 1
  4-bit adder                                           : 1
  6-bit adder                                           : 1
 # Counters                                             : 2
  4-bit up counter                                      : 2
-# Registers                                            : 121
- Flip-Flops                                            : 121
+# Registers                                            : 193
+ Flip-Flops                                            : 193
 # Comparators                                          : 8
  4-bit comparator greater                              : 3
  6-bit comparator greater                              : 5
-# Multiplexers                                         : 72
- 1-bit 2-to-1 multiplexer                              : 56
- 2-bit 2-to-1 multiplexer                              : 2
+# Multiplexers                                         : 123
+ 1-bit 2-to-1 multiplexer                              : 91
+ 2-bit 2-to-1 multiplexer                              : 9
  21-bit 2-to-1 multiplexer                             : 4
  21-bit 4-to-1 multiplexer                             : 1
  3-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 5
  4-bit 2-to-1 multiplexer                              : 5
- 8-bit 2-to-1 multiplexer                              : 2
-# FSMs                                                 : 3
+ 8-bit 2-to-1 multiplexer                              : 5
+ 8-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 4
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1293 - FF/Latch <reg2_7> has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <reg1_0> in Unit <top_level_spi> is equivalent to the following 7 FFs/Latches, which will be removed : <reg1_1> <reg1_2> <reg1_3> <reg1_4> <reg1_5> <reg1_6> <reg1_7> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_0> on signal <state[1:9]> with one-hot encoding.
 --------------------
@@ -404,7 +466,7 @@ Optimizing FSM <FSM_0> on signal <state[1:9]> with one-hot encoding.
  s8    | 100000000
 --------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <dut_reset_debounce/FSM_1> on signal <state_reg[1:2]> with gray encoding.
+Optimizing FSM <dut_reset_debounce/FSM_2> on signal <state_reg[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
@@ -414,7 +476,7 @@ Optimizing FSM <dut_reset_debounce/FSM_1> on signal <state_reg[1:2]> with gray e
  wait1 | 01
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <dut_spi_ctrl/FSM_2> on signal <state[1:5]> with user encoding.
+Optimizing FSM <dut_spi_ctrl/FSM_3> on signal <state[1:5]> with user encoding.
 ---------------------
  State   | Encoding
 ---------------------
@@ -436,6 +498,22 @@ Optimizing FSM <dut_spi_ctrl/FSM_2> on signal <state[1:5]> with user encoding.
  wait8   | 01111
  clr_cmd | 10000
 ---------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <comm_fpga_fx2/FSM_1> on signal <state[1:4]> with user encoding.
+------------------------------------
+ State                  | Encoding
+------------------------------------
+ s_idle                 | 0000
+ s_get_count0           | 0001
+ s_get_count1           | 0010
+ s_get_count2           | 0011
+ s_get_count3           | 0100
+ s_begin_write          | 0101
+ s_write                | 0110
+ s_end_write_aligned    | 0111
+ s_end_write_nonaligned | 1000
+ s_read                 | 1001
+------------------------------------
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
    either a register or latch described with both an asynchronous set and
@@ -479,6 +557,8 @@ WARNING:Xst:2677 - Node <counter_2> of sequential type is unconnected in block <
 Optimizing unit <debounce> ...
 
 Optimizing unit <spi_ctrl> ...
+WARNING:Xst:2677 - Node <dut_spi_ctrl/rx_data_7> of sequential type is unconnected in block <top_level_spi>.
+WARNING:Xst:2677 - Node <dut_spi_ctrl/rx_sreg_7> of sequential type is unconnected in block <top_level_spi>.
 WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_h_0> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_h_1> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_h_2> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
@@ -506,11 +586,11 @@ INFO:Xst:2261 - The FF/Latch <dut_spi_ctrl/rx_bit_cnt_3> in Unit <top_level_spi>
 INFO:Xst:2261 - The FF/Latch <dut_spi_ctrl/add_m_2> in Unit <top_level_spi> is equivalent to the following FF/Latch, which will be removed : <dut_spi_ctrl/add_m_4> 
 INFO:Xst:2261 - The FF/Latch <dut_spi_ctrl/cmd_4> in Unit <top_level_spi> is equivalent to the following 4 FFs/Latches, which will be removed : <dut_spi_ctrl/cmd_7> <dut_spi_ctrl/cmd_5> <dut_spi_ctrl/cmd_3> <dut_spi_ctrl/cmd_2> 
 INFO:Xst:2261 - The FF/Latch <dut_spi_ctrl/add_h_3> in Unit <top_level_spi> is equivalent to the following FF/Latch, which will be removed : <dut_spi_ctrl/add_h_4> 
+INFO:Xst:2261 - The FF/Latch <pos> in Unit <top_level_spi> is equivalent to the following FF/Latch, which will be removed : <reg1_0> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block top_level_spi, actual ratio is 1.
-FlipFlop state_FSM_FFd5 has been replicated 1 time(s)
 FlipFlop state_FSM_FFd6 has been replicated 1 time(s)
 FlipFlop state_FSM_FFd7 has been replicated 1 time(s)
 
@@ -520,8 +600,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 125
- Flip-Flops                                            : 125
+# Registers                                            : 189
+ Flip-Flops                                            : 189
 
 =========================================================================
 
@@ -544,59 +624,61 @@ Top Level Output File Name         : top_level_spi.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 263
+# BELS                             : 479
 #      GND                         : 1
-#      INV                         : 24
-#      LUT1                        : 1
-#      LUT2                        : 16
-#      LUT3                        : 37
-#      LUT4                        : 17
-#      LUT5                        : 66
-#      LUT6                        : 55
-#      MUXCY                       : 20
-#      MUXF7                       : 4
+#      INV                         : 58
+#      LUT1                        : 2
+#      LUT2                        : 23
+#      LUT3                        : 51
+#      LUT4                        : 40
+#      LUT5                        : 90
+#      LUT6                        : 104
+#      MUXCY                       : 51
+#      MUXF7                       : 5
 #      VCC                         : 1
-#      XORCY                       : 21
-# FlipFlops/Latches                : 135
-#      FD                          : 23
-#      FDC                         : 33
+#      XORCY                       : 53
+# FlipFlops/Latches                : 199
+#      FD                          : 36
+#      FDC                         : 31
 #      FDC_1                       : 11
-#      FDCE                        : 30
+#      FDCE                        : 28
+#      FDE                         : 55
 #      FDP                         : 14
 #      FDP_1                       : 2
 #      FDPE                        : 12
 #      LDC                         : 10
-# Clock Buffers                    : 2
+# Clock Buffers                    : 3
 #      BUFG                        : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 15
-#      IBUF                        : 2
-#      OBUF                        : 13
+#      BUFGP                       : 2
+# IO Buffers                       : 30
+#      IBUF                        : 4
+#      IOBUF                       : 8
+#      OBUF                        : 18
 
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx45csg324-3 
+Selected Device : 6slx45csg324-2 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             135  out of  54576     0%  
- Number of Slice LUTs:                  216  out of  27288     0%  
-    Number used as Logic:               216  out of  27288     0%  
+ Number of Slice Registers:             199  out of  54576     0%  
+ Number of Slice LUTs:                  368  out of  27288     1%  
+    Number used as Logic:               368  out of  27288     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    249
-   Number with an unused Flip Flop:     114  out of    249    45%  
-   Number with an unused LUT:            33  out of    249    13%  
-   Number of fully used LUT-FF pairs:   102  out of    249    40%  
-   Number of unique control sets:        43
+ Number of LUT Flip Flop pairs used:    414
+   Number with an unused Flip Flop:     215  out of    414    51%  
+   Number with an unused LUT:            46  out of    414    11%  
+   Number of fully used LUT-FF pairs:   153  out of    414    36%  
+   Number of unique control sets:        48
 
 IO Utilization: 
- Number of IOs:                          16
- Number of bonded IOBs:                  16  out of    218     7%  
+ Number of IOs:                          32
+ Number of bonded IOBs:                  32  out of    218    14%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
 
 ---------------------------
 Partition Resource Summary:
@@ -619,19 +701,20 @@ Clock Information:
 ---------------------------------------------------------------------------------------------+------------------------------------+-------+
 Clock Signal                                                                                 | Clock buffer(FF name)              | Load  |
 ---------------------------------------------------------------------------------------------+------------------------------------+-------+
+fx2Clk_in                                                                                    | BUFGP                              | 68    |
 dut_spi_ctrl/spi_clk_int                                                                     | NONE(spi_clk_cnt_3)                | 7     |
-dut_clock_divider/clkout_reg                                                                 | BUFG                               | 92    |
+dut_clock_divider/clkout_reg                                                                 | BUFG                               | 88    |
 clk_100MHz                                                                                   | BUFGP                              | 26    |
-reset_spi_clk_cnt_to_32_reset_AND_110_o(reset_spi_clk_cnt_to_32_reset_AND_110_o1:O)          | NONE(*)(spi_clk_cnt_5_LDC)         | 1     |
+reset_spi_clk_cnt_to_32_reset_AND_119_o(reset_spi_clk_cnt_to_32_reset_AND_119_o1:O)          | NONE(*)(spi_clk_cnt_5_LDC)         | 1     |
 dut_reset_debounce/state_reg_FSM_FFd1                                                        | NONE(dut_spi_ctrl/tx_empty_LDC)    | 1     |
-dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o(dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_7_LDC)| 1     |
-dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_103_o(dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_103_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_0_LDC)| 1     |
-dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_101_o(dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_101_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_1_LDC)| 1     |
-dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_97_o(dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_97_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_3_LDC)| 1     |
-dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_95_o(dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_95_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_4_LDC)| 1     |
-dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_99_o(dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_99_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_2_LDC)| 1     |
-dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_91_o(dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_91_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_6_LDC)| 1     |
-dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_93_o(dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_93_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_5_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_98_o(dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_98_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_7_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_112_o(dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_112_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_0_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_110_o(dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_110_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_1_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_106_o(dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_106_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_3_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_104_o(dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_104_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_4_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_108_o(dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_108_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_2_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_100_o(dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_100_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_6_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_102_o(dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_102_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_5_LDC)| 1     |
 ---------------------------------------------------------------------------------------------+------------------------------------+-------+
 (*) These 9 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -644,23 +727,48 @@ No asynchronous control signals found in this design
 
 Timing Summary:
 ---------------
-Speed Grade: -3
+Speed Grade: -2
 
-   Minimum period: 6.300ns (Maximum Frequency: 158.733MHz)
-   Minimum input arrival time before clock: 5.592ns
-   Maximum output required time after clock: 5.311ns
-   Maximum combinational path delay: No path found
+   Minimum period: 7.114ns (Maximum Frequency: 140.568MHz)
+   Minimum input arrival time before clock: 6.534ns
+   Maximum output required time after clock: 8.162ns
+   Maximum combinational path delay: 7.542ns
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'fx2Clk_in'
+  Clock period: 5.680ns (frequency: 176.056MHz)
+  Total number of paths / destination ports: 1253 / 93
+-------------------------------------------------------------------------
+Delay:               5.680ns (Levels of Logic = 4)
+  Source:            comm_fpga_fx2/count_14 (FF)
+  Destination:       comm_fpga_fx2/state_FSM_FFd2 (FF)
+  Source Clock:      fx2Clk_in rising
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/count_14 to comm_fpga_fx2/state_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.525   1.221  comm_fpga_fx2/count_14 (comm_fpga_fx2/count_14)
+     LUT6:I0->O            1   0.254   1.112  comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>5 (comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>4)
+     LUT6:I1->O            5   0.254   1.069  comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>6 (comm_fpga_fx2/count[31]_GND_5_o_equal_19_o)
+     LUT3:I0->O            1   0.235   0.682  comm_fpga_fx2/state_FSM_FFd2-In1_SW0 (N97)
+     LUT6:I5->O            1   0.254   0.000  comm_fpga_fx2/state_FSM_FFd2-In1 (comm_fpga_fx2/state_FSM_FFd2-In)
+     FD:D                      0.074          comm_fpga_fx2/state_FSM_FFd2
+    ----------------------------------------
+    Total                      5.680ns (1.596ns logic, 4.084ns route)
+                                       (28.1% logic, 71.9% route)
+
+=========================================================================
 Timing constraint: Default period analysis for Clock 'dut_spi_ctrl/spi_clk_int'
-  Clock period: 2.777ns (frequency: 360.166MHz)
+  Clock period: 3.258ns (frequency: 306.937MHz)
   Total number of paths / destination ports: 29 / 7
 -------------------------------------------------------------------------
-Delay:               2.777ns (Levels of Logic = 2)
+Delay:               3.258ns (Levels of Logic = 2)
   Source:            spi_clk_cnt_5_C_5 (FF)
   Destination:       spi_clk_cnt_5_C_5 (FF)
   Source Clock:      dut_spi_ctrl/spi_clk_int falling
@@ -670,43 +778,43 @@ Delay:               2.777ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC_1:C->Q            1   0.447   0.684  spi_clk_cnt_5_C_5 (spi_clk_cnt_5_C_5)
-     LUT3:I1->O            7   0.203   1.138  spi_clk_cnt_51 (spi_clk_cnt_5)
-     LUT6:I0->O            2   0.203   0.000  Madd_spi_clk_cnt_next_xor<5>11 (spi_clk_cnt_next<5>)
-     FDC_1:D                   0.102          spi_clk_cnt_5_C_5
+     FDC_1:C->Q            1   0.525   0.790  spi_clk_cnt_5_C_5 (spi_clk_cnt_5_C_5)
+     LUT3:I1->O            7   0.250   1.365  spi_clk_cnt_51 (spi_clk_cnt_5)
+     LUT6:I0->O            2   0.254   0.000  Madd_spi_clk_cnt_next_xor<5>11 (spi_clk_cnt_next<5>)
+     FDC_1:D                   0.074          spi_clk_cnt_5_C_5
     ----------------------------------------
-    Total                      2.777ns (0.955ns logic, 1.822ns route)
-                                       (34.4% logic, 65.6% route)
+    Total                      3.258ns (1.103ns logic, 2.155ns route)
+                                       (33.9% logic, 66.1% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'dut_clock_divider/clkout_reg'
-  Clock period: 6.300ns (frequency: 158.733MHz)
-  Total number of paths / destination ports: 1213 / 170
+  Clock period: 7.114ns (frequency: 140.568MHz)
+  Total number of paths / destination ports: 1155 / 163
 -------------------------------------------------------------------------
-Delay:               3.150ns (Levels of Logic = 2)
-  Source:            state_FSM_FFd8 (FF)
+Delay:               3.557ns (Levels of Logic = 2)
+  Source:            state_FSM_FFd6 (FF)
   Destination:       dut_spi_ctrl/rd_data2 (FF)
   Source Clock:      dut_clock_divider/clkout_reg rising
   Destination Clock: dut_clock_divider/clkout_reg falling
 
-  Data Path: state_FSM_FFd8 to dut_spi_ctrl/rd_data2
+  Data Path: state_FSM_FFd6 to dut_spi_ctrl/rd_data2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             16   0.447   1.005  state_FSM_FFd8 (state_FSM_FFd8)
-     LUT4:I3->O           14   0.205   1.186  state__n0092<0>1 (_n0092<0>)
-     LUT6:I3->O            1   0.205   0.000  dut_spi_ctrl/rd_data2_rstpot (dut_spi_ctrl/rd_data2_rstpot)
-     FDC_1:D                   0.102          dut_spi_ctrl/rd_data2
+     FDC:C->Q             19   0.525   1.369  state_FSM_FFd6 (state_FSM_FFd6)
+     LUT2:I0->O            6   0.250   1.104  state__n0156<1>1 (_n0156<1>)
+     LUT6:I3->O            1   0.235   0.000  dut_spi_ctrl/rd_data2_rstpot (dut_spi_ctrl/rd_data2_rstpot)
+     FDC_1:D                   0.074          dut_spi_ctrl/rd_data2
     ----------------------------------------
-    Total                      3.150ns (0.959ns logic, 2.191ns route)
-                                       (30.4% logic, 69.6% route)
+    Total                      3.557ns (1.084ns logic, 2.473ns route)
+                                       (30.5% logic, 69.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_100MHz'
-  Clock period: 5.155ns (frequency: 194.003MHz)
-  Total number of paths / destination ports: 584 / 28
+  Clock period: 6.052ns (frequency: 165.238MHz)
+  Total number of paths / destination ports: 585 / 28
 -------------------------------------------------------------------------
-Delay:               5.155ns (Levels of Logic = 4)
+Delay:               6.052ns (Levels of Logic = 4)
   Source:            dut_reset_debounce/state_reg_FSM_FFd1 (FF)
   Destination:       dut_reset_debounce/state_reg_FSM_FFd1 (FF)
   Source Clock:      clk_100MHz rising
@@ -716,21 +824,43 @@ Delay:               5.155ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q             111   0.447   1.907  dut_reset_debounce/state_reg_FSM_FFd1 (dut_reset_debounce/state_reg_FSM_FFd1)
-     LUT6:I5->O            1   0.205   0.580  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>1 (dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>)
-     LUT4:I3->O            2   0.205   0.617  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>5 (dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>4)
-     LUT4:I3->O            1   0.205   0.684  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>10_SW0 (N6)
-     LUT6:I4->O            1   0.203   0.000  dut_reset_debounce/state_reg_FSM_FFd1-In1 (dut_reset_debounce/state_reg_FSM_FFd1-In)
-     FD:D                      0.102          dut_reset_debounce/state_reg_FSM_FFd1
+     FD:C->Q             111   0.525   2.243  dut_reset_debounce/state_reg_FSM_FFd1 (dut_reset_debounce/state_reg_FSM_FFd1)
+     LUT6:I5->O            1   0.254   0.682  dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>1 (dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>)
+     LUT4:I3->O            2   0.254   0.726  dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>5 (dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>4)
+     LUT4:I3->O            1   0.254   0.790  dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>10_SW0 (N80)
+     LUT6:I4->O            1   0.250   0.000  dut_reset_debounce/state_reg_FSM_FFd1-In1 (dut_reset_debounce/state_reg_FSM_FFd1-In)
+     FD:D                      0.074          dut_reset_debounce/state_reg_FSM_FFd1
     ----------------------------------------
-    Total                      5.155ns (1.367ns logic, 3.788ns route)
-                                       (26.5% logic, 73.5% route)
+    Total                      6.052ns (1.611ns logic, 4.441ns route)
+                                       (26.6% logic, 73.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 178 / 107
+-------------------------------------------------------------------------
+Offset:              6.534ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       reg0_0 (FF)
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: fx2GotData_in to reg0_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            42   1.328   1.795  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT6:I4->O            1   0.250   0.682  GND_4_o_h2fValid_AND_5_o1_SW0 (N6)
+     LUT6:I5->O            2   0.254   0.726  GND_4_o_h2fValid_AND_5_o1 (GND_4_o_h2fValid_AND_5_o1)
+     LUT2:I1->O            8   0.254   0.943  GND_4_o_h2fValid_AND_5_o2 (GND_4_o_h2fValid_AND_5_o)
+     FDE:CE                    0.302          reg0_0
+    ----------------------------------------
+    Total                      6.534ns (2.388ns logic, 4.146ns route)
+                                       (36.5% logic, 63.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100MHz'
   Total number of paths / destination ports: 27 / 23
 -------------------------------------------------------------------------
-Offset:              5.592ns (Levels of Logic = 5)
+Offset:              6.487ns (Levels of Logic = 5)
   Source:            reset_btn (PAD)
   Destination:       dut_reset_debounce/state_reg_FSM_FFd1 (FF)
   Destination Clock: clk_100MHz rising
@@ -739,21 +869,21 @@ Offset:              5.592ns (Levels of Logic = 5)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            26   1.222   1.571  reset_btn_IBUF (reset_btn_IBUF)
-     LUT6:I0->O            1   0.203   0.580  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>1 (dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>)
-     LUT4:I3->O            2   0.205   0.617  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>5 (dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>4)
-     LUT4:I3->O            1   0.205   0.684  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>10_SW0 (N6)
-     LUT6:I4->O            1   0.203   0.000  dut_reset_debounce/state_reg_FSM_FFd1-In1 (dut_reset_debounce/state_reg_FSM_FFd1-In)
-     FD:D                      0.102          dut_reset_debounce/state_reg_FSM_FFd1
+     IBUF:I->O            26   1.328   1.875  reset_btn_IBUF (reset_btn_IBUF)
+     LUT6:I0->O            1   0.254   0.682  dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>1 (dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>)
+     LUT4:I3->O            2   0.254   0.726  dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>5 (dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>4)
+     LUT4:I3->O            1   0.254   0.790  dut_reset_debounce/q_next[20]_GND_15_o_equal_6_o<20>10_SW0 (N80)
+     LUT6:I4->O            1   0.250   0.000  dut_reset_debounce/state_reg_FSM_FFd1-In1 (dut_reset_debounce/state_reg_FSM_FFd1-In)
+     FD:D                      0.074          dut_reset_debounce/state_reg_FSM_FFd1
     ----------------------------------------
-    Total                      5.592ns (2.140ns logic, 3.452ns route)
-                                       (38.3% logic, 61.7% route)
+    Total                      6.487ns (2.414ns logic, 4.073ns route)
+                                       (37.2% logic, 62.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'dut_clock_divider/clkout_reg'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              2.109ns (Levels of Logic = 2)
+Offset:              2.338ns (Levels of Logic = 2)
   Source:            spi_din (PAD)
   Destination:       dut_spi_ctrl/rx_sreg_0 (FF)
   Destination Clock: dut_clock_divider/clkout_reg rising
@@ -762,52 +892,93 @@ Offset:              2.109ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.580  spi_din_IBUF (spi_din_IBUF)
-     LUT3:I2->O            1   0.205   0.000  dut_spi_ctrl/Mmux_rx_sreg[7]_rx_sreg[6]_mux_122_OUT11 (dut_spi_ctrl/rx_sreg[7]_rx_sreg[6]_mux_122_OUT<0>)
-     FDP:D                     0.102          dut_spi_ctrl/rx_sreg_0
+     IBUF:I->O             1   1.328   0.682  spi_din_IBUF (spi_din_IBUF)
+     LUT3:I2->O            1   0.254   0.000  dut_spi_ctrl/Mmux_rx_sreg[7]_rx_sreg[6]_mux_122_OUT11 (dut_spi_ctrl/rx_sreg[7]_rx_sreg[6]_mux_122_OUT<0>)
+     FDP:D                     0.074          dut_spi_ctrl/rx_sreg_0
     ----------------------------------------
-    Total                      2.109ns (1.529ns logic, 0.580ns route)
-                                       (72.5% logic, 27.5% route)
+    Total                      2.338ns (1.656ns logic, 0.682ns route)
+                                       (70.8% logic, 29.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'dut_clock_divider/clkout_reg'
-  Total number of paths / destination ports: 16 / 11
+  Total number of paths / destination ports: 15 / 10
 -------------------------------------------------------------------------
-Offset:              5.311ns (Levels of Logic = 2)
-  Source:            dut_spi_ctrl/state_FSM_FFd2 (FF)
+Offset:              6.168ns (Levels of Logic = 2)
+  Source:            dut_spi_ctrl/state_FSM_FFd3 (FF)
   Destination:       spi_cs (PAD)
   Source Clock:      dut_clock_divider/clkout_reg rising
 
-  Data Path: dut_spi_ctrl/state_FSM_FFd2 to spi_cs
+  Data Path: dut_spi_ctrl/state_FSM_FFd3 to spi_cs
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             30   0.447   1.511  dut_spi_ctrl/state_FSM_FFd2 (dut_spi_ctrl/state_FSM_FFd2)
-     LUT5:I1->O            1   0.203   0.579  dut_spi_ctrl/state__n0478<1>1 (spi_cs_OBUF)
-     OBUF:I->O                 2.571          spi_cs_OBUF (spi_cs)
+     FDC:C->Q             32   0.525   1.796  dut_spi_ctrl/state_FSM_FFd3 (dut_spi_ctrl/state_FSM_FFd3)
+     LUT5:I1->O            1   0.254   0.681  dut_spi_ctrl/state_spi_cs_int1 (spi_cs_OBUF)
+     OBUF:I->O                 2.912          spi_cs_OBUF (spi_cs)
     ----------------------------------------
-    Total                      5.311ns (3.221ns logic, 2.090ns route)
-                                       (60.7% logic, 39.3% route)
+    Total                      6.168ns (3.691ns logic, 2.477ns route)
+                                       (59.8% logic, 40.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 170 / 13
+-------------------------------------------------------------------------
+Offset:              8.162ns (Levels of Logic = 3)
+  Source:            comm_fpga_fx2/state_FSM_FFd2 (FF)
+  Destination:       fx2Data_io<7> (PAD)
+  Source Clock:      fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/state_FSM_FFd2 to fx2Data_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              67   0.525   2.181  comm_fpga_fx2/state_FSM_FFd2 (comm_fpga_fx2/state_FSM_FFd2)
+     LUT4:I1->O            8   0.235   1.374  comm_fpga_fx2/_n0128<3>1 (comm_fpga_fx2/_n0128)
+     LUT6:I1->O            1   0.254   0.681  comm_fpga_fx2/Mmux_dataOut8 (comm_fpga_fx2/dataOut<7>)
+     IOBUF:I->IO               2.912          fx2Data_io_7_IOBUF (fx2Data_io<7>)
+    ----------------------------------------
+    Total                      8.162ns (3.926ns logic, 4.236ns route)
+                                       (48.1% logic, 51.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_98_o'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              4.698ns (Levels of Logic = 2)
+Offset:              5.363ns (Levels of Logic = 2)
   Source:            dut_spi_ctrl/tx_sreg_7_LDC (LATCH)
   Destination:       spi_dout (PAD)
-  Source Clock:      dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o falling
+  Source Clock:      dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_98_o falling
 
   Data Path: dut_spi_ctrl/tx_sreg_7_LDC to spi_dout
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LDC:G->Q              2   0.498   0.845  dut_spi_ctrl/tx_sreg_7_LDC (dut_spi_ctrl/tx_sreg_7_LDC)
-     LUT3:I0->O            1   0.205   0.579  dut_spi_ctrl/tx_sreg_71 (dut_spi_ctrl/tx_sreg_7)
-     OBUF:I->O                 2.571          spi_dout_OBUF (spi_dout)
+     LDC:G->Q              2   0.581   0.954  dut_spi_ctrl/tx_sreg_7_LDC (dut_spi_ctrl/tx_sreg_7_LDC)
+     LUT3:I0->O            1   0.235   0.681  dut_spi_ctrl/tx_sreg_71 (dut_spi_ctrl/tx_sreg_7)
+     OBUF:I->O                 2.912          spi_dout_OBUF (spi_dout)
     ----------------------------------------
-    Total                      4.698ns (3.274ns logic, 1.424ns route)
-                                       (69.7% logic, 30.3% route)
+    Total                      5.363ns (3.728ns logic, 1.635ns route)
+                                       (69.5% logic, 30.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 19 / 11
+-------------------------------------------------------------------------
+Delay:               7.542ns (Levels of Logic = 4)
+  Source:            fx2GotRoom_in (PAD)
+  Destination:       fx2Data_io<7> (PAD)
+
+  Data Path: fx2GotRoom_in to fx2Data_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            15   1.328   1.155  fx2GotRoom_in_IBUF (fx2GotRoom_in_IBUF)
+     LUT2:I1->O            1   0.254   0.958  comm_fpga_fx2/Mmux_dataOut8_SW0 (N10)
+     LUT6:I2->O            1   0.254   0.681  comm_fpga_fx2/Mmux_dataOut8 (comm_fpga_fx2/dataOut<7>)
+     IOBUF:I->IO               2.912          fx2Data_io_7_IOBUF (fx2Data_io<7>)
+    ----------------------------------------
+    Total                      7.542ns (4.748ns logic, 2.794ns route)
+                                       (63.0% logic, 37.0% route)
 
 =========================================================================
 
@@ -819,7 +990,7 @@ Clock to Setup on destination clock clk_100MHz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100MHz     |    5.155|         |         |         |
+clk_100MHz     |    6.052|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock dut_clock_divider/clkout_reg
@@ -827,19 +998,19 @@ Clock to Setup on destination clock dut_clock_divider/clkout_reg
                                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------------------+---------+---------+---------+---------+
-clk_100MHz                                  |    4.789|         |    2.783|         |
-dut_clock_divider/clkout_reg                |    5.331|    2.408|    3.150|         |
-dut_reset_debounce/state_reg_FSM_FFd1       |         |    1.613|         |         |
-dut_spi_ctrl/spi_clk_int                    |         |    2.757|         |         |
-dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_103_o|         |    2.435|         |         |
-dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_101_o|         |    2.435|         |         |
-dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_99_o |         |    2.435|         |         |
-dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_97_o |         |    2.435|         |         |
-dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_95_o |         |    2.435|         |         |
-dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_93_o |         |    2.435|         |         |
-dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_91_o |         |    2.435|         |         |
-dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o |         |    1.667|         |         |
-reset_spi_clk_cnt_to_32_reset_AND_110_o     |         |    2.934|         |         |
+clk_100MHz                                  |    5.641|         |    3.226|         |
+dut_clock_divider/clkout_reg                |    6.129|    2.811|    3.557|         |
+dut_reset_debounce/state_reg_FSM_FFd1       |         |    1.800|         |         |
+dut_spi_ctrl/spi_clk_int                    |         |    3.233|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_112_o|         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_110_o|         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_108_o|         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_106_o|         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_104_o|         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_102_o|         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_100_o|         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_98_o |         |    1.911|         |         |
+reset_spi_clk_cnt_to_32_reset_AND_119_o     |         |    3.394|         |         |
 --------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock dut_reset_debounce/state_reg_FSM_FFd1
@@ -847,8 +1018,8 @@ Clock to Setup on destination clock dut_reset_debounce/state_reg_FSM_FFd1
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-clk_100MHz                  |         |         |    3.967|         |
-dut_clock_divider/clkout_reg|         |         |    4.208|         |
+clk_100MHz                  |         |         |    4.661|         |
+dut_clock_divider/clkout_reg|         |         |    4.921|         |
 ----------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock dut_spi_ctrl/spi_clk_int
@@ -856,104 +1027,113 @@ Clock to Setup on destination clock dut_spi_ctrl/spi_clk_int
                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------------------+---------+---------+---------+---------+
-clk_100MHz                             |         |         |    3.850|         |
-dut_clock_divider/clkout_reg           |         |         |    2.974|         |
-dut_spi_ctrl/spi_clk_int               |         |         |    2.777|         |
-reset_spi_clk_cnt_to_32_reset_AND_110_o|         |         |    2.954|         |
+clk_100MHz                             |         |         |    4.482|         |
+dut_clock_divider/clkout_reg           |         |         |    3.423|         |
+dut_spi_ctrl/spi_clk_int               |         |         |    3.258|         |
+reset_spi_clk_cnt_to_32_reset_AND_119_o|         |         |    3.419|         |
 ---------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_103_o
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_112_o
 ----------------------------+---------+---------+---------+---------+
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-clk_100MHz                  |         |         |    4.789|         |
-dut_clock_divider/clkout_reg|         |         |    5.205|         |
+clk_100MHz                  |         |         |    5.641|         |
+dut_clock_divider/clkout_reg|         |         |    6.062|         |
 ----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_101_o
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_110_o
 ----------------------------+---------+---------+---------+---------+
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-clk_100MHz                  |         |         |    3.947|         |
-dut_clock_divider/clkout_reg|         |         |    4.509|         |
+clk_100MHz                  |         |         |    4.636|         |
+dut_clock_divider/clkout_reg|         |         |    5.228|         |
 ----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_99_o
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_108_o
 ----------------------------+---------+---------+---------+---------+
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-clk_100MHz                  |         |         |    3.967|         |
-dut_clock_divider/clkout_reg|         |         |    4.526|         |
+clk_100MHz                  |         |         |    5.641|         |
+dut_clock_divider/clkout_reg|         |         |    6.129|         |
 ----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_97_o
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_106_o
 ----------------------------+---------+---------+---------+---------+
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-clk_100MHz                  |         |         |    3.833|         |
-dut_clock_divider/clkout_reg|         |         |    5.205|         |
+clk_100MHz                  |         |         |    4.415|         |
+dut_clock_divider/clkout_reg|         |         |    6.062|         |
 ----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_95_o
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_104_o
 ----------------------------+---------+---------+---------+---------+
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-clk_100MHz                  |         |         |    3.833|         |
-dut_clock_divider/clkout_reg|         |         |    5.331|         |
+clk_100MHz                  |         |         |    4.482|         |
+dut_clock_divider/clkout_reg|         |         |    6.062|         |
 ----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_93_o
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_102_o
 ----------------------------+---------+---------+---------+---------+
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-clk_100MHz                  |         |         |    3.833|         |
-dut_clock_divider/clkout_reg|         |         |    5.205|         |
+clk_100MHz                  |         |         |    5.641|         |
+dut_clock_divider/clkout_reg|         |         |    6.062|         |
 ----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_91_o
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_100_o
 ----------------------------+---------+---------+---------+---------+
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-clk_100MHz                  |         |         |    3.833|         |
-dut_clock_divider/clkout_reg|         |         |    5.331|         |
+clk_100MHz                  |         |         |    4.482|         |
+dut_clock_divider/clkout_reg|         |         |    5.123|         |
 ----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_98_o
 ----------------------------+---------+---------+---------+---------+
                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------+---------+---------+---------+---------+
-clk_100MHz                  |         |         |    3.967|         |
-dut_clock_divider/clkout_reg|         |         |    5.042|         |
+clk_100MHz                  |         |         |    5.641|         |
+dut_clock_divider/clkout_reg|         |         |    6.129|         |
 ----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock reset_spi_clk_cnt_to_32_reset_AND_110_o
+Clock to Setup on destination clock fx2Clk_in
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+dut_clock_divider/clkout_reg|    1.364|         |         |         |
+fx2Clk_in                   |    5.680|         |         |         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock reset_spi_clk_cnt_to_32_reset_AND_119_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100MHz     |         |         |    2.783|         |
+clk_100MHz     |         |         |    3.226|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.80 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.93 secs
  
 --> 
 
 
-Total memory usage is 395832 kilobytes
+Total memory usage is 393312 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   31 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of warnings :   37 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

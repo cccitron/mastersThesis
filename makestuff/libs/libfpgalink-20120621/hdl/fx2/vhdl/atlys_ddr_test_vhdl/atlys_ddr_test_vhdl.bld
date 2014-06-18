@@ -1,0 +1,244 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -filter
+iseconfig/filter.filter -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc
+atlys.ucf -p xc6slx45-csg324-2 atlys_ddr_test_vhdl.ngc atlys_ddr_test_vhdl.ngd
+
+Reading NGO file
+"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/a
+tlys_ddr_test_vhdl/atlys_ddr_test_vhdl.ngc" ...
+Gathering constraint information from source properties...
+Done.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/m
+   cbx_dram_dqs_n' is not connected to an external port in this design.  A new
+   port
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/m
+   cbx_dram_dqs_n' has been added and is connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/m
+   cbx_dram_dqs' is not connected to an external port in this design.  A new
+   port
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/m
+   cbx_dram_dqs' has been added and is connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/m
+   cbx_dram_udqs_n' is not connected to an external port in this design.  A new
+   port
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/m
+   cbx_dram_udqs_n' has been added and is connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/m
+   cbx_dram_udqs' is not connected to an external port in this design.  A new
+   port
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/m
+   cbx_dram_udqs' has been added and is connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[5].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO' has been added and is connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[4].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x' has been added and is connected to this
+   signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[7].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x' has been added and is connected to this
+   signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[6].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x' has been added and is connected to this
+   signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[3].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x' has been added and is connected to this
+   signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[2].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x' has been added and is connected to
+   this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[1].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x' has been added and is connected to
+   this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[0].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x_x' has been added and is connected
+   to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[9].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x_x_x' has been added and is connected
+   to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[8].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x_x_x_x' has been added and is
+   connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[11].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x_x_x_x_x' has been added and is
+   connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[10].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x_x_x_x_x_x' has been added and is
+   connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[13].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x_x_x_x_x_x_x' has been added and is
+   connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[12].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x_x_x_x_x_x_x_x' has been added and is
+   connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[15].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x_x_x_x_x_x_x_x_x' has been added and
+   is connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dq_iobuft[14].gen_iob_dq_inst/IO' is not connected to an external port in
+   this design.  A new port 'IO_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x' has been added
+   and is connected to this signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_term_calib.mcb_soft_calibration_top_inst/gen_zio.IOBUF_ZIO/IO' is not
+   connected to an external port in this design.  A new port
+   'IO_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x' has been added and is connected to this
+   signal.
+INFO:NgdBuild:889 - Pad net
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_term_calib.mcb_soft_calibration_top_inst/IOBUF_RZQ/IO' is not connected to
+   an external port in this design.  A new port
+   'IO_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x_x' has been added and is connected to
+   this signal.
+
+Annotating constraints to design from ucf file "atlys.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/i
+   ob_ldm' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_udm.iob_udm' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/i
+   ob_we' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/i
+   ob_ras' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_dram_odt.iob_odt' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/i
+   ob_cke' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/i
+   ob_cas' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_ba_obuft[2].iob_ba_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_ba_obuft[1].iob_ba_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_ba_obuft[0].iob_ba_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[12].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[11].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[10].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[9].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[8].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[7].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[6].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[5].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[4].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[3].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[2].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[1].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:435 - TRI primitive
+   'ddr_wrapper/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/g
+   en_addr_obuft[0].iob_addr_inst' has unconnected output pin
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<15>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<14>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<13>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<12>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<11>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<10>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<9>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<8>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<7>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<6>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<5>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<4>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<3>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<2>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<1>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dq<0>' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_rzq' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_zio' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_udqs' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_udqs_n' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dqs' has no legal driver
+WARNING:NgdBuild:470 - bidirect pad net 'mcb3_dram_dqs_n' has no legal driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:  45
+
+Total memory usage is 406308 kilobytes
+
+Writing NGD file "atlys_ddr_test_vhdl.ngd" ...
+Total REAL time to NGDBUILD completion:  4 sec
+Total CPU time to NGDBUILD completion:   4 sec
+
+Writing NGDBUILD log file "atlys_ddr_test_vhdl.bld"...

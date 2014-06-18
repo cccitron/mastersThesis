@@ -1,0 +1,690 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: atlys_ddr_test_vhdl.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "atlys_ddr_test_vhdl.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "atlys_ddr_test_vhdl"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-csg324
+
+---- Source Options
+Top Module Name                    : atlys_ddr_test_vhdl
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_mcb_controller.v" into library work
+Parsing module <iodrp_mcb_controller>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_controller.v" into library work
+Parsing module <iodrp_controller>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" into library work
+Parsing module <mcb_soft_calibration>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration_top.v" into library work
+Parsing module <mcb_soft_calibration_top>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" into library work
+Parsing module <mcb_raw_wrapper>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_ui_top.v" into library work
+Parsing module <mcb_ui_top>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" into library work
+Parsing module <memc_wrapper>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/infrastructure.v" into library work
+Parsing module <infrastructure>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" into library work
+Parsing module <ddr2>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" into library work
+Parsing module <ddr_interface_v>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" into library work
+Parsing entity <atlys_ddr_test_vhdl>.
+Parsing architecture <Behavioral> of entity <atlys_ddr_test_vhdl>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <atlys_ddr_test_vhdl> (architecture <Behavioral>) with generics from library <work>.
+Going to verilog side to elaborate module ddr_interface_v
+WARNING:HDLCompiler:25 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 96: Module <ddr2> does not have a port named <c3_sys_clk>.
+WARNING:HDLCompiler:1016 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 78: Port c3_sys_clk_p is not connected to this instance
+
+Elaborating module <ddr_interface_v>.
+
+Elaborating module <ddr2(C3_P0_MASK_SIZE=8,C3_P0_DATA_PORT_SIZE=64,C3_P1_MASK_SIZE=8,C3_P1_DATA_PORT_SIZE=64,DEBUG_EN=1,C3_MEMCLK_PERIOD=3200,C3_CALIB_SOFT_IP="TRUE",C3_SIMULATION="FALSE",C3_RST_ACT_LOW=0,C3_INPUT_CLK_TYPE="SINGLE_ENDED",C3_MEM_ADDR_ORDER="BANK_ROW_COLUMN",C3_NUM_DQ_PINS=16,C3_MEM_ADDR_WIDTH=13,C3_MEM_BANKADDR_WIDTH=3)>.
+
+Elaborating module <infrastructure(C_INCLK_PERIOD=32'sb0110010000000,C_RST_ACT_LOW=0,C_INPUT_CLK_TYPE="SINGLE_ENDED",C_CLKOUT0_DIVIDE=1,C_CLKOUT1_DIVIDE=1,C_CLKOUT2_DIVIDE=16,C_CLKOUT3_DIVIDE=8,C_CLKFBOUT_MULT=2,C_DIVCLK_DIVIDE=1)>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <PLL_ADV(BANDWIDTH="OPTIMIZED",CLKIN1_PERIOD=3.2,CLKIN2_PERIOD=3.2,CLKOUT0_DIVIDE=1,CLKOUT1_DIVIDE=1,CLKOUT2_DIVIDE=16,CLKOUT3_DIVIDE=8,CLKOUT4_DIVIDE=1,CLKOUT5_DIVIDE=1,CLKOUT0_PHASE=0.0,CLKOUT1_PHASE=180.0,CLKOUT2_PHASE=0.0,CLKOUT3_PHASE=0.0,CLKOUT4_PHASE=0.0,CLKOUT5_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DUTY_CYCLE=0.5,CLKOUT2_DUTY_CYCLE=0.5,CLKOUT3_DUTY_CYCLE=0.5,CLKOUT4_DUTY_CYCLE=0.5,CLKOUT5_DUTY_CYCLE=0.5,SIM_DEVICE="SPARTAN6",COMPENSATION="INTERNAL",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=2,CLKFBOUT_PHASE=0.0,REF_JITTER=0.005)>.
+
+Elaborating module <BUFG>.
+
+Elaborating module <BUFGCE>.
+
+Elaborating module <BUFPLL_MCB>.
+
+Elaborating module
+<memc_wrapper(C_MEMCLK_PERIOD=3200,C_CALIB_SOFT_IP="TRUE",C_ARB_NUM_TIME_SLOTS=12,C_ARB_TIME_SLOT_0=18'b01,C_ARB_TIME_SLOT_1=18'b01000,C_ARB_TIME_SLOT_2=18'b01,C_ARB_TIME_SLOT_3=18'b01000,C_ARB_TIME_SLOT_4=18'b01,C_ARB_TIME_SLOT_5=18'b01000,C_ARB_TIME_SLOT_6=18'b01,C_ARB_TIME_SLOT_7=18'b01000,C_ARB_TIME_SLOT_8=18'b01,C_ARB_TIME_SLOT_9=18'b01000,C_ARB_TIME_SLOT_10=18'b01,C_ARB_TIME_SLOT_11=18'b01000,C_ARB_ALGORITHM=0,C_PORT_ENABLE=6'b011,C_PORT_CONFIG="B64_B64",C_MEM_TRAS=45000,C_MEM_TRCD=12500,C_MEM_TREFI=7800000,C_MEM_TRFC=127500,C_MEM_TRP=12500,C_MEM_TWR=15000,C_MEM_TRTP=7500,C_MEM_TWTR=7500,C_MEM_ADDR_ORDER="BANK_ROW_COLUMN",C_NUM_DQ_PINS=16,C_MEM_TYPE="DDR2",C_MEM_DENSITY="1Gb",C_MEM_BURST_LEN=4,C_MEM_CAS_LATENCY=5,C_MEM_ADDR_WIDTH=13,C_MEM_BANKADDR_WIDTH=3,C_MEM_NUM_COL_BITS=10,C_MEM_DDR1_2_ODS="FULL",C_MEM_DDR2_RTT="50OHMS",C_MEM_DDR2_DIFF_DQS_EN="YES",C_MEM_DDR2_3_PA_SR="FULL",C_MEM_DDR2_3_HIGH_TEMP_SR="NORMAL",C_MEM_DDR3_CAS_LATENCY=6,C_MEM_DDR3_ODS="DIV6",C_MEM_DDR3_RTT="DIV2",C_MEM_DDR3_CAS_WR_LATEN
+CY=5,C_MEM_DDR3_AUTO_SR="ENABLED",C_MEM_MOBILE_PA_SR="FULL",C_MEM_MDDR_ODS="FULL",C_MC_CALIB_BYPASS="NO",C_MC_CALIBRATION_MODE="CALIBRATION",C_MC_CALIBRATION_DELAY="HALF",C_SKIP_IN_TERM_CAL=0,C_SKIP_DYNAMIC_CAL=0,LDQSP_TAP_DELAY_VAL=0,UDQSP_TAP_DELAY_VAL=0,LDQSN_TAP_DELAY_VAL=0,UDQSN_TAP_DELAY_VAL=0,DQ0_TAP_DELAY_VAL=0,DQ1_TAP_DELAY_VAL=0,DQ2_TAP_DELAY_VAL=0,DQ3_TAP_DELAY_VAL=0,DQ4_TAP_DELAY_VAL=0,DQ5_TAP_DELAY_VAL=0,DQ6_TAP_DELAY_VAL=0,DQ7_TAP_DELAY_VAL=0,DQ8_TAP_DELAY_VAL=0,DQ9_TAP_DELAY_VAL=0,DQ10_TAP_DELAY_VAL=0,DQ11_TAP_DELAY_VAL=0,DQ12_TAP_DELAY_VAL=0,DQ13_TAP_DELAY_VAL=0,DQ14_TAP_DELAY_VAL=0,DQ15_TAP_DELAY_VAL=0,C_P0_MASK_SIZE=8,C_P0_DATA_PORT_SIZE=64,C_P1_MASK_SIZE=8,C_P1_DATA_PORT_SIZE=64)>.
+
+Elaborating module
+<mcb_ui_top(C_MEMCLK_PERIOD=3200,C_PORT_ENABLE=6'b011,C_MEM_ADDR_ORDER="BANK_ROW_COLUMN",C_ARB_ALGORITHM=0,C_ARB_NUM_TIME_SLOTS=12,C_ARB_TIME_SLOT_0=18'b01,C_ARB_TIME_SLOT_1=18'b01000,C_ARB_TIME_SLOT_2=18'b01,C_ARB_TIME_SLOT_3=18'b01000,C_ARB_TIME_SLOT_4=18'b01,C_ARB_TIME_SLOT_5=18'b01000,C_ARB_TIME_SLOT_6=18'b01,C_ARB_TIME_SLOT_7=18'b01000,C_ARB_TIME_SLOT_8=18'b01,C_ARB_TIME_SLOT_9=18'b01000,C_ARB_TIME_SLOT_10=18'b01,C_ARB_TIME_SLOT_11=18'b01000,C_PORT_CONFIG="B64_B64",C_MEM_TRAS=45000,C_MEM_TRCD=12500,C_MEM_TREFI=7800000,C_MEM_TRFC=127500,C_MEM_TRP=12500,C_MEM_TWR=15000,C_MEM_TRTP=7500,C_MEM_TWTR=7500,C_NUM_DQ_PINS=16,C_MEM_TYPE="DDR2",C_MEM_DENSITY="1Gb",C_MEM_BURST_LEN=4,C_MEM_CAS_LATENCY=5,C_MEM_ADDR_WIDTH=13,C_MEM_BANKADDR_WIDTH=3,C_MEM_NUM_COL_BITS=10,C_MEM_DDR3_CAS_LATENCY=6,C_MEM_MOBILE_PA_SR="FULL",C_MEM_DDR1_2_ODS="FULL",C_MEM_DDR3_ODS="DIV6",C_MEM_DDR2_RTT="50OHMS",C_MEM_DDR3_RTT="DIV2",C_MEM_MDDR_ODS="FULL",C_MEM_DDR2_DIFF_DQS_EN="YES",C_MEM_DDR2_3_PA_SR="FULL",C_MEM_DDR3_CAS_WR_LATENCY=5,C_MEM_D
+DR3_AUTO_SR="ENABLED",C_MEM_DDR2_3_HIGH_TEMP_SR="NORMAL",C_MEM_DDR3_DYN_WRT_ODT="OFF",C_MEM_TZQINIT_MAXCNT=10'b1000010000,C_MC_CALIB_BYPASS="NO",C_MC_CALIBRATION_RA=16'b0,C_MC_CALIBRATION_BA=3'b0,C_MC_CALIBRATION_CA=12'b0,C_CALIB_SOFT_IP="TRUE",C_SKIP_IN_TERM_CAL=0,C_SKIP_DYNAMIC_CAL=0,C_SKIP_DYN_IN_TERM=1'b1,LDQSP_TAP_DELAY_VAL=0,UDQSP_TAP_DELAY_VAL=0,LDQSN_TAP_DELAY_VAL=0,UDQSN_TAP_DELAY_VAL=0,DQ0_TAP_DELAY_VAL=0,DQ1_TAP_DELAY_VAL=0,DQ2_TAP_DELAY_VAL=0,DQ3_TAP_DELAY_VAL=0,DQ4_TAP_DELAY_VAL=0,DQ5_TAP_DELAY_VAL=0,DQ6_TAP_DELAY_VAL=0,DQ7_TAP_DELAY_VAL=0,DQ8_TAP_DELAY_VAL=0,DQ9_TAP_DELAY_VAL=0,DQ10_TAP_DELAY_VAL=0,DQ11_TAP_DELAY_VAL=0,DQ12_TAP_DELAY_VAL=0,DQ13_TAP_DELAY_VAL=0,DQ14_TAP_DELAY_VAL=0,DQ15_TAP_DELAY_VAL=0,C_MC_CALIBRATION_CLK_DIV=1,C_MC_CALIBRATION_MODE="CALIBRATION",C_MC_CALIBRATION_DELAY="HALF",C_SIMULATION="FALSE",C_P0_MASK_SIZE=8,C_P0_DATA_PORT_SIZE=64,C_P1_MASK_SIZE=8,C_P1_DATA_PORT_SIZE=64,C_MCB_USE_EXTERNAL_BUFPLL=1)>.
+
+Elaborating module
+<mcb_raw_wrapper(C_MEMCLK_PERIOD=3200,C_PORT_ENABLE=6'b011,C_MEM_ADDR_ORDER="BANK_ROW_COLUMN",C_USR_INTERFACE_MODE="NATIVE",C_ARB_NUM_TIME_SLOTS=32'sb01100,C_ARB_TIME_SLOT_0=18'b111111111111010000,C_ARB_TIME_SLOT_1=18'b111111111111000010,C_ARB_TIME_SLOT_2=18'b111111111111010000,C_ARB_TIME_SLOT_3=18'b111111111111000010,C_ARB_TIME_SLOT_4=18'b111111111111010000,C_ARB_TIME_SLOT_5=18'b111111111111000010,C_ARB_TIME_SLOT_6=18'b111111111111010000,C_ARB_TIME_SLOT_7=18'b111111111111000010,C_ARB_TIME_SLOT_8=18'b111111111111010000,C_ARB_TIME_SLOT_9=18'b111111111111000010,C_ARB_TIME_SLOT_10=18'b111111111111010000,C_ARB_TIME_SLOT_11=18'b111111111111000010,C_PORT_CONFIG="B64_B64",C_MEM_TRAS=45000,C_MEM_TRCD=12500,C_MEM_TREFI=7800000,C_MEM_TRFC=127500,C_MEM_TRP=12500,C_MEM_TWR=15000,C_MEM_TRTP=7500,C_MEM_TWTR=7500,C_NUM_DQ_PINS=16,C_MEM_TYPE="DDR2",C_MEM_DENSITY="1Gb",C_MEM_BURST_LEN=4,C_MEM_CAS_LATENCY=5,C_MEM_ADDR_WIDTH=13,C_MEM_BANKADDR_WIDTH=3,C_MEM_NUM_COL_BITS=10,C_MEM_DDR3_CAS_LATENCY=6,C_MEM_MOBILE_PA_SR="FULL",C_MEM
+_DDR1_2_ODS="FULL",C_MEM_DDR3_ODS="DIV6",C_MEM_DDR2_RTT="50OHMS",C_MEM_DDR3_RTT="DIV2",C_MEM_MDDR_ODS="FULL",C_MEM_DDR2_DIFF_DQS_EN="YES",C_MEM_DDR2_3_PA_SR="FULL",C_MEM_DDR3_CAS_WR_LATENCY=5,C_MEM_DDR3_AUTO_SR="ENABLED",C_MEM_DDR2_3_HIGH_TEMP_SR="NORMAL",C_MEM_DDR3_DYN_WRT_ODT="OFF",C_MEM_TZQINIT_MAXCNT=32'b01000000000,C_MC_CALIB_BYPASS="NO",C_MC_CALIBRATION_RA=16'b0,C_MC_CALIBRATION_BA=3'b0,C_CALIB_SOFT_IP="TRUE",C_SKIP_IN_TERM_CAL=0,C_SKIP_DYNAMIC_CAL=0,C_SKIP_DYN_IN_TERM=1'b1,LDQSP_TAP_DELAY_VAL=0,UDQSP_TAP_DELAY_VAL=0,LDQSN_TAP_DELAY_VAL=0,UDQSN_TAP_DELAY_VAL=0,DQ0_TAP_DELAY_VAL=0,DQ1_TAP_DELAY_VAL=0,DQ2_TAP_DELAY_VAL=0,DQ3_TAP_DELAY_VAL=0,DQ4_TAP_DELAY_VAL=0,DQ5_TAP_DELAY_VAL=0,DQ6_TAP_DELAY_VAL=0,DQ7_TAP_DELAY_VAL=0,DQ8_TAP_DELAY_VAL=0,DQ9_TAP_DELAY_VAL=0,DQ10_TAP_DELAY_VAL=0,DQ11_TAP_DELAY_VAL=0,DQ12_TAP_DELAY_VAL=0,DQ13_TAP_DELAY_VAL=0,DQ14_TAP_DELAY_VAL=0,DQ15_TAP_DELAY_VAL=0,C_MC_CALIBRATION_CA=12'b0,C_MC_CALIBRATION_CLK_DIV=1,C_MC_CALIBRATION_MODE="CALIBRATION",C_MC_CALIBRATION_DELAY="HALF",C_P0_M
+ASK_SIZE=8,C_P0_DATA_PORT_SIZE=64,C_P1_MASK_SIZE=8,C_P1_DATA_PORT_SIZE=64)>.
+WARNING:HDLCompiler:872 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 688: Using initial value of allzero since it is never assigned
+
+Elaborating module
+<MCB(PORT_CONFIG="B64_B64",MEM_WIDTH=16,MEM_TYPE="DDR2",MEM_BURST_LEN=4,MEM_ADDR_ORDER="BANK_ROW_COLUMN",MEM_CAS_LATENCY=5,MEM_DDR3_CAS_LATENCY=6,MEM_DDR2_WRT_RECOVERY=32'sb0101,MEM_DDR3_WRT_RECOVERY=5,MEM_MOBILE_PA_SR="FULL",MEM_DDR1_2_ODS="FULL",MEM_DDR3_ODS="DIV6",MEM_DDR2_RTT="50OHMS",MEM_DDR3_RTT="DIV2",MEM_DDR3_ADD_LATENCY="OFF",MEM_DDR2_ADD_LATENCY=0,MEM_MOBILE_TC_SR=0,MEM_MDDR_ODS="FULL",MEM_DDR2_DIFF_DQS_EN="YES",MEM_DDR2_3_PA_SR="FULL",MEM_DDR3_CAS_WR_LATENCY=5,MEM_DDR3_AUTO_SR="ENABLED",MEM_DDR2_3_HIGH_TEMP_SR="NORMAL",MEM_DDR3_DYN_WRT_ODT="OFF",MEM_RA_SIZE=13,MEM_BA_SIZE=3,MEM_CA_SIZE=10,MEM_RAS_VAL=32'sb01111,MEM_RCD_VAL=32'sb0100,MEM_REFI_VAL=32'sb0100101101101,MEM_RFC_VAL=32'sb0101000,MEM_RP_VAL=32'sb0100,MEM_WR_VAL=32'sb0101,MEM_RTP_VAL=32'sb011,MEM_WTR_VAL=32'sb011,CAL_BYPASS="NO",CAL_RA=16'b0,CAL_BA=3'b0,CAL_CA=12'b0,CAL_CLK_DIV=1,CAL_DELAY="HALF",ARB_NUM_TIME_SLOTS=32'sb01100,ARB_TIME_SLOT_0=18'b111111111111010000,ARB_TIME_SLOT_1=18'b111111111111000010,ARB_TIME_SLOT_2=18'b111111111111010000
+,ARB_TIME_SLOT_3=18'b111111111111000010,ARB_TIME_SLOT_4=18'b111111111111010000,ARB_TIME_SLOT_5=18'b111111111111000010,ARB_TIME_SLOT_6=18'b111111111111010000,ARB_TIME_SLOT_7=18'b111111111111000010,ARB_TIME_SLOT_8=18'b111111111111010000,ARB_TIME_SLOT_9=18'b111111111111000010,ARB_TIME_SLOT_10=18'b111111111111010000,ARB_TIME_SLOT_11=18'b111111111111000010)>.
+
+Elaborating module <mcb_soft_calibration_top(C_MEM_TZQINIT_MAXCNT=32'b01000000000,C_MC_CALIBRATION_MODE="CALIBRATION",SKIP_IN_TERM_CAL=0,SKIP_DYNAMIC_CAL=0,SKIP_DYN_IN_TERM=1'b1,C_SIMULATION="FALSE",C_MEM_TYPE="DDR2")>.
+
+Elaborating module <mcb_soft_calibration(C_MEM_TZQINIT_MAXCNT=32'b01000000000,C_MC_CALIBRATION_MODE="CALIBRATION",SKIP_IN_TERM_CAL=0,SKIP_DYNAMIC_CAL=0,SKIP_DYN_IN_TERM=1'b1,C_SIMULATION="FALSE",C_MEM_TYPE="DDR2")>.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 416: Assignment to Half_MV_DU ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 418: Assignment to Half_MV_DD ignored, since the identifier is never used
+
+Elaborating module <iodrp_controller>.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_controller.v" Line 186: Result of 4-bit expression is truncated to fit in 3-bit target.
+
+Elaborating module <iodrp_mcb_controller>.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_mcb_controller.v" Line 301: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_mcb_controller.v" Line 312: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 451: Assignment to MCB_READ_DATA ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 601: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 723: Assignment to State_Start_DynCal_R1 ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 749: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 780: Assignment to MCB_UODATAVALID_U ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 942: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 946: Result of 8-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 992: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 996: Result of 8-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 997: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 998: Result of 8-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 999: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 1000: Result of 8-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 1001: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" Line 826: Assignment to IODRPCTRLR_USE_BKST ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration_top.v" Line 219: Assignment to Max_Value ignored, since the identifier is never used
+
+Elaborating module <IOBUF>.
+
+Elaborating module <IODRP2>.
+
+Elaborating module <OSERDES2(BYPASS_GCLK_FF="TRUE",DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",OUTPUT_MODE="SINGLE_ENDED",SERDES_MODE="MASTER",DATA_WIDTH=2)>.
+
+Elaborating module <OSERDES2(BYPASS_GCLK_FF="TRUE",DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",OUTPUT_MODE="SINGLE_ENDED",SERDES_MODE="MASTER",DATA_WIDTH=2,TRAIN_PATTERN=15)>.
+
+Elaborating module <OSERDES2(BYPASS_GCLK_FF="TRUE",DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",OUTPUT_MODE="SINGLE_ENDED",SERDES_MODE="MASTER",DATA_WIDTH=2,TRAIN_PATTERN=5)>.
+
+Elaborating module <OSERDES2(BYPASS_GCLK_FF="TRUE",DATA_RATE_OQ="SDR",DATA_RATE_OT="SDR",OUTPUT_MODE="SINGLE_ENDED",SERDES_MODE="SLAVE",DATA_WIDTH=2)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=7,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=7,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=6,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=6,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=14,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=14,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=5,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=5,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=4,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=4,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=0,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=0,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=1,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=1,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=15,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=15,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=3,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=3,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=2,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=2,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=8,ODELAY_VALUE=0,SERDES_MODE="MASTER",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <IODRP2_MCB(DATA_RATE="SDR",IDELAY_VALUE=0,MCB_ADDRESS=8,ODELAY_VALUE=0,SERDES_MODE="SLAVE",SIM_TAPDELAY_VALUE=10)>.
+
+Elaborating module <OBUFT>.
+
+Elaborating module <OBUFTDS>.
+
+Elaborating module <IOBUFDS>.
+
+Elaborating module <PULLDOWN>.
+
+Elaborating module <PULLUP>.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 865: Net <mig_p1_cmd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 866: Net <mig_p1_cmd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 867: Net <mig_p1_cmd_ra[14]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 868: Net <mig_p1_cmd_ba[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 869: Net <mig_p1_cmd_ca[11]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 871: Net <mig_p1_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 872: Net <mig_p1_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 896: Net <mig_p3_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 945: Net <mig_p2_wr_data[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 947: Net <mig_p4_wr_data[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 953: Net <mig_p2_wr_mask[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" Line 955: Net <mig_p4_wr_mask[3]> does not have a driver.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 789: Assignment to sysclk_2x_bufpll_o ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 790: Assignment to sysclk_2x_180_bufpll_o ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 791: Assignment to pll_ce_0_bufpll_o ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 792: Assignment to pll_ce_90_bufpll_o ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 793: Assignment to pll_lock_bufpll_o ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 986: Assignment to uo_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 987: Assignment to uo_data_valid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 989: Assignment to uo_cmd_ready_in ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 990: Assignment to uo_refrsh_flag ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 991: Assignment to uo_cal_start ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 992: Assignment to uo_sdo ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 993: Assignment to status ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1010: Assignment to s0_axi_awready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1015: Assignment to s0_axi_wready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1016: Assignment to s0_axi_bid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1017: Assignment to s0_axi_bresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1018: Assignment to s0_axi_bvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1030: Assignment to s0_axi_arready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1031: Assignment to s0_axi_rid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1032: Assignment to s0_axi_rdata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1033: Assignment to s0_axi_rresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1034: Assignment to s0_axi_rlast ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1035: Assignment to s0_axi_rvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1050: Assignment to s1_axi_awready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1055: Assignment to s1_axi_wready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1056: Assignment to s1_axi_bid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1057: Assignment to s1_axi_bresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1058: Assignment to s1_axi_bvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1070: Assignment to s1_axi_arready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1071: Assignment to s1_axi_rid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1072: Assignment to s1_axi_rdata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1073: Assignment to s1_axi_rresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1074: Assignment to s1_axi_rlast ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1075: Assignment to s1_axi_rvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1090: Assignment to s2_axi_awready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1095: Assignment to s2_axi_wready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1096: Assignment to s2_axi_bid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1097: Assignment to s2_axi_bresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1098: Assignment to s2_axi_bvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1110: Assignment to s2_axi_arready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1111: Assignment to s2_axi_rid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1112: Assignment to s2_axi_rdata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1113: Assignment to s2_axi_rresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1114: Assignment to s2_axi_rlast ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1115: Assignment to s2_axi_rvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1130: Assignment to s3_axi_awready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1135: Assignment to s3_axi_wready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1136: Assignment to s3_axi_bid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1137: Assignment to s3_axi_bresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1138: Assignment to s3_axi_bvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1150: Assignment to s3_axi_arready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1151: Assignment to s3_axi_rid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1152: Assignment to s3_axi_rdata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1153: Assignment to s3_axi_rresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1154: Assignment to s3_axi_rlast ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1155: Assignment to s3_axi_rvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1170: Assignment to s4_axi_awready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1175: Assignment to s4_axi_wready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1176: Assignment to s4_axi_bid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1177: Assignment to s4_axi_bresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1178: Assignment to s4_axi_bvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1190: Assignment to s4_axi_arready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1191: Assignment to s4_axi_rid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1192: Assignment to s4_axi_rdata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1193: Assignment to s4_axi_rresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1194: Assignment to s4_axi_rlast ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1195: Assignment to s4_axi_rvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1210: Assignment to s5_axi_awready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1215: Assignment to s5_axi_wready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1216: Assignment to s5_axi_bid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1217: Assignment to s5_axi_bresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1218: Assignment to s5_axi_bvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1230: Assignment to s5_axi_arready ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1231: Assignment to s5_axi_rid ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1232: Assignment to s5_axi_rdata ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1233: Assignment to s5_axi_rresp ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1234: Assignment to s5_axi_rlast ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 1235: Assignment to s5_axi_rvalid ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 437: Net <s0_axi_aclk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 438: Net <s0_axi_aresetn> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 439: Net <s0_axi_awid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 440: Net <s0_axi_awaddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 441: Net <s0_axi_awlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 442: Net <s0_axi_awsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 443: Net <s0_axi_awburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 444: Net <s0_axi_awlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 445: Net <s0_axi_awcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 446: Net <s0_axi_awprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 447: Net <s0_axi_awqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 448: Net <s0_axi_awvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 450: Net <s0_axi_wdata[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 451: Net <s0_axi_wstrb[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 452: Net <s0_axi_wlast> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 453: Net <s0_axi_wvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 458: Net <s0_axi_bready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 459: Net <s0_axi_arid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 460: Net <s0_axi_araddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 461: Net <s0_axi_arlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 462: Net <s0_axi_arsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 463: Net <s0_axi_arburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 464: Net <s0_axi_arlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 465: Net <s0_axi_arcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 466: Net <s0_axi_arprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 467: Net <s0_axi_arqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 468: Net <s0_axi_arvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 475: Net <s0_axi_rready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 477: Net <s1_axi_aclk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 478: Net <s1_axi_aresetn> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 479: Net <s1_axi_awid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 480: Net <s1_axi_awaddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 481: Net <s1_axi_awlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 482: Net <s1_axi_awsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 483: Net <s1_axi_awburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 484: Net <s1_axi_awlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 485: Net <s1_axi_awcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 486: Net <s1_axi_awprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 487: Net <s1_axi_awqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 488: Net <s1_axi_awvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 490: Net <s1_axi_wdata[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 491: Net <s1_axi_wstrb[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 492: Net <s1_axi_wlast> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 493: Net <s1_axi_wvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 498: Net <s1_axi_bready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 499: Net <s1_axi_arid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 500: Net <s1_axi_araddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 501: Net <s1_axi_arlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 502: Net <s1_axi_arsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 503: Net <s1_axi_arburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 504: Net <s1_axi_arlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 505: Net <s1_axi_arcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 506: Net <s1_axi_arprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 507: Net <s1_axi_arqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 508: Net <s1_axi_arvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 515: Net <s1_axi_rready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 517: Net <s2_axi_aclk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 518: Net <s2_axi_aresetn> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 519: Net <s2_axi_awid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 520: Net <s2_axi_awaddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 521: Net <s2_axi_awlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 522: Net <s2_axi_awsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 523: Net <s2_axi_awburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 524: Net <s2_axi_awlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 525: Net <s2_axi_awcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 526: Net <s2_axi_awprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 527: Net <s2_axi_awqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 528: Net <s2_axi_awvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 530: Net <s2_axi_wdata[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 531: Net <s2_axi_wstrb[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 532: Net <s2_axi_wlast> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 533: Net <s2_axi_wvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 538: Net <s2_axi_bready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 539: Net <s2_axi_arid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 540: Net <s2_axi_araddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 541: Net <s2_axi_arlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 542: Net <s2_axi_arsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 543: Net <s2_axi_arburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 544: Net <s2_axi_arlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 545: Net <s2_axi_arcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 546: Net <s2_axi_arprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 547: Net <s2_axi_arqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 548: Net <s2_axi_arvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 555: Net <s2_axi_rready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 557: Net <s3_axi_aclk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 558: Net <s3_axi_aresetn> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 559: Net <s3_axi_awid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 560: Net <s3_axi_awaddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 561: Net <s3_axi_awlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 562: Net <s3_axi_awsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 563: Net <s3_axi_awburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 564: Net <s3_axi_awlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 565: Net <s3_axi_awcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 566: Net <s3_axi_awprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 567: Net <s3_axi_awqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 568: Net <s3_axi_awvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 570: Net <s3_axi_wdata[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 571: Net <s3_axi_wstrb[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 572: Net <s3_axi_wlast> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 573: Net <s3_axi_wvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 578: Net <s3_axi_bready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 579: Net <s3_axi_arid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 580: Net <s3_axi_araddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 581: Net <s3_axi_arlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 582: Net <s3_axi_arsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 583: Net <s3_axi_arburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 584: Net <s3_axi_arlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 585: Net <s3_axi_arcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 586: Net <s3_axi_arprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 587: Net <s3_axi_arqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 588: Net <s3_axi_arvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 595: Net <s3_axi_rready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 597: Net <s4_axi_aclk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 598: Net <s4_axi_aresetn> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 599: Net <s4_axi_awid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 600: Net <s4_axi_awaddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 601: Net <s4_axi_awlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 602: Net <s4_axi_awsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 603: Net <s4_axi_awburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 604: Net <s4_axi_awlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 605: Net <s4_axi_awcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 606: Net <s4_axi_awprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 607: Net <s4_axi_awqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 608: Net <s4_axi_awvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 610: Net <s4_axi_wdata[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 611: Net <s4_axi_wstrb[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 612: Net <s4_axi_wlast> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 613: Net <s4_axi_wvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 618: Net <s4_axi_bready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 619: Net <s4_axi_arid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 620: Net <s4_axi_araddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 621: Net <s4_axi_arlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 622: Net <s4_axi_arsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 623: Net <s4_axi_arburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 624: Net <s4_axi_arlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 625: Net <s4_axi_arcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 626: Net <s4_axi_arprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 627: Net <s4_axi_arqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 628: Net <s4_axi_arvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 635: Net <s4_axi_rready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 637: Net <s5_axi_aclk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 638: Net <s5_axi_aresetn> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 639: Net <s5_axi_awid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 640: Net <s5_axi_awaddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 641: Net <s5_axi_awlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 642: Net <s5_axi_awsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 643: Net <s5_axi_awburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 644: Net <s5_axi_awlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 645: Net <s5_axi_awcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 646: Net <s5_axi_awprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 647: Net <s5_axi_awqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 648: Net <s5_axi_awvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 650: Net <s5_axi_wdata[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 651: Net <s5_axi_wstrb[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 652: Net <s5_axi_wlast> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 653: Net <s5_axi_wvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 658: Net <s5_axi_bready> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 659: Net <s5_axi_arid[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 660: Net <s5_axi_araddr[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 661: Net <s5_axi_arlen[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 662: Net <s5_axi_arsize[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 663: Net <s5_axi_arburst[1]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 664: Net <s5_axi_arlock[0]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 665: Net <s5_axi_arcache[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 666: Net <s5_axi_arprot[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 667: Net <s5_axi_arqos[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 668: Net <s5_axi_arvalid> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" Line 675: Net <s5_axi_rready> does not have a driver.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 630: Assignment to c3_p2_cmd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 631: Assignment to c3_p2_cmd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 638: Assignment to c3_p2_wr_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 639: Assignment to c3_p2_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 640: Assignment to c3_p2_wr_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 641: Assignment to c3_p2_wr_underrun ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 642: Assignment to c3_p2_wr_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 647: Assignment to c3_p2_rd_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 648: Assignment to c3_p2_rd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 649: Assignment to c3_p2_rd_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 650: Assignment to c3_p2_rd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 651: Assignment to c3_p2_rd_overflow ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 652: Assignment to c3_p2_rd_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 661: Assignment to c3_p3_cmd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 662: Assignment to c3_p3_cmd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 669: Assignment to c3_p3_wr_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 670: Assignment to c3_p3_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 671: Assignment to c3_p3_wr_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 672: Assignment to c3_p3_wr_underrun ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 673: Assignment to c3_p3_wr_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 678: Assignment to c3_p3_rd_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 679: Assignment to c3_p3_rd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 680: Assignment to c3_p3_rd_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 681: Assignment to c3_p3_rd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 682: Assignment to c3_p3_rd_overflow ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 683: Assignment to c3_p3_rd_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 692: Assignment to c3_p4_cmd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 693: Assignment to c3_p4_cmd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 700: Assignment to c3_p4_wr_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 701: Assignment to c3_p4_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 702: Assignment to c3_p4_wr_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 703: Assignment to c3_p4_wr_underrun ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 704: Assignment to c3_p4_wr_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 709: Assignment to c3_p4_rd_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 710: Assignment to c3_p4_rd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 711: Assignment to c3_p4_rd_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 712: Assignment to c3_p4_rd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 713: Assignment to c3_p4_rd_overflow ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 714: Assignment to c3_p4_rd_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 723: Assignment to c3_p5_cmd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 724: Assignment to c3_p5_cmd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 731: Assignment to c3_p5_wr_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 732: Assignment to c3_p5_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 733: Assignment to c3_p5_wr_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 734: Assignment to c3_p5_wr_underrun ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 735: Assignment to c3_p5_wr_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 740: Assignment to c3_p5_rd_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 741: Assignment to c3_p5_rd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 742: Assignment to c3_p5_rd_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 743: Assignment to c3_p5_rd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 744: Assignment to c3_p5_rd_overflow ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 745: Assignment to c3_p5_rd_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 748: Assignment to c3_selfrefresh_mode ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 292: Net <c3_p2_cmd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 293: Net <c3_p2_cmd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 294: Net <c3_p2_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 295: Net <c3_p2_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 296: Net <c3_p2_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 299: Net <c3_p2_wr_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 300: Net <c3_p2_wr_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 301: Net <c3_p2_wr_mask[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 302: Net <c3_p2_wr_data[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 308: Net <c3_p2_rd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 309: Net <c3_p2_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 316: Net <c3_p3_cmd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 317: Net <c3_p3_cmd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 318: Net <c3_p3_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 319: Net <c3_p3_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 320: Net <c3_p3_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 323: Net <c3_p3_wr_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 324: Net <c3_p3_wr_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 325: Net <c3_p3_wr_mask[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 326: Net <c3_p3_wr_data[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 332: Net <c3_p3_rd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 333: Net <c3_p3_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 340: Net <c3_p4_cmd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 341: Net <c3_p4_cmd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 342: Net <c3_p4_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 343: Net <c3_p4_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 344: Net <c3_p4_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 347: Net <c3_p4_wr_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 348: Net <c3_p4_wr_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 349: Net <c3_p4_wr_mask[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 350: Net <c3_p4_wr_data[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 356: Net <c3_p4_rd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 357: Net <c3_p4_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 364: Net <c3_p5_cmd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 365: Net <c3_p5_cmd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 366: Net <c3_p5_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 367: Net <c3_p5_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 368: Net <c3_p5_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 371: Net <c3_p5_wr_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 372: Net <c3_p5_wr_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 373: Net <c3_p5_wr_mask[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 374: Net <c3_p5_wr_data[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 380: Net <c3_p5_rd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.v" Line 381: Net <c3_p5_rd_en> does not have a driver.
+ERROR:HDLCompiler:267 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 96: Cannot find port c3_sys_clk on this module
+WARNING:HDLCompiler:189 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 99: Size mismatch in connection of port <mcb3_dram_dq>. Formal port size is 16-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 100: Size mismatch in connection of port <mcb3_dram_a>. Formal port size is 13-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 100: Assignment to DDR2A ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 101: Size mismatch in connection of port <mcb3_dram_ba>. Formal port size is 3-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 101: Assignment to DDR2BA ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 102: Assignment to DDR2RASN ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 103: Assignment to DDR2CASN ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 104: Assignment to DDR2WEN ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 105: Assignment to DDR2ODT ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 106: Assignment to DDR2CKE ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 107: Assignment to DDR2CLK_P ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 108: Assignment to DDR2CLK_N ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 113: Assignment to DDR2UDM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 114: Assignment to DDR2LDM ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 117: Assignment to c3_rst0 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 129: Assignment to c3_p0_cmd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 130: Assignment to c3_p0_cmd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 135: Assignment to c3_p0_wr_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 136: Assignment to c3_p0_wr_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 138: Assignment to c3_p0_wr_underrun ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 139: Assignment to c3_p0_wr_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 143: Assignment to c3_p0_rd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 146: Assignment to c3_p0_rd_overflow ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 147: Assignment to c3_p0_rd_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 154: Assignment to c3_p1_cmd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 155: Assignment to c3_p1_cmd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 160: Assignment to c3_p1_wr_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 161: Assignment to c3_p1_wr_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 163: Assignment to c3_p1_wr_underrun ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 164: Assignment to c3_p1_wr_error ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 168: Assignment to c3_p1_rd_full ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 171: Assignment to c3_p1_rd_overflow ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 172: Assignment to c3_p1_rd_error ignored, since the identifier is never used
+Module ddr_interface_v remains a blackbox, due to errors in its contents
+WARNING:HDLCompiler:1499 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface_v.v" Line 21: Empty module <ddr_interface_v> remains a black box.
+Back to vhdl to continue elaboration
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 129: Net <c3_p0_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 130: Net <c3_p0_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 131: Net <c3_p0_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 132: Net <c3_p0_wr_mask[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 133: Net <c3_p0_wr_data[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 137: Net <c3_p0_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 139: Net <c3_p0_wr_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 141: Net <c3_p1_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 142: Net <c3_p1_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 143: Net <c3_p1_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 144: Net <c3_p1_wr_mask[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 146: Net <c3_p1_wr_data[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 149: Net <c3_p1_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 151: Net <c3_p1_wr_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 152: Net <c3_p0_cmd_en> does not have a driver.
+--> 
+
+
+Total memory usage is 336700 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :  428 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

@@ -49,7 +49,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "vhdl_wrapper_for_verilog"
 Output Format                      : NGC
-Target Device                      : xc6slx45-3-csg324
+Target Device                      : xc6slx45-2-csg324
 
 ---- Source Options
 Top Module Name                    : vhdl_wrapper_for_verilog
@@ -113,10 +113,6 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ipcore_dir/ddr2/user_design/rtl/ddr2.v" into library work
 Parsing module <ddr2>.
-Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ddr_interface.v" into library work
-Parsing module <ddr_interface>.
-Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" into library work
-Parsing module <atlys_ddr_test>.
 Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ipcore_dir/ddr2/user_design/rtl/infrastructure.v" into library work
 Parsing module <infrastructure>.
 Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_controller.v" into library work
@@ -133,6 +129,13 @@ Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-
 Parsing module <mcb_ui_top>.
 Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" into library work
 Parsing module <memc_wrapper>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ddr_interface.v" into library work
+Parsing module <ddr_interface>.
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" into library work
+Parsing module <atlys_ddr_test>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/comm_fpga_fx2.vhdl" into library work
+Parsing entity <comm_fpga_fx2>.
+Parsing architecture <behavioural> of entity <comm_fpga_fx2>.
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/vhdl_wrapper_for_verilog.vhd" into library work
 Parsing entity <vhdl_wrapper_for_verilog>.
 Parsing architecture <Behavioral> of entity <vhdl_wrapper_for_verilog>.
@@ -154,15 +157,14 @@ Parsing architecture <trans> of entity <mcb_soft_calibration_top>.
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ipcore_dir/ddr2/user_design/rtl/memc3_infrastructure.vhd" into library work
 Parsing entity <memc3_infrastructure>.
 Parsing architecture <syn> of entity <memc3_infrastructure>.
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" into library work
-Parsing entity <memc3_wrapper>.
-Parsing architecture <acch> of entity <memc3_wrapper>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
 
 Elaborating entity <vhdl_wrapper_for_verilog> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <comm_fpga_fx2> (architecture <behavioural>) from library <work>.
 Going to verilog side to elaborate module atlys_ddr_test
 
 Elaborating module <atlys_ddr_test>.
@@ -663,22 +665,20 @@ WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgal
 WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ddr_interface.v" Line 172: Assignment to c3_p1_rd_overflow ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ddr_interface.v" Line 173: Assignment to c3_p1_rd_error ignored, since the identifier is never used
 WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/ddr_interface.v" Line 151: Net <c3_p1_cmd_en> does not have a driver.
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 107: Assignment to c3_p0_wr_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 109: Assignment to c3_p0_rd_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 111: Assignment to c3_p0_rd_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 117: Assignment to c3_p1_wr_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 119: Assignment to c3_p1_rd_data ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 120: Assignment to c3_p1_rd_count ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 122: Assignment to c3_p1_rd_empty ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 54: Net <c3_p0_wr_mask[7]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 56: Net <c3_p0_rd_en> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 58: Net <c3_p1_cmd_instr[2]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 59: Net <c3_p1_cmd_bl[5]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 60: Net <c3_p1_cmd_byte_addr[29]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 61: Net <c3_p1_wr_mask[7]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 62: Net <c3_p1_wr_data[63]> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 63: Net <c3_p1_rd_en> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 64: Net <c3_p1_wr_en> does not have a driver.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 111: Assignment to c3_p0_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 113: Assignment to c3_p0_rd_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 121: Assignment to c3_p1_wr_count ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 123: Assignment to c3_p1_rd_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 126: Assignment to c3_p1_rd_empty ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 57: Net <c3_p0_wr_mask[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 59: Net <c3_p0_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 61: Net <c3_p1_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 62: Net <c3_p1_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 63: Net <c3_p1_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 64: Net <c3_p1_wr_mask[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 65: Net <c3_p1_wr_data[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 66: Net <c3_p1_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" Line 67: Net <c3_p1_wr_en> does not have a driver.
 Back to vhdl to continue elaboration
 
 =========================================================================
@@ -687,19 +687,62 @@ Back to vhdl to continue elaboration
 
 Synthesizing Unit <vhdl_wrapper_for_verilog>.
     Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/vhdl_wrapper_for_verilog.vhd".
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/vhdl_wrapper_for_verilog.vhd" line 208: Output port <f2hReady_out> of the instance <comm_fpga_fx2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/vhdl_wrapper_for_verilog.vhd" line 231: Output port <CALIBRATION> of the instance <ddr_wrapper> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/vhdl_wrapper_for_verilog.vhd" line 231: Output port <p1_rd_count> of the instance <ddr_wrapper> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/vhdl_wrapper_for_verilog.vhd" line 231: Output port <p0_rd_empty> of the instance <ddr_wrapper> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/vhdl_wrapper_for_verilog.vhd" line 231: Output port <p0_rd_en> of the instance <ddr_wrapper> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <reg1>.
+    Found 8-bit register for signal <reg3>.
+    Found 8-bit 4-to-1 multiplexer for signal <_n0062> created at line 134.
+    WARNING:Xst:2404 -  FFs/Latches <reg2<7:0>> (without init value) have a constant value of 0 in block <vhdl_wrapper_for_verilog>.
     Summary:
-	no macro.
+	inferred  16 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 Unit <vhdl_wrapper_for_verilog> synthesized.
+
+Synthesizing Unit <comm_fpga_fx2>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/comm_fpga_fx2.vhdl".
+    Found 32-bit register for signal <count>.
+    Found 7-bit register for signal <chanAddr>.
+    Found 1-bit register for signal <isWrite>.
+    Found 1-bit register for signal <isAligned>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 21                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 8                                              |
+    | Clock              | fx2Clk_in (rising_edge)                        |
+    | Power Up State     | s_idle                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_18_OUT<31:0>> created at line 1308.
+    Found 1-bit tristate buffer for signal <fx2Data_io<7>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<6>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<5>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<4>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<3>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<2>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<1>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<0>> created at line 222
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred  48 Multiplexer(s).
+	inferred   8 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <comm_fpga_fx2> synthesized.
 
 Synthesizing Unit <atlys_ddr_test>.
     Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v".
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p0_wr_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p0_rd_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p1_wr_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p1_rd_data> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p1_rd_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p0_rd_empty> of the instance <ddr_interface> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 82: Output port <c3_p1_rd_empty> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 86: Output port <c3_p0_wr_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 86: Output port <c3_p0_rd_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 86: Output port <c3_p1_wr_count> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 86: Output port <c3_p1_rd_data> of the instance <ddr_interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test/atlys_ddr_test.v" line 86: Output port <c3_p1_rd_empty> of the instance <ddr_interface> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <c3_p0_wr_mask> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <c3_p1_cmd_instr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <c3_p1_cmd_bl> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -712,6 +755,7 @@ WARNING:Xst:653 - Signal <c3_p1_wr_en> is used but never assigned. This sourcele
     Found 1-bit register for signal <reset>.
     Found 5-bit register for signal <state>.
     Found 1-bit register for signal <c3_p0_wr_en>.
+    Found 64-bit register for signal <temp>.
     Found 64-bit register for signal <c3_p0_wr_data>.
     Found 12-bit register for signal <count>.
     Found 3-bit register for signal <c3_p0_cmd_instr>.
@@ -719,22 +763,23 @@ WARNING:Xst:653 - Signal <c3_p1_wr_en> is used but never assigned. This sourcele
     Found 30-bit register for signal <c3_p0_cmd_byte_addr>.
     Found 1-bit register for signal <c3_p0_cmd_en>.
     Found 2-bit register for signal <calib_done>.
-    Found finite state machine <FSM_0> for signal <state>.
+    Found finite state machine <FSM_1> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 12                                             |
     | Transitions        | 15                                             |
     | Inputs             | 2                                              |
-    | Outputs            | 20                                             |
+    | Outputs            | 25                                             |
     | Clock              | c3_clk0 (rising_edge)                          |
     | Power Up State     | 00000                                          |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 12-bit adder for signal <count[11]_GND_5_o_add_6_OUT> created at line 189.
+    Found 64-bit adder for signal <temp[63]_GND_15_o_add_7_OUT> created at line 236.
+    Found 12-bit adder for signal <count[11]_GND_15_o_add_8_OUT> created at line 274.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred 120 D-type flip-flop(s).
-	inferred   3 Multiplexer(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 184 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <atlys_ddr_test> synthesized.
 
@@ -1914,8 +1959,8 @@ WARNING:Xst:2935 - Signal 'MCB_UIDQLOWERINC', unconnected in block 'mcb_soft_cal
 WARNING:Xst:2935 - Signal 'MCB_UIDQUPPERDEC', unconnected in block 'mcb_soft_calibration', is tied to its initial value (0).
 WARNING:Xst:2935 - Signal 'MCB_UIDQUPPERINC', unconnected in block 'mcb_soft_calibration', is tied to its initial value (0).
 WARNING:Xst:2935 - Signal 'MCB_RECAL', unconnected in block 'mcb_soft_calibration', is tied to its initial value (0).
-    Register <MCB_UIUDQSDEC> equivalent to <MCB_UILDQSDEC> has been removed
     Register <MCB_UIUDQSINC> equivalent to <MCB_UILDQSINC> has been removed
+    Register <MCB_UIUDQSDEC> equivalent to <MCB_UILDQSDEC> has been removed
     Found 1-bit register for signal <CKE_Train>.
     Found 1-bit register for signal <Block_Reset>.
     Found 16-bit register for signal <WAIT_200us_COUNTER>.
@@ -1968,7 +2013,7 @@ WARNING:Xst:2935 - Signal 'MCB_RECAL', unconnected in block 'mcb_soft_calibratio
     Found 1-bit register for signal <DONE_SOFTANDHARD_CAL>.
     Found 1-bit register for signal <RST_reg>.
 INFO:Xst:1799 - State 101010 is never reached in FSM <STATE>.
-    Found finite state machine <FSM_1> for signal <STATE>.
+    Found finite state machine <FSM_2> for signal <STATE>.
     -----------------------------------------------------------------------
     | States             | 43                                             |
     | Transitions        | 102                                            |
@@ -1984,12 +2029,12 @@ INFO:Xst:1799 - State 101010 is never reached in FSM <STATE>.
     -----------------------------------------------------------------------
     Found 8-bit subtractor for signal <Max_Value_Delta_Up> created at line 372.
     Found 8-bit subtractor for signal <Max_Value_Delta_Dn> created at line 374.
-    Found 8-bit subtractor for signal <DQS_DELAY[7]_GND_19_o_sub_173_OUT> created at line 1224.
-    Found 16-bit adder for signal <WAIT_200us_COUNTER[15]_GND_19_o_add_12_OUT> created at line 455.
-    Found 10-bit adder for signal <RstCounter[9]_GND_19_o_add_17_OUT> created at line 524.
-    Found 6-bit adder for signal <count[5]_GND_19_o_add_39_OUT> created at line 651.
-    Found 6-bit adder for signal <P_Term[5]_GND_19_o_add_54_OUT> created at line 814.
-    Found 7-bit adder for signal <N_Term[6]_GND_19_o_add_67_OUT> created at line 864.
+    Found 8-bit subtractor for signal <DQS_DELAY[7]_GND_29_o_sub_173_OUT> created at line 1224.
+    Found 16-bit adder for signal <WAIT_200us_COUNTER[15]_GND_29_o_add_12_OUT> created at line 455.
+    Found 10-bit adder for signal <RstCounter[9]_GND_29_o_add_17_OUT> created at line 524.
+    Found 6-bit adder for signal <count[5]_GND_29_o_add_39_OUT> created at line 651.
+    Found 6-bit adder for signal <P_Term[5]_GND_29_o_add_54_OUT> created at line 814.
+    Found 7-bit adder for signal <N_Term[6]_GND_29_o_add_67_OUT> created at line 864.
     Found 8-bit adder for signal <n0586[7:0]> created at line 437.
     Found 9-bit adder for signal <n0589[8:0]> created at line 437.
     Found 10-bit adder for signal <n0592[9:0]> created at line 437.
@@ -1999,21 +2044,21 @@ INFO:Xst:1799 - State 101010 is never reached in FSM <STATE>.
     Found 10-bit adder for signal <n0613[9:0]> created at line 437.
     Found 11-bit adder for signal <n0616[10:0]> created at line 437.
     Found 10-bit adder for signal <n0628> created at line 437.
-    Found 8-bit adder for signal <counter_inc[7]_GND_19_o_add_155_OUT> created at line 1194.
-    Found 8-bit adder for signal <DQS_DELAY[7]_GND_19_o_add_158_OUT> created at line 1199.
-    Found 8-bit adder for signal <counter_dec[7]_GND_19_o_add_169_OUT> created at line 1219.
-    Found 12-bit adder for signal <_n0710> created at line 437.
+    Found 8-bit adder for signal <counter_inc[7]_GND_29_o_add_155_OUT> created at line 1194.
+    Found 8-bit adder for signal <DQS_DELAY[7]_GND_29_o_add_158_OUT> created at line 1199.
+    Found 8-bit adder for signal <counter_dec[7]_GND_29_o_add_169_OUT> created at line 1219.
+    Found 12-bit adder for signal <_n0711> created at line 437.
     Found 12-bit adder for signal <n0420> created at line 437.
-    Found 13-bit adder for signal <_n0713> created at line 437.
+    Found 13-bit adder for signal <_n0715> created at line 437.
     Found 13-bit adder for signal <n0414> created at line 437.
     Found 1-bit 3-to-1 multiplexer for signal <IODRP_SDO> created at line 671.
-    Found 10-bit comparator greater for signal <RstCounter[9]_PWR_18_o_LessThan_17_o> created at line 522
-    Found 10-bit comparator greater for signal <RstCounter[9]_GND_19_o_LessThan_26_o> created at line 541
+    Found 10-bit comparator greater for signal <RstCounter[9]_PWR_21_o_LessThan_17_o> created at line 522
+    Found 10-bit comparator greater for signal <RstCounter[9]_GND_29_o_LessThan_26_o> created at line 541
     Found 8-bit comparator greater for signal <Dec_Flag> created at line 639
     Found 8-bit comparator greater for signal <Inc_Flag> created at line 640
     Found 6-bit comparator equal for signal <n0132> created at line 876
     Found 7-bit comparator equal for signal <n0141> created at line 909
-    Found 6-bit comparator greater for signal <count[5]_PWR_18_o_LessThan_133_o> created at line 1136
+    Found 6-bit comparator greater for signal <count[5]_PWR_21_o_LessThan_133_o> created at line 1136
     Found 8-bit comparator greater for signal <Max_Value[7]_Max_Value_Previous[7]_LessThan_139_o> created at line 1168
     Found 8-bit comparator greater for signal <n0204> created at line 1168
     Found 8-bit comparator greater for signal <Max_Value_Previous[7]_Max_Value[7]_LessThan_143_o> created at line 1173
@@ -2049,7 +2094,7 @@ Synthesizing Unit <iodrp_controller>.
     Found 1-bit register for signal <DRP_BKST>.
     Found 3-bit register for signal <state>.
     Found 8-bit register for signal <memcell_addr_reg>.
-    Found finite state machine <FSM_2> for signal <state>.
+    Found finite state machine <FSM_3> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 8                                              |
     | Transitions        | 13                                             |
@@ -2062,7 +2107,7 @@ Synthesizing Unit <iodrp_controller>.
     | Encoding           | one-hot                                        |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <bit_cnt[2]_GND_20_o_add_15_OUT> created at line 186.
+    Found 3-bit adder for signal <bit_cnt[2]_GND_30_o_add_15_OUT> created at line 186.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  40 D-type flip-flop(s).
@@ -2087,7 +2132,7 @@ WARNING:Xst:647 - Input <drp_ioi_addr> is never used. This port will be preserve
     Found 1-bit register for signal <DRP_BKST>.
     Found 4-bit register for signal <state>.
     Found 8-bit register for signal <memcell_addr_reg>.
-    Found finite state machine <FSM_3> for signal <state>.
+    Found finite state machine <FSM_4> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 10                                             |
     | Transitions        | 15                                             |
@@ -2100,7 +2145,7 @@ WARNING:Xst:647 - Input <drp_ioi_addr> is never used. This port will be preserve
     | Encoding           | GRAY                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 3-bit adder for signal <bit_cnt[2]_GND_21_o_add_16_OUT> created at line 301.
+    Found 3-bit adder for signal <bit_cnt[2]_GND_31_o_add_16_OUT> created at line 301.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  41 D-type flip-flop(s).
@@ -2112,21 +2157,23 @@ Unit <iodrp_mcb_controller> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 26
+# Adders/Subtractors                                   : 28
  10-bit adder                                          : 4
  11-bit adder                                          : 2
  12-bit adder                                          : 4
  13-bit adder                                          : 2
  16-bit adder                                          : 1
  3-bit adder                                           : 2
+ 32-bit subtractor                                     : 1
  6-bit adder                                           : 2
+ 64-bit adder                                          : 1
  7-bit adder                                           : 1
  8-bit adder                                           : 3
  8-bit addsub                                          : 1
  8-bit subtractor                                      : 2
  9-bit adder                                           : 2
-# Registers                                            : 82
- 1-bit register                                        : 46
+# Registers                                            : 89
+ 1-bit register                                        : 48
  10-bit register                                       : 1
  12-bit register                                       : 1
  16-bit register                                       : 1
@@ -2134,12 +2181,13 @@ Macro Statistics
  25-bit register                                       : 1
  3-bit register                                        : 3
  30-bit register                                       : 1
+ 32-bit register                                       : 1
  4-bit register                                        : 1
  5-bit register                                        : 1
  6-bit register                                        : 4
- 64-bit register                                       : 1
- 7-bit register                                        : 2
- 8-bit register                                        : 17
+ 64-bit register                                       : 2
+ 7-bit register                                        : 3
+ 8-bit register                                        : 19
 # Comparators                                          : 15
  10-bit comparator greater                             : 2
  6-bit comparator equal                                : 1
@@ -2147,16 +2195,22 @@ Macro Statistics
  7-bit comparator equal                                : 1
  8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 2
-# Multiplexers                                         : 54
- 1-bit 2-to-1 multiplexer                              : 18
+# Multiplexers                                         : 106
+ 1-bit 2-to-1 multiplexer                              : 52
  1-bit 3-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 2
  12-bit 2-to-1 multiplexer                             : 3
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
  6-bit 2-to-1 multiplexer                              : 6
+ 64-bit 2-to-1 multiplexer                             : 2
  7-bit 2-to-1 multiplexer                              : 4
- 8-bit 2-to-1 multiplexer                              : 18
+ 8-bit 2-to-1 multiplexer                              : 21
+ 8-bit 4-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 2
-# FSMs                                                 : 4
+# Tristates                                            : 8
+ 1-bit tristate buffer                                 : 8
+# FSMs                                                 : 5
 
 =========================================================================
 
@@ -2166,16 +2220,27 @@ Macro Statistics
 
 INFO:Xst:2261 - The FF/Latch <IODRPCTRLR_MEMCELL_ADDR_2> in Unit <mcb_soft_calibration_inst> is equivalent to the following 3 FFs/Latches, which will be removed : <IODRPCTRLR_MEMCELL_ADDR_4> <IODRPCTRLR_MEMCELL_ADDR_5> <IODRPCTRLR_MEMCELL_ADDR_6> 
 INFO:Xst:2261 - The FF/Latch <c3_p0_cmd_byte_addr_0> in Unit <ddr_wrapper> is equivalent to the following 28 FFs/Latches, which will be removed : <c3_p0_cmd_byte_addr_1> <c3_p0_cmd_byte_addr_2> <c3_p0_cmd_byte_addr_3> <c3_p0_cmd_byte_addr_5> <c3_p0_cmd_byte_addr_6> <c3_p0_cmd_byte_addr_7> <c3_p0_cmd_byte_addr_8> <c3_p0_cmd_byte_addr_9> <c3_p0_cmd_byte_addr_10> <c3_p0_cmd_byte_addr_11> <c3_p0_cmd_byte_addr_12> <c3_p0_cmd_byte_addr_13> <c3_p0_cmd_byte_addr_14> <c3_p0_cmd_byte_addr_15> <c3_p0_cmd_byte_addr_16> <c3_p0_cmd_byte_addr_17> <c3_p0_cmd_byte_addr_18> <c3_p0_cmd_byte_addr_19> <c3_p0_cmd_byte_addr_20> <c3_p0_cmd_byte_addr_21> <c3_p0_cmd_byte_addr_22> <c3_p0_cmd_byte_addr_23> <c3_p0_cmd_byte_addr_24> <c3_p0_cmd_byte_addr_25> <c3_p0_cmd_byte_addr_26> <c3_p0_cmd_byte_addr_27> <c3_p0_cmd_byte_addr_28> <c3_p0_cmd_byte_addr_29> 
-INFO:Xst:2261 - The FF/Latch <c3_p0_wr_data_0> in Unit <ddr_wrapper> is equivalent to the following FF/Latch, which will be removed : <c3_p0_wr_data_2> 
-INFO:Xst:2261 - The FF/Latch <c3_p0_wr_data_1> in Unit <ddr_wrapper> is equivalent to the following 61 FFs/Latches, which will be removed : <c3_p0_wr_data_3> <c3_p0_wr_data_4> <c3_p0_wr_data_5> <c3_p0_wr_data_6> <c3_p0_wr_data_7> <c3_p0_wr_data_8> <c3_p0_wr_data_9> <c3_p0_wr_data_10> <c3_p0_wr_data_11> <c3_p0_wr_data_12> <c3_p0_wr_data_13> <c3_p0_wr_data_14> <c3_p0_wr_data_15> <c3_p0_wr_data_16> <c3_p0_wr_data_17> <c3_p0_wr_data_18> <c3_p0_wr_data_19> <c3_p0_wr_data_20> <c3_p0_wr_data_21> <c3_p0_wr_data_22> <c3_p0_wr_data_23> <c3_p0_wr_data_24> <c3_p0_wr_data_25> <c3_p0_wr_data_26> <c3_p0_wr_data_27> <c3_p0_wr_data_28> <c3_p0_wr_data_29> <c3_p0_wr_data_30> <c3_p0_wr_data_31> <c3_p0_wr_data_32> <c3_p0_wr_data_33> <c3_p0_wr_data_34> <c3_p0_wr_data_35> <c3_p0_wr_data_36> <c3_p0_wr_data_37> <c3_p0_wr_data_38> <c3_p0_wr_data_39> <c3_p0_wr_data_40> <c3_p0_wr_data_41> <c3_p0_wr_data_42> <c3_p0_wr_data_43> <c3_p0_wr_data_44> <c3_p0_wr_data_45> <c3_p0_wr_data_46> <c3_p0_wr_data_47> <c3_p0_wr_data_48>
-   <c3_p0_wr_data_49> <c3_p0_wr_data_50> <c3_p0_wr_data_51> <c3_p0_wr_data_52> <c3_p0_wr_data_53> <c3_p0_wr_data_54> <c3_p0_wr_data_55> <c3_p0_wr_data_56> <c3_p0_wr_data_57> <c3_p0_wr_data_58> <c3_p0_wr_data_59> <c3_p0_wr_data_60> <c3_p0_wr_data_61> <c3_p0_wr_data_62> <c3_p0_wr_data_63> 
 INFO:Xst:2261 - The FF/Latch <c3_p0_cmd_instr_1> in Unit <ddr_wrapper> is equivalent to the following 4 FFs/Latches, which will be removed : <c3_p0_cmd_instr_2> <c3_p0_cmd_bl_0> <c3_p0_cmd_bl_3> <c3_p0_cmd_bl_5> 
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_0 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_1 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_2 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_3 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_4 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_5 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_6 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_7 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_instr_1> (without init value) has a constant value of 0 in block <ddr_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <reset> has a constant value of 0 in block <ddr_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_byte_addr_4> (without init value) has a constant value of 1 in block <ddr_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_byte_addr_0> (without init value) has a constant value of 0 in block <ddr_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <c3_p0_wr_data_1> (without init value) has a constant value of 0 in block <ddr_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <c3_p0_wr_data_0> (without init value) has a constant value of 1 in block <ddr_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <IODRPCTRLR_MEMCELL_ADDR_2> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <DQS_DELAY_INITIAL_7> has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <MCB_UIDQCOUNT_3> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
@@ -2194,8 +2259,11 @@ WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_2> (without init value) has a cons
 WARNING:Xst:1710 - FF/Latch <powerup_pll_locked> (without init value) has a constant value of 1 in block <memc3_infrastructure_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2404 -  FFs/Latches <c3_p0_cmd_instr<2:1>> (without init value) have a constant value of 0 in block <atlys_ddr_test>.
 WARNING:Xst:2404 -  FFs/Latches <c3_p0_cmd_bl<5:5>> (without init value) have a constant value of 0 in block <atlys_ddr_test>.
-WARNING:Xst:2404 -  FFs/Latches <c3_p0_wr_data<63:3>> (without init value) have a constant value of 0 in block <atlys_ddr_test>.
 WARNING:Xst:2404 -  FFs/Latches <c3_p0_cmd_byte_addr<29:5>> (without init value) have a constant value of 0 in block <atlys_ddr_test>.
+
+Synthesizing (advanced) Unit <atlys_ddr_test>.
+The following registers are absorbed into counter <temp>: 1 register on signal <temp>.
+Unit <atlys_ddr_test> synthesized (advanced).
 
 Synthesizing (advanced) Unit <iodrp_controller>.
 The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
@@ -2212,7 +2280,7 @@ The following registers are absorbed into counter <DQS_DELAY>: 1 register on sig
 The following registers are absorbed into counter <counter_inc>: 1 register on signal <counter_inc>.
 The following registers are absorbed into counter <counter_dec>: 1 register on signal <counter_dec>.
 	The following adders/subtractors are grouped into adder tree <Madd_n0420_Madd1> :
- 	<Madd_n0610[8:0]> in block <mcb_soft_calibration>, 	<Madd_n0613[9:0]> in block <mcb_soft_calibration>, 	<Madd_n0616[10:0]_Madd> in block <mcb_soft_calibration>, 	<Madd__n0710_Madd> in block <mcb_soft_calibration>.
+ 	<Madd_n0610[8:0]> in block <mcb_soft_calibration>, 	<Madd_n0613[9:0]> in block <mcb_soft_calibration>, 	<Madd_n0616[10:0]_Madd> in block <mcb_soft_calibration>, 	<Madd__n0711_Madd> in block <mcb_soft_calibration>.
 	The following adders/subtractors are grouped into adder tree <Madd_n0592[9:0]1> :
  	<Madd_n0586[7:0]> in block <mcb_soft_calibration>, 	<Madd_n0589[8:0]> in block <mcb_soft_calibration>, 	<Madd_n0592[9:0]> in block <mcb_soft_calibration>.
 Unit <mcb_soft_calibration> synthesized (advanced).
@@ -2221,9 +2289,10 @@ Unit <mcb_soft_calibration> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 11
+# Adders/Subtractors                                   : 12
  10-bit adder                                          : 2
  12-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
  6-bit adder                                           : 1
  7-bit adder                                           : 1
  8-bit subtractor                                      : 2
@@ -2231,14 +2300,15 @@ Macro Statistics
 # Adder Trees                                          : 2
  10-bit / 4-inputs adder tree                          : 1
  10-bit / 6-inputs adder tree                          : 1
-# Counters                                             : 7
+# Counters                                             : 8
  16-bit up counter                                     : 1
  3-bit up counter                                      : 2
  6-bit up counter                                      : 1
+ 64-bit up counter                                     : 1
  8-bit up counter                                      : 2
  8-bit updown counter                                  : 1
-# Registers                                            : 258
- Flip-Flops                                            : 258
+# Registers                                            : 376
+ Flip-Flops                                            : 376
 # Comparators                                          : 15
  10-bit comparator greater                             : 2
  6-bit comparator equal                                : 1
@@ -2246,16 +2316,20 @@ Macro Statistics
  7-bit comparator equal                                : 1
  8-bit comparator greater                              : 8
  8-bit comparator lessequal                            : 2
-# Multiplexers                                         : 62
- 1-bit 2-to-1 multiplexer                              : 32
+# Multiplexers                                         : 114
+ 1-bit 2-to-1 multiplexer                              : 66
  1-bit 3-to-1 multiplexer                              : 1
  10-bit 2-to-1 multiplexer                             : 2
  12-bit 2-to-1 multiplexer                             : 3
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
  6-bit 2-to-1 multiplexer                              : 5
+ 64-bit 2-to-1 multiplexer                             : 2
  7-bit 2-to-1 multiplexer                              : 4
- 8-bit 2-to-1 multiplexer                              : 14
+ 8-bit 2-to-1 multiplexer                              : 17
+ 8-bit 4-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 1
-# FSMs                                                 : 4
+# FSMs                                                 : 5
 
 =========================================================================
 
@@ -2267,9 +2341,6 @@ WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_byte_addr_1> (without init value) has a c
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_byte_addr_2> (without init value) has a constant value of 0 in block <atlys_ddr_test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_byte_addr_3> (without init value) has a constant value of 0 in block <atlys_ddr_test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_byte_addr_4> (without init value) has a constant value of 1 in block <atlys_ddr_test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <c3_p0_wr_data_0> (without init value) has a constant value of 1 in block <atlys_ddr_test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <c3_p0_wr_data_1> (without init value) has a constant value of 0 in block <atlys_ddr_test>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <c3_p0_wr_data_2> (without init value) has a constant value of 1 in block <atlys_ddr_test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <reset> has a constant value of 0 in block <atlys_ddr_test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_bl_0> (without init value) has a constant value of 0 in block <atlys_ddr_test>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <c3_p0_cmd_bl_3> (without init value) has a constant value of 0 in block <atlys_ddr_test>. This FF/Latch will be trimmed during the optimization process.
@@ -2284,13 +2355,30 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_ADDR_5> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_ADDR_6> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <DRP_BKST> (without init value) has a constant value of 0 in block <iodrp_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_0 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_1 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_2 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_3 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_4 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_5 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_6 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch reg3_7 hinder the constant cleaning in the block vhdl_wrapper_for_verilog.
+   You should achieve better results by setting this init to 1.
+INFO:Xst:2261 - The FF/Latch <reg3_0> in Unit <vhdl_wrapper_for_verilog> is equivalent to the following 7 FFs/Latches, which will be removed : <reg3_1> <reg3_2> <reg3_3> <reg3_4> <reg3_5> <reg3_6> <reg3_7> 
 INFO:Xst:2261 - The FF/Latch <memcell_addr_reg_2> in Unit <iodrp_controller> is equivalent to the following 3 FFs/Latches, which will be removed : <memcell_addr_reg_4> <memcell_addr_reg_5> <memcell_addr_reg_6> 
 INFO:Xst:2261 - The FF/Latch <memcell_addr_reg_2> in Unit <iodrp_mcb_controller> is equivalent to the following 3 FFs/Latches, which will be removed : <memcell_addr_reg_4> <memcell_addr_reg_5> <memcell_addr_reg_6> 
 WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_2> (without init value) has a constant value of 0 in block <iodrp_controller>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_2> (without init value) has a constant value of 0 in block <iodrp_mcb_controller>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <powerup_pll_locked> (without init value) has a constant value of 1 in block <infrastructure>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ddr_wrapper/FSM_0> on signal <state[1:4]> with sequential encoding.
+Optimizing FSM <ddr_wrapper/FSM_1> on signal <state[1:4]> with sequential encoding.
 -------------------
  State | Encoding
 -------------------
@@ -2308,7 +2396,7 @@ Optimizing FSM <ddr_wrapper/FSM_0> on signal <state[1:4]> with sequential encodi
  01011 | 1011
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/FSM_1> on signal <STATE[1:6]> with gray encoding.
+Optimizing FSM <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/FSM_2> on signal <STATE[1:6]> with gray encoding.
 --------------------
  State  | Encoding
 --------------------
@@ -2356,7 +2444,7 @@ Optimizing FSM <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_i
  100111 | 111101
  101010 | unreached
 --------------------
-Optimizing FSM <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/FSM_2> on signal <state[1:8]> with one-hot encoding.
+Optimizing FSM <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/FSM_3> on signal <state[1:8]> with one-hot encoding.
 -------------------
  State | Encoding
 -------------------
@@ -2369,7 +2457,7 @@ Optimizing FSM <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_i
  101   | 01000000
  110   | 10000000
 -------------------
-Optimizing FSM <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller/FSM_3> on signal <state[1:4]> with GRAY encoding.
+Optimizing FSM <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller/FSM_4> on signal <state[1:4]> with GRAY encoding.
 -------------------
  State | Encoding
 -------------------
@@ -2384,10 +2472,26 @@ Optimizing FSM <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_i
  1000  | 1100
  1001  | 1101
 -------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <comm_fpga_fx2/FSM_0> on signal <state[1:4]> with user encoding.
+------------------------------------
+ State                  | Encoding
+------------------------------------
+ s_idle                 | 0000
+ s_get_count0           | 0001
+ s_get_count1           | 0010
+ s_get_count2           | 0011
+ s_get_count3           | 0100
+ s_begin_write          | 0101
+ s_write                | 0110
+ s_end_write_aligned    | 0111
+ s_end_write_nonaligned | 1000
+ s_read                 | 1001
+------------------------------------
 WARNING:Xst:1710 - FF/Latch <IODRPCTRLR_WRITE_DATA_7> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <TARGET_DQS_DELAY_7> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <c3_p0_cmd_instr> in Unit <atlys_ddr_test> is equivalent to the following FF/Latch, which will be removed : <c3_p0_cmd_bl_4> 
 INFO:Xst:2261 - The FF/Latch <c3_p0_cmd_bl_1> in Unit <atlys_ddr_test> is equivalent to the following FF/Latch, which will be removed : <c3_p0_cmd_bl_2> 
+INFO:Xst:2261 - The FF/Latch <c3_p0_cmd_instr> in Unit <atlys_ddr_test> is equivalent to the following FF/Latch, which will be removed : <c3_p0_cmd_bl_4> 
 INFO:Xst:2261 - The FF/Latch <MCB_UIADDR_0> in Unit <mcb_soft_calibration> is equivalent to the following 3 FFs/Latches, which will be removed : <MCB_UIADDR_2> <MCB_UIADDR_3> <MCB_UIADDR_4> 
 
 Optimizing unit <infrastructure> ...
@@ -2414,18 +2518,21 @@ INFO:Xst:2261 - The FF/Latch <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_ins
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block vhdl_wrapper_for_verilog, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block vhdl_wrapper_for_verilog, actual ratio is 3.
+FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_4 has been replicated 1 time(s)
+FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_6 has been replicated 1 time(s)
 FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Pre_SYSRST has been replicated 3 time(s)
-FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1 has been replicated 1 time(s)
 FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd2 has been replicated 3 time(s)
 FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd3 has been replicated 1 time(s)
-FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd4 has been replicated 2 time(s)
-FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd5 has been replicated 3 time(s)
-FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6 has been replicated 2 time(s)
+FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd4 has been replicated 1 time(s)
+FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd5 has been replicated 2 time(s)
+FlipFlop ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd6 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
 Processing Unit <vhdl_wrapper_for_verilog> :
+	Found 2-bit shift register for signal <ddr_wrapper/calib_done_1>.
 	Found 2-bit shift register for signal <ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/SELFREFRESH_MCB_MODE_R2>.
 Unit <vhdl_wrapper_for_verilog> processed.
 
@@ -2433,10 +2540,10 @@ Unit <vhdl_wrapper_for_verilog> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 296
- Flip-Flops                                            : 296
-# Shift Registers                                      : 1
- 2-bit shift register                                  : 1
+# Registers                                            : 474
+ Flip-Flops                                            : 474
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 2
 
 =========================================================================
 
@@ -2459,38 +2566,40 @@ Top Level Output File Name         : vhdl_wrapper_for_verilog.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 706
+# BELS                             : 1167
 #      GND                         : 1
-#      INV                         : 7
-#      LUT1                        : 27
-#      LUT2                        : 58
-#      LUT3                        : 47
-#      LUT4                        : 81
-#      LUT5                        : 106
-#      LUT6                        : 212
+#      INV                         : 39
+#      LUT1                        : 91
+#      LUT2                        : 59
+#      LUT3                        : 125
+#      LUT4                        : 93
+#      LUT5                        : 144
+#      LUT6                        : 259
 #      MULT_AND                    : 6
-#      MUXCY                       : 69
-#      MUXF7                       : 18
+#      MUXCY                       : 163
+#      MUXF7                       : 17
 #      VCC                         : 1
-#      XORCY                       : 73
-# FlipFlops/Latches                : 297
-#      FD                          : 47
+#      XORCY                       : 169
+# FlipFlops/Latches                : 476
+#      FD                          : 59
 #      FDC                         : 2
 #      FDCE                        : 26
-#      FDE                         : 40
+#      FDE                         : 209
 #      FDP                         : 1
-#      FDR                         : 91
-#      FDRE                        : 83
+#      FDR                         : 86
+#      FDRE                        : 86
 #      FDS                         : 7
-# Shift Registers                  : 1
-#      SRLC16E                     : 1
-# Clock Buffers                    : 2
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 3
 #      BUFG                        : 2
-# IO Buffers                       : 53
+#      BUFGP                       : 1
+# IO Buffers                       : 77
+#      IBUF                        : 10
 #      IBUFG                       : 1
-#      IOBUF                       : 18
+#      IOBUF                       : 26
 #      IOBUFDS                     : 2
-#      OBUF                        : 8
+#      OBUF                        : 14
 #      OBUFT                       : 23
 #      OBUFTDS                     : 1
 # Others                           : 75
@@ -2506,29 +2615,29 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx45csg324-3 
+Selected Device : 6slx45csg324-2 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             297  out of  54576     0%  
- Number of Slice LUTs:                  539  out of  27288     1%  
-    Number used as Logic:               538  out of  27288     1%  
-    Number used as Memory:                1  out of   6408     0%  
-       Number used as SRL:                1
+ Number of Slice Registers:             476  out of  54576     0%  
+ Number of Slice LUTs:                  812  out of  27288     2%  
+    Number used as Logic:               810  out of  27288     2%  
+    Number used as Memory:                2  out of   6408     0%  
+       Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    638
-   Number with an unused Flip Flop:     341  out of    638    53%  
-   Number with an unused LUT:            99  out of    638    15%  
-   Number of fully used LUT-FF pairs:   198  out of    638    31%  
-   Number of unique control sets:        26
+ Number of LUT Flip Flop pairs used:    927
+   Number with an unused Flip Flop:     451  out of    927    48%  
+   Number with an unused LUT:           115  out of    927    12%  
+   Number of fully used LUT-FF pairs:   361  out of    927    38%  
+   Number of unique control sets:        35
 
 IO Utilization: 
- Number of IOs:                          56
- Number of bonded IOBs:                  56  out of    218    25%  
+ Number of IOs:                          81
+ Number of bonded IOBs:                  81  out of    218    37%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
  Number of PLL_ADVs:                      1  out of      4    25%  
 
 ---------------------------
@@ -2552,8 +2661,9 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | PLL_ADV:CLKOUT2        | 47    |
-clk                                | PLL_ADV:CLKOUT3        | 251   |
+fx2Clk_in                          | BUFGP                  | 54    |
+clk                                | PLL_ADV:CLKOUT2        | 175   |
+clk                                | PLL_ADV:CLKOUT3        | 249   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -2562,12 +2672,12 @@ No asynchronous control signals found in this design
 
 Timing Summary:
 ---------------
-Speed Grade: -3
+Speed Grade: -2
 
-   Minimum period: 36.443ns (Maximum Frequency: 27.440MHz)
-   Minimum input arrival time before clock: 4.812ns
-   Maximum output required time after clock: 3.634ns
-   Maximum combinational path delay: 3.150ns
+   Minimum period: 42.819ns (Maximum Frequency: 23.354MHz)
+   Minimum input arrival time before clock: 5.578ns
+   Maximum output required time after clock: 7.925ns
+   Maximum combinational path delay: 7.173ns
 
 Timing Details:
 ---------------
@@ -2575,10 +2685,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 36.443ns (frequency: 27.440MHz)
-  Total number of paths / destination ports: 15807 / 652
+  Clock period: 42.819ns (frequency: 23.354MHz)
+  Total number of paths / destination ports: 18917 / 907
 -------------------------------------------------------------------------
-Delay:               5.831ns (Levels of Logic = 7)
+Delay:               6.851ns (Levels of Logic = 7)
   Source:            ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_0 (FF)
   Destination:       ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1 (FF)
   Source Clock:      clk rising 6.2X
@@ -2588,24 +2698,70 @@ Delay:               5.831ns (Levels of Logic = 7)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             13   0.447   0.933  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_0 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_0)
-     LUT2:I1->O            1   0.205   0.000  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_lut<0> (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_cy<0> (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_cy<0>)
-     XORCY:CI->O           1   0.180   0.684  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_xor<1> (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_Delta_Dn<1>)
-     LUT3:I1->O            1   0.203   0.580  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/n02041_SW0 (N61)
-     LUT6:I5->O           17   0.205   1.132  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/n02041 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/n0204)
-     LUT6:I4->O            1   0.203   0.580  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In8 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In9)
-     LUT6:I5->O            3   0.205   0.000  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In9 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In)
-     FDR:D                     0.102          ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1
+     FDR:C->Q             13   0.525   1.098  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_0 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_0)
+     LUT2:I1->O            1   0.254   0.000  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_lut<0> (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_cy<0> (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_cy<0>)
+     XORCY:CI->O           1   0.206   0.790  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Msub_Max_Value_Delta_Dn_xor<1> (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Max_Value_Delta_Dn<1>)
+     LUT3:I1->O            1   0.250   0.682  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/n02041_SW0 (N107)
+     LUT6:I5->O           17   0.254   1.317  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/n02041 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/n0204)
+     LUT6:I4->O            1   0.250   0.682  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In8 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In9)
+     LUT6:I5->O            2   0.254   0.000  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In9 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In)
+     FDR:D                     0.074          ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1
     ----------------------------------------
-    Total                      5.831ns (1.922ns logic, 3.909ns route)
-                                       (33.0% logic, 67.0% route)
+    Total                      6.851ns (2.282ns logic, 4.569ns route)
+                                       (33.3% logic, 66.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'fx2Clk_in'
+  Clock period: 6.562ns (frequency: 152.393MHz)
+  Total number of paths / destination ports: 1113 / 77
+-------------------------------------------------------------------------
+Delay:               6.562ns (Levels of Logic = 5)
+  Source:            comm_fpga_fx2/count_4 (FF)
+  Destination:       comm_fpga_fx2/state_FSM_FFd3 (FF)
+  Source Clock:      fx2Clk_in rising
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/count_4 to comm_fpga_fx2/state_FSM_FFd3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.525   0.994  comm_fpga_fx2/count_4 (comm_fpga_fx2/count_4)
+     LUT3:I0->O            1   0.235   0.682  comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>1_SW0 (N2)
+     LUT6:I5->O            2   0.254   1.156  comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>1 (comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>1)
+     LUT5:I0->O            5   0.254   1.069  comm_fpga_fx2/count[31]_GND_5_o_equal_19_o<31>6 (comm_fpga_fx2/count[31]_GND_5_o_equal_19_o)
+     LUT3:I0->O            2   0.235   0.834  comm_fpga_fx2/state_FSM_FFd2-In11 (comm_fpga_fx2/state_FSM_FFd2-In1)
+     LUT6:I4->O            1   0.250   0.000  comm_fpga_fx2/state_FSM_FFd3-In1 (comm_fpga_fx2/state_FSM_FFd3-In)
+     FD:D                      0.074          comm_fpga_fx2/state_FSM_FFd3
+    ----------------------------------------
+    Total                      6.562ns (1.827ns logic, 4.735ns route)
+                                       (27.8% logic, 72.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 162 / 92
+-------------------------------------------------------------------------
+Offset:              5.074ns (Levels of Logic = 2)
+  Source:            fx2GotData_in (PAD)
+  Destination:       comm_fpga_fx2/count_31 (FF)
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: fx2GotData_in to comm_fpga_fx2/count_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            41   1.328   1.671  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT6:I5->O           32   0.254   1.519  comm_fpga_fx2/_n0223_inv1 (comm_fpga_fx2/_n0223_inv)
+     FDE:CE                    0.302          comm_fpga_fx2/count_0
+    ----------------------------------------
+    Total                      5.074ns (1.884ns logic, 3.190ns route)
+                                       (37.1% logic, 62.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 98 / 66
+  Total number of paths / destination ports: 90 / 62
 -------------------------------------------------------------------------
-Offset:              4.812ns (Levels of Logic = 4)
+Offset:              5.578ns (Levels of Logic = 4)
   Source:            ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0:UOREFRSHFLAG (PAD)
   Destination:       ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_6 (FF)
   Destination Clock: clk rising 6.2X
@@ -2614,52 +2770,77 @@ Offset:              4.812ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    MCB:UOREFRSHFLAG      21   0.000   1.458  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/uo_refrsh_flag)
-     LUT5:I0->O            1   0.203   0.944  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In11_SW2 (N147)
-     LUT6:I0->O            2   0.203   0.721  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Mmux_STATE[5]_GND_19_o_Mux_198_o11 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Mmux_STATE[5]_GND_19_o_Mux_198_o11)
-     LUT6:I4->O            7   0.203   0.774  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1389_inv1_rstpot (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1389_inv1_rstpot)
-     LUT4:I3->O            1   0.205   0.000  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_0_dpot1 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_0_dpot1)
-     FDRE:D                    0.102          ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_0
+    MCB:UOREFRSHFLAG      21   0.000   1.740  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/uo_refrsh_flag)
+     LUT5:I0->O            1   0.254   1.112  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd1-In11_SW2 (N208)
+     LUT6:I1->O            2   0.254   0.726  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Mmux_STATE[5]_GND_29_o_Mux_198_o11 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Mmux_STATE[5]_GND_29_o_Mux_198_o11)
+     LUT6:I5->O            7   0.254   0.910  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1389_inv1_rstpot (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1389_inv1_rstpot)
+     LUT3:I2->O            1   0.254   0.000  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_0_dpot (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_0_dpot)
+     FDRE:D                    0.074          ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/DQS_DELAY_0
     ----------------------------------------
-    Total                      4.812ns (0.916ns logic, 3.896ns route)
-                                       (19.0% logic, 81.0% route)
+    Total                      5.578ns (1.090ns logic, 4.488ns route)
+                                       (19.5% logic, 80.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 156 / 13
+-------------------------------------------------------------------------
+Offset:              7.925ns (Levels of Logic = 3)
+  Source:            comm_fpga_fx2/state_FSM_FFd2 (FF)
+  Destination:       fx2Data_io<7> (PAD)
+  Source Clock:      fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/state_FSM_FFd2 to fx2Data_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              65   0.525   2.165  comm_fpga_fx2/state_FSM_FFd2 (comm_fpga_fx2/state_FSM_FFd2)
+     LUT4:I1->O            8   0.235   1.172  comm_fpga_fx2/_n0128<3>1 (comm_fpga_fx2/_n0128)
+     LUT4:I1->O            1   0.235   0.681  comm_fpga_fx2/Mmux_dataOut1 (comm_fpga_fx2/dataOut<0>)
+     IOBUF:I->IO               2.912          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+    ----------------------------------------
+    Total                      7.925ns (3.907ns logic, 4.018ns route)
+                                       (49.3% logic, 50.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 88 / 80
+  Total number of paths / destination ports: 150 / 142
 -------------------------------------------------------------------------
-Offset:              3.634ns (Levels of Logic = 1)
-  Source:            ddr_wrapper/calib_done_1 (FF)
-  Destination:       leds<1> (PAD)
-  Source Clock:      clk rising 3.1X
+Offset:              3.790ns (Levels of Logic = 2)
+  Source:            ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/syn_uiclk_pll_lock (FF)
+  Destination:       ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/IODRP2_RZQ:T (PAD)
+  Source Clock:      clk rising 6.2X
 
-  Data Path: ddr_wrapper/calib_done_1 to leds<1>
+  Data Path: ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/syn_uiclk_pll_lock to ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/IODRP2_RZQ:T
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.616  ddr_wrapper/calib_done_1 (ddr_wrapper/calib_done_1)
-     OBUF:I->O                 2.571          leds_1_OBUF (leds<1>)
+     FD:C->Q               2   0.525   0.726  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/syn_uiclk_pll_lock (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/syn_uiclk_pll_lock)
+     LUT1:I0->O           77   0.254   2.030  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/int_sys_rst1 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/int_sys_rst)
+     INV:I->O              0   0.255   0.000  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_ZIO_ODATAIN1_INV_0 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_ZIO_ODATAIN)
+    IODRP2:ODATAIN             0.000          ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/gen_zio.IODRP2_ZIO
     ----------------------------------------
-    Total                      3.634ns (3.018ns logic, 0.616ns route)
-                                       (83.0% logic, 17.0% route)
+    Total                      3.790ns (1.034ns logic, 2.756ns route)
+                                       (27.3% logic, 72.7% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 711 / 662
+  Total number of paths / destination ports: 740 / 675
 -------------------------------------------------------------------------
-Delay:               3.150ns (Levels of Logic = 1)
-  Source:            ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_ba_oserdes2[2].ioi_ba_0:OQ (PAD)
-  Destination:       DDR2BA<2> (PAD)
+Delay:               7.173ns (Levels of Logic = 4)
+  Source:            sw<7> (PAD)
+  Destination:       fx2Data_io<7> (PAD)
 
-  Data Path: ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_ba_oserdes2[2].ioi_ba_0:OQ to DDR2BA<2>
+  Data Path: sw<7> to fx2Data_io<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-    OSERDES2:OQ            1   0.000   0.579  ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_ba_oserdes2[2].ioi_ba_0 (ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/ioi_ba<2>)
-     OBUFT:I->O                2.571          ddr_wrapper/ddr_interface/u_ddr2/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_ba_obuft[2].iob_ba_inst (DDR2BA<2>)
+     IBUF:I->O             1   1.328   0.790  sw_7_IBUF (sw_7_IBUF)
+     LUT5:I3->O            1   0.250   0.958  comm_fpga_fx2/Mmux_dataOut8_SW0 (N18)
+     LUT4:I0->O            1   0.254   0.681  comm_fpga_fx2/Mmux_dataOut8 (comm_fpga_fx2/dataOut<7>)
+     IOBUF:I->IO               2.912          fx2Data_io_7_IOBUF (fx2Data_io<7>)
     ----------------------------------------
-    Total                      3.150ns (2.571ns logic, 0.579ns route)
-                                       (81.6% logic, 18.4% route)
+    Total                      7.173ns (4.744ns logic, 2.429ns route)
+                                       (66.1% logic, 33.9% route)
 
 =========================================================================
 
@@ -2671,21 +2852,29 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.831|         |         |         |
+clk            |    6.851|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock fx2Clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |    6.562|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 17.87 secs
+Total REAL time to Xst completion: 21.00 secs
+Total CPU time to Xst completion: 20.02 secs
  
 --> 
 
 
-Total memory usage is 426340 kilobytes
+Total memory usage is 428912 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1089 (   0 filtered)
-Number of infos    :  173 (   0 filtered)
+Number of warnings : 1098 (   0 filtered)
+Number of infos    :  175 (   0 filtered)
 

@@ -76,7 +76,7 @@ mkdir "../synth/xst" >> ise_flow_results.txt
 mkdir "../synth/xst/work" >> ise_flow_results.txt
 
 xst -ifn ise_run.txt -ofn mem_interface_top.syr -intstyle ise >> ise_flow_results.txt
-ngdbuild -intstyle ise -dd ../synth/_ngo -uc ddr2.ucf -p xc6slx45csg324-3 ddr2.ngc ddr2.ngd >> ise_flow_results.txt
+ngdbuild -intstyle ise -dd ../synth/_ngo -uc ddr2.ucf -p xc6slx45csg324-2 ddr2.ngc ddr2.ngd >> ise_flow_results.txt
 
 map -intstyle ise -detail -w -pr off -c 100 -o ddr2_map.ncd ddr2.ngd ddr2.pcf >> ise_flow_results.txt
 par -w -intstyle ise -ol std ddr2_map.ncd ddr2.ncd ddr2.pcf >> ise_flow_results.txt

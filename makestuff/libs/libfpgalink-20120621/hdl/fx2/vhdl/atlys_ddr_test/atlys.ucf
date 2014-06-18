@@ -1,22 +1,47 @@
-CONFIG VCCAUX  = 3.3;
 
-#NET "sw<0>" LOC = "A10";
-#NET "sw<1>" LOC = "D14";
-#NET "sw<2>" LOC = "C14";
-#NET "sw<3>" LOC = "P15";
-#NET "sw<4>" LOC = "P12";
-#NET "sw<5>" LOC = "R5";
-#NET "sw<6>" LOC = "T5";
-#NET "sw<7>" LOC = "E4";
-NET "clk"  LOC = "L15"; 
-NET "leds[0]"  LOC = "U18" |  IOSTANDARD=LVCMOS25;
-NET "leds[1]"  LOC = "M14" |  IOSTANDARD=LVCMOS25;
-NET "leds[2]"  LOC = "N14" |  IOSTANDARD=LVCMOS25;
-NET "leds[3]"  LOC = "L14" |  IOSTANDARD=LVCMOS25;
-NET "leds[4]"  LOC = "M13" |  IOSTANDARD=LVCMOS25;
-NET "leds[5]"  LOC = "D4" |  IOSTANDARD=LVCMOS25;
-NET "leds[6]"  LOC = "P16" |  IOSTANDARD=LVCMOS25;
-NET "leds[7]"  LOC = "N12" |  IOSTANDARD=LVCMOS25;
+
+NET "sw<0>" LOC = "A10" | IOSTANDARD = LVCMOS33;
+NET "sw<1>" LOC = "D14" | IOSTANDARD = LVCMOS33;
+NET "sw<2>" LOC = "C14" | IOSTANDARD = LVCMOS33;
+NET "sw<3>" LOC = "P15" | IOSTANDARD = LVCMOS33;
+NET "sw<4>" LOC = "P12" | IOSTANDARD = LVCMOS33;
+NET "sw<5>" LOC = "R5" | IOSTANDARD = LVCMOS33;
+NET "sw<6>" LOC = "T5" | IOSTANDARD = LVCMOS33;
+NET "sw<7>" LOC = "E4" | IOSTANDARD = LVCMOS33;
+NET "clk"  LOC = "L15" | IOSTANDARD = LVCMOS33;
+NET "leds[0]"  LOC = "U18" |  IOSTANDARD=LVCMOS33;#LVCMOS25;
+NET "leds[1]"  LOC = "M14" |  IOSTANDARD=LVCMOS33;#LVCMOS25;
+NET "leds[2]"  LOC = "N14" |  IOSTANDARD=LVCMOS33;#LVCMOS25;
+NET "leds[3]"  LOC = "L14" |  IOSTANDARD=LVCMOS33;#LVCMOS25;
+NET "leds[4]"  LOC = "M13" |  IOSTANDARD=LVCMOS33;#LVCMOS25;
+NET "leds[5]"  LOC = "D4"  |  IOSTANDARD=LVCMOS33;#LVCMOS25;
+NET "leds[6]"  LOC = "P16" |  IOSTANDARD=LVCMOS33;#LVCMOS25;
+NET "leds[7]"  LOC = "N12" |  IOSTANDARD=LVCMOS33;#LVCMOS25;
+
+#===============================================================================
+# USB interface
+#===============================================================================
+NET "fx2Clk_in"       LOC="C10"  | IOSTANDARD=LVTTL;   # IFCLK
+NET "fx2Addr_out<0>"  LOC="A14"  | IOSTANDARD=LVTTL;   # PA4/FIFOADR0
+NET "fx2Addr_out<1>"  LOC="B14"  | IOSTANDARD=LVTTL;   # PA5/FIFOADR1
+
+NET "fx2Data_io<0>"   LOC="A2"   | IOSTANDARD=LVTTL;   # PB0/FD0
+NET "fx2Data_io<1>"   LOC="D6"   | IOSTANDARD=LVTTL;   # PB1/FD1
+NET "fx2Data_io<2>"   LOC="C6"   | IOSTANDARD=LVTTL;   # PB2/FD2
+NET "fx2Data_io<3>"   LOC="B3"   | IOSTANDARD=LVTTL;   # PB3/FD3
+NET "fx2Data_io<4>"   LOC="A3"   | IOSTANDARD=LVTTL;   # PB4/FD4
+NET "fx2Data_io<5>"   LOC="B4"   | IOSTANDARD=LVTTL;   # PB5/FD5
+NET "fx2Data_io<6>"   LOC="A4"   | IOSTANDARD=LVTTL;   # PB6/FD6
+NET "fx2Data_io<7>"   LOC="C5"   | IOSTANDARD=LVTTL;   # PB7/FD7
+
+NET "fx2Read_out"     LOC="F13"  | IOSTANDARD=LVTTL;   # RDY0/SLRD
+NET "fx2OE_out"       LOC="A15"  | IOSTANDARD=LVTTL;   # PA2/SLOE
+NET "fx2GotData_in"   LOC="C15"  | IOSTANDARD=LVTTL;   # CTL2/FLAGC
+
+NET "fx2Write_out"    LOC="E13"  | IOSTANDARD=LVTTL;   # RDY1/SLWR
+NET "fx2GotRoom_in"   LOC="A9"   | IOSTANDARD=LVTTL;   # CTL1/FLAGB
+NET "fx2PktEnd_out"   LOC="C4"   | IOSTANDARD=LVTTL;   # PA6/PKTEND
+
 #NET "rs232_rx"  LOC = "A16";
 #NET "rs232_tx"  LOC = "B16";
 # Atlys PMOD connector
@@ -37,7 +62,7 @@ NET "leds[7]"  LOC = "N12" |  IOSTANDARD=LVCMOS25;
 #NET "btn<4>" LOC = "F5"; # BTNC
 #NET "btn<5>" LOC = "F6"; # BTNR
 # Timing constraints
-NET "clk" TNM_NET = clk;
+NET "clk" IOSTANDARD = LVCMOS33;# TNM_NET = clk;
 
 TIMESPEC TS_clk = PERIOD "clk" 100 MHz HIGH 50%; # 10ns
 #Net PhyResetOut_pin LOC=G13  |  TIG  |  IOSTANDARD=LVCMOS25;
@@ -76,14 +101,43 @@ TIMESPEC TS_clk = PERIOD "clk" 100 MHz HIGH 50%; # 10ns
 #TIMESPEC "TS_MDC_pin" = PERIOD "MDC_pin" 6.25 MHz HIGH 50 %;
 
 # DDR2
+CONFIG VCCAUX  = 3.3;
+CONFIG MCB_PERFORMANCE= STANDARD;
+NET "*/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/selfrefresh_mcb_mode" TIG;
+NET "*/c?_pll_lock" TIG;
+NET "*/memc?_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/CKE_Train" TIG; ##This path exists for DDR2 only
+
+NET "DDR2DQ[*]"    IN_TERM = NONE;
+NET "DDR2LDQS_P"   IN_TERM = NONE;
+NET "DDR2LDQS_N"   IN_TERM = NONE;
+NET "DDR2UDQS_P"   IN_TERM = NONE;
+NET "DDR2UDQS_N"   IN_TERM = NONE;
+
+NET "DDR2DQ[*]"    IOSTANDARD = SSTL18_II;
+NET "DDR2A[*]"     IOSTANDARD = SSTL18_II;
+NET "DDR2BA[*]"    IOSTANDARD = SSTL18_II;
+NET "DDR2LDQS_P"   IOSTANDARD = DIFF_SSTL18_II;
+NET "DDR2LDQS_N"   IOSTANDARD = DIFF_SSTL18_II;
+NET "DDR2UDQS_P"   IOSTANDARD = DIFF_SSTL18_II;
+NET "DDR2UDQS_N"   IOSTANDARD = DIFF_SSTL18_II;
+NET "DDR2CLK_P"    IOSTANDARD = DIFF_SSTL18_II;
+NET "DDR2CLK_N"    IOSTANDARD = DIFF_SSTL18_II;
+NET "DDR2CKE"      IOSTANDARD = SSTL18_II;
+NET "DDR2RASN"     IOSTANDARD = SSTL18_II;
+NET "DDR2CASN"     IOSTANDARD = SSTL18_II;
+NET "DDR2WEN"      IOSTANDARD = SSTL18_II;
+NET "DDR2ODT"      IOSTANDARD = SSTL18_II;
+NET "DDR2LDM"      IOSTANDARD = SSTL18_II;
+NET "DDR2UDM"      IOSTANDARD = SSTL18_II;
+NET "DDR2RZQ"      IOSTANDARD = SSTL18_II;
+NET "DDR2ZIO"      IOSTANDARD = SSTL18_II;
+
 NET "DDR2CLK_P"   LOC = "G3"; # Bank = 3, Pin name = IO_L46P_M3CLK,     		  Sch name = DDR-CK_P
 NET "DDR2CLK_N"   LOC = "G1"; # Bank = 3, Pin name = IO_L46N_M3CLKN,    		  Sch name = DDR-CK_N
 NET "DDR2CKE"    LOC = "H7"; # Bank = 3, Pin name = IO_L53P_M3CKE,       		  Sch name = DDR-CKE
 NET "DDR2RASN"   LOC = "L5"; # Bank = 3, Pin name = IO_L43P_GCLK23_M3RASN,		  Sch name = DDR-RAS
 NET "DDR2CASN"   LOC = "K5"; # Bank = 3, Pin name = IO_L43N_GCLK22_IRDY2_M3CASN, Sch name = DDR-CAS
 NET "DDR2WEN"    LOC = "E3"; # Bank = 3, Pin name = IO_L50P_M3WE,   			  Sch name = DDR-WE
-NET "DDR2RZQ"	  LOC = "L6"; # Bank = 3, Pin name = IO_L31P,   				  Sch name = RZQ
-NET "DDR2ZIO"	  LOC = "C2"; # Bank = 3, Pin name = IO_L83P,   				  Sch name = ZIO
 NET "DDR2BA[0]"    LOC = "F2"; # Bank = 3, Pin name = IO_L48P_M3BA0,        		  Sch name = DDR-BA0
 NET "DDR2BA[1]"    LOC = "F1"; # Bank = 3, Pin name = IO_L48N_M3BA1,        		  Sch name = DDR-BA1
 NET "DDR2BA[2]"    LOC = "E1"; # Bank = 3, Pin name = IO_L50N_M3BA2,       		  Sch name = DDR-BA2
@@ -124,32 +178,5 @@ NET "DDR2LDM"    LOC="K3"; # Bank = 3, Pin name = IO_L42N_GCLK24_M3LDM,         
 NET "DDR2UDM"    LOC="K4"; # Bank = 3, Pin name = IO_L42P_GCLK25_TRDY2_M3UDM,	  Sch name = DDR-UDM
 NET "DDR2ODT"    LOC="K6"; # Bank = 3, Pin name = IO_L45N_M3ODT,        		  Sch name = DDR-ODT
 
-NET "DDR2DQ[*]"    IN_TERM = NONE;
-NET "DDR2LDQS_P"   IN_TERM = NONE;
-NET "DDR2LDQS_N"   IN_TERM = NONE;
-NET "DDR2UDQS_P"   IN_TERM = NONE;
-NET "DDR2UDQS_N"   IN_TERM = NONE;
-
-NET "DDR2DQ[*]"    IOSTANDARD = SSTL18_II;
-NET "DDR2A[*]"     IOSTANDARD = SSTL18_II;
-NET "DDR2BA[*]"    IOSTANDARD = SSTL18_II;
-NET "DDR2LDQS_P"   IOSTANDARD = DIFF_SSTL18_II;
-NET "DDR2LDQS_N"   IOSTANDARD = DIFF_SSTL18_II;
-NET "DDR2UDQS_P"   IOSTANDARD = DIFF_SSTL18_II;
-NET "DDR2UDQS_N"   IOSTANDARD = DIFF_SSTL18_II;
-NET "DDR2CLK_P"    IOSTANDARD = DIFF_SSTL18_II;
-NET "DDR2CLK_N"    IOSTANDARD = DIFF_SSTL18_II;
-NET "DDR2CKE"      IOSTANDARD = SSTL18_II;
-NET "DDR2RASN"     IOSTANDARD = SSTL18_II;
-NET "DDR2CASN"     IOSTANDARD = SSTL18_II;
-NET "DDR2WEN"      IOSTANDARD = SSTL18_II;
-NET "DDR2ODT"      IOSTANDARD = SSTL18_II;
-NET "DDR2LDM"      IOSTANDARD = SSTL18_II;
-NET "DDR2UDM"      IOSTANDARD = SSTL18_II;
-NET "DDR2RZQ"      IOSTANDARD = SSTL18_II;
-NET "DDR2ZIO"      IOSTANDARD = SSTL18_II;
-
-CONFIG MCB_PERFORMANCE= STANDARD;
-NET "*/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/selfrefresh_mcb_mode" TIG;
-NET "*/c?_pll_lock" TIG;
-NET "*/memc?_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/CKE_Train" TIG; ##This path exists for DDR2 only
+NET "DDR2RZQ"	  LOC = "L6"; # Bank = 3, Pin name = IO_L31P,   				  Sch name = RZQ
+NET "DDR2ZIO"	  LOC = "C2"; # Bank = 3, Pin name = IO_L83P,   				  Sch name = ZIO

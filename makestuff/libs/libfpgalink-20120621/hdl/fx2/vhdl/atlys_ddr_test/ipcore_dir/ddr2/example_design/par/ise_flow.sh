@@ -76,7 +76,7 @@ mkdir "../synth/xst" >> ise_flow_results.txt
 mkdir "../synth/xst/work" >> ise_flow_results.txt
 
 xst -ifn ise_run.txt -ofn mem_interface_top.syr -intstyle ise >> ise_flow_results.txt
-ngdbuild -intstyle ise -dd ../synth/_ngo -uc example_top.ucf -p xc6slx45csg324-3 example_top.ngc example_top.ngd >> ise_flow_results.txt
+ngdbuild -intstyle ise -dd ../synth/_ngo -uc example_top.ucf -p xc6slx45csg324-2 example_top.ngc example_top.ngd >> ise_flow_results.txt
 
 map -intstyle ise -detail -w -pr off -c 100 -o example_top_map.ncd example_top.ngd example_top.pcf >> ise_flow_results.txt
 par -w -intstyle ise -ol std example_top_map.ncd example_top.ncd example_top.pcf >> ise_flow_results.txt

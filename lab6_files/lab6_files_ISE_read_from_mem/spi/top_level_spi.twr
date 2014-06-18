@@ -2,13 +2,13 @@
 Release 14.7 Trace  (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 2 -n
 3 -fastpaths -xml top_level_spi.twx top_level_spi.ncd -o top_level_spi.twr
 top_level_spi.pcf -ucf top_level_spi.ucf
 
 Design file:              top_level_spi.ncd
 Physical constraint file: top_level_spi.pcf
-Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Device,package,speed:     xc6slx45,csg324,C,-2 (PRODUCTION 1.23 2013-10-13)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -37,26 +37,88 @@ Setup/Hold to clock clk_100MHz
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-reset_btn   |    5.361(R)|      SLOW  |   -1.635(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
+reset_btn   |    5.902(R)|      SLOW  |   -1.458(R)|      FAST  |clk_100MHz_BUFGP  |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock fx2Clk_in
+-------------+------------+------------+------------+------------+------------------+--------+
+             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source       | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+-------------+------------+------------+------------+------------+------------------+--------+
+fx2Data_io<0>|    3.035(R)|      SLOW  |   -0.600(R)|      SLOW  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<1>|    2.564(R)|      SLOW  |   -0.765(R)|      SLOW  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<2>|    2.520(R)|      SLOW  |   -0.360(R)|      SLOW  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<3>|    3.185(R)|      SLOW  |   -1.117(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<4>|    3.376(R)|      SLOW  |   -0.629(R)|      SLOW  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<5>|    2.717(R)|      SLOW  |   -0.137(R)|      SLOW  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<6>|    2.754(R)|      SLOW  |   -0.210(R)|      SLOW  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<7>|    5.057(R)|      SLOW  |   -0.426(R)|      SLOW  |fx2Clk_in_BUFGP   |   0.000|
+fx2GotData_in|   10.045(R)|      SLOW  |   -3.013(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2GotRoom_in|    7.632(R)|      SLOW  |   -2.443(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+-------------+------------+------------+------------+------------+------------------+--------+
+
+Clock fx2Clk_in to Pad
+--------------+-----------------+------------+-----------------+------------+------------------+--------+
+              |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination   |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+--------------+-----------------+------------+-----------------+------------+------------------+--------+
+fx2Addr_out<0>|        18.179(R)|      SLOW  |         8.636(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<0> |        16.380(R)|      SLOW  |         6.452(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<1> |        16.829(R)|      SLOW  |         6.003(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<2> |        16.829(R)|      SLOW  |         6.252(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<3> |        16.403(R)|      SLOW  |         5.932(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<4> |        16.403(R)|      SLOW  |         6.158(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<5> |        16.828(R)|      SLOW  |         6.190(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<6> |        16.828(R)|      SLOW  |         6.391(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Data_io<7> |        16.402(R)|      SLOW  |         5.706(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2OE_out     |        16.689(R)|      SLOW  |         7.964(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2PktEnd_out |        17.438(R)|      SLOW  |         7.750(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Read_out   |        16.872(R)|      SLOW  |         8.056(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+fx2Write_out  |        18.371(R)|      SLOW  |         8.867(R)|      FAST  |fx2Clk_in_BUFGP   |   0.000|
+--------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk_100MHz
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_100MHz     |    3.803|         |         |         |
+clk_100MHz     |    4.685|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Clock to Setup on destination clock fx2Clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |    8.302|         |         |         |
+---------------+---------+---------+---------+---------+
 
-Analysis completed Sat Apr  5 18:41:40 2014 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+fx2GotData_in  |fx2OE_out      |   17.564|
+fx2GotData_in  |fx2Read_out    |   17.747|
+fx2GotRoom_in  |fx2Data_io<0>  |   15.352|
+fx2GotRoom_in  |fx2Data_io<1>  |   14.898|
+fx2GotRoom_in  |fx2Data_io<2>  |   14.792|
+fx2GotRoom_in  |fx2Data_io<3>  |   15.095|
+fx2GotRoom_in  |fx2Data_io<4>  |   15.009|
+fx2GotRoom_in  |fx2Data_io<5>  |   15.918|
+fx2GotRoom_in  |fx2Data_io<6>  |   15.797|
+fx2GotRoom_in  |fx2Data_io<7>  |   15.742|
+fx2GotRoom_in  |fx2Write_out   |   12.666|
+---------------+---------------+---------+
+
+
+Analysis completed Tue Jun 10 16:07:13 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 440 MB
+Peak Memory Usage: 443 MB
 
 
 

@@ -1,0 +1,25 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/test_spi_ctrl_isim_beh.exe -prj /home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/test_spi_ctrl_beh.prj work.test_spi_ctrl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/spi_ctrl.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/tb_spi_ctrl.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 98288 KB
+Fuse CPU Usage: 1490 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture rtl of entity spi_ctrl [spi_ctrl_default]
+Compiling architecture test of entity test_spi_ctrl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Built simulation executable /home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/test_spi_ctrl_isim_beh.exe
+Fuse Memory Usage: 674644 KB
+Fuse CPU Usage: 1690 ms
+GCC CPU Usage: 6230 ms

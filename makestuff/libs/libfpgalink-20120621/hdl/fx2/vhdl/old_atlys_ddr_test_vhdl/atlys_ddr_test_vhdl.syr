@@ -1,0 +1,1590 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: atlys_ddr_test_vhdl.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "atlys_ddr_test_vhdl.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "atlys_ddr_test_vhdl"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-csg324
+
+---- Source Options
+Top Module Name                    : atlys_ddr_test_vhdl
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/iodrp_mcb_controller.vhd" into library work
+Parsing entity <iodrp_mcb_controller>.
+Parsing architecture <trans> of entity <iodrp_mcb_controller>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/iodrp_controller.vhd" into library work
+Parsing entity <iodrp_controller>.
+Parsing architecture <trans> of entity <iodrp_controller>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd" into library work
+Parsing entity <mcb_soft_calibration>.
+Parsing architecture <trans> of entity <mcb_soft_calibration>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration_top.vhd" into library work
+Parsing entity <mcb_soft_calibration_top>.
+Parsing architecture <trans> of entity <mcb_soft_calibration_top>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" into library work
+Parsing entity <mcb_raw_wrapper>.
+Parsing architecture <aarch> of entity <mcb_raw_wrapper>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" into library work
+Parsing entity <memc3_wrapper>.
+Parsing architecture <acch> of entity <memc3_wrapper>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_infrastructure.vhd" into library work
+Parsing entity <memc3_infrastructure>.
+Parsing architecture <syn> of entity <memc3_infrastructure>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.vhd" into library work
+Parsing entity <ddr2>.
+Parsing architecture <arc> of entity <ddr2>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" into library work
+Parsing entity <ddr_interface>.
+Parsing architecture <Behavioral> of entity <ddr_interface>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" into library work
+Parsing entity <atlys_ddr_test_vhdl>.
+Parsing architecture <Behavioral> of entity <atlys_ddr_test_vhdl>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <atlys_ddr_test_vhdl> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <ddr_interface> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" Line 213: c3_clk_sig should be on the sensitivity list of the process
+
+Elaborating entity <ddr2> (architecture <arc>) with generics from library <work>.
+
+Elaborating entity <memc3_infrastructure> (architecture <syn>) with generics from library <work>.
+
+Elaborating entity <memc3_wrapper> (architecture <acch>) with generics from library <work>.
+
+Elaborating entity <mcb_raw_wrapper> (architecture <aarch>) with generics from library <work>.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 582: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 586: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2445: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2446: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2447: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2448: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2449: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2450: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2451: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2452: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2453: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2454: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2455: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2456: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2457: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2458: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2459: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2460: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2861: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2862: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2863: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2864: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2865: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2866: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2867: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2868: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2903: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2904: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2905: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2906: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2907: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2908: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2909: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2910: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2945: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2946: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2947: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2948: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2949: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2950: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2951: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2952: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2988: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2989: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2990: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2991: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2992: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2993: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2994: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 2995: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3029: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3030: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3031: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3032: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3033: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3034: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3035: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3036: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3072: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3073: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3074: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3075: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3076: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3077: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3078: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3079: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3111: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3112: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3113: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3114: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3115: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3116: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3117: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3118: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3156: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3157: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3158: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3159: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3160: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3161: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3162: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3163: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3207: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3495: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 3964: Comparison between arrays of unequal length always returns FALSE.
+
+Elaborating entity <mcb_soft_calibration_top> (architecture <trans>) with generics from library <work>.
+
+Elaborating entity <mcb_soft_calibration> (architecture <trans>) with generics from library <work>.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd" Line 559: Assignment to half_mv_du ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd" Line 561: Assignment to half_mv_dd ignored, since the identifier is never used
+
+Elaborating entity <iodrp_controller> (architecture <trans>) from library <work>.
+INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/iodrp_controller.vhd" Line 352. Case statement is complete. others clause is never selected
+
+Elaborating entity <iodrp_mcb_controller> (architecture <trans>) from library <work>.
+INFO:HDLCompiler:679 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/iodrp_mcb_controller.vhd" Line 496. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd" Line 623: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd" Line 911: Assignment to state_start_dyncal_r1 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd" Line 968: Assignment to mcb_uodatavalid_u ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd" Line 1012: Assignment to iodrpctrlr_use_bkst ignored, since the identifier is never used
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration_top.vhd" Line 395: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 6993: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 7024: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 7025: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 7050: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 7051: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 7075: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 7086: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 7087: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 7091: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:321 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 7092: Comparison between arrays of unequal length always returns FALSE.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 781: Net <mig_p1_cmd_clk> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 782: Net <mig_p1_cmd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 783: Net <mig_p1_cmd_ra[14]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 784: Net <mig_p1_cmd_ba[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 785: Net <mig_p1_cmd_ca[11]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 787: Net <mig_p1_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 788: Net <mig_p1_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 812: Net <mig_p3_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 860: Net <mig_p2_wr_data[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 862: Net <mig_p4_wr_data[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 867: Net <mig_p2_wr_mask[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd" Line 869: Net <mig_p4_wr_mask[3]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" Line 192: Net <c3_p1_cmd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 73: Net <c3_p0_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 74: Net <c3_p0_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 75: Net <c3_p0_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 76: Net <c3_p0_wr_mask[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 77: Net <c3_p0_wr_data[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 81: Net <c3_p0_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 83: Net <c3_p0_wr_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 85: Net <c3_p1_cmd_instr[2]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 86: Net <c3_p1_cmd_bl[5]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 87: Net <c3_p1_cmd_byte_addr[29]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 88: Net <c3_p1_wr_mask[7]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 90: Net <c3_p1_wr_data[63]> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 93: Net <c3_p1_rd_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 95: Net <c3_p1_wr_en> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" Line 96: Net <c3_p0_cmd_en> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <atlys_ddr_test_vhdl>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd".
+        C3_NUM_DQ_PINS = 16
+        C3_MEM_ADDR_WIDTH = 13
+        C3_MEM_BANKADDR_WIDTH = 3
+WARNING:Xst:647 - Input <SW_I> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" line 101: Output port <c3_p0_wr_count> of the instance <interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" line 101: Output port <c3_p0_rd_data> of the instance <interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" line 101: Output port <c3_p0_rd_count> of the instance <interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" line 101: Output port <c3_p1_wr_count> of the instance <interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" line 101: Output port <c3_p1_rd_data> of the instance <interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" line 101: Output port <c3_p1_rd_count> of the instance <interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" line 101: Output port <c3_p0_rd_empty> of the instance <interface> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/atlys_ddr_test_vhdl.vhd" line 101: Output port <c3_p1_rd_empty> of the instance <interface> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <c3_p0_cmd_instr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p0_cmd_bl> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p0_cmd_byte_addr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p0_wr_mask> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p0_wr_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p1_cmd_instr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p1_cmd_bl> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p1_cmd_byte_addr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p1_wr_mask> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p1_wr_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p0_rd_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p0_wr_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p1_rd_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p1_wr_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <c3_p0_cmd_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 2-bit register for signal <calib_done>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <atlys_ddr_test_vhdl> synthesized.
+
+Synthesizing Unit <ddr_interface>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd".
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_rst0> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p0_cmd_empty> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p0_cmd_full> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p0_wr_full> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p0_wr_empty> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p0_wr_underrun> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p0_wr_error> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p0_rd_full> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p0_rd_overflow> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p0_rd_error> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p1_cmd_empty> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p1_cmd_full> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p1_wr_full> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p1_wr_empty> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p1_wr_underrun> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p1_wr_error> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p1_rd_full> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p1_rd_overflow> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ddr_interface.vhd" line 216: Output port <c3_p1_rd_error> of the instance <u_ddr2> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <c3_p1_cmd_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <ddr_interface> synthesized.
+
+Synthesizing Unit <ddr2>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.vhd".
+        C3_P0_MASK_SIZE = 8
+        C3_P0_DATA_PORT_SIZE = 64
+        C3_P1_MASK_SIZE = 8
+        C3_P1_DATA_PORT_SIZE = 64
+        C3_MEMCLK_PERIOD = 3200
+        C3_RST_ACT_LOW = 0
+        C3_INPUT_CLK_TYPE = "SINGLE_ENDED"
+        C3_CALIB_SOFT_IP = "TRUE"
+        C3_SIMULATION = "FALSE"
+        DEBUG_EN = 1
+        C3_MEM_ADDR_ORDER = "ROW_BANK_COLUMN"
+        C3_NUM_DQ_PINS = 16
+        C3_MEM_ADDR_WIDTH = 13
+        C3_MEM_BANKADDR_WIDTH = 3
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/ddr2.vhd" line 515: Output port <selfrefresh_mode> of the instance <memc3_wrapper_inst> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <ddr2> synthesized.
+
+Synthesizing Unit <memc3_infrastructure>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_infrastructure.vhd".
+        C_INCLK_PERIOD = 10000
+        C_RST_ACT_LOW = 0
+        C_INPUT_CLK_TYPE = "SINGLE_ENDED"
+        C_CLKOUT0_DIVIDE = 1
+        C_CLKOUT1_DIVIDE = 1
+        C_CLKOUT2_DIVIDE = 8
+        C_CLKOUT3_DIVIDE = 4
+        C_CLKFBOUT_MULT = 25
+        C_DIVCLK_DIVIDE = 4
+    Set property "MAX_FANOUT = 10" for signal <rst0_sync_r>.
+    Set property "syn_maxfan = 10" for signal <rst0_sync_r>.
+    Set property "KEEP = TRUE" for signal <sys_clk_ibufg>.
+WARNING:Xst:647 - Input <sys_clk_p> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <sys_clk_n> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <syn_clk0_powerup_pll_locked>.
+    Found 1-bit register for signal <powerup_pll_locked>.
+    Found 25-bit register for signal <rst0_sync_r>.
+    Summary:
+	inferred  27 D-type flip-flop(s).
+Unit <memc3_infrastructure> synthesized.
+
+Synthesizing Unit <memc3_wrapper>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd".
+        C_MEMCLK_PERIOD = 3200
+        C_P0_MASK_SIZE = 8
+        C_P0_DATA_PORT_SIZE = 64
+        C_P1_MASK_SIZE = 8
+        C_P1_DATA_PORT_SIZE = 64
+        C_ARB_NUM_TIME_SLOTS = 12
+        C_ARB_TIME_SLOT_0 = "000010"
+        C_ARB_TIME_SLOT_1 = "010000"
+        C_ARB_TIME_SLOT_2 = "000010"
+        C_ARB_TIME_SLOT_3 = "010000"
+        C_ARB_TIME_SLOT_4 = "000010"
+        C_ARB_TIME_SLOT_5 = "010000"
+        C_ARB_TIME_SLOT_6 = "000010"
+        C_ARB_TIME_SLOT_7 = "010000"
+        C_ARB_TIME_SLOT_8 = "000010"
+        C_ARB_TIME_SLOT_9 = "010000"
+        C_ARB_TIME_SLOT_10 = "000010"
+        C_ARB_TIME_SLOT_11 = "010000"
+        C_MEM_TRAS = 45000
+        C_MEM_TRCD = 12500
+        C_MEM_TREFI = 7800000
+        C_MEM_TRFC = 127500
+        C_MEM_TRP = 12500
+        C_MEM_TWR = 15000
+        C_MEM_TRTP = 7500
+        C_MEM_TWTR = 7500
+        C_MEM_ADDR_ORDER = "ROW_BANK_COLUMN"
+        C_MEM_TYPE = "DDR2"
+        C_MEM_DENSITY = "1Gb"
+        C_NUM_DQ_PINS = 16
+        C_MEM_BURST_LEN = 4
+        C_MEM_CAS_LATENCY = 5
+        C_MEM_ADDR_WIDTH = 13
+        C_MEM_BANKADDR_WIDTH = 3
+        C_MEM_NUM_COL_BITS = 10
+        C_MEM_DDR1_2_ODS = "FULL"
+        C_MEM_DDR2_RTT = "50OHMS"
+        C_MEM_DDR2_DIFF_DQS_EN = "YES"
+        C_MEM_DDR2_3_PA_SR = "FULL"
+        C_MEM_DDR2_3_HIGH_TEMP_SR = "NORMAL"
+        C_MEM_DDR3_CAS_LATENCY = 6
+        C_MEM_DDR3_CAS_WR_LATENCY = 5
+        C_MEM_DDR3_ODS = "DIV6"
+        C_MEM_DDR3_RTT = "DIV2"
+        C_MEM_DDR3_AUTO_SR = "ENABLED"
+        C_MEM_DDR3_DYN_WRT_ODT = "OFF"
+        C_MEM_MOBILE_PA_SR = "FULL"
+        C_MEM_MDDR_ODS = "FULL"
+        C_MC_CALIB_BYPASS = "NO"
+        C_LDQSP_TAP_DELAY_VAL = 0
+        C_UDQSP_TAP_DELAY_VAL = 0
+        C_LDQSN_TAP_DELAY_VAL = 0
+        C_UDQSN_TAP_DELAY_VAL = 0
+        C_DQ0_TAP_DELAY_VAL = 0
+        C_DQ1_TAP_DELAY_VAL = 0
+        C_DQ2_TAP_DELAY_VAL = 0
+        C_DQ3_TAP_DELAY_VAL = 0
+        C_DQ4_TAP_DELAY_VAL = 0
+        C_DQ5_TAP_DELAY_VAL = 0
+        C_DQ6_TAP_DELAY_VAL = 0
+        C_DQ7_TAP_DELAY_VAL = 0
+        C_DQ8_TAP_DELAY_VAL = 0
+        C_DQ9_TAP_DELAY_VAL = 0
+        C_DQ10_TAP_DELAY_VAL = 0
+        C_DQ11_TAP_DELAY_VAL = 0
+        C_DQ12_TAP_DELAY_VAL = 0
+        C_DQ13_TAP_DELAY_VAL = 0
+        C_DQ14_TAP_DELAY_VAL = 0
+        C_DQ15_TAP_DELAY_VAL = 0
+        C_SKIP_IN_TERM_CAL = 0
+        C_SKIP_DYNAMIC_CAL = 0
+        C_SIMULATION = "FALSE"
+        C_MC_CALIBRATION_MODE = "CALIBRATION"
+        C_MC_CALIBRATION_DELAY = "HALF"
+        C_CALIB_SOFT_IP = "TRUE"
+WARNING:Xst:647 - Input <selfrefresh_enter> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_wr_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_rd_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_rd_count> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <uo_data> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <status> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_cmd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_cmd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p2_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_cmd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_cmd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p3_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_cmd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_cmd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p4_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_cmd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_cmd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_wr_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_wr_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_wr_underrun> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_wr_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_rd_full> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_rd_empty> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_rd_overflow> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <p5_rd_error> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <mcbx_dram_ddr3_rst> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <uo_data_valid> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <uo_cmd_ready_in> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <uo_refrsh_flag> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <uo_cal_start> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/memc3_wrapper.vhd" line 638: Output port <uo_sdo> of the instance <memc3_mcb_raw_wrapper_inst> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <memc3_wrapper> synthesized.
+
+Synthesizing Unit <mcb_raw_wrapper>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_raw_wrapper.vhd".
+        C_MEMCLK_PERIOD = 3200
+        C_PORT_ENABLE = "000011"
+        C_MEM_ADDR_ORDER = "ROW_BANK_COLUMN"
+        C_ARB_NUM_TIME_SLOTS = 12
+        C_ARB_TIME_SLOT_0 = "000000000000000010"
+        C_ARB_TIME_SLOT_1 = "000000000000010000"
+        C_ARB_TIME_SLOT_2 = "000000000000000010"
+        C_ARB_TIME_SLOT_3 = "000000000000010000"
+        C_ARB_TIME_SLOT_4 = "000000000000000010"
+        C_ARB_TIME_SLOT_5 = "000000000000010000"
+        C_ARB_TIME_SLOT_6 = "000000000000000010"
+        C_ARB_TIME_SLOT_7 = "000000000000010000"
+        C_ARB_TIME_SLOT_8 = "000000000000000010"
+        C_ARB_TIME_SLOT_9 = "000000000000010000"
+        C_ARB_TIME_SLOT_10 = "000000000000000010"
+        C_ARB_TIME_SLOT_11 = "000000000000010000"
+        C_PORT_CONFIG = "B64_B64"
+        C_MEM_TRAS = 45000
+        C_MEM_TRCD = 12500
+        C_MEM_TREFI = 7800000
+        C_MEM_TRFC = 127500
+        C_MEM_TRP = 12500
+        C_MEM_TWR = 15000
+        C_MEM_TRTP = 7500
+        C_MEM_TWTR = 7500
+        C_NUM_DQ_PINS = 16
+        C_MEM_TYPE = "DDR2"
+        C_MEM_DENSITY = "1Gb"
+        C_MEM_BURST_LEN = 4
+        C_MEM_CAS_LATENCY = 5
+        C_MEM_ADDR_WIDTH = 13
+        C_MEM_BANKADDR_WIDTH = 3
+        C_MEM_NUM_COL_BITS = 10
+        C_MEM_DDR3_CAS_LATENCY = 6
+        C_MEM_MOBILE_PA_SR = "FULL"
+        C_MEM_DDR1_2_ODS = "FULL"
+        C_MEM_DDR3_ODS = "DIV6"
+        C_MEM_DDR2_RTT = "50OHMS"
+        C_MEM_DDR3_RTT = "DIV2"
+        C_MEM_MDDR_ODS = "FULL"
+        C_MEM_DDR2_DIFF_DQS_EN = "YES"
+        C_MEM_DDR2_3_PA_SR = "FULL"
+        C_MEM_DDR3_CAS_WR_LATENCY = 5
+        C_MEM_DDR3_AUTO_SR = "ENABLED"
+        C_MEM_DDR2_3_HIGH_TEMP_SR = "NORMAL"
+        C_MEM_DDR3_DYN_WRT_ODT = "OFF"
+        C_MEM_TZQINIT_MAXCNT = "1000010000"
+        C_MC_CALIB_BYPASS = "NO"
+        C_MC_CALIBRATION_RA = "0000000000000000"
+        C_MC_CALIBRATION_BA = "000"
+        C_CALIB_SOFT_IP = "TRUE"
+        C_SKIP_IN_TERM_CAL = 0
+        C_SKIP_DYNAMIC_CAL = 0
+        C_SKIP_DYN_IN_TERM = 1
+        C_SIMULATION = "FALSE"
+        LDQSP_TAP_DELAY_VAL = 0
+        UDQSP_TAP_DELAY_VAL = 0
+        LDQSN_TAP_DELAY_VAL = 0
+        UDQSN_TAP_DELAY_VAL = 0
+        DQ0_TAP_DELAY_VAL = 0
+        DQ1_TAP_DELAY_VAL = 0
+        DQ2_TAP_DELAY_VAL = 0
+        DQ3_TAP_DELAY_VAL = 0
+        DQ4_TAP_DELAY_VAL = 0
+        DQ5_TAP_DELAY_VAL = 0
+        DQ6_TAP_DELAY_VAL = 0
+        DQ7_TAP_DELAY_VAL = 0
+        DQ8_TAP_DELAY_VAL = 0
+        DQ9_TAP_DELAY_VAL = 0
+        DQ10_TAP_DELAY_VAL = 0
+        DQ11_TAP_DELAY_VAL = 0
+        DQ12_TAP_DELAY_VAL = 0
+        DQ13_TAP_DELAY_VAL = 0
+        DQ14_TAP_DELAY_VAL = 0
+        DQ15_TAP_DELAY_VAL = 0
+        C_MC_CALIBRATION_CA = "000000000000"
+        C_MC_CALIBRATION_CLK_DIV = 1
+        C_MC_CALIBRATION_MODE = "CALIBRATION"
+        C_MC_CALIBRATION_DELAY = "HALF"
+        C_P0_MASK_SIZE = 8
+        C_P0_DATA_PORT_SIZE = 64
+        C_P1_MASK_SIZE = 8
+        C_P1_DATA_PORT_SIZE = 64
+    Set property "MAX_FANOUT = 1" for signal <int_sys_rst>.
+    Set property "syn_maxfan = 1" for signal <int_sys_rst>.
+WARNING:Xst:647 - Input <p0_cmd_byte_addr<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p0_cmd_byte_addr<29:27>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p1_cmd_byte_addr<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p1_cmd_byte_addr<29:27>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_cmd_instr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_cmd_bl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_cmd_byte_addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_wr_mask> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_wr_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_cmd_instr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_cmd_bl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_cmd_byte_addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_wr_mask> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_wr_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_cmd_instr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_cmd_bl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_cmd_byte_addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_wr_mask> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_wr_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_cmd_instr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_cmd_bl> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_cmd_byte_addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_wr_mask> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_wr_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_dqcount> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_arb_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_cmd_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_cmd_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_wr_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_wr_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_rd_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p2_rd_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_arb_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_cmd_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_cmd_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_wr_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_wr_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_rd_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p3_rd_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_arb_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_cmd_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_cmd_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_wr_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_wr_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_rd_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p4_rd_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_arb_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_cmd_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_cmd_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_wr_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_wr_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_rd_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <p5_rd_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <calib_recal> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_read> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_add> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_cs> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_sdi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_broadcast> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_drp_update> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_done_cal> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_cmd> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_cmd_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_cmd_en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_dq_lower_dec> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_dq_lower_inc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_dq_upper_dec> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_dq_upper_inc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_udqs_inc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_udqs_dec> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_ldqs_inc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ui_ldqs_dec> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <p2_wr_count> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_rd_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_rd_count> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_wr_count> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_rd_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_rd_count> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_wr_count> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_rd_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_rd_count> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_wr_count> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_rd_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_rd_count> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p1_cmd_ra> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p1_cmd_ba> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p1_cmd_ca> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p1_cmd_instr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p1_cmd_bl> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p3_cmd_bl> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p2_wr_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p4_wr_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p2_wr_mask> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p4_wr_mask> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_cmd_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_cmd_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_wr_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_wr_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_wr_underrun> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_wr_error> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_rd_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_rd_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_rd_overflow> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p2_rd_error> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_cmd_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_cmd_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_wr_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_wr_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_wr_underrun> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_wr_error> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_rd_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_rd_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_rd_overflow> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p3_rd_error> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_cmd_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_cmd_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_wr_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_wr_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_wr_underrun> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_wr_error> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_rd_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_rd_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_rd_overflow> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p4_rd_error> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_cmd_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_cmd_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_wr_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_wr_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_wr_underrun> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_wr_error> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_rd_full> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_rd_empty> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_rd_overflow> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <p5_rd_error> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mcbx_dram_ddr3_rst> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p1_cmd_clk> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <mig_p1_cmd_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <normal_operation_window>.
+    Found 1-bit register for signal <soft_cal_selfrefresh_req>.
+    Found 1-bit register for signal <syn_uiclk_pll_lock>.
+    WARNING:Xst:2404 -  FFs/Latches <selfrefresh_enter_r1<0:0>> (without init value) have a constant value of 0 in block <mcb_raw_wrapper>.
+    WARNING:Xst:2404 -  FFs/Latches <selfrefresh_enter_r2<0:0>> (without init value) have a constant value of 0 in block <mcb_raw_wrapper>.
+    WARNING:Xst:2404 -  FFs/Latches <selfrefresh_enter_r3<5:5>> (without init value) have a constant value of 0 in block <mcb_raw_wrapper>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <mcb_raw_wrapper> synthesized.
+
+Synthesizing Unit <mcb_soft_calibration_top>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration_top.vhd".
+        C_MEM_TZQINIT_MAXCNT = "1000010000"
+        C_MC_CALIBRATION_MODE = "CALIBRATION"
+        SKIP_IN_TERM_CAL = 0
+        SKIP_DYNAMIC_CAL = 0
+        SKIP_DYN_IN_TERM = 1
+        C_SIMULATION = "FALSE"
+        C_MEM_TYPE = "DDR2"
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration_top.vhd" line 291: Output port <Max_Value> of the instance <mcb_soft_calibration_inst> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <ZIO_IN_R2>.
+    Found 1-bit register for signal <RZQ_IN_R1>.
+    Found 1-bit register for signal <RZQ_IN_R2>.
+    Found 1-bit register for signal <ZIO_IN_R1>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <mcb_soft_calibration_top> synthesized.
+
+Synthesizing Unit <mcb_soft_calibration>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd".
+        C_MEM_TZQINIT_MAXCNT = "1000010000"
+        SKIP_IN_TERM_CAL = 0
+        SKIP_DYNAMIC_CAL = 0
+        SKIP_DYN_IN_TERM = 1
+        C_MC_CALIBRATION_MODE = "CALIBRATION"
+        C_SIMULATION = "FALSE"
+        C_MEM_TYPE = "DDR2"
+    Set property "syn_preserve = true" for signal <P_Term>.
+    Set property "syn_preserve = true" for signal <N_Term>.
+    Set property "syn_preserve = true" for signal <P_Term_s>.
+    Set property "syn_preserve = true" for signal <N_Term_s>.
+    Set property "syn_preserve = true" for signal <P_Term_w>.
+    Set property "syn_preserve = true" for signal <N_Term_w>.
+    Set property "syn_preserve = true" for signal <P_Term_Prev>.
+    Set property "syn_preserve = true" for signal <N_Term_Prev>.
+    Set property "syn_preserve = true" for signal <IODRPCTRLR_MEMCELL_ADDR>.
+    Set property "syn_preserve = true" for signal <IODRPCTRLR_WRITE_DATA>.
+    Set property "syn_preserve = true" for signal <Max_Value_Previous>.
+    Set property "syn_preserve = true" for signal <DQS_DELAY_INITIAL>.
+    Set property "IOB = FALSE" for signal <DONE_SOFTANDHARD_CAL>.
+WARNING:Xst:647 - Input <MCB_UODATA> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <MCB_UODATAVALID> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <MCB_UOCMDREADY> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <MCB_UO_CAL_START> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd" line 583: Output port <DRP_BKST> of the instance <iodrp_controller_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/mcb_soft_calibration.vhd" line 601: Output port <read_data> of the instance <iodrp_mcb_controller_inst> is unconnected or connected to loadless signal.
+    Register <MCB_UIUDQSINC> equivalent to <MCB_UILDQSINC> has been removed
+    Register <MCB_UIUDQSDEC> equivalent to <MCB_UILDQSDEC> has been removed
+    Found 1-bit register for signal <CKE_Train>.
+    Found 1-bit register for signal <Block_Reset>.
+    Found 1-bit register for signal <SELFREFRESH_MCB_MODE_R1>.
+    Found 1-bit register for signal <SELFREFRESH_MCB_MODE_R2>.
+    Found 1-bit register for signal <SELFREFRESH_MCB_MODE_R3>.
+    Found 1-bit register for signal <SELFREFRESH_REQ_R1>.
+    Found 1-bit register for signal <SELFREFRESH_REQ_R2>.
+    Found 1-bit register for signal <SELFREFRESH_REQ_R3>.
+    Found 1-bit register for signal <PLL_LOCK_R1>.
+    Found 1-bit register for signal <PLL_LOCK_R2>.
+    Found 16-bit register for signal <WAIT_200us_COUNTER>.
+    Found 10-bit register for signal <RstCounter>.
+    Found 1-bit register for signal <Rst_condition1>.
+    Found 4-bit register for signal <pre_sysrst_cnt>.
+    Found 1-bit register for signal <SELFREFRESH_MCB_REQ>.
+    Found 1-bit register for signal <WAIT_SELFREFRESH_EXIT_DQS_CAL>.
+    Found 1-bit register for signal <PERFORM_START_DYN_CAL_AFTER_SELFREFRESH>.
+    Found 1-bit register for signal <START_DYN_CAL_STATE_R1>.
+    Found 1-bit register for signal <PERFORM_START_DYN_CAL_AFTER_SELFREFRESH_R1>.
+    Found 1-bit register for signal <SELFREFRESH_MODE_xilinx11>.
+    Found 1-bit register for signal <WaitCountEnable>.
+    Found 8-bit register for signal <WaitTimer>.
+    Found 1-bit register for signal <WarmEnough>.
+    Found 6-bit register for signal <count>.
+    Found 1-bit register for signal <MCB_CMD_VALID>.
+    Found 5-bit register for signal <MCB_UIADDR_int>.
+    Found 1-bit register for signal <MCB_UICMDEN>.
+    Found 1-bit register for signal <MCB_UIDONECAL_xilinx7>.
+    Found 1-bit register for signal <MCB_USE_BKST>.
+    Found 1-bit register for signal <MCB_UIDRPUPDATE>.
+    Found 1-bit register for signal <Pre_SYSRST>.
+    Found 1-bit register for signal <IODRPCTRLR_CMD_VALID>.
+    Found 8-bit register for signal <IODRPCTRLR_MEMCELL_ADDR>.
+    Found 8-bit register for signal <IODRPCTRLR_WRITE_DATA>.
+    Found 1-bit register for signal <IODRPCTRLR_R_WB>.
+    Found 6-bit register for signal <P_Term>.
+    Found 7-bit register for signal <N_Term>.
+    Found 6-bit register for signal <P_Term_s>.
+    Found 7-bit register for signal <N_Term_w>.
+    Found 6-bit register for signal <P_Term_w>.
+    Found 7-bit register for signal <N_Term_s>.
+    Found 6-bit register for signal <P_Term_Prev>.
+    Found 7-bit register for signal <N_Term_Prev>.
+    Found 2-bit register for signal <Active_IODRP>.
+    Found 1-bit register for signal <MCB_UILDQSINC>.
+    Found 1-bit register for signal <MCB_UILDQSDEC>.
+    Found 1-bit register for signal <counter_en>.
+    Found 1-bit register for signal <First_Dyn_Cal_Done>.
+    Found 8-bit register for signal <Max_Value_int>.
+    Found 8-bit register for signal <Max_Value_Previous>.
+    Found 6-bit register for signal <STATE>.
+    Found 8-bit register for signal <DQS_DELAY>.
+    Found 8-bit register for signal <DQS_DELAY_INITIAL>.
+    Found 8-bit register for signal <TARGET_DQS_DELAY>.
+    Found 1-bit register for signal <First_In_Term_Done>.
+    Found 1-bit register for signal <MCB_UICMD>.
+    Found 4-bit register for signal <MCB_UIDQCOUNT>.
+    Found 8-bit register for signal <counter_inc>.
+    Found 8-bit register for signal <counter_dec>.
+    Found 1-bit register for signal <DONE_SOFTANDHARD_CAL>.
+    Found 1-bit register for signal <RST_reg>.
+INFO:Xst:1799 - State 111010 is never reached in FSM <STATE>.
+    Found finite state machine <FSM_0> for signal <STATE>.
+    -----------------------------------------------------------------------
+    | States             | 59                                             |
+    | Transitions        | 138                                            |
+    | Inputs             | 23                                             |
+    | Outputs            | 30                                             |
+    | Clock              | UI_CLK (rising_edge)                           |
+    | Reset              | RST_reg (positive)                             |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000000                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <WAIT_200us_COUNTER[15]_GND_41_o_add_13_OUT> created at line 632.
+    Found 10-bit adder for signal <RstCounter[9]_GND_41_o_add_18_OUT> created at line 694.
+    Found 4-bit adder for signal <pre_sysrst_cnt[3]_GND_41_o_add_24_OUT> created at line 761.
+    Found 8-bit adder for signal <WaitTimer[7]_GND_41_o_add_33_OUT> created at line 936.
+    Found 6-bit adder for signal <count[5]_GND_41_o_add_41_OUT> created at line 958.
+    Found 6-bit adder for signal <P_Term[5]_GND_41_o_add_55_OUT> created at line 1134.
+    Found 7-bit adder for signal <N_Term[6]_GND_41_o_add_86_OUT> created at line 1187.
+    Found 8-bit adder for signal <counter_inc[7]_GND_41_o_add_332_OUT> created at line 1699.
+    Found 8-bit adder for signal <DQS_DELAY[7]_GND_41_o_add_335_OUT> created at line 1705.
+    Found 8-bit adder for signal <counter_dec[7]_GND_41_o_add_345_OUT> created at line 1724.
+    Found 8-bit subtractor for signal <Max_Value_Delta_Up> created at line 433.
+    Found 8-bit subtractor for signal <Max_Value_Delta_Dn> created at line 435.
+    Found 6-bit subtractor for signal <GND_41_o_GND_41_o_sub_73_OUT<5:0>> created at line 1139.
+    Found 7-bit subtractor for signal <GND_41_o_GND_41_o_sub_180_OUT<6:0>> created at line 1197.
+    Found 8-bit subtractor for signal <GND_41_o_GND_41_o_sub_349_OUT<7:0>> created at line 1730.
+    Found 15-bit adder for signal <_n0876> created at line 501.
+    Found 15-bit adder for signal <n0754> created at line 501.
+    Found 15-bit adder for signal <n0502> created at line 501.
+    Found 15-bit adder for signal <_n0885> created at line 501.
+    Found 15-bit adder for signal <n0483> created at line 501.
+    Found 15-bit adder for signal <_n0891> created at line 501.
+    Found 15-bit adder for signal <n0491[14:0]> created at line 501.
+    Found 15-bit adder for signal <n0493> created at line 501.
+    Found 15-bit adder for signal <n0554> created at line 501.
+    Found 1-bit 3-to-1 multiplexer for signal <IODRP_SDO> created at line 982.
+    Found 10-bit comparator greater for signal <RstCounter[9]_GND_41_o_LessThan_18_o> created at line 692
+    Found 8-bit comparator greater for signal <Dec_Flag> created at line 946
+    Found 8-bit comparator greater for signal <Inc_Flag> created at line 947
+    Found 6-bit comparator equal for signal <n0171> created at line 1205
+    Found 7-bit comparator equal for signal <n0180> created at line 1237
+    Found 6-bit comparator greater for signal <count[5]_PWR_16_o_LessThan_308_o> created at line 1642
+    Found 8-bit comparator greater for signal <Max_Value_int[7]_Max_Value_Previous[7]_LessThan_314_o> created at line 1675
+    Found 8-bit comparator greater for signal <n0261> created at line 1675
+    Found 8-bit comparator greater for signal <Max_Value_Previous[7]_Max_Value_int[7]_LessThan_319_o> created at line 1679
+    Found 8-bit comparator greater for signal <n0265> created at line 1679
+    Found 8-bit comparator greater for signal <DQS_DELAY[7]_DQS_DELAY_UPPER_LIMIT[7]_LessThan_334_o> created at line 1701
+    Found 8-bit comparator lessequal for signal <n0279> created at line 1701
+    Found 8-bit comparator greater for signal <DQS_DELAY_LOWER_LIMIT[7]_DQS_DELAY[7]_LessThan_347_o> created at line 1726
+    Found 8-bit comparator lessequal for signal <n0293> created at line 1726
+    WARNING:Xst:2404 -  FFs/Latches <MCB_UICMDIN<0:0>> (without init value) have a constant value of 0 in block <mcb_soft_calibration>.
+    Summary:
+	inferred  23 Adder/Subtractor(s).
+	inferred 214 D-type flip-flop(s).
+	inferred  14 Comparator(s).
+	inferred  44 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <mcb_soft_calibration> synthesized.
+
+Synthesizing Unit <iodrp_controller>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/iodrp_controller.vhd".
+    Found 8-bit register for signal <data_reg>.
+    Found 1-bit register for signal <rd_not_write_reg>.
+    Found 8-bit register for signal <shift_through_reg>.
+    Found 3-bit register for signal <bit_cnt>.
+    Found 8-bit register for signal <read_data>.
+    Found 1-bit register for signal <AddressPhase>.
+    Found 1-bit register for signal <DRP_ADD>.
+    Found 1-bit register for signal <DRP_CS>.
+    Found 1-bit register for signal <DRP_BKST>.
+    Found 3-bit register for signal <state>.
+    Found 8-bit register for signal <memcell_addr_reg>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 13                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 8                                              |
+    | Clock              | DRP_CLK (rising_edge)                          |
+    | Reset              | sync_rst (positive)                            |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <bit_cnt[2]_GND_42_o_add_12_OUT> created at line 238.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <iodrp_controller> synthesized.
+
+Synthesizing Unit <iodrp_mcb_controller>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_vhdl/ipcore_dir/ddr2/user_design/rtl/iodrp_mcb_controller.vhd".
+    Set property "fsm_encoding = gray" for signal <state>.
+    Set property "fsm_encoding = gray" for signal <nextstate>.
+WARNING:Xst:647 - Input <drp_ioi_addr> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <data_reg>.
+    Found 1-bit register for signal <rd_not_write_reg>.
+    Found 8-bit register for signal <shift_through_reg<7:0>>.
+    Found 3-bit register for signal <bit_cnt>.
+    Found 8-bit register for signal <read_data>.
+    Found 1-bit register for signal <AddressPhase>.
+    Found 1-bit register for signal <DRP_ADD_xilinx0>.
+    Found 1-bit register for signal <DRP_CS_xilinx1>.
+    Found 1-bit register for signal <MCB_UIREAD>.
+    Found 1-bit register for signal <DRP_BKST>.
+    Found 4-bit register for signal <state>.
+    Found 8-bit register for signal <memcell_addr_reg>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 15                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 9                                              |
+    | Clock              | DRP_CLK (rising_edge)                          |
+    | Reset              | sync_rst (positive)                            |
+    | Reset type         | synchronous                                    |
+    | Reset State        | ready                                          |
+    | Power Up State     | ready                                          |
+    | Encoding           | gray                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <bit_cnt[2]_GND_44_o_add_13_OUT> created at line 372.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <iodrp_mcb_controller> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 25
+ 10-bit adder                                          : 1
+ 15-bit adder                                          : 9
+ 16-bit adder                                          : 1
+ 3-bit adder                                           : 2
+ 4-bit adder                                           : 1
+ 6-bit adder                                           : 2
+ 6-bit subtractor                                      : 1
+ 7-bit adder                                           : 1
+ 7-bit subtractor                                      : 1
+ 8-bit adder                                           : 3
+ 8-bit addsub                                          : 1
+ 8-bit subtractor                                      : 2
+# Registers                                            : 92
+ 1-bit register                                        : 55
+ 10-bit register                                       : 1
+ 16-bit register                                       : 1
+ 2-bit register                                        : 2
+ 25-bit register                                       : 1
+ 3-bit register                                        : 2
+ 4-bit register                                        : 2
+ 5-bit register                                        : 1
+ 6-bit register                                        : 5
+ 7-bit register                                        : 4
+ 8-bit register                                        : 18
+# Comparators                                          : 14
+ 10-bit comparator greater                             : 1
+ 6-bit comparator equal                                : 1
+ 6-bit comparator greater                              : 1
+ 7-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 8
+ 8-bit comparator lessequal                            : 2
+# Multiplexers                                         : 53
+ 1-bit 2-to-1 multiplexer                              : 17
+ 1-bit 3-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 1
+ 6-bit 2-to-1 multiplexer                              : 4
+ 7-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 25
+ 9-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <soft_cal_selfrefresh_req> (without init value) has a constant value of 0 in block <memc3_mcb_raw_wrapper_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <IODRPCTRLR_MEMCELL_ADDR_6> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <IODRPCTRLR_MEMCELL_ADDR_5> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <IODRPCTRLR_MEMCELL_ADDR_4> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <IODRPCTRLR_MEMCELL_ADDR_2> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MCB_UIDQCOUNT_3> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MCB_UIDQCOUNT_2> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MCB_UIDQCOUNT_1> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MCB_UIDQCOUNT_0> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MCB_UICMD> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <WarmEnough> (without init value) has a constant value of 1 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <SELFREFRESH_MCB_REQ> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <SELFREFRESH_REQ_R1> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_6> (without init value) has a constant value of 0 in block <iodrp_mcb_controller_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_5> (without init value) has a constant value of 0 in block <iodrp_mcb_controller_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_4> (without init value) has a constant value of 0 in block <iodrp_mcb_controller_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_2> (without init value) has a constant value of 0 in block <iodrp_mcb_controller_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_6> (without init value) has a constant value of 0 in block <iodrp_controller_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_5> (without init value) has a constant value of 0 in block <iodrp_controller_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_4> (without init value) has a constant value of 0 in block <iodrp_controller_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_2> (without init value) has a constant value of 0 in block <iodrp_controller_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SELFREFRESH_REQ_R2> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SELFREFRESH_REQ_R3> (without init value) has a constant value of 0 in block <mcb_soft_calibration_inst>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <iodrp_controller>.
+The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
+Unit <iodrp_controller> synthesized (advanced).
+
+Synthesizing (advanced) Unit <iodrp_mcb_controller>.
+The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
+Unit <iodrp_mcb_controller> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mcb_soft_calibration>.
+The following registers are absorbed into counter <pre_sysrst_cnt>: 1 register on signal <pre_sysrst_cnt>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+The following registers are absorbed into counter <WAIT_200us_COUNTER>: 1 register on signal <WAIT_200us_COUNTER>.
+The following registers are absorbed into counter <RstCounter>: 1 register on signal <RstCounter>.
+The following registers are absorbed into counter <DQS_DELAY>: 1 register on signal <DQS_DELAY>.
+The following registers are absorbed into counter <counter_inc>: 1 register on signal <counter_inc>.
+The following registers are absorbed into counter <counter_dec>: 1 register on signal <counter_dec>.
+The following registers are absorbed into counter <WaitTimer>: 1 register on signal <WaitTimer>.
+Unit <mcb_soft_calibration> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 15
+ 10-bit adder                                          : 3
+ 11-bit adder                                          : 1
+ 6-bit adder                                           : 1
+ 6-bit subtractor                                      : 1
+ 7-bit adder                                           : 1
+ 7-bit subtractor                                      : 1
+ 8-bit adder                                           : 2
+ 8-bit subtractor                                      : 2
+ 9-bit adder                                           : 3
+# Counters                                             : 10
+ 10-bit up counter                                     : 1
+ 16-bit up counter                                     : 1
+ 3-bit up counter                                      : 2
+ 4-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+ 8-bit up counter                                      : 3
+ 8-bit updown counter                                  : 1
+# Registers                                            : 257
+ Flip-Flops                                            : 257
+# Comparators                                          : 14
+ 10-bit comparator greater                             : 1
+ 6-bit comparator equal                                : 1
+ 6-bit comparator greater                              : 1
+ 7-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 8
+ 8-bit comparator lessequal                            : 2
+# Multiplexers                                         : 61
+ 1-bit 2-to-1 multiplexer                              : 31
+ 1-bit 3-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 4
+ 7-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 21
+ 9-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <soft_cal_selfrefresh_req> (without init value) has a constant value of 0 in block <mcb_raw_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <MCB_UICMD> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MCB_UIDQCOUNT_0> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MCB_UIDQCOUNT_1> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MCB_UIDQCOUNT_2> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <MCB_UIDQCOUNT_3> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_ADDR_2> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_ADDR_4> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_ADDR_5> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_MEMCELL_ADDR_6> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DRP_BKST> (without init value) has a constant value of 0 in block <iodrp_controller>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <memcell_addr_reg_2> in Unit <iodrp_controller> is equivalent to the following 3 FFs/Latches, which will be removed : <memcell_addr_reg_4> <memcell_addr_reg_5> <memcell_addr_reg_6> 
+INFO:Xst:2261 - The FF/Latch <memcell_addr_reg_2> in Unit <iodrp_mcb_controller> is equivalent to the following 3 FFs/Latches, which will be removed : <memcell_addr_reg_4> <memcell_addr_reg_5> <memcell_addr_reg_6> 
+WARNING:Xst:1710 - FF/Latch <SELFREFRESH_REQ_R1> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SELFREFRESH_MCB_REQ> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <WarmEnough> (without init value) has a constant value of 1 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SELFREFRESH_REQ_R2> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SELFREFRESH_REQ_R3> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <WAIT_SELFREFRESH_EXIT_DQS_CAL> of sequential type is unconnected in block <mcb_soft_calibration>.
+WARNING:Xst:2677 - Node <PERFORM_START_DYN_CAL_AFTER_SELFREFRESH> of sequential type is unconnected in block <mcb_soft_calibration>.
+WARNING:Xst:2677 - Node <WaitCountEnable> of sequential type is unconnected in block <mcb_soft_calibration>.
+WARNING:Xst:2677 - Node <PERFORM_START_DYN_CAL_AFTER_SELFREFRESH_R1> of sequential type is unconnected in block <mcb_soft_calibration>.
+WARNING:Xst:2677 - Node <SELFREFRESH_MCB_MODE_R3> of sequential type is unconnected in block <mcb_soft_calibration>.
+WARNING:Xst:2677 - Node <START_DYN_CAL_STATE_R1> of sequential type is unconnected in block <mcb_soft_calibration>.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_2> (without init value) has a constant value of 0 in block <iodrp_controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <memcell_addr_reg_2> (without init value) has a constant value of 0 in block <iodrp_mcb_controller>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/FSM_0> on signal <STATE[1:58]> with one-hot encoding.
+----------------------------------------------------------------------
+ State  | Encoding
+----------------------------------------------------------------------
+ 000000 | 0000000000000000000000000000000000000000000000000000000001
+ 000001 | 0000000000000000000000000000000000000000000000000000000010
+ 000010 | 0000000000000000000000000000000000000000000000000000000100
+ 000011 | 0000000000000000000000000000000000000000000000000000001000
+ 000100 | 0000000000000000000000000000000000000000000000000000010000
+ 000101 | 0000000000000000000000000000000000000000000000000000100000
+ 000110 | 0000000000000000000000000000000000000000000000000001000000
+ 000111 | 0000000000000000000000000000000000000000000000000010000000
+ 001000 | 0000000000000000000000000000000000000000000000000100000000
+ 001001 | 0000000000000000000000000000000000000000000000001000000000
+ 001010 | 0000000000000000000000000000000000000000000000010000000000
+ 001011 | 0000000000000000000000000000000000000000000000100000000000
+ 001100 | 0000000000000000000000000000000000000000000001000000000000
+ 001101 | 0000000000000000000000000000000000000000000010000000000000
+ 100010 | 0000000000000000000000000000000000000000000100000000000000
+ 010000 | 0000000000000000000000000000000000000000001000000000000000
+ 001110 | 0000000000000000000000000000000000000000010000000000000000
+ 001111 | 0000000000000000000000000000000000000000100000000000000000
+ 010001 | 0000000000000000000000000000000000000001000000000000000000
+ 010010 | 0000000000000000000000000000000000000010000000000000000000
+ 010011 | 0000000000000000000000000000000000000100000000000000000000
+ 010100 | 0000000000000000000000000000000000001000000000000000000000
+ 010101 | 0000000000000000000000000000000000010000000000000000000000
+ 010110 | 0000000000000000000000000000000000100000000000000000000000
+ 010111 | 0000000000000000000000000000000001000000000000000000000000
+ 011000 | 0000000000000000000000000000000010000000000000000000000000
+ 011001 | 0000000000000000000000000000000100000000000000000000000000
+ 011010 | 0000000000000000000000000000001000000000000000000000000000
+ 011011 | 0000000000000000000000000000010000000000000000000000000000
+ 011100 | 0000000000000000000000000000100000000000000000000000000000
+ 011101 | 0000000000000000000000000001000000000000000000000000000000
+ 011110 | 0000000000000000000000000010000000000000000000000000000000
+ 011111 | 0000000000000000000000000100000000000000000000000000000000
+ 100000 | 0000000000000000000000001000000000000000000000000000000000
+ 100001 | 0000000000000000000000010000000000000000000000000000000000
+ 100011 | 0000000000000000000000100000000000000000000000000000000000
+ 100100 | 0000000000000000000001000000000000000000000000000000000000
+ 100101 | 0000000000000000000010000000000000000000000000000000000000
+ 110010 | 0000000000000000000100000000000000000000000000000000000000
+ 110001 | 0000000000000000001000000000000000000000000000000000000000
+ 100111 | 0000000000000000010000000000000000000000000000000000000000
+ 100110 | 0000000000000000100000000000000000000000000000000000000000
+ 101000 | 0000000000000001000000000000000000000000000000000000000000
+ 101001 | 0000000000000010000000000000000000000000000000000000000000
+ 101010 | 0000000000000100000000000000000000000000000000000000000000
+ 101011 | 0000000000001000000000000000000000000000000000000000000000
+ 101100 | 0000000000010000000000000000000000000000000000000000000000
+ 101101 | 0000000000100000000000000000000000000000000000000000000000
+ 101110 | 0000000001000000000000000000000000000000000000000000000000
+ 101111 | 0000000010000000000000000000000000000000000000000000000000
+ 110000 | 0000000100000000000000000000000000000000000000000000000000
+ 110011 | 0000001000000000000000000000000000000000000000000000000000
+ 110100 | 0000010000000000000000000000000000000000000000000000000000
+ 110101 | 0000100000000000000000000000000000000000000000000000000000
+ 110110 | 0001000000000000000000000000000000000000000000000000000000
+ 111000 | 0010000000000000000000000000000000000000000000000000000000
+ 111001 | 0100000000000000000000000000000000000000000000000000000000
+ 110111 | 1000000000000000000000000000000000000000000000000000000000
+ 111010 | unreached
+----------------------------------------------------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller_inst/FSM_1> on signal <state[1:8]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00000001
+ 001   | 00000010
+ 010   | 00000100
+ 011   | 00001000
+ 111   | 00010000
+ 100   | 00100000
+ 101   | 01000000
+ 110   | 10000000
+-------------------
+Optimizing FSM <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/FSM_2> on signal <state[1:4]> with gray encoding.
+-------------------------------
+ State             | Encoding
+-------------------------------
+ ready             | 0000
+ decide            | 0001
+ addr_phase        | 0011
+ addr_to_data_gap  | 0010
+ addr_to_data_gap2 | 0111
+ addr_to_data_gap3 | 0101
+ data_phase        | 0100
+ almost_ready      | 0110
+ almost_ready2     | 1100
+ almost_ready3     | 1101
+-------------------------------
+WARNING:Xst:1293 - FF/Latch <DQS_DELAY_INITIAL_7> has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <TARGET_DQS_DELAY_7> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <IODRPCTRLR_WRITE_DATA_7> (without init value) has a constant value of 0 in block <mcb_soft_calibration>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance U_BUFG_CLK1 in unit memc3_infrastructure of type BUFGCE has been replaced by BUFGMUX
+INFO:Xst:2261 - The FF/Latch <MCB_UIADDR_int_2> in Unit <mcb_soft_calibration> is equivalent to the following 2 FFs/Latches, which will be removed : <MCB_UIADDR_int_3> <MCB_UIADDR_int_4> 
+WARNING:Xst:2170 - Unit atlys_ddr_test_vhdl : the following signal(s) form a combinatorial loop: interface/c3_clk_sig.
+
+Optimizing unit <atlys_ddr_test_vhdl> ...
+
+Optimizing unit <memc3_infrastructure> ...
+
+Optimizing unit <mcb_soft_calibration_top> ...
+
+Optimizing unit <mcb_soft_calibration> ...
+
+Optimizing unit <iodrp_controller> ...
+
+Optimizing unit <iodrp_mcb_controller> ...
+WARNING:Xst:1710 - FF/Latch <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller_inst/data_reg_7> (without init value) has a constant value of 0 in block <atlys_ddr_test_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/data_reg_7> (without init value) has a constant value of 0 in block <atlys_ddr_test_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/read_data_7> of sequential type is unconnected in block <atlys_ddr_test_vhdl>.
+WARNING:Xst:2677 - Node <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/read_data_6> of sequential type is unconnected in block <atlys_ddr_test_vhdl>.
+WARNING:Xst:2677 - Node <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/read_data_5> of sequential type is unconnected in block <atlys_ddr_test_vhdl>.
+WARNING:Xst:2677 - Node <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/read_data_4> of sequential type is unconnected in block <atlys_ddr_test_vhdl>.
+WARNING:Xst:2677 - Node <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/read_data_3> of sequential type is unconnected in block <atlys_ddr_test_vhdl>.
+WARNING:Xst:2677 - Node <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/read_data_2> of sequential type is unconnected in block <atlys_ddr_test_vhdl>.
+WARNING:Xst:2677 - Node <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/read_data_1> of sequential type is unconnected in block <atlys_ddr_test_vhdl>.
+WARNING:Xst:2677 - Node <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_mcb_controller_inst/read_data_0> of sequential type is unconnected in block <atlys_ddr_test_vhdl>.
+WARNING:Xst:1293 - FF/Latch <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_9> has a constant value of 0 in block <atlys_ddr_test_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_8> has a constant value of 0 in block <atlys_ddr_test_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_7> has a constant value of 0 in block <atlys_ddr_test_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_6> has a constant value of 0 in block <atlys_ddr_test_vhdl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RstCounter_5> has a constant value of 0 in block <atlys_ddr_test_vhdl>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block atlys_ddr_test_vhdl, actual ratio is 2.
+FlipFlop interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd4 has been replicated 1 time(s)
+FlipFlop interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd42 has been replicated 1 time(s)
+FlipFlop interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd46 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 346
+ Flip-Flops                                            : 346
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : atlys_ddr_test_vhdl.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 815
+#      GND                         : 1
+#      INV                         : 14
+#      LUT1                        : 30
+#      LUT2                        : 86
+#      LUT3                        : 67
+#      LUT4                        : 92
+#      LUT5                        : 74
+#      LUT6                        : 272
+#      MULT_AND                    : 7
+#      MUXCY                       : 90
+#      MUXF7                       : 7
+#      VCC                         : 1
+#      XORCY                       : 74
+# FlipFlops/Latches                : 346
+#      FD                          : 33
+#      FDC                         : 10
+#      FDCE                        : 23
+#      FDE                         : 25
+#      FDP                         : 26
+#      FDR                         : 142
+#      FDRE                        : 82
+#      FDS                         : 5
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGMUX                     : 1
+# IO Buffers                       : 54
+#      IBUF                        : 1
+#      IBUFG                       : 1
+#      IOBUF                       : 18
+#      IOBUFDS                     : 2
+#      OBUF                        : 8
+#      OBUFT                       : 23
+#      OBUFTDS                     : 1
+# Others                           : 75
+#      BUFPLL_MCB                  : 1
+#      IODRP2                      : 2
+#      IODRP2_MCB                  : 22
+#      MCB                         : 1
+#      OSERDES2                    : 44
+#      PLL_ADV                     : 1
+#      PULLDOWN                    : 2
+#      PULLUP                      : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             346  out of  54576     0%  
+ Number of Slice LUTs:                  635  out of  27288     2%  
+    Number used as Logic:               635  out of  27288     2%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    734
+   Number with an unused Flip Flop:     388  out of    734    52%  
+   Number with an unused LUT:            99  out of    734    13%  
+   Number of fully used LUT-FF pairs:   247  out of    734    33%  
+   Number of unique control sets:        30
+
+IO Utilization: 
+ Number of IOs:                          65
+ Number of bonded IOBs:                  57  out of    218    26%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of PLL_ADVs:                      1  out of      4    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK_I                              | PLL_ADV:CLKOUT2        | 28    |
+CLK_I                              | PLL_ADV:CLKOUT3        | 318   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 45.256ns (Maximum Frequency: 22.096MHz)
+   Minimum input arrival time before clock: 5.944ns
+   Maximum output required time after clock: 4.252ns
+   Maximum combinational path delay: 4.700ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK_I'
+  Clock period: 45.256ns (frequency: 22.096MHz)
+  Total number of paths / destination ports: 22646 / 753
+-------------------------------------------------------------------------
+Delay:               7.241ns (Levels of Logic = 5)
+  Source:            interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd45 (FF)
+  Destination:       interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/counter_dec_7 (FF)
+  Source Clock:      CLK_I rising 6.2X
+  Destination Clock: CLK_I rising 6.2X
+
+  Data Path: interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd45 to interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/counter_dec_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             15   0.525   1.155  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd45 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd45)
+     LUT3:I2->O            2   0.254   0.726  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1815211 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n181521)
+     LUT6:I5->O           20   0.254   1.286  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE[5]_GND_41_o_wide_mux_367_OUT<1>1 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE[5]_GND_41_o_wide_mux_367_OUT<1>)
+     LUT4:I3->O           19   0.254   1.261  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<3>3 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE<3>_inv_inv)
+     LUT6:I5->O            8   0.254   0.944  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Reset_OR_DriverANDClockEnable10 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/Reset_OR_DriverANDClockEnable10)
+     LUT4:I3->O            1   0.254   0.000  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/counter_inc_7_rstpot (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/counter_inc_7_rstpot)
+     FD:D                      0.074          interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/counter_inc_7
+    ----------------------------------------
+    Total                      7.241ns (1.869ns logic, 5.372ns route)
+                                       (25.8% logic, 74.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_I'
+  Total number of paths / destination ports: 185 / 124
+-------------------------------------------------------------------------
+Offset:              5.944ns (Levels of Logic = 3)
+  Source:            RESET_I (PAD)
+  Destination:       interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RST_reg (FF)
+  Destination Clock: CLK_I rising 6.2X
+
+  Data Path: RESET_I to interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RST_reg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   1.328   0.841  RESET_I_IBUF (RESET_I_IBUF)
+     LUT5:I4->O           76   0.254   2.131  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/int_sys_rst1 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/int_sys_rst)
+     LUT2:I0->O            1   0.250   0.681  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/non_violating_rst1 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/non_violating_rst)
+     FDP:PRE                   0.459          interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/RST_reg
+    ----------------------------------------
+    Total                      5.944ns (2.291ns logic, 3.653ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_I'
+  Total number of paths / destination ports: 172 / 73
+-------------------------------------------------------------------------
+Offset:              4.252ns (Levels of Logic = 2)
+  Source:            interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/normal_operation_window (FF)
+  Destination:       interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/gen_zio.IODRP2_ZIO:T (PAD)
+  Source Clock:      CLK_I rising 6.2X
+
+  Data Path: interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/normal_operation_window to interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/gen_zio.IODRP2_ZIO:T
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.525   1.196  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/normal_operation_window (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/normal_operation_window)
+     LUT5:I0->O           76   0.254   2.022  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/int_sys_rst1 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/int_sys_rst)
+     INV:I->O              0   0.255   0.000  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_ZIO_ODATAIN1_INV_0 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_ZIO_ODATAIN)
+    IODRP2:ODATAIN             0.000          interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/IODRP2_RZQ
+    ----------------------------------------
+    Total                      4.252ns (1.034ns logic, 3.218ns route)
+                                       (24.3% logic, 75.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 801 / 706
+-------------------------------------------------------------------------
+Delay:               4.700ns (Levels of Logic = 3)
+  Source:            RESET_I (PAD)
+  Destination:       interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/gen_zio.IODRP2_ZIO:T (PAD)
+
+  Data Path: RESET_I to interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/gen_zio.IODRP2_ZIO:T
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   1.328   0.841  RESET_I_IBUF (RESET_I_IBUF)
+     LUT5:I4->O           76   0.254   2.022  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/int_sys_rst1 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/int_sys_rst)
+     INV:I->O              0   0.255   0.000  interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_ZIO_ODATAIN1_INV_0 (interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/RZQ_ZIO_ODATAIN)
+    IODRP2:ODATAIN             0.000          interface/u_ddr2/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/IODRP2_RZQ
+    ----------------------------------------
+    Total                      4.700ns (1.837ns logic, 2.863ns route)
+                                       (39.1% logic, 60.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK_I
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_I          |    7.241|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.99 secs
+ 
+--> 
+
+
+Total memory usage is 420084 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  364 (   0 filtered)
+Number of infos    :   96 (   0 filtered)
+

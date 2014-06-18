@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -filter
 iseconfig/filter.filter -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc
-atlys.ucf -p xc6slx45-csg324-3 vhdl_wrapper_for_verilog.ngc
+atlys.ucf -p xc6slx45-csg324-2 vhdl_wrapper_for_verilog.ngc
 vhdl_wrapper_for_verilog.ngd
 
 Reading NGO file
@@ -21,54 +21,15 @@ WARNING:NgdBuild - The value of SIM_DEVICE on instance
    changed in this same manner in the source netlist or constraint file.
 Resolving constraint associations...
 Checking Constraint Associations...
-INFO:ConstraintSystem:178 - TNM 'clk', used in period specification 'TS_clk',
-   was traced into PLL_ADV instance
-   ddr_wrapper/ddr_interface/u_ddr2/memc3_infrastructure_inst/u_pll_adv. The
-   following new TNM groups and period specifications were generated at the
-   PLL_ADV output(s): 
-   CLKOUT3: <TIMESPEC
-   TS_ddr_wrapper_ddr_interface_u_ddr2_memc3_infrastructure_inst_mcb_drp_clk_buf
-   g_in = PERIOD
-   "ddr_wrapper_ddr_interface_u_ddr2_memc3_infrastructure_inst_mcb_drp_clk_bufg_
-   in" TS_clk * 1.5625 ...>
-
-INFO:ConstraintSystem:178 - TNM 'clk', used in period specification 'TS_clk',
-   was traced into PLL_ADV instance
-   ddr_wrapper/ddr_interface/u_ddr2/memc3_infrastructure_inst/u_pll_adv. The
-   following new TNM groups and period specifications were generated at the
-   PLL_ADV output(s): 
-   CLKOUT1: <TIMESPEC
-   TS_ddr_wrapper_ddr_interface_u_ddr2_memc3_infrastructure_inst_clk_2x_180 =
-   PERIOD
-   "ddr_wrapper_ddr_interface_u_ddr2_memc3_infrastructure_inst_clk_2x_180"
-   TS_clk * 6.25 PHASE 0.8 ns HIGH 50%>
-
-INFO:ConstraintSystem:178 - TNM 'clk', used in period specification 'TS_clk',
-   was traced into PLL_ADV instance
-   ddr_wrapper/ddr_interface/u_ddr2/memc3_infrastructure_inst/u_pll_adv. The
-   following new TNM groups and period specifications were generated at the
-   PLL_ADV output(s): 
-   CLKOUT0: <TIMESPEC
-   TS_ddr_wrapper_ddr_interface_u_ddr2_memc3_infrastructure_inst_clk_2x_0 =
-   PERIOD "ddr_wrapper_ddr_interface_u_ddr2_memc3_infrastructure_inst_clk_2x_0"
-   TS_clk * 6.25 HIGH 50%>
-
-INFO:ConstraintSystem:178 - TNM 'clk', used in period specification 'TS_clk',
-   was traced into PLL_ADV instance
-   ddr_wrapper/ddr_interface/u_ddr2/memc3_infrastructure_inst/u_pll_adv. The
-   following new TNM groups and period specifications were generated at the
-   PLL_ADV output(s): 
-   CLKOUT2: <TIMESPEC
-   TS_ddr_wrapper_ddr_interface_u_ddr2_memc3_infrastructure_inst_clk0_bufg_in =
-   PERIOD
-   "ddr_wrapper_ddr_interface_u_ddr2_memc3_infrastructure_inst_clk0_bufg_in"
-   TS_clk * 0.78125 HIGH 50%>
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_clk = PERIOD "clk" 100 MHz
+   HIGH 50%;> [atlys.ucf(67)]: Unable to find an active 'TNM' or 'TimeGrp'
+   constraint named 'clk'.
 
 Done...
 
 Checking expanded design ...
-WARNING:NgdBuild:452 - logical net 'N269' has no driver
-WARNING:NgdBuild:452 - logical net 'N271' has no driver
+WARNING:NgdBuild:452 - logical net 'N336' has no driver
+WARNING:NgdBuild:452 - logical net 'N338' has no driver
 
 Partition Implementation Status
 -------------------------------
@@ -79,9 +40,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   3
+  Number of warnings:   4
 
-Total memory usage is 406048 kilobytes
+Total memory usage is 407504 kilobytes
 
 Writing NGD file "vhdl_wrapper_for_verilog.ngd" ...
 Total REAL time to NGDBUILD completion:  4 sec

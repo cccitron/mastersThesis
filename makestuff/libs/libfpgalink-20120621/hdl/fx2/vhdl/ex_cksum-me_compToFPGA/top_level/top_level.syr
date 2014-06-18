@@ -1,0 +1,947 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: top_level.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_level.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_level"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : top_level
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/comm_fpga_fx2.vhd" into library work
+Parsing entity <comm_fpga_fx2>.
+Parsing architecture <behavioural> of entity <comm_fpga_fx2>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/top_level.vhd" into library work
+Parsing entity <top_level>.
+Parsing architecture <behavioural> of entity <top_level>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top_level> (architecture <behavioural>) from library <work>.
+
+Elaborating entity <comm_fpga_fx2> (architecture <behavioural>) from library <work>.
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/top_level.vhd" Line 246: Assignment to flags ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_level>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/top_level.vhd".
+    Found 8-bit register for signal <reg1>.
+    Found 8-bit register for signal <reg2>.
+    Found 8-bit register for signal <reg3>.
+    Found 8-bit register for signal <temp_array<0>>.
+    Found 8-bit register for signal <temp_array<1>>.
+    Found 8-bit register for signal <temp_array<2>>.
+    Found 8-bit register for signal <temp_array<3>>.
+    Found 8-bit register for signal <temp_array<4>>.
+    Found 8-bit register for signal <temp_array<5>>.
+    Found 8-bit register for signal <temp_array<6>>.
+    Found 8-bit register for signal <temp_array<7>>.
+    Found 8-bit register for signal <temp_array<8>>.
+    Found 32-bit register for signal <ndx>.
+    Found 32-bit register for signal <f2h_rd>.
+    Found 32-bit adder for signal <ndx[31]_GND_4_o_add_45_OUT> created at line 124.
+    Found 32-bit adder for signal <f2h_rd[31]_GND_4_o_add_47_OUT> created at line 130.
+    Found 8-bit 9-to-1 multiplexer for signal <reg1_next> created at line 117.
+    Found 1-bit 9-to-1 multiplexer for signal <ndx[3]_X_4_o_wide_mux_33_OUT[7]> created at line 122.
+    Found 1-bit 9-to-1 multiplexer for signal <ndx[3]_X_4_o_wide_mux_33_OUT[6]> created at line 122.
+    Found 1-bit 9-to-1 multiplexer for signal <ndx[3]_X_4_o_wide_mux_33_OUT[5]> created at line 122.
+    Found 1-bit 9-to-1 multiplexer for signal <ndx[3]_X_4_o_wide_mux_33_OUT[4]> created at line 122.
+    Found 1-bit 9-to-1 multiplexer for signal <ndx[3]_X_4_o_wide_mux_33_OUT[3]> created at line 122.
+    Found 1-bit 9-to-1 multiplexer for signal <ndx[3]_X_4_o_wide_mux_33_OUT[2]> created at line 122.
+    Found 1-bit 9-to-1 multiplexer for signal <ndx[3]_X_4_o_wide_mux_33_OUT[1]> created at line 122.
+    Found 1-bit 9-to-1 multiplexer for signal <ndx[3]_X_4_o_wide_mux_33_OUT[0]> created at line 122.
+    Found 8-bit 4-to-1 multiplexer for signal <_n0215> created at line 61.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<8><7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<8><6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<8><5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<8><4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<8><3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<8><2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<8><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<8><0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<7><7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<7><6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<7><5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<7><4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<7><3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<7><2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<7><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<7><0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<6><7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<6><6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<6><5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<6><4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<6><3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<6><2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<6><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<6><0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<5><7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<5><6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<5><5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<5><4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<5><3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<5><2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<5><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<5><0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<4><7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<4><6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<4><5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<4><4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<4><3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<4><2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<4><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<4><0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<3><7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<3><6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<3><5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<3><4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<3><3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<3><2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<3><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<3><0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<2><7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<2><6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<2><5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<2><4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<2><3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<2><2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<2><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<2><0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<1><7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<1><6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<1><5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<1><4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<1><3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<1><2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<1><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<1><0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<0><7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<0><6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<0><5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<0><4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<0><3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<0><2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<0><1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_array_next<0><0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 160 D-type flip-flop(s).
+	inferred  72 Latch(s).
+	inferred  19 Multiplexer(s).
+Unit <top_level> synthesized.
+
+Synthesizing Unit <comm_fpga_fx2>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/comm_fpga_fx2.vhd".
+    Found 32-bit register for signal <count>.
+    Found 7-bit register for signal <chanAddr>.
+    Found 1-bit register for signal <isWrite>.
+    Found 1-bit register for signal <isAligned>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 22                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 8                                              |
+    | Clock              | fx2Clk_in (rising_edge)                        |
+    | Power Up State     | s_idle                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <GND_77_o_GND_77_o_sub_18_OUT<31:0>> created at line 1308.
+    Found 1-bit tristate buffer for signal <fx2Data_io<7>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<6>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<5>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<4>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<3>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<2>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<1>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<0>> created at line 222
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred  49 Multiplexer(s).
+	inferred   8 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <comm_fpga_fx2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 2
+ 32-bit subtractor                                     : 1
+# Registers                                            : 18
+ 1-bit register                                        : 2
+ 32-bit register                                       : 3
+ 7-bit register                                        : 1
+ 8-bit register                                        : 12
+# Latches                                              : 72
+ 1-bit latch                                           : 72
+# Multiplexers                                         : 68
+ 1-bit 2-to-1 multiplexer                              : 43
+ 1-bit 9-to-1 multiplexer                              : 8
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 4-to-1 multiplexer                              : 1
+ 8-bit 9-to-1 multiplexer                              : 1
+# Tristates                                            : 8
+ 1-bit tristate buffer                                 : 8
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <top_level>.
+The following registers are absorbed into counter <f2h_rd>: 1 register on signal <f2h_rd>.
+The following registers are absorbed into counter <ndx>: 1 register on signal <ndx>.
+Unit <top_level> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit subtractor                                     : 1
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 137
+ Flip-Flops                                            : 137
+# Multiplexers                                         : 75
+ 1-bit 2-to-1 multiplexer                              : 43
+ 1-bit 9-to-1 multiplexer                              : 16
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <comm_fpga_fx2/FSM_0> on signal <state[1:4]> with user encoding.
+------------------------------------
+ State                  | Encoding
+------------------------------------
+ s_idle                 | 0000
+ s_get_count0           | 0001
+ s_get_count1           | 0010
+ s_get_count2           | 0011
+ s_get_count3           | 0100
+ s_begin_write          | 0101
+ s_write                | 0110
+ s_end_write_aligned    | 0111
+ s_end_write_nonaligned | 1000
+ s_read                 | 1001
+------------------------------------
+
+Optimizing unit <top_level> ...
+WARNING:Xst:1293 - FF/Latch <ndx_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_9> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_10> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_11> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_12> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_13> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_14> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_15> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_16> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_17> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_18> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_19> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_20> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_21> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_22> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_23> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_24> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_25> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_26> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_27> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_28> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ndx_31> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_9> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_10> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_11> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_12> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_13> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_14> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_15> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_16> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_17> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_18> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_19> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_20> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_21> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_22> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_23> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_24> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_25> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_26> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_27> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_28> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <f2h_rd_31> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 1.
+FlipFlop comm_fpga_fx2/state_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd2 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd3 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd4 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 156
+ Flip-Flops                                            : 156
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top_level.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 379
+#      GND                         : 1
+#      INV                         : 33
+#      LUT1                        : 7
+#      LUT2                        : 8
+#      LUT3                        : 19
+#      LUT4                        : 26
+#      LUT5                        : 96
+#      LUT6                        : 110
+#      MUXCY                       : 37
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 40
+# FlipFlops/Latches                : 228
+#      FD                          : 92
+#      FDE                         : 56
+#      FDRE                        : 8
+#      LD                          : 72
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 32
+#      IBUF                        : 10
+#      IOBUF                       : 8
+#      OBUF                        : 14
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             228  out of  54576     0%  
+ Number of Slice LUTs:                  299  out of  27288     1%  
+    Number used as Logic:               299  out of  27288     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    394
+   Number with an unused Flip Flop:     166  out of    394    42%  
+   Number with an unused LUT:            95  out of    394    24%  
+   Number of fully used LUT-FF pairs:   133  out of    394    33%  
+   Number of unique control sets:        15
+
+IO Utilization: 
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    218    15%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+--------------------------------------------------------+------------------------------+-------+
+Clock Signal                                            | Clock buffer(FF name)        | Load  |
+--------------------------------------------------------+------------------------------+-------+
+ndx[3]_Decoder_35_OUT<8>(ndx[3]_Decoder_35_OUT<8><3>1:O)| NONE(*)(temp_array_next<8>_7)| 8     |
+ndx[3]_Decoder_35_OUT<7>(ndx[3]_Decoder_35_OUT<7><3>1:O)| NONE(*)(temp_array_next<7>_6)| 8     |
+ndx[3]_Decoder_35_OUT<6>(ndx[3]_Decoder_35_OUT<6><3>1:O)| NONE(*)(temp_array_next<6>_5)| 8     |
+ndx[3]_Decoder_35_OUT<5>(ndx[3]_Decoder_35_OUT<5><3>1:O)| NONE(*)(temp_array_next<5>_4)| 8     |
+ndx[3]_Decoder_35_OUT<4>(ndx[3]_Decoder_35_OUT<4><3>1:O)| NONE(*)(temp_array_next<4>_3)| 8     |
+ndx[3]_Decoder_35_OUT<3>(ndx[3]_Decoder_35_OUT<3><3>1:O)| NONE(*)(temp_array_next<3>_2)| 8     |
+ndx[3]_Decoder_35_OUT<2>(ndx[3]_Decoder_35_OUT<2><3>1:O)| NONE(*)(temp_array_next<2>_1)| 8     |
+ndx[3]_Decoder_35_OUT<1>(ndx[3]_Decoder_35_OUT<1><3>1:O)| NONE(*)(temp_array_next<1>_0)| 8     |
+fx2Clk_in                                               | BUFGP                        | 156   |
+ndx[3]_Decoder_35_OUT<0>(ndx[3]_Decoder_35_OUT<0><3>1:O)| NONE(*)(temp_array_next<0>_7)| 8     |
+--------------------------------------------------------+------------------------------+-------+
+(*) These 9 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.783ns (Maximum Frequency: 264.365MHz)
+   Minimum input arrival time before clock: 6.237ns
+   Maximum output required time after clock: 8.846ns
+   Maximum combinational path delay: 10.120ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'fx2Clk_in'
+  Clock period: 3.783ns (frequency: 264.365MHz)
+  Total number of paths / destination ports: 1767 / 148
+-------------------------------------------------------------------------
+Delay:               3.783ns (Levels of Logic = 3)
+  Source:            comm_fpga_fx2/count_14 (FF)
+  Destination:       comm_fpga_fx2/state_FSM_FFd2 (FF)
+  Source Clock:      fx2Clk_in rising
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/count_14 to comm_fpga_fx2/state_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.447   1.015  comm_fpga_fx2/count_14 (comm_fpga_fx2/count_14)
+     LUT6:I0->O            1   0.203   0.924  comm_fpga_fx2/count[31]_GND_77_o_equal_19_o<31>5 (comm_fpga_fx2/count[31]_GND_77_o_equal_19_o<31>4)
+     LUT6:I1->O            4   0.203   0.684  comm_fpga_fx2/count[31]_GND_77_o_equal_19_o<31>6 (comm_fpga_fx2/count[31]_GND_77_o_equal_19_o)
+     LUT6:I5->O            3   0.205   0.000  comm_fpga_fx2/state_FSM_FFd1-In5 (comm_fpga_fx2/state_FSM_FFd1-In)
+     FD:D                      0.102          comm_fpga_fx2/state_FSM_FFd1
+    ----------------------------------------
+    Total                      3.783ns (1.160ns logic, 2.623ns route)
+                                       (30.7% logic, 69.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ndx[3]_Decoder_35_OUT<8>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.237ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       temp_array_next<8>_7 (LATCH)
+  Destination Clock: ndx[3]_Decoder_35_OUT<8> falling
+
+  Data Path: fx2GotData_in to temp_array_next<8>_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.498  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            8   0.203   1.050  GND_4_o_h2fValid_AND_6_o11 (GND_4_o_h2fValid_AND_6_o1)
+     LUT5:I1->O            9   0.203   0.000  Mmux_ndx[3]_h2fData[7]_mux_34_OUT<0>14 (ndx[3]_h2fData[7]_mux_34_OUT<0>)
+     LD:D                      0.037          temp_array_next<8>_0
+    ----------------------------------------
+    Total                      6.237ns (1.868ns logic, 4.369ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ndx[3]_Decoder_35_OUT<7>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.237ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       temp_array_next<7>_6 (LATCH)
+  Destination Clock: ndx[3]_Decoder_35_OUT<7> falling
+
+  Data Path: fx2GotData_in to temp_array_next<7>_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.498  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            8   0.203   1.050  GND_4_o_h2fValid_AND_6_o11 (GND_4_o_h2fValid_AND_6_o1)
+     LUT5:I1->O            9   0.203   0.000  Mmux_ndx[3]_h2fData[7]_mux_34_OUT<0>14 (ndx[3]_h2fData[7]_mux_34_OUT<0>)
+     LD:D                      0.037          temp_array_next<7>_0
+    ----------------------------------------
+    Total                      6.237ns (1.868ns logic, 4.369ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ndx[3]_Decoder_35_OUT<6>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.237ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       temp_array_next<6>_5 (LATCH)
+  Destination Clock: ndx[3]_Decoder_35_OUT<6> falling
+
+  Data Path: fx2GotData_in to temp_array_next<6>_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.498  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            8   0.203   1.050  GND_4_o_h2fValid_AND_6_o11 (GND_4_o_h2fValid_AND_6_o1)
+     LUT5:I1->O            9   0.203   0.000  Mmux_ndx[3]_h2fData[7]_mux_34_OUT<0>14 (ndx[3]_h2fData[7]_mux_34_OUT<0>)
+     LD:D                      0.037          temp_array_next<6>_0
+    ----------------------------------------
+    Total                      6.237ns (1.868ns logic, 4.369ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ndx[3]_Decoder_35_OUT<5>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.237ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       temp_array_next<5>_4 (LATCH)
+  Destination Clock: ndx[3]_Decoder_35_OUT<5> falling
+
+  Data Path: fx2GotData_in to temp_array_next<5>_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.498  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            8   0.203   1.050  GND_4_o_h2fValid_AND_6_o11 (GND_4_o_h2fValid_AND_6_o1)
+     LUT5:I1->O            9   0.203   0.000  Mmux_ndx[3]_h2fData[7]_mux_34_OUT<0>14 (ndx[3]_h2fData[7]_mux_34_OUT<0>)
+     LD:D                      0.037          temp_array_next<5>_0
+    ----------------------------------------
+    Total                      6.237ns (1.868ns logic, 4.369ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ndx[3]_Decoder_35_OUT<4>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.237ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       temp_array_next<4>_3 (LATCH)
+  Destination Clock: ndx[3]_Decoder_35_OUT<4> falling
+
+  Data Path: fx2GotData_in to temp_array_next<4>_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.498  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            8   0.203   1.050  GND_4_o_h2fValid_AND_6_o11 (GND_4_o_h2fValid_AND_6_o1)
+     LUT5:I1->O            9   0.203   0.000  Mmux_ndx[3]_h2fData[7]_mux_34_OUT<0>14 (ndx[3]_h2fData[7]_mux_34_OUT<0>)
+     LD:D                      0.037          temp_array_next<4>_0
+    ----------------------------------------
+    Total                      6.237ns (1.868ns logic, 4.369ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ndx[3]_Decoder_35_OUT<3>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.237ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       temp_array_next<3>_2 (LATCH)
+  Destination Clock: ndx[3]_Decoder_35_OUT<3> falling
+
+  Data Path: fx2GotData_in to temp_array_next<3>_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.498  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            8   0.203   1.050  GND_4_o_h2fValid_AND_6_o11 (GND_4_o_h2fValid_AND_6_o1)
+     LUT5:I1->O            9   0.203   0.000  Mmux_ndx[3]_h2fData[7]_mux_34_OUT<0>14 (ndx[3]_h2fData[7]_mux_34_OUT<0>)
+     LD:D                      0.037          temp_array_next<3>_0
+    ----------------------------------------
+    Total                      6.237ns (1.868ns logic, 4.369ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ndx[3]_Decoder_35_OUT<2>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.237ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       temp_array_next<2>_1 (LATCH)
+  Destination Clock: ndx[3]_Decoder_35_OUT<2> falling
+
+  Data Path: fx2GotData_in to temp_array_next<2>_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.498  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            8   0.203   1.050  GND_4_o_h2fValid_AND_6_o11 (GND_4_o_h2fValid_AND_6_o1)
+     LUT5:I1->O            9   0.203   0.000  Mmux_ndx[3]_h2fData[7]_mux_34_OUT<0>14 (ndx[3]_h2fData[7]_mux_34_OUT<0>)
+     LD:D                      0.037          temp_array_next<2>_0
+    ----------------------------------------
+    Total                      6.237ns (1.868ns logic, 4.369ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ndx[3]_Decoder_35_OUT<1>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.237ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       temp_array_next<1>_0 (LATCH)
+  Destination Clock: ndx[3]_Decoder_35_OUT<1> falling
+
+  Data Path: fx2GotData_in to temp_array_next<1>_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.498  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            8   0.203   1.050  GND_4_o_h2fValid_AND_6_o11 (GND_4_o_h2fValid_AND_6_o1)
+     LUT5:I1->O            9   0.203   0.000  Mmux_ndx[3]_h2fData[7]_mux_34_OUT<0>14 (ndx[3]_h2fData[7]_mux_34_OUT<0>)
+     LD:D                      0.037          temp_array_next<1>_0
+    ----------------------------------------
+    Total                      6.237ns (1.868ns logic, 4.369ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 218 / 131
+-------------------------------------------------------------------------
+Offset:              4.879ns (Levels of Logic = 2)
+  Source:            fx2GotData_in (PAD)
+  Destination:       comm_fpga_fx2/count_31 (FF)
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: fx2GotData_in to comm_fpga_fx2/count_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.841  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT6:I0->O           32   0.203   1.291  comm_fpga_fx2/_n0223_inv1 (comm_fpga_fx2/_n0223_inv)
+     FDE:CE                    0.322          comm_fpga_fx2/count_0
+    ----------------------------------------
+    Total                      4.879ns (1.747ns logic, 3.132ns route)
+                                       (35.8% logic, 64.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ndx[3]_Decoder_35_OUT<0>'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.237ns (Levels of Logic = 4)
+  Source:            fx2GotData_in (PAD)
+  Destination:       temp_array_next<0>_7 (LATCH)
+  Destination Clock: ndx[3]_Decoder_35_OUT<0> falling
+
+  Data Path: fx2GotData_in to temp_array_next<0>_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.498  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I0->O            8   0.203   1.050  GND_4_o_h2fValid_AND_6_o11 (GND_4_o_h2fValid_AND_6_o1)
+     LUT5:I1->O            9   0.203   0.000  Mmux_ndx[3]_h2fData[7]_mux_34_OUT<0>14 (ndx[3]_h2fData[7]_mux_34_OUT<0>)
+     LD:D                      0.037          temp_array_next<0>_0
+    ----------------------------------------
+    Total                      6.237ns (1.868ns logic, 4.369ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 247 / 21
+-------------------------------------------------------------------------
+Offset:              8.846ns (Levels of Logic = 5)
+  Source:            comm_fpga_fx2/state_FSM_FFd4 (FF)
+  Destination:       led_out<7> (PAD)
+  Source Clock:      fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/state_FSM_FFd4 to led_out<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              34   0.447   1.321  comm_fpga_fx2/state_FSM_FFd4 (comm_fpga_fx2/state_FSM_FFd4)
+     LUT5:I4->O           22   0.205   1.381  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I2->O            1   0.203   0.808  led_out<1>3 (led_out<1>3)
+     LUT6:I3->O            1   0.205   0.924  led_out<1>5 (led_out<1>5)
+     LUT6:I1->O            1   0.203   0.579  led_out<1>6 (led_out_7_OBUF)
+     OBUF:I->O                 2.571          led_out_7_OBUF (led_out<7>)
+    ----------------------------------------
+    Total                      8.846ns (3.834ns logic, 5.012ns route)
+                                       (43.3% logic, 56.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 382 / 19
+-------------------------------------------------------------------------
+Delay:               10.120ns (Levels of Logic = 6)
+  Source:            fx2GotData_in (PAD)
+  Destination:       led_out<7> (PAD)
+
+  Data Path: fx2GotData_in to led_out<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            45   1.222   1.821  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT5:I0->O           22   0.203   1.381  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT6:I2->O            1   0.203   0.808  led_out<1>3 (led_out<1>3)
+     LUT6:I3->O            1   0.205   0.924  led_out<1>5 (led_out<1>5)
+     LUT6:I1->O            1   0.203   0.579  led_out<1>6 (led_out_7_OBUF)
+     OBUF:I->O                 2.571          led_out_7_OBUF (led_out<7>)
+    ----------------------------------------
+    Total                     10.120ns (4.607ns logic, 5.513ns route)
+                                       (45.5% logic, 54.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock fx2Clk_in
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+fx2Clk_in               |    3.783|         |         |         |
+ndx[3]_Decoder_35_OUT<0>|         |    1.179|         |         |
+ndx[3]_Decoder_35_OUT<1>|         |    1.179|         |         |
+ndx[3]_Decoder_35_OUT<2>|         |    1.179|         |         |
+ndx[3]_Decoder_35_OUT<3>|         |    1.179|         |         |
+ndx[3]_Decoder_35_OUT<4>|         |    1.179|         |         |
+ndx[3]_Decoder_35_OUT<5>|         |    1.179|         |         |
+ndx[3]_Decoder_35_OUT<6>|         |    1.179|         |         |
+ndx[3]_Decoder_35_OUT<7>|         |    1.179|         |         |
+ndx[3]_Decoder_35_OUT<8>|         |    1.179|         |         |
+------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ndx[3]_Decoder_35_OUT<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |         |         |    4.963|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ndx[3]_Decoder_35_OUT<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |         |         |    4.963|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ndx[3]_Decoder_35_OUT<2>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |         |         |    4.963|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ndx[3]_Decoder_35_OUT<3>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |         |         |    4.963|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ndx[3]_Decoder_35_OUT<4>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |         |         |    4.963|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ndx[3]_Decoder_35_OUT<5>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |         |         |    4.963|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ndx[3]_Decoder_35_OUT<6>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |         |         |    4.963|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ndx[3]_Decoder_35_OUT<7>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |         |         |    4.963|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ndx[3]_Decoder_35_OUT<8>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |         |         |    4.963|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.52 secs
+ 
+--> 
+
+
+Total memory usage is 390336 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  129 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

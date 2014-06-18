@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/test_spi_ctrl_isim_beh.exe" -prj "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/test_spi_ctrl_beh.prj" "work.test_spi_ctrl" 

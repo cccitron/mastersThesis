@@ -11,7 +11,8 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
+--use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 --this is the top level design entity that uses the SPI controler
 --as a component to interface with the memory on the Atlys board
@@ -19,14 +20,29 @@ use ieee.std_logic_unsigned.all;
 entity top_level_spi is
 	port (
 		clk_100MHz : in std_logic; -- 100MHz clk, FPGA's external oscillator
-		leds : buffer std_logic_vector (7 downto 0); -- drives all eight LEDs on board
+		leds : buffer std_logic_vector (6 downto 0); -- drives all eight LEDs on board
 		reset_btn : in std_logic; -- attached to center push-button
 		spi_clk : buffer std_logic;
 		spi_cs : out std_logic;
 		spi_din : in std_logic;
 		spi_dout : out std_logic;
 		spi_wp_bar : out std_logic;
-		spi_hold_bar : out std_logic
+		spi_hold_bar : out std_logic;
+      
+      -- FX2 interface -----------------------------------------------------------------------------
+		fx2Clk_in     : in    std_logic;                    -- 48MHz clock from FX2
+		fx2Addr_out   : out   std_logic_vector(1 downto 0); -- select FIFO: "10" for EP6OUT, "11" for EP8IN
+		fx2Data_io    : inout std_logic_vector(7 downto 0); -- 8-bit data to/from FX2
+
+		-- When EP6OUT selected:
+		fx2Read_out   : out   std_logic;                    -- asserted (active-low) when reading from FX2
+		fx2OE_out     : out   std_logic;                    -- asserted (active-low) to tell FX2 to drive bus
+		fx2GotData_in : in    std_logic;                    -- asserted (active-high) when FX2 has data for us
+
+		-- When EP8IN selected:
+		fx2Write_out  : out   std_logic;                    -- asserted (active-low) when writing to FX2
+		fx2GotRoom_in : in    std_logic;                    -- asserted (active-high) when FX2 has room for more data from us
+		fx2PktEnd_out : out   std_logic                    -- asserted (active-low) when a host read needs to be committed early
 	);
 end top_level_spi;
 
@@ -115,9 +131,111 @@ signal reset_spi_clk_cnt_to_32 : std_logic;
 signal start_address: std_logic_vector (23 downto 0);
 signal howmany_locations_to_read: std_logic_vector (3 downto 0);
 
+-- Channel read/write interface -----------------------------------------------------------------
+	signal chanAddr  : std_logic_vector(6 downto 0);  -- the selected channel (0-127)
+
+	-- Host >> FPGA pipe:
+	signal h2fData   : std_logic_vector(7 downto 0);  -- data lines used when the host writes to a channel
+	signal h2fValid  : std_logic;                     -- '1' means "on the next clock rising edge, please accept the data on h2fData"
+	signal h2fReady  : std_logic;                     -- channel logic can drive this low to say "I'm not ready for more data yet"
+
+	-- Host << FPGA pipe:
+	signal f2hData   : std_logic_vector(7 downto 0);  -- data lines used when the host reads from a channel
+	signal f2hValid  : std_logic;                     -- channel logic can drive this low to say "I don't have data ready for you"
+	signal f2hReady  : std_logic;                     -- '1' means "on the next clock rising edge, put your next byte of data on f2hData"
+	-- ----------------------------------------------------------------------------------------------
+
+	-- Needed so that the comm_fpga_fx2 module can drive both fx2Read_out and fx2OE_out
+	signal fx2Read                 : std_logic;
+
+	-- Flags for display on the 7-seg decimal points
+	--signal flags                   : std_logic_vector(3 downto 0);
+
+	-- Registers implementing the channels
+	signal checksum, checksum_next : std_logic_vector(15 downto 0) := x"0000";
+	signal reg0, reg0_next         : std_logic_vector(7 downto 0)  := x"00";
+	signal reg1, reg1_next         : std_logic_vector(7 downto 0)  := x"00";
+	signal reg2, reg2_next         : std_logic_vector(7 downto 0)  := x"00";
+	signal reg3, reg3_next         : std_logic_vector(7 downto 0)  := x"00";
+
+   signal pos : std_logic := '0';
+
 
 begin -- the fun here :)
 
+-- Infer registers
+	process(fx2Clk_in)
+	begin
+		if ( rising_edge(fx2Clk_in) ) then
+			checksum <= checksum_next;
+--         if (pos = '0') then
+--            reg0 <= FbRdData(15 downto 8); --reg0_next;
+--         else
+--            reg0 <= FbRdData(7 downto 0);
+--         end if;
+         reg0 <= reg0_next;
+         reg1 <= reg1_next;--FbRdData(15 downto 11) & "000"; --reg1_next;
+			reg2 <= reg2_next;--FbRdData(10 downto 5) & "00"; --reg2_next;
+			reg3 <= reg3_next;--FbRdData(4 downto 0) & "000"; --reg3_next;
+         
+         pos <= NOT(pos);
+		end if;
+	end process;
+
+--RED_I => FbRdData(15 downto 11) & "000",
+--GREEN_I => FbRdData(10 downto 5) & "00",
+--BLUE_I => FbRdData(4 downto 0) & "000",
+
+	-- Drive register inputs for each channel when the host is writing
+	checksum_next <=
+		std_logic_vector(unsigned(checksum) + unsigned(h2fData))
+			when chanAddr = "0000000" and h2fValid = '1'
+		else x"0000"
+			when chanAddr = "0000001" and h2fValid = '1' and h2fData(0) = '1'
+		else checksum;
+	reg0_next <= h2fData when chanAddr = "0000000" and h2fValid = '1' else reg0;
+	reg1_next <= x"00" when pos = '1' else x"ff"; --CamBD(15 downto 8) when pos = '0' else CamBD(7 downto 0); --h2fData when chanAddr = "0000001" and h2fValid = '1' else reg1;
+	reg2_next <= ('0' & leds) when chanAddr = "0000010" and h2fValid = '1' else reg2;
+	reg3_next <= ('0' & leds); --x"ff"; --h2fData when chanAddr = "0000011" and h2fValid = '1' else reg3;
+	
+	-- Select values to return for each channel when the host is reading
+	with chanAddr select f2hData <=
+		reg0 when "0000000",
+		--FbRdData(15 downto 11) & "000" when "0000001",
+      reg1  when "0000001",
+		reg2  when "0000010",
+		reg3  when "0000011",
+		x"00" when others;
+
+	-- Assert that there's always data for reading, and always room for writing
+	f2hValid <= '1';
+	h2fReady <= '1';                                                         --END_SNIPPET(registers)
+
+	-- CommFPGA module
+	fx2Read_out <= fx2Read;
+	fx2OE_out <= fx2Read;
+	fx2Addr_out(1) <= '1';  -- Use EP6OUT/EP8IN, not EP2OUT/EP4IN.
+	comm_fpga_fx2 : entity work.comm_fpga_fx2
+		port map(
+			-- FX2 interface
+			fx2Clk_in      => fx2Clk_in,
+			fx2FifoSel_out => fx2Addr_out(0),
+			fx2Data_io     => fx2Data_io,
+			fx2Read_out    => fx2Read,
+			fx2GotData_in  => fx2GotData_in,
+			fx2Write_out   => fx2Write_out,
+			fx2GotRoom_in  => fx2GotRoom_in,
+			fx2PktEnd_out  => fx2PktEnd_out,
+
+			-- Channel read/write interface
+			chanAddr_out   => chanAddr,
+			h2fData_out    => h2fData,
+			h2fValid_out   => h2fValid,
+			h2fReady_in    => h2fReady,
+			f2hData_in     => f2hData,
+			f2hValid_in    => f2hValid,
+			f2hReady_out   => f2hReady
+		);
 
 -- hard coded constants: the start address from where I start 
 -- to read memory locations; and how many locations will I read?
@@ -135,13 +253,17 @@ howmany_locations_to_read <= "0011"; -- for now I play with up to 16;
 dut_clock_divider: clk_divider
    generic map(N=>8)
 	port map(
-      clk=>clk_100MHz, reset=>reset,
-      clkout=>clk_100MHz_divided);
+      clk    => clk_100MHz, 
+      reset  => reset,
+      clkout => clk_100MHz_divided);
 
 -- instantiate debounce circuit;
-dut_reset_debounce: debounce port map(
-	clk=>clk_100MHz, sw=>reset_btn,
-	db_level=>reset, db_tick=>open);
+dut_reset_debounce: debounce 
+   port map(
+	clk      => clk_100MHz, 
+   sw       => reset_btn,
+	db_level => reset, 
+   db_tick  => open);
 				
 -- instantiate spi controller; 
 dut_spi_ctrl : spi_ctrl port map (
@@ -172,9 +294,9 @@ dut_spi_ctrl : spi_ctrl port map (
 process (reset, clk_100MHz_divided, state)
 begin
 	if reset = '1' then	 		
-		leds <= "00111100";
+		leds <= "1111101";--"00111100";
 	elsif (rising_edge(clk_100MHz_divided) and state = S8) then
-		leds <= leds_next;
+		leds <= leds_next(6 downto 0);
 	end if;
 end process; 
 
@@ -189,7 +311,7 @@ begin
 		spi_clk_cnt <= spi_clk_cnt_next;	
 	end if;
 end process;
-spi_clk_cnt_next <= spi_clk_cnt + 1;
+spi_clk_cnt_next <= STD_LOGIC_VECTOR(UNSIGNED(spi_clk_cnt) + 1); --spi_clk_cnt + 1;
 
 -- counter that monitors how many memory locations have 
 -- been read so far; it is incremented each time we visit 
@@ -203,7 +325,7 @@ begin
 		locations_cnt <= locations_cnt_next;	
 	end if;
 end process;
-locations_cnt_next <= locations_cnt + 1;
+locations_cnt_next <= STD_LOGIC_VECTOR(UNSIGNED(locations_cnt) + 1); --locations_cnt + 1;
 
 -- advance the ad-hoc state machine responsible with reading
 -- one Fash memory location; we use the spi_clk (which is

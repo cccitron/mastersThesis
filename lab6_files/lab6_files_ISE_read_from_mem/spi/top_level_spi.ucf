@@ -1,7 +1,7 @@
 # PlanAhead Generated physical constraints 
 
-NET "clk_100MHz" LOC = L15;
-NET "reset_btn" LOC = F5;
+NET "clk_100MHz" LOC = L15 | IOSTANDARD = LVCMOS33;
+NET "reset_btn" LOC = F5 | IOSTANDARD = LVCMOS33;
 NET "spi_din" LOC = R13; 
 NET "spi_dout" LOC = T13;
 NET "spi_cs" LOC = V3;
@@ -17,12 +17,35 @@ NET "spi_clk" LOC = R15;
 NET "spi_wp_bar" LOC = T14;
 NET "spi_hold_bar" LOC = V14;
 
-NET "leds[0]" LOC = U18;
-NET "leds[1]" LOC = M14;
-NET "leds[2]" LOC = N14;
-NET "leds[3]" LOC = L14;
-NET "leds[4]" LOC = M13;
-NET "leds[5]" LOC = D4;
-NET "leds[6]" LOC = P16;
-NET "leds[7]" LOC = N12;
+NET "leds[0]" LOC = U18 | IOSTANDARD = LVCMOS33;
+NET "leds[1]" LOC = M14 | IOSTANDARD = LVCMOS33;
+NET "leds[2]" LOC = N14 | IOSTANDARD = LVCMOS33;
+NET "leds[3]" LOC = L14 | IOSTANDARD = LVCMOS33;
+NET "leds[4]" LOC = M13 | IOSTANDARD = LVCMOS33;
+NET "leds[5]" LOC = D4  | IOSTANDARD = LVCMOS33;
+NET "leds[6]" LOC = P16 | IOSTANDARD = LVCMOS33;
+#NET "leds[7]" LOC = N12 | IOSTANDARD = LVCMOS25;
 
+#===============================================================================
+# USB interface
+#===============================================================================
+NET "fx2Clk_in"       LOC="C10"  | IOSTANDARD=LVTTL;   # IFCLK
+NET "fx2Addr_out<0>"  LOC="A14"  | IOSTANDARD=LVTTL;   # PA4/FIFOADR0
+NET "fx2Addr_out<1>"  LOC="B14"  | IOSTANDARD=LVTTL;   # PA5/FIFOADR1
+
+NET "fx2Data_io<0>"   LOC="A2"   | IOSTANDARD=LVTTL;   # PB0/FD0
+NET "fx2Data_io<1>"   LOC="D6"   | IOSTANDARD=LVTTL;   # PB1/FD1
+NET "fx2Data_io<2>"   LOC="C6"   | IOSTANDARD=LVTTL;   # PB2/FD2
+NET "fx2Data_io<3>"   LOC="B3"   | IOSTANDARD=LVTTL;   # PB3/FD3
+NET "fx2Data_io<4>"   LOC="A3"   | IOSTANDARD=LVTTL;   # PB4/FD4
+NET "fx2Data_io<5>"   LOC="B4"   | IOSTANDARD=LVTTL;   # PB5/FD5
+NET "fx2Data_io<6>"   LOC="A4"   | IOSTANDARD=LVTTL;   # PB6/FD6
+NET "fx2Data_io<7>"   LOC="C5"   | IOSTANDARD=LVTTL;   # PB7/FD7
+
+NET "fx2Read_out"     LOC="F13"  | IOSTANDARD=LVTTL;   # RDY0/SLRD
+NET "fx2OE_out"       LOC="A15"  | IOSTANDARD=LVTTL;   # PA2/SLOE
+NET "fx2GotData_in"   LOC="C15"  | IOSTANDARD=LVTTL;   # CTL2/FLAGC
+
+NET "fx2Write_out"    LOC="E13"  | IOSTANDARD=LVTTL;   # RDY1/SLWR
+NET "fx2GotRoom_in"   LOC="A9"   | IOSTANDARD=LVTTL;   # CTL1/FLAGB
+NET "fx2PktEnd_out"   LOC="C4"   | IOSTANDARD=LVTTL;   # PA6/PKTEND

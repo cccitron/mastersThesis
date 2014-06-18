@@ -8,8 +8,8 @@ Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_aldec_read
 Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_aldec_read_from_mem/aldec/testbench_top_level_spi.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 98344 KB
-Fuse CPU Usage: 1240 ms
+Fuse Memory Usage: 98348 KB
+Fuse CPU Usage: 1360 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -19,8 +19,9 @@ Compiling architecture rtl of entity spi_ctrl [spi_ctrl_default]
 Compiling architecture rtl of entity top_level_spi [top_level_spi_default]
 Compiling architecture test of entity test_top_level_spi
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 10 VHDL Units
 Built simulation executable /home/cccitron/mastersThesis/lab6_files/lab6_files_aldec_read_from_mem/aldec/test_top_level_spi_isim_beh.exe
-Fuse Memory Usage: 674384 KB
-Fuse CPU Usage: 1460 ms
-GCC CPU Usage: 4830 ms
+Fuse Memory Usage: 674380 KB
+Fuse CPU Usage: 1570 ms
+GCC CPU Usage: 670 ms

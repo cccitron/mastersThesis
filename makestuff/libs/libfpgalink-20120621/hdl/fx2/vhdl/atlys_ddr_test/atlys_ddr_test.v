@@ -44,7 +44,10 @@ module atlys_ddr_test (
       //output [7:0] leds
       
       output [1:0] CALIBRATION,
-      output [63:0] p0_rd_data
+      output [63:0] p0_rd_data,
+      output p0_rd_empty,
+      output p0_rd_en,
+      output [6:0] p1_rd_count
    );
 	 
 	 
@@ -65,6 +68,7 @@ module atlys_ddr_test (
 	reg c3_p0_cmd_en;
 	reg reset = 0;
    reg [5:0] ld;
+   reg [63:0] temp = 64'd2;
 
 	// Outputs
 	wire [6:0] c3_p0_wr_count;
@@ -137,32 +141,113 @@ module atlys_ddr_test (
 //   assign leds[1:0] = calib_done;
    assign CALIBRATION = calib_done;
    assign p0_rd_data = c3_p0_rd_data;
+   assign p0_rd_empty = c3_p0_rd_empty;
+   assign p0_rd_en = c3_p0_rd_en;
+   assign p1_rd_count = c3_p1_rd_count;
 
 	reg [4:0] state = 0;
 	reg [11:0] count;
 	
 	always @(posedge c3_clk0)
 		case(state)
-		0: begin
+//		0: begin
+//			reset <= 0;
+//			if (calib_done[1]) state <= 1;
+//			end
+//		1: begin
+//			c3_p0_wr_en <= 1;
+//			c3_p0_wr_data <= 64'd9;
+//			state <= 2;
+//			count <= 12'd0;
+//			end
+//		2: begin
+//			c3_p0_wr_data <= 64'd2;
+//			state <= 3;
+//			end
+//		3: begin
+//			c3_p0_wr_data <= 64'd3;
+//			state <= 4;
+//			end
+//		4: begin
+//			c3_p0_wr_data <= 64'd4;
+//			state <= 5;
+//			end
+//		5: begin
+//			c3_p0_wr_data <= 64'd5;
+//			state <= 6;
+//			end
+//		6: begin
+//			c3_p0_wr_data <= 64'd7;
+//			state <= 7;
+//			end
+//		7: begin
+//			c3_p0_wr_en <= 0;
+//			c3_p0_cmd_instr <= 3'b000; // Write
+//			c3_p0_cmd_bl <= 6'd6; // 6 bytes
+//			c3_p0_cmd_byte_addr <= 30'd16; // To address 16
+//			c3_p0_cmd_en <= 1;
+//			state <= 8;
+//			end
+//		8: begin
+//			c3_p0_cmd_en <= 0;
+//			state <= 9;
+//			end
+//		9: begin
+//			count <= count + 1'b1;
+//			if (count[11])
+//				state <= 10;
+//			end
+//		10: begin
+//			count <= 12'd0;
+//			c3_p0_cmd_bl <= 6'd6;
+//			c3_p0_cmd_byte_addr <= 30'd16;
+//			c3_p0_cmd_instr <= 3'b001;
+//			c3_p0_cmd_en <= 1;
+//			state <= 11;
+//			end
+//		11: begin
+//			c3_p0_cmd_en <= 0;
+//			count <= count + 1'b1;
+//         //ld <= c3_p0_rd_data[5:0];
+//			if (count[11])//~c3_p0_rd_empty)//count[11])
+//				state <= 12; //0;
+//			end
+//      12: begin
+//         if (~c3_p0_rd_empty)
+//            state <= 13;
+//         end
+//      13: begin
+//         c3_p0_rd_en <= 1;
+//         state <= 14;
+//         end
+//      14: begin
+//         if (c3_p0_rd_empty) begin
+//            c3_p0_rd_en <= 0; //
+//            state <= 0;
+//            end
+//         end
+      
+      0: begin
 			reset <= 0;
 			if (calib_done[1]) state <= 1;
 			end
 		1: begin
 			c3_p0_wr_en <= 1;
-			c3_p0_wr_data <= 64'd5;//1;
+         temp <= temp + 64'd1;
+			c3_p0_wr_data <= temp; //64'd1;
 			state <= 2;
 			count <= 12'd0;
 			end
 		2: begin
-			c3_p0_wr_data <= 64'd5;//2;
+			c3_p0_wr_data <= 64'd2;
 			state <= 3;
 			end
 		3: begin
-			c3_p0_wr_data <= 64'd5;//3;
+			c3_p0_wr_data <= 64'd3;
 			state <= 4;
 			end
 		4: begin
-			c3_p0_wr_data <= 64'd5;//4;
+			c3_p0_wr_data <= 64'd4;
 			state <= 5;
 			end
 		5: begin
@@ -170,7 +255,7 @@ module atlys_ddr_test (
 			state <= 6;
 			end
 		6: begin
-			c3_p0_wr_data <= 64'd5;//6;
+			c3_p0_wr_data <= 64'd6;
 			state <= 7;
 			end
 		7: begin

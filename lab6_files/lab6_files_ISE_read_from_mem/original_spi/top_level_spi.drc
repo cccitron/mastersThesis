@@ -1,0 +1,45 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Mon Jun  9 17:54:43 2014
+
+drc -z top_level_spi.ncd top_level_spi.pcf
+
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_91_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_103_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_97_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_101_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_95_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   reset_spi_clk_cnt_to_32_reset_AND_110_o is sourced by a combinatorial pin.
+   This is not good design practice. Use the CE pin to control the loading of
+   data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_99_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_93_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+DRC detected 0 errors and 9 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

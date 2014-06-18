@@ -415,7 +415,7 @@ if __name__ == "__main__":
                   im.putpixel((i, j), (buff[0], buff[1], buff[1]))
             
             '''
-            time.sleep(1)
+            #time.sleep(1)
             #buff = flReadChannel(handle, 1000, 0x00, 30000)
             '''
             i = 0
@@ -446,10 +446,13 @@ if __name__ == "__main__":
 
             print("Reading:")
             #flWriteChannel(handle, 1000, 0x01, 0x65)
-            for i in range (2):
-                buff = flReadChannel(handle, 1000, 0x00, 2)
-            print(buff)
-            print("")
+            for i in range (1000):
+                buff = flReadChannel(handle, 1000, 0x02, 1)
+                print(buff)
+                print("")
+                buff = flReadChannel(handle, 1000, 0x03, 1)
+                print(buff)
+                print("")
             #print(len(buff))
 
             #print("")
