@@ -76,27 +76,37 @@ architecture behavioural of top_level is
 	signal reg2, reg2_next         : std_logic_vector(7 downto 0)  := x"00";
 	signal reg3, reg3_next         : std_logic_vector(7 downto 0)  := x"00";
    
-   -- Template array for storing data transfered to the FPGA from comp
-   type array_type_templ is array (0 to 8) of std_logic_vector(7 downto 0);
-	signal templ_array, templ_array_next : array_type_templ := (OTHERS => (OTHERS => '0'));
+--   -- Template array for storing data transfered to the FPGA from comp
+--   type array_type_templ is array (0 to 8) of std_logic_vector(7 downto 0);
+--	signal templ_array, templ_array_next : array_type_templ := (OTHERS => (OTHERS => '0'));
+--   
+--   -- Search array for storing data transfered to the FPGA from comp
+--   type array_type_search is array (0 to 8) of std_logic_vector(7 downto 0);
+--	signal search_array, search_array_next : array_type_search := (OTHERS => (OTHERS => '0'));
+--   
+--   SIGNAL ndx_t, ndx_t_next, f2h_t_rd, f2h_t_rd_next : INTEGER := 0;
+--   SIGNAL ndx_s, ndx_s_next, f2h_s_rd, f2h_s_rd_next : INTEGER := 0;
+--   
+--   -- sum array
+--   type array_type_sad is array (0 to 8) of std_logic_vector(7 downto 0);
+--	signal sad_array, sad_array_next : array_type_sad := (OTHERS => (OTHERS => '0'));
+--   
+--   SIGNAL ndx_sad, ndx_sad_next, f2h_sad_rd, f2h_sad_rd_next : INTEGER := 0;
+--   
+--   SIGNAL sel_arr : STD_LOGIC := '0';
    
-   -- Search array for storing data transfered to the FPGA from comp
-   type array_type_search is array (0 to 8) of std_logic_vector(7 downto 0);
-	signal search_array, search_array_next : array_type_search := (OTHERS => (OTHERS => '0'));
+   --SIGNAL clk_sad : STD_LOGIC := '0';
    
-   SIGNAL ndx_t, ndx_t_next, f2h_t_rd, f2h_t_rd_next : INTEGER := 0;
-   SIGNAL ndx_s, ndx_s_next, f2h_s_rd, f2h_s_rd_next : INTEGER := 0;
-   
-   -- sum array
-   type array_type_sad is array (0 to 8) of std_logic_vector(7 downto 0);
-	signal sad_array, sad_array_next : array_type_sad := (OTHERS => (OTHERS => '0'));
-   
-   SIGNAL ndx_sad, ndx_sad_next, f2h_sad_rd, f2h_sad_rd_next : INTEGER := 0;
-   
-   SIGNAL sel_arr : STD_LOGIC := '0';
+   signal reg1_templ, reg2_search, reg3_disp : std_logic_vector(7 downto 0)  := x"00";
 
 begin                                                                     --BEGIN_SNIPPET(registers)
-	-- Infer registers
+	
+--   clk_proc : PROCESS (fx2Clk_in)
+--   BEGIN
+--      clk_sad <= NOT(clk_sad);
+--   END PROCESS clk_proc;
+   
+   -- Infer registers
 	process(fx2Clk_in)
 	begin
 		if ( rising_edge(fx2Clk_in) ) then
@@ -105,24 +115,24 @@ begin                                                                     --BEGI
 			reg1 <= reg1_next;
 			reg2 <= reg2_next;
 			reg3 <= reg3_next;
-         templ_array <= templ_array_next;
-         
-         ndx_t <= ndx_t_next;
-         IF (ndx_t = 9) THEN
-            ndx_t <= 8;
-            --sel_arr <= '1';
-         END IF;
-         
-         f2h_t_rd <= f2h_t_rd_next;
-         IF (f2h_t_rd = 9) THEN
-            f2h_t_rd <= 8;
-            --sel_arr <= '0';
-         END IF;
-         
-         f2h_sad_rd <= f2h_sad_rd_next;
-         IF (f2h_sad_rd = 9) THEN
-            f2h_sad_rd <= 8;
-         END IF;
+--         templ_array <= templ_array_next;
+--         
+--         ndx_t <= ndx_t_next;
+--         IF (ndx_t = 9) THEN
+--            ndx_t <= 8;
+--            --sel_arr <= '1';
+--         END IF;
+--         
+--         f2h_t_rd <= f2h_t_rd_next;
+--         IF (f2h_t_rd = 9) THEN
+--            f2h_t_rd <= 8;
+--            --sel_arr <= '0';
+--         END IF;
+--         
+--         f2h_sad_rd <= f2h_sad_rd_next;
+--         IF (f2h_sad_rd = 9) THEN
+--            f2h_sad_rd <= 8;
+--         END IF;
          
 		end if;
 	end process;
@@ -135,32 +145,32 @@ begin                                                                     --BEGI
 			when chanAddr = "0000001" and h2fValid = '1' and h2fData(0) = '1'
 		else checksum;
 	reg0_next <= h2fData when chanAddr = "0000000" and h2fValid = '1' else reg0;
-	reg1_next <= templ_array(f2h_t_rd); --h2fData when chanAddr = "0000001" and h2fValid = '1' else reg1;
-	reg2_next <= search_array(f2h_s_rd); --h2fData when chanAddr = "0000010" and h2fValid = '1' else reg2;
-	reg3_next <= sad_array(f2h_sad_rd); --h2fData when chanAddr = "0000011" and h2fValid = '1' else reg3;
+	reg1_next <= reg1_templ; --templ_array(f2h_t_rd); --h2fData when chanAddr = "0000001" and h2fValid = '1' else reg1;
+	reg2_next <= reg2_search; --search_array(f2h_s_rd); --h2fData when chanAddr = "0000010" and h2fValid = '1' else reg2;
+	reg3_next <= reg3_disp; --sad_array(f2h_sad_rd); --h2fData when chanAddr = "0000011" and h2fValid = '1' else reg3;
    
-   -- host to FPGA templ_array, reg0
-   templ_array_next(ndx_t)  <= h2fData when chanAddr = "0000001" and h2fValid = '1' else templ_array(ndx_t);
-   --search_array_next(ndx_s) <= h2fData when chanAddr = "0000010" and h2fValid = '1' else search_array(ndx_s);
-   
-   ndx_t_next <= ndx_t + 1 WHEN h2fValid = '1'
-      ELSE ndx_t;
-   
-   -- FPGA templ_array to host, reg1
-   --temp_array_next(f2h_rd) <= h2fData when chanAddr = "0000001" and h2fValid = '1' else templ_array(f2h_rd);
-   
-   f2h_t_rd_next <= f2h_t_rd + 1 WHEN f2hReady = '1'
-      ELSE f2h_t_rd;
-   
-   sum : PROCESS (fx2Clk_in)--ndx_t)
-   BEGIN
-      IF (RISING_EDGE(fx2Clk_in)) THEN
-         sad_array <= sad_array;
-         IF (ndx_t > 1 AND ndx_sad < 2) THEN
-            sad_array(ndx_sad) <= STD_LOGIC_VECTOR(UNSIGNED(templ_array(ndx_sad)) + UNSIGNED(templ_array(ndx_sad + 1)));
-         END IF;
-      END IF;
-   END PROCESS sum;
+--   -- host to FPGA templ_array, reg0
+--   templ_array_next(ndx_t)  <= h2fData when chanAddr = "0000001" and h2fValid = '1' else templ_array(ndx_t);
+--   --search_array_next(ndx_s) <= h2fData when chanAddr = "0000010" and h2fValid = '1' else search_array(ndx_s);
+--   
+--   ndx_t_next <= ndx_t + 1 WHEN h2fValid = '1'
+--      ELSE ndx_t;
+--   
+--   -- FPGA templ_array to host, reg1
+--   --temp_array_next(f2h_rd) <= h2fData when chanAddr = "0000001" and h2fValid = '1' else templ_array(f2h_rd);
+--   
+--   f2h_t_rd_next <= f2h_t_rd + 1 WHEN f2hReady = '1'
+--      ELSE f2h_t_rd;
+--   
+--   sum : PROCESS (fx2Clk_in)--ndx_t)
+--   BEGIN
+--      IF (RISING_EDGE(fx2Clk_in)) THEN
+--         sad_array <= sad_array;
+--         IF (ndx_t > 1 AND ndx_sad < 2) THEN
+--            sad_array(ndx_sad) <= STD_LOGIC_VECTOR(UNSIGNED(templ_array(ndx_sad)) + UNSIGNED(templ_array(ndx_sad + 1)));
+--         END IF;
+--      END IF;
+--   END PROCESS sum;
    
    -- store values from comp in templ_array
 --   compToFPGA : process (fx2Clk_in) --h2fData, chanAddr, h2fValid, temp_array)
@@ -205,7 +215,7 @@ begin                                                                     --BEGI
 		reg3  when "0000011",
 		x"00" when others;
 
-	-- Assert that there's always data for reading, and always room for writing
+	-- Used to Assert that there's always data for reading, and always room for writing
 	--f2hValid <= '1';
    f2hValid <= '1' WHEN f2hReady = '1' ELSE '0';
 	h2fReady <= '1';                                                         --END_SNIPPET(registers)
@@ -261,17 +271,17 @@ begin                                                                     --BEGI
 	--led_out <= reg3;
    
    -- Use the switch to select which element from temp_array to display on LEDs
-   WITH sw_in SELECT led_out <=
-      h2fValid & chanAddr(6 DOWNTO 0) WHEN x"00",
-      templ_array(0)  WHEN x"01",
-      templ_array(1)  WHEN x"02",
-      templ_array(2)  WHEN x"04",
-      templ_array(3)  WHEN x"08",
-      templ_array(4)  WHEN x"10",
-      templ_array(5)  WHEN x"20",
-      templ_array(6)  WHEN x"40",
-      templ_array(7)  WHEN x"80",
-      x"f5"          WHEN OTHERS;
+--   WITH sw_in SELECT led_out <=
+--      h2fValid & chanAddr(6 DOWNTO 0) WHEN x"00",
+--      templ_array(0)  WHEN x"01",
+--      templ_array(1)  WHEN x"02",
+--      templ_array(2)  WHEN x"04",
+--      templ_array(3)  WHEN x"08",
+--      templ_array(4)  WHEN x"10",
+--      templ_array(5)  WHEN x"20",
+--      templ_array(6)  WHEN x"40",
+--      templ_array(7)  WHEN x"80",
+--      x"f5"          WHEN OTHERS;
       
 	flags <= "000" & f2hReady;
 	--seven_seg : entity work.seven_seg
@@ -282,4 +292,22 @@ begin                                                                     --BEGI
 	--		segs_out   => sseg_out,
 	--		anodes_out => anode_out
 	--	);
+   
+   sad_wrappings : entity work.sad_wrapper
+      port map ( 
+         clk_I      => fx2Clk_in, --clk_sad,
+
+         h2fData_I  => h2fData,
+         templ_O    => reg1_templ, --reg1_next,
+         search_O   => reg2_search, --reg2_next,
+         disp_O     => reg3_disp, --reg3_next,
+         
+         chanAddr_I => chanAddr,
+         f2hReady_I => f2hReady,
+         h2fValid_I => h2fValid,
+         
+         sw_I       => sw_in,
+         led_O      => led_out
+   );
+   
 end behavioural;
