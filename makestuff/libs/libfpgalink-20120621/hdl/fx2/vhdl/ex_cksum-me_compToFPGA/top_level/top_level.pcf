@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Jun 23 14:08:09 2014
+// Written by: Map P.20131013 on Tue Jun 24 11:34:54 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -40,7 +40,8 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "reg1_4" BEL "reg1_5" BEL "reg1_6" BEL "reg1_7" BEL "reg2_0" BEL
         "reg2_1" BEL "reg2_2" BEL "reg2_3" BEL "reg2_4" BEL "reg2_5" BEL
         "reg2_6" BEL "reg2_7" BEL "reg3_0" BEL "reg3_1" BEL "reg3_2" BEL
-        "reg3_3" BEL "reg3_4" BEL "reg3_5" BEL "reg3_6" BEL "reg3_7" BEL
+        "reg3_3" BEL "reg0_0" BEL "reg0_1" BEL "reg0_2" BEL "reg0_3" BEL
+        "reg0_4" BEL "reg0_5" BEL "reg0_6" BEL "reg0_7" BEL
         "comm_fpga_fx2/state_FSM_FFd2" BEL "comm_fpga_fx2/state_FSM_FFd3" BEL
         "comm_fpga_fx2/state_FSM_FFd1" BEL "comm_fpga_fx2/state_FSM_FFd4" BEL
         "comm_fpga_fx2/count_31" BEL "comm_fpga_fx2/count_30" BEL
@@ -63,23 +64,7 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "comm_fpga_fx2/chanAddr_5" BEL "comm_fpga_fx2/chanAddr_4" BEL
         "comm_fpga_fx2/chanAddr_3" BEL "comm_fpga_fx2/chanAddr_2" BEL
         "comm_fpga_fx2/chanAddr_1" BEL "comm_fpga_fx2/chanAddr_0" BEL
-        "comm_fpga_fx2/isAligned" BEL "sad_wrappings/f2h_s_rd_31" BEL
-        "sad_wrappings/f2h_s_rd_30" BEL "sad_wrappings/f2h_s_rd_29" BEL
-        "sad_wrappings/f2h_s_rd_28" BEL "sad_wrappings/f2h_s_rd_27" BEL
-        "sad_wrappings/f2h_s_rd_26" BEL "sad_wrappings/f2h_s_rd_25" BEL
-        "sad_wrappings/f2h_s_rd_24" BEL "sad_wrappings/f2h_s_rd_23" BEL
-        "sad_wrappings/f2h_s_rd_22" BEL "sad_wrappings/f2h_s_rd_21" BEL
-        "sad_wrappings/f2h_s_rd_20" BEL "sad_wrappings/f2h_s_rd_19" BEL
-        "sad_wrappings/f2h_s_rd_18" BEL "sad_wrappings/f2h_s_rd_17" BEL
-        "sad_wrappings/f2h_s_rd_16" BEL "sad_wrappings/f2h_s_rd_15" BEL
-        "sad_wrappings/f2h_s_rd_14" BEL "sad_wrappings/f2h_s_rd_13" BEL
-        "sad_wrappings/f2h_s_rd_12" BEL "sad_wrappings/f2h_s_rd_11" BEL
-        "sad_wrappings/f2h_s_rd_10" BEL "sad_wrappings/f2h_s_rd_9" BEL
-        "sad_wrappings/f2h_s_rd_8" BEL "sad_wrappings/f2h_s_rd_7" BEL
-        "sad_wrappings/f2h_s_rd_6" BEL "sad_wrappings/f2h_s_rd_5" BEL
-        "sad_wrappings/f2h_s_rd_4" BEL "sad_wrappings/f2h_s_rd_3" BEL
-        "sad_wrappings/f2h_s_rd_2" BEL "sad_wrappings/f2h_s_rd_1" BEL
-        "sad_wrappings/f2h_s_rd_0" BEL "sad_wrappings/f2h_t_rd_31" BEL
+        "comm_fpga_fx2/isAligned" BEL "sad_wrappings/f2h_t_rd_31" BEL
         "sad_wrappings/f2h_t_rd_30" BEL "sad_wrappings/f2h_t_rd_29" BEL
         "sad_wrappings/f2h_t_rd_28" BEL "sad_wrappings/f2h_t_rd_27" BEL
         "sad_wrappings/f2h_t_rd_26" BEL "sad_wrappings/f2h_t_rd_25" BEL
@@ -111,7 +96,23 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/ndx_s_6" BEL "sad_wrappings/ndx_s_5" BEL
         "sad_wrappings/ndx_s_4" BEL "sad_wrappings/ndx_s_3" BEL
         "sad_wrappings/ndx_s_2" BEL "sad_wrappings/ndx_s_1" BEL
-        "sad_wrappings/ndx_s_0" BEL "sad_wrappings/ndx_t_31" BEL
+        "sad_wrappings/ndx_s_0" BEL "sad_wrappings/f2h_s_rd_31" BEL
+        "sad_wrappings/f2h_s_rd_30" BEL "sad_wrappings/f2h_s_rd_29" BEL
+        "sad_wrappings/f2h_s_rd_28" BEL "sad_wrappings/f2h_s_rd_27" BEL
+        "sad_wrappings/f2h_s_rd_26" BEL "sad_wrappings/f2h_s_rd_25" BEL
+        "sad_wrappings/f2h_s_rd_24" BEL "sad_wrappings/f2h_s_rd_23" BEL
+        "sad_wrappings/f2h_s_rd_22" BEL "sad_wrappings/f2h_s_rd_21" BEL
+        "sad_wrappings/f2h_s_rd_20" BEL "sad_wrappings/f2h_s_rd_19" BEL
+        "sad_wrappings/f2h_s_rd_18" BEL "sad_wrappings/f2h_s_rd_17" BEL
+        "sad_wrappings/f2h_s_rd_16" BEL "sad_wrappings/f2h_s_rd_15" BEL
+        "sad_wrappings/f2h_s_rd_14" BEL "sad_wrappings/f2h_s_rd_13" BEL
+        "sad_wrappings/f2h_s_rd_12" BEL "sad_wrappings/f2h_s_rd_11" BEL
+        "sad_wrappings/f2h_s_rd_10" BEL "sad_wrappings/f2h_s_rd_9" BEL
+        "sad_wrappings/f2h_s_rd_8" BEL "sad_wrappings/f2h_s_rd_7" BEL
+        "sad_wrappings/f2h_s_rd_6" BEL "sad_wrappings/f2h_s_rd_5" BEL
+        "sad_wrappings/f2h_s_rd_4" BEL "sad_wrappings/f2h_s_rd_3" BEL
+        "sad_wrappings/f2h_s_rd_2" BEL "sad_wrappings/f2h_s_rd_1" BEL
+        "sad_wrappings/f2h_s_rd_0" BEL "sad_wrappings/ndx_t_31" BEL
         "sad_wrappings/ndx_t_30" BEL "sad_wrappings/ndx_t_29" BEL
         "sad_wrappings/ndx_t_28" BEL "sad_wrappings/ndx_t_27" BEL
         "sad_wrappings/ndx_t_26" BEL "sad_wrappings/ndx_t_25" BEL
@@ -127,79 +128,227 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/ndx_t_6" BEL "sad_wrappings/ndx_t_5" BEL
         "sad_wrappings/ndx_t_4" BEL "sad_wrappings/ndx_t_3" BEL
         "sad_wrappings/ndx_t_2" BEL "sad_wrappings/ndx_t_1" BEL
-        "sad_wrappings/ndx_t_0" BEL "sad_wrappings/f2h_sad_rd_3" BEL
-        "sad_wrappings/f2h_sad_rd_2" BEL "sad_wrappings/f2h_sad_rd_1" BEL
-        "sad_wrappings/f2h_sad_rd_0" BEL "sad_wrappings/sad_array_14_7" BEL
-        "sad_wrappings/sad_array_14_6" BEL "sad_wrappings/sad_array_14_5" BEL
-        "sad_wrappings/sad_array_14_4" BEL "sad_wrappings/sad_array_14_3" BEL
-        "sad_wrappings/sad_array_14_2" BEL "sad_wrappings/sad_array_14_1" BEL
-        "sad_wrappings/sad_array_14_0" BEL "sad_wrappings/sad_array_13_7" BEL
-        "sad_wrappings/sad_array_13_6" BEL "sad_wrappings/sad_array_13_5" BEL
-        "sad_wrappings/sad_array_13_4" BEL "sad_wrappings/sad_array_13_3" BEL
-        "sad_wrappings/sad_array_13_2" BEL "sad_wrappings/sad_array_13_1" BEL
-        "sad_wrappings/sad_array_13_0" BEL "sad_wrappings/sad_array_15_7" BEL
-        "sad_wrappings/sad_array_15_6" BEL "sad_wrappings/sad_array_15_5" BEL
-        "sad_wrappings/sad_array_15_4" BEL "sad_wrappings/sad_array_15_3" BEL
-        "sad_wrappings/sad_array_15_2" BEL "sad_wrappings/sad_array_15_1" BEL
-        "sad_wrappings/sad_array_15_0" BEL "sad_wrappings/sad_array_12_7" BEL
-        "sad_wrappings/sad_array_12_6" BEL "sad_wrappings/sad_array_12_5" BEL
-        "sad_wrappings/sad_array_12_4" BEL "sad_wrappings/sad_array_12_3" BEL
-        "sad_wrappings/sad_array_12_2" BEL "sad_wrappings/sad_array_12_1" BEL
-        "sad_wrappings/sad_array_12_0" BEL "sad_wrappings/sad_array_11_7" BEL
-        "sad_wrappings/sad_array_11_6" BEL "sad_wrappings/sad_array_11_5" BEL
-        "sad_wrappings/sad_array_11_4" BEL "sad_wrappings/sad_array_11_3" BEL
-        "sad_wrappings/sad_array_11_2" BEL "sad_wrappings/sad_array_11_1" BEL
-        "sad_wrappings/sad_array_11_0" BEL "sad_wrappings/sad_array_9_7" BEL
-        "sad_wrappings/sad_array_9_6" BEL "sad_wrappings/sad_array_9_5" BEL
-        "sad_wrappings/sad_array_9_4" BEL "sad_wrappings/sad_array_9_3" BEL
-        "sad_wrappings/sad_array_9_2" BEL "sad_wrappings/sad_array_9_1" BEL
-        "sad_wrappings/sad_array_9_0" BEL "sad_wrappings/sad_array_8_7" BEL
-        "sad_wrappings/sad_array_8_6" BEL "sad_wrappings/sad_array_8_5" BEL
-        "sad_wrappings/sad_array_8_4" BEL "sad_wrappings/sad_array_8_3" BEL
-        "sad_wrappings/sad_array_8_2" BEL "sad_wrappings/sad_array_8_1" BEL
-        "sad_wrappings/sad_array_8_0" BEL "sad_wrappings/sad_array_10_7" BEL
-        "sad_wrappings/sad_array_10_6" BEL "sad_wrappings/sad_array_10_5" BEL
-        "sad_wrappings/sad_array_10_4" BEL "sad_wrappings/sad_array_10_3" BEL
-        "sad_wrappings/sad_array_10_2" BEL "sad_wrappings/sad_array_10_1" BEL
-        "sad_wrappings/sad_array_10_0" BEL "sad_wrappings/sad_array_7_7" BEL
-        "sad_wrappings/sad_array_7_6" BEL "sad_wrappings/sad_array_7_5" BEL
-        "sad_wrappings/sad_array_7_4" BEL "sad_wrappings/sad_array_7_3" BEL
-        "sad_wrappings/sad_array_7_2" BEL "sad_wrappings/sad_array_7_1" BEL
-        "sad_wrappings/sad_array_7_0" BEL "sad_wrappings/sad_array_6_7" BEL
-        "sad_wrappings/sad_array_6_6" BEL "sad_wrappings/sad_array_6_5" BEL
-        "sad_wrappings/sad_array_6_4" BEL "sad_wrappings/sad_array_6_3" BEL
-        "sad_wrappings/sad_array_6_2" BEL "sad_wrappings/sad_array_6_1" BEL
-        "sad_wrappings/sad_array_6_0" BEL "sad_wrappings/sad_array_4_7" BEL
-        "sad_wrappings/sad_array_4_6" BEL "sad_wrappings/sad_array_4_5" BEL
-        "sad_wrappings/sad_array_4_4" BEL "sad_wrappings/sad_array_4_3" BEL
-        "sad_wrappings/sad_array_4_2" BEL "sad_wrappings/sad_array_4_1" BEL
-        "sad_wrappings/sad_array_4_0" BEL "sad_wrappings/sad_array_3_7" BEL
-        "sad_wrappings/sad_array_3_6" BEL "sad_wrappings/sad_array_3_5" BEL
-        "sad_wrappings/sad_array_3_4" BEL "sad_wrappings/sad_array_3_3" BEL
-        "sad_wrappings/sad_array_3_2" BEL "sad_wrappings/sad_array_3_1" BEL
-        "sad_wrappings/sad_array_3_0" BEL "sad_wrappings/sad_array_5_7" BEL
-        "sad_wrappings/sad_array_5_6" BEL "sad_wrappings/sad_array_5_5" BEL
-        "sad_wrappings/sad_array_5_4" BEL "sad_wrappings/sad_array_5_3" BEL
-        "sad_wrappings/sad_array_5_2" BEL "sad_wrappings/sad_array_5_1" BEL
-        "sad_wrappings/sad_array_5_0" BEL "sad_wrappings/sad_array_2_7" BEL
-        "sad_wrappings/sad_array_2_6" BEL "sad_wrappings/sad_array_2_5" BEL
-        "sad_wrappings/sad_array_2_4" BEL "sad_wrappings/sad_array_2_3" BEL
-        "sad_wrappings/sad_array_2_2" BEL "sad_wrappings/sad_array_2_1" BEL
-        "sad_wrappings/sad_array_2_0" BEL "sad_wrappings/sad_array_1_7" BEL
-        "sad_wrappings/sad_array_1_6" BEL "sad_wrappings/sad_array_1_5" BEL
-        "sad_wrappings/sad_array_1_4" BEL "sad_wrappings/sad_array_1_3" BEL
-        "sad_wrappings/sad_array_1_2" BEL "sad_wrappings/sad_array_1_1" BEL
-        "sad_wrappings/sad_array_1_0" BEL "sad_wrappings/sad_array_0_7" BEL
-        "sad_wrappings/sad_array_0_6" BEL "sad_wrappings/sad_array_0_5" BEL
-        "sad_wrappings/sad_array_0_4" BEL "sad_wrappings/sad_array_0_3" BEL
-        "sad_wrappings/sad_array_0_2" BEL "sad_wrappings/sad_array_0_1" BEL
-        "sad_wrappings/sad_array_0_0" BEL "sad_wrappings/templ_array_0_7" BEL
-        "sad_wrappings/templ_array_0_6" BEL "sad_wrappings/templ_array_0_5"
-        BEL "sad_wrappings/templ_array_0_4" BEL
-        "sad_wrappings/templ_array_0_3" BEL "sad_wrappings/templ_array_0_2"
-        BEL "sad_wrappings/templ_array_0_1" BEL
-        "sad_wrappings/templ_array_0_0" BEL "sad_wrappings/search_array_56_7"
-        BEL "sad_wrappings/search_array_56_6" BEL
+        "sad_wrappings/ndx_t_0" BEL "sad_wrappings/f2h_disp_rd_0" BEL
+        "sad_wrappings/f2h_sad_rd_3" BEL "sad_wrappings/f2h_sad_rd_2" BEL
+        "sad_wrappings/f2h_sad_rd_1" BEL "sad_wrappings/f2h_sad_rd_0" BEL
+        "sad_wrappings/ndx_sad_FSM_FFd1" BEL
+        "sad_wrappings/disparityArray_1_3" BEL
+        "sad_wrappings/disparityArray_1_2" BEL
+        "sad_wrappings/disparityArray_1_1" BEL
+        "sad_wrappings/disparityArray_1_0" BEL
+        "sad_wrappings/disparityArray_0_3" BEL
+        "sad_wrappings/disparityArray_0_2" BEL
+        "sad_wrappings/disparityArray_0_1" BEL
+        "sad_wrappings/disparityArray_0_0" BEL
+        "sad_wrappings/sad_array<1>_15_7" BEL
+        "sad_wrappings/sad_array<1>_15_6" BEL
+        "sad_wrappings/sad_array<1>_15_5" BEL
+        "sad_wrappings/sad_array<1>_15_4" BEL
+        "sad_wrappings/sad_array<1>_15_3" BEL
+        "sad_wrappings/sad_array<1>_15_2" BEL
+        "sad_wrappings/sad_array<1>_15_1" BEL
+        "sad_wrappings/sad_array<1>_15_0" BEL
+        "sad_wrappings/sad_array<1>_14_7" BEL
+        "sad_wrappings/sad_array<1>_14_6" BEL
+        "sad_wrappings/sad_array<1>_14_5" BEL
+        "sad_wrappings/sad_array<1>_14_4" BEL
+        "sad_wrappings/sad_array<1>_14_3" BEL
+        "sad_wrappings/sad_array<1>_14_2" BEL
+        "sad_wrappings/sad_array<1>_14_1" BEL
+        "sad_wrappings/sad_array<1>_14_0" BEL
+        "sad_wrappings/sad_array<1>_13_7" BEL
+        "sad_wrappings/sad_array<1>_13_6" BEL
+        "sad_wrappings/sad_array<1>_13_5" BEL
+        "sad_wrappings/sad_array<1>_13_4" BEL
+        "sad_wrappings/sad_array<1>_13_3" BEL
+        "sad_wrappings/sad_array<1>_13_2" BEL
+        "sad_wrappings/sad_array<1>_13_1" BEL
+        "sad_wrappings/sad_array<1>_13_0" BEL
+        "sad_wrappings/sad_array<1>_11_7" BEL
+        "sad_wrappings/sad_array<1>_11_6" BEL
+        "sad_wrappings/sad_array<1>_11_5" BEL
+        "sad_wrappings/sad_array<1>_11_4" BEL
+        "sad_wrappings/sad_array<1>_11_3" BEL
+        "sad_wrappings/sad_array<1>_11_2" BEL
+        "sad_wrappings/sad_array<1>_11_1" BEL
+        "sad_wrappings/sad_array<1>_11_0" BEL
+        "sad_wrappings/sad_array<1>_10_7" BEL
+        "sad_wrappings/sad_array<1>_10_6" BEL
+        "sad_wrappings/sad_array<1>_10_5" BEL
+        "sad_wrappings/sad_array<1>_10_4" BEL
+        "sad_wrappings/sad_array<1>_10_3" BEL
+        "sad_wrappings/sad_array<1>_10_2" BEL
+        "sad_wrappings/sad_array<1>_10_1" BEL
+        "sad_wrappings/sad_array<1>_10_0" BEL
+        "sad_wrappings/sad_array<1>_12_7" BEL
+        "sad_wrappings/sad_array<1>_12_6" BEL
+        "sad_wrappings/sad_array<1>_12_5" BEL
+        "sad_wrappings/sad_array<1>_12_4" BEL
+        "sad_wrappings/sad_array<1>_12_3" BEL
+        "sad_wrappings/sad_array<1>_12_2" BEL
+        "sad_wrappings/sad_array<1>_12_1" BEL
+        "sad_wrappings/sad_array<1>_12_0" BEL "sad_wrappings/sad_array<1>_9_7"
+        BEL "sad_wrappings/sad_array<1>_9_6" BEL
+        "sad_wrappings/sad_array<1>_9_5" BEL "sad_wrappings/sad_array<1>_9_4"
+        BEL "sad_wrappings/sad_array<1>_9_3" BEL
+        "sad_wrappings/sad_array<1>_9_2" BEL "sad_wrappings/sad_array<1>_9_1"
+        BEL "sad_wrappings/sad_array<1>_9_0" BEL
+        "sad_wrappings/sad_array<1>_8_7" BEL "sad_wrappings/sad_array<1>_8_6"
+        BEL "sad_wrappings/sad_array<1>_8_5" BEL
+        "sad_wrappings/sad_array<1>_8_4" BEL "sad_wrappings/sad_array<1>_8_3"
+        BEL "sad_wrappings/sad_array<1>_8_2" BEL
+        "sad_wrappings/sad_array<1>_8_1" BEL "sad_wrappings/sad_array<1>_8_0"
+        BEL "sad_wrappings/sad_array<1>_7_7" BEL
+        "sad_wrappings/sad_array<1>_7_6" BEL "sad_wrappings/sad_array<1>_7_5"
+        BEL "sad_wrappings/sad_array<1>_7_4" BEL
+        "sad_wrappings/sad_array<1>_7_3" BEL "sad_wrappings/sad_array<1>_7_2"
+        BEL "sad_wrappings/sad_array<1>_7_1" BEL
+        "sad_wrappings/sad_array<1>_7_0" BEL "sad_wrappings/sad_array<1>_6_7"
+        BEL "sad_wrappings/sad_array<1>_6_6" BEL
+        "sad_wrappings/sad_array<1>_6_5" BEL "sad_wrappings/sad_array<1>_6_4"
+        BEL "sad_wrappings/sad_array<1>_6_3" BEL
+        "sad_wrappings/sad_array<1>_6_2" BEL "sad_wrappings/sad_array<1>_6_1"
+        BEL "sad_wrappings/sad_array<1>_6_0" BEL
+        "sad_wrappings/sad_array<1>_5_7" BEL "sad_wrappings/sad_array<1>_5_6"
+        BEL "sad_wrappings/sad_array<1>_5_5" BEL
+        "sad_wrappings/sad_array<1>_5_4" BEL "sad_wrappings/sad_array<1>_5_3"
+        BEL "sad_wrappings/sad_array<1>_5_2" BEL
+        "sad_wrappings/sad_array<1>_5_1" BEL "sad_wrappings/sad_array<1>_5_0"
+        BEL "sad_wrappings/sad_array<1>_4_7" BEL
+        "sad_wrappings/sad_array<1>_4_6" BEL "sad_wrappings/sad_array<1>_4_5"
+        BEL "sad_wrappings/sad_array<1>_4_4" BEL
+        "sad_wrappings/sad_array<1>_4_3" BEL "sad_wrappings/sad_array<1>_4_2"
+        BEL "sad_wrappings/sad_array<1>_4_1" BEL
+        "sad_wrappings/sad_array<1>_4_0" BEL "sad_wrappings/sad_array<1>_3_7"
+        BEL "sad_wrappings/sad_array<1>_3_6" BEL
+        "sad_wrappings/sad_array<1>_3_5" BEL "sad_wrappings/sad_array<1>_3_4"
+        BEL "sad_wrappings/sad_array<1>_3_3" BEL
+        "sad_wrappings/sad_array<1>_3_2" BEL "sad_wrappings/sad_array<1>_3_1"
+        BEL "sad_wrappings/sad_array<1>_3_0" BEL
+        "sad_wrappings/sad_array<1>_2_7" BEL "sad_wrappings/sad_array<1>_2_6"
+        BEL "sad_wrappings/sad_array<1>_2_5" BEL
+        "sad_wrappings/sad_array<1>_2_4" BEL "sad_wrappings/sad_array<1>_2_3"
+        BEL "sad_wrappings/sad_array<1>_2_2" BEL
+        "sad_wrappings/sad_array<1>_2_1" BEL "sad_wrappings/sad_array<1>_2_0"
+        BEL "sad_wrappings/sad_array<1>_1_7" BEL
+        "sad_wrappings/sad_array<1>_1_6" BEL "sad_wrappings/sad_array<1>_1_5"
+        BEL "sad_wrappings/sad_array<1>_1_4" BEL
+        "sad_wrappings/sad_array<1>_1_3" BEL "sad_wrappings/sad_array<1>_1_2"
+        BEL "sad_wrappings/sad_array<1>_1_1" BEL
+        "sad_wrappings/sad_array<1>_1_0" BEL "sad_wrappings/sad_array<1>_0_7"
+        BEL "sad_wrappings/sad_array<1>_0_6" BEL
+        "sad_wrappings/sad_array<1>_0_5" BEL "sad_wrappings/sad_array<1>_0_4"
+        BEL "sad_wrappings/sad_array<1>_0_3" BEL
+        "sad_wrappings/sad_array<1>_0_2" BEL "sad_wrappings/sad_array<1>_0_1"
+        BEL "sad_wrappings/sad_array<1>_0_0" BEL
+        "sad_wrappings/sad_array<0>_15_7" BEL
+        "sad_wrappings/sad_array<0>_15_6" BEL
+        "sad_wrappings/sad_array<0>_15_5" BEL
+        "sad_wrappings/sad_array<0>_15_4" BEL
+        "sad_wrappings/sad_array<0>_15_3" BEL
+        "sad_wrappings/sad_array<0>_15_2" BEL
+        "sad_wrappings/sad_array<0>_15_1" BEL
+        "sad_wrappings/sad_array<0>_15_0" BEL
+        "sad_wrappings/sad_array<0>_14_7" BEL
+        "sad_wrappings/sad_array<0>_14_6" BEL
+        "sad_wrappings/sad_array<0>_14_5" BEL
+        "sad_wrappings/sad_array<0>_14_4" BEL
+        "sad_wrappings/sad_array<0>_14_3" BEL
+        "sad_wrappings/sad_array<0>_14_2" BEL
+        "sad_wrappings/sad_array<0>_14_1" BEL
+        "sad_wrappings/sad_array<0>_14_0" BEL
+        "sad_wrappings/sad_array<0>_13_7" BEL
+        "sad_wrappings/sad_array<0>_13_6" BEL
+        "sad_wrappings/sad_array<0>_13_5" BEL
+        "sad_wrappings/sad_array<0>_13_4" BEL
+        "sad_wrappings/sad_array<0>_13_3" BEL
+        "sad_wrappings/sad_array<0>_13_2" BEL
+        "sad_wrappings/sad_array<0>_13_1" BEL
+        "sad_wrappings/sad_array<0>_13_0" BEL
+        "sad_wrappings/sad_array<0>_12_7" BEL
+        "sad_wrappings/sad_array<0>_12_6" BEL
+        "sad_wrappings/sad_array<0>_12_5" BEL
+        "sad_wrappings/sad_array<0>_12_4" BEL
+        "sad_wrappings/sad_array<0>_12_3" BEL
+        "sad_wrappings/sad_array<0>_12_2" BEL
+        "sad_wrappings/sad_array<0>_12_1" BEL
+        "sad_wrappings/sad_array<0>_12_0" BEL
+        "sad_wrappings/sad_array<0>_11_7" BEL
+        "sad_wrappings/sad_array<0>_11_6" BEL
+        "sad_wrappings/sad_array<0>_11_5" BEL
+        "sad_wrappings/sad_array<0>_11_4" BEL
+        "sad_wrappings/sad_array<0>_11_3" BEL
+        "sad_wrappings/sad_array<0>_11_2" BEL
+        "sad_wrappings/sad_array<0>_11_1" BEL
+        "sad_wrappings/sad_array<0>_11_0" BEL
+        "sad_wrappings/sad_array<0>_10_7" BEL
+        "sad_wrappings/sad_array<0>_10_6" BEL
+        "sad_wrappings/sad_array<0>_10_5" BEL
+        "sad_wrappings/sad_array<0>_10_4" BEL
+        "sad_wrappings/sad_array<0>_10_3" BEL
+        "sad_wrappings/sad_array<0>_10_2" BEL
+        "sad_wrappings/sad_array<0>_10_1" BEL
+        "sad_wrappings/sad_array<0>_10_0" BEL "sad_wrappings/sad_array<0>_9_7"
+        BEL "sad_wrappings/sad_array<0>_9_6" BEL
+        "sad_wrappings/sad_array<0>_9_5" BEL "sad_wrappings/sad_array<0>_9_4"
+        BEL "sad_wrappings/sad_array<0>_9_3" BEL
+        "sad_wrappings/sad_array<0>_9_2" BEL "sad_wrappings/sad_array<0>_9_1"
+        BEL "sad_wrappings/sad_array<0>_9_0" BEL
+        "sad_wrappings/sad_array<0>_8_7" BEL "sad_wrappings/sad_array<0>_8_6"
+        BEL "sad_wrappings/sad_array<0>_8_5" BEL
+        "sad_wrappings/sad_array<0>_8_4" BEL "sad_wrappings/sad_array<0>_8_3"
+        BEL "sad_wrappings/sad_array<0>_8_2" BEL
+        "sad_wrappings/sad_array<0>_8_1" BEL "sad_wrappings/sad_array<0>_8_0"
+        BEL "sad_wrappings/sad_array<0>_7_7" BEL
+        "sad_wrappings/sad_array<0>_7_6" BEL "sad_wrappings/sad_array<0>_7_5"
+        BEL "sad_wrappings/sad_array<0>_7_4" BEL
+        "sad_wrappings/sad_array<0>_7_3" BEL "sad_wrappings/sad_array<0>_7_2"
+        BEL "sad_wrappings/sad_array<0>_7_1" BEL
+        "sad_wrappings/sad_array<0>_7_0" BEL "sad_wrappings/sad_array<0>_6_7"
+        BEL "sad_wrappings/sad_array<0>_6_6" BEL
+        "sad_wrappings/sad_array<0>_6_5" BEL "sad_wrappings/sad_array<0>_6_4"
+        BEL "sad_wrappings/sad_array<0>_6_3" BEL
+        "sad_wrappings/sad_array<0>_6_2" BEL "sad_wrappings/sad_array<0>_6_1"
+        BEL "sad_wrappings/sad_array<0>_6_0" BEL
+        "sad_wrappings/sad_array<0>_5_7" BEL "sad_wrappings/sad_array<0>_5_6"
+        BEL "sad_wrappings/sad_array<0>_5_5" BEL
+        "sad_wrappings/sad_array<0>_5_4" BEL "sad_wrappings/sad_array<0>_5_3"
+        BEL "sad_wrappings/sad_array<0>_5_2" BEL
+        "sad_wrappings/sad_array<0>_5_1" BEL "sad_wrappings/sad_array<0>_5_0"
+        BEL "sad_wrappings/sad_array<0>_4_7" BEL
+        "sad_wrappings/sad_array<0>_4_6" BEL "sad_wrappings/sad_array<0>_4_5"
+        BEL "sad_wrappings/sad_array<0>_4_4" BEL
+        "sad_wrappings/sad_array<0>_4_3" BEL "sad_wrappings/sad_array<0>_4_2"
+        BEL "sad_wrappings/sad_array<0>_4_1" BEL
+        "sad_wrappings/sad_array<0>_4_0" BEL "sad_wrappings/sad_array<0>_3_7"
+        BEL "sad_wrappings/sad_array<0>_3_6" BEL
+        "sad_wrappings/sad_array<0>_3_5" BEL "sad_wrappings/sad_array<0>_3_4"
+        BEL "sad_wrappings/sad_array<0>_3_3" BEL
+        "sad_wrappings/sad_array<0>_3_2" BEL "sad_wrappings/sad_array<0>_3_1"
+        BEL "sad_wrappings/sad_array<0>_3_0" BEL
+        "sad_wrappings/sad_array<0>_2_7" BEL "sad_wrappings/sad_array<0>_2_6"
+        BEL "sad_wrappings/sad_array<0>_2_5" BEL
+        "sad_wrappings/sad_array<0>_2_4" BEL "sad_wrappings/sad_array<0>_2_3"
+        BEL "sad_wrappings/sad_array<0>_2_2" BEL
+        "sad_wrappings/sad_array<0>_2_1" BEL "sad_wrappings/sad_array<0>_2_0"
+        BEL "sad_wrappings/sad_array<0>_1_7" BEL
+        "sad_wrappings/sad_array<0>_1_6" BEL "sad_wrappings/sad_array<0>_1_5"
+        BEL "sad_wrappings/sad_array<0>_1_4" BEL
+        "sad_wrappings/sad_array<0>_1_3" BEL "sad_wrappings/sad_array<0>_1_2"
+        BEL "sad_wrappings/sad_array<0>_1_1" BEL
+        "sad_wrappings/sad_array<0>_1_0" BEL "sad_wrappings/sad_array<0>_0_7"
+        BEL "sad_wrappings/sad_array<0>_0_6" BEL
+        "sad_wrappings/sad_array<0>_0_5" BEL "sad_wrappings/sad_array<0>_0_4"
+        BEL "sad_wrappings/sad_array<0>_0_3" BEL
+        "sad_wrappings/sad_array<0>_0_2" BEL "sad_wrappings/sad_array<0>_0_1"
+        BEL "sad_wrappings/sad_array<0>_0_0" BEL
+        "sad_wrappings/templ_array_0_7" BEL "sad_wrappings/templ_array_0_6"
+        BEL "sad_wrappings/templ_array_0_5" BEL
+        "sad_wrappings/templ_array_0_4" BEL "sad_wrappings/templ_array_0_3"
+        BEL "sad_wrappings/templ_array_0_2" BEL
+        "sad_wrappings/templ_array_0_1" BEL "sad_wrappings/templ_array_0_0"
+        BEL "sad_wrappings/search_array_56_7" BEL
+        "sad_wrappings/search_array_56_6" BEL
         "sad_wrappings/search_array_56_5" BEL
         "sad_wrappings/search_array_56_4" BEL
         "sad_wrappings/search_array_56_3" BEL
@@ -222,6 +371,14 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_54_2" BEL
         "sad_wrappings/search_array_54_1" BEL
         "sad_wrappings/search_array_54_0" BEL
+        "sad_wrappings/search_array_53_7" BEL
+        "sad_wrappings/search_array_53_6" BEL
+        "sad_wrappings/search_array_53_5" BEL
+        "sad_wrappings/search_array_53_4" BEL
+        "sad_wrappings/search_array_53_3" BEL
+        "sad_wrappings/search_array_53_2" BEL
+        "sad_wrappings/search_array_53_1" BEL
+        "sad_wrappings/search_array_53_0" BEL
         "sad_wrappings/search_array_52_7" BEL
         "sad_wrappings/search_array_52_6" BEL
         "sad_wrappings/search_array_52_5" BEL
@@ -238,14 +395,6 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_51_2" BEL
         "sad_wrappings/search_array_51_1" BEL
         "sad_wrappings/search_array_51_0" BEL
-        "sad_wrappings/search_array_53_7" BEL
-        "sad_wrappings/search_array_53_6" BEL
-        "sad_wrappings/search_array_53_5" BEL
-        "sad_wrappings/search_array_53_4" BEL
-        "sad_wrappings/search_array_53_3" BEL
-        "sad_wrappings/search_array_53_2" BEL
-        "sad_wrappings/search_array_53_1" BEL
-        "sad_wrappings/search_array_53_0" BEL
         "sad_wrappings/search_array_50_7" BEL
         "sad_wrappings/search_array_50_6" BEL
         "sad_wrappings/search_array_50_5" BEL
@@ -262,6 +411,14 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_49_2" BEL
         "sad_wrappings/search_array_49_1" BEL
         "sad_wrappings/search_array_49_0" BEL
+        "sad_wrappings/search_array_48_7" BEL
+        "sad_wrappings/search_array_48_6" BEL
+        "sad_wrappings/search_array_48_5" BEL
+        "sad_wrappings/search_array_48_4" BEL
+        "sad_wrappings/search_array_48_3" BEL
+        "sad_wrappings/search_array_48_2" BEL
+        "sad_wrappings/search_array_48_1" BEL
+        "sad_wrappings/search_array_48_0" BEL
         "sad_wrappings/search_array_47_7" BEL
         "sad_wrappings/search_array_47_6" BEL
         "sad_wrappings/search_array_47_5" BEL
@@ -278,14 +435,6 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_46_2" BEL
         "sad_wrappings/search_array_46_1" BEL
         "sad_wrappings/search_array_46_0" BEL
-        "sad_wrappings/search_array_48_7" BEL
-        "sad_wrappings/search_array_48_6" BEL
-        "sad_wrappings/search_array_48_5" BEL
-        "sad_wrappings/search_array_48_4" BEL
-        "sad_wrappings/search_array_48_3" BEL
-        "sad_wrappings/search_array_48_2" BEL
-        "sad_wrappings/search_array_48_1" BEL
-        "sad_wrappings/search_array_48_0" BEL
         "sad_wrappings/search_array_45_7" BEL
         "sad_wrappings/search_array_45_6" BEL
         "sad_wrappings/search_array_45_5" BEL
@@ -302,6 +451,14 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_44_2" BEL
         "sad_wrappings/search_array_44_1" BEL
         "sad_wrappings/search_array_44_0" BEL
+        "sad_wrappings/search_array_43_7" BEL
+        "sad_wrappings/search_array_43_6" BEL
+        "sad_wrappings/search_array_43_5" BEL
+        "sad_wrappings/search_array_43_4" BEL
+        "sad_wrappings/search_array_43_3" BEL
+        "sad_wrappings/search_array_43_2" BEL
+        "sad_wrappings/search_array_43_1" BEL
+        "sad_wrappings/search_array_43_0" BEL
         "sad_wrappings/search_array_42_7" BEL
         "sad_wrappings/search_array_42_6" BEL
         "sad_wrappings/search_array_42_5" BEL
@@ -318,14 +475,6 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_41_2" BEL
         "sad_wrappings/search_array_41_1" BEL
         "sad_wrappings/search_array_41_0" BEL
-        "sad_wrappings/search_array_43_7" BEL
-        "sad_wrappings/search_array_43_6" BEL
-        "sad_wrappings/search_array_43_5" BEL
-        "sad_wrappings/search_array_43_4" BEL
-        "sad_wrappings/search_array_43_3" BEL
-        "sad_wrappings/search_array_43_2" BEL
-        "sad_wrappings/search_array_43_1" BEL
-        "sad_wrappings/search_array_43_0" BEL
         "sad_wrappings/search_array_40_7" BEL
         "sad_wrappings/search_array_40_6" BEL
         "sad_wrappings/search_array_40_5" BEL
@@ -342,6 +491,14 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_39_2" BEL
         "sad_wrappings/search_array_39_1" BEL
         "sad_wrappings/search_array_39_0" BEL
+        "sad_wrappings/search_array_38_7" BEL
+        "sad_wrappings/search_array_38_6" BEL
+        "sad_wrappings/search_array_38_5" BEL
+        "sad_wrappings/search_array_38_4" BEL
+        "sad_wrappings/search_array_38_3" BEL
+        "sad_wrappings/search_array_38_2" BEL
+        "sad_wrappings/search_array_38_1" BEL
+        "sad_wrappings/search_array_38_0" BEL
         "sad_wrappings/search_array_37_7" BEL
         "sad_wrappings/search_array_37_6" BEL
         "sad_wrappings/search_array_37_5" BEL
@@ -358,14 +515,6 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_36_2" BEL
         "sad_wrappings/search_array_36_1" BEL
         "sad_wrappings/search_array_36_0" BEL
-        "sad_wrappings/search_array_38_7" BEL
-        "sad_wrappings/search_array_38_6" BEL
-        "sad_wrappings/search_array_38_5" BEL
-        "sad_wrappings/search_array_38_4" BEL
-        "sad_wrappings/search_array_38_3" BEL
-        "sad_wrappings/search_array_38_2" BEL
-        "sad_wrappings/search_array_38_1" BEL
-        "sad_wrappings/search_array_38_0" BEL
         "sad_wrappings/search_array_35_7" BEL
         "sad_wrappings/search_array_35_6" BEL
         "sad_wrappings/search_array_35_5" BEL
@@ -382,6 +531,14 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_34_2" BEL
         "sad_wrappings/search_array_34_1" BEL
         "sad_wrappings/search_array_34_0" BEL
+        "sad_wrappings/search_array_33_7" BEL
+        "sad_wrappings/search_array_33_6" BEL
+        "sad_wrappings/search_array_33_5" BEL
+        "sad_wrappings/search_array_33_4" BEL
+        "sad_wrappings/search_array_33_3" BEL
+        "sad_wrappings/search_array_33_2" BEL
+        "sad_wrappings/search_array_33_1" BEL
+        "sad_wrappings/search_array_33_0" BEL
         "sad_wrappings/search_array_32_7" BEL
         "sad_wrappings/search_array_32_6" BEL
         "sad_wrappings/search_array_32_5" BEL
@@ -398,14 +555,6 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_31_2" BEL
         "sad_wrappings/search_array_31_1" BEL
         "sad_wrappings/search_array_31_0" BEL
-        "sad_wrappings/search_array_33_7" BEL
-        "sad_wrappings/search_array_33_6" BEL
-        "sad_wrappings/search_array_33_5" BEL
-        "sad_wrappings/search_array_33_4" BEL
-        "sad_wrappings/search_array_33_3" BEL
-        "sad_wrappings/search_array_33_2" BEL
-        "sad_wrappings/search_array_33_1" BEL
-        "sad_wrappings/search_array_33_0" BEL
         "sad_wrappings/search_array_30_7" BEL
         "sad_wrappings/search_array_30_6" BEL
         "sad_wrappings/search_array_30_5" BEL
@@ -462,6 +611,14 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_24_2" BEL
         "sad_wrappings/search_array_24_1" BEL
         "sad_wrappings/search_array_24_0" BEL
+        "sad_wrappings/search_array_23_7" BEL
+        "sad_wrappings/search_array_23_6" BEL
+        "sad_wrappings/search_array_23_5" BEL
+        "sad_wrappings/search_array_23_4" BEL
+        "sad_wrappings/search_array_23_3" BEL
+        "sad_wrappings/search_array_23_2" BEL
+        "sad_wrappings/search_array_23_1" BEL
+        "sad_wrappings/search_array_23_0" BEL
         "sad_wrappings/search_array_22_7" BEL
         "sad_wrappings/search_array_22_6" BEL
         "sad_wrappings/search_array_22_5" BEL
@@ -478,14 +635,6 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_21_2" BEL
         "sad_wrappings/search_array_21_1" BEL
         "sad_wrappings/search_array_21_0" BEL
-        "sad_wrappings/search_array_23_7" BEL
-        "sad_wrappings/search_array_23_6" BEL
-        "sad_wrappings/search_array_23_5" BEL
-        "sad_wrappings/search_array_23_4" BEL
-        "sad_wrappings/search_array_23_3" BEL
-        "sad_wrappings/search_array_23_2" BEL
-        "sad_wrappings/search_array_23_1" BEL
-        "sad_wrappings/search_array_23_0" BEL
         "sad_wrappings/search_array_20_7" BEL
         "sad_wrappings/search_array_20_6" BEL
         "sad_wrappings/search_array_20_5" BEL
@@ -502,6 +651,14 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_19_2" BEL
         "sad_wrappings/search_array_19_1" BEL
         "sad_wrappings/search_array_19_0" BEL
+        "sad_wrappings/search_array_18_7" BEL
+        "sad_wrappings/search_array_18_6" BEL
+        "sad_wrappings/search_array_18_5" BEL
+        "sad_wrappings/search_array_18_4" BEL
+        "sad_wrappings/search_array_18_3" BEL
+        "sad_wrappings/search_array_18_2" BEL
+        "sad_wrappings/search_array_18_1" BEL
+        "sad_wrappings/search_array_18_0" BEL
         "sad_wrappings/search_array_17_7" BEL
         "sad_wrappings/search_array_17_6" BEL
         "sad_wrappings/search_array_17_5" BEL
@@ -518,14 +675,6 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_16_2" BEL
         "sad_wrappings/search_array_16_1" BEL
         "sad_wrappings/search_array_16_0" BEL
-        "sad_wrappings/search_array_18_7" BEL
-        "sad_wrappings/search_array_18_6" BEL
-        "sad_wrappings/search_array_18_5" BEL
-        "sad_wrappings/search_array_18_4" BEL
-        "sad_wrappings/search_array_18_3" BEL
-        "sad_wrappings/search_array_18_2" BEL
-        "sad_wrappings/search_array_18_1" BEL
-        "sad_wrappings/search_array_18_0" BEL
         "sad_wrappings/search_array_15_7" BEL
         "sad_wrappings/search_array_15_6" BEL
         "sad_wrappings/search_array_15_5" BEL
@@ -542,6 +691,14 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_14_2" BEL
         "sad_wrappings/search_array_14_1" BEL
         "sad_wrappings/search_array_14_0" BEL
+        "sad_wrappings/search_array_13_7" BEL
+        "sad_wrappings/search_array_13_6" BEL
+        "sad_wrappings/search_array_13_5" BEL
+        "sad_wrappings/search_array_13_4" BEL
+        "sad_wrappings/search_array_13_3" BEL
+        "sad_wrappings/search_array_13_2" BEL
+        "sad_wrappings/search_array_13_1" BEL
+        "sad_wrappings/search_array_13_0" BEL
         "sad_wrappings/search_array_12_7" BEL
         "sad_wrappings/search_array_12_6" BEL
         "sad_wrappings/search_array_12_5" BEL
@@ -558,14 +715,6 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/search_array_11_2" BEL
         "sad_wrappings/search_array_11_1" BEL
         "sad_wrappings/search_array_11_0" BEL
-        "sad_wrappings/search_array_13_7" BEL
-        "sad_wrappings/search_array_13_6" BEL
-        "sad_wrappings/search_array_13_5" BEL
-        "sad_wrappings/search_array_13_4" BEL
-        "sad_wrappings/search_array_13_3" BEL
-        "sad_wrappings/search_array_13_2" BEL
-        "sad_wrappings/search_array_13_1" BEL
-        "sad_wrappings/search_array_13_0" BEL
         "sad_wrappings/search_array_10_7" BEL
         "sad_wrappings/search_array_10_6" BEL
         "sad_wrappings/search_array_10_5" BEL
@@ -579,22 +728,22 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         BEL "sad_wrappings/search_array_9_3" BEL
         "sad_wrappings/search_array_9_2" BEL "sad_wrappings/search_array_9_1"
         BEL "sad_wrappings/search_array_9_0" BEL
-        "sad_wrappings/search_array_7_7" BEL "sad_wrappings/search_array_7_6"
-        BEL "sad_wrappings/search_array_7_5" BEL
-        "sad_wrappings/search_array_7_4" BEL "sad_wrappings/search_array_7_3"
-        BEL "sad_wrappings/search_array_7_2" BEL
-        "sad_wrappings/search_array_7_1" BEL "sad_wrappings/search_array_7_0"
-        BEL "sad_wrappings/search_array_6_7" BEL
-        "sad_wrappings/search_array_6_6" BEL "sad_wrappings/search_array_6_5"
-        BEL "sad_wrappings/search_array_6_4" BEL
-        "sad_wrappings/search_array_6_3" BEL "sad_wrappings/search_array_6_2"
-        BEL "sad_wrappings/search_array_6_1" BEL
-        "sad_wrappings/search_array_6_0" BEL "sad_wrappings/search_array_8_7"
-        BEL "sad_wrappings/search_array_8_6" BEL
-        "sad_wrappings/search_array_8_5" BEL "sad_wrappings/search_array_8_4"
-        BEL "sad_wrappings/search_array_8_3" BEL
-        "sad_wrappings/search_array_8_2" BEL "sad_wrappings/search_array_8_1"
-        BEL "sad_wrappings/search_array_8_0" BEL
+        "sad_wrappings/search_array_8_7" BEL "sad_wrappings/search_array_8_6"
+        BEL "sad_wrappings/search_array_8_5" BEL
+        "sad_wrappings/search_array_8_4" BEL "sad_wrappings/search_array_8_3"
+        BEL "sad_wrappings/search_array_8_2" BEL
+        "sad_wrappings/search_array_8_1" BEL "sad_wrappings/search_array_8_0"
+        BEL "sad_wrappings/search_array_7_7" BEL
+        "sad_wrappings/search_array_7_6" BEL "sad_wrappings/search_array_7_5"
+        BEL "sad_wrappings/search_array_7_4" BEL
+        "sad_wrappings/search_array_7_3" BEL "sad_wrappings/search_array_7_2"
+        BEL "sad_wrappings/search_array_7_1" BEL
+        "sad_wrappings/search_array_7_0" BEL "sad_wrappings/search_array_6_7"
+        BEL "sad_wrappings/search_array_6_6" BEL
+        "sad_wrappings/search_array_6_5" BEL "sad_wrappings/search_array_6_4"
+        BEL "sad_wrappings/search_array_6_3" BEL
+        "sad_wrappings/search_array_6_2" BEL "sad_wrappings/search_array_6_1"
+        BEL "sad_wrappings/search_array_6_0" BEL
         "sad_wrappings/search_array_5_7" BEL "sad_wrappings/search_array_5_6"
         BEL "sad_wrappings/search_array_5_5" BEL
         "sad_wrappings/search_array_5_4" BEL "sad_wrappings/search_array_5_3"
@@ -605,23 +754,23 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         BEL "sad_wrappings/search_array_4_4" BEL
         "sad_wrappings/search_array_4_3" BEL "sad_wrappings/search_array_4_2"
         BEL "sad_wrappings/search_array_4_1" BEL
-        "sad_wrappings/search_array_4_0" BEL "sad_wrappings/search_array_2_7"
-        BEL "sad_wrappings/search_array_2_6" BEL
-        "sad_wrappings/search_array_2_5" BEL "sad_wrappings/search_array_2_4"
-        BEL "sad_wrappings/search_array_2_3" BEL
-        "sad_wrappings/search_array_2_2" BEL "sad_wrappings/search_array_2_1"
-        BEL "sad_wrappings/search_array_2_0" BEL
-        "sad_wrappings/search_array_1_7" BEL "sad_wrappings/search_array_1_6"
-        BEL "sad_wrappings/search_array_1_5" BEL
-        "sad_wrappings/search_array_1_4" BEL "sad_wrappings/search_array_1_3"
-        BEL "sad_wrappings/search_array_1_2" BEL
-        "sad_wrappings/search_array_1_1" BEL "sad_wrappings/search_array_1_0"
-        BEL "sad_wrappings/search_array_3_7" BEL
-        "sad_wrappings/search_array_3_6" BEL "sad_wrappings/search_array_3_5"
-        BEL "sad_wrappings/search_array_3_4" BEL
-        "sad_wrappings/search_array_3_3" BEL "sad_wrappings/search_array_3_2"
-        BEL "sad_wrappings/search_array_3_1" BEL
-        "sad_wrappings/search_array_3_0" BEL "sad_wrappings/search_array_0_7"
+        "sad_wrappings/search_array_4_0" BEL "sad_wrappings/search_array_3_7"
+        BEL "sad_wrappings/search_array_3_6" BEL
+        "sad_wrappings/search_array_3_5" BEL "sad_wrappings/search_array_3_4"
+        BEL "sad_wrappings/search_array_3_3" BEL
+        "sad_wrappings/search_array_3_2" BEL "sad_wrappings/search_array_3_1"
+        BEL "sad_wrappings/search_array_3_0" BEL
+        "sad_wrappings/search_array_2_7" BEL "sad_wrappings/search_array_2_6"
+        BEL "sad_wrappings/search_array_2_5" BEL
+        "sad_wrappings/search_array_2_4" BEL "sad_wrappings/search_array_2_3"
+        BEL "sad_wrappings/search_array_2_2" BEL
+        "sad_wrappings/search_array_2_1" BEL "sad_wrappings/search_array_2_0"
+        BEL "sad_wrappings/search_array_1_7" BEL
+        "sad_wrappings/search_array_1_6" BEL "sad_wrappings/search_array_1_5"
+        BEL "sad_wrappings/search_array_1_4" BEL
+        "sad_wrappings/search_array_1_3" BEL "sad_wrappings/search_array_1_2"
+        BEL "sad_wrappings/search_array_1_1" BEL
+        "sad_wrappings/search_array_1_0" BEL "sad_wrappings/search_array_0_7"
         BEL "sad_wrappings/search_array_0_6" BEL
         "sad_wrappings/search_array_0_5" BEL "sad_wrappings/search_array_0_4"
         BEL "sad_wrappings/search_array_0_3" BEL
@@ -632,49 +781,49 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/templ_array_56_4" BEL "sad_wrappings/templ_array_56_3"
         BEL "sad_wrappings/templ_array_56_2" BEL
         "sad_wrappings/templ_array_56_1" BEL "sad_wrappings/templ_array_56_0"
-        BEL "sad_wrappings/templ_array_54_7" BEL
-        "sad_wrappings/templ_array_54_6" BEL "sad_wrappings/templ_array_54_5"
-        BEL "sad_wrappings/templ_array_54_4" BEL
-        "sad_wrappings/templ_array_54_3" BEL "sad_wrappings/templ_array_54_2"
-        BEL "sad_wrappings/templ_array_54_1" BEL
-        "sad_wrappings/templ_array_54_0" BEL "sad_wrappings/templ_array_53_7"
+        BEL "sad_wrappings/templ_array_55_7" BEL
+        "sad_wrappings/templ_array_55_6" BEL "sad_wrappings/templ_array_55_5"
+        BEL "sad_wrappings/templ_array_55_4" BEL
+        "sad_wrappings/templ_array_55_3" BEL "sad_wrappings/templ_array_55_2"
+        BEL "sad_wrappings/templ_array_55_1" BEL
+        "sad_wrappings/templ_array_55_0" BEL "sad_wrappings/templ_array_53_7"
         BEL "sad_wrappings/templ_array_53_6" BEL
         "sad_wrappings/templ_array_53_5" BEL "sad_wrappings/templ_array_53_4"
         BEL "sad_wrappings/templ_array_53_3" BEL
         "sad_wrappings/templ_array_53_2" BEL "sad_wrappings/templ_array_53_1"
         BEL "sad_wrappings/templ_array_53_0" BEL
-        "sad_wrappings/templ_array_55_7" BEL "sad_wrappings/templ_array_55_6"
-        BEL "sad_wrappings/templ_array_55_5" BEL
-        "sad_wrappings/templ_array_55_4" BEL "sad_wrappings/templ_array_55_3"
-        BEL "sad_wrappings/templ_array_55_2" BEL
-        "sad_wrappings/templ_array_55_1" BEL "sad_wrappings/templ_array_55_0"
-        BEL "sad_wrappings/templ_array_52_7" BEL
-        "sad_wrappings/templ_array_52_6" BEL "sad_wrappings/templ_array_52_5"
-        BEL "sad_wrappings/templ_array_52_4" BEL
-        "sad_wrappings/templ_array_52_3" BEL "sad_wrappings/templ_array_52_2"
-        BEL "sad_wrappings/templ_array_52_1" BEL
-        "sad_wrappings/templ_array_52_0" BEL "sad_wrappings/templ_array_51_7"
+        "sad_wrappings/templ_array_52_7" BEL "sad_wrappings/templ_array_52_6"
+        BEL "sad_wrappings/templ_array_52_5" BEL
+        "sad_wrappings/templ_array_52_4" BEL "sad_wrappings/templ_array_52_3"
+        BEL "sad_wrappings/templ_array_52_2" BEL
+        "sad_wrappings/templ_array_52_1" BEL "sad_wrappings/templ_array_52_0"
+        BEL "sad_wrappings/templ_array_54_7" BEL
+        "sad_wrappings/templ_array_54_6" BEL "sad_wrappings/templ_array_54_5"
+        BEL "sad_wrappings/templ_array_54_4" BEL
+        "sad_wrappings/templ_array_54_3" BEL "sad_wrappings/templ_array_54_2"
+        BEL "sad_wrappings/templ_array_54_1" BEL
+        "sad_wrappings/templ_array_54_0" BEL "sad_wrappings/templ_array_51_7"
         BEL "sad_wrappings/templ_array_51_6" BEL
         "sad_wrappings/templ_array_51_5" BEL "sad_wrappings/templ_array_51_4"
         BEL "sad_wrappings/templ_array_51_3" BEL
         "sad_wrappings/templ_array_51_2" BEL "sad_wrappings/templ_array_51_1"
         BEL "sad_wrappings/templ_array_51_0" BEL
-        "sad_wrappings/templ_array_49_7" BEL "sad_wrappings/templ_array_49_6"
-        BEL "sad_wrappings/templ_array_49_5" BEL
-        "sad_wrappings/templ_array_49_4" BEL "sad_wrappings/templ_array_49_3"
-        BEL "sad_wrappings/templ_array_49_2" BEL
-        "sad_wrappings/templ_array_49_1" BEL "sad_wrappings/templ_array_49_0"
-        BEL "sad_wrappings/templ_array_48_7" BEL
-        "sad_wrappings/templ_array_48_6" BEL "sad_wrappings/templ_array_48_5"
-        BEL "sad_wrappings/templ_array_48_4" BEL
-        "sad_wrappings/templ_array_48_3" BEL "sad_wrappings/templ_array_48_2"
-        BEL "sad_wrappings/templ_array_48_1" BEL
-        "sad_wrappings/templ_array_48_0" BEL "sad_wrappings/templ_array_50_7"
-        BEL "sad_wrappings/templ_array_50_6" BEL
-        "sad_wrappings/templ_array_50_5" BEL "sad_wrappings/templ_array_50_4"
-        BEL "sad_wrappings/templ_array_50_3" BEL
-        "sad_wrappings/templ_array_50_2" BEL "sad_wrappings/templ_array_50_1"
-        BEL "sad_wrappings/templ_array_50_0" BEL
+        "sad_wrappings/templ_array_50_7" BEL "sad_wrappings/templ_array_50_6"
+        BEL "sad_wrappings/templ_array_50_5" BEL
+        "sad_wrappings/templ_array_50_4" BEL "sad_wrappings/templ_array_50_3"
+        BEL "sad_wrappings/templ_array_50_2" BEL
+        "sad_wrappings/templ_array_50_1" BEL "sad_wrappings/templ_array_50_0"
+        BEL "sad_wrappings/templ_array_49_7" BEL
+        "sad_wrappings/templ_array_49_6" BEL "sad_wrappings/templ_array_49_5"
+        BEL "sad_wrappings/templ_array_49_4" BEL
+        "sad_wrappings/templ_array_49_3" BEL "sad_wrappings/templ_array_49_2"
+        BEL "sad_wrappings/templ_array_49_1" BEL
+        "sad_wrappings/templ_array_49_0" BEL "sad_wrappings/templ_array_48_7"
+        BEL "sad_wrappings/templ_array_48_6" BEL
+        "sad_wrappings/templ_array_48_5" BEL "sad_wrappings/templ_array_48_4"
+        BEL "sad_wrappings/templ_array_48_3" BEL
+        "sad_wrappings/templ_array_48_2" BEL "sad_wrappings/templ_array_48_1"
+        BEL "sad_wrappings/templ_array_48_0" BEL
         "sad_wrappings/templ_array_47_7" BEL "sad_wrappings/templ_array_47_6"
         BEL "sad_wrappings/templ_array_47_5" BEL
         "sad_wrappings/templ_array_47_4" BEL "sad_wrappings/templ_array_47_3"
@@ -685,23 +834,23 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         BEL "sad_wrappings/templ_array_46_4" BEL
         "sad_wrappings/templ_array_46_3" BEL "sad_wrappings/templ_array_46_2"
         BEL "sad_wrappings/templ_array_46_1" BEL
-        "sad_wrappings/templ_array_46_0" BEL "sad_wrappings/templ_array_44_7"
-        BEL "sad_wrappings/templ_array_44_6" BEL
-        "sad_wrappings/templ_array_44_5" BEL "sad_wrappings/templ_array_44_4"
-        BEL "sad_wrappings/templ_array_44_3" BEL
-        "sad_wrappings/templ_array_44_2" BEL "sad_wrappings/templ_array_44_1"
-        BEL "sad_wrappings/templ_array_44_0" BEL
-        "sad_wrappings/templ_array_43_7" BEL "sad_wrappings/templ_array_43_6"
-        BEL "sad_wrappings/templ_array_43_5" BEL
-        "sad_wrappings/templ_array_43_4" BEL "sad_wrappings/templ_array_43_3"
-        BEL "sad_wrappings/templ_array_43_2" BEL
-        "sad_wrappings/templ_array_43_1" BEL "sad_wrappings/templ_array_43_0"
-        BEL "sad_wrappings/templ_array_45_7" BEL
-        "sad_wrappings/templ_array_45_6" BEL "sad_wrappings/templ_array_45_5"
-        BEL "sad_wrappings/templ_array_45_4" BEL
-        "sad_wrappings/templ_array_45_3" BEL "sad_wrappings/templ_array_45_2"
-        BEL "sad_wrappings/templ_array_45_1" BEL
-        "sad_wrappings/templ_array_45_0" BEL "sad_wrappings/templ_array_42_7"
+        "sad_wrappings/templ_array_46_0" BEL "sad_wrappings/templ_array_45_7"
+        BEL "sad_wrappings/templ_array_45_6" BEL
+        "sad_wrappings/templ_array_45_5" BEL "sad_wrappings/templ_array_45_4"
+        BEL "sad_wrappings/templ_array_45_3" BEL
+        "sad_wrappings/templ_array_45_2" BEL "sad_wrappings/templ_array_45_1"
+        BEL "sad_wrappings/templ_array_45_0" BEL
+        "sad_wrappings/templ_array_44_7" BEL "sad_wrappings/templ_array_44_6"
+        BEL "sad_wrappings/templ_array_44_5" BEL
+        "sad_wrappings/templ_array_44_4" BEL "sad_wrappings/templ_array_44_3"
+        BEL "sad_wrappings/templ_array_44_2" BEL
+        "sad_wrappings/templ_array_44_1" BEL "sad_wrappings/templ_array_44_0"
+        BEL "sad_wrappings/templ_array_43_7" BEL
+        "sad_wrappings/templ_array_43_6" BEL "sad_wrappings/templ_array_43_5"
+        BEL "sad_wrappings/templ_array_43_4" BEL
+        "sad_wrappings/templ_array_43_3" BEL "sad_wrappings/templ_array_43_2"
+        BEL "sad_wrappings/templ_array_43_1" BEL
+        "sad_wrappings/templ_array_43_0" BEL "sad_wrappings/templ_array_42_7"
         BEL "sad_wrappings/templ_array_42_6" BEL
         "sad_wrappings/templ_array_42_5" BEL "sad_wrappings/templ_array_42_4"
         BEL "sad_wrappings/templ_array_42_3" BEL
@@ -712,22 +861,22 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/templ_array_41_4" BEL "sad_wrappings/templ_array_41_3"
         BEL "sad_wrappings/templ_array_41_2" BEL
         "sad_wrappings/templ_array_41_1" BEL "sad_wrappings/templ_array_41_0"
-        BEL "sad_wrappings/templ_array_39_7" BEL
-        "sad_wrappings/templ_array_39_6" BEL "sad_wrappings/templ_array_39_5"
-        BEL "sad_wrappings/templ_array_39_4" BEL
-        "sad_wrappings/templ_array_39_3" BEL "sad_wrappings/templ_array_39_2"
-        BEL "sad_wrappings/templ_array_39_1" BEL
-        "sad_wrappings/templ_array_39_0" BEL "sad_wrappings/templ_array_38_7"
-        BEL "sad_wrappings/templ_array_38_6" BEL
-        "sad_wrappings/templ_array_38_5" BEL "sad_wrappings/templ_array_38_4"
-        BEL "sad_wrappings/templ_array_38_3" BEL
-        "sad_wrappings/templ_array_38_2" BEL "sad_wrappings/templ_array_38_1"
-        BEL "sad_wrappings/templ_array_38_0" BEL
-        "sad_wrappings/templ_array_40_7" BEL "sad_wrappings/templ_array_40_6"
-        BEL "sad_wrappings/templ_array_40_5" BEL
-        "sad_wrappings/templ_array_40_4" BEL "sad_wrappings/templ_array_40_3"
-        BEL "sad_wrappings/templ_array_40_2" BEL
-        "sad_wrappings/templ_array_40_1" BEL "sad_wrappings/templ_array_40_0"
+        BEL "sad_wrappings/templ_array_40_7" BEL
+        "sad_wrappings/templ_array_40_6" BEL "sad_wrappings/templ_array_40_5"
+        BEL "sad_wrappings/templ_array_40_4" BEL
+        "sad_wrappings/templ_array_40_3" BEL "sad_wrappings/templ_array_40_2"
+        BEL "sad_wrappings/templ_array_40_1" BEL
+        "sad_wrappings/templ_array_40_0" BEL "sad_wrappings/templ_array_39_7"
+        BEL "sad_wrappings/templ_array_39_6" BEL
+        "sad_wrappings/templ_array_39_5" BEL "sad_wrappings/templ_array_39_4"
+        BEL "sad_wrappings/templ_array_39_3" BEL
+        "sad_wrappings/templ_array_39_2" BEL "sad_wrappings/templ_array_39_1"
+        BEL "sad_wrappings/templ_array_39_0" BEL
+        "sad_wrappings/templ_array_38_7" BEL "sad_wrappings/templ_array_38_6"
+        BEL "sad_wrappings/templ_array_38_5" BEL
+        "sad_wrappings/templ_array_38_4" BEL "sad_wrappings/templ_array_38_3"
+        BEL "sad_wrappings/templ_array_38_2" BEL
+        "sad_wrappings/templ_array_38_1" BEL "sad_wrappings/templ_array_38_0"
         BEL "sad_wrappings/templ_array_37_7" BEL
         "sad_wrappings/templ_array_37_6" BEL "sad_wrappings/templ_array_37_5"
         BEL "sad_wrappings/templ_array_37_4" BEL
@@ -739,22 +888,22 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         BEL "sad_wrappings/templ_array_36_3" BEL
         "sad_wrappings/templ_array_36_2" BEL "sad_wrappings/templ_array_36_1"
         BEL "sad_wrappings/templ_array_36_0" BEL
-        "sad_wrappings/templ_array_34_7" BEL "sad_wrappings/templ_array_34_6"
-        BEL "sad_wrappings/templ_array_34_5" BEL
-        "sad_wrappings/templ_array_34_4" BEL "sad_wrappings/templ_array_34_3"
-        BEL "sad_wrappings/templ_array_34_2" BEL
-        "sad_wrappings/templ_array_34_1" BEL "sad_wrappings/templ_array_34_0"
-        BEL "sad_wrappings/templ_array_33_7" BEL
-        "sad_wrappings/templ_array_33_6" BEL "sad_wrappings/templ_array_33_5"
-        BEL "sad_wrappings/templ_array_33_4" BEL
-        "sad_wrappings/templ_array_33_3" BEL "sad_wrappings/templ_array_33_2"
-        BEL "sad_wrappings/templ_array_33_1" BEL
-        "sad_wrappings/templ_array_33_0" BEL "sad_wrappings/templ_array_35_7"
-        BEL "sad_wrappings/templ_array_35_6" BEL
-        "sad_wrappings/templ_array_35_5" BEL "sad_wrappings/templ_array_35_4"
-        BEL "sad_wrappings/templ_array_35_3" BEL
-        "sad_wrappings/templ_array_35_2" BEL "sad_wrappings/templ_array_35_1"
-        BEL "sad_wrappings/templ_array_35_0" BEL
+        "sad_wrappings/templ_array_35_7" BEL "sad_wrappings/templ_array_35_6"
+        BEL "sad_wrappings/templ_array_35_5" BEL
+        "sad_wrappings/templ_array_35_4" BEL "sad_wrappings/templ_array_35_3"
+        BEL "sad_wrappings/templ_array_35_2" BEL
+        "sad_wrappings/templ_array_35_1" BEL "sad_wrappings/templ_array_35_0"
+        BEL "sad_wrappings/templ_array_34_7" BEL
+        "sad_wrappings/templ_array_34_6" BEL "sad_wrappings/templ_array_34_5"
+        BEL "sad_wrappings/templ_array_34_4" BEL
+        "sad_wrappings/templ_array_34_3" BEL "sad_wrappings/templ_array_34_2"
+        BEL "sad_wrappings/templ_array_34_1" BEL
+        "sad_wrappings/templ_array_34_0" BEL "sad_wrappings/templ_array_33_7"
+        BEL "sad_wrappings/templ_array_33_6" BEL
+        "sad_wrappings/templ_array_33_5" BEL "sad_wrappings/templ_array_33_4"
+        BEL "sad_wrappings/templ_array_33_3" BEL
+        "sad_wrappings/templ_array_33_2" BEL "sad_wrappings/templ_array_33_1"
+        BEL "sad_wrappings/templ_array_33_0" BEL
         "sad_wrappings/templ_array_32_7" BEL "sad_wrappings/templ_array_32_6"
         BEL "sad_wrappings/templ_array_32_5" BEL
         "sad_wrappings/templ_array_32_4" BEL "sad_wrappings/templ_array_32_3"
@@ -765,23 +914,23 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         BEL "sad_wrappings/templ_array_31_4" BEL
         "sad_wrappings/templ_array_31_3" BEL "sad_wrappings/templ_array_31_2"
         BEL "sad_wrappings/templ_array_31_1" BEL
-        "sad_wrappings/templ_array_31_0" BEL "sad_wrappings/templ_array_29_7"
-        BEL "sad_wrappings/templ_array_29_6" BEL
-        "sad_wrappings/templ_array_29_5" BEL "sad_wrappings/templ_array_29_4"
-        BEL "sad_wrappings/templ_array_29_3" BEL
-        "sad_wrappings/templ_array_29_2" BEL "sad_wrappings/templ_array_29_1"
-        BEL "sad_wrappings/templ_array_29_0" BEL
-        "sad_wrappings/templ_array_28_7" BEL "sad_wrappings/templ_array_28_6"
-        BEL "sad_wrappings/templ_array_28_5" BEL
-        "sad_wrappings/templ_array_28_4" BEL "sad_wrappings/templ_array_28_3"
-        BEL "sad_wrappings/templ_array_28_2" BEL
-        "sad_wrappings/templ_array_28_1" BEL "sad_wrappings/templ_array_28_0"
-        BEL "sad_wrappings/templ_array_30_7" BEL
-        "sad_wrappings/templ_array_30_6" BEL "sad_wrappings/templ_array_30_5"
-        BEL "sad_wrappings/templ_array_30_4" BEL
-        "sad_wrappings/templ_array_30_3" BEL "sad_wrappings/templ_array_30_2"
-        BEL "sad_wrappings/templ_array_30_1" BEL
-        "sad_wrappings/templ_array_30_0" BEL "sad_wrappings/templ_array_27_7"
+        "sad_wrappings/templ_array_31_0" BEL "sad_wrappings/templ_array_30_7"
+        BEL "sad_wrappings/templ_array_30_6" BEL
+        "sad_wrappings/templ_array_30_5" BEL "sad_wrappings/templ_array_30_4"
+        BEL "sad_wrappings/templ_array_30_3" BEL
+        "sad_wrappings/templ_array_30_2" BEL "sad_wrappings/templ_array_30_1"
+        BEL "sad_wrappings/templ_array_30_0" BEL
+        "sad_wrappings/templ_array_29_7" BEL "sad_wrappings/templ_array_29_6"
+        BEL "sad_wrappings/templ_array_29_5" BEL
+        "sad_wrappings/templ_array_29_4" BEL "sad_wrappings/templ_array_29_3"
+        BEL "sad_wrappings/templ_array_29_2" BEL
+        "sad_wrappings/templ_array_29_1" BEL "sad_wrappings/templ_array_29_0"
+        BEL "sad_wrappings/templ_array_28_7" BEL
+        "sad_wrappings/templ_array_28_6" BEL "sad_wrappings/templ_array_28_5"
+        BEL "sad_wrappings/templ_array_28_4" BEL
+        "sad_wrappings/templ_array_28_3" BEL "sad_wrappings/templ_array_28_2"
+        BEL "sad_wrappings/templ_array_28_1" BEL
+        "sad_wrappings/templ_array_28_0" BEL "sad_wrappings/templ_array_27_7"
         BEL "sad_wrappings/templ_array_27_6" BEL
         "sad_wrappings/templ_array_27_5" BEL "sad_wrappings/templ_array_27_4"
         BEL "sad_wrappings/templ_array_27_3" BEL
@@ -792,49 +941,49 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/templ_array_26_4" BEL "sad_wrappings/templ_array_26_3"
         BEL "sad_wrappings/templ_array_26_2" BEL
         "sad_wrappings/templ_array_26_1" BEL "sad_wrappings/templ_array_26_0"
-        BEL "sad_wrappings/templ_array_24_7" BEL
-        "sad_wrappings/templ_array_24_6" BEL "sad_wrappings/templ_array_24_5"
-        BEL "sad_wrappings/templ_array_24_4" BEL
-        "sad_wrappings/templ_array_24_3" BEL "sad_wrappings/templ_array_24_2"
-        BEL "sad_wrappings/templ_array_24_1" BEL
-        "sad_wrappings/templ_array_24_0" BEL "sad_wrappings/templ_array_23_7"
+        BEL "sad_wrappings/templ_array_25_7" BEL
+        "sad_wrappings/templ_array_25_6" BEL "sad_wrappings/templ_array_25_5"
+        BEL "sad_wrappings/templ_array_25_4" BEL
+        "sad_wrappings/templ_array_25_3" BEL "sad_wrappings/templ_array_25_2"
+        BEL "sad_wrappings/templ_array_25_1" BEL
+        "sad_wrappings/templ_array_25_0" BEL "sad_wrappings/templ_array_24_7"
+        BEL "sad_wrappings/templ_array_24_6" BEL
+        "sad_wrappings/templ_array_24_5" BEL "sad_wrappings/templ_array_24_4"
+        BEL "sad_wrappings/templ_array_24_3" BEL
+        "sad_wrappings/templ_array_24_2" BEL "sad_wrappings/templ_array_24_1"
+        BEL "sad_wrappings/templ_array_24_0" BEL
+        "sad_wrappings/templ_array_22_7" BEL "sad_wrappings/templ_array_22_6"
+        BEL "sad_wrappings/templ_array_22_5" BEL
+        "sad_wrappings/templ_array_22_4" BEL "sad_wrappings/templ_array_22_3"
+        BEL "sad_wrappings/templ_array_22_2" BEL
+        "sad_wrappings/templ_array_22_1" BEL "sad_wrappings/templ_array_22_0"
+        BEL "sad_wrappings/templ_array_21_7" BEL
+        "sad_wrappings/templ_array_21_6" BEL "sad_wrappings/templ_array_21_5"
+        BEL "sad_wrappings/templ_array_21_4" BEL
+        "sad_wrappings/templ_array_21_3" BEL "sad_wrappings/templ_array_21_2"
+        BEL "sad_wrappings/templ_array_21_1" BEL
+        "sad_wrappings/templ_array_21_0" BEL "sad_wrappings/templ_array_23_7"
         BEL "sad_wrappings/templ_array_23_6" BEL
         "sad_wrappings/templ_array_23_5" BEL "sad_wrappings/templ_array_23_4"
         BEL "sad_wrappings/templ_array_23_3" BEL
         "sad_wrappings/templ_array_23_2" BEL "sad_wrappings/templ_array_23_1"
         BEL "sad_wrappings/templ_array_23_0" BEL
-        "sad_wrappings/templ_array_25_7" BEL "sad_wrappings/templ_array_25_6"
-        BEL "sad_wrappings/templ_array_25_5" BEL
-        "sad_wrappings/templ_array_25_4" BEL "sad_wrappings/templ_array_25_3"
-        BEL "sad_wrappings/templ_array_25_2" BEL
-        "sad_wrappings/templ_array_25_1" BEL "sad_wrappings/templ_array_25_0"
-        BEL "sad_wrappings/templ_array_22_7" BEL
-        "sad_wrappings/templ_array_22_6" BEL "sad_wrappings/templ_array_22_5"
-        BEL "sad_wrappings/templ_array_22_4" BEL
-        "sad_wrappings/templ_array_22_3" BEL "sad_wrappings/templ_array_22_2"
-        BEL "sad_wrappings/templ_array_22_1" BEL
-        "sad_wrappings/templ_array_22_0" BEL "sad_wrappings/templ_array_21_7"
-        BEL "sad_wrappings/templ_array_21_6" BEL
-        "sad_wrappings/templ_array_21_5" BEL "sad_wrappings/templ_array_21_4"
-        BEL "sad_wrappings/templ_array_21_3" BEL
-        "sad_wrappings/templ_array_21_2" BEL "sad_wrappings/templ_array_21_1"
-        BEL "sad_wrappings/templ_array_21_0" BEL
-        "sad_wrappings/templ_array_19_7" BEL "sad_wrappings/templ_array_19_6"
-        BEL "sad_wrappings/templ_array_19_5" BEL
-        "sad_wrappings/templ_array_19_4" BEL "sad_wrappings/templ_array_19_3"
-        BEL "sad_wrappings/templ_array_19_2" BEL
-        "sad_wrappings/templ_array_19_1" BEL "sad_wrappings/templ_array_19_0"
-        BEL "sad_wrappings/templ_array_18_7" BEL
-        "sad_wrappings/templ_array_18_6" BEL "sad_wrappings/templ_array_18_5"
-        BEL "sad_wrappings/templ_array_18_4" BEL
-        "sad_wrappings/templ_array_18_3" BEL "sad_wrappings/templ_array_18_2"
-        BEL "sad_wrappings/templ_array_18_1" BEL
-        "sad_wrappings/templ_array_18_0" BEL "sad_wrappings/templ_array_20_7"
-        BEL "sad_wrappings/templ_array_20_6" BEL
-        "sad_wrappings/templ_array_20_5" BEL "sad_wrappings/templ_array_20_4"
-        BEL "sad_wrappings/templ_array_20_3" BEL
-        "sad_wrappings/templ_array_20_2" BEL "sad_wrappings/templ_array_20_1"
-        BEL "sad_wrappings/templ_array_20_0" BEL
+        "sad_wrappings/templ_array_20_7" BEL "sad_wrappings/templ_array_20_6"
+        BEL "sad_wrappings/templ_array_20_5" BEL
+        "sad_wrappings/templ_array_20_4" BEL "sad_wrappings/templ_array_20_3"
+        BEL "sad_wrappings/templ_array_20_2" BEL
+        "sad_wrappings/templ_array_20_1" BEL "sad_wrappings/templ_array_20_0"
+        BEL "sad_wrappings/templ_array_19_7" BEL
+        "sad_wrappings/templ_array_19_6" BEL "sad_wrappings/templ_array_19_5"
+        BEL "sad_wrappings/templ_array_19_4" BEL
+        "sad_wrappings/templ_array_19_3" BEL "sad_wrappings/templ_array_19_2"
+        BEL "sad_wrappings/templ_array_19_1" BEL
+        "sad_wrappings/templ_array_19_0" BEL "sad_wrappings/templ_array_18_7"
+        BEL "sad_wrappings/templ_array_18_6" BEL
+        "sad_wrappings/templ_array_18_5" BEL "sad_wrappings/templ_array_18_4"
+        BEL "sad_wrappings/templ_array_18_3" BEL
+        "sad_wrappings/templ_array_18_2" BEL "sad_wrappings/templ_array_18_1"
+        BEL "sad_wrappings/templ_array_18_0" BEL
         "sad_wrappings/templ_array_17_7" BEL "sad_wrappings/templ_array_17_6"
         BEL "sad_wrappings/templ_array_17_5" BEL
         "sad_wrappings/templ_array_17_4" BEL "sad_wrappings/templ_array_17_3"
@@ -845,23 +994,23 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         BEL "sad_wrappings/templ_array_16_4" BEL
         "sad_wrappings/templ_array_16_3" BEL "sad_wrappings/templ_array_16_2"
         BEL "sad_wrappings/templ_array_16_1" BEL
-        "sad_wrappings/templ_array_16_0" BEL "sad_wrappings/templ_array_14_7"
-        BEL "sad_wrappings/templ_array_14_6" BEL
-        "sad_wrappings/templ_array_14_5" BEL "sad_wrappings/templ_array_14_4"
-        BEL "sad_wrappings/templ_array_14_3" BEL
-        "sad_wrappings/templ_array_14_2" BEL "sad_wrappings/templ_array_14_1"
-        BEL "sad_wrappings/templ_array_14_0" BEL
-        "sad_wrappings/templ_array_13_7" BEL "sad_wrappings/templ_array_13_6"
-        BEL "sad_wrappings/templ_array_13_5" BEL
-        "sad_wrappings/templ_array_13_4" BEL "sad_wrappings/templ_array_13_3"
-        BEL "sad_wrappings/templ_array_13_2" BEL
-        "sad_wrappings/templ_array_13_1" BEL "sad_wrappings/templ_array_13_0"
-        BEL "sad_wrappings/templ_array_15_7" BEL
-        "sad_wrappings/templ_array_15_6" BEL "sad_wrappings/templ_array_15_5"
-        BEL "sad_wrappings/templ_array_15_4" BEL
-        "sad_wrappings/templ_array_15_3" BEL "sad_wrappings/templ_array_15_2"
-        BEL "sad_wrappings/templ_array_15_1" BEL
-        "sad_wrappings/templ_array_15_0" BEL "sad_wrappings/templ_array_12_7"
+        "sad_wrappings/templ_array_16_0" BEL "sad_wrappings/templ_array_15_7"
+        BEL "sad_wrappings/templ_array_15_6" BEL
+        "sad_wrappings/templ_array_15_5" BEL "sad_wrappings/templ_array_15_4"
+        BEL "sad_wrappings/templ_array_15_3" BEL
+        "sad_wrappings/templ_array_15_2" BEL "sad_wrappings/templ_array_15_1"
+        BEL "sad_wrappings/templ_array_15_0" BEL
+        "sad_wrappings/templ_array_14_7" BEL "sad_wrappings/templ_array_14_6"
+        BEL "sad_wrappings/templ_array_14_5" BEL
+        "sad_wrappings/templ_array_14_4" BEL "sad_wrappings/templ_array_14_3"
+        BEL "sad_wrappings/templ_array_14_2" BEL
+        "sad_wrappings/templ_array_14_1" BEL "sad_wrappings/templ_array_14_0"
+        BEL "sad_wrappings/templ_array_13_7" BEL
+        "sad_wrappings/templ_array_13_6" BEL "sad_wrappings/templ_array_13_5"
+        BEL "sad_wrappings/templ_array_13_4" BEL
+        "sad_wrappings/templ_array_13_3" BEL "sad_wrappings/templ_array_13_2"
+        BEL "sad_wrappings/templ_array_13_1" BEL
+        "sad_wrappings/templ_array_13_0" BEL "sad_wrappings/templ_array_12_7"
         BEL "sad_wrappings/templ_array_12_6" BEL
         "sad_wrappings/templ_array_12_5" BEL "sad_wrappings/templ_array_12_4"
         BEL "sad_wrappings/templ_array_12_3" BEL
@@ -872,22 +1021,22 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         "sad_wrappings/templ_array_11_4" BEL "sad_wrappings/templ_array_11_3"
         BEL "sad_wrappings/templ_array_11_2" BEL
         "sad_wrappings/templ_array_11_1" BEL "sad_wrappings/templ_array_11_0"
-        BEL "sad_wrappings/templ_array_9_7" BEL
-        "sad_wrappings/templ_array_9_6" BEL "sad_wrappings/templ_array_9_5"
-        BEL "sad_wrappings/templ_array_9_4" BEL
-        "sad_wrappings/templ_array_9_3" BEL "sad_wrappings/templ_array_9_2"
-        BEL "sad_wrappings/templ_array_9_1" BEL
-        "sad_wrappings/templ_array_9_0" BEL "sad_wrappings/templ_array_8_7"
-        BEL "sad_wrappings/templ_array_8_6" BEL
-        "sad_wrappings/templ_array_8_5" BEL "sad_wrappings/templ_array_8_4"
-        BEL "sad_wrappings/templ_array_8_3" BEL
-        "sad_wrappings/templ_array_8_2" BEL "sad_wrappings/templ_array_8_1"
-        BEL "sad_wrappings/templ_array_8_0" BEL
-        "sad_wrappings/templ_array_10_7" BEL "sad_wrappings/templ_array_10_6"
-        BEL "sad_wrappings/templ_array_10_5" BEL
-        "sad_wrappings/templ_array_10_4" BEL "sad_wrappings/templ_array_10_3"
-        BEL "sad_wrappings/templ_array_10_2" BEL
-        "sad_wrappings/templ_array_10_1" BEL "sad_wrappings/templ_array_10_0"
+        BEL "sad_wrappings/templ_array_10_7" BEL
+        "sad_wrappings/templ_array_10_6" BEL "sad_wrappings/templ_array_10_5"
+        BEL "sad_wrappings/templ_array_10_4" BEL
+        "sad_wrappings/templ_array_10_3" BEL "sad_wrappings/templ_array_10_2"
+        BEL "sad_wrappings/templ_array_10_1" BEL
+        "sad_wrappings/templ_array_10_0" BEL "sad_wrappings/templ_array_9_7"
+        BEL "sad_wrappings/templ_array_9_6" BEL
+        "sad_wrappings/templ_array_9_5" BEL "sad_wrappings/templ_array_9_4"
+        BEL "sad_wrappings/templ_array_9_3" BEL
+        "sad_wrappings/templ_array_9_2" BEL "sad_wrappings/templ_array_9_1"
+        BEL "sad_wrappings/templ_array_9_0" BEL
+        "sad_wrappings/templ_array_8_7" BEL "sad_wrappings/templ_array_8_6"
+        BEL "sad_wrappings/templ_array_8_5" BEL
+        "sad_wrappings/templ_array_8_4" BEL "sad_wrappings/templ_array_8_3"
+        BEL "sad_wrappings/templ_array_8_2" BEL
+        "sad_wrappings/templ_array_8_1" BEL "sad_wrappings/templ_array_8_0"
         BEL "sad_wrappings/templ_array_7_7" BEL
         "sad_wrappings/templ_array_7_6" BEL "sad_wrappings/templ_array_7_5"
         BEL "sad_wrappings/templ_array_7_4" BEL
@@ -899,22 +1048,22 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         BEL "sad_wrappings/templ_array_6_3" BEL
         "sad_wrappings/templ_array_6_2" BEL "sad_wrappings/templ_array_6_1"
         BEL "sad_wrappings/templ_array_6_0" BEL
-        "sad_wrappings/templ_array_4_7" BEL "sad_wrappings/templ_array_4_6"
-        BEL "sad_wrappings/templ_array_4_5" BEL
-        "sad_wrappings/templ_array_4_4" BEL "sad_wrappings/templ_array_4_3"
-        BEL "sad_wrappings/templ_array_4_2" BEL
-        "sad_wrappings/templ_array_4_1" BEL "sad_wrappings/templ_array_4_0"
-        BEL "sad_wrappings/templ_array_3_7" BEL
-        "sad_wrappings/templ_array_3_6" BEL "sad_wrappings/templ_array_3_5"
-        BEL "sad_wrappings/templ_array_3_4" BEL
-        "sad_wrappings/templ_array_3_3" BEL "sad_wrappings/templ_array_3_2"
-        BEL "sad_wrappings/templ_array_3_1" BEL
-        "sad_wrappings/templ_array_3_0" BEL "sad_wrappings/templ_array_5_7"
-        BEL "sad_wrappings/templ_array_5_6" BEL
-        "sad_wrappings/templ_array_5_5" BEL "sad_wrappings/templ_array_5_4"
-        BEL "sad_wrappings/templ_array_5_3" BEL
-        "sad_wrappings/templ_array_5_2" BEL "sad_wrappings/templ_array_5_1"
-        BEL "sad_wrappings/templ_array_5_0" BEL
+        "sad_wrappings/templ_array_5_7" BEL "sad_wrappings/templ_array_5_6"
+        BEL "sad_wrappings/templ_array_5_5" BEL
+        "sad_wrappings/templ_array_5_4" BEL "sad_wrappings/templ_array_5_3"
+        BEL "sad_wrappings/templ_array_5_2" BEL
+        "sad_wrappings/templ_array_5_1" BEL "sad_wrappings/templ_array_5_0"
+        BEL "sad_wrappings/templ_array_4_7" BEL
+        "sad_wrappings/templ_array_4_6" BEL "sad_wrappings/templ_array_4_5"
+        BEL "sad_wrappings/templ_array_4_4" BEL
+        "sad_wrappings/templ_array_4_3" BEL "sad_wrappings/templ_array_4_2"
+        BEL "sad_wrappings/templ_array_4_1" BEL
+        "sad_wrappings/templ_array_4_0" BEL "sad_wrappings/templ_array_3_7"
+        BEL "sad_wrappings/templ_array_3_6" BEL
+        "sad_wrappings/templ_array_3_5" BEL "sad_wrappings/templ_array_3_4"
+        BEL "sad_wrappings/templ_array_3_3" BEL
+        "sad_wrappings/templ_array_3_2" BEL "sad_wrappings/templ_array_3_1"
+        BEL "sad_wrappings/templ_array_3_0" BEL
         "sad_wrappings/templ_array_2_7" BEL "sad_wrappings/templ_array_2_6"
         BEL "sad_wrappings/templ_array_2_5" BEL
         "sad_wrappings/templ_array_2_4" BEL "sad_wrappings/templ_array_2_3"
@@ -925,7 +1074,8 @@ TIMEGRP fx2Clk_in = BEL "reg1_0" BEL "reg1_1" BEL "reg1_2" BEL "reg1_3" BEL
         BEL "sad_wrappings/templ_array_1_4" BEL
         "sad_wrappings/templ_array_1_3" BEL "sad_wrappings/templ_array_1_2"
         BEL "sad_wrappings/templ_array_1_1" BEL
-        "sad_wrappings/templ_array_1_0" BEL "fx2Clk_in_BUFGP/BUFG";
+        "sad_wrappings/templ_array_1_0" BEL "sad_wrappings/junk_t" BEL
+        "sad_wrappings/junk_s" BEL "fx2Clk_in_BUFGP/BUFG";
 TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 SCHEMATIC END;
 

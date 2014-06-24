@@ -111,6 +111,9 @@ Slice Utilization Ratio Delta      : 5
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/sadAlgorithm_3x3.vhd" into library work
 Parsing entity <sadAlgorithm_3x3>.
 Parsing architecture <Behavioral> of entity <sadalgorithm_3x3>.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/minComparator.vhd" into library work
+Parsing entity <minComparator>.
+Parsing architecture <Behavioral> of entity <mincomparator>.
 Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/sad_wrapper.vhd" into library work
 Parsing entity <sad_wrapper>.
 Parsing architecture <Behavioral> of entity <sad_wrapper>.
@@ -128,12 +131,14 @@ Parsing architecture <behavioural> of entity <top_level>.
 Elaborating entity <top_level> (architecture <behavioural>) from library <work>.
 
 Elaborating entity <comm_fpga_fx2> (architecture <behavioural>) from library <work>.
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/top_level.vhd" Line 286: Assignment to flags ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/top_level.vhd" Line 290: Assignment to flags ignored, since the identifier is never used
 
 Elaborating entity <sad_wrapper> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:1127 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/sad_wrapper.vhd" Line 90: Assignment to sum_array ignored, since the identifier is never used
 
 Elaborating entity <sadAlgorithm_3x3> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <minComparator> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/sad_wrapper.vhd" Line 317: disparityarray should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -144,9 +149,10 @@ Synthesizing Unit <top_level>.
     Found 8-bit register for signal <reg1>.
     Found 8-bit register for signal <reg2>.
     Found 8-bit register for signal <reg3>.
-    Found 8-bit 4-to-1 multiplexer for signal <_n0059> created at line 61.
+    Found 8-bit register for signal <reg0>.
+    Found 8-bit 4-to-1 multiplexer for signal <_n0045> created at line 61.
     Summary:
-	inferred  24 D-type flip-flop(s).
+	inferred  32 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
 Unit <top_level> synthesized.
 
@@ -193,6 +199,9 @@ Synthesizing Unit <sad_wrapper>.
         nrow_c = 3
         PIXEL_CNT = 57
         DISP_RANGE = 16
+        DISP_ROW = 2
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/sad_wrapper.vhd" line 303: Output port <sad> of the instance <g_minResult[0].i_minResult> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/sad_wrapper.vhd" line 303: Output port <sad> of the instance <g_minResult[1].i_minResult> is unconnected or connected to loadless signal.
     Found 8-bit register for signal <templ_array<1>>.
     Found 8-bit register for signal <templ_array<2>>.
     Found 8-bit register for signal <templ_array<3>>.
@@ -306,46 +315,81 @@ Synthesizing Unit <sad_wrapper>.
     Found 8-bit register for signal <search_array<54>>.
     Found 8-bit register for signal <search_array<55>>.
     Found 8-bit register for signal <search_array<56>>.
-    Found 8-bit register for signal <sad_array<0>>.
-    Found 8-bit register for signal <sad_array<1>>.
-    Found 8-bit register for signal <sad_array<2>>.
-    Found 8-bit register for signal <sad_array<3>>.
-    Found 8-bit register for signal <sad_array<4>>.
-    Found 8-bit register for signal <sad_array<5>>.
-    Found 8-bit register for signal <sad_array<6>>.
-    Found 8-bit register for signal <sad_array<7>>.
-    Found 8-bit register for signal <sad_array<8>>.
-    Found 8-bit register for signal <sad_array<9>>.
-    Found 8-bit register for signal <sad_array<10>>.
-    Found 8-bit register for signal <sad_array<11>>.
-    Found 8-bit register for signal <sad_array<12>>.
-    Found 8-bit register for signal <sad_array<13>>.
-    Found 8-bit register for signal <sad_array<14>>.
-    Found 8-bit register for signal <sad_array<15>>.
+    Found 8-bit register for signal <sad_array<0><0>>.
+    Found 8-bit register for signal <sad_array<0><1>>.
+    Found 8-bit register for signal <sad_array<0><2>>.
+    Found 8-bit register for signal <sad_array<0><3>>.
+    Found 8-bit register for signal <sad_array<0><4>>.
+    Found 8-bit register for signal <sad_array<0><5>>.
+    Found 8-bit register for signal <sad_array<0><6>>.
+    Found 8-bit register for signal <sad_array<0><7>>.
+    Found 8-bit register for signal <sad_array<0><8>>.
+    Found 8-bit register for signal <sad_array<0><9>>.
+    Found 8-bit register for signal <sad_array<0><10>>.
+    Found 8-bit register for signal <sad_array<0><11>>.
+    Found 8-bit register for signal <sad_array<0><12>>.
+    Found 8-bit register for signal <sad_array<0><13>>.
+    Found 8-bit register for signal <sad_array<0><14>>.
+    Found 8-bit register for signal <sad_array<0><15>>.
+    Found 8-bit register for signal <sad_array<1><0>>.
+    Found 8-bit register for signal <sad_array<1><1>>.
+    Found 8-bit register for signal <sad_array<1><2>>.
+    Found 8-bit register for signal <sad_array<1><3>>.
+    Found 8-bit register for signal <sad_array<1><4>>.
+    Found 8-bit register for signal <sad_array<1><5>>.
+    Found 8-bit register for signal <sad_array<1><6>>.
+    Found 8-bit register for signal <sad_array<1><7>>.
+    Found 8-bit register for signal <sad_array<1><8>>.
+    Found 8-bit register for signal <sad_array<1><9>>.
+    Found 8-bit register for signal <sad_array<1><10>>.
+    Found 8-bit register for signal <sad_array<1><11>>.
+    Found 8-bit register for signal <sad_array<1><12>>.
+    Found 8-bit register for signal <sad_array<1><13>>.
+    Found 8-bit register for signal <sad_array<1><14>>.
+    Found 8-bit register for signal <sad_array<1><15>>.
+    Found 4-bit register for signal <disparityArray<0>>.
+    Found 4-bit register for signal <disparityArray<1>>.
+    Found 1-bit register for signal <junk_s>.
+    Found 1-bit register for signal <junk_t>.
     Found 32-bit register for signal <ndx_t>.
     Found 32-bit register for signal <ndx_s>.
     Found 32-bit register for signal <f2h_t_rd>.
     Found 32-bit register for signal <f2h_s_rd>.
     Found 32-bit register for signal <f2h_sad_rd>.
+    Found 32-bit register for signal <ndx_sad>.
+    Found 32-bit register for signal <f2h_disp_rd>.
     Found 8-bit register for signal <templ_array<0>>.
-    Found 32-bit adder for signal <ndx_t[31]_GND_14_o_add_223_OUT> created at line 143.
-    Found 32-bit adder for signal <ndx_s[31]_GND_14_o_add_287_OUT> created at line 158.
-    Found 32-bit adder for signal <f2h_t_rd[31]_GND_14_o_add_290_OUT> created at line 164.
-    Found 32-bit adder for signal <f2h_s_rd[31]_GND_14_o_add_293_OUT> created at line 167.
-    Found 32-bit adder for signal <f2h_sad_rd[31]_GND_14_o_add_296_OUT> created at line 170.
+    Found finite state machine <FSM_1> for signal <ndx_sad>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk_I (rising_edge)                            |
+    | Power Up State     | 00000000000000000000000000000000               |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <ndx_t[31]_GND_14_o_add_232_OUT> created at line 180.
+    Found 32-bit adder for signal <ndx_s[31]_GND_14_o_add_297_OUT> created at line 196.
+    Found 32-bit adder for signal <f2h_t_rd[31]_GND_14_o_add_300_OUT> created at line 202.
+    Found 32-bit adder for signal <f2h_s_rd[31]_GND_14_o_add_303_OUT> created at line 205.
+    Found 32-bit adder for signal <f2h_sad_rd[31]_GND_14_o_add_306_OUT> created at line 208.
+    Found 32-bit adder for signal <f2h_disp_rd[31]_GND_14_o_add_309_OUT> created at line 211.
 INFO:Xst:3019 - HDL ADVISOR - 512 flip-flops were inferred for signal <templ_array>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
 INFO:Xst:3019 - HDL ADVISOR - 512 flip-flops were inferred for signal <search_array>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
 INFO:Xst:3019 - HDL ADVISOR - 512 flip-flops were inferred for signal <templ_array>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
 INFO:Xst:3019 - HDL ADVISOR - 512 flip-flops were inferred for signal <search_array>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
-    Found 8-bit 57-to-1 multiplexer for signal <ndx_t[5]_X_14_o_wide_mux_162_OUT> created at line 135.
-    Found 8-bit 57-to-1 multiplexer for signal <ndx_s[5]_X_14_o_wide_mux_226_OUT> created at line 150.
-    Found 8-bit 57-to-1 multiplexer for signal <templ_O> created at line 232.
-    Found 8-bit 57-to-1 multiplexer for signal <search_O> created at line 233.
-    Found 8-bit 16-to-1 multiplexer for signal <disp_O> created at line 234.
+    Found 8-bit 57-to-1 multiplexer for signal <ndx_t[5]_X_14_o_wide_mux_170_OUT> created at line 171.
+    Found 8-bit 57-to-1 multiplexer for signal <ndx_s[5]_X_14_o_wide_mux_235_OUT> created at line 187.
+    Found 8-bit 57-to-1 multiplexer for signal <templ_O> created at line 325.
+    Found 8-bit 57-to-1 multiplexer for signal <search_O> created at line 326.
+    Found 8-bit 16-to-1 multiplexer for signal <sad_O> created at line 327.
     Summary:
-	inferred   5 Adder/Subtractor(s).
-	inferred 1200 D-type flip-flop(s).
-	inferred   8 Multiplexer(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred 1370 D-type flip-flop(s).
+	inferred  26 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
 Unit <sad_wrapper> synthesized.
 
 Synthesizing Unit <sadAlgorithm_3x3>.
@@ -380,33 +424,45 @@ Synthesizing Unit <sadAlgorithm_3x3>.
 	inferred  26 Adder/Subtractor(s).
 Unit <sadAlgorithm_3x3> synthesized.
 
+Synthesizing Unit <minComparator>.
+    Related source file is "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/minComparator.vhd".
+    Found 8-bit comparator greater for signal <sad1[7]_sad0[7]_LessThan_1_o> created at line 51
+    Summary:
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <minComparator> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 422
- 32-bit adder                                          : 5
+# Adders/Subtractors                                   : 839
+ 32-bit adder                                          : 6
  32-bit subtractor                                     : 1
- 9-bit adder                                           : 272
- 9-bit subtractor                                      : 144
-# Registers                                            : 142
- 1-bit register                                        : 2
- 32-bit register                                       : 6
+ 9-bit adder                                           : 544
+ 9-bit subtractor                                      : 288
+# Registers                                            : 164
+ 1-bit register                                        : 4
+ 32-bit register                                       : 7
+ 4-bit register                                        : 2
  7-bit register                                        : 1
- 8-bit register                                        : 133
-# Multiplexers                                         : 59
+ 8-bit register                                        : 150
+# Comparators                                          : 30
+ 8-bit comparator greater                              : 30
+# Multiplexers                                         : 137
  1-bit 2-to-1 multiplexer                              : 35
  2-bit 2-to-1 multiplexer                              : 7
- 32-bit 2-to-1 multiplexer                             : 6
+ 32-bit 2-to-1 multiplexer                             : 7
+ 4-bit 2-to-1 multiplexer                              : 31
  8-bit 16-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 51
  8-bit 4-to-1 multiplexer                              : 1
  8-bit 57-to-1 multiplexer                             : 4
 # Tristates                                            : 8
  1-bit tristate buffer                                 : 8
-# FSMs                                                 : 1
-# Xors                                                 : 1152
- 1-bit xor2                                            : 1152
+# FSMs                                                 : 2
+# Xors                                                 : 2304
+ 1-bit xor2                                            : 2304
 
 =========================================================================
 
@@ -414,6 +470,10 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1293 - FF/Latch <reg3_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg3_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg3_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg3_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <sadAlgorithm_3x3>.
 	The following adders/subtractors are grouped into adder tree <Madd_sum_sign_Madd1> :
@@ -424,6 +484,7 @@ Unit <sadAlgorithm_3x3> synthesized (advanced).
 
 Synthesizing (advanced) Unit <sad_wrapper>.
 The following registers are absorbed into counter <f2h_sad_rd>: 1 register on signal <f2h_sad_rd>.
+The following registers are absorbed into counter <f2h_disp_rd>: 1 register on signal <f2h_disp_rd>.
 The following registers are absorbed into counter <ndx_t>: 1 register on signal <ndx_t>.
 The following registers are absorbed into counter <ndx_s>: 1 register on signal <ndx_s>.
 The following registers are absorbed into counter <f2h_t_rd>: 1 register on signal <f2h_t_rd>.
@@ -434,35 +495,47 @@ Unit <sad_wrapper> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 162
- 32-bit adder                                          : 1
+# Adders/Subtractors                                   : 323
+ 32-bit adder                                          : 2
  32-bit subtractor                                     : 1
- 9-bit adder                                           : 16
- 9-bit subtractor                                      : 144
-# Adder Trees                                          : 32
- 8-bit / 8-inputs adder tree                           : 16
- 9-bit / 8-inputs adder tree                           : 16
-# Counters                                             : 5
- 32-bit up counter                                     : 5
-# Registers                                            : 1105
- Flip-Flops                                            : 1105
-# Multiplexers                                         : 94
- 1-bit 16-to-1 multiplexer                             : 8
- 1-bit 2-to-1 multiplexer                              : 35
- 1-bit 57-to-1 multiplexer                             : 32
+ 9-bit adder                                           : 32
+ 9-bit subtractor                                      : 288
+# Adder Trees                                          : 64
+ 8-bit / 8-inputs adder tree                           : 32
+ 9-bit / 8-inputs adder tree                           : 32
+# Counters                                             : 6
+ 32-bit up counter                                     : 6
+# Registers                                            : 1251
+ Flip-Flops                                            : 1251
+# Comparators                                          : 30
+ 8-bit comparator greater                              : 30
+# Multiplexers                                         : 266
+ 1-bit 2-to-1 multiplexer                              : 167
+ 1-bit 57-to-1 multiplexer                             : 16
  2-bit 2-to-1 multiplexer                              : 7
- 32-bit 2-to-1 multiplexer                             : 6
- 8-bit 2-to-1 multiplexer                              : 5
+ 32-bit 2-to-1 multiplexer                             : 7
+ 4-bit 2-to-1 multiplexer                              : 30
+ 8-bit 16-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 35
  8-bit 4-to-1 multiplexer                              : 1
-# FSMs                                                 : 1
-# Xors                                                 : 1152
- 1-bit xor2                                            : 1152
+ 8-bit 57-to-1 multiplexer                             : 2
+# FSMs                                                 : 2
+# Xors                                                 : 2304
+ 1-bit xor2                                            : 2304
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <sad_wrappings/FSM_1> on signal <ndx_sad[1:2]> with one-hot encoding.
+----------------------------------------------
+ State                            | Encoding
+----------------------------------------------
+ 00000000000000000000000000000000 | 01
+ 00000000000000000000000000000001 | 10
+----------------------------------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <comm_fpga_fx2/FSM_0> on signal <state[1:4]> with user encoding.
 ------------------------------------
@@ -485,38 +558,73 @@ Optimizing unit <top_level> ...
 Optimizing unit <sad_wrapper> ...
 
 Optimizing unit <sadAlgorithm_3x3> ...
-WARNING:Xst:1293 - FF/Latch <sad_wrappings/f2h_sad_rd_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_9> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_10> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_11> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_12> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_13> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_14> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_15> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_16> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_17> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_18> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_19> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_20> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_21> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_22> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_23> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_24> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_25> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_26> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_27> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_28> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <reg3_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg3_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg3_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <reg3_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <sad_wrappings/f2h_disp_rd_1> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_31> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_28> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_27> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_26> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_25> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_24> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_23> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_22> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_21> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_20> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_19> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_18> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_17> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_16> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_15> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_14> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_13> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_12> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_11> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_10> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_9> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_sad_rd_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_31> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_28> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_27> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_26> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_25> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_24> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_23> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_22> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_21> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_20> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_19> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_18> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_17> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_16> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_15> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_14> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_13> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_12> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_11> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_10> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_9> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_3> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sad_wrappings/f2h_disp_rd_2> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 21.
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 39.
 
 Final Macro Processing ...
 
@@ -524,8 +632,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1241
- Flip-Flops                                            : 1241
+# Registers                                            : 1385
+ Flip-Flops                                            : 1385
 
 =========================================================================
 
@@ -548,24 +656,24 @@ Top Level Output File Name         : top_level.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 8837
+# BELS                             : 16641
 #      GND                         : 1
-#      INV                         : 36
-#      LUT1                        : 132
-#      LUT2                        : 2101
-#      LUT3                        : 290
-#      LUT4                        : 532
-#      LUT5                        : 238
-#      LUT6                        : 1023
-#      MUXCY                       : 2098
-#      MUXF7                       : 16
-#      MUXF8                       : 8
+#      INV                         : 37
+#      LUT1                        : 133
+#      LUT2                        : 4246
+#      LUT3                        : 609
+#      LUT4                        : 1097
+#      LUT5                        : 324
+#      LUT6                        : 1566
+#      MUXCY                       : 4035
+#      MUXF7                       : 24
+#      MUXF8                       : 12
 #      VCC                         : 1
-#      XORCY                       : 2361
-# FlipFlops/Latches                : 1241
-#      FD                          : 156
+#      XORCY                       : 4556
+# FlipFlops/Latches                : 1385
+#      FD                          : 299
 #      FDE                         : 953
-#      FDR                         : 4
+#      FDR                         : 5
 #      FDRE                        : 128
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -581,16 +689,16 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1241  out of  54576     2%  
- Number of Slice LUTs:                 4352  out of  27288    15%  
-    Number used as Logic:              4352  out of  27288    15%  
+ Number of Slice Registers:            1385  out of  54576     2%  
+ Number of Slice LUTs:                 8012  out of  27288    29%  
+    Number used as Logic:              8012  out of  27288    29%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   5093
-   Number with an unused Flip Flop:    3852  out of   5093    75%  
-   Number with an unused LUT:           741  out of   5093    14%  
-   Number of fully used LUT-FF pairs:   500  out of   5093     9%  
-   Number of unique control sets:       123
+ Number of LUT Flip Flop pairs used:   8689
+   Number with an unused Flip Flop:    7304  out of   8689    84%  
+   Number with an unused LUT:           677  out of   8689     7%  
+   Number of fully used LUT-FF pairs:   708  out of   8689     8%  
+   Number of unique control sets:       124
 
 IO Utilization: 
  Number of IOs:                          33
@@ -620,7 +728,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-fx2Clk_in                          | BUFGP                  | 1241  |
+fx2Clk_in                          | BUFGP                  | 1385  |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -631,10 +739,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 9.266ns (Maximum Frequency: 107.926MHz)
-   Minimum input arrival time before clock: 6.316ns
-   Maximum output required time after clock: 7.732ns
-   Maximum combinational path delay: 8.465ns
+   Minimum period: 12.475ns (Maximum Frequency: 80.161MHz)
+   Minimum input arrival time before clock: 6.375ns
+   Maximum output required time after clock: 10.667ns
+   Maximum combinational path delay: 11.314ns
 
 Timing Details:
 ---------------
@@ -642,113 +750,107 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fx2Clk_in'
-  Clock period: 9.266ns (frequency: 107.925MHz)
-  Total number of paths / destination ports: 15093773 / 2446
+  Clock period: 12.475ns (frequency: 80.161MHz)
+  Total number of paths / destination ports: 31006528 / 2591
 -------------------------------------------------------------------------
-Delay:               9.266ns (Levels of Logic = 24)
-  Source:            sad_wrappings/templ_array_2_0 (FF)
-  Destination:       sad_wrappings/sad_array_14_7 (FF)
+Delay:               12.475ns (Levels of Logic = 12)
+  Source:            sad_wrappings/sad_array<1>_8_5 (FF)
+  Destination:       sad_wrappings/disparityArray_1_0 (FF)
   Source Clock:      fx2Clk_in rising
   Destination Clock: fx2Clk_in rising
 
-  Data Path: sad_wrappings/templ_array_2_0 to sad_wrappings/sad_array_14_7
+  Data Path: sad_wrappings/sad_array<1>_8_5 to sad_wrappings/disparityArray_1_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             18   0.447   1.050  sad_wrappings/templ_array_2_0 (sad_wrappings/templ_array_2_0)
-     LUT2:I1->O            1   0.205   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_lut<0> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<0> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<1> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<2> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<3> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<4> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<5> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<6> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<6>)
-     MUXCY:CI->O           0   0.019   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<7> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_cy<7>)
-     XORCY:CI->O          14   0.180   1.302  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_6_OUT<8:0>_xor<8> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_6_OUT<8>)
-     LUT5:I0->O            1   0.203   0.684  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<2>_SW2 (N230)
-     LUT4:I2->O            1   0.203   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<2> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<2>)
-     MUXCY:S->O            1   0.172   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<2> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<2>)
-     XORCY:CI->O           1   0.180   0.580  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_xor<3> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36)
-     LUT2:I1->O            1   0.205   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<3> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<3>)
-     MUXCY:S->O            1   0.172   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>)
-     XORCY:CI->O           2   0.180   0.617  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_xor<4> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_411)
-     LUT3:I2->O            1   0.205   0.580  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124 (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124)
-     LUT4:I3->O            1   0.205   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>5 (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>5)
-     MUXCY:S->O            1   0.172   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_cy<0>_4 (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_cy<0>5)
-     XORCY:CI->O           1   0.180   0.580  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_5 (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612)
-     LUT2:I1->O            1   0.205   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>)
-     MUXCY:S->O            0   0.172   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_cy<6> (sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_cy<6>)
-     XORCY:CI->O           1   0.180   0.000  sad_wrappings/g_signed_sad[0].g_signed_sad_calc[15].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7> (sad_wrappings/sad_array_next<15><7>)
-     FD:D                      0.102          sad_wrappings/sad_array_15_7
+     FD:C->Q               4   0.447   1.048  sad_wrappings/sad_array<1>_8_5 (sad_wrappings/sad_array<1>_8_5)
+     LUT6:I0->O            1   0.203   0.580  sad_wrappings/g_sadComp8[1].g_minComp8[4].i_minComp8/sad1[7]_sad0[7]_LessThan_1_o22 (sad_wrappings/g_sadComp8[1].g_minComp8[4].i_minComp8/sad1[7]_sad0[7]_LessThan_1_o21)
+     LUT6:I5->O            8   0.205   0.803  sad_wrappings/g_sadComp8[1].g_minComp8[4].i_minComp8/sad1[7]_sad0[7]_LessThan_1_o24 (sad_wrappings/g_sadComp8[1].g_minComp8[4].i_minComp8/sad1[7]_sad0[7]_LessThan_1_o23)
+     LUT6:I5->O            3   0.205   1.015  sad_wrappings/g_sadComp8[1].g_minComp8[4].i_minComp8/Mmux_sad61 (sad_wrappings/minSad<1><4><5>)
+     LUT6:I0->O            1   0.203   0.580  sad_wrappings/g_sadComp4[1].g_minComp4[2].i_minComp4/sad1[7]_sad0[7]_LessThan_1_o22 (sad_wrappings/g_sadComp4[1].g_minComp4[2].i_minComp4/sad1[7]_sad0[7]_LessThan_1_o21)
+     LUT6:I5->O            8   0.205   0.803  sad_wrappings/g_sadComp4[1].g_minComp4[2].i_minComp4/sad1[7]_sad0[7]_LessThan_1_o24 (sad_wrappings/g_sadComp4[1].g_minComp4[2].i_minComp4/sad1[7]_sad0[7]_LessThan_1_o23)
+     LUT6:I5->O            3   0.205   1.015  sad_wrappings/g_sadComp4[1].g_minComp4[2].i_minComp4/Mmux_sad61 (sad_wrappings/minSad<1><10><5>)
+     LUT6:I0->O            2   0.203   0.617  sad_wrappings/g_sadComp2[1].g_minComp2[1].i_minComp2/sad1[7]_sad0[7]_LessThan_1_o22 (sad_wrappings/g_sadComp2[1].g_minComp2[1].i_minComp2/sad1[7]_sad0[7]_LessThan_1_o21)
+     LUT6:I5->O            5   0.205   0.715  sad_wrappings/g_sadComp2[1].g_minComp2[1].i_minComp2/sad1[7]_sad0[7]_LessThan_1_o24 (sad_wrappings/g_sadComp2[1].g_minComp2[1].i_minComp2/sad1[7]_sad0[7]_LessThan_1_o23)
+     LUT6:I5->O            7   0.205   0.773  sad_wrappings/g_sadComp2[1].g_minComp2[1].i_minComp2/sad1[7]_sad0[7]_LessThan_1_o25 (sad_wrappings/g_sadComp2[1].g_minComp2[1].i_minComp2/sad1[7]_sad0[7]_LessThan_1_o)
+     MUXF8:S->O            2   0.202   0.721  sad_wrappings/g_minResult[1].i_minResult/Mmux_pos_3_f7 (sad_wrappings/g_minResult[1].i_minResult/Mmux_pos_3_f7)
+     LUT4:I2->O            1   0.203   0.808  sad_wrappings/g_minResult[1].i_minResult/sad1[7]_sad0[7]_LessThan_1_o29_SW5 (N116)
+     LUT6:I3->O            1   0.205   0.000  sad_wrappings/g_minResult[1].i_minResult/Mmux_pos_2_f8 (sad_wrappings/minPos<1><14><0>)
+     FD:D                      0.102          sad_wrappings/disparityArray_1_0
     ----------------------------------------
-    Total                      9.266ns (3.873ns logic, 5.393ns route)
-                                       (41.8% logic, 58.2% route)
+    Total                     12.475ns (2.998ns logic, 9.477ns route)
+                                       (24.0% logic, 76.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
-  Total number of paths / destination ports: 2114 / 1132
+  Total number of paths / destination ports: 2119 / 1137
 -------------------------------------------------------------------------
-Offset:              6.316ns (Levels of Logic = 3)
+Offset:              6.375ns (Levels of Logic = 4)
   Source:            fx2GotData_in (PAD)
-  Destination:       sad_wrappings/ndx_s_31 (FF)
+  Destination:       sad_wrappings/search_array_56_7 (FF)
   Destination Clock: fx2Clk_in rising
 
-  Data Path: fx2GotData_in to sad_wrappings/ndx_s_31
+  Data Path: fx2GotData_in to sad_wrappings/search_array_56_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            42   1.222   1.778  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
-     LUT5:I0->O           18   0.203   1.297  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
-     LUT4:I0->O           32   0.203   1.291  sad_wrappings/GND_14_o_h2fValid_I_AND_143_o1 (sad_wrappings/GND_14_o_h2fValid_I_AND_143_o)
-     FDRE:CE                   0.322          sad_wrappings/ndx_s_0
+     LUT5:I0->O            4   0.203   1.028  comm_fpga_fx2/Mmux_h2fValid_out11 (h2fValid)
+     LUT5:I0->O           40   0.203   1.634  sad_wrappings/GND_14_o_junk_s_AND_143_o1 (sad_wrappings/GND_14_o_junk_s_AND_143_o)
+     LUT3:I0->O           57   0.205   0.000  sad_wrappings/Mmux_reg1_search8 (sad_wrappings/reg1_search<7>)
+     FDE:D                     0.102          sad_wrappings/search_array_0_7
     ----------------------------------------
-    Total                      6.316ns (1.950ns logic, 4.366ns route)
-                                       (30.9% logic, 69.1% route)
+    Total                      6.375ns (1.935ns logic, 4.440ns route)
+                                       (30.4% logic, 69.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
-  Total number of paths / destination ports: 200 / 21
+  Total number of paths / destination ports: 232 / 21
 -------------------------------------------------------------------------
-Offset:              7.732ns (Levels of Logic = 4)
-  Source:            comm_fpga_fx2/state_FSM_FFd1 (FF)
-  Destination:       fx2Data_io<7> (PAD)
+Offset:              10.667ns (Levels of Logic = 7)
+  Source:            sad_wrappings/f2h_sad_rd_1 (FF)
+  Destination:       led_out<1> (PAD)
   Source Clock:      fx2Clk_in rising
 
-  Data Path: comm_fpga_fx2/state_FSM_FFd1 to fx2Data_io<7>
+  Data Path: sad_wrappings/f2h_sad_rd_1 to led_out<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              50   0.447   1.776  comm_fpga_fx2/state_FSM_FFd1 (comm_fpga_fx2/state_FSM_FFd1)
-     LUT5:I2->O            1   0.205   0.580  comm_fpga_fx2/Mmux_dataOut12_SW0 (N20)
-     LUT6:I5->O            8   0.205   1.167  comm_fpga_fx2/Mmux_dataOut12 (comm_fpga_fx2/Mmux_dataOut12)
-     LUT6:I0->O            1   0.203   0.579  comm_fpga_fx2/Mmux_dataOut1 (comm_fpga_fx2/dataOut<0>)
-     IOBUF:I->IO               2.571          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+     FDR:C->Q             67   0.447   1.764  sad_wrappings/f2h_sad_rd_1 (sad_wrappings/f2h_sad_rd_1)
+     LUT5:I3->O            1   0.203   0.827  sad_wrappings/led_O<1>13 (sad_wrappings/led_O<1>12)
+     LUT5:I1->O            1   0.203   0.924  sad_wrappings/led_O<1>14 (sad_wrappings/led_O<1>13)
+     LUT6:I1->O            1   0.203   0.684  sad_wrappings/led_O<1>15 (sad_wrappings/led_O<1>14)
+     LUT6:I4->O            1   0.203   0.827  sad_wrappings/led_O<1>18 (sad_wrappings/led_O<1>17)
+     LUT5:I1->O            1   0.203   0.827  sad_wrappings/led_O<1>19 (sad_wrappings/led_O<1>18)
+     LUT5:I1->O            1   0.203   0.579  sad_wrappings/led_O<1>110 (led_out_1_OBUF)
+     OBUF:I->O                 2.571          led_out_1_OBUF (led_out<1>)
     ----------------------------------------
-    Total                      7.732ns (3.631ns logic, 4.101ns route)
-                                       (47.0% logic, 53.0% route)
+    Total                     10.667ns (4.236ns logic, 6.431ns route)
+                                       (39.7% logic, 60.3% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 249 / 19
+  Total number of paths / destination ports: 273 / 19
 -------------------------------------------------------------------------
-Delay:               8.465ns (Levels of Logic = 6)
-  Source:            sw_in<7> (PAD)
-  Destination:       led_out<7> (PAD)
+Delay:               11.314ns (Levels of Logic = 8)
+  Source:            sw_in<1> (PAD)
+  Destination:       led_out<3> (PAD)
 
-  Data Path: sw_in<7> to led_out<7>
+  Data Path: sw_in<1> to led_out<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   1.222   0.961  sw_in_7_IBUF (sw_in_7_IBUF)
-     LUT5:I0->O            6   0.203   0.745  sad_wrappings/GND_14_o_sw_I[7]_equal_302_o<7>11 (sad_wrappings/GND_14_o_sw_I[7]_equal_302_o<7>1)
-     LUT4:I3->O            6   0.205   0.992  sad_wrappings/GND_14_o_sw_I[7]_equal_305_o<7>1 (sad_wrappings/GND_14_o_sw_I[7]_equal_305_o)
-     LUT4:I0->O            1   0.203   0.580  sad_wrappings/led_O<0>_SW0 (N38)
-     LUT6:I5->O            1   0.205   0.579  sad_wrappings/led_O<0> (led_out_0_OBUF)
-     OBUF:I->O                 2.571          led_out_0_OBUF (led_out<0>)
+     IBUF:I->O            32   1.222   1.636  sw_in_1_IBUF (sw_in_1_IBUF)
+     LUT5:I0->O            1   0.203   0.827  sad_wrappings/led_O<1>13 (sad_wrappings/led_O<1>12)
+     LUT5:I1->O            1   0.203   0.924  sad_wrappings/led_O<1>14 (sad_wrappings/led_O<1>13)
+     LUT6:I1->O            1   0.203   0.684  sad_wrappings/led_O<1>15 (sad_wrappings/led_O<1>14)
+     LUT6:I4->O            1   0.203   0.827  sad_wrappings/led_O<1>18 (sad_wrappings/led_O<1>17)
+     LUT5:I1->O            1   0.203   0.827  sad_wrappings/led_O<1>19 (sad_wrappings/led_O<1>18)
+     LUT5:I1->O            1   0.203   0.579  sad_wrappings/led_O<1>110 (led_out_1_OBUF)
+     OBUF:I->O                 2.571          led_out_1_OBUF (led_out<1>)
     ----------------------------------------
-    Total                      8.465ns (4.609ns logic, 3.856ns route)
-                                       (54.4% logic, 45.6% route)
+    Total                     11.314ns (5.011ns logic, 6.303ns route)
+                                       (44.3% logic, 55.7% route)
 
 =========================================================================
 
@@ -760,21 +862,21 @@ Clock to Setup on destination clock fx2Clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fx2Clk_in      |    9.266|         |         |         |
+fx2Clk_in      |   12.475|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 20.63 secs
+Total REAL time to Xst completion: 40.00 secs
+Total CPU time to Xst completion: 39.73 secs
  
 --> 
 
 
-Total memory usage is 421808 kilobytes
+Total memory usage is 481296 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   30 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :   69 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 

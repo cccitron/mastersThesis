@@ -478,9 +478,9 @@ if __name__ == "__main__":
 
 # 2) Write two bytes, in the same command and read them back
             # Initialize byte array for template of 57 bytes
-            buffTempl_h2f = bytearray([0x02, 0x05, 0x05, 0x03, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-                                       0x04, 0x00, 0x07, 0x01, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-                                       0x07, 0x05, 0x09, 0x06, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff])
+            buffTempl_h2f = bytearray([0xff, 0x02, 0x05, 0x05, 0x03, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+                                             0x04, 0x00, 0x07, 0x01, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+                                             0x07, 0x05, 0x09, 0x06, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff])
             '''buffTempl_h2f = bytearray(10);            
             buffTempl_h2f[0] = 0x02;
             buffTempl_h2f[1] = 5;
@@ -492,10 +492,10 @@ if __name__ == "__main__":
             buffTempl_h2f[7] = 5;
             buffTempl_h2f[8] = 9;'''
 
-            # Initialize byte array for search
-            buffSearch_h2f = bytearray([0x02, 0x07, 0x05, 0x08, 0x06, 0x00, 0x02, 0x07, 0x05, 0x08, 0x06, 0x00, 0x02, 0x07, 0x05, 0x08, 0x06, 0x00, 0x00,
-                                        0x01, 0x07, 0x04, 0x02, 0x07, 0x09, 0x01, 0x07, 0x04, 0x02, 0x07, 0x09, 0x01, 0x07, 0x04, 0x02, 0x07, 0x09, 0x00,
-                                        0x08, 0x04, 0x06, 0x08, 0x05, 0x03, 0x08, 0x04, 0x06, 0x08, 0x05, 0x03, 0x08, 0x04, 0x06, 0x08, 0x05, 0x03, 0x00])
+            # Initialize byte array for search, the first byte is junk and isn't actually used on the board
+            buffSearch_h2f = bytearray([0xff, 0x02, 0x07, 0x05, 0x08, 0x06, 0x00, 0x02, 0x07, 0x05, 0x08, 0x06, 0x00, 0x02, 0x07, 0x05, 0x08, 0x06, 0x00, 0x00,
+                                              0x01, 0x07, 0x04, 0x02, 0x07, 0x09, 0x01, 0x07, 0x04, 0x02, 0x07, 0x09, 0x01, 0x07, 0x04, 0x02, 0x07, 0x09, 0x00,
+                                              0x08, 0x04, 0x06, 0x08, 0x05, 0x03, 0x08, 0x04, 0x06, 0x08, 0x05, 0x03, 0x08, 0x04, 0x06, 0x08, 0x05, 0x03, 0x00])
             '''buffSearch_h2f[0] = 2;
             buffSearch_h2f[1] = 7;
             buffSearch_h2f[2] = 5;                        
@@ -507,8 +507,8 @@ if __name__ == "__main__":
             buffSearch_h2f[8] = 6;'''
 
             # Write bytes to FPGA register (reg) 1 ### change to reg 0 or something
-            flWriteChannel(handle, 1000, 0x01, buffTempl_h2f)
-            flWriteChannel(handle, 1000, 0x02, buffSearch_h2f)
+            flWriteChannel(handle, 1000, 0x00, buffTempl_h2f)
+            flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)
 
             # Read from reg 1, should get back 5 and 67
             '''buffIn = flReadChannel(handle, 1000, 0x01, 1)
@@ -528,19 +528,47 @@ if __name__ == "__main__":
             print("")'''
 
             print("begin template read")            
-            for ndx in range(9):
-                buf = flReadChannel(handle, 1000, 0x01, 1)
+            for ndx in range(19):
+                buf = flReadChannel(handle, 1000, 0x00, 1)
+                print(buf, end=" ")
+            print("")
+            for ndx in range(19):
+                buf = flReadChannel(handle, 1000, 0x00, 1)
+                print(buf, end=" ")
+            print("")
+            for ndx in range(19):
+                buf = flReadChannel(handle, 1000, 0x00, 1)
                 print(buf, end=" ")
             print("")
 
             print("begin search read")            
-            for ndx in range(9):
-                buf = flReadChannel(handle, 1000, 0x02, 1)
+            for ndx in range(19):
+                buf = flReadChannel(handle, 1000, 0x01, 1)
+                print(buf, end=" ")
+            print("")
+            for ndx in range(19):
+                buf = flReadChannel(handle, 1000, 0x01, 1)
+                print(buf, end=" ")
+            print("")
+            for ndx in range(19):
+                buf = flReadChannel(handle, 1000, 0x01, 1)
                 print(buf, end=" ")
             print("")
             
-            print("reading from sad array")            
+            print("reading from sad array 0")            
             for ndx in range(16):
+                buf = flReadChannel(handle, 1000, 0x02, 1)
+                print(buf, end=" ")
+            print("")
+
+            print("reading from sad array 1")            
+            for ndx in range(16):
+                buf = flReadChannel(handle, 1000, 0x02, 1)
+                print(buf, end=" ")
+            print("")
+
+            print("reading from disparity array")            
+            for ndx in range(2):
                 buf = flReadChannel(handle, 1000, 0x03, 1)
                 print(buf, end=" ")
             print("")

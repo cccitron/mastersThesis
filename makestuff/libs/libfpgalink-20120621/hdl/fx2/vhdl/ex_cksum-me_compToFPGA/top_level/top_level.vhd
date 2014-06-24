@@ -70,11 +70,12 @@ architecture behavioural of top_level is
 	signal flags                   : std_logic_vector(3 downto 0);
 
 	-- Registers implementing the channels
-	signal checksum, checksum_next : std_logic_vector(15 downto 0) := x"0000";
+	--signal checksum, checksum_next : std_logic_vector(15 downto 0) := x"0000";
 	signal reg0, reg0_next         : std_logic_vector(7 downto 0)  := x"00";
 	signal reg1, reg1_next         : std_logic_vector(7 downto 0)  := x"00";
 	signal reg2, reg2_next         : std_logic_vector(7 downto 0)  := x"00";
 	signal reg3, reg3_next         : std_logic_vector(7 downto 0)  := x"00";
+--   signal reg4, reg4_next         : std_logic_vector(7 downto 0)  := x"00";
    
 --   -- Template array for storing data transfered to the FPGA from comp
 --   type array_type_templ is array (0 to 8) of std_logic_vector(7 downto 0);
@@ -97,7 +98,7 @@ architecture behavioural of top_level is
    
    --SIGNAL clk_sad : STD_LOGIC := '0';
    
-   signal reg1_templ, reg2_search, reg3_disp : std_logic_vector(7 downto 0)  := x"00";
+   signal reg0_templ, reg1_search, reg2_sad, reg3_disp : std_logic_vector(7 downto 0)  := x"00";
 
 begin                                                                     --BEGIN_SNIPPET(registers)
 	
@@ -110,11 +111,12 @@ begin                                                                     --BEGI
 	process(fx2Clk_in)
 	begin
 		if ( rising_edge(fx2Clk_in) ) then
-			checksum <= checksum_next;
+			--checksum <= checksum_next;
 			reg0 <= reg0_next;
 			reg1 <= reg1_next;
 			reg2 <= reg2_next;
 			reg3 <= reg3_next;
+         --reg4 <= reg4_next;
 --         templ_array <= templ_array_next;
 --         
 --         ndx_t <= ndx_t_next;
@@ -138,16 +140,17 @@ begin                                                                     --BEGI
 	end process;
 
 	-- Drive register inputs for each channel when the host is writing
-	checksum_next <=
-		std_logic_vector(unsigned(checksum) + unsigned(h2fData))
-			when chanAddr = "0000000" and h2fValid = '1'
-		else x"0000"
-			when chanAddr = "0000001" and h2fValid = '1' and h2fData(0) = '1'
-		else checksum;
-	reg0_next <= h2fData when chanAddr = "0000000" and h2fValid = '1' else reg0;
-	reg1_next <= reg1_templ; --templ_array(f2h_t_rd); --h2fData when chanAddr = "0000001" and h2fValid = '1' else reg1;
-	reg2_next <= reg2_search; --search_array(f2h_s_rd); --h2fData when chanAddr = "0000010" and h2fValid = '1' else reg2;
-	reg3_next <= reg3_disp; --sad_array(f2h_sad_rd); --h2fData when chanAddr = "0000011" and h2fValid = '1' else reg3;
+--	checksum_next <=
+--		std_logic_vector(unsigned(checksum) + unsigned(h2fData))
+--			when chanAddr = "0000000" and h2fValid = '1'
+--		else x"0000"
+--			when chanAddr = "0000001" and h2fValid = '1' and h2fData(0) = '1'
+--		else checksum;
+	reg0_next <= reg0_templ; --h2fData when chanAddr = "0000000" and h2fValid = '1' else reg0;
+	reg1_next <= reg1_search; --reg1_templ; --templ_array(f2h_t_rd); --h2fData when chanAddr = "0000001" and h2fValid = '1' else reg1;
+	reg2_next <= reg2_sad; --reg2_search; --search_array(f2h_s_rd); --h2fData when chanAddr = "0000010" and h2fValid = '1' else reg2;
+	reg3_next <= reg3_disp; --reg3_sad; --sad_array(f2h_sad_rd); --h2fData when chanAddr = "0000011" and h2fValid = '1' else reg3;
+--   reg4_next <= reg4_disp;
    
 --   -- host to FPGA templ_array, reg0
 --   templ_array_next(ndx_t)  <= h2fData when chanAddr = "0000001" and h2fValid = '1' else templ_array(ndx_t);
@@ -209,10 +212,11 @@ begin                                                                     --BEGI
 	
 	-- Select values to return for each channel when the host is reading
 	with chanAddr select f2hData <=
-		sw_in when "0000000",
+		reg0  when "0000000",
 		reg1  when "0000001",
 		reg2  when "0000010",
 		reg3  when "0000011",
+--      reg4  when "0000100",
 		x"00" when others;
 
 	-- Used to Assert that there's always data for reading, and always room for writing
@@ -298,9 +302,10 @@ begin                                                                     --BEGI
          clk_I      => fx2Clk_in, --clk_sad,
 
          h2fData_I  => h2fData,
-         templ_O    => reg1_templ, --reg1_next,
-         search_O   => reg2_search, --reg2_next,
-         disp_O     => reg3_disp, --reg3_next,
+         templ_O    => reg0_templ, --reg1_next,
+         search_O   => reg1_search, --reg2_next,
+         sad_O      => reg2_sad,
+         disp_O     => reg3_disp,
          
          chanAddr_I => chanAddr,
          f2hReady_I => f2hReady,
