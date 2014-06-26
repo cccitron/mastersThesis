@@ -28,19 +28,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 31006528 paths analyzed, 4916 endpoints analyzed, 0 failing endpoints
+ 31066888 paths analyzed, 8566 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  18.281ns.
+ Minimum period is  18.905ns.
 --------------------------------------------------------------------------------
 
-Paths for end point sad_wrappings/sad_array<1>_2_7 (SLICE_X54Y41.C5), 97456 paths
+Paths for end point sad_wrappings/sad_array<0>_1_7 (SLICE_X40Y19.C3), 97456 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     1.719ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               sad_wrappings/templ_array_21_4 (FF)
-  Destination:          sad_wrappings/sad_array<1>_2_7 (FF)
+Slack (setup path):     1.095ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sad_wrappings/templ_array_39_6 (FF)
+  Destination:          sad_wrappings/sad_array<0>_1_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.175ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.071ns (0.448 - 0.519)
+  Data Path Delay:      18.847ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.023ns (0.552 - 0.575)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -51,115 +51,57 @@ Slack (setup path):     1.719ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_21_4 to sad_wrappings/sad_array<1>_2_7
+  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_39_6 to sad_wrappings/sad_array<0>_1_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y56.AQ      Tcko                  0.391   sad_wrappings/templ_array_21<7>
-                                                       sad_wrappings/templ_array_21_4
-    SLICE_X56Y31.A2      net (fanout=66)       7.089   sad_wrappings/templ_array_21<4>
-    SLICE_X56Y31.COUT    Topcya                0.379   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_xor<8>
-    SLICE_X53Y58.A6      net (fanout=9)        2.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-    SLICE_X53Y58.A       Tilo                  0.259   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd2_xor<0>21
-    SLICE_X56Y64.B3      net (fanout=2)        1.177   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-    SLICE_X56Y64.DMUX    Topbd                 0.571   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-    SLICE_X56Y66.DX      net (fanout=2)        1.151   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
-    SLICE_X56Y66.COUT    Tdxcy                 0.087   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.BMUX    Tcinb                 0.292   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_711
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_xor<7>
-    SLICE_X54Y55.B3      net (fanout=1)        1.364   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_511
-    SLICE_X54Y55.BMUX    Tilo                  0.251   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd125
-    SLICE_X54Y55.C5      net (fanout=2)        0.383   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd125
-    SLICE_X54Y55.CQ      Tad_logic             0.796   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
-    SLICE_X54Y41.C5      net (fanout=1)        1.039   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-    SLICE_X54Y41.CLK     Tas                   0.480   sad_wrappings/sad_array<1>_2<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
-                                                       sad_wrappings/sad_array<1>_2_7
+    SLICE_X33Y90.CQ      Tcko                  0.391   sad_wrappings/templ_array_39<7>
+                                                       sad_wrappings/templ_array_39_6
+    SLICE_X40Y13.C4      net (fanout=67)       9.918   sad_wrappings/templ_array_39<6>
+    SLICE_X40Y13.COUT    Topcyc                0.295   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.AMUX    Tcina                 0.177   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_xor<8>
+    SLICE_X45Y7.D3       net (fanout=13)       1.550   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+    SLICE_X45Y7.D        Tilo                  0.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>6121
+    SLICE_X45Y7.B2       net (fanout=3)        0.449   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+    SLICE_X45Y7.B        Tilo                  0.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>611
+    SLICE_X44Y7.B5       net (fanout=1)        0.186   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>61
+    SLICE_X44Y7.BMUX     Topbb                 0.376   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_76
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>61
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_xor<7>
+    SLICE_X46Y8.B3       net (fanout=2)        0.590   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_56
+    SLICE_X46Y8.BMUX     Topbb                 0.368   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_711
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<5>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_xor<7>
+    SLICE_X44Y11.B3      net (fanout=1)        0.824   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_511
+    SLICE_X44Y11.BMUX    Tilo                  0.261   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd125
+    SLICE_X44Y11.C5      net (fanout=2)        0.380   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd125
+    SLICE_X44Y11.CQ      Tad_logic             0.822   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
+    SLICE_X40Y19.C3      net (fanout=1)        1.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+    SLICE_X40Y19.CLK     Tas                   0.480   sad_wrappings/sad_array<0>_1<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
+                                                       sad_wrappings/sad_array<0>_1_7
     -------------------------------------------------  ---------------------------
-    Total                                     18.175ns (3.708ns logic, 14.467ns route)
-                                                       (20.4% logic, 79.6% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     1.794ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               sad_wrappings/templ_array_21_4 (FF)
-  Destination:          sad_wrappings/sad_array<1>_2_7 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      18.100ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.071ns (0.448 - 0.519)
-  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
-  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_21_4 to sad_wrappings/sad_array<1>_2_7
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X17Y56.AQ      Tcko                  0.391   sad_wrappings/templ_array_21<7>
-                                                       sad_wrappings/templ_array_21_4
-    SLICE_X56Y31.A2      net (fanout=66)       7.089   sad_wrappings/templ_array_21<4>
-    SLICE_X56Y31.COUT    Topcya                0.379   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_xor<8>
-    SLICE_X53Y58.A6      net (fanout=9)        2.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-    SLICE_X53Y58.A       Tilo                  0.259   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd2_xor<0>21
-    SLICE_X56Y64.B3      net (fanout=2)        1.177   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-    SLICE_X56Y64.DMUX    Topbd                 0.571   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-    SLICE_X56Y66.DX      net (fanout=2)        1.151   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
-    SLICE_X56Y66.COUT    Tdxcy                 0.087   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_711
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_xor<7>
-    SLICE_X54Y55.A4      net (fanout=1)        1.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_411
-    SLICE_X54Y55.AMUX    Tilo                  0.251   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124
-    SLICE_X54Y55.BX      net (fanout=2)        0.579   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124
-    SLICE_X54Y55.CQ      Tito_logic            0.721   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
-    SLICE_X54Y41.C5      net (fanout=1)        1.039   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-    SLICE_X54Y41.CLK     Tas                   0.480   sad_wrappings/sad_array<1>_2<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
-                                                       sad_wrappings/sad_array<1>_2_7
-    -------------------------------------------------  ---------------------------
-    Total                                     18.100ns (3.543ns logic, 14.557ns route)
+    Total                                     18.847ns (3.688ns logic, 15.159ns route)
                                                        (19.6% logic, 80.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.865ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               sad_wrappings/templ_array_21_4 (FF)
-  Destination:          sad_wrappings/sad_array<1>_2_7 (FF)
+Slack (setup path):     1.116ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sad_wrappings/templ_array_39_6 (FF)
+  Destination:          sad_wrappings/sad_array<0>_1_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.029ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.071ns (0.448 - 0.519)
+  Data Path Delay:      18.826ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.023ns (0.552 - 0.575)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -170,59 +112,54 @@ Slack (setup path):     1.865ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_21_4 to sad_wrappings/sad_array<1>_2_7
+  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_39_6 to sad_wrappings/sad_array<0>_1_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y56.AQ      Tcko                  0.391   sad_wrappings/templ_array_21<7>
-                                                       sad_wrappings/templ_array_21_4
-    SLICE_X56Y31.A2      net (fanout=66)       7.089   sad_wrappings/templ_array_21<4>
-    SLICE_X56Y31.COUT    Topcya                0.379   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_xor<8>
-    SLICE_X53Y58.A6      net (fanout=9)        2.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-    SLICE_X53Y58.A       Tilo                  0.259   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd2_xor<0>21
-    SLICE_X56Y64.B3      net (fanout=2)        1.177   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-    SLICE_X56Y64.DMUX    Topbd                 0.571   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-    SLICE_X56Y66.DX      net (fanout=2)        1.151   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
-    SLICE_X56Y66.COUT    Tdxcy                 0.087   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_711
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_xor<7>
-    SLICE_X54Y55.A4      net (fanout=1)        1.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_411
-    SLICE_X54Y55.AMUX    Tilo                  0.251   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124
-    SLICE_X54Y55.B4      net (fanout=2)        0.311   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124
-    SLICE_X54Y55.CQ      Tad_logic             0.918   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>5
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
-    SLICE_X54Y41.C5      net (fanout=1)        1.039   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-    SLICE_X54Y41.CLK     Tas                   0.480   sad_wrappings/sad_array<1>_2<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
-                                                       sad_wrappings/sad_array<1>_2_7
+    SLICE_X33Y90.CQ      Tcko                  0.391   sad_wrappings/templ_array_39<7>
+                                                       sad_wrappings/templ_array_39_6
+    SLICE_X40Y13.C4      net (fanout=67)       9.918   sad_wrappings/templ_array_39<6>
+    SLICE_X40Y13.COUT    Topcyc                0.295   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.AMUX    Tcina                 0.177   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_xor<8>
+    SLICE_X45Y7.C2       net (fanout=13)       1.661   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+    SLICE_X45Y7.CMUX     Tilo                  0.313   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>6131
+    SLICE_X44Y6.D5       net (fanout=3)        0.373   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>613
+    SLICE_X44Y6.DMUX     Topdd                 0.393   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>41
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+    SLICE_X46Y7.D6       net (fanout=2)        0.498   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
+    SLICE_X46Y7.DMUX     Topdd                 0.374   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+    SLICE_X44Y10.D4      net (fanout=1)        0.746   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_311
+    SLICE_X44Y10.DMUX    Tilo                  0.261   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.A4      net (fanout=2)        0.738   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.CQ      Tad_logic             0.946   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>4
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
+    SLICE_X40Y19.C3      net (fanout=1)        1.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+    SLICE_X40Y19.CLK     Tas                   0.480   sad_wrappings/sad_array<0>_1<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
+                                                       sad_wrappings/sad_array<0>_1_7
     -------------------------------------------------  ---------------------------
-    Total                                     18.029ns (3.740ns logic, 14.289ns route)
-                                                       (20.7% logic, 79.3% route)
+    Total                                     18.826ns (3.630ns logic, 15.196ns route)
+                                                       (19.3% logic, 80.7% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point sad_wrappings/sad_array<1>_2_6 (SLICE_X54Y41.C5), 97456 paths
---------------------------------------------------------------------------------
-Slack (setup path):     1.738ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               sad_wrappings/templ_array_21_4 (FF)
-  Destination:          sad_wrappings/sad_array<1>_2_6 (FF)
+Slack (setup path):     1.215ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sad_wrappings/templ_array_39_6 (FF)
+  Destination:          sad_wrappings/sad_array<0>_1_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.156ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.071ns (0.448 - 0.519)
+  Data Path Delay:      18.727ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.023ns (0.552 - 0.575)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -233,56 +170,57 @@ Slack (setup path):     1.738ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_21_4 to sad_wrappings/sad_array<1>_2_6
+  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_39_6 to sad_wrappings/sad_array<0>_1_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y56.AQ      Tcko                  0.391   sad_wrappings/templ_array_21<7>
-                                                       sad_wrappings/templ_array_21_4
-    SLICE_X56Y31.A2      net (fanout=66)       7.089   sad_wrappings/templ_array_21<4>
-    SLICE_X56Y31.COUT    Topcya                0.379   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_xor<8>
-    SLICE_X53Y58.A6      net (fanout=9)        2.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-    SLICE_X53Y58.A       Tilo                  0.259   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd2_xor<0>21
-    SLICE_X56Y64.B3      net (fanout=2)        1.177   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-    SLICE_X56Y64.DMUX    Topbd                 0.571   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-    SLICE_X56Y66.DX      net (fanout=2)        1.151   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
-    SLICE_X56Y66.COUT    Tdxcy                 0.087   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.BMUX    Tcinb                 0.292   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_711
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_xor<7>
-    SLICE_X54Y55.B3      net (fanout=1)        1.364   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_511
-    SLICE_X54Y55.BMUX    Tilo                  0.251   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd125
-    SLICE_X54Y55.C5      net (fanout=2)        0.383   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd125
-    SLICE_X54Y55.CQ      Tad_logic             0.796   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
-    SLICE_X54Y41.C5      net (fanout=1)        1.039   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-    SLICE_X54Y41.CLK     Tas                   0.461   sad_wrappings/sad_array<1>_2<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
-                                                       sad_wrappings/sad_array<1>_2_6
+    SLICE_X33Y90.CQ      Tcko                  0.391   sad_wrappings/templ_array_39<7>
+                                                       sad_wrappings/templ_array_39_6
+    SLICE_X40Y13.C4      net (fanout=67)       9.918   sad_wrappings/templ_array_39<6>
+    SLICE_X40Y13.COUT    Topcyc                0.295   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.AMUX    Tcina                 0.177   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_xor<8>
+    SLICE_X45Y7.D3       net (fanout=13)       1.550   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+    SLICE_X45Y7.D        Tilo                  0.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>6121
+    SLICE_X44Y6.D4       net (fanout=3)        0.439   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+    SLICE_X44Y6.DMUX     Topdd                 0.393   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>41
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+    SLICE_X46Y7.D6       net (fanout=2)        0.498   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
+    SLICE_X46Y7.DMUX     Topdd                 0.374   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+    SLICE_X44Y10.D4      net (fanout=1)        0.746   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_311
+    SLICE_X44Y10.DMUX    Tilo                  0.261   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.A4      net (fanout=2)        0.738   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.CQ      Tad_logic             0.946   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>4
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
+    SLICE_X40Y19.C3      net (fanout=1)        1.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+    SLICE_X40Y19.CLK     Tas                   0.480   sad_wrappings/sad_array<0>_1<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
+                                                       sad_wrappings/sad_array<0>_1_7
     -------------------------------------------------  ---------------------------
-    Total                                     18.156ns (3.689ns logic, 14.467ns route)
-                                                       (20.3% logic, 79.7% route)
+    Total                                     18.727ns (3.576ns logic, 15.151ns route)
+                                                       (19.1% logic, 80.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.813ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               sad_wrappings/templ_array_21_4 (FF)
-  Destination:          sad_wrappings/sad_array<1>_2_6 (FF)
+
+Paths for end point sad_wrappings/sad_array<0>_1_6 (SLICE_X40Y19.C3), 97456 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.114ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sad_wrappings/templ_array_39_6 (FF)
+  Destination:          sad_wrappings/sad_array<0>_1_6 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.081ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.071ns (0.448 - 0.519)
+  Data Path Delay:      18.828ns (Levels of Logic = 9)
+  Clock Path Skew:      -0.023ns (0.552 - 0.575)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -293,55 +231,57 @@ Slack (setup path):     1.813ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_21_4 to sad_wrappings/sad_array<1>_2_6
+  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_39_6 to sad_wrappings/sad_array<0>_1_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y56.AQ      Tcko                  0.391   sad_wrappings/templ_array_21<7>
-                                                       sad_wrappings/templ_array_21_4
-    SLICE_X56Y31.A2      net (fanout=66)       7.089   sad_wrappings/templ_array_21<4>
-    SLICE_X56Y31.COUT    Topcya                0.379   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_xor<8>
-    SLICE_X53Y58.A6      net (fanout=9)        2.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-    SLICE_X53Y58.A       Tilo                  0.259   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd2_xor<0>21
-    SLICE_X56Y64.B3      net (fanout=2)        1.177   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-    SLICE_X56Y64.DMUX    Topbd                 0.571   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-    SLICE_X56Y66.DX      net (fanout=2)        1.151   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
-    SLICE_X56Y66.COUT    Tdxcy                 0.087   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_711
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_xor<7>
-    SLICE_X54Y55.A4      net (fanout=1)        1.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_411
-    SLICE_X54Y55.AMUX    Tilo                  0.251   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124
-    SLICE_X54Y55.BX      net (fanout=2)        0.579   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124
-    SLICE_X54Y55.CQ      Tito_logic            0.721   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
-    SLICE_X54Y41.C5      net (fanout=1)        1.039   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-    SLICE_X54Y41.CLK     Tas                   0.461   sad_wrappings/sad_array<1>_2<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
-                                                       sad_wrappings/sad_array<1>_2_6
+    SLICE_X33Y90.CQ      Tcko                  0.391   sad_wrappings/templ_array_39<7>
+                                                       sad_wrappings/templ_array_39_6
+    SLICE_X40Y13.C4      net (fanout=67)       9.918   sad_wrappings/templ_array_39<6>
+    SLICE_X40Y13.COUT    Topcyc                0.295   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.AMUX    Tcina                 0.177   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_xor<8>
+    SLICE_X45Y7.D3       net (fanout=13)       1.550   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+    SLICE_X45Y7.D        Tilo                  0.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>6121
+    SLICE_X45Y7.B2       net (fanout=3)        0.449   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+    SLICE_X45Y7.B        Tilo                  0.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>611
+    SLICE_X44Y7.B5       net (fanout=1)        0.186   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>61
+    SLICE_X44Y7.BMUX     Topbb                 0.376   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_76
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>61
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_xor<7>
+    SLICE_X46Y8.B3       net (fanout=2)        0.590   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_56
+    SLICE_X46Y8.BMUX     Topbb                 0.368   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_711
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<5>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_xor<7>
+    SLICE_X44Y11.B3      net (fanout=1)        0.824   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_511
+    SLICE_X44Y11.BMUX    Tilo                  0.261   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd125
+    SLICE_X44Y11.C5      net (fanout=2)        0.380   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd125
+    SLICE_X44Y11.CQ      Tad_logic             0.822   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
+    SLICE_X40Y19.C3      net (fanout=1)        1.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+    SLICE_X40Y19.CLK     Tas                   0.461   sad_wrappings/sad_array<0>_1<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
+                                                       sad_wrappings/sad_array<0>_1_6
     -------------------------------------------------  ---------------------------
-    Total                                     18.081ns (3.524ns logic, 14.557ns route)
+    Total                                     18.828ns (3.669ns logic, 15.159ns route)
                                                        (19.5% logic, 80.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.884ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               sad_wrappings/templ_array_21_4 (FF)
-  Destination:          sad_wrappings/sad_array<1>_2_6 (FF)
+Slack (setup path):     1.135ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sad_wrappings/templ_array_39_6 (FF)
+  Destination:          sad_wrappings/sad_array<0>_1_6 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.010ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.071ns (0.448 - 0.519)
+  Data Path Delay:      18.807ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.023ns (0.552 - 0.575)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -352,59 +292,54 @@ Slack (setup path):     1.884ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_21_4 to sad_wrappings/sad_array<1>_2_6
+  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_39_6 to sad_wrappings/sad_array<0>_1_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y56.AQ      Tcko                  0.391   sad_wrappings/templ_array_21<7>
-                                                       sad_wrappings/templ_array_21_4
-    SLICE_X56Y31.A2      net (fanout=66)       7.089   sad_wrappings/templ_array_21<4>
-    SLICE_X56Y31.COUT    Topcya                0.379   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_xor<8>
-    SLICE_X53Y58.A6      net (fanout=9)        2.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-    SLICE_X53Y58.A       Tilo                  0.259   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd2_xor<0>21
-    SLICE_X56Y64.B3      net (fanout=2)        1.177   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-    SLICE_X56Y64.DMUX    Topbd                 0.571   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-    SLICE_X56Y66.DX      net (fanout=2)        1.151   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
-    SLICE_X56Y66.COUT    Tdxcy                 0.087   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X56Y67.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_711
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_xor<7>
-    SLICE_X54Y55.A4      net (fanout=1)        1.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_411
-    SLICE_X54Y55.AMUX    Tilo                  0.251   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124
-    SLICE_X54Y55.B4      net (fanout=2)        0.311   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd124
-    SLICE_X54Y55.CQ      Tad_logic             0.918   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>5
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
-    SLICE_X54Y41.C5      net (fanout=1)        1.039   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-    SLICE_X54Y41.CLK     Tas                   0.461   sad_wrappings/sad_array<1>_2<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
-                                                       sad_wrappings/sad_array<1>_2_6
+    SLICE_X33Y90.CQ      Tcko                  0.391   sad_wrappings/templ_array_39<7>
+                                                       sad_wrappings/templ_array_39_6
+    SLICE_X40Y13.C4      net (fanout=67)       9.918   sad_wrappings/templ_array_39<6>
+    SLICE_X40Y13.COUT    Topcyc                0.295   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.AMUX    Tcina                 0.177   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_xor<8>
+    SLICE_X45Y7.C2       net (fanout=13)       1.661   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+    SLICE_X45Y7.CMUX     Tilo                  0.313   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>6131
+    SLICE_X44Y6.D5       net (fanout=3)        0.373   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>613
+    SLICE_X44Y6.DMUX     Topdd                 0.393   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>41
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+    SLICE_X46Y7.D6       net (fanout=2)        0.498   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
+    SLICE_X46Y7.DMUX     Topdd                 0.374   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+    SLICE_X44Y10.D4      net (fanout=1)        0.746   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_311
+    SLICE_X44Y10.DMUX    Tilo                  0.261   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.A4      net (fanout=2)        0.738   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.CQ      Tad_logic             0.946   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>4
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
+    SLICE_X40Y19.C3      net (fanout=1)        1.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+    SLICE_X40Y19.CLK     Tas                   0.461   sad_wrappings/sad_array<0>_1<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
+                                                       sad_wrappings/sad_array<0>_1_6
     -------------------------------------------------  ---------------------------
-    Total                                     18.010ns (3.721ns logic, 14.289ns route)
-                                                       (20.7% logic, 79.3% route)
+    Total                                     18.807ns (3.611ns logic, 15.196ns route)
+                                                       (19.2% logic, 80.8% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point sad_wrappings/sad_array<1>_2_7 (SLICE_X54Y41.A2), 32856 paths
---------------------------------------------------------------------------------
-Slack (setup path):     1.800ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               sad_wrappings/templ_array_21_4 (FF)
-  Destination:          sad_wrappings/sad_array<1>_2_7 (FF)
+Slack (setup path):     1.234ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sad_wrappings/templ_array_39_6 (FF)
+  Destination:          sad_wrappings/sad_array<0>_1_6 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.094ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.071ns (0.448 - 0.519)
+  Data Path Delay:      18.708ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.023ns (0.552 - 0.575)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -415,56 +350,57 @@ Slack (setup path):     1.800ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_21_4 to sad_wrappings/sad_array<1>_2_7
+  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_39_6 to sad_wrappings/sad_array<0>_1_6
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y56.AQ      Tcko                  0.391   sad_wrappings/templ_array_21<7>
-                                                       sad_wrappings/templ_array_21_4
-    SLICE_X56Y31.A2      net (fanout=66)       7.089   sad_wrappings/templ_array_21<4>
-    SLICE_X56Y31.COUT    Topcya                0.379   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_xor<8>
-    SLICE_X53Y58.A6      net (fanout=9)        2.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-    SLICE_X53Y58.A       Tilo                  0.259   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd2_xor<0>21
-    SLICE_X56Y64.B3      net (fanout=2)        1.177   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-    SLICE_X56Y64.BMUX    Topbb                 0.376   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-    SLICE_X56Y66.B3      net (fanout=2)        0.589   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_16
-    SLICE_X56Y66.CMUX    Topbc                 0.526   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X54Y54.C3      net (fanout=1)        1.333   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_211
-    SLICE_X54Y54.CMUX    Tilo                  0.251   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd122
-    SLICE_X54Y54.DX      net (fanout=2)        0.551   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd122
-    SLICE_X54Y54.COUT    Tdxcy                 0.097   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_cy<0>_2
-    SLICE_X54Y55.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_cy<0>3
-    SLICE_X54Y55.AQ      Tito_logic            0.581   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_412_rt
-    SLICE_X54Y41.A2      net (fanout=1)        1.410   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_412
-    SLICE_X54Y41.CLK     Tas                   0.619   sad_wrappings/sad_array<1>_2<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
-                                                       sad_wrappings/sad_array<1>_2_7
+    SLICE_X33Y90.CQ      Tcko                  0.391   sad_wrappings/templ_array_39<7>
+                                                       sad_wrappings/templ_array_39_6
+    SLICE_X40Y13.C4      net (fanout=67)       9.918   sad_wrappings/templ_array_39<6>
+    SLICE_X40Y13.COUT    Topcyc                0.295   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.AMUX    Tcina                 0.177   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_xor<8>
+    SLICE_X45Y7.D3       net (fanout=13)       1.550   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+    SLICE_X45Y7.D        Tilo                  0.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>6121
+    SLICE_X44Y6.D4       net (fanout=3)        0.439   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+    SLICE_X44Y6.DMUX     Topdd                 0.393   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>41
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+    SLICE_X46Y7.D6       net (fanout=2)        0.498   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
+    SLICE_X46Y7.DMUX     Topdd                 0.374   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+    SLICE_X44Y10.D4      net (fanout=1)        0.746   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_311
+    SLICE_X44Y10.DMUX    Tilo                  0.261   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.A4      net (fanout=2)        0.738   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.CQ      Tad_logic             0.946   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>4
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612_rt
+    SLICE_X40Y19.C3      net (fanout=1)        1.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+    SLICE_X40Y19.CLK     Tas                   0.461   sad_wrappings/sad_array<0>_1<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
+                                                       sad_wrappings/sad_array<0>_1_6
     -------------------------------------------------  ---------------------------
-    Total                                     18.094ns (3.681ns logic, 14.413ns route)
-                                                       (20.3% logic, 79.7% route)
+    Total                                     18.708ns (3.557ns logic, 15.151ns route)
+                                                       (19.0% logic, 81.0% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.812ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               sad_wrappings/templ_array_21_4 (FF)
-  Destination:          sad_wrappings/sad_array<1>_2_7 (FF)
+
+Paths for end point sad_wrappings/sad_array<0>_1_7 (SLICE_X40Y19.B6), 59437 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.284ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sad_wrappings/templ_array_39_6 (FF)
+  Destination:          sad_wrappings/sad_array<0>_1_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.082ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.071ns (0.448 - 0.519)
+  Data Path Delay:      18.658ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.023ns (0.552 - 0.575)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -475,56 +411,54 @@ Slack (setup path):     1.812ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_21_4 to sad_wrappings/sad_array<1>_2_7
+  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_39_6 to sad_wrappings/sad_array<0>_1_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y56.AQ      Tcko                  0.391   sad_wrappings/templ_array_21<7>
-                                                       sad_wrappings/templ_array_21_4
-    SLICE_X56Y31.A2      net (fanout=66)       7.089   sad_wrappings/templ_array_21<4>
-    SLICE_X56Y31.COUT    Topcya                0.379   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_xor<8>
-    SLICE_X53Y58.A6      net (fanout=9)        2.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-    SLICE_X53Y58.A       Tilo                  0.259   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd2_xor<0>21
-    SLICE_X56Y64.B3      net (fanout=2)        1.177   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-    SLICE_X56Y64.CMUX    Topbc                 0.526   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-    SLICE_X56Y66.C5      net (fanout=2)        0.540   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_26
-    SLICE_X56Y66.CMUX    Topcc                 0.413   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<2>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X54Y54.C3      net (fanout=1)        1.333   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_211
-    SLICE_X54Y54.CMUX    Tilo                  0.251   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd122
-    SLICE_X54Y54.DX      net (fanout=2)        0.551   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd122
-    SLICE_X54Y54.COUT    Tdxcy                 0.097   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_cy<0>_2
-    SLICE_X54Y55.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_cy<0>3
-    SLICE_X54Y55.AQ      Tito_logic            0.581   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_412_rt
-    SLICE_X54Y41.A2      net (fanout=1)        1.410   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_412
-    SLICE_X54Y41.CLK     Tas                   0.619   sad_wrappings/sad_array<1>_2<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
-                                                       sad_wrappings/sad_array<1>_2_7
+    SLICE_X33Y90.CQ      Tcko                  0.391   sad_wrappings/templ_array_39<7>
+                                                       sad_wrappings/templ_array_39_6
+    SLICE_X40Y13.C4      net (fanout=67)       9.918   sad_wrappings/templ_array_39<6>
+    SLICE_X40Y13.COUT    Topcyc                0.295   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.AMUX    Tcina                 0.177   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_xor<8>
+    SLICE_X45Y7.C2       net (fanout=13)       1.661   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+    SLICE_X45Y7.CMUX     Tilo                  0.313   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>6131
+    SLICE_X44Y6.D5       net (fanout=3)        0.373   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>613
+    SLICE_X44Y6.DMUX     Topdd                 0.393   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>41
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+    SLICE_X46Y7.D6       net (fanout=2)        0.498   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
+    SLICE_X46Y7.DMUX     Topdd                 0.374   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+    SLICE_X44Y10.D4      net (fanout=1)        0.746   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_311
+    SLICE_X44Y10.DMUX    Tilo                  0.261   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.A4      net (fanout=2)        0.738   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.BQ      Tad_logic             0.848   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>4
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_512_rt
+    SLICE_X40Y19.B6      net (fanout=1)        1.063   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_512
+    SLICE_X40Y19.CLK     Tas                   0.606   sad_wrappings/sad_array<0>_1<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<5>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
+                                                       sad_wrappings/sad_array<0>_1_7
     -------------------------------------------------  ---------------------------
-    Total                                     18.082ns (3.718ns logic, 14.364ns route)
-                                                       (20.6% logic, 79.4% route)
+    Total                                     18.658ns (3.658ns logic, 15.000ns route)
+                                                       (19.6% logic, 80.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.877ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               sad_wrappings/templ_array_21_4 (FF)
-  Destination:          sad_wrappings/sad_array<1>_2_7 (FF)
+Slack (setup path):     1.383ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sad_wrappings/templ_array_39_6 (FF)
+  Destination:          sad_wrappings/sad_array<0>_1_7 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      18.017ns (Levels of Logic = 9)
-  Clock Path Skew:      -0.071ns (0.448 - 0.519)
+  Data Path Delay:      18.559ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.023ns (0.552 - 0.575)
   Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -535,136 +469,190 @@ Slack (setup path):     1.877ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_21_4 to sad_wrappings/sad_array<1>_2_7
+  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_39_6 to sad_wrappings/sad_array<0>_1_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y56.AQ      Tcko                  0.391   sad_wrappings/templ_array_21<7>
-                                                       sad_wrappings/templ_array_21_4
-    SLICE_X56Y31.A2      net (fanout=66)       7.089   sad_wrappings/templ_array_21<4>
-    SLICE_X56Y31.COUT    Topcya                0.379   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_cy<7>
-    SLICE_X56Y32.AMUX    Tcina                 0.202   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_12_OUT<8:0>_xor<8>
-    SLICE_X53Y58.A6      net (fanout=9)        2.258   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_12_OUT<8>
-    SLICE_X53Y58.A       Tilo                  0.259   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd2_xor<0>21
-    SLICE_X56Y64.B3      net (fanout=2)        1.177   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_12
-    SLICE_X56Y64.BMUX    Topbb                 0.376   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
-    SLICE_X56Y66.B3      net (fanout=2)        0.589   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_16
-    SLICE_X56Y66.CMUX    Topbc                 0.526   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<1>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
-    SLICE_X54Y54.C3      net (fanout=1)        1.333   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_211
-    SLICE_X54Y54.CMUX    Tilo                  0.251   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd122
-    SLICE_X54Y54.D3      net (fanout=2)        0.311   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd122
-    SLICE_X54Y54.COUT    Topcyd                0.260   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>3
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_cy<0>_2
-    SLICE_X54Y55.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_cy<0>3
-    SLICE_X54Y55.AQ      Tito_logic            0.581   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_412_rt
-    SLICE_X54Y41.A2      net (fanout=1)        1.410   sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_412
-    SLICE_X54Y41.CLK     Tas                   0.619   sad_wrappings/sad_array<1>_2<7>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<4>
-                                                       sad_wrappings/g_signed_sad[1].g_signed_sad_calc[2].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
-                                                       sad_wrappings/sad_array<1>_2_7
+    SLICE_X33Y90.CQ      Tcko                  0.391   sad_wrappings/templ_array_39<7>
+                                                       sad_wrappings/templ_array_39_6
+    SLICE_X40Y13.C4      net (fanout=67)       9.918   sad_wrappings/templ_array_39<6>
+    SLICE_X40Y13.COUT    Topcyc                0.295   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.AMUX    Tcina                 0.177   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_xor<8>
+    SLICE_X45Y7.D3       net (fanout=13)       1.550   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+    SLICE_X45Y7.D        Tilo                  0.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>6121
+    SLICE_X44Y6.D4       net (fanout=3)        0.439   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>612
+    SLICE_X44Y6.DMUX     Topdd                 0.393   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>41
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+    SLICE_X46Y7.D6       net (fanout=2)        0.498   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_36
+    SLICE_X46Y7.DMUX     Topdd                 0.374   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_lut<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+    SLICE_X44Y10.D4      net (fanout=1)        0.746   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_311
+    SLICE_X44Y10.DMUX    Tilo                  0.261   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.A4      net (fanout=2)        0.738   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.BQ      Tad_logic             0.848   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>4
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_512_rt
+    SLICE_X40Y19.B6      net (fanout=1)        1.063   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_512
+    SLICE_X40Y19.CLK     Tas                   0.606   sad_wrappings/sad_array<0>_1<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<5>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
+                                                       sad_wrappings/sad_array<0>_1_7
     -------------------------------------------------  ---------------------------
-    Total                                     18.017ns (3.844ns logic, 14.173ns route)
-                                                       (21.3% logic, 78.7% route)
+    Total                                     18.559ns (3.604ns logic, 14.955ns route)
+                                                       (19.4% logic, 80.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.401ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sad_wrappings/templ_array_39_6 (FF)
+  Destination:          sad_wrappings/sad_array<0>_1_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      18.541ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.023ns (0.552 - 0.575)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sad_wrappings/templ_array_39_6 to sad_wrappings/sad_array<0>_1_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X33Y90.CQ      Tcko                  0.391   sad_wrappings/templ_array_39<7>
+                                                       sad_wrappings/templ_array_39_6
+    SLICE_X40Y13.C4      net (fanout=67)       9.918   sad_wrappings/templ_array_39<6>
+    SLICE_X40Y13.COUT    Topcyc                0.295   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_lut<6>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.CIN     net (fanout=1)        0.003   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_cy<7>
+    SLICE_X40Y14.AMUX    Tcina                 0.177   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/Msub_GND_15_o_GND_15_o_sub_21_OUT<8:0>_xor<8>
+    SLICE_X42Y7.A3       net (fanout=13)       1.334   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/GND_15_o_GND_15_o_sub_21_OUT<8>
+    SLICE_X42Y7.A        Tilo                  0.205   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_25
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd5_xor<0>31
+    SLICE_X44Y6.C3       net (fanout=1)        0.516   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_25
+    SLICE_X44Y6.CMUX     Topcc                 0.413   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_lut<2>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd6_cy<3>
+    SLICE_X46Y7.CX       net (fanout=2)        0.768   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_26
+    SLICE_X46Y7.DMUX     Tcxd                  0.259   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd11_cy<3>
+    SLICE_X44Y10.D4      net (fanout=1)        0.746   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_311
+    SLICE_X44Y10.DMUX    Tilo                  0.261   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_312
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.A4      net (fanout=2)        0.738   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd123
+    SLICE_X44Y11.BQ      Tad_logic             0.848   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_612
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_lut<0>4
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd12_xor<0>_6
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_512_rt
+    SLICE_X40Y19.B6      net (fanout=1)        1.063   sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd_512
+    SLICE_X40Y19.CLK     Tas                   0.606   sad_wrappings/sad_array<0>_1<7>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_lut<5>
+                                                       sad_wrappings/g_signed_sad[0].g_signed_sad_calc[1].i_sad_alg_3x3/ADDERTREE_INTERNAL_Madd13_xor<7>
+                                                       sad_wrappings/sad_array<0>_1_7
+    -------------------------------------------------  ---------------------------
+    Total                                     18.541ns (3.455ns logic, 15.086ns route)
+                                                       (18.6% logic, 81.4% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point comm_fpga_fx2/count_27 (SLICE_X4Y119.A6), 1 path
+Paths for end point sad_wrappings/junk_s_row (SLICE_X46Y86.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.419ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               comm_fpga_fx2/count_27 (FF)
-  Destination:          comm_fpga_fx2/count_27 (FF)
+Slack (hold path):      0.413ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               sad_wrappings/junk_s_row (FF)
+  Destination:          sad_wrappings/junk_s_row (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.419ns (Levels of Logic = 1)
+  Data Path Delay:      0.413ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: comm_fpga_fx2/count_27 to comm_fpga_fx2/count_27
+  Minimum Data Path at Fast Process Corner: sad_wrappings/junk_s_row to sad_wrappings/junk_s_row
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X4Y119.AQ      Tcko                  0.200   comm_fpga_fx2/count<26>
-                                                       comm_fpga_fx2/count_27
-    SLICE_X4Y119.A6      net (fanout=4)        0.029   comm_fpga_fx2/count<27>
-    SLICE_X4Y119.CLK     Tah         (-Th)    -0.190   comm_fpga_fx2/count<26>
-                                                       comm_fpga_fx2/Mmux_count_next34
-                                                       comm_fpga_fx2/count_27
+    SLICE_X46Y86.AQ      Tcko                  0.200   sad_wrappings/junk_s_row
+                                                       sad_wrappings/junk_s_row
+    SLICE_X46Y86.A6      net (fanout=2)        0.023   sad_wrappings/junk_s_row
+    SLICE_X46Y86.CLK     Tah         (-Th)    -0.190   sad_wrappings/junk_s_row
+                                                       sad_wrappings/junk_s_row_glue_rst
+                                                       sad_wrappings/junk_s_row
     -------------------------------------------------  ---------------------------
-    Total                                      0.419ns (0.390ns logic, 0.029ns route)
-                                                       (93.1% logic, 6.9% route)
+    Total                                      0.413ns (0.390ns logic, 0.023ns route)
+                                                       (94.4% logic, 5.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point comm_fpga_fx2/count_30 (SLICE_X7Y119.A6), 1 path
+Paths for end point comm_fpga_fx2/count_28 (SLICE_X54Y109.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.450ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               comm_fpga_fx2/count_30 (FF)
-  Destination:          comm_fpga_fx2/count_30 (FF)
+Slack (hold path):      0.424ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               comm_fpga_fx2/count_28 (FF)
+  Destination:          comm_fpga_fx2/count_28 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.450ns (Levels of Logic = 1)
+  Data Path Delay:      0.424ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: comm_fpga_fx2/count_30 to comm_fpga_fx2/count_30
+  Minimum Data Path at Fast Process Corner: comm_fpga_fx2/count_28 to comm_fpga_fx2/count_28
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y119.AQ      Tcko                  0.198   comm_fpga_fx2/count<31>
-                                                       comm_fpga_fx2/count_30
-    SLICE_X7Y119.A6      net (fanout=4)        0.037   comm_fpga_fx2/count<30>
-    SLICE_X7Y119.CLK     Tah         (-Th)    -0.215   comm_fpga_fx2/count<31>
-                                                       comm_fpga_fx2/Mmux_count_next382
-                                                       comm_fpga_fx2/count_30
+    SLICE_X54Y109.AQ     Tcko                  0.200   comm_fpga_fx2/count<29>
+                                                       comm_fpga_fx2/count_28
+    SLICE_X54Y109.A6     net (fanout=4)        0.034   comm_fpga_fx2/count<28>
+    SLICE_X54Y109.CLK    Tah         (-Th)    -0.190   comm_fpga_fx2/count<29>
+                                                       comm_fpga_fx2/Mmux_count_next352
+                                                       comm_fpga_fx2/count_28
     -------------------------------------------------  ---------------------------
-    Total                                      0.450ns (0.413ns logic, 0.037ns route)
-                                                       (91.8% logic, 8.2% route)
+    Total                                      0.424ns (0.390ns logic, 0.034ns route)
+                                                       (92.0% logic, 8.0% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point comm_fpga_fx2/count_24 (SLICE_X25Y117.A6), 1 path
+Paths for end point sad_wrappings/junk_s (SLICE_X39Y92.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.451ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               comm_fpga_fx2/count_24 (FF)
-  Destination:          comm_fpga_fx2/count_24 (FF)
+Slack (hold path):      0.435ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               sad_wrappings/junk_s (FF)
+  Destination:          sad_wrappings/junk_s (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.451ns (Levels of Logic = 1)
+  Data Path Delay:      0.435ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
   Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: comm_fpga_fx2/count_24 to comm_fpga_fx2/count_24
+  Minimum Data Path at Fast Process Corner: sad_wrappings/junk_s to sad_wrappings/junk_s
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X25Y117.AQ     Tcko                  0.198   comm_fpga_fx2/count<25>
-                                                       comm_fpga_fx2/count_24
-    SLICE_X25Y117.A6     net (fanout=4)        0.038   comm_fpga_fx2/count<24>
-    SLICE_X25Y117.CLK    Tah         (-Th)    -0.215   comm_fpga_fx2/count<25>
-                                                       comm_fpga_fx2/Mmux_count_next313
-                                                       comm_fpga_fx2/count_24
+    SLICE_X39Y92.AQ      Tcko                  0.198   sad_wrappings/junk_s
+                                                       sad_wrappings/junk_s
+    SLICE_X39Y92.A6      net (fanout=2)        0.022   sad_wrappings/junk_s
+    SLICE_X39Y92.CLK     Tah         (-Th)    -0.215   sad_wrappings/junk_s
+                                                       sad_wrappings/junk_s_glue_rst
+                                                       sad_wrappings/junk_s
     -------------------------------------------------  ---------------------------
-    Total                                      0.451ns (0.413ns logic, 0.038ns route)
-                                                       (91.6% logic, 8.4% route)
+    Total                                      0.435ns (0.413ns logic, 0.022ns route)
+                                                       (94.9% logic, 5.1% route)
 
 --------------------------------------------------------------------------------
 
@@ -681,17 +669,17 @@ Slack: 18.270ns (period - min period limit)
 Slack: 19.570ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: sad_wrappings/sad_array<1>_3<3>/CLK
-  Logical resource: sad_wrappings/sad_array<1>_3_0/CK
-  Location pin: SLICE_X50Y42.CLK
+  Physical resource: sad_wrappings/ndx_s_row<3>/CLK
+  Logical resource: sad_wrappings/ndx_s_row_0/CK
+  Location pin: SLICE_X46Y78.CLK
   Clock network: fx2Clk_in_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.570ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: sad_wrappings/sad_array<1>_3<3>/CLK
-  Logical resource: sad_wrappings/sad_array<1>_3_1/CK
-  Location pin: SLICE_X50Y42.CLK
+  Physical resource: sad_wrappings/ndx_s_row<3>/CLK
+  Logical resource: sad_wrappings/ndx_s_row_1/CK
+  Location pin: SLICE_X46Y78.CLK
   Clock network: fx2Clk_in_BUFGP
 --------------------------------------------------------------------------------
 
@@ -708,7 +696,7 @@ Clock to Setup on destination clock fx2Clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fx2Clk_in      |   18.281|         |         |         |
+fx2Clk_in      |   18.905|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -717,23 +705,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 31006528 paths, 0 nets, and 28198 connections
+Constraints cover 31066888 paths, 0 nets, and 32161 connections
 
 Design statistics:
-   Minimum period:  18.281ns{1}   (Maximum frequency:  54.702MHz)
+   Minimum period:  18.905ns{1}   (Maximum frequency:  52.896MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Tue Jun 24 11:36:46 2014 
+Analysis completed Wed Jun 25 16:56:22 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 547 MB
+Peak Memory Usage: 563 MB
 
 
 

@@ -77,16 +77,15 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
    constant clk_I_period : time := 10 ns;
    
    -- Array to represent 3x3 template
-	type array_type_templ is array (0 to 56) of std_logic_vector(7 downto 0);
-	signal templateArray : array_type_templ := (x"02", x"05", x"05", x"03", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
-                                               x"04", x"00", x"07", x"01", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
-                                               x"07", x"05", x"09", x"06", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff");
+	type array_type_templ is array (0 to 58) of std_logic_vector(7 downto 0);
+	signal templateArray : array_type_templ := (x"ff", x"02", x"05", x"05", x"03", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
+                                                      x"04", x"00", x"07", x"01", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
+                                                      x"07", x"05", x"09", x"06", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"05");
    -- Array to represent 3x5 search image 
-   type array_type_search is array (0 to 56) of std_logic_vector(7 downto 0);
-	signal searchArray : array_type_search := (x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"00",
-                                              x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"00",
-                                              x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"00");
-   
+   type array_type_search is array (0 to 57) of std_logic_vector(7 downto 0);
+	signal searchArray : array_type_search := (x"ff", x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"02", x"07", x"05", x"08", x"06", x"00", x"00",
+                                                     x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"01", x"07", x"04", x"02", x"07", x"09", x"00",
+                                                     x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"08", x"04", x"06", x"08", x"05", x"03", x"00");
    SIGNAL ndx_t, ndx_s : INTEGER := 0;
  
 BEGIN
@@ -126,15 +125,44 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-      wait for clk_I_period*10;
+      wait for clk_I_period*20;
 
       -- insert stimulus here 
+      chanAddr_I <= "0000000";
+      h2fValid_I <= '1';    
+      
+--      WHILE (ndx_t < 200) LOOP
+--         write(line_out, now);
+--         write(line_out, string'(" ndx_t: "));
+--         write(line_out, ndx_t);
+--         writeline(output, line_out);
+--         ndx_t <= ndx_t + 1;
+--         wait for clk_I_period;
+--      END LOOP;
       
       
-      write(line_out, now);
-      write(line_out, string'(" SAD output: "));
-      write(line_out, SAD_O);
-      writeline(output, line_out);
+      WHILE (ndx_t < 59) LOOP
+         wait for 10 ns;
+         h2fData_I <= templateArray(ndx_t); 
+         ndx_t <= ndx_t + 1;
+      END LOOP;
+      h2fValid_I <= '0';    
+
+      wait for clk_I_period;
+      ndx_t <= 0;
+      --h2fValid_I <= '0';
+      wait for clk_I_period;
+--      
+      f2hReady_I <= '1';
+--      
+      WHILE (ndx_t < 58) LOOP
+         write(line_out, ndx_t);
+         write(line_out, string'(" templ_O: "));
+         write(line_out, templ_O);
+         writeline(output, line_out);
+         wait for clk_I_period;
+         ndx_t <= ndx_t + 1;
+      END LOOP;
 
       wait;
    end process;

@@ -75,7 +75,8 @@ architecture behavioural of top_level is
 	signal reg1, reg1_next         : std_logic_vector(7 downto 0)  := x"00";
 	signal reg2, reg2_next         : std_logic_vector(7 downto 0)  := x"00";
 	signal reg3, reg3_next         : std_logic_vector(7 downto 0)  := x"00";
---   signal reg4, reg4_next         : std_logic_vector(7 downto 0)  := x"00";
+   signal reg4, reg4_next         : std_logic_vector(7 downto 0)  := x"00";
+   signal reg5, reg5_next         : std_logic_vector(7 downto 0)  := x"00";
    
 --   -- Template array for storing data transfered to the FPGA from comp
 --   type array_type_templ is array (0 to 8) of std_logic_vector(7 downto 0);
@@ -99,6 +100,7 @@ architecture behavioural of top_level is
    --SIGNAL clk_sad : STD_LOGIC := '0';
    
    signal reg0_templ, reg1_search, reg2_sad, reg3_disp : std_logic_vector(7 downto 0)  := x"00";
+   signal reg4_next_templ_row, reg5_next_search_row : std_logic_vector(7 downto 0)  := x"00";
 
 begin                                                                     --BEGIN_SNIPPET(registers)
 	
@@ -116,7 +118,8 @@ begin                                                                     --BEGI
 			reg1 <= reg1_next;
 			reg2 <= reg2_next;
 			reg3 <= reg3_next;
-         --reg4 <= reg4_next;
+         reg4 <= reg4_next;
+         reg5 <= reg5_next;
 --         templ_array <= templ_array_next;
 --         
 --         ndx_t <= ndx_t_next;
@@ -150,7 +153,8 @@ begin                                                                     --BEGI
 	reg1_next <= reg1_search; --reg1_templ; --templ_array(f2h_t_rd); --h2fData when chanAddr = "0000001" and h2fValid = '1' else reg1;
 	reg2_next <= reg2_sad; --reg2_search; --search_array(f2h_s_rd); --h2fData when chanAddr = "0000010" and h2fValid = '1' else reg2;
 	reg3_next <= reg3_disp; --reg3_sad; --sad_array(f2h_sad_rd); --h2fData when chanAddr = "0000011" and h2fValid = '1' else reg3;
---   reg4_next <= reg4_disp;
+   reg4_next <= reg4_next_templ_row;
+   reg5_next <= reg5_next_search_row;
    
 --   -- host to FPGA templ_array, reg0
 --   templ_array_next(ndx_t)  <= h2fData when chanAddr = "0000001" and h2fValid = '1' else templ_array(ndx_t);
@@ -216,7 +220,8 @@ begin                                                                     --BEGI
 		reg1  when "0000001",
 		reg2  when "0000010",
 		reg3  when "0000011",
---      reg4  when "0000100",
+      reg4  when "0000100",
+      reg5  when "0000101",
 		x"00" when others;
 
 	-- Used to Assert that there's always data for reading, and always room for writing

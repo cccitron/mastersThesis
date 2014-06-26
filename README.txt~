@@ -34,8 +34,21 @@ ex_fifo-me/source/
 
 ex_fifo-me_compToFPGA/fifo/
    VHDL code that corresponds with cksum_comp-to-fpga_fpgalink3.py. It will 
-   display the value sent from the computer to the LEDs.
+   display the value sent from the computer to the LEDs. Doesn't really work.
 
 sad_fifo_3x3/fifo/
    Implements a 3x3 SAD algorithm with fifo fpgalink code.
+
+
+
+
+
+
+INTALLS
+
+Python:
+   sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+
+
+
 

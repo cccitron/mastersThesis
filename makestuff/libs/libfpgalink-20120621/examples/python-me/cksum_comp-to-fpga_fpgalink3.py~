@@ -478,9 +478,9 @@ if __name__ == "__main__":
 
 # 2) Write two bytes, in the same command and read them back
             # Initialize byte array for template of 57 bytes
-            buffTempl_h2f = bytearray([0x02, 0x05, 0x05, 0x03, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-                                       0x04, 0x00, 0x07, 0x01, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-                                       0x07, 0x05, 0x09, 0x06, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff])
+            buffTempl_h2f = bytearray([0xff, 0x02, 0x05, 0x05, 0x03, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+                                             0x04, 0x00, 0x07, 0x01, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+                                             0x07, 0x05, 0x09, 0x06, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff])
             '''buffTempl_h2f = bytearray(10);            
             buffTempl_h2f[0] = 0x02;
             buffTempl_h2f[1] = 5;
@@ -572,6 +572,54 @@ if __name__ == "__main__":
                 buf = flReadChannel(handle, 1000, 0x03, 1)
                 print(buf, end=" ")
             print("")
+
+            # Fourth row of template test image
+            templateRow4 = bytearray(20)
+            for ndx in range(20):
+                templateRow4[ndx] = ndx
+            
+            #templateRow4[1] = 0x02
+            #templateRow4[17] = 0x03
+
+
+            for i in range(3):
+                # Send fourth row to FPGA
+                flWriteChannel(handle, 1000, 0x04, templateRow4)
+                flWriteChannel(handle, 1000, 0x05, templateRow4)
+
+                print("begin template read, again")            
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x00, 1)
+                    print(buf, end=" ")
+                print("")
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x00, 1)
+                    print(buf, end=" ")
+                print("")
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x00, 1)
+                    print(buf, end=" ")
+                print("")
+
+                print("begin search read")            
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x01, 1)
+                    print(buf, end=" ")
+                print("")
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x01, 1)
+                    print(buf, end=" ")
+                print("")
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x01, 1)
+                    print(buf, end=" ")
+                print("")
+
+                print("reading from disparity array")
+                for ndx in range(2):
+                    buf = flReadChannel(handle, 1000, 0x03, 1)
+                    print(buf, end=" ")
+                print("\n")
 
             '''buf = flReadChannel(handle, 1000, 0x03, 1)
             print(buf)

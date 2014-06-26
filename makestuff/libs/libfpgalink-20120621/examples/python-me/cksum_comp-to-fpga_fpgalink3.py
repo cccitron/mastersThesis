@@ -573,6 +573,54 @@ if __name__ == "__main__":
                 print(buf, end=" ")
             print("")
 
+            # Fourth row of template test image
+            templateRow4 = bytearray(20)
+            for ndx in range(20):
+                templateRow4[ndx] = 0x01
+            
+            #templateRow4[1] = 0x02
+            #templateRow4[17] = 0x03
+
+
+            for i in range(3):
+                # Send fourth row to FPGA
+                flWriteChannel(handle, 1000, 0x04, templateRow4)
+                flWriteChannel(handle, 1000, 0x05, templateRow4)
+
+                print("begin template read, again")            
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x00, 1)
+                    print(buf, end=" ")
+                print("")
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x00, 1)
+                    print(buf, end=" ")
+                print("")
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x00, 1)
+                    print(buf, end=" ")
+                print("")
+
+                print("begin search read")            
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x01, 1)
+                    print(buf, end=" ")
+                print("")
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x01, 1)
+                    print(buf, end=" ")
+                print("")
+                for ndx in range(19):
+                    buf = flReadChannel(handle, 1000, 0x01, 1)
+                    print(buf, end=" ")
+                print("")
+
+                print("reading from disparity array")
+                for ndx in range(2):
+                    buf = flReadChannel(handle, 1000, 0x03, 1)
+                    print(buf, end=" ")
+                print("\n")
+
             '''buf = flReadChannel(handle, 1000, 0x03, 1)
             print(buf)
             buf = flReadChannel(handle, 1000, 0x03, 1)
