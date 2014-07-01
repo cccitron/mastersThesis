@@ -57,12 +57,7 @@ end sadAlgorithm_3x3;
 
 architecture Behavioral of sadAlgorithm_3x3 is
    
-   -- Number of columns in the search image
-   CONSTANT ncol_c : INTEGER := 19;     
-   -- Number of rows in the search image
-   CONSTANT nrow_c : INTEGER := 3;
-   
-   SIGNAL sum_sign, sum_sign_next : SIGNED(8 DOWNTO 0);
+   SIGNAL sum_sign : SIGNED(9 DOWNTO 0);
    
 begin
    
@@ -71,15 +66,15 @@ begin
    BEGIN
       --sum_array_next <= sum_array;
       sum_sign <= 
-         abs(SIGNED('0' & ttl) - SIGNED('0' & stl)) + 
-         abs(SIGNED('0' & ttc) - SIGNED('0' & stc)) + 
-         abs(SIGNED('0' & ttr) - SIGNED('0' & str)) + 
-         abs(SIGNED('0' & tml) - SIGNED('0' & sml)) +
-         abs(SIGNED('0' & tmc) - SIGNED('0' & smc)) +
-         abs(SIGNED('0' & tmr) - SIGNED('0' & smr)) +
-         abs(SIGNED('0' & tbl) - SIGNED('0' & sbl)) +
-         abs(SIGNED('0' & tbc) - SIGNED('0' & sbc)) +
-         abs(SIGNED('0' & tbr) - SIGNED('0' & sbr));
+         abs(SIGNED("00" & ttl) - SIGNED("00" & stl)) + 
+         abs(SIGNED("00" & ttc) - SIGNED("00" & stc)) + 
+         abs(SIGNED("00" & ttr) - SIGNED("00" & str)) + 
+         abs(SIGNED("00" & tml) - SIGNED("00" & sml)) +
+         abs(SIGNED("00" & tmc) - SIGNED("00" & smc)) +
+         abs(SIGNED("00" & tmr) - SIGNED("00" & smr)) +
+         abs(SIGNED("00" & tbl) - SIGNED("00" & sbl)) +
+         abs(SIGNED("00" & tbc) - SIGNED("00" & sbc)) +
+         abs(SIGNED("00" & tbr) - SIGNED("00" & sbr));
    END PROCESS signed_sum;
    
    -- Assigns the values from summer array to sad array
@@ -87,7 +82,11 @@ begin
    BEGIN
       --sad_array_next <= sad_array;
       --FOR i IN 0 TO 2 LOOP
-      sad <= STD_LOGIC_VECTOR(sum_sign(7 DOWNTO 0));
+      IF (sum_sign < 256) THEN
+         sad <= STD_LOGIC_VECTOR(sum_sign(7 DOWNTO 0));
+      ELSE
+         sad <= x"ff";
+      END IF;
       --END LOOP;
    END PROCESS sad_assign;
 

@@ -22,6 +22,11 @@ import time
 import sys
 import argparse
 from ctypes import *
+import numpy
+
+# Numpy settings
+numpy.set_printoptions(threshold=numpy.nan)
+numpy.set_printoptions(linewidth=2000)
 
 # Define types
 class FLContext(Structure):
@@ -445,7 +450,7 @@ if __name__ == "__main__":
                   im.putpixel((i, j), ((buff[0] & 0xf8), ((buff[0] & 0x07) << 5) | ((buff[1] & 0xe0) >> 3), (buff[1] & 0x1f) << 3))
             '''
 
-            print("Reading:")
+            #print("Reading:")
             #flWriteChannel(handle, 1000, 0x01, 0x65)
             '''for i in range (1000):
                 buff = flReadChannel(handle, 1000, 0x02, 1)
@@ -455,60 +460,177 @@ if __name__ == "__main__":
                 print(buff)
                 print("")'''
 
-# 1) Write two bytes, one at a time and read them back.
+            # Black and white images
+            fileR = "tsukubaright_bw.jpg"
+            fileL = "tsukubaleft_bw.jpg"
+            
+            # Each color represents a distance that corresponds with disparity range of 0-15
+            colorScheme = numpy.array([(0x00, 0x00, 0x8F), \
+                           (0x00, 0x0F, 0xFF), \
+                           (0x00, 0x8F, 0xFF), \
+                           (0x00, 0xCF, 0xFF), \
+                           (0x0F, 0xFF, 0xEF), \
+                           (0x4F, 0xFF, 0xAF), \
+                           (0x8F, 0xFF, 0x6F), \
+                           (0xCF, 0xFF, 0x2F), \
+                           (0xFF, 0xEF, 0x00), \
+                           (0xFF, 0xAF, 0x00), \
+                           (0xFF, 0x9F, 0x00), \
+                           (0xFF, 0x6F, 0x00), \
+                           (0xFF, 0x2F, 0x00), \
+                           (0xEF, 0x00, 0x00), \
+                           (0xAF, 0x00, 0x00), \
+                           (0x7F, 0x00, 0x00)])
 
-            '''# Write one byte to FPGA register (reg) 3
-            flWriteChannel(handle, 1000, 0x01, 5)
+            try:
+                # Open files
+                imR = Image.open(fileR)
+                imL = Image.open(fileL)
+                
+                # Get size of images
+                (width, height) = imR.size
+                (wL, hL) = imL.size
+                
+                # Check to make sure they're the same size
+                if (width != wL or height != hL):
+                    print("Error, image sizes don't match!")
+                    exit(0)
+                
+                # Initialize arrays
+                templateBuff = numpy.zeros((height, width), dtype = 'i')
+                searchBuff = numpy.zeros((height, width), dtype = 'i')
+                disparity_f2h = numpy.zeros((height-2, width-17), dtype = 'i')
+                
+                # Assign pixel values to arrays
+                for i in range(height):
+                    for j in range(width):
+                        templateBuff[i][j] = imR.getpixel((j, i)) 
+                        searchBuff[i][j] = imL.getpixel((j, i))
+                
+                # Number of pixels per row to be sent
+                ncol = 21 #65
+                # Number of rows of pixels to be sent
+                nrow = 3
+                # Disparity range 0-15
+                disp_range = 16
+                # Number of disparity values for an entire row
+                disp_row = ncol - (disp_range + 1)
+                
+                # template & search arrays, data sent over via bytearrays
+                buffTempl_h2f = bytearray(ncol * nrow + 1)
+                buffSearch_h2f = bytearray(ncol * nrow + 1)
+                
+                # The initial data to be sent to the FPGA
+                ndx = 1
+                for i in range(nrow):
+                    for j in range(ncol):
+                        buffTempl_h2f[ndx] = templateBuff[i][j]
+                        buffSearch_h2f[ndx] = searchBuff[i][j]
+                        ndx += 1
+                        
+                #print("template:\n", buffTempl_h2f)
+                        
+                # Write bytes to FPGA register (reg) 1 ### change to reg 0 or something
+                flWriteChannel(handle, 1000, 0x00, buffTempl_h2f)
+                flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)
+                
+                '''print("begin template read")            
+                for i in range(3):
+                    for ndx in range(ncol):
+                        buf = flReadChannel(handle, 1000, 0x00, 1)
+                        print(buf, end=" ")
+                    print("\n")
 
-            # Read from reg 1, should get back 5
-            buff = flReadChannel(handle, 1000, 0x01, 1)
-            print(buff)
-            print("")
+                print("begin search read")
+                for i in range(3):            
+                    for ndx in range(ncol):
+                        buf = flReadChannel(handle, 1000, 0x01, 1)
+                        print(buf, end=" ")
+                    print("\n")
+                
+                for i in range(disp_row):
+                    print("reading from sad array ", i)    
+                    for ndx in range(disp_range):
+                        buf = flReadChannel(handle, 1000, 0x02, 1)
+                        print(buf, end=" ")
+                    print("\n")'''
+                
+                #print("reading from disparity array")            
+                for ndx in range(disp_row):
+                    disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)
+                    #print(disparity_f2h[0][ndx], end=" ")
+                #print("\n\n\n")
+                
+                # Next rows
+                templateRow_h2f = bytearray(ncol + 1)
+                searchRow_h2f = bytearray(ncol + 1)
+                
+                # The initial data to be sent to the FPGA
+                pos = 1
+                for i in range(3, height):
+                    ndx = 1
+                    for j in range(ncol):
+                        templateRow_h2f[ndx] = templateBuff[i][j]
+                        searchRow_h2f[ndx] = searchBuff[i][j]
+                        ndx += 1
+                    
+                    flWriteChannel(handle, 1000, 0x00, templateRow_h2f)
+                    flWriteChannel(handle, 1000, 0x01, searchRow_h2f)
+                    
+                    if (i >= 71 and i <= 74 or i >= 286):
+                        print("_____ DISP ROW = ", i-2, " _____")
+                        
+                        print("begin template read")            
+                        for j in range(3):
+                            for ndx in range(ncol):
+                                buf = flReadChannel(handle, 1000, 0x00, 1)
+                                print(buf, end=" ")
+                            print("\n")
 
-            time.sleep(1)
+                        print("begin search read")
+                        for j in range(3):            
+                            for ndx in range(ncol):
+                                buf = flReadChannel(handle, 1000, 0x01, 1)
+                                print(buf, end=" ")
+                            print("\n")
+                        
+                        for j in range(disp_row):
+                            print("reading from sad array ", j)    
+                            for ndx in range(disp_range):
+                                buf = flReadChannel(handle, 1000, 0x02, 1)
+                                print(buf, end=" ")
+                            print("\n")
+                        
+                        print("reading from disparity array")
+                         
+                    for ndx in range(disp_row):
+                        disparity_f2h[pos][ndx] = flReadChannel(handle, 1000, 0x03, 1)
+                        if (i >= 71 and i <= 74 or i >= 286):
+                            print(disparity_f2h[pos][ndx], end=" ")
+                    if (i >= 71 and i <= 74 or i >= 286):
+                        print("\n\n\n")
+                    pos += 1
+                    
+                    '''for ndx in range(disp_row):
+                        buf = flReadChannel(handle, 1000, 0x03, 1)
+                        print(buf, end=" ")
+                    print("")'''
+                    
+                #print(disparity_f2h)
+                for i in range(height-2):
+                    for j in range(4):
+                        print(disparity_f2h[i][j], end=" ")
+                    print("")
+                
+            except IOError:
+                print("Error for either file", fileR, " or ", fileL)
 
-            # Write one byte to FPGA register (reg) 1
-            flWriteChannel(handle, 1000, 0x01, 67)
-
-            # Read from reg 1, should get back 67
-            buff = flReadChannel(handle, 1000, 0x01, 1)
-            print(buff)
-            print("")'''
 
 
-# 2) Write two bytes, in the same command and read them back
-            # Initialize byte array for template of 57 bytes
-            buffTempl_h2f = bytearray([0xff, 0x02, 0x05, 0x05, 0x03, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-                                             0x04, 0x00, 0x07, 0x01, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-                                             0x07, 0x05, 0x09, 0x06, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff])
-            '''buffTempl_h2f = bytearray(10);            
-            buffTempl_h2f[0] = 0x02;
-            buffTempl_h2f[1] = 5;
-            buffTempl_h2f[2] = 5;                        
-            buffTempl_h2f[3] = 4;
-            buffTempl_h2f[4] = 0;
-            buffTempl_h2f[5] = 7;
-            buffTempl_h2f[6] = 7;
-            buffTempl_h2f[7] = 5;
-            buffTempl_h2f[8] = 9;'''
-
-            # Initialize byte array for search, the first byte is junk and isn't actually used on the board
-            buffSearch_h2f = bytearray([0xff, 0x02, 0x07, 0x05, 0x08, 0x06, 0x00, 0x02, 0x07, 0x05, 0x08, 0x06, 0x00, 0x02, 0x07, 0x05, 0x08, 0x06, 0x00, 0x00,
-                                              0x01, 0x07, 0x04, 0x02, 0x07, 0x09, 0x01, 0x07, 0x04, 0x02, 0x07, 0x09, 0x01, 0x07, 0x04, 0x02, 0x07, 0x09, 0x00,
-                                              0x08, 0x04, 0x06, 0x08, 0x05, 0x03, 0x08, 0x04, 0x06, 0x08, 0x05, 0x03, 0x08, 0x04, 0x06, 0x08, 0x05, 0x03, 0x00])
-            '''buffSearch_h2f[0] = 2;
-            buffSearch_h2f[1] = 7;
-            buffSearch_h2f[2] = 5;                        
-            buffSearch_h2f[3] = 1;
-            buffSearch_h2f[4] = 7;
-            buffSearch_h2f[5] = 4;
-            buffSearch_h2f[6] = 8;
-            buffSearch_h2f[7] = 4;
-            buffSearch_h2f[8] = 6;'''
 
             # Write bytes to FPGA register (reg) 1 ### change to reg 0 or something
-            flWriteChannel(handle, 1000, 0x00, buffTempl_h2f)
-            flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)
+            '''flWriteChannel(handle, 1000, 0x00, buffTempl_h2f)
+            flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)'''
 
             # Read from reg 1, should get back 5 and 67
             '''buffIn = flReadChannel(handle, 1000, 0x01, 1)
@@ -527,7 +649,7 @@ if __name__ == "__main__":
             print(buffIn)
             print("")'''
 
-            print("begin template read")            
+            '''print("begin template read")            
             for ndx in range(19):
                 buf = flReadChannel(handle, 1000, 0x00, 1)
                 print(buf, end=" ")
@@ -584,8 +706,8 @@ if __name__ == "__main__":
 
             for i in range(3):
                 # Send fourth row to FPGA
-                flWriteChannel(handle, 1000, 0x04, templateRow4)
-                flWriteChannel(handle, 1000, 0x05, templateRow4)
+                flWriteChannel(handle, 1000, 0x00, templateRow4)
+                flWriteChannel(handle, 1000, 0x01, templateRow4)
 
                 print("begin template read, again")            
                 for ndx in range(19):
@@ -619,7 +741,7 @@ if __name__ == "__main__":
                 for ndx in range(2):
                     buf = flReadChannel(handle, 1000, 0x03, 1)
                     print(buf, end=" ")
-                print("\n")
+                print("\n")'''
 
             '''buf = flReadChannel(handle, 1000, 0x03, 1)
             print(buf)
