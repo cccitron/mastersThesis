@@ -83,6 +83,9 @@ try:
             print(searchBuff[i][j], end=" ")
         print("")'''
 
+    # initial time before running SAD algorithm
+    t0 = time.time()
+
     for row in range(height-2):
         sadArray = numpy.zeros((DISP_ROW, DISP_RANGE), dtype = 'i')
         for i in range(DISP_ROW):
@@ -107,7 +110,7 @@ try:
         disparityAll[row] = disparityArray
 
         # Print SAD array
-        if ((row >= 69 and row <= 72) or row >= 284):
+        '''if ((row >= 69 and row <= 72) or row >= 284):
             print("Disp row: ", row)
             # Print template array
             print("begin template read")
@@ -130,7 +133,7 @@ try:
             print("dispare:")
             for j in range(4):
                 print(disparityAll[row][j], end=" ")
-            print("\n\n")
+            print("\n\n")'''
         
         '''# mins of each row
         print("\nmins of each row")
@@ -144,6 +147,9 @@ try:
             print(disparityAll[i][j], end=" ")
         print("")'''
     
+    # time after SAD algorithm has finished
+    t1 = time.time()
+    
     # create disparity image
     im = Image.new("RGB", (width-17, height-2), "black")
     
@@ -152,6 +158,17 @@ try:
             im.putpixel((i,j), (colorScheme[disparityAll[j][i]][0], colorScheme[disparityAll[j][i]][1], colorScheme[disparityAll[j][i]][2]))
 
     im.save("tsukuba_disp3x3.png")
+
+    # time after image is created
+    t2 = time.time()
+
+    print("t0 = ", t0)
+    print("t1 = ", t1)
+    print("t2 = ", t2)
+
+    print("t1 - t0 = ", t1-t0)
+    print("t2 - t1 = ", t2-t1)
+    print("t2 - t0 = ", t2-t0)
 
     '''# SAD Algorithm
     for i in range(DISP_ROW):

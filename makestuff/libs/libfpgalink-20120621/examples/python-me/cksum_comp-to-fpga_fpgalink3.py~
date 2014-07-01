@@ -520,6 +520,9 @@ if __name__ == "__main__":
                 buffTempl_h2f = bytearray(ncol * nrow + 1)
                 buffSearch_h2f = bytearray(ncol * nrow + 1)
                 
+                # initial time
+                t0 = time.time()
+                
                 # The initial data to be sent to the FPGA
                 ndx = 1
                 for i in range(nrow):
@@ -581,7 +584,7 @@ if __name__ == "__main__":
                         disparity_f2h[pos][ndx] = flReadChannel(handle, 1000, 0x03, 1)
                     pos += 1
                     
-                for offset in range(4, width-17, 4):
+                for offset in range(4, width-21, 4):
                     pos = 0
                     for i in range(3):
                         ndx = 1
@@ -611,31 +614,34 @@ if __name__ == "__main__":
                             disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)
                         pos += 1
                     
-                    '''if (i >= 71 and i <= 74 or i >= 286):
-                        print("_____ DISP ROW = ", i-2, " _____")
-                        
-                        print("begin template read")            
-                        for j in range(3):
-                            for ndx in range(ncol):
-                                buf = flReadChannel(handle, 1000, 0x00, 1)
-                                print(buf, end=" ")
-                            print("\n")
+                # time after SAD Algorithm has finished
+                t1 = time.time()
+                    
+                '''if (i >= 71 and i <= 74 or i >= 286):
+                    print("_____ DISP ROW = ", i-2, " _____")
+                    
+                    print("begin template read")            
+                    for j in range(3):
+                        for ndx in range(ncol):
+                            buf = flReadChannel(handle, 1000, 0x00, 1)
+                            print(buf, end=" ")
+                        print("\n")
 
-                        print("begin search read")
-                        for j in range(3):            
-                            for ndx in range(ncol):
-                                buf = flReadChannel(handle, 1000, 0x01, 1)
-                                print(buf, end=" ")
-                            print("\n")
-                        
-                        for j in range(disp_row):
-                            print("reading from sad array ", j)    
-                            for ndx in range(disp_range):
-                                buf = flReadChannel(handle, 1000, 0x02, 1)
-                                print(buf, end=" ")
-                            print("\n")
-                        
-                        print("reading from disparity array")
+                    print("begin search read")
+                    for j in range(3):            
+                        for ndx in range(ncol):
+                            buf = flReadChannel(handle, 1000, 0x01, 1)
+                            print(buf, end=" ")
+                        print("\n")
+                    
+                    for j in range(disp_row):
+                        print("reading from sad array ", j)    
+                        for ndx in range(disp_range):
+                            buf = flReadChannel(handle, 1000, 0x02, 1)
+                            print(buf, end=" ")
+                        print("\n")
+                    
+                    print("reading from disparity array")
                          
                     for ndx in range(disp_row):
                         disparity_f2h[pos][ndx] = flReadChannel(handle, 1000, 0x03, 1)
@@ -651,10 +657,10 @@ if __name__ == "__main__":
                     print("")'''
                     
                 #print(disparity_f2h)
-                for i in range(height-2):
+                '''for i in range(height-2):
                     for j in range(width-17):
                         print(disparity_f2h[i][j], end=" ")
-                    print("")
+                    print("")'''
                     
                 # create disparity image
                 im = Image.new("RGB", (width-17, height-2), "black")
@@ -664,7 +670,18 @@ if __name__ == "__main__":
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
                 im.save("tsukuba_disp3x3.png")
-                im.show()
+                #im.show()
+                
+                # time after image is created
+                t2 = time.time()
+
+                print("t0 = ", t0)
+                print("t1 = ", t1)
+                print("t2 = ", t2)
+
+                print("t1 - t0 = ", t1-t0)
+                print("t2 - t1 = ", t2-t1)
+                print("t2 - t0 = ", t2-t0)
                 
             except IOError:
                 print("Error for either file", fileR, " or ", fileL)
