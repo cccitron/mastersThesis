@@ -34,14 +34,14 @@ entity sad_wrapper is
       window : integer := 3; -- Window size, i.e. "3" -> 3x3 window
       win    : integer := 1; -- win is the number of pixels above, below, right, & left of center pixel
    
-      NCOL_C : INTEGER := 21; --33; --65; --200; --19; -- Number of columns in the search image
+      NCOL_C : INTEGER := 19; --21; --33; --65; --200; --19; -- Number of columns in the search image
       NROW_C : INTEGER := 3;  -- Number of rows in the search image
       
-      PIXEL_CNT  : INTEGER := 63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
+      PIXEL_CNT  : INTEGER := 57; --63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
       DISP_RANGE : INTEGER := 16; -- Disparity range 0-15
-      DISP_ROW   : INTEGER := 4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
-      NUM_2_ROW  : INTEGER := 21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
-      LAST_ROW   : INTEGER := 42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
+      DISP_ROW   : INTEGER := 2; --4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
+      NUM_2_ROW  : INTEGER := 19; --21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
+      LAST_ROW   : INTEGER := 38 --42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
    );
    Port ( 
       clk_I      : in  STD_LOGIC;
@@ -92,7 +92,7 @@ architecture Behavioral of sad_wrapper is
 	--signal sum_array, sum_array_next : array_type_signed;
    
    -- sad array
-   type array_type_sad is array (0 to DISP_ROW-1, 0 to DISP_RANGE-1) of std_logic_vector(7 downto 0);
+   type array_type_sad is array (0 to DISP_ROW-1, 0 to DISP_RANGE-1) of std_logic_vector(9 downto 0);
 	signal sad_array, sad_array_next : array_type_sad;-- := (OTHERS => (OTHERS => '0'));
    
    SIGNAL ndx_sad, ndx_sad_next, f2h_sad_rd, f2h_sad_rd_next : INTEGER := 0;
@@ -105,7 +105,7 @@ architecture Behavioral of sad_wrapper is
    --signal assign_out, assign_out_next : STD_LOGIC := '0';
    
    -- 2D Array for the min SAD values in the min comparator
-   TYPE array_type_minSad IS ARRAY (0 to DISP_ROW-1, 0 TO DISP_RANGE-1) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+   TYPE array_type_minSad IS ARRAY (0 to DISP_ROW-1, 0 TO DISP_RANGE-1) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
    SIGNAL minSad : array_type_minSad;
    
    -- 2D Array for the pos of the sad values in the min comparator
@@ -414,7 +414,7 @@ begin
 --      END IF;
       
 --      IF
-         FOR i IN 0 TO DISP_ROW-1 LOOP --- To pipeline, could have this hold until ready, to give enough time for comp to read all disp values
+         FOR i IN 0 TO 1 LOOP --DISP_ROW-1 LOOP --- To pipeline, could have this hold until ready, to give enough time for comp to read all disp values
 --            if (minSad(i, 13) < minSad(i, 12)) then
 --               disparityArray_next(i) <= minPos(i, 13);
 --            else
@@ -422,6 +422,10 @@ begin
 --            end if;
 --            
             disparityArray_next(i) <= minPos(i, 14);
+--         disparityArray_next(0) <= minPos(0, 14);
+--         disparityArray_next(1) <= minPos(1, 14);
+         --disparityArray_next(2) <= minPos(2, 14);
+         --disparityArray_next(3) <= minPos(3, 14);
          END LOOP;
       END IF;
    END PROCESS disparity_assign;
@@ -452,14 +456,14 @@ begin
    
    templ_O  <= templ_array(f2h_t_rd);
    search_O <= search_array(f2h_s_rd);
-   sad_O    <= sad_array(ndx_sad, f2h_sad_rd);
+   sad_O    <= sad_array(ndx_sad, f2h_sad_rd)(7 DOWNTO 0);
    disp_O   <= x"0" & disparityArray(f2h_disp_rd); --sad_array(f2h_sad_rd);
    
    WITH sw_I SELECT led_O <=
       STD_LOGIC_VECTOR(TO_UNSIGNED(f2h_sad_rd, 8)) WHEN x"00", --h2fValid_I & chanAddr_I(6 DOWNTO 0) WHEN x"00",
-      sad_array(0, 0)  WHEN x"01",
-      sad_array(0, 1)  WHEN x"02",
-      sad_array(0, 2)  WHEN x"04",
+      sad_array(0, 0)(7 DOWNTO 0)  WHEN x"01",
+      sad_array(0, 1)(7 DOWNTO 0)  WHEN x"02",
+      sad_array(0, 2)(7 DOWNTO 0)  WHEN x"04",
       x"0" & disparityArray(0)  WHEN x"08",
       x"0" & disparityArray(1)  WHEN x"10",
       templ_array(0)  WHEN x"20",

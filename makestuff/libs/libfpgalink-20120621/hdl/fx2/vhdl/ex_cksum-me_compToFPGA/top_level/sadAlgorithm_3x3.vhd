@@ -51,13 +51,13 @@ entity sadAlgorithm_3x3 is
       sbc : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);
       sbr : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);
       
-      sad : OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+      sad : OUT STD_LOGIC_VECTOR (9 DOWNTO 0)
    );
 end sadAlgorithm_3x3;
 
 architecture Behavioral of sadAlgorithm_3x3 is
    
-   SIGNAL sum_sign : SIGNED(9 DOWNTO 0);
+   SIGNAL sum_sign : SIGNED(10 DOWNTO 0);
    
 begin
    
@@ -66,15 +66,15 @@ begin
    BEGIN
       --sum_array_next <= sum_array;
       sum_sign <= 
-         abs(SIGNED("00" & ttl) - SIGNED("00" & stl)) + 
-         abs(SIGNED("00" & ttc) - SIGNED("00" & stc)) + 
-         abs(SIGNED("00" & ttr) - SIGNED("00" & str)) + 
-         abs(SIGNED("00" & tml) - SIGNED("00" & sml)) +
-         abs(SIGNED("00" & tmc) - SIGNED("00" & smc)) +
-         abs(SIGNED("00" & tmr) - SIGNED("00" & smr)) +
-         abs(SIGNED("00" & tbl) - SIGNED("00" & sbl)) +
-         abs(SIGNED("00" & tbc) - SIGNED("00" & sbc)) +
-         abs(SIGNED("00" & tbr) - SIGNED("00" & sbr));
+         abs(SIGNED("000" & ttl) - SIGNED("000" & stl)) + 
+         abs(SIGNED("000" & ttc) - SIGNED("000" & stc)) + 
+         abs(SIGNED("000" & ttr) - SIGNED("000" & str)) + 
+         abs(SIGNED("000" & tml) - SIGNED("000" & sml)) +
+         abs(SIGNED("000" & tmc) - SIGNED("000" & smc)) +
+         abs(SIGNED("000" & tmr) - SIGNED("000" & smr)) +
+         abs(SIGNED("000" & tbl) - SIGNED("000" & sbl)) +
+         abs(SIGNED("000" & tbc) - SIGNED("000" & sbc)) +
+         abs(SIGNED("000" & tbr) - SIGNED("000" & sbr));
    END PROCESS signed_sum;
    
    -- Assigns the values from summer array to sad array
@@ -83,9 +83,9 @@ begin
       --sad_array_next <= sad_array;
       --FOR i IN 0 TO 2 LOOP
       IF (sum_sign < 256) THEN
-         sad <= STD_LOGIC_VECTOR(sum_sign(7 DOWNTO 0));
+         sad <= STD_LOGIC_VECTOR(sum_sign(9 DOWNTO 0));
       ELSE
-         sad <= x"ff";
+         sad <= x"ff" & "00";
       END IF;
       --END LOOP;
    END PROCESS sad_assign;

@@ -33,11 +33,11 @@ entity minComparator is
 	Port ( 
 --		clk   : in   std_logic;
 --      ena   : in   std_logic;
-      sad0  : in   STD_LOGIC_VECTOR (7 downto 0);
+      sad0  : in   STD_LOGIC_VECTOR (9 downto 0);
 		pos0  : in   STD_LOGIC_VECTOR (3 downto 0);
-		sad1  : in   STD_LOGIC_VECTOR (7 downto 0);
+		sad1  : in   STD_LOGIC_VECTOR (9 downto 0);
 		pos1  : in   STD_LOGIC_VECTOR (3 downto 0);
-		sad   : out  STD_LOGIC_VECTOR (7 downto 0);
+		sad   : out  STD_LOGIC_VECTOR (9 downto 0);
 		pos   : out  STD_LOGIC_VECTOR (3 downto 0)
 	);
 end minComparator;
