@@ -1,0 +1,32 @@
+###################################################################
+##
+## Name     : d_shared_mem_bus_mapper
+## Desc     : Map for RTL to Hurri
+##
+###################################################################
+
+BEGIN d_shared_mem_bus_mapper
+
+# bsb options
+OPTION CORE_TEMPLATE_ASSOC = d_shared_mem_bus_template
+OPTION HURRI_DESC = d_shared_mem_bus_template component
+OPTION HURRI_VLNV = xilinx.com|bsb_lib.components|d_shared_mem_bus_template|1.0
+
+OPTION RTL_DESC = d_shared_mem_bus component
+OPTION RTL_VLNV = xilinx.com|bsb_lib.rtl_components|d_shared_mem_bus|1.00.a
+
+## Peripheral Options
+OPTION IPTYPE = PERIPHERAL
+OPTION USAGE_LEVEL = BASE_USER
+OPTION DESC = AXI4Lite Shared Memory Bus Controller Mapper RTL to Hurri
+OPTION LONG_DESC = AXI4Lite Shared Memory Bus Controller Mapper RTL to Hurri
+OPTION IP_GROUP = Digilent:MICROBLAZE
+
+## Bus Interfaces
+BUS_INTERFACE BUS = S_AXI, BUS_STD = AXI, BUS_TYPE = SLAVE, DESC = connect_0
+
+## Generics for VHDL or Parameters for Verilog
+## Ports
+PORT S_AXI_ACLK = ACLK, DIR = I, BUS = S_AXI, SIGIS = CLK, DESC = clock_0
+
+END

@@ -1,0 +1,18 @@
+ISim log file
+Running: /home/cccitron/mastersThesis/lab6_files/lab6_files_aldec_read_from_mem/aldec/test_top_level_spi_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/cccitron/mastersThesis/lab6_files/lab6_files_aldec_read_from_mem/aldec/test_top_level_spi_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /test_top_level_spi/dut/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+Finished circuit initialization process.
+# restart
+# run 6.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.

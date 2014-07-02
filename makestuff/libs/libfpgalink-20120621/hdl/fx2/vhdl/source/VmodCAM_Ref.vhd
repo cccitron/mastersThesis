@@ -182,9 +182,15 @@ signal readFifoOutputReady     : std_logic;                     --           rea
 --signal array0 : array_type := (x"fc", x"11", x"05",
 --										 x"02", x"fe", x"13",
 --										 x"15", x"01", x"fd");
+<<<<<<< HEAD
 
 type array_type is array (0 to 2) of std_logic_vector(7 downto 0);
 signal array3 : array_type := (x"00", x"0F", x"FF");
+=======
+
+type array_type is array (0 to 1) of std_logic_vector(7 downto 0);
+signal array2 : array_type := (x"0f", x"f0");
+>>>>>>> recover
 
 -- Counter which endlessly puts items into the read FIFO for the host to read
 signal count, count_next       : std_logic_vector(7 downto 0) := (others => '0');
@@ -202,9 +208,16 @@ begin
 	process(fx2Clk_in)
 	begin
 		if ( rising_edge(fx2Clk_in) ) then
+<<<<<<< HEAD
 			count <= count_next;
 			if (count = x"03") then
 				count <= x"00";
+=======
+			if (count = x"02") then
+				count <= x"00";
+			else
+				count <= count_next;
+>>>>>>> recover
 			end if;
 		end if;
 	end process;
@@ -220,19 +233,30 @@ begin
 	h2fReady <=
 		'0' when writeFifoInputReady = '0' and chanAddr = "0000000"
 		else '1';
+<<<<<<< HEAD
 
    -- Connect data from Camera A to array3
    array3(0) <= "000" & CamAD(15 downto 11);
    array3(1) <= "00"  & CamAD(10 downto 5);
    array3(2) <= "000" & CamAD(4 downto 0);
       
+=======
+
+	array2(0) <= FbRdData(15 downto 8);
+	array2(1) <= FbRdData(7 downto 0);
+	
+>>>>>>> recover
 	-- Wire up read FIFO to channel 0 reads:
 	--   readFifoInputValid driven by producer_timer
 	--   flags(0) driven by readFifoInputReady
 	count_next <=
 		std_logic_vector(unsigned(count) + 1) when readFifoInputValid = '1'
 		else count;
+<<<<<<< HEAD
 	readFifoInputData <= array3(TO_INTEGER(unsigned(count)));
+=======
+	readFifoInputData <= array2(TO_INTEGER(unsigned(count)));
+>>>>>>> recover
 	f2hValid <=
 		'0' when readFifoOutputValid = '0' and chanAddr = "0000000"
 		else '1';

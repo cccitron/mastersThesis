@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="871" delta="new" >"/home/cccitron/mastersThesis/absDiff/absDiff.vhd" Line 81: Using initial value <arg fmt="%s" index="1">&quot;000000100000010100000101000001000000000000000111000001110000010100001001&quot;</arg> for <arg fmt="%s" index="2">template3x3</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="new" >"/home/cccitron/mastersThesis/absDiff/absDiff.vhd" Line 82: Using initial value <arg fmt="%s" index="1">&quot;000000100000011100000101000000010000011100000100000010000000010000000110&quot;</arg> for <arg fmt="%s" index="2">img3x3_0</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="new" >"/home/cccitron/mastersThesis/absDiff/absDiff.vhd" Line 83: Using initial value <arg fmt="%s" index="1">&quot;000001110000010100001000000001110000010000000010000001000000011000001000&quot;</arg> for <arg fmt="%s" index="2">img3x3_1</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="new" >"/home/cccitron/mastersThesis/absDiff/absDiff.vhd" Line 84: Using initial value <arg fmt="%s" index="1">&quot;000001010000100000000110000001000000001000000111000001100000100000000101&quot;</arg> for <arg fmt="%s" index="2">img3x3_2</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="871" delta="new" >"/home/cccitron/mastersThesis/absDiff/absDiff.vhd" Line 85: Using initial value <arg fmt="%s" index="1">&quot;000000000000000000000000000000000000000000000000000000000000000000000000&quot;</arg> for <arg fmt="%s" index="2">zeros</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">CLK_I</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+</messages>
+

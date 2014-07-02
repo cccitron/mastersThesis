@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE doc SYSTEM "../../ipdialog.dtd" [
+	<!-- -->
+	<!ENTITY C_NUM_USER_REGS '
+	<widget id="C_NUM_USER_REGS">
+		<key>C_NUM_USER_REGS</key>
+		<label>Number of User addressable Registers</label>
+		<tip></tip>
+	</widget>
+	'>
+	<!ENTITY FIFO_ADDR_WIDTH '
+	<widget id="FIFO_ADDR_WIDTH">
+		<key>FIFO_ADDR_WIDTH</key>
+		<label>FIFO Address Width</label>
+		<tip></tip>
+	</widget>
+	'>
+	<!ENTITY C_S_AXI_PROTOCOL '
+		<widget id="C_S_AXI_PROTOCOL">
+		<key>C_S_AXI_PROTOCOL</key>
+		<label>AXI4Lite Protocol</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_S_AXI_ADDR_WIDTH '
+	<widget id="C_S_AXI_ADDR_WIDTH">
+		<key>C_S_AXI_ADDR_WIDTH</key>
+		<label>AXI Slave IP Address Width</label>
+		<tip></tip>
+	</widget>
+	'>
+	<!ENTITY C_S_AXI_DATA_WIDTH '
+	<widget id="C_S_AXI_DATA_WIDTH">
+		<key>C_S_AXI_DATA_WIDTH</key>
+		<label>AXI Slave IP Data Width or BRAM Data Width</label>
+		<tip></tip>
+	</widget>
+	'>
+	<!ENTITY C_S_AXI_MIN_SIZE '
+		<widget id="C_S_AXI_MIN_SIZE">
+		<key>C_S_AXI_MIN_SIZE</key>
+		<label>C_S_AXI_MIN_SIZE</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_USE_WSTRB '
+		<widget id="C_USE_WSTRB">
+		<key>C_USE_WSTRB</key>
+		<label>Use WSTRB</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_DPHASE_TIMEOUT '
+		<widget id="C_DPHASE_TIMEOUT">
+		<key>C_DPHASE_TIMEOUT</key>
+		<label>C_DPHASE_TIMEOUT</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_BASEADDR '
+		<widget id="C_BASEADDR">
+		<key>C_BASEADDR</key>
+		<label>C_BASEADDR</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_HIGHADDR '
+		<widget id="C_HIGHADDR">
+		<key>C_HIGHADDR</key>
+		<label>C_HIGHADDR</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_FAMILY '
+		<widget id="C_FAMILY">
+		<key>C_FAMILY</key>
+		<label>C_FAMILY</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_NUM_REG '
+		<widget id="C_NUM_REG">
+		<key>C_NUM_REG</key>
+		<label>C_NUM_REG</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_NUM_MEM '
+		<widget id="C_NUM_MEM">
+		<key>C_NUM_MEM</key>
+		<label>C_NUM_MEM</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_SLV_AWIDTH '
+		<widget id="C_SLV_AWIDTH">
+		<key>C_SLV_AWIDTH</key>
+		<label>C_SLV_AWIDTH</label>
+		<tip></tip>
+        </widget>
+	'>
+	<!ENTITY C_SLV_DWIDTH '
+		<widget id="C_SLV_DWIDTH">
+		<key>C_SLV_DWIDTH</key>
+		<label>C_SLV_DWIDTH</label>
+		<tip></tip>
+        </widget>
+	'>
+]>
+
+<doc>
+	<view id="User">
+		<display>User</display>
+		<group id="Common">
+			<display>Common</display>
+			<item>&C_NUM_USER_REGS;</item>
+			<item>&FIFO_ADDR_WIDTH;</item>
+		</group>
+	</view>
+	<view id="System">
+		<display>System</display>
+		<group id="Addresses">
+			<display>Addresses</display>
+			<item>&C_BASEADDR;</item>
+			<item>&C_HIGHADDR;</item>
+		</group>
+		<group id="AXI">
+			<display>AXI</display>
+			<item>&C_S_AXI_DATA_WIDTH;</item>
+			<item>&C_S_AXI_ADDR_WIDTH;</item>
+			<item>&C_S_AXI_MIN_SIZE;</item>
+			<item>&C_USE_WSTRB;</item>
+			<item>&C_DPHASE_TIMEOUT;</item>
+			<item>&C_NUM_REG;</item>
+			<item>&C_NUM_MEM;</item>
+			<item>&C_SLV_AWIDTH;</item>
+			<item>&C_SLV_DWIDTH;</item>
+			<item>&C_S_AXI_PROTOCOL;</item>
+		</group>
+		<group id="Hidden">
+			<display>Hidden</display>
+			<item>&C_FAMILY;</item>
+		</group>
+	</view>
+    <view id="Wizard">
+        <display>Wizard</display>
+        <group id="Hidden">
+			<display>Hidden</display>
+            <item>
+                <widget id="NumUserRegs_Combo">
+                    <key>C_NUM_USER_REGS</key>
+                    <label>Number of User addressable Registers</label>
+                    <tip>Number of User addressable Registers</tip>
+                </widget>
+            </item>
+			<item>
+                <widget id="FifoAddrW_Combo">
+                    <key>FIFO_ADDR_WIDTH</key>
+                    <label>FIFO Address Width</label>
+                    <tip>FIFO Address Width</tip>
+                </widget>
+            </item>
+        </group>
+    </view>
+</doc>

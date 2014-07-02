@@ -1,0 +1,241 @@
+WARNING:EDK:1430 - Found verilog library and file from XST project file, will be
+   skipped!
+   line 10: "verilog work "../../hdl/verilog/ac97_controller.v"" indicates
+   verilog file ...
+
+Parsing XST project file successfully ...
+Analyzing HDL source files ...
+ERROR:EDK:1488 - HDL source file
+   D:/Digilent/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common
+   _v3_00_a/hdl/vhdl/proc_common_pkg.vhd is not readable!
+
+WARNING:EDK:1430 - Found verilog library and file from XST project file, will be
+   skipped!
+   line 10: "verilog work "../../hdl/verilog/ac97_controller.v"" indicates
+   verilog file ...
+
+Parsing XST project file successfully ...
+Analyzing HDL source files ...
+ERROR:EDK:1488 - HDL source file
+   D:/Digilent/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common
+   _v3_00_a/hdl/vhdl/proc_common_pkg.vhd is not readable!
+
+WARNING:EDK:1430 - Found verilog library and file from XST project file, will be
+   skipped!
+   line 10: "verilog work "../../hdl/verilog/ac97_controller.v"" indicates
+   verilog file ...
+
+Parsing XST project file successfully ...
+Analyzing HDL source files ...
+ERROR:EDK:1488 - HDL source file
+   D:/Digilent/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common
+   _v3_00_a/hdl/vhdl/proc_common_pkg.vhd is not readable!
+
+WARNING:EDK:2394 - Skip non-vhdl source file from PAO file!
+   "verilog ac97_if_v1_10_a ac97_controller.v" ...
+
+Parsing PAO project file successfully ...
+Analyzing HDL source files ...
+Analyzing HDL source files successfully ...
+HDL language for the peripheral (top level) design unit ac97_if is vhdl ...
+INFO:EDK:3391 - Create temporary xst project file:
+   D:\Digilent\Projects\Atlys\Atlys_12_2_RevC_BIST\pcores/ac97_if.prj
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/proc_common_pkg.vhd" in Library proc_common_v3_00_a.
+Package <proc_common_pkg> compiled.
+Package body <proc_common_pkg> compiled.
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/or_muxcy.vhd" in Library proc_common_v3_00_a.
+Entity <or_muxcy> compiled.
+Entity <or_muxcy> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/family_support.vhd" in Library proc_common_v3_00_a.
+Package <family_support> compiled.
+Package body <family_support> compiled.
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/counter_f.vhd" in Library proc_common_v3_00_a.
+Entity <counter_f> compiled.
+Entity <counter_f> (Architecture <imp>) compiled.
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/pselect_f.vhd" in Library proc_common_v3_00_a.
+Entity <pselect_f> compiled.
+Entity <pselect_f> (Architecture <imp>) compiled.
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/or_gate128.vhd" in Library proc_common_v3_00_a.
+Entity <or_gate128> compiled.
+Entity <or_gate128> (Architecture <imp>) compiled.
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hd
+l/vhdl/ipif_pkg.vhd" in Library proc_common_v3_00_a.
+Package <ipif_pkg> compiled.
+Package body <ipif_pkg> compiled.
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plb_address_decoder.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plb_address_decoder> compiled.
+Entity <plb_address_decoder> (Architecture <IMP>) compiled.
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plb_slave_attachment.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plb_slave_attachment> compiled.
+Entity <plb_slave_attachment> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"M:/Xilinx/12.2/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1
+_01_a/hdl/vhdl/plbv46_slave_single.vhd" in Library plbv46_slave_single_v1_01_a.
+Entity <plbv46_slave_single> compiled.
+Entity <plbv46_slave_single> (Architecture <implementation>) compiled.
+Compiling vhdl file
+"D:/Digilent/Projects/Atlys/Atlys_12_2_RevC_BIST/pcores/ac97_if_v1_10_a/hdl/vhdl
+/user_logic.vhd" in Library ac97_if_v1_10_a.
+Entity <user_logic> compiled.
+Entity <user_logic> (Architecture <IMP>) compiled.
+Compiling vhdl file
+"D:/Digilent/Projects/Atlys/Atlys_12_2_RevC_BIST/pcores/ac97_if_v1_10_a/hdl/vhdl
+/ac97_if.vhd" in Library ac97_if_v1_10_a.
+Entity <ac97_if> compiled.
+Entity <ac97_if> (Architecture <IMP>) compiled.
+
+
+Analyzing HDL attributes ...
+Entity name = ac97_if
+INFO:EDK:1607 - IPTYPE set to value : PERIPHERAL
+INFO:EDK:1511 - IMP_NETLIST set to value : TRUE
+INFO:EDK:1486 - HDL set to value : VHDL
+WARNING:EDK:3590 - Unable to delete temporary project file
+   D:\Digilent\Projects\Atlys\Atlys_12_2_RevC_BIST\pcores\ac97_if.prj : 13
+WARNING:EDK:2065 - PARAMETER:_NUM_SLAVES - SLAVE PLBV46 parameter is not defined
+   in the HDL source
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Clk!
+INFO:EDK:1470 - Get attribute value INTERRUPT from previous MPD file.
+INFO:EDK:1470 - Get attribute value LEVEL_HIGH from previous MPD file.
+INFO:EDK:1631 - Infer bus clock [SPLB_Clk] for bus interface SPLB ...
+ERROR:EDK:1987 - No port was associated to bus connector SPLB_Rst!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_abort!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_ABus!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_UABus!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_BE!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_busLock!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_lockErr!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_masterID!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_PAValid!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_rdPendPri!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_wrPendPri!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_rdPendReq!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_wrPendReq!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_rdBurst!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_rdPrim!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_reqPri!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_RNW!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_SAValid!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_MSize!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_size!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_TAttribute!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_type!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_wrBurst!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_wrDBus!
+ERROR:EDK:1987 - No port was associated to bus connector PLB_wrPrim!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_addrAck!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_MBusy!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_MRdErr!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_MWrErr!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_MIRQ!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_rdBTerm!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_rdComp!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_rdDAck!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_rdDBus!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_rdWdAddr!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_rearbitrate!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_SSize!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_wait!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_wrBTerm!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_wrComp!
+ERROR:EDK:1987 - No port was associated to bus connector Sl_wrDAck!
+INFO:EDK:1470 - Get attribute value INTERRUPT from previous MPD file.
+INFO:EDK:1470 - Get attribute value LEVEL_HIGH from previous MPD file.
+INFO:EDK:1470 - Get attribute value INTERRUPT from previous MPD file.
+INFO:EDK:1470 - Get attribute value LEVEL_HIGH from previous MPD file.
+INFO:EDK:1470 - Get attribute value INTERRUPT from previous MPD file.
+INFO:EDK:1470 - Get attribute value LEVEL_HIGH from previous MPD file.
+Copying file user_logic.vhd to
+D:\Digilent\Projects\Atlys\Atlys_12_2_RevC_BIST\pcores/ac97_if_v1_10_a/hdl/vhdl/
+...
+Copying file ac97_if.vhd to
+D:\Digilent\Projects\Atlys\Atlys_12_2_RevC_BIST\pcores/ac97_if_v1_10_a/hdl/vhdl/
+...
+
+Thank you for using Create and Import Peripheral Wizard! Please find your
+imported peripheral under
+D:\Digilent\Projects\Atlys\Atlys_12_2_RevC_BIST\pcores\ac97_if_v1_10_a.
+
+Summary:
+
+  Logical library     : ac97_if_v1_10_a
+  Version             : 1.10.a
+  Bus interface(s)    : SPLB 
+
+The following sub-directories will be created:
+
+  - ac97_if_v1_10_a\data
+  - ac97_if_v1_10_a\hdl
+  - ac97_if_v1_10_a\hdl\vhdl
+
+
+The following HDL source files will be copied into the ac97_if_v1_10_a\hdl\vhdl
+directory:
+
+  - user_logic.vhd
+  - ac97_if.vhd
+
+The following files will be created under the ac97_if_v1_10_a\data directory:
+
+  - ac97_if_v2_1_0.mpd
+  - ac97_if_v2_1_0.pao
+
+

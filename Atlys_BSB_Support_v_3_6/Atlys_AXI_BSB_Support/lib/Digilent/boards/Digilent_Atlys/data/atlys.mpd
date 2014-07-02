@@ -1,0 +1,199 @@
+
+BEGIN atlys
+
+OPTION VLNV = digilent|bsb_lib.boards|atlys|C
+
+## OPTION -> spirit:parameter
+OPTION FAMILY = spartan6
+OPTION DEVICE = xc6slx45
+OPTION PACKAGE = csg324
+OPTION SPEED_GRADE = -3
+OPTION JTAG_POSITION = 1
+OPTION SPEC_URL = www.digilentinc.com
+OPTION CONTACT_INFO_URL = www.digilentinc.com
+OPTION VendorName = Digilent
+OPTION DisplayName = Digilent Spartan-6 Atlys 
+OPTION LONG_DESC = 'The Atlys board features a Xilinx Spartan-6 XC6SLX45-3CSG324C FPGA device, two input and two output HDMI ports, 1Gb (x16) DDR2 DRAM component for use with Spartan-6, 128Mbit Numonyx N25Q 128(x4) SPI Flash memory, Marvell Alaska 10/100/1000 PHY device (88E111) with GMII interface, HID Host for USB mouse, keyboard, USB-UART bridge for the serial port, AC 97 Codec with color coded jacks, 8 slide switches, 5 pushbuttons in gamepad configuration, 8 LEDs and 1 reset button'
+
+## IO_INTERFACE -> spirit:busInterface
+IO_INTERFACE IO_IF = clock_0, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|clock|1.0
+IO_INTERFACE IO_IF = reset_0, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|reset|1.0
+IO_INTERFACE IO_IF = RS232_Uart_1, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|uart|1.0
+IO_INTERFACE IO_IF = DIP_Switches_8Bits, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|gpio|1.0
+IO_INTERFACE IO_IF = LEDs_8Bits, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|gpio|1.0
+IO_INTERFACE IO_IF = Push_Buttons_5Bits, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|gpio|1.0
+IO_INTERFACE IO_IF = MCB_DDR2, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|ddr2_sdram|1.0
+IO_INTERFACE IO_IF = QSPI_FLASH, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|XIL_QSPI_V1|1.0
+IO_INTERFACE IO_IF = Digilent_Usb_Epp, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|d_usb_epp_dstm_axi|1.0
+IO_INTERFACE IO_IF = Ethernet_Lite, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|mii|1.0
+IO_INTERFACE IO_IF = ETHERNET, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|gmii|1.0
+IO_INTERFACE IO_IF = Digilent_AC97_Cntlr, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|d_ac97_axi|1.0
+#IO_INTERFACE IO_IF = Digilent_HDMI_Cntlr, IO_TYPE = xilinx.com|bsb_lib.rtl_busdefs|axi_hdmi|1.0
+#IO_INTERFACE IO_IF = PS2_Keyboard_Mouse, IO_TYPE =    #PS2 is not yet supported in AXI, the user must instantiate an AXI-PLB bridge in XPS and attach the PS2 core to the PLB
+
+## PARAMETER -> spirit:modelParameter
+PARAMETER refclk_frequency_0 = 100000000, DT = INTEGER, RANGE=(100000000:100000000), ASSIGNMENT=CONSTANT, IO_IF = clock_0, IO_IS = frequency
+PARAMETER reset_polarity = 0, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = reset_0, IO_IS = RST_POLARITY
+
+# DIP_Switches_8Bits
+PARAMETER DIP_Switches_8Bits_GPIO_WIDTH_ID = 8, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = DIP_Switches_8Bits, IO_IS = C_GPIO_WIDTH
+PARAMETER DIP_Switches_8Bits_ALL_INPUTS_ID = 1, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = DIP_Switches_8Bits, IO_IS = C_ALL_INPUTS
+PARAMETER DIP_Switches_8Bits_IS_DUAL_ID = 0, DT = STRING, IO_IF = DIP_Switches_8Bits, IO_IS = C_IS_DUAL
+
+# LEDs_8Bits
+PARAMETER LEDs_8Bits_GPIO_WIDTH_ID = 8, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = LEDs_8Bits, IO_IS = C_GPIO_WIDTH
+PARAMETER LEDs_8Bits_ALL_INPUTS_ID = 0, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = LEDs_8Bits, IO_IS = C_ALL_INPUTS
+PARAMETER LEDs_8Bits_IS_DUAL_ID = 0, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = LEDs_8Bits, IO_IS = C_IS_DUAL
+
+# Push_Buttons_5Bits
+PARAMETER Push_Buttons_5Bits_GPIO_WIDTH_ID = 5, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = Push_Buttons_5Bits, IO_IS = C_GPIO_WIDTH
+PARAMETER Push_Buttons_5Bits_ALL_INPUTS_ID = 1, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = Push_Buttons_5Bits, IO_IS = C_ALL_INPUTS
+PARAMETER Push_Buttons_5Bits_IS_DUAL_ID = 0, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = Push_Buttons_5Bits, IO_IS = C_IS_DUAL
+
+# MCB_DDR2
+PARAMETER C_MEM_PARTNO_ID = EDE1116AXXX-8E, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_PARTNO
+PARAMETER C_BYPASS_CORE_UCF_ID = 0, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_BYPASS_CORE_UCF
+PARAMETER C_MEM_TRAS_ID = 45000, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_TRAS
+PARAMETER C_MEM_TRCD_ID = 12500, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_TRCD
+PARAMETER C_MEM_TRFC_ID = 127500, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_TRFC
+PARAMETER C_MEM_TRP_ID = 12500, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_TRP
+PARAMETER C_MEM_TYPE_ID = DDR2, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_TYPE
+PARAMETER C_MEM_BURST_LEN_ID = 4, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_BURST_LEN
+PARAMETER C_MEM_CAS_LATENCY_ID = 5, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_CAS_LATENCY
+PARAMETER C_MEM_DDR2_RTT_ID = 50OHMS, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_DDR2_RTT
+PARAMETER C_MEM_DDR2_DIFF_DQS_EN_ID = YES, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MEM_DDR2_DIFF_DQS_EN
+PARAMETER C_MCB_RZQ_LOC_ID = L6, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MCB_RZQ_LOC
+PARAMETER C_MCB_ZIO_LOC_ID = C2, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = C_MCB_ZIO_LOC
+PARAMETER MEMORY_0_BASEADDR_ID = 0x00000000, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = MEMORY_0_BASEADDR
+PARAMETER MEMORY_0_HIGHADDR_ID = 0x07ffffff, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = MCB_DDR2, IO_IS = MEMORY_0_HIGHADDR
+
+#QSPI_FLASH
+PARAMETER QSPI_FLASH_SCK_RATIO_ID = 16, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = QSPI_FLASH, IO_IS = C_SCK_RATIO
+PARAMETER QSPI_FLASH_NUM_SS_BITS_ID = 1, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = QSPI_FLASH, IO_IS = C_NUM_SS_BITS
+PARAMETER QSPI_FLASH_NUM_TRANSFER_BITS_ID = 8, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = QSPI_FLASH, IO_IS = C_NUM_TRANSFER_BITS
+PARAMETER QSPI_FLASH_EXCLUSIVE = Linear_Flash, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = QSPI_FLASH, IO_IS = EXCLUSIVE
+
+# Ethernet_Lite - MII
+PARAMETER Ethernet_Lite_EXCLUSIVE = ETHERNET, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = Ethernet_Lite, IO_IS = EXCLUSIVE
+
+# ETHERNET - GMII
+PARAMETER ethernet_PHY_TYPE_0 = GMII, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = ETHERNET, IO_IS = PHY_TYPE
+PARAMETER ethernet_IMP_TYPE_0 = "Soft TEMAC 10, 100 or 1000 Mbps", DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = ETHERNET, IO_IS = IMP_TYPE
+PARAMETER ethernet_DUPLEX_0 = FULL, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = ETHERNET, IO_IS = DUPLEX
+PARAMETER ETHERNET_EXCLUSIVE = Ethernet_Lite, DT = STRING, ASSIGNMENT=CONSTANT, IO_IF = ETHERNET, IO_IS = EXCLUSIVE
+
+## Ports
+PORT GCLK = "", DIR = I, IO_IF = clock_0, IO_IS = CLK, SIGIS=CLK, ASSIGNMENT=REQUIRE
+PORT RESET = "", DIR = I, IO_IF = reset_0, IO_IS = RESET, SIGIS=RST, ASSIGNMENT=REQUIRE
+
+# RS232_Uart_1
+PORT RS232_Uart_1_sout = "", DIR = O, IO_IF = RS232_Uart_1, IO_IS = sout
+PORT RS232_Uart_1_sin = "", DIR = I, IO_IF = RS232_Uart_1, IO_IS = sin
+
+#GPIO
+PORT DIP_Switches_8Bits_TRI_I = "", DIR = I, VEC = [7:0], IO_IF = DIP_Switches_8Bits, IO_IS = TRI_I
+PORT LEDs_8Bits_TRI_O = "", DIR = O, VEC = [7:0], IO_IF = LEDs_8Bits, IO_IS = TRI_O
+PORT Push_Buttons_5Bits_TRI_I = "", DIR = I, VEC = [0:4], IO_IF = Push_Buttons_5Bits, IO_IS = TRI_I
+
+# Digilent Usb Epp
+PORT Digilent_Usb_Epp_IFCLK_pin = "", DIR = I, IO_IF = Digilent_Usb_Epp, IO_IS = usb_ifclk
+PORT Digilent_Usb_Epp_STMEN_pin = "", DIR = I, IO_IF = Digilent_Usb_Epp, IO_IS = usb_stmen
+PORT Digilent_Usb_Epp_FLAGA_pin = "", DIR = I, IO_IF = Digilent_Usb_Epp, IO_IS = usb_flaga
+PORT Digilent_Usb_Epp_FLAGB_pin = "", DIR = I, IO_IF = Digilent_Usb_Epp, IO_IS = usb_flagb
+PORT Digilent_Usb_Epp_FLAGC_pin = "", DIR = I, IO_IF = Digilent_Usb_Epp, IO_IS = usb_flagc
+PORT Digilent_Usb_Epp_SLRD_pin = "", DIR = O, IO_IF = Digilent_Usb_Epp, IO_IS = usb_slrd
+PORT Digilent_Usb_Epp_SLWR_pin = "", DIR = O, IO_IF = Digilent_Usb_Epp, IO_IS = usb_slwr
+PORT Digilent_Usb_Epp_SLOE_pin = "", DIR = O, IO_IF = Digilent_Usb_Epp, IO_IS = usb_sloe
+PORT Digilent_Usb_Epp_FIFOADR_pin = "", DIR = O, VEC = [1:0], IO_IF = Digilent_Usb_Epp, IO_IS = usb_fifoaddr
+PORT Digilent_Usb_Epp_PKTEND_pin = "", DIR = O, IO_IF = Digilent_Usb_Epp, IO_IS = usb_pktend
+PORT Digilent_Usb_Epp_EPPRST_pin = "", DIR = I, IO_IF = Digilent_Usb_Epp, IO_IS = usb_epprst
+PORT Digilent_Usb_Epp_DB = "", DIR = IO, VEC = [7:0], IO_IF = Digilent_Usb_Epp, IO_IS = usb_dq
+PORT Digilent_Usb_Epp_IRQ_EPP_pin = "", DIR = O, IO_IF = Digilent_Usb_Epp, IO_IS = usb_irq_epp, SIGIS=INTERRUPT, SENSITIVITY=LEVEL_HIGH, INTERRUPT_PRIORITY=HIGH
+
+#MCB_DDR2
+PORT mcbx_dram_clk = "", DIR = O, IO_IF = MCB_DDR2, IO_IS = clk
+PORT mcbx_dram_clk_n = "", DIR = O, IO_IF = MCB_DDR2, IO_IS = clk_n
+PORT mcbx_dram_cke = "", DIR = O, IO_IF = MCB_DDR2, IO_IS = cke
+PORT mcbx_dram_odt = "", DIR = O, IO_IF = MCB_DDR2, IO_IS = odt
+PORT mcbx_dram_ras_n = "", DIR = O, IO_IF = MCB_DDR2, IO_IS = ras_n
+PORT mcbx_dram_cas_n = "", DIR = O, IO_IF = MCB_DDR2, IO_IS = cas_n
+PORT mcbx_dram_we_n = "", DIR = O, IO_IF = MCB_DDR2, IO_IS = we_n
+PORT mcbx_dram_ldm = "", DIR = O, IO_IF = MCB_DDR2, IO_IS = ldm
+PORT mcbx_dram_udm = "", DIR = O, IO_IF = MCB_DDR2, IO_IS = udm
+PORT mcbx_dram_ba = "", DIR = O, VEC = [2:0], IO_IF = MCB_DDR2, IO_IS = ba
+PORT mcbx_dram_addr = "", DIR = O, VEC = [12:0], IO_IF = MCB_DDR2, IO_IS = addr
+PORT mcbx_dram_dq = "", DIR = IO, VEC = [15:0], IO_IF = MCB_DDR2, IO_IS = dq
+PORT mcbx_dram_dqs = "", DIR = IO, IO_IF = MCB_DDR2, IO_IS = dqs
+PORT mcbx_dram_dqs_n = "", DIR = IO, IO_IF = MCB_DDR2, IO_IS = dqs_n
+PORT mcbx_dram_udqs = "", DIR = IO, IO_IF = MCB_DDR2, IO_IS = udqs
+PORT mcbx_dram_udqs_n = "", DIR = IO, IO_IF = MCB_DDR2, IO_IS = udqs_n
+PORT rzq = "", DIR = IO, IO_IF = MCB_DDR2, IO_IS = rzq
+PORT zio = "", DIR = IO, IO_IF = MCB_DDR2, IO_IS = zio
+
+#QSPI_FLASH
+PORT QSPI_FLASH_SCLK = "", DIR = O, IO_IF = QSPI_FLASH, IO_IS = SCK
+PORT QSPI_FLASH_IO0 = "", DIR = IO, IO_IF = QSPI_FLASH, IO_IS = IO0
+PORT QSPI_FLASH_IO1 = "", DIR = IO, IO_IF = QSPI_FLASH, IO_IS = IO1
+PORT QSPI_FLASH_IO2 = "", DIR = IO, IO_IF = QSPI_FLASH, IO_IS = IO2
+PORT QSPI_FLASH_IO3 = "", DIR = IO, IO_IF = QSPI_FLASH, IO_IS = IO3
+PORT QSPI_FLASH_SS = "", DIR = O, IO_IF = QSPI_FLASH, IO_IS = SS
+
+# 10/100 Ethernet MAC
+PORT Ethernet_Lite_MDIO = "", DIR = IO, IO_IF = Ethernet_Lite, IO_IS = MDIO
+PORT Ethernet_Lite_MDC = "", DIR = O, IO_IF = Ethernet_Lite, IO_IS = MDC
+#PORT Ethernet_Lite_TX_ER = "", DIR = O, IO_IF = Ethernet_Lite, IO_IS = TX_ER
+PORT Ethernet_Lite_TXD = "", DIR = O, VEC = [3:0], IO_IF = Ethernet_Lite, IO_IS = TXD
+PORT Ethernet_Lite_TX_EN = "", DIR = O, IO_IF = Ethernet_Lite, IO_IS = TX_EN
+PORT Ethernet_Lite_TX_CLK = "", DIR = I, IO_IF = Ethernet_Lite, IO_IS = TX_CLK
+PORT Ethernet_Lite_COL = "", DIR = I, IO_IF = Ethernet_Lite, IO_IS = COL
+PORT Ethernet_Lite_RXD = "", DIR = I, VEC = [3:0], IO_IF = Ethernet_Lite, IO_IS = RXD
+PORT Ethernet_Lite_RX_ER = "", DIR = I, IO_IF = Ethernet_Lite, IO_IS = RX_ER
+PORT Ethernet_Lite_RX_CLK = "", DIR = I, IO_IF = Ethernet_Lite, IO_IS = RX_CLK
+PORT Ethernet_Lite_CRS = "", DIR = I, IO_IF = Ethernet_Lite, IO_IS = CRS
+PORT Ethernet_Lite_RX_DV = "", DIR = I, IO_IF = Ethernet_Lite, IO_IS = RX_DV
+PORT Ethernet_Lite_PHY_RST_N = "", DIR = O, IO_IF = Ethernet_Lite, IO_IS = PHY_RST_N
+#PORT Ethernet_Lite_MDINT = "", DIR = I, IO_IF = Ethernet_Lite, IO_IS = INTERRUPT  #, SIGIS=INTERRUPT
+
+# Soft TEMAC
+PORT ETHERNET_MDIO = "", DIR = IO, IO_IF = ETHERNET, IO_IS = MDIO
+PORT ETHERNET_MDC = "", DIR = O, IO_IF = ETHERNET, IO_IS = MDC
+PORT ETHERNET_TX_ER = "", DIR = O, IO_IF = ETHERNET, IO_IS = TX_ER
+PORT ETHERNET_TXD = "", DIR = O, VEC = [7:0], IO_IF = ETHERNET, IO_IS = TXD
+PORT ETHERNET_TX_EN = "", DIR = O, IO_IF = ETHERNET, IO_IS = TX_EN
+PORT ETHERNET_MII_TX_CLK = "", DIR = I, IO_IF = ETHERNET, IO_IS = MII_TX_CLK
+PORT ETHERNET_TX_CLK = "", DIR = O, IO_IF = ETHERNET, IO_IS = TX_CLK
+PORT ETHERNET_RXD = "", DIR = I, VEC = [7:0], IO_IF = ETHERNET, IO_IS = RXD
+PORT ETHERNET_RX_ER = "", DIR = I, IO_IF = ETHERNET, IO_IS = RX_ER
+PORT ETHERNET_RX_CLK = "", DIR = I, IO_IF = ETHERNET, IO_IS = RX_CLK
+PORT ETHERNET_RX_DV = "", DIR = I, IO_IF = ETHERNET, IO_IS = RX_DV
+PORT ETHERNET_PHY_RST_N = "", DIR = O, IO_IF = ETHERNET, IO_IS = PHY_RST_N
+
+# Digilent AC-97
+PORT Digilent_AC97_Cntlr_BITCLK_pin = "", DIR = O, IO_IF = Digilent_AC97_Cntlr, IO_IS = ac97_bitclk
+PORT Digilent_AC97_Cntlr_SDATA_IN_pin = "", DIR = O, IO_IF = Digilent_AC97_Cntlr, IO_IS = ac97_sdata_in
+PORT Digilent_AC97_Cntlr_SDATA_OUT_pin = "", DIR = IO, IO_IF = Digilent_AC97_Cntlr, IO_IS = ac97_sdata_out
+PORT Digilent_AC97_Cntlr_SYNC_pin = "", DIR = IO, IO_IF = Digilent_AC97_Cntlr, IO_IS = ac97_sync
+PORT Digilent_AC97_Cntlr_RESET_N_pin = "", DIR = IO, IO_IF = Digilent_AC97_Cntlr, IO_IS = ac97_reset_n
+PORT Digilent_AC97_Cntlr_IRQ = "", DIR = O, IO_IF = Digilent_AC97_Cntlr, IO_IS = ac97_irq, SIGIS=INTERRUPT
+
+# Digilent HDMI
+#PORT Digilent_HDMI_Cntlr_TMDS_TX_0_N_pin = "", DIR = O, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_TX_0_N
+#PORT Digilent_HDMI_Cntlr_TMDS_TX_0_P_pin = "", DIR = O, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_TX_0_P
+#PORT Digilent_HDMI_Cntlr_TMDS_TX_1_N_pin = "", DIR = O, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_TX_1_N
+#PORT Digilent_HDMI_Cntlr_TMDS_TX_1_P_pin = "", DIR = O, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_TX_1_P
+#PORT Digilent_HDMI_Cntlr_TMDS_TX_2_N_pin = "", DIR = O, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_TX_2_N
+#PORT Digilent_HDMI_Cntlr_TMDS_TX_2_P_pin = "", DIR = O, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_TX_2_P
+#PORT Digilent_HDMI_Cntlr_TMDS_TX_CLK_N_pin = "", DIR = O, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_TX_CLK_N
+#PORT Digilent_HDMI_Cntlr_TMDS_TX_CLK_P_pin = "", DIR = O, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_TX_CLK_P
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_0_N_pin = "", DIR = I, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_0_N
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_0_P_pin = "", DIR = I, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_0_P
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_1_N_pin = "", DIR = I, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_1_N
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_1_P_pin = "", DIR = I, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_1_P
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_2_N_pin = "", DIR = I, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_2_N
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_2_P_pin = "", DIR = I, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_2_P
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_CLK_N_pin = "", DIR = I, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_CLK_N
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_CLK_P_pin = "", DIR = I, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_CLK_P
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_SCL_pin = "", DIR = I, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_SCL
+#PORT Digilent_HDMI_Cntlr_TMDS_RX_SDA_pin = "", DIR = IO, IO_IF = Digilent_HDMI_Cntlr, IO_IS = TMDS_RX_SDA
+
+END

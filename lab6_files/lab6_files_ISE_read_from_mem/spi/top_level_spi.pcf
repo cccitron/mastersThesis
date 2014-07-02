@@ -1,0 +1,39 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue Jun 10 16:06:48 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "fx2Clk_in" LOCATE = SITE "C10" LEVEL 1;
+COMP "fx2Data_io<0>" LOCATE = SITE "A2" LEVEL 1;
+COMP "fx2Data_io<1>" LOCATE = SITE "D6" LEVEL 1;
+COMP "fx2Data_io<2>" LOCATE = SITE "C6" LEVEL 1;
+COMP "fx2Data_io<3>" LOCATE = SITE "B3" LEVEL 1;
+COMP "fx2Data_io<4>" LOCATE = SITE "A3" LEVEL 1;
+COMP "fx2Data_io<5>" LOCATE = SITE "B4" LEVEL 1;
+COMP "fx2Data_io<6>" LOCATE = SITE "A4" LEVEL 1;
+COMP "fx2Data_io<7>" LOCATE = SITE "C5" LEVEL 1;
+COMP "clk_100MHz" LOCATE = SITE "L15" LEVEL 1;
+COMP "fx2Read_out" LOCATE = SITE "F13" LEVEL 1;
+COMP "leds<0>" LOCATE = SITE "U18" LEVEL 1;
+COMP "leds<1>" LOCATE = SITE "M14" LEVEL 1;
+COMP "leds<2>" LOCATE = SITE "N14" LEVEL 1;
+COMP "leds<3>" LOCATE = SITE "L14" LEVEL 1;
+COMP "leds<4>" LOCATE = SITE "M13" LEVEL 1;
+COMP "leds<5>" LOCATE = SITE "D4" LEVEL 1;
+COMP "leds<6>" LOCATE = SITE "P16" LEVEL 1;
+COMP "spi_wp_bar" LOCATE = SITE "T14" LEVEL 1;
+COMP "spi_clk" LOCATE = SITE "R15" LEVEL 1;
+COMP "spi_din" LOCATE = SITE "R13" LEVEL 1;
+COMP "fx2GotData_in" LOCATE = SITE "C15" LEVEL 1;
+COMP "spi_hold_bar" LOCATE = SITE "V14" LEVEL 1;
+COMP "fx2GotRoom_in" LOCATE = SITE "A9" LEVEL 1;
+COMP "reset_btn" LOCATE = SITE "F5" LEVEL 1;
+COMP "spi_cs" LOCATE = SITE "V3" LEVEL 1;
+COMP "fx2Write_out" LOCATE = SITE "E13" LEVEL 1;
+COMP "spi_dout" LOCATE = SITE "T13" LEVEL 1;
+COMP "fx2PktEnd_out" LOCATE = SITE "C4" LEVEL 1;
+COMP "fx2Addr_out<0>" LOCATE = SITE "A14" LEVEL 1;
+COMP "fx2Addr_out<1>" LOCATE = SITE "B14" LEVEL 1;
+COMP "fx2OE_out" LOCATE = SITE "A15" LEVEL 1;
+SCHEMATIC END;
+

@@ -1,0 +1,20 @@
+##############################################################################
+## Filename:          E:\Nexys3\test10\pcores/d_qspi_axi_v1_00_a/data/d_qspi_axi_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Sep 02 11:19:22 2011 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a proc_common_pkg vhdl
+lib proc_common_v3_00_a family_support vhdl
+lib proc_common_v3_00_a pselect_f vhdl
+lib proc_common_v3_00_a ipif_pkg vhdl
+lib d_qspi_axi_v1_00_a spi_tr8 verilog
+lib d_qspi_axi_v1_00_a spi_fifo_send verilog
+lib d_qspi_axi_v1_00_a spi_fifo_receive verilog
+lib proc_common_v3_00_a counter_f vhdl
+lib axi_lite_ipif_v1_01_a address_decoder vhdl
+lib d_qspi_axi_v1_00_a spi_sf verilog
+lib axi_lite_ipif_v1_01_a slave_attachment vhdl
+lib d_qspi_axi_v1_00_a user_logic vhdl
+lib axi_lite_ipif_v1_01_a axi_lite_ipif vhdl
+lib d_qspi_axi_v1_00_a d_qspi_axi vhdl

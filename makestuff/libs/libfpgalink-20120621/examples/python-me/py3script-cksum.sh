@@ -1,2 +1,4 @@
-dd of=/var/tmp/foo.dat if=/dev/urandom bs=65536 count=160
-sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/backup1-ex_cksum-me/top_level.xsvf
+#sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/ex_cksum-me/source/default.xsvf
+#sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum-fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/atlys_ddr_test/default.xsvf
+#sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum-fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x /home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/default.xsvf
+sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum_comp-to-fpga_fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/default.xsvf

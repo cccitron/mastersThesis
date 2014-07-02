@@ -1,0 +1,23 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Jun 09 17:54:15 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "spi_wp_bar" LOCATE = SITE "T14" LEVEL 1;
+COMP "clk_100MHz" LOCATE = SITE "L15" LEVEL 1;
+COMP "spi_hold_bar" LOCATE = SITE "V14" LEVEL 1;
+COMP "leds<0>" LOCATE = SITE "U18" LEVEL 1;
+COMP "leds<1>" LOCATE = SITE "M14" LEVEL 1;
+COMP "spi_cs" LOCATE = SITE "V3" LEVEL 1;
+COMP "leds<2>" LOCATE = SITE "N14" LEVEL 1;
+COMP "leds<3>" LOCATE = SITE "L14" LEVEL 1;
+COMP "leds<4>" LOCATE = SITE "M13" LEVEL 1;
+COMP "leds<5>" LOCATE = SITE "D4" LEVEL 1;
+COMP "leds<6>" LOCATE = SITE "P16" LEVEL 1;
+COMP "leds<7>" LOCATE = SITE "N12" LEVEL 1;
+COMP "spi_clk" LOCATE = SITE "R15" LEVEL 1;
+COMP "spi_din" LOCATE = SITE "R13" LEVEL 1;
+COMP "spi_dout" LOCATE = SITE "T13" LEVEL 1;
+COMP "reset_btn" LOCATE = SITE "F5" LEVEL 1;
+SCHEMATIC END;
+

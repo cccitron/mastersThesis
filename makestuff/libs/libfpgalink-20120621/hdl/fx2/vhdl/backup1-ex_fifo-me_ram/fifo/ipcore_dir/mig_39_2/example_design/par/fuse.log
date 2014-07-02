@@ -1,0 +1,51 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top_isim_beh.exe -prj /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top_beh.prj work.tb_example_top 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/data_prbs_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/v6_data_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/sp6_data_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/afifo.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/iodrp_mcb_controller.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/iodrp_controller.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/wr_data_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/read_posted_fifo.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/rd_data_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" into library work
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/mcb_soft_calibration.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/write_data_path.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/tg_status.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/read_data_path.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/mcb_flow_control.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/mcb_soft_calibration_top.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/mcb_traffic_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/init_mem_pattern_ctr.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/mcb_raw_wrapper.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/memc3_wrapper.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/memc3_tb_top.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/memc3_infrastructure.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/example_top.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" into library work
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 160: <c3_calib_done> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 163: <c3_calib_done> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 166: <c3_calib_done> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 172: <c3_p1_wr_en> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 173: <c3_p1_wr_data> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 176: <c3_p1_wr_data> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 178: <c3_p1_wr_data> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 180: <c3_p1_wr_data> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 182: <c3_p1_wr_data> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 184: <c3_p1_wr_data> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 186: <c3_p1_wr_data> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 189: <c3_p1_wr_en> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 193: <c3_p1_wr_count> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 198: <c3_p1_cmd_instr> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 199: <c3_p1_cmd_bl> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 200: <c3_p1_cmd_byte_addr> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 203: <c3_p1_cmd_en> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 206: <c3_p1_cmd_en> is not declared.
+ERROR:HDLCompiler:69 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" Line 210: <c3_p1_cmd_bl> is not declared.
+Sorry, too many errors..

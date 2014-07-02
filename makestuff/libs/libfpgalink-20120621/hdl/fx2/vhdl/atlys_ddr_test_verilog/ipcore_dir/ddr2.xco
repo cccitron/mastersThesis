@@ -1,0 +1,15 @@
+##############################################################
+##############################################################
+##############################################################
+SET designentry = Verilog
+SET BusFormat = BusFormatAngleBracketNotRipped
+SET devicefamily = spartan6
+SET device = xc6slx45
+SET package = csg324
+SET speedgrade = -3
+SET FlowVendor = Foundation_ISE
+SET VerilogSim = True
+SET VHDLSim = True
+SELECT MIG family Xilinx,_Inc. 3.61
+CSET component_name=ddr2
+CSET xml_input_file=./ddr2/user_design/mig.prj

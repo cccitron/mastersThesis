@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<spirit:vendor>digilent</spirit:vendor>
+	<spirit:library>bsb_lib.components</spirit:library>
+	<spirit:name>bsb_component</spirit:name>
+	<spirit:version>C</spirit:version>
+	<spirit:busInterfaces>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>clock_0</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="ref_clock" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>frequency</spirit:name>
+					<spirit:value spirit:format="long" spirit:resolve="immediate" spirit:id="refclk_frequency_0" spirit:minimum="100000000" spirit:maximum="100000000" spirit:rangeType="int">100000000</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>reset_0</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="ref_reset" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>RST_POLARITY</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="reset_polarity">0</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>RS232_Uart_1</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="uart" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>DIP_Switches_8Bits</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="gpio" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>C_GPIO_WIDTH</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="DIP_Switches_8Bits_GPIO_WIDTH_ID">8</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_ALL_INPUTS</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="DIP_Switches_8Bits_ALL_INPUTS_ID">1</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_IS_DUAL</spirit:name>
+					<spirit:value spirit:format="string" spirit:id="DIP_Switches_8Bits_IS_DUAL_ID">0</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>LEDs_8Bits</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="gpio" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>C_GPIO_WIDTH</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="LEDs_8Bits_GPIO_WIDTH_ID">8</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_ALL_INPUTS</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="LEDs_8Bits_ALL_INPUTS_ID">0</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_IS_DUAL</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="LEDs_8Bits_IS_DUAL_ID">0</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>Push_Buttons_5Bits</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="gpio" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>C_GPIO_WIDTH</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="Push_Buttons_5Bits_GPIO_WIDTH_ID">5</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_ALL_INPUTS</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="Push_Buttons_5Bits_ALL_INPUTS_ID">1</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_IS_DUAL</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="Push_Buttons_5Bits_IS_DUAL_ID">0</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>MCB_DDR2</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="s6_ddrx_memory" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>C_MEM_PARTNO</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_PARTNO_ID">EDE1116AXXX-8E</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_BYPASS_CORE_UCF</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_BYPASS_CORE_UCF_ID">0</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MEM_TRAS</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_TRAS_ID">45000</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MEM_TRCD</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_TRCD_ID">12500</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MEM_TRFC</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_TRFC_ID">127500</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MEM_TRP</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_TRP_ID">12500</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MEM_TYPE</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_TYPE_ID">DDR2</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MEM_BURST_LEN</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_BURST_LEN_ID">4</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MEM_CAS_LATENCY</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_CAS_LATENCY_ID">5</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MEM_DDR2_RTT</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_DDR2_RTT_ID">50OHMS</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MEM_DDR2_DIFF_DQS_EN</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MEM_DDR2_DIFF_DQS_EN_ID">YES</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MCB_RZQ_LOC</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MCB_RZQ_LOC_ID">L6</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_MCB_ZIO_LOC</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="C_MCB_ZIO_LOC_ID">C2</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>MEMORY_0_BASEADDR</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="MEMORY_0_BASEADDR_ID">0x00000000</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>MEMORY_0_HIGHADDR</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="MEMORY_0_HIGHADDR_ID">0x07ffffff</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>QSPI_FLASH</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="XIL_QSPI_V1" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>C_SCK_RATIO</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="QSPI_FLASH_SCK_RATIO_ID">16</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_NUM_SS_BITS</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="QSPI_FLASH_NUM_SS_BITS_ID">1</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>C_NUM_TRANSFER_BITS</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="QSPI_FLASH_NUM_TRANSFER_BITS_ID">8</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>		
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>Digilent_Usb_Epp</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="d_usb_epp_dstm_axi" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>Ethernet_Lite</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="ethernetlite" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>EXCLUSIVE</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="Ethernet_Lite_EXCLUSIVE">ETHERNET</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>ETHERNET</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="ethernet" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+			<spirit:parameters>
+				<spirit:parameter>
+					<spirit:name>PHY_TYPE</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="ethernet_PHY_TYPE_0">GMII</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>IMP_TYPE</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="ethernet_IMP_TYPE_0">Soft TEMAC 10, 100 or 1000 Mbps</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>DUPLEX</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="ethernet_DUPLEX_0">FULL</spirit:value>
+				</spirit:parameter>
+				<spirit:parameter>
+					<spirit:name>EXCLUSIVE</spirit:name>
+					<spirit:value spirit:format="string" spirit:resolve="immediate" spirit:id="ETHERNET_EXCLUSIVE">Ethernet_Lite</spirit:value>
+				</spirit:parameter>
+			</spirit:parameters>
+		</spirit:busInterface>
+		<spirit:busInterface spirit:service="requestor">
+			<spirit:name>Digilent_AC97_Cntlr</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com" spirit:library="bsb_lib.busdefs" spirit:name="d_ac97_axi" spirit:version="1.0"/>
+			<spirit:master>
+			</spirit:master>
+		</spirit:busInterface>
+	</spirit:busInterfaces>
+</spirit:component>

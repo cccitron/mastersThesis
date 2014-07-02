@@ -1,0 +1,1185 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -uc example_top.ucf -p xc6slx45-csg324-3
+example_top.ngc example_top.ngd
+
+Reading NGO file
+"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/e
+x_fifo-me/fifo/ipcore_dir/mig_39_2/example_design/par/example_top.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "example_top.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK3', used in period specification
+   'TS_SYS_CLK3', was traced into PLL_ADV instance u_pll_adv. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT3: <TIMESPEC TS_memc3_infrastructure_inst_mcb_drp_clk_bufg_in = PERIOD
+   "memc3_infrastructure_inst_mcb_drp_clk_bufg_in" TS_SYS_CLK3 / 0.25 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK3', used in period specification
+   'TS_SYS_CLK3', was traced into PLL_ADV instance u_pll_adv. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT1: <TIMESPEC TS_memc3_infrastructure_inst_clk_2x_180 = PERIOD
+   "memc3_infrastructure_inst_clk_2x_180" TS_SYS_CLK3 / 2 PHASE 0.75 ns HIGH
+   50%>
+
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK3', used in period specification
+   'TS_SYS_CLK3', was traced into PLL_ADV instance u_pll_adv. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT0: <TIMESPEC TS_memc3_infrastructure_inst_clk_2x_0 = PERIOD
+   "memc3_infrastructure_inst_clk_2x_0" TS_SYS_CLK3 / 2 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK3', used in period specification
+   'TS_SYS_CLK3', was traced into PLL_ADV instance u_pll_adv. The following new
+   TNM groups and period specifications were generated at the PLL_ADV output(s):
+    
+   CLKOUT2: <TIMESPEC TS_memc3_infrastructure_inst_clk0_bufg_in = PERIOD
+   "memc3_infrastructure_inst_clk0_bufg_in" TS_SYS_CLK3 / 0.125 HIGH 50%>
+
+Done...
+
+Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'c3_p0_cmd_byte_addr<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p0_cmd_byte_addr<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p0_cmd_byte_addr<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p0_cmd_byte_addr<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p1_cmd_byte_addr<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p1_cmd_byte_addr<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p1_cmd_byte_addr<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p1_cmd_byte_addr<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p2_cmd_byte_addr<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p2_cmd_byte_addr<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p2_cmd_byte_addr<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p2_cmd_byte_addr<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p3_cmd_byte_addr<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p3_cmd_byte_addr<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p3_cmd_byte_addr<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'c3_p3_cmd_byte_addr<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'N24' has no driver
+WARNING:NgdBuild:452 - logical net 'N25' has no driver
+WARNING:NgdBuild:452 - logical net 'N26' has no driver
+WARNING:NgdBuild:452 - logical net 'N27' has no driver
+WARNING:NgdBuild:452 - logical net 'N28' has no driver
+WARNING:NgdBuild:452 - logical net 'N29' has no driver
+WARNING:NgdBuild:452 - logical net 'N30' has no driver
+WARNING:NgdBuild:452 - logical net 'N31' has no driver
+WARNING:NgdBuild:452 - logical net 'N32' has no driver
+WARNING:NgdBuild:452 - logical net 'N33' has no driver
+WARNING:NgdBuild:452 - logical net 'N34' has no driver
+WARNING:NgdBuild:452 - logical net 'N35' has no driver
+WARNING:NgdBuild:452 - logical net 'N36' has no driver
+WARNING:NgdBuild:452 - logical net 'N37' has no driver
+WARNING:NgdBuild:452 - logical net 'N38' has no driver
+WARNING:NgdBuild:452 - logical net 'N39' has no driver
+WARNING:NgdBuild:452 - logical net 'N40' has no driver
+WARNING:NgdBuild:452 - logical net 'N41' has no driver
+WARNING:NgdBuild:452 - logical net 'N42' has no driver
+WARNING:NgdBuild:452 - logical net 'N43' has no driver
+WARNING:NgdBuild:452 - logical net 'N44' has no driver
+WARNING:NgdBuild:452 - logical net 'N45' has no driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<127>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<126>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<125>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<124>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<123>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<122>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<121>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<120>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<119>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<118>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<117>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<116>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<115>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<114>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<113>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<112>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<111>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<110>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<109>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<108>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<107>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<106>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<105>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<104>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<103>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<102>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<101>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<100>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<99>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<98>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<97>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<96>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<95>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<94>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<93>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<92>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<91>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<90>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<89>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<88>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<87>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<86>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<85>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<84>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<83>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<82>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<81>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<80>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<79>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<78>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<77>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<76>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<75>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<74>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<73>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<72>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<71>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<70>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<69>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<68>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<67>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<66>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<65>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<64>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<63>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<62>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<61>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<60>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<59>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<58>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<57>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<56>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<55>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<54>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<53>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<52>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<51>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<50>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<49>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<48>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<47>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<46>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<45>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<44>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<43>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<42>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<41>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<40>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<39>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<38>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<37>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<36>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<35>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<34>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<33>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<32>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<31>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<30>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<29>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<28>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<27>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<26>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<25>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<24>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<23>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<22>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<21>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<20>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<19>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<18>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<17>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<16>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<15>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<14>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<13>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<12>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<11>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<10>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<9>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<8>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<7>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<6>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<5>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<4>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<3>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<2>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<1>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'memc3_tb_top_inst/error_status<0>' has no
+   driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p0/rd_buff_avail<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p0/last_word_rd' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p0/force_wrcmd_gen' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p0/mcb_wr_data_end_o' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p0/RD_PATH.read_data_path_inst/user_bl_cnt_i
+   s_1' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p0/xhdl18.write_data_path_inst/wr_data_gen_i
+   nst/s6_wdgen.sp6_data_gen_inst/cmd_startE' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/rd_buff_avail<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/last_word_rd' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/force_wrcmd_gen' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/mcb_wr_data_end_o' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<127>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<126>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<125>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<124>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<123>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<122>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<121>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<120>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<119>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<118>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<117>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<116>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<115>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<114>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<113>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<112>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<111>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<110>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<109>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<108>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<107>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<106>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<105>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<104>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<103>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<102>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<101>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<100>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<99>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<98>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<97>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<96>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<95>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<94>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<93>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<92>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<91>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<90>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<89>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<88>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<87>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<86>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<85>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<84>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<83>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<82>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<81>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<80>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<79>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<78>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<77>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<76>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<75>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<74>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<73>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<72>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<71>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<70>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<69>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<68>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<67>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<66>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<65>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<64>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<63>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<62>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<61>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<60>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<59>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<58>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<57>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<56>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<55>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<54>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<53>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<52>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<51>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<50>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<49>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<48>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<47>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<46>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<45>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<44>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<43>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<42>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<41>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<40>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<39>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<38>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<37>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<36>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<35>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<34>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<33>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<32>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<31>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<30>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<29>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<28>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<27>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<26>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<25>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<24>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<23>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<22>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<21>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<20>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<19>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<18>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<17>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<16>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<15>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<14>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<13>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<12>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<11>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<10>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<9>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<8>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<7>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<6>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<5>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<4>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<3>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<2>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<1>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/error_status<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/RD_PATH.read_data_path_inst/user_bl_cnt_i
+   s_1' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p1/xhdl18.write_data_path_inst/wr_data_gen_i
+   nst/s6_wdgen.sp6_data_gen_inst/cmd_startE' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/rd_buff_avail<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/last_word_rd' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/force_wrcmd_gen' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/mcb_wr_data_end_o' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<127>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<126>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<125>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<124>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<123>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<122>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<121>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<120>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<119>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<118>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<117>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<116>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<115>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<114>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<113>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<112>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<111>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<110>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<109>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<108>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<107>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<106>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<105>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<104>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<103>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<102>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<101>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<100>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<99>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<98>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<97>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<96>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<95>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<94>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<93>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<92>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<91>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<90>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<89>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<88>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<87>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<86>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<85>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<84>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<83>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<82>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<81>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<80>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<79>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<78>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<77>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<76>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<75>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<74>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<73>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<72>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<71>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<70>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<69>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<68>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<67>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<66>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<65>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<64>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<63>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<62>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<61>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<60>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<59>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<58>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<57>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<56>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<55>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<54>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<53>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<52>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<51>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<50>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<49>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<48>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<47>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<46>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<45>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<44>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<43>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<42>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<41>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<40>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<39>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<38>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<37>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<36>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<35>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<34>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<33>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<32>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<31>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<30>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<29>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<28>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<27>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<26>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<25>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<24>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<23>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<22>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<21>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<20>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<19>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<18>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<17>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<16>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<15>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<14>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<13>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<12>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<11>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<10>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<9>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<8>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<7>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<6>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<5>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<4>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<3>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<2>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<1>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/error_status<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/RD_PATH.read_data_path_inst/user_bl_cnt_i
+   s_1' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p2/xhdl18.write_data_path_inst/wr_data_gen_i
+   nst/s6_wdgen.sp6_data_gen_inst/cmd_startE' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/rd_buff_avail<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/last_word_rd' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/force_wrcmd_gen' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/mcb_wr_data_end_o' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<127>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<126>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<125>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<124>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<123>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<122>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<121>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<120>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<119>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<118>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<117>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<116>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<115>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<114>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<113>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<112>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<111>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<110>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<109>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<108>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<107>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<106>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<105>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<104>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<103>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<102>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<101>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<100>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<99>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<98>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<97>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<96>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<95>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<94>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<93>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<92>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<91>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<90>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<89>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<88>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<87>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<86>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<85>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<84>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<83>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<82>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<81>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<80>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<79>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<78>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<77>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<76>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<75>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<74>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<73>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<72>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<71>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<70>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<69>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<68>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<67>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<66>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<65>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<64>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<63>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<62>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<61>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<60>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<59>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<58>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<57>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<56>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<55>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<54>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<53>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<52>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<51>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<50>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<49>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<48>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<47>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<46>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<45>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<44>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<43>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<42>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<41>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<40>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<39>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<38>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<37>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<36>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<35>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<34>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<33>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<32>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<31>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<30>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<29>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<28>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<27>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<26>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<25>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<24>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<23>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<22>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<21>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<20>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<19>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<18>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<17>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<16>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<15>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<14>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<13>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<12>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<11>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<10>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<9>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<8>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<7>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<6>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<5>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<4>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<3>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<2>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<1>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/error_status<0>' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/RD_PATH.read_data_path_inst/user_bl_cnt_i
+   s_1' has no driver
+WARNING:NgdBuild:452 - logical net
+   'memc3_tb_top_inst/m_traffic_gen_p3/xhdl18.write_data_path_inst/wr_data_gen_i
+   nst/s6_wdgen.sp6_data_gen_inst/cmd_startE' has no driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings: 574
+
+Total memory usage is 433484 kilobytes
+
+Writing NGD file "example_top.ngd" ...
+Total REAL time to NGDBUILD completion:  7 sec
+Total CPU time to NGDBUILD completion:   7 sec
+
+Writing NGDBUILD log file "example_top.bld"...

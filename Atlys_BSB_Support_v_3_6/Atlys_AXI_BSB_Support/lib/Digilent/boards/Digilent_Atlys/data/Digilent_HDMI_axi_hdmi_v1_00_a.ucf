@@ -1,0 +1,36 @@
+#### HDMI Core constraints
+# Overwrite existing VCCAUX setting for TMDS interfaces
+CONFIG VCCAUX = 3.3;
+
+############################################################
+
+NET "*TMDS_TX_0_N*"    LOC = "C8"  | IOSTANDARD = "TMDS_33";
+NET "*TMDS_TX_0_P*"    LOC = "D8"  | IOSTANDARD = "TMDS_33";
+NET "*TMDS_TX_1_N*"    LOC = "A7"  | IOSTANDARD = "TMDS_33";
+NET "*TMDS_TX_1_P*"    LOC = "C7"  | IOSTANDARD = "TMDS_33";
+NET "*TMDS_TX_2_N*"    LOC = "A8"  | IOSTANDARD = "TMDS_33";
+NET "*TMDS_TX_2_P*"    LOC = "B8"  | IOSTANDARD = "TMDS_33";
+NET "*TMDS_TX_CLK_N*"  LOC = "A6"  | IOSTANDARD = "TMDS_33";
+NET "*TMDS_TX_CLK_P*"  LOC = "B6"  | IOSTANDARD = "TMDS_33";
+NET "*TMDS_RX_0_N*"    LOC = "K18" | IOSTANDARD = "TMDS_33";
+NET "*TMDS_RX_0_P*"    LOC = "K17" | IOSTANDARD = "TMDS_33";
+NET "*TMDS_RX_1_N*"    LOC = "L18" | IOSTANDARD = "TMDS_33";
+NET "*TMDS_RX_1_P*"    LOC = "L17" | IOSTANDARD = "TMDS_33";
+NET "*TMDS_RX_2_N*"    LOC = "J18" | IOSTANDARD = "TMDS_33";
+NET "*TMDS_RX_2_P*"    LOC = "J16" | IOSTANDARD = "TMDS_33";
+NET "*TMDS_RX_CLK_N*"  LOC = "H18" | IOSTANDARD = "TMDS_33";
+NET "*TMDS_RX_CLK_P*"  LOC = "H17" | IOSTANDARD = "TMDS_33";
+NET "*TMDS_RX_SCL*"    LOC = "M16" | IOSTANDARD = "I2C";
+NET "*TMDS_RX_SDA*"    LOC = "M18" | IOSTANDARD = "I2C";
+
+############################################################
+
+NET "*SIG_PLL0?CLKOUT2" TNM_NET = globclk;
+NET "*Inst_DynClkGen?PllOut_x1" TNM_NET = hdmipclk;
+
+############################################################
+# Timing Constraints                                       #
+############################################################
+
+TIMESPEC TS_path1 = FROM globclk TO hdmipclk 14 ns;
+TIMESPEC TS_path2 = FROM hdmipclk TO globclk 10 ns;

@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "D:\Download\Atlys\Atlys_12_2_RevC_BIST\pcores\ac97_if_v1_10_a\devl\synthesis\ac97_if_xst.prj"
+-top ac97_if
+-p virtex5
+-ofn "D:\Download\Atlys\Atlys_12_2_RevC_BIST\pcores\ac97_if_v1_10_a\devl\synthesis\ac97_if_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib ac97_if_v1_10_a

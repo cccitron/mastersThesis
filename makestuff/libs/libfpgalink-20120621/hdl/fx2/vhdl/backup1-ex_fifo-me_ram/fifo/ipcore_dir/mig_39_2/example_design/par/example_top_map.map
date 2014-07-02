@@ -1,0 +1,58 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Map Application Log File for Design 'example_top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
+-pr off -lc off -power off -o example_top_map.ncd example_top.ngd
+example_top.pcf 
+Target Device  : xc6slx45
+Target Package : csg324
+Target Speed   : -3
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Wed Mar 26 17:59:56 2014
+
+Mapping design into LUTs...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 15 secs 
+Total CPU  time at the beginning of Placer: 15 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:1baf658d) REAL time: 17 secs 
+
+Phase 2.7  Design Feasibility Check
+ERROR:Place:864 - Incompatible IOB's are locked to the same bank 0
+   Conflicting IO Standards are:
+   IO Standard 1: Name = LVTTL, VREF = NR, VCCO = 3.30, TERM = NONE, DIR =
+   OUTPUT, DRIVE_STR = 12
+   List of locked IOB's:
+   	led_out<5>
+
+   IO Standard 2: Name = LVCMOS18, VREF = NR, VCCO = 1.80, TERM = NONE, DIR =
+   OUTPUT, DRIVE_STR = 12
+   List of locked IOB's:
+   	calib_done
+   	error
+
+   These IO Standards are incompatible due to VCCO mismatch.
+
+Phase 2.7  Design Feasibility Check (Checksum:1baf658d) REAL time: 17 secs 
+
+Total REAL time to Placer completion: 17 secs 
+Total CPU  time to Placer completion: 17 secs 
+ERROR:Pack:1654 - The timing-driven placement phase encountered an error.
+
+Mapping completed.
+See MAP report file "example_top_map.mrp" for details.
+Problem encountered during the packing phase.
+
+Design Summary
+--------------
+Number of errors   :   2
+Number of warnings :   0

@@ -1,0 +1,32 @@
+###################################################################
+##
+## Name     : svn_seg_axi_mapper
+## Desc     : Map for RTL to Hurri
+##
+###################################################################
+
+BEGIN svn_seg_axi_mapper
+
+# bsb options
+OPTION CORE_TEMPLATE_ASSOC = svn_seg_axi_template
+OPTION HURRI_DESC = svn_seg_axi_template component
+OPTION HURRI_VLNV = xilinx.com|bsb_lib.components|svn_seg_axi_template|1.0
+
+OPTION RTL_DESC = svn_seg_axi component
+OPTION RTL_VLNV = xilinx.com|bsb_lib.rtl_components|svn_seg_axi|1.00.a
+
+## Peripheral Options
+OPTION IPTYPE = PERIPHERAL
+OPTION USAGE_LEVEL = BASE_USER
+OPTION DESC = AXI4Lite Seven Segmnent Decoder Mapper RTL to Hurri
+OPTION LONG_DESC = AXI4Lite Seven Segment Decoder Mapper RTL to Hurri
+OPTION IP_GROUP = Digilent:MICROBLAZE
+
+## Bus Interfaces
+BUS_INTERFACE BUS = S_AXI, BUS_STD = AXI, BUS_TYPE = SLAVE, DESC = connect_0
+
+## Generics for VHDL or Parameters for Verilog
+## Ports
+PORT S_AXI_ACLK = "", DIR = I, SIGIS = CLK, DESC = clock_0
+
+END

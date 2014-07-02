@@ -1,0 +1,240 @@
+ISim log file
+Running: /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_example_top/uut/memc3_wrapper_inst/memc3_mcb_raw_wrapper_inst/gen_term_calib/mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/rd_mdata_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/rd_path/read_data_path_inst/read_postedfifo/rd_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/rd_path/read_data_path_inst/rd_mdata_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/rd_mdata_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/rd_path/read_data_path_inst/read_postedfifo/rd_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/rd_path/read_data_path_inst/rd_mdata_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/rd_mdata_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/rd_path/read_data_path_inst/read_postedfifo/rd_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/rd_path/read_data_path_inst/rd_mdata_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/rd_mdata_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/rd_path/read_data_path_inst/read_postedfifo/rd_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/rd_path/read_data_path_inst/rd_mdata_fifo/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Finished circuit initialization process.
+WARNING: This is a limited version of the ISim. The current design has exceeded the design size limit for this version and the performance of the simulation will be derated. Please contact your nearest sales office at http://www.xilinx.com/company/contact.htm or visit the Xilinx on-line store at http://www.xilinx.com/onlinestore/design_resources.htm if interested in purchasing the full, unlimited version of this simulator.
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(10), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(11), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(11), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(11), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 5 ns(11), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 125 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 205 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 285 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 365 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 445 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 525 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 605 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 685 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 765 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 845 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p0/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p1/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p2/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 925 ns(8), Instance /tb_example_top/uut/memc3_tb_top_inst/m_traffic_gen_p3/u_c_gen/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# pwd
+# cd ..
+# cd sim
+# cd functional
+# exit 0

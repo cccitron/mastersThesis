@@ -1,0 +1,116 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml absDiff.twx absDiff.ncd -o absDiff.twr absDiff.pcf -ucf
+abs.ucf
+
+Design file:              absDiff.ncd
+Physical constraint file: absDiff.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+sw_in<0>       |led_out<0>     |   16.830|
+sw_in<0>       |led_out<1>     |   17.621|
+sw_in<0>       |led_out<2>     |   18.464|
+sw_in<0>       |led_out<3>     |   18.916|
+sw_in<0>       |led_out<4>     |   19.057|
+sw_in<0>       |led_out<5>     |   23.053|
+sw_in<0>       |led_out<6>     |   20.435|
+sw_in<0>       |led_out<7>     |   20.493|
+sw_in<1>       |led_out<0>     |   17.834|
+sw_in<1>       |led_out<1>     |   18.591|
+sw_in<1>       |led_out<2>     |   19.227|
+sw_in<1>       |led_out<3>     |   19.977|
+sw_in<1>       |led_out<4>     |   20.458|
+sw_in<1>       |led_out<5>     |   24.454|
+sw_in<1>       |led_out<6>     |   21.836|
+sw_in<1>       |led_out<7>     |   21.894|
+sw_in<2>       |led_out<0>     |   18.064|
+sw_in<2>       |led_out<1>     |   19.026|
+sw_in<2>       |led_out<2>     |   19.869|
+sw_in<2>       |led_out<3>     |   20.321|
+sw_in<2>       |led_out<4>     |   20.688|
+sw_in<2>       |led_out<5>     |   24.684|
+sw_in<2>       |led_out<6>     |   22.066|
+sw_in<2>       |led_out<7>     |   22.124|
+sw_in<3>       |led_out<0>     |   18.155|
+sw_in<3>       |led_out<1>     |   19.117|
+sw_in<3>       |led_out<2>     |   19.960|
+sw_in<3>       |led_out<3>     |   20.412|
+sw_in<3>       |led_out<4>     |   20.779|
+sw_in<3>       |led_out<5>     |   24.775|
+sw_in<3>       |led_out<6>     |   22.157|
+sw_in<3>       |led_out<7>     |   22.215|
+sw_in<4>       |led_out<0>     |   17.449|
+sw_in<4>       |led_out<1>     |   18.411|
+sw_in<4>       |led_out<2>     |   19.254|
+sw_in<4>       |led_out<3>     |   19.706|
+sw_in<4>       |led_out<4>     |   20.073|
+sw_in<4>       |led_out<5>     |   24.069|
+sw_in<4>       |led_out<6>     |   21.451|
+sw_in<4>       |led_out<7>     |   21.509|
+sw_in<5>       |led_out<0>     |   17.709|
+sw_in<5>       |led_out<1>     |   18.671|
+sw_in<5>       |led_out<2>     |   19.514|
+sw_in<5>       |led_out<3>     |   19.966|
+sw_in<5>       |led_out<4>     |   20.333|
+sw_in<5>       |led_out<5>     |   24.329|
+sw_in<5>       |led_out<6>     |   21.711|
+sw_in<5>       |led_out<7>     |   21.769|
+sw_in<6>       |led_out<0>     |   17.587|
+sw_in<6>       |led_out<1>     |   18.549|
+sw_in<6>       |led_out<2>     |   19.392|
+sw_in<6>       |led_out<3>     |   19.844|
+sw_in<6>       |led_out<4>     |   20.211|
+sw_in<6>       |led_out<5>     |   24.207|
+sw_in<6>       |led_out<6>     |   21.589|
+sw_in<6>       |led_out<7>     |   21.647|
+sw_in<7>       |led_out<0>     |   16.882|
+sw_in<7>       |led_out<1>     |   17.844|
+sw_in<7>       |led_out<2>     |   18.687|
+sw_in<7>       |led_out<3>     |   19.139|
+sw_in<7>       |led_out<4>     |   19.506|
+sw_in<7>       |led_out<5>     |   23.502|
+sw_in<7>       |led_out<6>     |   20.884|
+sw_in<7>       |led_out<7>     |   20.942|
+---------------+---------------+---------+
+
+
+Analysis completed Tue Apr 22 21:45:20 2014 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 436 MB
+
+
+

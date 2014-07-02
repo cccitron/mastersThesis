@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<spirit:abstractionDefinition
+	xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4/index.xsd">
+	<spirit:vendor>xilinx.com</spirit:vendor>
+	<spirit:library>bsb_lib.rtl_busdefs</spirit:library>
+	<spirit:name>d_ac97_axi_rtl</spirit:name>
+	<spirit:version>1.0</spirit:version>
+	<spirit:busType spirit:vendor="xilinx.com"
+		spirit:library="bsb_lib.rtl_busdefs" spirit:name="d_ac97_axi"
+		spirit:version="1.0" />
+	<spirit:ports>
+		<spirit:port>
+			<spirit:logicalName>ac97_bitclk</spirit:logicalName>
+			<spirit:description>AC-97 Clock</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>ac97_sdata_in</spirit:logicalName>
+			<spirit:description>AC-97 Serial Data Input</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>ac97_sdata_out</spirit:logicalName>
+			<spirit:description>AC-97 Serial Data Output</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>ac97_sync</spirit:logicalName>
+			<spirit:description>AC-97 Sync</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+		<spirit:port>
+			<spirit:logicalName>ac97_reset_n</spirit:logicalName>
+			<spirit:description>AC-97 Reset#</spirit:description>
+			<spirit:wire>
+				<spirit:onMaster>
+					<spirit:direction>out</spirit:direction>
+				</spirit:onMaster>
+				<spirit:onSlave>
+					<spirit:direction>in</spirit:direction>
+				</spirit:onSlave>
+			</spirit:wire>
+		</spirit:port>
+	</spirit:ports>
+</spirit:abstractionDefinition>

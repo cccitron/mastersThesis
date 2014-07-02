@@ -1,0 +1,959 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Reading design: top_level_spi.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_level_spi.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_level_spi"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-csg324
+
+---- Source Options
+Top Module Name                    : top_level_spi
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/spi_ctrl.vhd" into library work
+Parsing entity <spi_ctrl>.
+INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/spi_ctrl.vhd" Line 16. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+Parsing architecture <rtl> of entity <spi_ctrl>.
+Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/debounce.vhd" into library work
+Parsing entity <debounce>.
+Parsing architecture <fsmd_arch> of entity <debounce>.
+Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/clk_divider.vhd" into library work
+Parsing entity <clk_divider>.
+Parsing architecture <arch> of entity <clk_divider>.
+Parsing VHDL file "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" into library work
+Parsing entity <top_level_spi>.
+INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 22. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 24. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+Parsing architecture <rtl> of entity <top_level_spi>.
+INFO:HDLCompiler:1676 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 39. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top_level_spi> (architecture <rtl>) from library <work>.
+
+Elaborating entity <clk_divider> (architecture <arch>) with generics from library <work>.
+
+Elaborating entity <debounce> (architecture <fsmd_arch>) from library <work>.
+
+Elaborating entity <spi_ctrl> (architecture <rtl>) from library <work>.
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 202: d_out should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 234: d_out should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 270: start_address should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 280: start_address should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 290: start_address should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 309: d_out should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" Line 332: locations_cnt should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_level_spi>.
+    Related source file is "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd".
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" line 142: Output port <db_tick> of the instance <dut_reset_debounce> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/top_level_spi.vhd" line 147: Output port <clk_enable> of the instance <dut_spi_ctrl> is unconnected or connected to loadless signal.
+    Found 4-bit register for signal <locations_cnt>.
+    Found 4-bit register for signal <state>.
+    Found 8-bit register for signal <leds>.
+    Found 1-bit register for signal <spi_clk_cnt<5>>.
+    Found 1-bit register for signal <spi_clk_cnt<4>>.
+    Found 1-bit register for signal <spi_clk_cnt<3>>.
+    Found 1-bit register for signal <spi_clk_cnt<2>>.
+    Found 1-bit register for signal <spi_clk_cnt<1>>.
+    Found 1-bit register for signal <spi_clk_cnt<0>>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 17                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 15                                             |
+    | Clock              | clk_100MHz_divided (rising_edge)               |
+    | Reset              | reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | s0                                             |
+    | Power Up State     | s0                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit adder for signal <spi_clk_cnt_next> created at line 192.
+    Found 4-bit adder for signal <locations_cnt_next> created at line 206.
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_GND_5_o_LessThan_14_o> created at line 261
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_GND_5_o_LessThan_16_o> created at line 271
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_GND_5_o_LessThan_18_o> created at line 281
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_PWR_5_o_LessThan_20_o> created at line 291
+    Found 6-bit comparator greater for signal <spi_clk_cnt[5]_PWR_5_o_LessThan_22_o> created at line 298
+    Found 4-bit comparator greater for signal <locations_cnt[3]_howmany_locations_to_read[3]_LessThan_25_o> created at line 332
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  18 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <top_level_spi> synthesized.
+
+Synthesizing Unit <clk_divider>.
+    Related source file is "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/clk_divider.vhd".
+        N = 8
+    Found 3-bit register for signal <counter>.
+    Found 1-bit register for signal <clkout_reg>.
+    Found 3-bit adder for signal <counter[2]_GND_6_o_add_3_OUT> created at line 34.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <clk_divider> synthesized.
+
+Synthesizing Unit <debounce>.
+    Related source file is "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/debounce.vhd".
+    Found 21-bit register for signal <q_reg>.
+    Found 2-bit register for signal <state_reg>.
+    Found finite state machine <FSM_1> for signal <state_reg>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | zero                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 21-bit subtractor for signal <GND_8_o_GND_8_o_sub_5_OUT<20:0>> created at line 1308.
+    Found 21-bit 4-to-1 multiplexer for signal <q_next> created at line 33.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  21 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <debounce> synthesized.
+
+Synthesizing Unit <spi_ctrl>.
+    Related source file is "/home/cccitron/mastersThesis/lab6_files/lab6_files_ISE_read_from_mem/spi/spi_ctrl.vhd".
+    Found 1-bit register for signal <rx_empty>.
+    Found 1-bit register for signal <spi_clk_int>.
+    Found 8-bit register for signal <add_h>.
+    Found 8-bit register for signal <add_m>.
+    Found 8-bit register for signal <add_l>.
+    Found 8-bit register for signal <tx_data>.
+    Found 5-bit register for signal <state>.
+    Found 8-bit register for signal <rx_data>.
+    Found 2-bit register for signal <clk_cnt>.
+    Found 1-bit register for signal <clk_en>.
+    Found 1-bit register for signal <tx_enable_d>.
+    Found 1-bit register for signal <rd_data1>.
+    Found 1-bit register for signal <rd_data2>.
+    Found 1-bit register for signal <rx_ready>.
+    Found 8-bit register for signal <cmd>.
+    Found 1-bit register for signal <tx_new_data>.
+    Found 4-bit register for signal <tx_bit_cnt>.
+    Found 1-bit register for signal <tx_empty_set>.
+    Found 4-bit register for signal <rx_bit_cnt>.
+    Found 1-bit register for signal <rx_ready_set>.
+    Found 1-bit register for signal <rx_empty_clr>.
+    Found 1-bit register for signal <tx_empty>.
+    Found 1-bit register for signal <rx_sreg<7>>.
+    Found 1-bit register for signal <rx_sreg<6>>.
+    Found 1-bit register for signal <rx_sreg<5>>.
+    Found 1-bit register for signal <rx_sreg<4>>.
+    Found 1-bit register for signal <rx_sreg<3>>.
+    Found 1-bit register for signal <rx_sreg<2>>.
+    Found 1-bit register for signal <rx_sreg<1>>.
+    Found 1-bit register for signal <rx_sreg<0>>.
+    Found 1-bit register for signal <tx_sreg<7>>.
+    Found 1-bit register for signal <tx_sreg<6>>.
+    Found 1-bit register for signal <tx_sreg<5>>.
+    Found 1-bit register for signal <tx_sreg<4>>.
+    Found 1-bit register for signal <tx_sreg<3>>.
+    Found 1-bit register for signal <tx_sreg<2>>.
+    Found 1-bit register for signal <tx_sreg<1>>.
+    Found 1-bit register for signal <tx_sreg<0>>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 17                                             |
+    | Transitions        | 71                                             |
+    | Inputs             | 23                                             |
+    | Outputs            | 12                                             |
+    | Clock              | clk_in (rising_edge)                           |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit adder for signal <clk_cnt[1]_GND_9_o_add_4_OUT> created at line 123.
+    Found 4-bit adder for signal <tx_bit_cnt[3]_GND_9_o_add_110_OUT> created at line 529.
+    Found 4-bit adder for signal <rx_bit_cnt[3]_GND_9_o_add_118_OUT> created at line 618.
+    Found 32x10-bit Read Only RAM for signal <_n0424>
+    Found 4-bit comparator greater for signal <rx_bit_cnt[3]_GND_9_o_LessThan_87_o> created at line 394
+    Found 4-bit comparator greater for signal <tx_bit_cnt[3]_GND_9_o_LessThan_95_o> created at line 405
+    Summary:
+	inferred   1 RAM(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  86 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  63 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spi_ctrl> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x10-bit single-port Read Only RAM                   : 1
+# Adders/Subtractors                                   : 7
+ 2-bit adder                                           : 1
+ 21-bit subtractor                                     : 1
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 3
+ 6-bit adder                                           : 1
+# Registers                                            : 48
+ 1-bit register                                        : 35
+ 2-bit register                                        : 1
+ 21-bit register                                       : 1
+ 3-bit register                                        : 1
+ 4-bit register                                        : 3
+ 8-bit register                                        : 7
+# Comparators                                          : 8
+ 4-bit comparator greater                              : 3
+ 6-bit comparator greater                              : 5
+# Multiplexers                                         : 73
+ 1-bit 2-to-1 multiplexer                              : 57
+ 2-bit 2-to-1 multiplexer                              : 2
+ 21-bit 2-to-1 multiplexer                             : 4
+ 21-bit 4-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <spi_ctrl>.
+The following registers are absorbed into counter <tx_bit_cnt>: 1 register on signal <tx_bit_cnt>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0424> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 10-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <("1",addr,wr)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <spi_ctrl> synthesized (advanced).
+
+Synthesizing (advanced) Unit <top_level_spi>.
+The following registers are absorbed into counter <locations_cnt>: 1 register on signal <locations_cnt>.
+Unit <top_level_spi> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x10-bit single-port distributed Read Only RAM       : 1
+# Adders/Subtractors                                   : 5
+ 2-bit adder                                           : 1
+ 21-bit subtractor                                     : 1
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
+ 6-bit adder                                           : 1
+# Counters                                             : 2
+ 4-bit up counter                                      : 2
+# Registers                                            : 121
+ Flip-Flops                                            : 121
+# Comparators                                          : 8
+ 4-bit comparator greater                              : 3
+ 6-bit comparator greater                              : 5
+# Multiplexers                                         : 72
+ 1-bit 2-to-1 multiplexer                              : 56
+ 2-bit 2-to-1 multiplexer                              : 2
+ 21-bit 2-to-1 multiplexer                             : 4
+ 21-bit 4-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 2
+ 4-bit 2-to-1 multiplexer                              : 5
+ 8-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:9]> with one-hot encoding.
+--------------------
+ State | Encoding
+--------------------
+ s0    | 000000001
+ s1    | 000000010
+ s2    | 000000100
+ s3    | 000001000
+ s4    | 000010000
+ s5    | 000100000
+ s6    | 001000000
+ s7    | 010000000
+ s8    | 100000000
+--------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <dut_reset_debounce/FSM_1> on signal <state_reg[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ zero  | 00
+ wait0 | 10
+ one   | 11
+ wait1 | 01
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <dut_spi_ctrl/FSM_2> on signal <state[1:5]> with user encoding.
+---------------------
+ State   | Encoding
+---------------------
+ idle    | 00000
+ txcmd   | 00001
+ txadd_h | 00010
+ txadd_m | 00011
+ txadd_l | 00100
+ txdummy | 00101
+ txdata  | 00110
+ rxdata  | 00111
+ wait1   | 01000
+ wait2   | 01001
+ wait3   | 01010
+ wait4   | 01011
+ wait6   | 01100
+ wait5   | 01101
+ wait7   | 01110
+ wait8   | 01111
+ clr_cmd | 10000
+---------------------
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    spi_clk_cnt_5 in unit <top_level_spi>
+    tx_empty in unit <spi_ctrl>
+    tx_sreg_7 in unit <spi_ctrl>
+    tx_sreg_0 in unit <spi_ctrl>
+    tx_sreg_1 in unit <spi_ctrl>
+    tx_sreg_3 in unit <spi_ctrl>
+    tx_sreg_4 in unit <spi_ctrl>
+    tx_sreg_2 in unit <spi_ctrl>
+    tx_sreg_6 in unit <spi_ctrl>
+    tx_sreg_5 in unit <spi_ctrl>
+
+
+Optimizing unit <top_level_spi> ...
+
+Optimizing unit <clk_divider> ...
+WARNING:Xst:2677 - Node <counter_2> of sequential type is unconnected in block <clk_divider>.
+
+Optimizing unit <debounce> ...
+
+Optimizing unit <spi_ctrl> ...
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_h_0> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_h_1> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_h_2> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_h_5> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_h_7> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_m_1> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_m_3> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_l_0> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_l_1> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_l_3> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/add_l_5> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/tx_data_0> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/tx_data_1> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/tx_data_2> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/tx_data_3> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/tx_data_4> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/tx_data_5> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/tx_data_6> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/tx_data_7> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/cmd_0> (without init value) has a constant value of 1 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/cmd_1> (without init value) has a constant value of 1 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <dut_spi_ctrl/tx_new_data> (without init value) has a constant value of 0 in block <top_level_spi>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <dut_spi_ctrl/add_l_2> in Unit <top_level_spi> is equivalent to the following 2 FFs/Latches, which will be removed : <dut_spi_ctrl/add_l_7> <dut_spi_ctrl/add_l_4> 
+INFO:Xst:2261 - The FF/Latch <dut_spi_ctrl/rx_bit_cnt_3> in Unit <top_level_spi> is equivalent to the following FF/Latch, which will be removed : <dut_spi_ctrl/rx_ready_set> 
+INFO:Xst:2261 - The FF/Latch <dut_spi_ctrl/add_m_2> in Unit <top_level_spi> is equivalent to the following FF/Latch, which will be removed : <dut_spi_ctrl/add_m_4> 
+INFO:Xst:2261 - The FF/Latch <dut_spi_ctrl/cmd_4> in Unit <top_level_spi> is equivalent to the following 4 FFs/Latches, which will be removed : <dut_spi_ctrl/cmd_7> <dut_spi_ctrl/cmd_5> <dut_spi_ctrl/cmd_3> <dut_spi_ctrl/cmd_2> 
+INFO:Xst:2261 - The FF/Latch <dut_spi_ctrl/add_h_3> in Unit <top_level_spi> is equivalent to the following FF/Latch, which will be removed : <dut_spi_ctrl/add_h_4> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_level_spi, actual ratio is 1.
+FlipFlop state_FSM_FFd5 has been replicated 1 time(s)
+FlipFlop state_FSM_FFd6 has been replicated 2 time(s)
+FlipFlop state_FSM_FFd7 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 126
+ Flip-Flops                                            : 126
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top_level_spi.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 264
+#      GND                         : 1
+#      INV                         : 24
+#      LUT1                        : 1
+#      LUT2                        : 16
+#      LUT3                        : 37
+#      LUT4                        : 17
+#      LUT5                        : 66
+#      LUT6                        : 55
+#      MUXCY                       : 20
+#      MUXF7                       : 5
+#      VCC                         : 1
+#      XORCY                       : 21
+# FlipFlops/Latches                : 136
+#      FD                          : 23
+#      FDC                         : 34
+#      FDC_1                       : 11
+#      FDCE                        : 30
+#      FDP                         : 14
+#      FDP_1                       : 2
+#      FDPE                        : 12
+#      LDC                         : 10
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 15
+#      IBUF                        : 2
+#      OBUF                        : 13
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             136  out of  54576     0%  
+ Number of Slice LUTs:                  216  out of  27288     0%  
+    Number used as Logic:               216  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    249
+   Number with an unused Flip Flop:     113  out of    249    45%  
+   Number with an unused LUT:            33  out of    249    13%  
+   Number of fully used LUT-FF pairs:   103  out of    249    41%  
+   Number of unique control sets:        43
+
+IO Utilization: 
+ Number of IOs:                          16
+ Number of bonded IOBs:                  16  out of    218     7%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------------------------------------------+------------------------------------+-------+
+Clock Signal                                                                                 | Clock buffer(FF name)              | Load  |
+---------------------------------------------------------------------------------------------+------------------------------------+-------+
+dut_spi_ctrl/spi_clk_int                                                                     | NONE(spi_clk_cnt_3)                | 7     |
+dut_clock_divider/clkout_reg                                                                 | BUFG                               | 93    |
+clk_100MHz                                                                                   | BUFGP                              | 26    |
+reset_spi_clk_cnt_to_32_reset_AND_110_o(reset_spi_clk_cnt_to_32_reset_AND_110_o1:O)          | NONE(*)(spi_clk_cnt_5_LDC)         | 1     |
+dut_reset_debounce/state_reg_FSM_FFd1                                                        | NONE(dut_spi_ctrl/tx_empty_LDC)    | 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o(dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_7_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_103_o(dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_103_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_0_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_101_o(dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_101_o1:O)| NONE(*)(dut_spi_ctrl/tx_sreg_1_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_97_o(dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_97_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_3_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_95_o(dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_95_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_4_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_99_o(dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_99_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_2_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_91_o(dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_91_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_6_LDC)| 1     |
+dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_93_o(dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_93_o1:O)  | NONE(*)(dut_spi_ctrl/tx_sreg_5_LDC)| 1     |
+---------------------------------------------------------------------------------------------+------------------------------------+-------+
+(*) These 9 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 7.250ns (Maximum Frequency: 137.931MHz)
+   Minimum input arrival time before clock: 6.487ns
+   Maximum output required time after clock: 6.151ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dut_spi_ctrl/spi_clk_int'
+  Clock period: 3.258ns (frequency: 306.937MHz)
+  Total number of paths / destination ports: 29 / 7
+-------------------------------------------------------------------------
+Delay:               3.258ns (Levels of Logic = 2)
+  Source:            spi_clk_cnt_5_C_5 (FF)
+  Destination:       spi_clk_cnt_5_C_5 (FF)
+  Source Clock:      dut_spi_ctrl/spi_clk_int falling
+  Destination Clock: dut_spi_ctrl/spi_clk_int falling
+
+  Data Path: spi_clk_cnt_5_C_5 to spi_clk_cnt_5_C_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC_1:C->Q            1   0.525   0.790  spi_clk_cnt_5_C_5 (spi_clk_cnt_5_C_5)
+     LUT3:I1->O            7   0.250   1.365  spi_clk_cnt_51 (spi_clk_cnt_5)
+     LUT6:I0->O            2   0.254   0.000  Madd_spi_clk_cnt_next_xor<5>11 (spi_clk_cnt_next<5>)
+     FDC_1:D                   0.074          spi_clk_cnt_5_C_5
+    ----------------------------------------
+    Total                      3.258ns (1.103ns logic, 2.155ns route)
+                                       (33.9% logic, 66.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'dut_clock_divider/clkout_reg'
+  Clock period: 7.250ns (frequency: 137.931MHz)
+  Total number of paths / destination ports: 1205 / 171
+-------------------------------------------------------------------------
+Delay:               3.625ns (Levels of Logic = 2)
+  Source:            state_FSM_FFd8 (FF)
+  Destination:       dut_spi_ctrl/rd_data2 (FF)
+  Source Clock:      dut_clock_divider/clkout_reg rising
+  Destination Clock: dut_clock_divider/clkout_reg falling
+
+  Data Path: state_FSM_FFd8 to dut_spi_ctrl/rd_data2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             16   0.525   1.182  state_FSM_FFd8 (state_FSM_FFd8)
+     LUT4:I3->O           14   0.254   1.355  state__n0092<0>1 (_n0092<0>)
+     LUT6:I3->O            1   0.235   0.000  dut_spi_ctrl/rd_data2_rstpot (dut_spi_ctrl/rd_data2_rstpot)
+     FDC_1:D                   0.074          dut_spi_ctrl/rd_data2
+    ----------------------------------------
+    Total                      3.625ns (1.088ns logic, 2.537ns route)
+                                       (30.0% logic, 70.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_100MHz'
+  Clock period: 6.055ns (frequency: 165.154MHz)
+  Total number of paths / destination ports: 584 / 28
+-------------------------------------------------------------------------
+Delay:               6.055ns (Levels of Logic = 4)
+  Source:            dut_reset_debounce/state_reg_FSM_FFd1 (FF)
+  Destination:       dut_reset_debounce/state_reg_FSM_FFd1 (FF)
+  Source Clock:      clk_100MHz rising
+  Destination Clock: clk_100MHz rising
+
+  Data Path: dut_reset_debounce/state_reg_FSM_FFd1 to dut_reset_debounce/state_reg_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q             112   0.525   2.246  dut_reset_debounce/state_reg_FSM_FFd1 (dut_reset_debounce/state_reg_FSM_FFd1)
+     LUT6:I5->O            1   0.254   0.682  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>1 (dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>)
+     LUT4:I3->O            2   0.254   0.726  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>5 (dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>4)
+     LUT4:I3->O            1   0.254   0.790  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>10_SW0 (N6)
+     LUT6:I4->O            1   0.250   0.000  dut_reset_debounce/state_reg_FSM_FFd1-In1 (dut_reset_debounce/state_reg_FSM_FFd1-In)
+     FD:D                      0.074          dut_reset_debounce/state_reg_FSM_FFd1
+    ----------------------------------------
+    Total                      6.055ns (1.611ns logic, 4.444ns route)
+                                       (26.6% logic, 73.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_100MHz'
+  Total number of paths / destination ports: 27 / 23
+-------------------------------------------------------------------------
+Offset:              6.487ns (Levels of Logic = 5)
+  Source:            reset_btn (PAD)
+  Destination:       dut_reset_debounce/state_reg_FSM_FFd1 (FF)
+  Destination Clock: clk_100MHz rising
+
+  Data Path: reset_btn to dut_reset_debounce/state_reg_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            26   1.328   1.875  reset_btn_IBUF (reset_btn_IBUF)
+     LUT6:I0->O            1   0.254   0.682  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>1 (dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>)
+     LUT4:I3->O            2   0.254   0.726  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>5 (dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>4)
+     LUT4:I3->O            1   0.254   0.790  dut_reset_debounce/q_next[20]_GND_8_o_equal_6_o<20>10_SW0 (N6)
+     LUT6:I4->O            1   0.250   0.000  dut_reset_debounce/state_reg_FSM_FFd1-In1 (dut_reset_debounce/state_reg_FSM_FFd1-In)
+     FD:D                      0.074          dut_reset_debounce/state_reg_FSM_FFd1
+    ----------------------------------------
+    Total                      6.487ns (2.414ns logic, 4.073ns route)
+                                       (37.2% logic, 62.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'dut_clock_divider/clkout_reg'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              2.338ns (Levels of Logic = 2)
+  Source:            spi_din (PAD)
+  Destination:       dut_spi_ctrl/rx_sreg_0 (FF)
+  Destination Clock: dut_clock_divider/clkout_reg rising
+
+  Data Path: spi_din to dut_spi_ctrl/rx_sreg_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.682  spi_din_IBUF (spi_din_IBUF)
+     LUT3:I2->O            1   0.254   0.000  dut_spi_ctrl/Mmux_rx_sreg[7]_rx_sreg[6]_mux_122_OUT11 (dut_spi_ctrl/rx_sreg[7]_rx_sreg[6]_mux_122_OUT<0>)
+     FDP:D                     0.074          dut_spi_ctrl/rx_sreg_0
+    ----------------------------------------
+    Total                      2.338ns (1.656ns logic, 0.682ns route)
+                                       (70.8% logic, 29.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'dut_clock_divider/clkout_reg'
+  Total number of paths / destination ports: 16 / 11
+-------------------------------------------------------------------------
+Offset:              6.151ns (Levels of Logic = 2)
+  Source:            dut_spi_ctrl/state_FSM_FFd2 (FF)
+  Destination:       spi_cs (PAD)
+  Source Clock:      dut_clock_divider/clkout_reg rising
+
+  Data Path: dut_spi_ctrl/state_FSM_FFd2 to spi_cs
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             31   0.525   1.779  dut_spi_ctrl/state_FSM_FFd2 (dut_spi_ctrl/state_FSM_FFd2)
+     LUT5:I1->O            1   0.254   0.681  dut_spi_ctrl/state__n0478<1>1 (spi_cs_OBUF)
+     OBUF:I->O                 2.912          spi_cs_OBUF (spi_cs)
+    ----------------------------------------
+    Total                      6.151ns (3.691ns logic, 2.460ns route)
+                                       (60.0% logic, 40.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.363ns (Levels of Logic = 2)
+  Source:            dut_spi_ctrl/tx_sreg_7_LDC (LATCH)
+  Destination:       spi_dout (PAD)
+  Source Clock:      dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o falling
+
+  Data Path: dut_spi_ctrl/tx_sreg_7_LDC to spi_dout
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              2   0.581   0.954  dut_spi_ctrl/tx_sreg_7_LDC (dut_spi_ctrl/tx_sreg_7_LDC)
+     LUT3:I0->O            1   0.235   0.681  dut_spi_ctrl/tx_sreg_71 (dut_spi_ctrl/tx_sreg_7)
+     OBUF:I->O                 2.912          spi_dout_OBUF (spi_dout)
+    ----------------------------------------
+    Total                      5.363ns (3.728ns logic, 1.635ns route)
+                                       (69.5% logic, 30.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_100MHz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_100MHz     |    6.055|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_clock_divider/clkout_reg
+--------------------------------------------+---------+---------+---------+---------+
+                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------+---------+---------+---------+---------+
+clk_100MHz                                  |    5.644|         |    3.229|         |
+dut_clock_divider/clkout_reg                |    6.208|    2.828|    3.625|         |
+dut_reset_debounce/state_reg_FSM_FFd1       |         |    1.800|         |         |
+dut_spi_ctrl/spi_clk_int                    |         |    3.233|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_103_o|         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_101_o|         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_99_o |         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_97_o |         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_95_o |         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_93_o |         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_91_o |         |    2.780|         |         |
+dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o |         |    1.911|         |         |
+reset_spi_clk_cnt_to_32_reset_AND_110_o     |         |    3.394|         |         |
+--------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_reset_debounce/state_reg_FSM_FFd1
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+clk_100MHz                  |         |         |    4.664|         |
+dut_clock_divider/clkout_reg|         |         |    4.956|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_spi_ctrl/spi_clk_int
+---------------------------------------+---------+---------+---------+---------+
+                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------+---------+---------+---------+---------+
+clk_100MHz                             |         |         |    4.485|         |
+dut_clock_divider/clkout_reg           |         |         |    3.452|         |
+dut_spi_ctrl/spi_clk_int               |         |         |    3.258|         |
+reset_spi_clk_cnt_to_32_reset_AND_110_o|         |         |    3.419|         |
+---------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[0]_AND_103_o
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+clk_100MHz                  |         |         |    5.644|         |
+dut_clock_divider/clkout_reg|         |         |    6.103|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[1]_AND_101_o
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+clk_100MHz                  |         |         |    4.639|         |
+dut_clock_divider/clkout_reg|         |         |    5.228|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[2]_AND_99_o
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+clk_100MHz                  |         |         |    4.664|         |
+dut_clock_divider/clkout_reg|         |         |    5.295|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[3]_AND_97_o
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+clk_100MHz                  |         |         |    4.418|         |
+dut_clock_divider/clkout_reg|         |         |    6.103|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[4]_AND_95_o
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+clk_100MHz                  |         |         |    4.418|         |
+dut_clock_divider/clkout_reg|         |         |    6.208|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[5]_AND_93_o
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+clk_100MHz                  |         |         |    4.418|         |
+dut_clock_divider/clkout_reg|         |         |    6.103|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[6]_AND_91_o
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+clk_100MHz                  |         |         |    4.418|         |
+dut_clock_divider/clkout_reg|         |         |    6.208|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock dut_spi_ctrl/tx_enable_d_tx_reg[7]_AND_89_o
+----------------------------+---------+---------+---------+---------+
+                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------+---------+---------+---------+---------+
+clk_100MHz                  |         |         |    4.664|         |
+dut_clock_divider/clkout_reg|         |         |    5.295|         |
+----------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock reset_spi_clk_cnt_to_32_reset_AND_110_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_100MHz     |         |         |    3.229|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.78 secs
+ 
+--> 
+
+
+Total memory usage is 391688 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   31 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
+

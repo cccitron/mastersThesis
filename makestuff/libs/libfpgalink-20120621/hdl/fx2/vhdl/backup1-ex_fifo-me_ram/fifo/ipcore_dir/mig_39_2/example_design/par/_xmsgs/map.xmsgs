@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">c3_p0_rd_count&lt;6&gt;</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">732</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">c3_p0_rd_count&lt;5&gt;,
+c3_p0_rd_count&lt;4&gt;,
+c3_p0_rd_count&lt;3&gt;,
+c3_p0_rd_count&lt;2&gt;,
+c3_p0_rd_count&lt;1&gt;</arg>
+To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
+</msg>
+
+<msg type="info" file="MapLib" num="562" delta="old" >No environment variables are currently set.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="info" file="Pack" num="1716" delta="old" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+</msg>
+
+<msg type="info" file="Pack" num="1720" delta="old" >Initializing voltage to <arg fmt="%0.3f" index="1">1.140</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">1.140</arg> to <arg fmt="%0.3f" index="3">1.260</arg> Volts)
+</msg>
+
+<msg type="info" file="Map" num="215" delta="old" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+</msg>
+
+<msg type="error" file="Place" num="864" delta="old" >Incompatible IOB&apos;s are locked to the same bank <arg fmt="%d" index="1">0</arg>
+Conflicting IO Standards are:
+IO Standard 1: <arg fmt="%s" index="2">Name = LVTTL, VREF = NR, VCCO = 3.30, TERM = NONE, DIR = OUTPUT, DRIVE_STR = 12
+</arg><arg fmt="%s" index="3">List of locked IOB&apos;s:
+	led_out&lt;5&gt;
+
+</arg>IO Standard 2: <arg fmt="%s" index="4">Name = LVCMOS18, VREF = NR, VCCO = 1.80, TERM = NONE, DIR = OUTPUT, DRIVE_STR = 12
+</arg><arg fmt="%s" index="5">List of locked IOB&apos;s:
+	calib_done
+	error
+
+</arg>These IO Standards are incompatible due to <arg fmt="%s" index="6">VCCO mismatch.
+</arg>
+</msg>
+
+<msg type="error" file="Pack" num="1654" delta="old" >The timing-driven placement phase encountered an error.
+</msg>
+
+</messages>
+

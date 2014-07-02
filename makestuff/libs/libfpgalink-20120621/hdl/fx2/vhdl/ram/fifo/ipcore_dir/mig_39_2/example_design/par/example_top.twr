@@ -1,0 +1,152 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml example_top.twx example_top.ncd -o example_top.twr
+example_top.pcf -ucf example_top.ucf
+
+Design file:              example_top.ncd
+Physical constraint file: example_top.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock c3_sys_clk
+------------+------------+------------+------------+------------+---------------------------------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                                             | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s)                            | Phase  |
+------------+------------+------------+------------+------------+---------------------------------------------+--------+
+c3_sys_rst_i|    9.797(R)|      SLOW  |   -1.699(R)|      FAST  |c3_mcb_drp_clk                               |   0.000|
+            |    5.769(R)|      SLOW  |   -3.185(R)|      FAST  |memc3_infrastructure_inst/mcb_drp_clk_bufg_in|   0.000|
+mcb3_rzq    |    0.470(R)|      FAST  |    0.577(R)|      SLOW  |c3_mcb_drp_clk                               |   0.000|
+mcb3_zio    |    1.441(R)|      SLOW  |   -0.572(R)|      SLOW  |c3_mcb_drp_clk                               |   0.000|
+------------+------------+------------+------------+------------+---------------------------------------------+--------+
+
+Clock CLK_I to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+led_out<0>  |        10.558(R)|      SLOW  |         6.100(R)|      FAST  |CLK_I_BUFGP       |   0.000|
+led_out<1>  |        10.502(R)|      SLOW  |         6.067(R)|      FAST  |CLK_I_BUFGP       |   0.000|
+led_out<2>  |        10.505(R)|      SLOW  |         6.086(R)|      FAST  |CLK_I_BUFGP       |   0.000|
+led_out<3>  |        10.957(R)|      SLOW  |         6.357(R)|      FAST  |CLK_I_BUFGP       |   0.000|
+led_out<4>  |        11.371(R)|      SLOW  |         6.628(R)|      FAST  |CLK_I_BUFGP       |   0.000|
+led_out<5>  |        11.858(R)|      SLOW  |         6.752(R)|      FAST  |CLK_I_BUFGP       |   0.000|
+led_out<6>  |        13.089(R)|      SLOW  |         7.763(R)|      FAST  |CLK_I_BUFGP       |   0.000|
+led_out<7>  |        12.376(R)|      SLOW  |         7.241(R)|      FAST  |CLK_I_BUFGP       |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock c3_sys_clk to Pad
+----------------+-----------------+------------+-----------------+------------+------------------+--------+
+                |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination     |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+----------------+-----------------+------------+-----------------+------------+------------------+--------+
+mcb3_dram_a<0>  |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<1>  |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<2>  |         8.875(R)|      SLOW  |         5.094(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<3>  |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<4>  |         8.875(R)|      SLOW  |         5.094(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<5>  |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<6>  |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<7>  |         8.875(R)|      SLOW  |         5.094(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<8>  |         8.875(R)|      SLOW  |         5.094(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<9>  |         8.875(R)|      SLOW  |         5.094(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<10> |         8.875(R)|      SLOW  |         5.094(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<11> |         8.863(R)|      SLOW  |         5.082(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_a<12> |         8.863(R)|      SLOW  |         5.082(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_ba<0> |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_ba<1> |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_ba<2> |         8.875(R)|      SLOW  |         5.094(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_cas_n |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_ck    |         8.904(R)|      SLOW  |         5.121(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_ck_n  |         8.944(R)|      SLOW  |         5.146(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_cke   |         8.863(R)|      SLOW  |         5.082(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_dm    |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<0> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<1> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<2> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<3> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<4> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<5> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<6> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<7> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<8> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<9> |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<10>|         8.971(R)|      SLOW  |         5.183(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<11>|         8.971(R)|      SLOW  |         5.183(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<12>|         8.971(R)|      SLOW  |         5.183(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<13>|         8.971(R)|      SLOW  |         5.183(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<14>|         8.962(R)|      SLOW  |         5.174(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dq<15>|         8.962(R)|      SLOW  |         5.174(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_dqs   |         8.982(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_dqs_n |         8.982(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_odt   |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_ras_n |         8.884(R)|      SLOW  |         5.103(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_udm   |         8.980(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x_180  |   0.000|
+mcb3_dram_udqs  |         8.982(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_udqs_n|         8.982(R)|      SLOW  |         5.192(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_dram_we_n  |         8.875(R)|      SLOW  |         5.094(R)|      FAST  |c3_sysclk_2x      |   0.000|
+mcb3_rzq        |        19.088(R)|      SLOW  |        10.737(R)|      FAST  |c3_mcb_drp_clk    |   0.000|
+mcb3_zio        |        18.891(R)|      SLOW  |        10.482(R)|      FAST  |c3_mcb_drp_clk    |   0.000|
+----------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock CLK_I
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_I          |    2.300|         |         |         |
+c3_sys_clk     |    6.372|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock c3_sys_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_I          |    1.659|         |         |         |
+c3_sys_clk     |    8.528|    1.192|         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+c3_sys_rst_i   |mcb3_rzq       |   20.439|
+c3_sys_rst_i   |mcb3_zio       |   20.242|
+---------------+---------------+---------+
+
+
+Analysis completed Wed Apr 16 11:58:33 2014 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 448 MB
+
+
+

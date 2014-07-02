@@ -1,0 +1,26 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/cccitron/mastersThesis/bram/state_machine/tb_top_level_isim_beh.exe -prj /home/cccitron/mastersThesis/bram/state_machine/tb_top_level_beh.prj work.tb_top_level 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/cccitron/mastersThesis/bram/state_machine/bram_right_single.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/bram/state_machine/top_level.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/bram/state_machine/tb_top_level.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 97412 KB
+Fuse CPU Usage: 1320 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package textio
+Compiling package std_logic_textio
+Compiling package numeric_std
+Compiling architecture behavioral of entity bram_right_single [bram_right_single_default]
+Compiling architecture behavioral of entity top_level [top_level_default]
+Compiling architecture behavior of entity tb_top_level
+Time Resolution for simulation is 1ps.
+Compiled 10 VHDL Units
+Built simulation executable /home/cccitron/mastersThesis/bram/state_machine/tb_top_level_isim_beh.exe
+Fuse Memory Usage: 673444 KB
+Fuse CPU Usage: 1560 ms
+GCC CPU Usage: 3940 ms

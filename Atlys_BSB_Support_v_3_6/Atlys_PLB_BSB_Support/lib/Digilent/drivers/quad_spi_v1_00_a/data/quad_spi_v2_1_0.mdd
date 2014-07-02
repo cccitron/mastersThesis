@@ -1,0 +1,19 @@
+##############################################################################
+## Filename:          E:\LICENTA\Projects\Atlys_13_1_AXI/drivers/quad_spi_if_axi_v1_01_a/data/quad_spi_if_axi_v2_1_0.mdd
+## Description:       Microprocessor Driver Definition
+## Date:              Thu May 05 11:40:14 2011 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+OPTION psf_version = 2.1.0;
+
+BEGIN DRIVER quad_spi
+
+  OPTION supported_peripherals = (quad_spi_if);
+  OPTION driver_state = ACTIVE;
+  OPTION depends = (common_v1_00_a);
+  OPTION copyfiles = all;
+  
+  BEGIN INTERFACE linux
+  END INTERFACE
+
+END DRIVER

@@ -1,0 +1,22 @@
+##############################################################################
+## Filename:          d_usb_epp_dstm_axi_v1_00_a/data/d_usb_epp_dstm_axi_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Wed Aug 31 15:46:58 2011 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a counter_f vhdl
+lib proc_common_v3_00_a or_gate128 vhdl
+lib proc_common_v3_00_a proc_common_pkg vhdl
+lib proc_common_v3_00_a family_support vhdl
+lib d_usb_epp_dstm_axi_v1_00_a fifo verilog
+lib proc_common_v3_00_a pselect_f vhdl
+lib proc_common_v3_00_a ipif_pkg vhdl
+lib d_usb_epp_dstm_axi_v1_00_a usb_epp verilog
+lib d_usb_epp_dstm_axi_v1_00_a epp_dstm_mux verilog
+lib d_usb_epp_dstm_axi_v1_00_a dstm verilog
+lib axi_lite_ipif_v1_01_a address_decoder vhdl
+lib d_usb_epp_dstm_axi_v1_00_a usb_epp_dstm verilog
+lib axi_lite_ipif_v1_01_a slave_attachment vhdl
+lib d_usb_epp_dstm_axi_v1_00_a user_logic vhdl
+lib axi_lite_ipif_v1_01_a axi_lite_ipif vhdl
+lib d_usb_epp_dstm_axi_v1_00_a d_usb_epp_dstm_axi vhdl

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Project NoOfControllers="1" >
+    <ModuleName>ddr2</ModuleName>
+    <TargetFPGA>xc6slx45-csg324/-2</TargetFPGA>
+    <Version>3.92</Version>
+    <Controller number="3" >
+        <MemoryDevice>DDR2_SDRAM/Components/EDE1116AXXX-8E</MemoryDevice>
+        <TimePeriod>3200</TimePeriod>
+        <EnableVoltageRange>0</EnableVoltageRange>
+        <DataMask>1</DataMask>
+        <CustomPart>FALSE</CustomPart>
+        <NewPartName/>
+        <RowAddress>13</RowAddress>
+        <ColAddress>10</ColAddress>
+        <BankAddress>3</BankAddress>
+        <TimingParameters>
+            <Parameters twtr="7.5" trefi="7.8" twr="15" trtp="7.5" trfc="127.5" trp="12.5" tras="45" trcd="12.5" />
+        </TimingParameters>
+        <mrBurstLength name="Burst Length" >4(010)</mrBurstLength>
+        <mrCasLatency name="CAS Latency" >5</mrCasLatency>
+        <emrDllEnable name="DLL Enable" >Enable-Normal</emrDllEnable>
+        <emrOutputDriveStrength name="Output Drive Strength" >Fullstrength</emrOutputDriveStrength>
+        <emrRTT name="RTT (nominal) - ODT" >50ohms</emrRTT>
+        <emrPosted name="Additive Latency (AL)" >0</emrPosted>
+        <emrOCD name="OCD Operation" >OCD Exit</emrOCD>
+        <emrDQS name="DQS# Enable" >Enable</emrDQS>
+        <emrRDQS name="RDQS Enable" >Disable</emrRDQS>
+        <emrOutputs name="Outputs" >Enable</emrOutputs>
+        <mr2SelfRefreshTempRange name="High Temparature Self Refresh Rate" >Disable</mr2SelfRefreshTempRange>
+        <PortInterface>NATIVE,NATIVE</PortInterface>
+        <Class>Class II</Class>
+        <DataClass>Class II</DataClass>
+        <InputPinTermination>CALIB_TERM</InputPinTermination>
+        <DataTermination>25 Ohms</DataTermination>
+        <CalibrationRowAddress/>
+        <CalibrationColumnAddress/>
+        <CalibrationBankAddress/>
+        <SystemClock>Single-Ended</SystemClock>
+        <BypassCalibration>1</BypassCalibration>
+        <DebugSignals>Disable</DebugSignals>
+        <SystemClock>Single-Ended</SystemClock>
+        <Configuration>Two 64-bit bi-directional ports</Configuration>
+        <RzqPin>L6</RzqPin>
+        <ZioPin>C2</ZioPin>
+        <PortsSelected>Port0,Port1</PortsSelected>
+        <PortDirections>Bi-directional,Bi-directional</PortDirections>
+        <UserMemoryAddressMap>ROW_BANK_COLUMN</UserMemoryAddressMap>
+        <ArbitrationAlgorithm>Round Robin</ArbitrationAlgorithm>
+        <TimeSlot0>01</TimeSlot0>
+        <TimeSlot1>10</TimeSlot1>
+        <TimeSlot2>01</TimeSlot2>
+        <TimeSlot3>10</TimeSlot3>
+        <TimeSlot4>01</TimeSlot4>
+        <TimeSlot5>10</TimeSlot5>
+        <TimeSlot6>01</TimeSlot6>
+        <TimeSlot7>10</TimeSlot7>
+        <TimeSlot8>01</TimeSlot8>
+        <TimeSlot9>10</TimeSlot9>
+        <TimeSlot10>01</TimeSlot10>
+        <TimeSlot11>10</TimeSlot11>
+    </Controller>
+</Project>

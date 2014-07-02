@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/cccitron/mastersThesis/absDiff/tb_absDiff_isim_beh.exe" -prj "/home/cccitron/mastersThesis/absDiff/tb_absDiff_beh.prj" "work.tb_absDiff" 

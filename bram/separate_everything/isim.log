@@ -1,0 +1,37 @@
+ISim log file
+Running: /home/cccitron/mastersThesis/bram/arr_BRAM_arr/tb_top_level_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/cccitron/mastersThesis/bram/arr_BRAM_arr/tb_top_level_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
+# run 6.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+4210 ns sadArray(0, 0): 00010100
+4230 ns sadArray(0, 1): 00011001
+4250 ns sadArray(0, 2): 00010001
+4270 ns sadArray(0, 3): 11111111
+4290 ns sadArray(0, 4): 11111111
+4310 ns sadArray(0, 5): 11111111
+4330 ns sadArray(0, 6): 11111111
+4350 ns sadArray(0, 7): 11111111
+4370 ns sadArray(0, 8): 11111111
+4390 ns sadArray(0, 9): 11111111
+4410 ns sadArray(0, a): 11111111
+4430 ns sadArray(0, b): 11111111
+4450 ns sadArray(0, c): 11111111
+4470 ns sadArray(0, d): 11111111
+4490 ns sadArray(0, e): 11111111
+4510 ns sadArray(0, f): 11111111
+4530 ns sadArray(1, 0): 00011000
+4550 ns sadArray(1, 1): 00011000
+4570 ns sadArray(1, 2): 00011011
+# exit 0

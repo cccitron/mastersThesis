@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4 http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4/index.xsd">
+	<spirit:vendor>xilinx.com</spirit:vendor>
+	<spirit:library>bsb_lib.bridges</spirit:library>
+	<spirit:name>d_ac97_axi_template_io_bridge</spirit:name>
+	<spirit:version>1.0</spirit:version>
+
+	<spirit:busInterfaces>
+		<spirit:busInterface>
+			<spirit:name>d_ac97_axi_high_level_if</spirit:name>
+			<spirit:busType spirit:vendor="xilinx.com"
+				spirit:library="bsb_lib.busdefs" spirit:name="d_ac97_axi" spirit:version="1.0" />
+			<spirit:master />
+		</spirit:busInterface>
+
+		<spirit:busInterface>
+			<spirit:name>d_ac97_axi_rtl_if</spirit:name>
+			<spirit:busType spirit:version="1.0" spirit:library="bsb_lib.rtl_busdefs"
+				spirit:name="d_ac97_axi" spirit:vendor="xilinx.com" />
+			<spirit:abstractionType spirit:version="1.0"
+				spirit:library="bsb_lib.rtl_busdefs" spirit:name="d_ac97_axi_rtl"
+				spirit:vendor="xilinx.com" />
+			<spirit:slave />
+		</spirit:busInterface>
+	</spirit:busInterfaces>
+
+	<spirit:model>
+		<spirit:modelParameters>
+			<spirit:modelParameter>
+				<spirit:name>BSB_REMAP</spirit:name>
+				<spirit:description>Used to store IO interface name of board</spirit:description>
+				<spirit:value spirit:id="bsb_remap_id" spirit:resolve="generated"
+					spirit:format="string">Not_Set</spirit:value>
+			</spirit:modelParameter>
+			<spirit:modelParameter>
+				<spirit:name>HURRI_INST_NAME</spirit:name>
+				<spirit:value spirit:id="hurri_inst_name_id"
+					spirit:resolve="generated" spirit:format="string">Not_Set</spirit:value>
+			</spirit:modelParameter>
+		</spirit:modelParameters>
+	</spirit:model>
+
+	<spirit:parameters>
+		<spirit:parameter> 
+			<spirit:name>template_type</spirit:name>
+			<spirit:value spirit:id="template_type_id" 
+			spirit:resolve="immediate"
+			spirit:format="string">bridge</spirit:value>
+		</spirit:parameter>
+	</spirit:parameters>
+
+</spirit:component>

@@ -1,0 +1,245 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top_isim_beh.exe -prj /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top_beh.prj work.tb_example_top 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/data_prbs_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/v6_data_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/sp6_data_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/afifo.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/iodrp_mcb_controller.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/iodrp_controller.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/wr_data_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/read_posted_fifo.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/rd_data_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" into library work
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/mcb_soft_calibration.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/write_data_path.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/tg_status.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/read_data_path.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/mcb_flow_control.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/mcb_soft_calibration_top.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/mcb_traffic_gen.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/init_mem_pattern_ctr.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/mcb_raw_wrapper.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/memc3_wrapper.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/memc3_tb_top.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/memc3_infrastructure.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/example_top.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top.vhd" into library work
+Starting static elaboration
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+WARNING:HDLCompiler:329 - "/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/common_modules.v" Line 260: Target <(null)> of concurrent assignment or output port connection should be a net type.
+WARNING:HDLCompiler:536 - "/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/MCB_WRAP.v" Line 323: Index is always out of bounds for array convertbin
+WARNING:HDLCompiler:532 - "/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/MCB_WRAP.v" Line 323: Index <-1> is out of range [63:0] for signal <convertbin>.
+WARNING:HDLCompiler:536 - "/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/MCB_WRAP.v" Line 324: Index is always out of bounds for array convertbin
+WARNING:HDLCompiler:532 - "/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/MCB_WRAP.v" Line 324: Index <-1> is out of range [63:0] for signal <convertbin>.
+Completed static elaboration
+Fuse Memory Usage: 160508 KB
+Fuse CPU Usage: 26430 ms
+Compiling module xil_mcb_mod49
+Compiling module xil_mcb_mod109
+Compiling module xil_mcb_mod46
+Compiling module xil_mcb_mod20
+Compiling module xil_mcb_mod21
+Compiling module xil_mcb_mod22
+Compiling module xil_mcb_mod19
+Compiling module xil_mcb_mod31
+Compiling module xil_mcb_mod29
+Compiling module xil_mcb_mod24
+Compiling module xil_mcb_mod25
+Compiling module xil_mcb_mod27
+Compiling module xil_mcb_mod28_default
+Compiling module xil_mcb_mod33
+Compiling module xil_mcb_mod32
+Compiling module xil_mcb_mod106
+Compiling module xil_mcb_mod62
+Compiling module xil_mcb_mod63
+Compiling module xil_mcb_mod61
+Compiling module xil_mcb_mod64
+Compiling module xil_mcb_mod65
+Compiling module xil_mcb_mod111
+Compiling module xil_mcb_mod110
+Compiling module xil_mcb_mod47
+Compiling module xil_mcb_mod38
+Compiling module xil_mcb_mod39
+Compiling module xil_mcb_mod40
+Compiling module xil_mcb_mod41
+Compiling module xil_mcb_mod42
+Compiling module xil_mcb_mod43
+Compiling module xil_mcb_mod44
+Compiling module xil_mcb_mod50
+Compiling module xil_mcb_mod45(PORT_CONFIG="B32_B...
+Compiling module xil_mcb_mod48(PORT_CONFIG="B32_B...
+Compiling module xil_mcb_mod100
+Compiling module xil_mcb_mod72(RD_WRB=1,PIN_WIDTH...
+Compiling module xil_mcb_mod73
+Compiling module xil_mcb_mod92
+Compiling module xil_mcb_mod93
+Compiling module xil_mcb_mod78
+Compiling module xil_mcb_mod102
+Compiling module xil_mcb_mod101
+Compiling module xil_mcb_mod77
+Compiling module xil_mcb_mod98
+Compiling module xil_mcb_mod97
+Compiling module xil_mcb_mod80
+Compiling module xil_mcb_mod81
+Compiling module xil_mcb_mod86
+Compiling module xil_mcb_mod91
+Compiling module xil_mcb_mod90
+Compiling module xil_mcb_mod76
+Compiling module xil_mcb_mod75
+Compiling module xil_mcb_mod88
+Compiling module xil_mcb_mod79
+Compiling module xil_mcb_mod74
+Compiling module xil_mcb_mod82
+Compiling module xil_mcb_mod87
+Compiling module xil_mcb_mod83
+Compiling module xil_mcb_mod96
+Compiling module xil_mcb_mod94
+Compiling module xil_mcb_mod95
+Compiling module xil_mcb_mod84
+Compiling module xil_mcb_mod89
+Compiling module xil_mcb_mod99
+Compiling module xil_mcb_mod85
+Compiling module xil_mcb_mod103(PIN_WIDTH=16)
+Compiling module xil_mcb_mod72(RD_WRB=0,PIN_WIDTH...
+Compiling module xil_mcb_mod103(RD_WRB=0,PIN_WIDT...
+Compiling module xil_mcb_mod103(RD_WRB=1,PIN_WIDT...
+Compiling module xil_mcb_mod104(PIN_WIDTH=16,PORT...
+Compiling module xil_mcb_mod56
+Compiling module xil_mcb_mod107
+Compiling module xil_mcb_mod59
+Compiling module xil_mcb_mod108
+Compiling module xil_mcb_mod52
+Compiling module xil_mcb_mod53
+Compiling module xil_mcb_mod5
+Compiling module xil_mcb_mod54
+Compiling module xil_mcb_mod70
+Compiling module xil_mcb_mod55
+Compiling module xil_mcb_mod57
+Compiling module xil_mcb_mod58
+Compiling module xil_mcb_mod51
+Compiling module xil_mcb_mod17
+Compiling module xil_mcb_mod14
+Compiling module xil_mcb_mod0
+Compiling module xil_mcb_mod23
+Compiling module xil_mcb_mod67
+Compiling module xil_mcb_mod68
+Compiling module xil_mcb_mod66
+Compiling module xil_mcb_mod7
+Compiling module xil_mcb_mod69
+Compiling module xil_mcb_mod71
+Compiling module MCB_des(PORT_CONFIG="B32_B32_B32...
+Compiling module B_MCB(ARB_NUM_TIME_SLOTS=12,ARB_...
+Compiling module MCB_WRAP(12,"000000000001010100"...
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package textio
+Compiling package std_logic_textio
+Compiling package vcomponents
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling package vital_timing
+Compiling package vital_primitives
+Compiling package vpkg
+Compiling architecture ibufg_v of entity IBUFG [\IBUFG("DONT_CARE","0",true,"DEF...]
+Compiling architecture pll_adv_v of entity PLL_ADV [\PLL_ADV("OPTIMIZED","CLKFBOUT",...]
+Compiling architecture bufg_v of entity BUFG [bufg_default]
+Compiling architecture bufgmux_v of entity BUFGMUX [\BUFGMUX("SYNC")(1,4)\]
+Compiling architecture inv_v of entity INV [inv_default]
+Compiling architecture bufgce_v of entity BUFGCE [bufgce_default]
+Compiling architecture bufpll_mcb_v of entity BUFPLL_MCB [\BUFPLL_MCB(2,"LOCK_TO_0")(1,9)\]
+Compiling architecture syn of entity memc3_infrastructure [\memc3_infrastructure(3000,0,"SI...]
+Compiling package vl_types
+Compiling architecture mcb_v of entity MCB [\MCB(12,"000000000001010100","00...]
+Compiling architecture trans of entity iodrp_controller [iodrp_controller_default]
+Compiling architecture trans of entity iodrp_mcb_controller [iodrp_mcb_controller_default]
+Compiling architecture trans of entity mcb_soft_calibration [\mcb_soft_calibration(('1','0','...]
+Compiling architecture iobuf_v of entity IOBUF [\IOBUF("DONT_CARE",12,"0",true,"...]
+Compiling architecture iodrp2_v of entity IODRP2 [\IODRP2("SDR",75)(1,3)\]
+Compiling architecture trans of entity mcb_soft_calibration_top [\mcb_soft_calibration_top(('1','...]
+Compiling architecture oserdes2_v of entity OSERDES2 [\OSERDES2(true,"SDR","SDR",2,"SI...]
+Compiling architecture oserdes2_v of entity OSERDES2 [\OSERDES2(true,"SDR","SDR",2,"SI...]
+Compiling architecture oserdes2_v of entity OSERDES2 [\OSERDES2(true,"SDR","SDR",2,"SI...]
+Compiling architecture oserdes2_v of entity OSERDES2 [\OSERDES2(true,"SDR","SDR",2,"SI...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,7,0,"MASTER"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,7,0,"SLAVE",...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,6,0,"MASTER"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,6,0,"SLAVE",...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,14,0,"MASTER...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,14,0,"SLAVE"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,5,0,"MASTER"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,5,0,"SLAVE",...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,4,0,"MASTER"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,4,0,"SLAVE",...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,0,0,"MASTER"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,0,0,"SLAVE",...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,1,0,"MASTER"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,1,0,"SLAVE",...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,15,0,"MASTER...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,15,0,"SLAVE"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,3,0,"MASTER"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,3,0,"SLAVE",...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,2,0,"MASTER"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,2,0,"SLAVE",...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,8,0,"MASTER"...]
+Compiling architecture iodrp2_mcb_v of entity IODRP2_MCB [\IODRP2_MCB("SDR",0,8,0,"SLAVE",...]
+Compiling architecture obuft_v of entity OBUFT [\OBUFT("DONT_CARE",12,"DEFAULT",...]
+Compiling architecture obuftds_v of entity OBUFTDS [\OBUFTDS("DONT_CARE","DEFAULT","...]
+Compiling architecture iobufds_v of entity IOBUFDS [\IOBUFDS("DONT_CARE",false,"FALS...]
+Compiling architecture pulldown_v of entity PULLDOWN [pulldown_default]
+Compiling architecture pullup_v of entity PULLUP [pullup_default]
+Compiling architecture aarch of entity mcb_raw_wrapper [\mcb_raw_wrapper(3000,('0','0','...]
+Compiling architecture acch of entity memc3_wrapper [\memc3_wrapper(3000,4,32,4,32,12...]
+Compiling architecture trans of entity init_mem_pattern_ctr [\init_mem_pattern_ctr("SPARTAN6"...]
+Compiling architecture trans of entity cmd_prbs_gen [\cmd_prbs_gen(100,"SPARTAN6",32,...]
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+Compiling architecture trans of entity cmd_prbs_gen [\cmd_prbs_gen(100,"SPARTAN6",32,...]
+Compiling architecture trans of entity cmd_prbs_gen [\cmd_prbs_gen(100,"SPARTAN6",29,...]
+Compiling architecture trans of entity cmd_prbs_gen [\cmd_prbs_gen(100,"SPARTAN6",32,...]
+Compiling architecture trans of entity cmd_gen [\cmd_gen("SPARTAN6",4,100,"BI_MO...]
+Compiling architecture trans of entity mcb_flow_control [\mcb_flow_control(100,"SPARTAN6"...]
+Compiling architecture trans of entity afifo [\afifo(100,32,32,5,1)\]
+Compiling architecture trans of entity afifo [\afifo(100,38,16,4,1)\]
+Compiling architecture trans of entity read_posted_fifo [\read_posted_fifo(100,4,"SPARTAN...]
+Compiling architecture trans of entity data_prbs_gen [\data_prbs_gen("FALSE",32,32)(1,...]
+Compiling architecture trans of entity sp6_data_gen [\sp6_data_gen(32,6,32,"DGEN_ALL"...]
+Compiling architecture trans of entity rd_data_gen [\rd_data_gen("SPARTAN6",4,32,6,3...]
+Compiling architecture trans of entity read_data_path [\read_data_path(100,"SPARTAN6",4...]
+Compiling architecture trans of entity wr_data_gen [\wr_data_gen(100,"SPARTAN6",4,"W...]
+Compiling architecture trans of entity write_data_path [\write_data_path(100,4,"SPARTAN6...]
+Compiling architecture trans of entity tg_status [\tg_status(100,32)\]
+Compiling architecture trans of entity mcb_traffic_gen [\mcb_traffic_gen(100,"SPARTAN6",...]
+Compiling architecture trans of entity init_mem_pattern_ctr [\init_mem_pattern_ctr("SPARTAN6"...]
+Compiling architecture trans of entity cmd_prbs_gen [\cmd_prbs_gen(100,"SPARTAN6",32,...]
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+Compiling architecture trans of entity cmd_gen [\cmd_gen("SPARTAN6",4,100,"BI_MO...]
+Compiling architecture trans of entity mcb_traffic_gen [\mcb_traffic_gen(100,"SPARTAN6",...]
+Compiling architecture trans of entity init_mem_pattern_ctr [\init_mem_pattern_ctr("SPARTAN6"...]
+Compiling architecture trans of entity cmd_prbs_gen [\cmd_prbs_gen(100,"SPARTAN6",32,...]
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+Compiling architecture trans of entity cmd_gen [\cmd_gen("SPARTAN6",4,100,"BI_MO...]
+Compiling architecture trans of entity mcb_traffic_gen [\mcb_traffic_gen(100,"SPARTAN6",...]
+Compiling architecture trans of entity init_mem_pattern_ctr [\init_mem_pattern_ctr("SPARTAN6"...]
+Compiling architecture trans of entity cmd_prbs_gen [\cmd_prbs_gen(100,"SPARTAN6",32,...]
+WARNING:HDLCompiler:443 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/../rtl/traffic_gen/cmd_prbs_gen.vhd" Line 106: Function logb2 does not always return a value.
+Compiling architecture trans of entity cmd_gen [\cmd_gen("SPARTAN6",4,100,"BI_MO...]
+Compiling architecture trans of entity mcb_traffic_gen [\mcb_traffic_gen(100,"SPARTAN6",...]
+Compiling architecture arc of entity memc3_tb_top [\memc3_tb_top(4,32,4,32,4,"FALSE...]
+Compiling architecture arc of entity example_top [\example_top(4,32,4,32,3000,0,"S...]
+Compiling architecture behavior of entity tb_example_top
+Time Resolution for simulation is 1ps.
+Waiting for 132 sub-compilation(s) to finish...
+Compiled 173 VHDL Units
+Compiled 96 Verilog Units
+Built simulation executable /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top_isim_beh.exe
+Fuse Memory Usage: 766968 KB
+Fuse CPU Usage: 30660 ms
+GCC CPU Usage: 99760 ms

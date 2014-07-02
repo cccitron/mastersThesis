@@ -1,0 +1,22 @@
+NET "CLK_I" LOC = L15;
+
+#===============================================================================
+# On-board peripheral signals
+#===============================================================================
+NET "led_out<0>"      LOC="U18"  | IOSTANDARD=LVTTL;
+NET "led_out<1>"      LOC="M14"  | IOSTANDARD=LVTTL;
+NET "led_out<2>"      LOC="N14"  | IOSTANDARD=LVTTL;
+NET "led_out<3>"      LOC="L14"  | IOSTANDARD=LVTTL;
+NET "led_out<4>"      LOC="M13"  | IOSTANDARD=LVTTL;
+NET "led_out<5>"      LOC="D4"   | IOSTANDARD=LVTTL;
+NET "led_out<6>"      LOC="P16"  | IOSTANDARD=LVTTL;
+NET "led_out<7>"      LOC="N12"  | IOSTANDARD=LVTTL;
+
+NET "sw_in<0>"        LOC="A10"  | IOSTANDARD=LVTTL;   # SW0
+NET "sw_in<1>"        LOC="D14"  | IOSTANDARD=LVTTL;   # SW1
+NET "sw_in<2>"        LOC="C14"  | IOSTANDARD=LVTTL;   # SW2
+NET "sw_in<3>"        LOC="P15"  | IOSTANDARD=LVTTL;   # SW3
+NET "sw_in<4>"        LOC="P12"  | IOSTANDARD=LVTTL;   # SW4
+NET "sw_in<5>"        LOC="R5"   | IOSTANDARD=LVTTL;   # SW5
+NET "sw_in<6>"        LOC="T5"   | IOSTANDARD=LVTTL;   # SW6
+NET "sw_in<7>"        LOC="E4"   | IOSTANDARD=LVTTL;   # SW7
