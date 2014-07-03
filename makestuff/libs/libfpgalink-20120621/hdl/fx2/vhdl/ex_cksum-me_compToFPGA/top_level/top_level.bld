@@ -1,0 +1,41 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -uc
+/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/platfor
+ms/atlys/platform.ucf -p xc6slx45-csg324-3 top_level.ngc top_level.ngd
+
+Reading NGO file
+"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/e
+x_cksum-me_compToFPGA/top_level/top_level.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file
+"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/platfo
+rms/atlys/platform.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 451944 kilobytes
+
+Writing NGD file "top_level.ngd" ...
+Total REAL time to NGDBUILD completion:  9 sec
+Total CPU time to NGDBUILD completion:   8 sec
+
+Writing NGDBUILD log file "top_level.bld"...

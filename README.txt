@@ -39,6 +39,10 @@ ex_fifo-me_compToFPGA/fifo/
    VHDL code that corresponds with cksum_comp-to-fpga_fpgalink3.py. It will 
    display the value sent from the computer to the LEDs. Doesn't really work.
 
+pipeline_cksum-me/
+   Pipelined the SAD algorithm. Next is to implement BRAM to work with arrays.
+   Also using array packets.
+
 sad_fifo_3x3/fifo/
    Implements a 3x3 SAD algorithm with fifo fpgalink code.
 
