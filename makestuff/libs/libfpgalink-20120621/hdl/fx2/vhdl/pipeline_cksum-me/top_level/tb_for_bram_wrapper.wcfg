@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/pipeline_cksum-me/top_level/tb_state_wrapper_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_textio" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="tb_state_wrapper" />
+            <top_module name="textio" />
+            <top_module name="window_array" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="30" />
+   <wvobject fp_name="/tb_state_wrapper/clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/h2fdata_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">h2fdata_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">h2fdata_i[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/chanaddr_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">chanaddr_i[6:0]</obj_property>
+      <obj_property name="ObjectShortName">chanaddr_i[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/f2hready_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">f2hready_i</obj_property>
+      <obj_property name="ObjectShortName">f2hready_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/h2fvalid_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">h2fvalid_i</obj_property>
+      <obj_property name="ObjectShortName">h2fvalid_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/sw_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sw_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sw_i[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/led_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">led_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led_o[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/din_t" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din_t[0:8]</obj_property>
+      <obj_property name="ObjectShortName">din_t[0:8]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/douter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">douter[0:8]</obj_property>
+      <obj_property name="ObjectShortName">douter[0:8]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/clk_i_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i_period</obj_property>
+      <obj_property name="ObjectShortName">clk_i_period</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/en_t" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">en_t</obj_property>
+      <obj_property name="ObjectShortName">en_t</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/en_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">en_s</obj_property>
+      <obj_property name="ObjectShortName">en_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/t_rd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">t_rd</obj_property>
+      <obj_property name="ObjectShortName">t_rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/t_rd_next" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">t_rd_next</obj_property>
+      <obj_property name="ObjectShortName">t_rd_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/s_rd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">s_rd</obj_property>
+      <obj_property name="ObjectShortName">s_rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/s_rd_next" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">s_rd_next</obj_property>
+      <obj_property name="ObjectShortName">s_rd_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/we_t" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">we_t[0:0]</obj_property>
+      <obj_property name="ObjectShortName">we_t[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/we_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">we_s[0:0]</obj_property>
+      <obj_property name="ObjectShortName">we_s[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/addr_t" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_t[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_t[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/addr_t_next" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_t_next[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_t_next[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_s[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_s[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/addr_s_next" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_s_next[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_s_next[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/dina" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dina[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/dout_t" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout_t[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_t[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/dout_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_s[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/ndx_t_wr" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_t_wr</obj_property>
+      <obj_property name="ObjectShortName">ndx_t_wr</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/ndx_t_wr_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_t_wr_next</obj_property>
+      <obj_property name="ObjectShortName">ndx_t_wr_next</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/ndx_s_wr" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_s_wr</obj_property>
+      <obj_property name="ObjectShortName">ndx_s_wr</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/ndx_s_wr_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_s_wr_next</obj_property>
+      <obj_property name="ObjectShortName">ndx_s_wr_next</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

@@ -116,8 +116,34 @@ architecture behavioural of top_level is
 	
 	signal i, j : integer := 0;
 	
-	SIGNAL dinA, dinB : pixelWindow; --STD_LOGIC_VECTOR(7 DOWNTO 0);
-	SIGNAL dout : STD_LOGIC_VECTOR(7 DOWNTO 0);
+--	-- pipeline adder stuff
+--	SIGNAL dinA_template, dinB_search : pixelWindow := (OTHERS => (OTHERS => '0')); --STD_LOGIC_VECTOR(7 DOWNTO 0);
+--	SIGNAL dout : STD_LOGIC_VECTOR(7 DOWNTO 0);
+--	
+--	-- bram stuff
+--	COMPONENT bram_9x8
+--		PORT (
+--			clka : IN STD_LOGIC;
+--			ena : IN STD_LOGIC;
+--			wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+--			addra : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+--			dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+--			douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+--		);
+--	END COMPONENT;
+--	
+--	SIGNAL ena : STD_LOGIC := '0';
+--	SIGNAL wea : STD_LOGIC_VECTOR(0 DOWNTO 0) := "0";
+--	SIGNAL addra, addra_next : STD_LOGIC_VECTOR(3 DOWNTO 0) := "0000";
+--	SIGNAL dina, douta : STD_LOGIC_VECTOR(7 DOWNTO 0);
+--	
+--	-- State machine stuff
+--	TYPE state_type IS (s0, s1, s2, s3); 
+--	SIGNAL curr_s, next_s : state_type := s0;
+--	SIGNAL posT, posT_next : INTEGER := 0;
+--	
+--	-- Other SAD things
+--	SIGNAL reg0_templ : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	
 begin                                                                     --BEGIN_SNIPPET(registers)
 	
@@ -168,7 +194,7 @@ begin                                                                     --BEGI
 	
 	-- Select values to return for each channel when the host is reading
 	with chanAddr select f2hData <=
-		sw_in when "0000000",
+		reg0  when "0000000",
 		reg1  when "0000001",
 		reg2  when "0000010",
 		reg3  when "0000011",
@@ -176,7 +202,8 @@ begin                                                                     --BEGI
 		x"00" when others;
 
 	-- Assert that there's always data for reading, and always room for writing
-	f2hValid <= '1';
+	--f2hValid <= '1';
+	f2hValid <= '1' WHEN f2hReady = '1' ELSE '0';
 	h2fReady <= '1';                                                         --END_SNIPPET(registers)
 
 	-- CommFPGA module
@@ -206,7 +233,7 @@ begin                                                                     --BEGI
 		);
 
 	-- LEDs and 7-seg display
-	led_out <= reg0;
+	--led_out <= reg0;
 	flags <= "000" & f2hReady;
 	--seven_seg : entity work.seven_seg
 	--	port map(
@@ -217,12 +244,119 @@ begin                                                                     --BEGI
 	--		anodes_out => anode_out
 	--	);
 	
-	adding : entity work.adder
-		Port map ( 
-			clk_I  => fx2Clk_in,
-			dinA_I => dina,
-			dinB_I => dinb,
-			data_O => dout
+--	--dina <= reg1;
+--	ena <= '1';
+--	
+--	-- state change
+--	PROCESS (fx2Clk_in)
+--	BEGIN
+--		IF (RISING_EDGE(fx2Clk_in)) THEN
+--			curr_s <= next_s;
+--
+--			addra <= addra_next;
+--			IF (addra = x"9") THEN
+--				addra <= x"0";
+--			END IF;
+--			
+--			posT <= posT_next;
+----			IF (posT = 9) THEN
+----				postT <= 0;
+----			END IF;
+--		END IF;
+--	END PROCESS;
+--	
+--	-- state machine process
+--	state_machine_process : PROCESS (curr_s, h2fReady, chanAddr)
+--	BEGIN
+--		addra_next <= addra;
+--		dina <= x"ff";
+--		posT_next <= posT;
+--	
+--		CASE curr_s IS
+--			-- place bytes into state machine for template
+--			WHEN s0 =>
+--				IF (h2fValid = '1' AND chanAddr = "000000") THEN
+--					wea <= "1";
+--					addra_next <= STD_LOGIC_VECTOR(UNSIGNED(addra) + 1);
+--					dina <= h2fData;
+--					posT_next <= posT + 1;
+--				ELSE
+--					wea <= "0";
+--				END IF;
+--				
+--				IF (posT = 9) THEN
+--					next_s <= s1;
+--					posT_next <= 0;
+--				ELSE
+--					next_s <= curr_s;
+--				END IF;
+--				
+--			WHEN s1 => 
+--				wea <= "0";
+--				reg0_templ <= douta;
+--				dinA_template(posT) <= douta;
+--				posT_next <= posT + 1;
+--				
+--				IF (posT = 9) THEN
+--					next_s <= s2;
+--					posT_next <= 0;
+--				ELSE
+--					next_s <= curr_s;
+--				END IF;
+--				
+--			WHEN s2 => 
+--				wea <= "0";
+--				next_s <= s3;
+--				
+--			WHEN s3 => 
+--				wea <= "0";
+--				next_s <= s3;
+--				
+--		END CASE;
+--	END PROCESS state_machine_process;
+--	
+--	bram_template : bram_9x8
+--	PORT MAP (
+--		clka => fx2Clk_in,
+--		ena => ena,
+--		wea => wea,
+--		addra => addra,
+--		dina => dina,
+--		douta => douta
+--	);
+--	
+--	adding : entity work.adder
+--		Port map ( 
+--			clk_I  => fx2Clk_in,
+--			dinA_I => dina_template,
+--			dinB_I => dinb_search,
+--			data_O => dout
+--		);
+--		
+--	WITH sw_in SELECT led_out <=
+--		dinA_template(0)	WHEN x"00",
+--		dinA_template(1)	WHEN x"01",
+--		dinA_template(2)	WHEN x"02",
+--		dinA_template(3)	WHEN x"03",
+--		dinA_template(4)	WHEN x"04",
+--		dinA_template(5)	WHEN x"05",
+--		dinA_template(6)	WHEN x"06",
+--		dinA_template(7)	WHEN x"07",
+--		dinA_template(8)	WHEN x"08",
+--		x"ff"					WHEN OTHERS;
+		
+	state_wrappings : entity work.state_wrapper
+		Port map( 
+			clk_I 		=> fx2Clk_in,
+			
+			h2fData_I  	=> h2fData,
+			
+			chanAddr_I 	=> chanAddr,
+			f2hReady_I 	=> f2hReady,
+			h2fValid_I 	=> h2fValid,
+			
+			sw_I  		=> sw_in,
+			led_O 		=> led_out
 		);
 	
 end behavioural;
