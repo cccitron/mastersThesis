@@ -27,6 +27,8 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
+USE IEEE.STD_LOGIC_TEXTIO.ALL;
+USE STD.TEXTIO.ALL;
  
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -107,6 +109,9 @@ BEGIN
 	
 	VARIABLE ndx : INTEGER RANGE 0 TO 8;
 	
+	-- Text output
+   variable line_out : line;
+	
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
@@ -147,8 +152,108 @@ BEGIN
 			wait for clk_I_period; h2fData_I  <= din_s(ndx);
 			ndx := ndx + 1;
 		END LOOP;
-		sw_I <= x"01";
 
+		wait for clk_I_period;
+		h2fValid_I <= '0';
+
+		-- template print out
+		wait for clk_I_period;
+      sw_I <= x"00"; wait for clk_I_period*2; write(line_out, now);
+      write(line_out, string'(" templateArray(0): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		wait for clk_I_period;
+
+		wait for clk_I_period;
+      sw_I <= x"01"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" templateArray(1): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"02"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" templateArray(2): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"03"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" templateArray(3): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"04"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" templateArray(4): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"05"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" templateArray(5): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"06"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" templateArray(6): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"07"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" templateArray(7): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"08"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" templateArray(8): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		-- search print out
+		wait for clk_I_period;
+      sw_I <= x"10"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" searchArray(0): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+
+		wait for clk_I_period;
+      sw_I <= x"11"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" searchArray(1): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"12"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" searchArray(2): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"13"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" searchArray(3): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"14"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" searchArray(4): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"15"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" searchArray(5): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"16"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" searchArray(6): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"17"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" searchArray(7): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"18"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" searchArray(8): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period;
+      sw_I <= x"00"; wait for clk_I_period; write(line_out, now);
+      write(line_out, string'(" templateArray(0): ")); 
+      write(line_out, led_O); writeline(output, line_out);
+		
       wait;
    end process;
 

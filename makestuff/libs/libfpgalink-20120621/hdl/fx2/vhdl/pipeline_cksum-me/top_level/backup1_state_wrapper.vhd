@@ -70,7 +70,6 @@ architecture Behavioral of state_wrapper is
 	SIGNAL s_rd, s_rd_next : STD_LOGIC := '0';
 	SIGNAL ready_t, ready_t_next : STD_LOGIC := '0';
 	SIGNAL ready_s, ready_s_next : STD_LOGIC := '0';
-	SIGNAL read_bram, read_bram_next : STD_LOGIC := '0';
 	
 	SIGNAL we_t, we_s : STD_LOGIC_VECTOR(0 DOWNTO 0) := "0";
 	SIGNAL addr_t, addr_t_next : STD_LOGIC_VECTOR(3 DOWNTO 0) := "0000";
@@ -110,24 +109,17 @@ begin
 			
 			t_rd <= t_rd_next;
 			s_rd <= s_rd_next;
-			read_bram <= read_bram_next;
---			IF (ready_t = '0' OR ready_s = '0') THEN
---				read_bram <= '0';
---			ELSE
---				read_bram <= read_bram_next;
---			END IF;
 			
 			dinA_template <= dinA_template;
 			dinB_search <= dinB_search;
 			
-			IF (read_bram = '1') THEN -- AND ready_t = '1' AND ready_s = '1') THEN --t_rd = '1' AND s_rd = '1') THEN
+			IF (t_rd = '1' AND s_rd = '1') THEN
 				dinA_template(ndx_t_rd) <= dout_t;
 				dinB_search(ndx_s_rd) <= dout_s;
 				
 				IF (ndx_t_rd = 8) THEN
 					ndx_t_rd <= 0;
 					t_rd <= NOT(t_rd_next);
---					read_bram <= '0';
 				ELSE
 					ndx_t_rd <= ndx_t_rd + 1;
 				END IF;
@@ -135,11 +127,32 @@ begin
 				IF (ndx_s_rd = 8) THEN
 					ndx_s_rd <= 0;
 					s_rd <= NOT(s_rd_next);
---					read_bram <= '0';
 				ELSE
 					ndx_s_rd <= ndx_s_rd + 1;
 				END IF;
 			END IF;
+			
+--			dinA_template <= dinA_template;
+--			IF (t_rd = '1') THEN
+--				dinA_template(ndx_t_rd) <= dout_t;
+--				
+--				IF (ndx_t_rd = 8) THEN
+--					ndx_t_rd <= 0;
+--				ELSE
+--					ndx_t_rd <= ndx_t_rd + 1;
+--				END IF;
+--			END IF;
+--			
+--			dinB_search <= dinB_search;
+--			IF (s_rd = '1') THEN
+--				dinB_search(ndx_s_rd) <= dout_s;
+--				
+--				IF (ndx_s_rd = 8) THEN
+--					ndx_s_rd <= 0;
+--				ELSE
+--					ndx_s_rd <= ndx_s_rd + 1;
+--				END IF;
+--			END IF;
 			
 			-- Template Stuff
 			ndx_t_wr <= ndx_t_wr_next;
@@ -161,6 +174,19 @@ begin
 				ready_t <= ready_t_next;
 				addr_t <= addr_t_next;
 			END IF;
+			
+--			IF (ndx_t_rd_next = 9) THEN
+--				ndx_t_rd <= 0;
+--			ELSE
+--				ndx_t_rd <= ndx_t_rd_next;
+--			END IF;
+			
+--			dinA_template <= dinA_template;
+--			IF (rd_t = '1') THEN
+--				dinA_template(
+--			END IF;
+--			dinA_template <= dinA_template_next;
+			--dinB_search <= dinB_search_next;
 			
 			-- Search Stuff
 			ndx_s_wr <= ndx_s_wr_next;
@@ -191,42 +217,58 @@ begin
 
 	t_rd_next <= '1' WHEN ready_t = '1' ELSE t_rd;
 	s_rd_next <= '1' WHEN ready_s = '1' ELSE s_rd;
-	
-	read_bram_next <= '1' WHEN t_rd = '1' AND s_rd = '1' ELSE '0';
 
 	-- Template BRAM process for reading and writing
-	template_bram : process (h2fValid_I, chanAddr_I, addr_t, ndx_t_wr, ready_t, t_rd, s_rd)
+	template_bram : process (h2fValid_I, chanAddr_I, addr_t, ndx_t_wr, ready_t)
 	begin
 		ready_t_next <= ready_t;
 		IF (h2fValid_I = '1' AND chanAddr_I = "0000000") THEN
 			we_t <= "1";
 			addr_t_next <= STD_LOGIC_VECTOR(UNSIGNED(addr_t) + 1);
 			ndx_t_wr_next <= ndx_t_wr + 1;
-		ELSIF (t_rd = '1' AND s_rd = '1') THEN
+			--t_rd_next <= t_rd;
+		ELSIF (t_rd = '1') THEN
 			we_t <= "0";
 			addr_t_next <= STD_LOGIC_VECTOR(UNSIGNED(addr_t) + 1);
+			--t_rd_next <= t_rd;
+--			dinA_template_next(TO_INTEGER(UNSIGNED(addr_t))) <= dout_t;
 		ELSE
 			we_t <= "0";
 			addr_t_next <= addr_t;
 			ndx_t_wr_next <= ndx_t_wr;
+			--t_rd_next <= t_rd;
 		END IF;
 	end process template_bram;
-
+	
+--	fill_template : PROCESS (ndx_t_rd, dout_t, dinA_template)
+--	BEGIN
+--		dinA_template_next <= dinA_template;
+--		
+--		IF (t_rd = '1' AND pause_t = '0') THEN
+--			dinA_template_next(ndx_t_rd) <= dout_t;
+--		END IF;
+--	END PROCESS fill_template;
+	
+--	ndx_t_rd_next <= ndx_t_rd + 1 WHEN t_rd = '1' AND pause_t = '0' ELSE ndx_t_rd;
+	
 	-- Search BRAM process for reading and writing
-	search_bram : process (h2fValid_I, chanAddr_I, addr_s, ndx_s_wr, ready_s, s_rd, t_rd)
+	search_bram : process (h2fValid_I, chanAddr_I, addr_s, ndx_s_wr, ready_s)
 	begin
 		ready_s_next <= ready_s;
 		IF (h2fValid_I = '1' AND chanAddr_I = "0000001") THEN
 			we_s <= "1";
 			addr_s_next <= STD_LOGIC_VECTOR(UNSIGNED(addr_s) + 1);
 			ndx_s_wr_next <= ndx_s_wr + 1;
-		ELSIF (s_rd = '1' AND t_rd = '1') THEN
+--			s_rd_next <= s_rd;
+		ELSIF (s_rd = '1') THEN
 			we_s <= "0";
 			addr_s_next <= STD_LOGIC_VECTOR(UNSIGNED(addr_s) + 1);
+--			s_rd_next <= s_rd;
 		ELSE
 			we_s <= "0";
 			addr_s_next <= addr_s;
 			ndx_s_wr_next <= ndx_s_wr;
+--			s_rd_next <= s_rd;
 		END IF;
 	end process search_bram;
 	

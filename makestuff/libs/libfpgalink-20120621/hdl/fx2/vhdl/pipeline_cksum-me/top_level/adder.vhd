@@ -66,13 +66,13 @@ begin
 			
 			temp(1) <= temp(0) + ABS(SIGNED('0' & dinA(1)) - SIGNED('0' & dinB(1)));
 			temp(2) <= temp(1) + ABS(SIGNED('0' & dinA(2)) - SIGNED('0' & dinB(2)));
---			temp(3) <= temp(2) + ABS(SIGNED('0' & dinA(3)) - SIGNED('0' & dinB(3)));
---			temp(4) <= temp(3) + ABS(SIGNED('0' & dinA(4)) - SIGNED('0' & dinB(4)));
---			temp(5) <= temp(4) + ABS(SIGNED('0' & dinA(5)) - SIGNED('0' & dinB(5)));
---			temp(6) <= temp(5) + ABS(SIGNED('0' & dinA(6)) - SIGNED('0' & dinB(6)));
---			temp(7) <= temp(6) + ABS(SIGNED('0' & dinA(7)) - SIGNED('0' & dinB(7)));
+			temp(3) <= temp(2) + ABS(SIGNED('0' & dinA(3)) - SIGNED('0' & dinB(3)));
+			temp(4) <= temp(3) + ABS(SIGNED('0' & dinA(4)) - SIGNED('0' & dinB(4)));
+			temp(5) <= temp(4) + ABS(SIGNED('0' & dinA(5)) - SIGNED('0' & dinB(5)));
+			temp(6) <= temp(5) + ABS(SIGNED('0' & dinA(6)) - SIGNED('0' & dinB(6)));
+			temp(7) <= temp(6) + ABS(SIGNED('0' & dinA(7)) - SIGNED('0' & dinB(7)));
 
-			dout <= temp(2) + ABS(SIGNED('0' & dinA(3)) - SIGNED('0' & dinB(3)));
+			dout <= temp(7) + ABS(SIGNED('0' & dinA(8)) - SIGNED('0' & dinB(8)));
 		END IF;
 	END PROCESS adding;
 	

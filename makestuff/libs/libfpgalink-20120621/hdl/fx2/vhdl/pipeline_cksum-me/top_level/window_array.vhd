@@ -14,7 +14,7 @@ USE ieee.numeric_std.ALL;
 package window_array is
 
 	TYPE pixelWindow IS ARRAY(0 TO 8) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
-	TYPE signWindow  IS ARRAY(0 TO 2) OF SIGNED(8 DOWNTO 0);
+	TYPE signWindow  IS ARRAY(0 TO 7) OF SIGNED(8 DOWNTO 0);
 -- type <new_type> is
 --  record
 --    <type_name>        : std_logic_vector( 7 downto 0);

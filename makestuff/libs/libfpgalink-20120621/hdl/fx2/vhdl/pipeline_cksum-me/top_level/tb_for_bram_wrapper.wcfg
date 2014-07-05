@@ -16,7 +16,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="30" />
+   <WVObjectSize size="36" />
    <wvobject fp_name="/tb_state_wrapper/clk_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i</obj_property>
       <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -93,9 +93,43 @@
       <obj_property name="ElementShortName">s_rd_next</obj_property>
       <obj_property name="ObjectShortName">s_rd_next</obj_property>
    </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/ready_t" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ready_t</obj_property>
+      <obj_property name="ObjectShortName">ready_t</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/ready_t_next" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ready_t_next</obj_property>
+      <obj_property name="ObjectShortName">ready_t_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/ready_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ready_s</obj_property>
+      <obj_property name="ObjectShortName">ready_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/ready_s_next" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ready_s_next</obj_property>
+      <obj_property name="ObjectShortName">ready_s_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/read_bram_next" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">read_bram_next</obj_property>
+      <obj_property name="ObjectShortName">read_bram_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/read_bram" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">read_bram</obj_property>
+      <obj_property name="ObjectShortName">read_bram</obj_property>
+   </wvobject>
    <wvobject fp_name="/tb_state_wrapper/uut/we_t" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">we_t[0:0]</obj_property>
       <obj_property name="ObjectShortName">we_t[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/dout_t" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout_t[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_t[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/addr_t_next" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_t_next[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_t_next[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_state_wrapper/uut/we_s" type="array" db_ref_id="1">
@@ -108,14 +142,14 @@
       <obj_property name="ObjectShortName">addr_t[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_state_wrapper/uut/addr_t_next" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">addr_t_next[3:0]</obj_property>
-      <obj_property name="ObjectShortName">addr_t_next[3:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb_state_wrapper/uut/addr_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">addr_s[3:0]</obj_property>
       <obj_property name="ObjectShortName">addr_s[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/uut/dout_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout_s[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_s[7:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_state_wrapper/uut/addr_s_next" type="array" db_ref_id="1">
@@ -126,16 +160,6 @@
    <wvobject fp_name="/tb_state_wrapper/uut/dina" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">dina[7:0]</obj_property>
       <obj_property name="ObjectShortName">dina[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_state_wrapper/uut/dout_t" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">dout_t[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dout_t[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_state_wrapper/uut/dout_s" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">dout_s[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dout_s[7:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_state_wrapper/uut/ndx_t_wr" type="other" db_ref_id="1">
