@@ -50,6 +50,12 @@ ARCHITECTURE behavior OF tb_state_wrapper IS
          chanAddr_I : IN  std_logic_vector(6 downto 0);
          f2hReady_I : IN  std_logic;
          h2fValid_I : IN  std_logic;
+			
+			sad_O      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		
+			bram_t_O   : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			bram_s_O   : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			
          sw_I : IN  std_logic_vector(7 downto 0);
          led_O : OUT  std_logic_vector(7 downto 0)
         );
@@ -65,7 +71,10 @@ ARCHITECTURE behavior OF tb_state_wrapper IS
    signal sw_I : std_logic_vector(7 downto 0) := (others => '0');
 
  	--Outputs
-   signal led_O : std_logic_vector(7 downto 0);
+   signal led_O    : std_logic_vector(7 downto 0);
+	SIGNAL sad_O    : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SIGNAL bram_t_O : STD_LOGIC_VECTOR(7 DOWNTO 0);
+	SIGNAL bram_s_O : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
    -- Clock period definitions
    constant clk_I_period : time := 20 ns;
@@ -90,6 +99,9 @@ BEGIN
           chanAddr_I => chanAddr_I,
           f2hReady_I => f2hReady_I,
           h2fValid_I => h2fValid_I,
+			 sad_O      => sad_O,
+			 bram_t_O   => bram_t_O,
+			 bram_s_O   => bram_s_O,
           sw_I => sw_I,
           led_O => led_O
         );
@@ -253,6 +265,18 @@ BEGIN
       sw_I <= x"00"; wait for clk_I_period; write(line_out, now);
       write(line_out, string'(" templateArray(0): ")); 
       write(line_out, led_O); writeline(output, line_out);
+		
+		wait for clk_I_period*2;
+		chanAddr_I <= "0000000";
+		f2hReady_I <= '1';
+		ndx := 1;
+		WHILE (ndx <= 8) LOOP
+			wait for clk_I_period;
+			ndx := ndx + 1;
+		END LOOP;
+		
+		wait for clk_I_period;
+		f2hReady_I <= '0';
 		
       wait;
    end process;

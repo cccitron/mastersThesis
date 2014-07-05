@@ -157,8 +157,6 @@ begin
 --				t_rd <= NOT(t_rd_next);
 				IF (t_rd = '1') THEN
 					ready_t <= '0'; --NOT(ready_t_next);
-				ELSIF (chanAddr_I = "0000100") THEN
-					ready_t <= '0';
 				ELSE
 					ready_t <= '1'; --NOT(ready_t_next);
 				END IF;
@@ -180,8 +178,6 @@ begin
 --				ready_s <= NOT(ready_s_next);
 				IF (s_rd = '1') THEN
 					ready_s <= '0'; --NOT(ready_t_next);
-				ELSIF (chanAddr_I = "0000101") THEN
-					ready_s <= '0';
 				ELSE
 					ready_s <= '1'; --NOT(ready_t_next);
 				END IF;
@@ -233,9 +229,6 @@ begin
 			addr_s_next <= STD_LOGIC_VECTOR(UNSIGNED(addr_s) + 1);
 			ndx_s_wr_next <= ndx_s_wr + 1;
 		ELSIF (s_rd = '1' AND t_rd = '1') THEN
-			we_s <= "0";
-			addr_s_next <= STD_LOGIC_VECTOR(UNSIGNED(addr_s) + 1);
-		ELSIF (f2hReady_I = '1' AND chanAddr_I = "0000101") THEN
 			we_s <= "0";
 			addr_s_next <= STD_LOGIC_VECTOR(UNSIGNED(addr_s) + 1);
 		ELSE

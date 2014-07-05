@@ -105,14 +105,17 @@ architecture behavioural of top_level is
 	-- initializing a 4 element array of 24 bit elements to zero.
 	--array0 <= (others => (others => '0'));
 	----- Alternate idea: single array w/ every 3 bytes being a diff pixel -----
-	signal reg4 : std_logic_vector(7 downto 0) := x"00";
-	signal reg5 : std_logic_vector(7 downto 0) := x"00";
+	signal reg4, reg4_next : std_logic_vector(7 downto 0) := x"00";
+	signal reg5, reg5_next : std_logic_vector(7 downto 0) := x"00";
 	signal reg6 : std_logic_vector(7 downto 0) := x"00";
 	--array0(0) = x"05";
 	--array0(1) := x"12";
 	--array0(2) := x"ff";
 	--array0(3) <= x"0000ff";
 	signal c_sig : std_logic_vector(7 downto 0) := x"00";
+	
+	signal reg0_templ, reg1_search, reg2_sad, reg3_disp : std_logic_vector(7 downto 0)  := x"00";
+	signal reg4_bram_t, reg5_bram_s : STD_LOGIC_VECTOR(7 DOWNTO 0) := x"00";
 	
 	signal i, j : integer := 0;
 	
@@ -161,7 +164,8 @@ begin                                                                     --BEGI
 			reg1 <= reg1_next;
 			reg2 <= reg2_next;
 			reg3 <= reg3_next;
-			reg4 <= c_sig;--array0(i, j);
+			reg4 <= reg4_next;
+			reg5 <= reg5_next;
 			if (chanAddr = "0000100") then
 			   if (j > 2) then
 			      j <= 0;
@@ -185,9 +189,10 @@ begin                                                                     --BEGI
 		else checksum;
 	reg0_next <= h2fData when chanAddr = "0000000" and h2fValid = '1' else reg0;
 	reg1_next <= h2fData when chanAddr = "0000001" and h2fValid = '1' else reg1;
-	reg2_next <= h2fData when chanAddr = "0000010" and h2fValid = '1' else reg2;
+	reg2_next <= reg2_sad; --h2fData when chanAddr = "0000010" and h2fValid = '1' else reg2;
 	reg3_next <= h2fData when chanAddr = "0000011" and h2fValid = '1' else reg3;
-	--reg4_next <= h2fData when chanAddr = "0000100" and h2fValid = '1' else reg4;
+	reg4_next <= reg4_bram_t; --h2fData when chanAddr = "0000100" and h2fValid = '1' else reg4;
+	reg5_next <= reg5_bram_s;
 	
 	--reg4_next <= x"8a";
 	--reg4 <= x"8a";
@@ -199,6 +204,7 @@ begin                                                                     --BEGI
 		reg2  when "0000010",
 		reg3  when "0000011",
 		reg4  when "0000100",
+		reg5  when "0000101",
 		x"00" when others;
 
 	-- Assert that there's always data for reading, and always room for writing
@@ -354,6 +360,12 @@ begin                                                                     --BEGI
 			chanAddr_I 	=> chanAddr,
 			f2hReady_I 	=> f2hReady,
 			h2fValid_I 	=> h2fValid,
+			
+			sad_O			=> reg2_sad,
+			--disp_O      => reg3_disp,
+			
+			bram_t_O		=> reg4_bram_t,
+			bram_s_O		=> reg5_bram_s,
 			
 			sw_I  		=> sw_in,
 			led_O 		=> led_out

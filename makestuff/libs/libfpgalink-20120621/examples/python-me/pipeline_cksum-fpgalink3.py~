@@ -444,12 +444,28 @@ if __name__ == "__main__":
                   im.putpixel((i, j), ((buff[0] & 0xf8), ((buff[0] & 0x07) << 5) | ((buff[1] & 0xe0) >> 3), (buff[1] & 0x1f) << 3))
             '''
 
-            buff = buffarray(9)
+            buff_t = bytearray(9)
+            buff_s = bytearray(9)
             for i in range(9):
-                buff[i] = i
+                buff_t[i] = i+1
+                buff_s[i] = i+2
 
             #print("Reading:")
-            flWriteChannel(handle, 1000, 0x00, buff)
+            flWriteChannel(handle, 1000, 0x00, buff_t)
+            flWriteChannel(handle, 1000, 0x01, buff_s)
+            
+            buff = flReadChannel(handle, 1000, 0x02, 1)
+            print(buff)
+            print("")
+            
+            '''for i in range (9):
+                buff = flReadChannel(handle, 1000, 0x04, 1)
+                print(buff, end=" ")
+            print("")'''
+            
+            buff = flReadChannel(handle, 1000, 0x04, 9)
+            print(buff)
+            print("")
             '''for i in range (1000):
                 buff = flReadChannel(handle, 1000, 0x02, 1)
                 print(buff)

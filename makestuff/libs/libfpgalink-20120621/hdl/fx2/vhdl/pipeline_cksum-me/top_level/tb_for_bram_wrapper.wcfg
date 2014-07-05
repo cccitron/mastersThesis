@@ -16,7 +16,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="36" />
+   <WVObjectSize size="38" />
    <wvobject fp_name="/tb_state_wrapper/clk_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i</obj_property>
       <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -64,11 +64,6 @@
       <obj_property name="ObjectShortName">clk_i_period</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_state_wrapper/uut/dout" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">dout[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb_state_wrapper/uut/en_t" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">en_t</obj_property>
       <obj_property name="ObjectShortName">en_t</obj_property>
@@ -104,6 +99,21 @@
    <wvobject fp_name="/tb_state_wrapper/uut/ready_s" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">ready_s</obj_property>
       <obj_property name="ObjectShortName">ready_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/bram_t_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">bram_t_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">bram_t_o[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/bram_s_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">bram_s_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">bram_s_o[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_state_wrapper/sad_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sad_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sad_o[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_state_wrapper/uut/ready_s_next" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">ready_s_next</obj_property>
