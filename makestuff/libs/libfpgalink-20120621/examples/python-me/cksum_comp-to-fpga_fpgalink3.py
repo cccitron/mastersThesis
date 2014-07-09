@@ -508,13 +508,15 @@ if __name__ == "__main__":
                         searchBuff[i][j] = imL.getpixel((j, i))
                 
                 # Number of pixels per row to be sent
-                ncol = 21 #65
+                #ncol = 21 #33 #25 #21 #65
                 # Number of rows of pixels to be sent
                 nrow = 3
                 # Disparity range 0-15
                 disp_range = 16
                 # Number of disparity values for an entire row
-                disp_row = ncol - (disp_range + 1)
+                disp_row = 2#ncol - (disp_range + 1)
+                # Number of pixels per row to be sent
+                ncol = disp_row + disp_range + 1
                 
                 # template & search arrays, data sent over via bytearrays
                 buffTempl_h2f = bytearray(ncol * nrow + 1)
@@ -584,7 +586,7 @@ if __name__ == "__main__":
                         disparity_f2h[pos][ndx] = flReadChannel(handle, 1000, 0x03, 1)
                     pos += 1
                     
-                for offset in range(4, width-21, 4):
+                for offset in range(disp_row, width-ncol, disp_row):
                     pos = 0
                     for i in range(3):
                         ndx = 1
@@ -669,8 +671,8 @@ if __name__ == "__main__":
                     for j in range(height-2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("tsukuba_disp3x3.png")
-                #im.show()
+                im.save("tsukuba_disp3x3_2_1024_limited.png")
+                im.show()
                 
                 # time after image is created
                 t2 = time.time()

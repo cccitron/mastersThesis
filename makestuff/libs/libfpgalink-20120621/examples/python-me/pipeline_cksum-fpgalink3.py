@@ -463,7 +463,7 @@ if __name__ == "__main__":
                 print(buff, end=" ")
             print("")
             
-            '''buff = flReadChannel(handle, 1000, 0x04, 9)
+            '''buff = flReadChannel(handle, 1000, 0x00, 9)
             print(buff)
             print("")'''
             '''for i in range (1000):

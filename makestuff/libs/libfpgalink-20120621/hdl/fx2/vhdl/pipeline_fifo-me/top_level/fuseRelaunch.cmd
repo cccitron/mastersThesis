@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/pipeline_cksum-me/top_level/tb_state_wrapper_isim_beh.exe" -prj "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/pipeline_cksum-me/top_level/tb_state_wrapper_beh.prj" "work.tb_state_wrapper" 

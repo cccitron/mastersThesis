@@ -1,0 +1,36 @@
+SET_FLAG DEBUG FALSE
+SET_FLAG MODE INTERACTIVE
+SET_FLAG STANDALONE_MODE FALSE
+SET_PREFERENCE devicefamily spartan6
+SET_PREFERENCE device xc6slx45
+SET_PREFERENCE speedgrade -3
+SET_PREFERENCE package csg324
+SET_PREFERENCE verilogsim false
+SET_PREFERENCE vhdlsim true
+SET_PREFERENCE simulationfiles Behavioral
+SET_PREFERENCE busformat BusFormatAngleBracketNotRipped
+SET_PREFERENCE outputdirectory /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/ipcore_dir/
+SET_PREFERENCE workingdirectory /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/ipcore_dir/tmp/
+SET_PREFERENCE subworkingdirectory /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/ipcore_dir/tmp/_cg/
+SET_PREFERENCE transientdirectory /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/ipcore_dir/tmp/_cg/_dbg/
+SET_PREFERENCE designentry VHDL
+SET_PREFERENCE flowvendor Other
+SET_PREFERENCE addpads false
+SET_PREFERENCE projectname coregen
+SET_PREFERENCE formalverification false
+SET_PREFERENCE asysymbol false
+SET_PREFERENCE implementationfiletype Ngc
+SET_PREFERENCE foundationsym false
+SET_PREFERENCE createndf false
+SET_PREFERENCE removerpms false
+SET_PARAMETER Component_Name adder
+SET_CORE_NAME Adder Subtracter
+SET_CORE_VERSION 11.0
+SET_CORE_VLNV xilinx.com:ip:c_addsub:11.0
+SET_CORE_CLASS com.xilinx.ip.c_addsub_v11_0.c_addsub_v11_0
+SET_CORE_PATH /opt/Xilinx/14.7/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/c_addsub_v11_0
+SET_CORE_GUIPATH /opt/Xilinx/14.7/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/c_addsub_v11_0/gui/c_addsub_v11_0.tcl
+SET_CORE_DATASHEET /opt/Xilinx/14.7/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/c_addsub_v11_0/doc/ds214_addsub.pdf
+ADD_CORE_DOCUMENT </opt/Xilinx/14.7/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/c_addsub_v11_0/doc/c_addsub_v11_0_readme.txt><c_addsub_v11_0_readme.txt>
+ADD_CORE_DOCUMENT </opt/Xilinx/14.7/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/c_addsub_v11_0/doc/c_addsub_v11_0_vinfo.html><c_addsub_v11_0_vinfo.html>
+ADD_CORE_DOCUMENT </opt/Xilinx/14.7/ISE_DS/ISE/coregen/ip/xilinx/primary/com/xilinx/ip/c_addsub_v11_0/doc/ds214_addsub.pdf><ds214_addsub.pdf>

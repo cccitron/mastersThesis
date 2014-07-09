@@ -131,6 +131,40 @@ begin
 --         templ_next_t_row <= templ_next_t_row_next;
 --         search_next_s_row <= search_next_s_row_next;
          
+			
+			
+			
+			
+			
+			
+--			templ_array <= templ_array;
+--			
+--			IF (chanAddr_I = "0000000" and h2fValid_I = '1' and junk_t = '0') THEN
+--				IF (disp_ready = '1') THEN
+--					templ_array(0 TO LAST_ROW-1) <= templ_array(NUM_2_ROW TO PIXEL_CNT-1);
+--				ELSE
+--					templ_array(ndx_t) <= h2fData_I;
+--				END IF;
+--				
+--				IF (ndx_t = PIXEL_CNT-1) THEN
+--					ndx_t <= LAST_ROW;
+----					junk_t <= '1';
+--				ELSE
+--					ndx_t <= ndx_t + 1;
+----					junk_t <= junk_t
+--				END IF;
+--			END IF;
+--			
+--         IF (ndx_t = PIXEL_CNT) THEN
+--            junk_t <= '1';
+--         ELSE
+--            junk_t <= junk_t_next;
+--         END IF;
+			
+			
+			
+			
+			
          ndx_t <= ndx_t_next;
          IF (ndx_t = PIXEL_CNT) THEN
             ndx_t <= LAST_ROW; --0;
@@ -180,42 +214,11 @@ begin
             disp_ready <= '0';
          END IF;
          
---         ndx_disp <= ndx_disp_next;
---         IF (ndx_disp = DISP_RANGE) THEN
---            ndx_disp <= 0;
---         END IF;
-         
---         IF (ndx_t_row_next = NCOL_C) THEN
---            ndx_t_row <= 0;
---            next_t_row <= '1';
---            junk_t_row <= '1';
---         ELSE
---            ndx_t_row <= ndx_t_row_next;
---            next_t_row <= '0';
---            junk_t_row <= junk_t_row_next;
---         END IF;
---         
---         IF (ndx_s_row_next = NCOL_C) THEN
---            ndx_s_row <= 0;
---            next_s_row <= '1';
---            junk_s_row <= '1';
---         ELSE
---            ndx_s_row <= ndx_s_row_next;
---            next_s_row <= '0';
---            junk_s_row <= junk_s_row_next;
---         END IF;
-         
---         IF (neg_disp = '1') THEN
---            disp_ready <= NOT(disp_ready);
---            next_t_row <= NOT(next_t_row);
---         ELSE
---            disp_ready <= disp_ready;
---            next_t_row <= next_t_row;
---         END IF;
-         
 		end if;
 	end process;
       
+--	junk_t_next <= '0' when chanAddr_I = "0000000" and h2fValid_I = '1' else junk_t;
+		
    -- host to FPGA templ_array
    -- reg 0
    reg0_templ <= h2fData_I when chanAddr_I = "0000000" and h2fValid_I = '1' and junk_t = '0' else templ_array(ndx_t);
@@ -311,6 +314,8 @@ begin
       BEGIN
          i_sad_alg_3x3 : ENTITY work.sadAlgorithm_3x3
             PORT MAP (
+--					clk_I => clk_I,
+				
                ttl => templ_array(0+i),
                ttc => templ_array(1+i),
                ttr => templ_array(2+i),

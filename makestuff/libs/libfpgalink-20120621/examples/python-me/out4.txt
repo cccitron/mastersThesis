@@ -1,0 +1,61 @@
+FPGALink Python Example Copyright (C) 2011-2012 Chris McClelland
+
+Attempting to open connection to FPGALink device 1443:0007...
+Loading firmware into 1443:0007...
+Awaiting renumeration...
+Attempting to open connection to FPGALink device 1443:0007 again...
+The FPGALink device at 1443:0007 scanned its JTAG chain, yielding:
+  0x44008093
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+Playing "../../hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/default.xsvf" into the JTAG chain on FPGALink device 1443:0007...
+begin template read
+2 3 3 3 3 3 3 3 3 3 2 2 3 3 3 2 3 2 3 2 3 
+
+2 4 4 4 4 4 4 4 4 4 4 4 5 3 4 3 5 3 4 3 5 
+
+2 4 3 4 4 4 4 4 4 4 4 3 5 3 4 2 4 3 4 3 4 
+
+begin search read
+2 2 3 3 3 4 3 3 3 3 3 2 3 1 2 2 3 2 3 2 3 
+
+2 4 4 4 4 4 4 4 4 4 4 4 5 3 4 3 5 3 4 3 5 
+
+2 4 4 4 3 4 4 4 4 4 4 3 4 3 4 3 4 3 4 3 4 
+
+reading from sad array  0
+1 1 0 1 1 1 1 1 1 0 1 0 1 0 1 0 
+
+reading from sad array  1
+0 1 0 0 0 0 0 0 1 0 1 0 1 0 1 0 
+
+reading from sad array  2
+1 0 0 0 0 0 0 1 0 1 0 1 0 1 0 1 
+
+reading from sad array  3
+0 0 0 0 0 0 1 0 1 0 1 0 1 0 1 0 
+
+reading from disparity array
+2 0 1 0 
+
+
+
+t0 =  1404774624.8008235
+t1 =  1404774624.850534
+t2 =  1404774624.8505344
+t1 - t0 =  0.04971051216125488
+t2 - t1 =  4.76837158203125e-07
+t2 - t0 =  0.049710988998413086

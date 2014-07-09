@@ -30,7 +30,9 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity sadAlgorithm_3x3 is
-   Port ( 
+   Port (
+--		clk_I : IN STD_LOGIC;
+	
       ttl : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);
       ttc : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);
       ttr : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -56,8 +58,11 @@ entity sadAlgorithm_3x3 is
 end sadAlgorithm_3x3;
 
 architecture Behavioral of sadAlgorithm_3x3 is
-   
-   SIGNAL sum_sign : SIGNED(9 DOWNTO 0);
+	
+--	type array_type_temp is array (0 to 7) of SIGNED(9 downto 0);
+--	signal temp : array_type_temp;
+	
+	SIGNAL sum_sign : SIGNED(9 DOWNTO 0);
    
 begin
    
@@ -75,6 +80,20 @@ begin
          abs(SIGNED("00" & tbl) - SIGNED("00" & sbl)) +
          abs(SIGNED("00" & tbc) - SIGNED("00" & sbc)) +
          abs(SIGNED("00" & tbr) - SIGNED("00" & sbr));
+
+--		IF (RISING_EDGE(clk_I)) THEN
+--			temp(0) <= abs(SIGNED("00" & ttl) - SIGNED("00" & stl));
+--			
+--			temp(1) <= temp(0) + abs(SIGNED("00" & ttc) - SIGNED("00" & stc));
+--			temp(2) <= temp(1) + abs(SIGNED("00" & ttr) - SIGNED("00" & str));
+--			temp(3) <= temp(2) + abs(SIGNED("00" & tml) - SIGNED("00" & sml));
+--			temp(4) <= temp(3) + abs(SIGNED("00" & tmc) - SIGNED("00" & smc));
+--			temp(5) <= temp(4) + abs(SIGNED("00" & tmr) - SIGNED("00" & smr));
+--			temp(6) <= temp(5) + abs(SIGNED("00" & tbl) - SIGNED("00" & sbl));
+--			temp(7) <= temp(6) + abs(SIGNED("00" & tbc) - SIGNED("00" & sbc));
+--			
+--			sum_sign <= temp(7) + abs(SIGNED("00" & tbr) - SIGNED("00" & sbr));
+--		END IF;
    END PROCESS signed_sum;
    
    -- Assigns the values from summer array to sad array

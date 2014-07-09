@@ -15,6 +15,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+#NET "clk"   LOC = "L15";
+#NET "reset" LOC = "T15"; # Bank = 2, Pin name = IO_L1N_M0_CMPMISO_2, Sch name = M0/RESET
+
 #===============================================================================
 # USB interface
 #===============================================================================

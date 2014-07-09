@@ -1,0 +1,59 @@
+ISim log file
+Running: /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/pipeline_cksum-me/top_level/tb_state_wrapper_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -view /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/pipeline_cksum-me/top_level/tb_for_bram_wrapper.wcfg -wdb /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/pipeline_cksum-me/top_level/tb_state_wrapper_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# run 1500 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 310 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/tb_state_wrapper/uut/bram_template/U0/native_mem_module/mem_module/).
+at 510 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/tb_state_wrapper/uut/bram_search/U0/native_mem_module/mem_module/).
+740 ns templateArray(0): 00000001
+800 ns templateArray(1): 00000010
+840 ns templateArray(2): 00000011
+880 ns templateArray(3): 00000100
+920 ns templateArray(4): 00000101
+960 ns templateArray(5): 00000110
+1000 ns templateArray(6): 00000111
+1040 ns templateArray(7): 00001000
+1080 ns templateArray(8): 00001001
+1120 ns searchArray(0): 00000010
+1160 ns searchArray(1): 00000011
+1200 ns searchArray(2): 00000100
+1240 ns searchArray(3): 00000101
+1280 ns searchArray(4): 00000110
+1320 ns searchArray(5): 00000111
+1360 ns searchArray(6): 00001000
+1400 ns searchArray(7): 00001001
+1440 ns searchArray(8): 00001010
+1480 ns templateArray(0): 00000001
+# restart
+# run 2.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 310 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/tb_state_wrapper/uut/bram_template/U0/native_mem_module/mem_module/).
+at 510 ns(1): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/tb_state_wrapper/uut/bram_search/U0/native_mem_module/mem_module/).
+740 ns templateArray(0): 00000001
+800 ns templateArray(1): 00000010
+840 ns templateArray(2): 00000011
+880 ns templateArray(3): 00000100
+920 ns templateArray(4): 00000101
+960 ns templateArray(5): 00000110
+1000 ns templateArray(6): 00000111
+1040 ns templateArray(7): 00001000
+1080 ns templateArray(8): 00001001
+1120 ns searchArray(0): 00000010
+1160 ns searchArray(1): 00000011
+1200 ns searchArray(2): 00000100
+1240 ns searchArray(3): 00000101
+1280 ns searchArray(4): 00000110
+1320 ns searchArray(5): 00000111
+1360 ns searchArray(6): 00001000
+1400 ns searchArray(7): 00001001
+1440 ns searchArray(8): 00001010
+1480 ns templateArray(0): 00000001
+# exit 0

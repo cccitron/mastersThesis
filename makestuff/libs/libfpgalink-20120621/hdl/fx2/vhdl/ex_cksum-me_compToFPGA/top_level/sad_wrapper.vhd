@@ -24,6 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
 
+--USE work.window_array.all;
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
 --library UNISIM;
@@ -303,7 +304,7 @@ begin
    
    f2h_disp_rd_next <= f2h_disp_rd + 1 WHEN f2hReady_I = '1' AND chanAddr_I = "0000011"
       ELSE f2h_disp_rd;
-
+		
    -- Sum of the Absolute Difference between the template 3x3 and search 3x3
    g_signed_sad : FOR i IN 0 TO DISP_ROW-1 GENERATE
    BEGIN
@@ -311,6 +312,8 @@ begin
       BEGIN
          i_sad_alg_3x3 : ENTITY work.sadAlgorithm_3x3
             PORT MAP (
+					clk_I => clk_I,
+				
                ttl => templ_array(0+i),
                ttc => templ_array(1+i),
                ttr => templ_array(2+i),
