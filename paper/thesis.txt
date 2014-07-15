@@ -1,0 +1,2317 @@
+DECAFS: A MODULAR DISTRIBUTED FILE SYSTEM TO FACILITATE
+STUDENT LEARNING
+
+A Thesis
+Presented to
+the Faculty of California Polytechnic State University
+San Luis Obispo
+
+In Partial Fulﬁllment
+of the Requirements for the Degree
+Master of Science in Computer Science
+
+by
+Halli Meth
+June 2014
+
+c 2014
+Halli Meth
+ALL RIGHTS RESERVED
+
+ii
+
+COMMITTEE MEMBERSHIP
+
+TITLE:
+
+DecaFS: A Modular Distributed File System to Facilitate Student Learning
+
+AUTHOR:
+
+Halli Meth
+
+DATE SUBMITTED:
+
+June 2014
+
+COMMITTEE CHAIR:
+
+Chris Lupo, Ph.D.
+
+COMMITTEE MEMBER:
+
+Alex Dekhtyar, Ph.D.
+
+COMMITTEE MEMBER:
+
+Aaron Keen, Ph.D.
+
+COMMITTEE MEMBER:
+
+John Bellardo, Ph.D
+
+iii
+
+Abstract
+DecaFS: A Modular Distributed File System to Facilitate Student Learning
+Halli Meth
+
+Data quantity, speed requirements, reliability constraints, and other factors
+encourage industry developers to build distributed systems and use distributed
+services. Software engineers are therefore exposed to distributed systems and services daily in the workplace. However, distributed computing is hard to teach in
+Computer Science courses due to the complexity distribution brings to all problem spaces. This presents a gap in education where students may not fully understand the challenges introduced with distributed systems. Teaching students
+distributed concepts would help better prepare them for industry development
+work.
+DecaFS, Distributed Educational Component Adaptable File System, is a
+modular distributed ﬁle system designed for educational use. The goal of the
+system is to teach distributed computing concepts to undergraduate and graduate
+level students by allowing them to develop small, digestible portions of the system.
+The system is broken up into layers, and each layer is broken up into modules
+so that students can build or modify diﬀerent components in small, assignment
+sized portions. Students can replace modules or entire layers by following the
+DecaFS APIs and recompiling the system. This allows the behavior of the DFS
+(Distributed File System) to change based on student implementation, while
+providing base functionality for students to work from.
+
+iv
+
+Acknowledgements
+Thanks to:
+• Chris Lupo and Alex Dekhtyar for project inspiration, support and guidance.
+• Jeﬀrey Forrester
+• Peter Faiman
+
+v
+
+Contents
+List of Tables
+
+x
+
+List of Figures
+
+xi
+
+1 Introduction
+
+1
+
+1.1
+
+Distributed Systems in Education . . . . . . . . . . . . . . . . . .
+
+1
+
+1.2
+
+Distributed File Systems . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+
+1.3
+
+Our Contribution . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+
+2 Background
+
+4
+
+2.1
+
+Transparency . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+4
+
+2.2
+
+Fault Tolerance . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+2.2.1
+
+Availability . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+2.2.2
+
+Replication . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+2.3
+
+Scalability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6
+
+2.4
+
+File Names . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6
+
+2.4.1
+
+7
+
+Additional Naming Properties . . . . . . . . . . . . . . . .
+
+3 Related Work
+
+8
+
+3.1
+
+Andrew File System (AFS) . . . . . . . . . . . . . . . . . . . . . .
+
+8
+
+3.2
+
+Google File System (GFS) . . . . . . . . . . . . . . . . . . . . . .
+
+9
+
+3.2.1
+
+GFS Architecture . . . . . . . . . . . . . . . . . . . . . . .
+
+11
+
+3.3
+
+Hadoop Distributed File System (HDFS) . . . . . . . . . . . . . .
+
+11
+
+3.4
+
+Others . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+12
+
+3.5
+
+Related Work and DecaFS . . . . . . . . . . . . . . . . . . . . . .
+
+13
+
+4 DecaFS Requirements
+
+14
+vi
+
+4.1
+
+System Requirements . . . . . . . . . . . . . . . . . . . . . . . . .
+
+14
+
+4.2
+
+DFS Requirements . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+15
+
+4.3
+
+Limitations and Conﬁguration . . . . . . . . . . . . . . . . . . . .
+
+15
+
+5 DecaFS Design
+
+17
+
+5.1
+
+Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+17
+
+5.2
+
+Deﬁnitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+19
+
+5.3
+
+Barista . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+20
+
+5.3.1
+
+Barista Core . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+20
+
+5.3.2
+
+Persitent Metadata . . . . . . . . . . . . . . . . . . . . . .
+
+21
+
+5.3.3
+
+Volatile Metadata . . . . . . . . . . . . . . . . . . . . . . .
+
+21
+
+5.3.4
+
+Locking Strategy . . . . . . . . . . . . . . . . . . . . . . .
+
+21
+
+5.3.5
+
+IO Manager . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+22
+
+5.3.6
+
+Distribution Strategy . . . . . . . . . . . . . . . . . . . . .
+
+22
+
+5.3.7
+
+Replication Strategy . . . . . . . . . . . . . . . . . . . . .
+
+22
+
+5.3.8
+
+IO/Distribution and Replication . . . . . . . . . . . . . . .
+
+23
+
+5.3.9
+
+Access Module . . . . . . . . . . . . . . . . . . . . . . . .
+
+23
+
+5.3.10 Monitored Strategy . . . . . . . . . . . . . . . . . . . . . .
+
+23
+
+Espresso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+24
+
+5.4.1
+
+Espresso Storage . . . . . . . . . . . . . . . . . . . . . . .
+
+24
+
+Network . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+24
+
+5.5.1
+
+Net TCP
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+25
+
+5.5.2
+
+Network Core . . . . . . . . . . . . . . . . . . . . . . . . .
+
+25
+
+Connecting Layers . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+25
+
+5.6.1
+
+DecaFS Barista . . . . . . . . . . . . . . . . . . . . . . . .
+
+25
+
+5.6.2
+
+Espresso Core . . . . . . . . . . . . . . . . . . . . . . . . .
+
+26
+
+5.4
+
+5.5
+
+5.6
+
+6 DecaFS Workﬂows
+
+27
+
+6.1
+
+Data Flow . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+27
+
+6.2
+
+Open . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+29
+
+6.3
+
+Read . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+31
+
+6.4
+
+Write . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+35
+
+vii
+
+6.4.1
+
+Metadata . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+35
+
+6.4.2
+
+Chunks and Replica Chunks . . . . . . . . . . . . . . . . .
+
+36
+
+6.4.3
+
+Distribution and Replication Strategy Modules . . . . . . .
+
+36
+
+6.5
+
+Close . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+39
+
+6.6
+
+Delete . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+40
+
+6.6.1
+
+Metadata . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+41
+
+6.6.2
+
+Node Failures . . . . . . . . . . . . . . . . . . . . . . . . .
+
+41
+
+6.7
+
+Seek . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+44
+
+6.8
+
+Stat . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+46
+
+7 DecaFS Implementation
+7.1
+
+47
+
+Barista Core . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+47
+
+7.1.2
+
+Persitent Metadata . . . . . . . . . . . . . . . . . . . . . .
+
+47
+
+7.1.3
+
+Volatile Metadata . . . . . . . . . . . . . . . . . . . . . . .
+
+48
+
+7.1.4
+
+Locking Strategy . . . . . . . . . . . . . . . . . . . . . . .
+
+48
+
+7.1.5
+
+IO Manager . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+48
+
+7.1.6
+
+Distribution Strategy . . . . . . . . . . . . . . . . . . . . .
+
+48
+
+7.1.7
+
+Replication Strategy . . . . . . . . . . . . . . . . . . . . .
+
+48
+
+7.1.8
+
+Access Module . . . . . . . . . . . . . . . . . . . . . . . .
+
+48
+
+7.1.9
+
+Monitored Strategy . . . . . . . . . . . . . . . . . . . . . .
+
+48
+
+Network . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+49
+
+7.2.1
+
+Net TCP
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+49
+
+7.2.2
+
+Network Core . . . . . . . . . . . . . . . . . . . . . . . . .
+
+49
+
+Espresso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+49
+
+7.3.1
+
+Espresso Core . . . . . . . . . . . . . . . . . . . . . . . . .
+
+49
+
+7.3.2
+
+7.3
+
+47
+
+7.1.1
+
+7.2
+
+Barista . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+Espresso Storage . . . . . . . . . . . . . . . . . . . . . . .
+
+49
+
+8 Testing and Validation
+
+50
+
+9 Conclusions
+
+51
+
+10 Future Work
+
+52
+
+Bibliography
+
+53
+viii
+
+A Workﬂows for Failures
+
+55
+
+A.1 Open Failures . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+55
+
+A.2 Read Failures . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+57
+
+A.3 Write Failures . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+57
+
+A.4 Close Failures . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+57
+
+A.5 Delete Failures . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+59
+
+A.6 Seek Failures . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+61
+
+B APIs
+
+63
+
+B.1 Barista . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+63
+
+B.1.1 Barista Core . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+63
+
+ix
+
+List of Tables
+
+x
+
+List of Figures
+3.1
+
+AFS Namespace . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+9
+
+3.2
+
+GFS Architecture . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+11
+
+3.3
+
+HDFS Architecture . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+12
+
+5.1
+
+DecaFS Architecture . . . . . . . . . . . . . . . . . . . . . . . . .
+
+19
+
+6.1
+
+DecaFS Data Flow . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+28
+
+6.2
+
+DecaFS Open . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+30
+
+6.3
+
+DecaFS Open READ ONLY: Success . . . . . . . . . . . . . . . .
+
+30
+
+6.4
+
+DecaFS Open READ WRITE: Success . . . . . . . . . . . . . . .
+
+31
+
+6.5
+
+DecaFS Read . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+33
+
+6.6
+
+DecaFS Read: Success . . . . . . . . . . . . . . . . . . . . . . . .
+
+34
+
+6.7
+
+DecaFS Write . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+37
+
+6.8
+
+DecaFS Write: Success . . . . . . . . . . . . . . . . . . . . . . . .
+
+38
+
+6.9
+
+DecaFS Close . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+39
+
+6.10 DecaFS Close: Success . . . . . . . . . . . . . . . . . . . . . . . .
+
+40
+
+6.11 DecaFS Delete
+
+42
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6.12 DecaFS Delete: Success
+6.13 DecaFS Seek
+
+. . . . . . . . . . . . . . . . . . . . . . .
+
+43
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+45
+
+6.14 DecaFS Seek: Success
+
+. . . . . . . . . . . . . . . . . . . . . . . .
+
+45
+
+A.1 DecaFS Open READ ONLY: Lock Failure . . . . . . . . . . . . .
+
+56
+
+A.2 DecaFS Open READ ONLY: File Not Found Failure . . . . . . .
+
+56
+
+A.3 DecaFS Open READ WRITE: Lock Failure . . . . . . . . . . . .
+
+57
+
+xi
+
+A.4 DecaFS Close: Wrong Client Failure . . . . . . . . . . . . . . . .
+
+58
+
+A.5 DecaFS Close: File Not Open Failure . . . . . . . . . . . . . . . .
+
+58
+
+A.6 DecaFS Delete: File Not Found Failure . . . . . . . . . . . . . . .
+
+60
+
+A.7 DecaFS Delete: Lock Failure . . . . . . . . . . . . . . . . . . . . .
+
+60
+
+A.8 DecaFS Seek: Lock Failure . . . . . . . . . . . . . . . . . . . . . .
+
+62
+
+A.9 DecaFS Seek: Wrong Client Failure . . . . . . . . . . . . . . . . .
+
+62
+
+xii
+
+Chapter 1
+Introduction
+
+1.1
+
+Distributed Systems in Education
+
+Computer Science education is structured to be attractive to students and
+“strategic to a business enterprise [5].” Hogansan explains that curricula needs to
+be structured in a way that can counter the movement to out-source development
+work by preparing students in “knowledge areas that are of strategic importance
+to the enterprise” and are therefore “less likely to be successfully out-sourced
+[5].” His “strategic CS program” within the ABET criteria, includes Distributed
+Technologies at both the Undergraduate and Graduate level [5]. The importance
+of distributed computing in education can also be seen by Google and IBM’s joint
+Initiative in 2008 to “improve computer science students knowledge ... to better
+address the emerging paradigm of large-scale distributed computing [9].”
+The Cal Poly Computer Science Department has decided to begin updating
+the curriculum to facilitate Distributed Systems Education. This thesis aims to
+help shape coursework to teach Distributed Concepts by allowing students to
+
+1
+
+write components of Distributed File Systems.
+
+1.2
+
+Distributed File Systems
+
+A Distributed File System (DFS) is “a ﬁle system, who’s clients, servers, and
+storage devices are dispersed among the machines of a distributed system.” Under
+this deﬁnition, a distributed system is “a collection of loosely coupled machines”,
+servers are software services that run on a single machine in the system and
+client’s are processes that can invoke these services [6].
+A DFS can be implemented as part of a Distributed Operating System, or as
+a software layer [6]. At Cal Poly, we are implementing a software layer DFS that
+will be responsible for managing the communication between the “conventional
+operating systems and ﬁle systems”.
+
+1.3
+
+Our Contribution
+
+Research in Distributed Computing Education has focused on virtual systems
+[16]. However, at Cal Poly the theme of each department’s educational goals is
+“learn by doing”. To adhere to the Cal Poly motto, we developed DecaFS, a
+modular distributed ﬁle system to run on physical systems.
+Our work describes the following contributions:
+1. Design of a modular DFS (DecaFS), with small components that can be
+implemented or adapted in a classroom environment.
+2. Implementation of base functionality in DecaFS to allow students to develop
+DecaFS modules.
+2
+
+3. Design of lab activities for students to complete using DecaFS to learn
+various distributed computing concepts.
+Background information on Distributed File Systems and Related Work will
+be detailed in Chapter 2 and Chapter 3. Design of our system, DecaFS, will
+be presented in Chapter 5, followed by implementation details in Chapter 7.
+Information on DecaFS testing and validation will be presented in Chapter 8,
+and lastly Conclusions and Future Work in Chapter 9 and Chapter 10.
+
+3
+
+Chapter 2
+Background
+Distributed File Systems have many of the same goals of traditional ﬁle systems. Here we will discuss the main DFS concerns that are independent of a
+single DFS implementation.
+
+2.1
+
+Transparency
+
+DFS clients, like any ﬁle system client, should be unaware of the storage
+mechanisms. This means that the number of servers and the “dispersion of
+storage devices” should be transparent to a client of the DFS [6]. The main
+concept of transparency is network transparency. A client should be able to
+“access remote ﬁles using the same set of ﬁle operations applicable to local ﬁles
+[6].” This places the responsibility of locating ﬁles and transmitting data across
+the network on the DFS.
+
+4
+
+2.2
+
+Fault Tolerance
+
+A DFS should be able to perform in the case of faults. Levy and Silberschatz
+use a broad deﬁnition of a “fault” which includes communication faults, machine
+failures, storage devices crashes, and the decay of storage media. In the case
+of these faults, the DFS needs to be able to function. The level of continued
+system functionality should be proportional with the degradation of performance
+or functionality to the fault causing the disturbance [6].
+
+2.2.1
+
+Availability
+
+Availability is an additional criteria that can be imposed on a DFS with
+respect to fault tolerance. A ﬁle is “available” if it can be accessed regardless
+of of storage failures and machine faults [6]. A similar criteria is robustness,
+which means that the ﬁle is guaranteed to survive faults, but it may not become
+available until faults are recovered [6].
+
+2.2.2
+
+Replication
+
+In order to increase the availability of ﬁles within a DFS, DFS designers can
+use replication strategies. One common mechanism for replication is “demand
+replication” where ﬁles have a primary replica, which is accessed ﬁrst for read
+and write requests, and supplementary secondary replica(s) which can be used
+for access during faults on the primary machine [14].
+
+5
+
+2.3
+
+Scalability
+
+Scalability is “the capability of the system to adapt to increased service load
+[6].” When compared to a traditional File System, a DFS has a higher risk of saturation because communication overhead is associated with DFS client requests
+since the DFS must send and receive data over a network. However, a distributed
+system can gain beneﬁts from having multiplicity of resources [6]. Centralized
+components of any distributed system removes the beneﬁts of resource multiplicity and introduces a bottleneck on the resource, which can be the cause of system
+faults.
+Scalability and Fault Tolerance are related since the properties since scaling
+can cause faults, and some faults may hinder the system’s ability to scale. In
+order to build a system that is both scalable and fault tolerant, a DFS must have
+multiple, independent servers that control multiple, independent storage devices
+[6].
+
+2.4
+
+File Names
+
+All ﬁle systems have a layer of abstraction between a textual ﬁle name, and
+the actual storage of the data in disk blocks. A DFS introduces another layer of
+abstraction for transparency as described in Section 2.1. To support transparency,
+a DFS must hide where in the network of resources ﬁle data is located. A DFS
+may also hide this information with ﬁle replicas (2.2.2), multiple copies of ﬁle
+data to support fault tolerance (Section 2.2). With all abstractions, a DFS can
+maintain a mapping of a ﬁlename to a list of all storage locations for all pieces
+of a DFS ﬁle, hiding the existence of replicas and storage locations [6].
+
+6
+
+2.4.1
+
+Additional Naming Properties
+
+Two new properties are imposed on a DFS with regard to transparency
+through naming.
+1. Location Transparency: Filenames do not expose storage location information.
+2. Location Independence: Filenames do not to be changed when physical
+storage location changes.
+[6]
+
+7
+
+Chapter 3
+Related Work
+Both Research and Industry use Distributed File Systems, but to the best
+of our knowledge, no extant system can be broken up into pieces conducive to
+student learning.
+
+3.1
+
+Andrew File System (AFS)
+
+Andrew File System (AFS) is a distributed network ﬁle system. [12] AFS is
+unique to DFS research because it provides “location independence, scalability
+and transparent migration”, while working across Operating Systems. AFS ﬁles
+are organized into a “globally unique namespace” as seen in Figure 3.1 [15]. AFS
+facilitates these non-server identiﬁable namespaces by maintaining a replicated
+location database. Clients must connect to the database to resolve ﬁle names and
+ﬁnd data. These domains are considered to be “AFS cells” and ﬁle pathnames
+include cells rather than server names [15]. This namespace design allows for
+location transparency and independence as described in 2.4.1, since AFS administrators can move data between servers without aﬀecting clients. This model also
+8
+
+1
+Figure 3.1: This shows the namespace design for AFS ﬁles [15].
+
+address scalability (Section 2.3) since more resources can be added in a particular
+domain without notifying the clients.
+With all of these features, “the diﬀerent aspects of AFS can be overwhelming
+at ﬁrst and the learning curve for setting up your own AFS cell is steep... Secure,
+platform-independent world-wide ﬁle sharing is a concept as attractive as serving
+your /usr/local/ area and all your UNIX home directories [15].” AFS is designed
+for secure global sharing, and is maintained today as an open source project [10].
+However, these design considerations, and the learning curve, make the system
+too complex for small, but meaningful, DFS behavioral modiﬁcations and use in
+the classroom.
+
+3.2
+
+Google File System (GFS)
+
+The Google File System (GFS) is a “scalable distributed le system for large
+distributed data-intensive applications” [4]. GFS is designed with similar goals
+discussed in Chapter 2, such scalability (2.3) and availability (2.2), but is tailored to Google’s Application needs [4]. For example, Google constantly deals
+with component failures (2.2) due to the “quantity and quality of the components” which guarantees that “some are not functional at any given time and
+9
+
+some will not recover from their current failures [4].” For Google’s use, most ﬁle
+modiﬁcations are append only, and once written to, “ﬁles are only read, and often
+sequentially [4].”
+In addition to GFS being proprietary, some of the design considerations made
+for GFS make it unusable for students.
+• “We expect a few million les, each typically 100 MB or larger in size. MultiGB les are the common case and should be managed eﬃciently. Small les
+must be supported, but we need not optimize for them [4]”
+At Cal Poly we support “Learn By Doing” and encourage students to have
+hands on experience in as many aspects of a project as possible. Therefore,
+it is desirable for students to collect and use their own data for project,
+making smaller ﬁles more common than large ﬁles due to the time required
+for data collection.
+• “The workloads primarily consist of two kinds of reads: large streaming
+reads and small random reads...The workloads also have many large, sequential writes that append data to ﬁles [4].”
+The goal of DecaFS is ﬂexibility, students should be able to modify the
+system to adapt to their needs for a given project. Therefore, we cannot predict the workloads since they vary from project-to-project and per
+student.
+• “The system must eﬃciently implement well-deﬁned semantics for multiple
+clients that concurrently append to the same ﬁle [4].”
+Cal Poly course sizes are small, and we will have signiﬁcantly less hardware
+running our DFS than at Google, so we are able to impose write restrictions
+10
+
+1
+Figure 3.2: Architecture for GFS [4].
+
+that allow us to have only one client writing a ﬁle at a time.
+
+3.2.1
+
+GFS Architecture
+
+Even though a system like GFS is infeasible for our purposes, many other
+systems are based on GFS, so it is still meaningful to explore the GFS architecture
+as seen in Figure 3.2. A GFS cluster has a single master node, and multiple chunk
+servers (worker nodes) and can be accessed by multiple clients [4]. Every ﬁle is
+divided into chunks, of a ﬁxed size, identiﬁable by a unique “chunk handle”
+that is assigned by master on creation [4]. Chunks are stored on disk in chunk
+servers, and each chunk is replicated three times by default [4]. The master
+node is responsible for the maintenance of metadata and system-wide activities.
+The master communicates regularly with chunk servers via heartbeats that are
+periodic checks for state [4].
+
+3.3
+
+Hadoop Distributed File System (HDFS)
+
+Hadoop Distributed File System (HDFS) is an open-source project similar
+to GFS. The HDFS Architecture can be seen in Figure 3.3. Assumptions for
+
+11
+
+1
+Figure 3.3: Architecture for HDFS [11].
+
+HDFS, like GFS, include hardware failures, streaming data processing (batch
+processing), large data ﬁles, and “write-once-read-many” ﬁle access [11]. HDFS
+has a master-slave architecture, with one master (NameNode) and many slaves
+(DataNode) [11]. Files are stored as “blocks” and each ﬁle is split into one or
+more blocks (like GFS chunks) [11].
+In addition to the requirement diﬀerences discussed in 3.2 which also apply
+to HDFS, HDFS cannot be directly mounted in user space, which limits the
+usefulness for students. Like GFS, we have determined that HDFS is unsuitable
+for classroom learning. The HDFS code-base is very large, and HDFS has many
+features for large-scale data processing that are not useful for the amount of data
+students can easily collect.
+
+3.4
+
+Others
+
+Other systems have been implemented that are similar to GFS and HDFS.
+For example, Quantcast File System (QFS) is a C++ HDFS alternative based
+on Kosmos Distributed File System (KFS) [1], implemented to work with the
+HDFS APIs. KFS, QFS, and other systems like it, are performance improvements
+over HDFS. These and other systems [13][8] are implemented with similar design
+12
+
+considerations of HDFS and GFS [7].
+
+3.5
+
+Related Work and DecaFS
+
+We have explored a sample of Distributed File Systems that are available,
+but found that in general, our design requirements discussed in Chapter 2 are
+accurate. Extant systems focus on scalability, fault tolerance, and transparency,
+for real data sets, imposing stricter requirements and more complex implementations than a classroom setting. Since extant systems are too robust or complex
+for student use, we have decided to build DecaFS for educational purposes. DecaFS is heavily inspired by Related DFS Work, but simpliﬁed down to the most
+basic DFS components and functions to reduce the learning curve for students
+and make biweekly projects feasible.
+
+13
+
+Chapter 4
+DecaFS Requirements
+
+4.1
+
+System Requirements
+
+Cal Poly courses need projects that allow students to develop pieces of Distributed Systems to learn diﬀerent distribution and distributed system management techniques. They must also be able to build applications that use a distributed system to solve problems from various application domains. The high
+level requirements of the system are seen as follows:
+• REQ-1: Students should be able to develop architectural components of a
+Distributed System
+• REQ-2: Students should be able to build applications for a Distributed
+System
+We have decided to develop a Modular Distributed File System (DecaFS) that
+allows students to develop components (modules) of the DFS. Altering modules
+serves two purposes: ﬁrst, students can develop components of a distributed
+14
+
+system, the DFS, (REQ-1), second, students can alter the behavior of DFS to
+support their data needs for applications (REQ-2).
+
+4.2
+
+DFS Requirements
+
+In addition to the overall system requirements described in Section 4.1, several
+requirements have been placed on the DFS to ensure that the system adapt to
+the needs of various projects and courses.
+• REQ-3: Students should be able to change which node(s) data is stored
+on/recovered from.
+• REQ-4: Students should be able to change the replication policies of the
+system. The system should support no replication, mirroring, and some
+RAID [2] implementations.
+• REQ-5: The DFS should be POSIX compliant.
+• REQ-6: The system should be able to tolerate one node failure.
+
+4.3
+
+Limitations and Conﬁguration
+
+The DFS also needs to have limitations and conﬁguration properties that can
+change per DFS-instance.
+• REQ-7: Students/Professors should be able to set the maximum possible
+ﬁle size for the DFS.
+
+15
+
+• REQ-8: Students/Professors should be able to set the size (in bytes) of the
+stripes for each ﬁle, where a stripe is the maximum number of bytes of ﬁle
+data that are broken up into pieces and distributed for storage.
+• REQ-9: Students/Professors should be able to set the size (in bytes) of the
+chunks for each ﬁle, where a chunk is the maximum number of bytes of a
+stripe of ﬁle data storage by one write, per storage node.
+
+16
+
+Chapter 5
+DecaFS Design
+We designed DecaFS, Distributed Educational Component Adaptable File
+System, to meet the requirements speciﬁed in Chapter 4, to provide students
+with a ﬂexible DFS that can be customized to include an application need or
+distributed systems concept.
+
+5.1
+
+Overview
+
+We designed DecaFS to have a master-slave architecture similar to GFS 3.2
+and HDFS 3.3. Our design is similar to these two systems, but scaled down for
+smaller numbers of nodes in the DFS and fewer clients. Our requirements are
+therefore more relaxed than those of GFS and HDFS. We designed to support
+one-node failures, smaller ﬁle sizes, and did not attempt to optimize our system
+for performance.
+DecaFS is broken down into three functional layers. The Barista Layer (5.3)
+contains all functionality of the master node of the system and the Espresso
+
+17
+
+Layer (5.4) contains all worker functionality. Communication between Barista
+and Espresso is also separated in its own layer, the Network Layer (5.5). Each
+layer is broken up into modules, which are logical components of the DFS. Each
+module is responsible for one task, or a set of tasks, that accomplish a piece of
+DFS functionality.
+Students should be able to replace a module, a set of modules, or one or more
+layers of DecaFS by following the module or layer APIs to achieve desired DFS
+behavior. With this modular design, students can change the behavior of the
+system, develop pieces of the system that are not provided by a professor, or
+improve extant system modules to learn about distributed systems.
+The overall architecture for DecaFS can be seen in Figure 5.1, and each module will be explained in more detail in the rest of this chapter, and in Chapter 7.
+DecaFS modules work together to accomplish DFS tasks which are a subset of
+Unix File System functionality. DecaFS supports the following operations:
+• File: open, read, write, close, delete, seek, stat
+• Directory: make, open, read
+
+18
+
+Figure 5.1: Architecture for DecaFS.
+
+5.2
+
+Deﬁnitions
+
+In order to properly discuss the functions of DecaFS Modules and the interactions between them, we need to deﬁne terms that we use throughout our
+system.
+• Node: a machine running a component of DecaFS.
+• Barista: the master node, one per instance of DecaFS.
+• Espresso: a worker node, one or more per instance of DecaFS.
+• DecaFS Client: any user running a process on a node in DecaFS. One user
+running multiple processes on the same node is considered the same client.
+One user running multiple processes on diﬀerent nodes are considered two
+separate clients.
+
+19
+
+• Stripe: a logical piece of a ﬁle to be distributed across multiple Espresso
+nodes in DecaFS.
+• Chunk: a piece of a Stripe, the actual data sent to or read from an Espresso
+node.
+
+5.3
+
+Barista
+
+As described in Section 5.1, the Barista Layer contains all functionality for the
+master node of DecaFS. Barista Responsibilities include: metadata management,
+monitoring system health (node failures), processing DecaFS client requests, and
+managing synchronization.
+
+5.3.1
+
+Barista Core
+
+Barista Core is the center of the Barista Layer. The goal of this module
+is to control the ﬂow of requests throughout the system, and should not be
+modiﬁed by students in most cases. Barista Core is the main entry point for
+the Barista Node from DecaFS Clients. While Barista Core manages the ﬂow
+of control of the system, the functionality of the system lies in other modules.
+This allows students to change the behavior of the system, without risk of broken
+communication channels between nodes.
+Barista Core handles communication with the Network Layer, so that network information can be hidden from students. This removes the need of explicit
+knowledge of Networks to develop a module for DecaFS. Barista Core also manages the storage and recovery of System Metadata. This ensures that DecaFS can
+clean-up and start-up without relying on students to log when they are reading
+20
+
+and writing data from other modules.
+Barista Core deals with data of various sizes from the clients, and breaks
+requests down into stripes before sending requests to other Barista Modules.
+
+5.3.2
+
+Persitent Metadata
+
+Barista Core uses Persistent Metadata to store all system information. This
+information includes the list of ﬁles stored in DecaFS and general information for
+each ﬁle such as size, id, and the stripe and chunk size associated with that ﬁle.
+
+5.3.3
+
+Volatile Metadata
+
+Barista Core uses Volatile Metadata to maintain the state of the current instance of DecaFS and the interaction between the system and its clients. Volatile
+Metadata is in charge of maintaining information such as the list of nodes currently ”active”, or not in a failure state, and the set of ﬁle descriptors for DecaFS
+clients.
+
+5.3.4
+
+Locking Strategy
+
+Barista Core uses the Locking Strategy module to manage DecaFS Client
+accesses to ﬁles at any point in time. For simplicity, DecaFS allows only one
+DecaFS Client to access a ﬁle at a time. DecaFS maintains two types of locks:
+exclusive and shared. Exclusive locks are needed to write to a ﬁle, and shared
+locks allow reading from a ﬁle. Only one process under one client may have an
+exclusive lock on a ﬁle at any point in time. Many processes under the same
+client may hold a shared lock on a ﬁle at any point in time. Locks are assigned
+21
+
+based on the permissions that a ﬁle is opened with, and released when the ﬁle is
+closed. We do not permit upgrading of locks.
+
+5.3.5
+
+IO Manager
+
+IO Manager is responsible for breaking down tasks (read/write/delete) and
+distributing work among the Espresso Nodes of the system. Students can modify
+this module to customize the mechanisms for storage and retrieval of data in/from
+Espresso Nodes.
+IO Manager receives requests of stripe size from Barista Core and is responsible for breaking striped requests into chunks for the Espresso Nodes. This
+allows students to customize behavior since they have total control over the size
+and number of chunks created per stripe. Management of data replication also
+happens in this module.
+
+5.3.6
+
+Distribution Strategy
+
+The Distribution Strategy Module provides the mechanism for determining
+what node a particular chunk should be sent to. A chunk is uniquely identiﬁed by
+its ﬁle, stripe and chunk number. This module allows students to change where
+chunks are sent throughout the system without writing an entire IO manager as
+described in 5.3.5.
+
+5.3.7
+
+Replication Strategy
+
+Similar to the Distribution Strategy Module (5.3.6), the Replication Strategy
+Module provides a mechanism for determining what node a particular chunk’s
+22
+
+replica should be sent to. Again, students can alter where chunk replicas are sent
+to without writing an entire IO Manager Module (5.3.5.
+
+5.3.8
+
+IO/Distribution and Replication
+
+The combination of these three modules gives students total control over the
+mechanisms for distributing ﬁle chunks and replicating data. With this control,
+students can choose to not replicate their data, do mirrored replication where
+each chunk is written to two nodes, or more complex strategies such as RAID,
+without managing system metadata.
+If students wish to implement more complex storage and replication strategies
+that require additional metadata, we allow them to register their own functions
+to be called on system start-up that will allow them to recover any additional
+metadata they wish to store.
+
+5.3.9
+
+Access Module
+
+The access module is the end point for data processing on the Barista Layer.
+It receives read, write, and delete requests from other Modules and sends them
+to the Network Layer. The Access Module is a good place for students to add a
+buﬀering system to avoid extraneous network calls.
+
+5.3.10
+
+Monitored Strategy
+
+Students may also wish to perform system monitoring for tasks such as rebalancing data if their storage mechanisms are not balanced. We allow them to
+register functions with Barista Core for monitoring that will be called incremen23
+
+tally based on a time-out speciﬁed at the time of registration.
+One monitoring function is pre-deﬁned for students and will be called each
+time the system detects a node failure in case a student’s module needs to be
+notiﬁed.
+
+5.4
+
+Espresso
+
+As described in Section 5.1, the Espresso Layer is responsible for storing data
+on disk and maintaining all associated metadata. Students should not have to
+alter any component of the Espresso Layer. The layer facilitates raw-data storage,
+but all logic related to the storage of ﬁle data resides in the Barista Layer.
+
+5.4.1
+
+Espresso Storage
+
+Espresso Storage is the main module of the Espresso Layer. It is responsible
+for executing chunk-level read, write, and delete requests. This module manages
+local metadata and knows only about which chunks exist on the Espresso Node
+the module runs on.
+
+5.5
+
+Network
+
+As described in Section 5.1, the Network Layer handles communication between nodes in DecaFS and between clients and the system. This layer hides
+the notion of packets from the rest of the system, allowing students to develop
+DecaFS modules without prior knowledge of Networks. Students will need to
+understand that nodes in the system communicate with one another, but will use
+24
+
+a DecaFS API to handle communication, rather than using direct Network calls
+and buﬀers.
+
+5.5.1
+
+Net TCP
+
+The Net TCP module provides functionality that is common to multiple network components of DecaFS. This functionality includes deﬁning server behavior,
+allowing a node to listen for requests, client behavior, sending requests to a server,
+and management of the connections between clients and servers.
+
+5.5.2
+
+Network Core
+
+The Network Core module extends the functionality of the Net TCP module
+to be speciﬁc to the needs of diﬀerent nodes in DecaFS. This module deﬁnes the
+diﬀerent packet types required for communication between Barista and Espresso
+nodes, as well as DecaFS Clients. It also handle the processing of packets and
+exposes an API for students to use to send requests across the network.
+
+5.6
+5.6.1
+
+Connecting Layers
+DecaFS Barista
+
+The DecaFS Barista Module is responsible for set-up of the Barista Node. It
+ensures that all metadata is recovered through Barista Core, and connects itself
+to the system through the Network Layer.
+
+25
+
+5.6.2
+
+Espresso Core
+
+The Espresso Core Module is responsible for set-up of an Espresso Node. This
+layer must restore any metadata, and connect itself to the system through the
+Network Layer.
+
+26
+
+Chapter 6
+DecaFS Workﬂows
+DecaFS is designed for students to write modules, so the functionality of the
+DFS has to be broken down into pieces small enough for student consumption.
+However, this design makes it diﬃcult to trace the ﬂow of execution throughout
+the system for diﬀerent tasks. In this section, we examine major “workﬂows” or
+DFS tasks, and follow the ﬂow of execution through DecaFS modules.
+For simplicity in all discussion of workﬂows, we will ignore the Network Layer.
+Please assume that all communication between Barista and Espresso Modules,
+and between the DecaFS Client and the Barista Core go through the Network
+Layer.
+
+6.1
+
+Data Flow
+
+We have brieﬂy discussed data ﬂow throughout DecaFS in terms of stripes
+and chunks. DecaFS modules are responsible for dealing with diﬀerent data
+fragments. Each module that deals directly with data, is designed to fragment
+
+27
+
+the data only once. The overall data ﬂow for the system can be seen in Figure 6.1.
+DecaFS Clients request or send raw data to DecaFS of any size, within DecaFS ﬁle
+size limits. Raw Data goes directly to Barista Core, the entry-point for the Barista
+Node (5.3). Barista Core then breaks up the request into stripe-size requests.
+Striped data is sent/requested from the IO Manager, which further breaks down
+the request into chunk-size requests for per-node storage or retrieval. Chunks are
+then sent to/requested from Espresso Nodes through the Access Module. The
+Access Module does not transform the data further, but translates the Barista’s
+request into a Network Request to be sent to an Espresso Node. Once a request
+is received on the Espresso Side, all data is dealt with at the chunk level.
+Responses or data requested is sent from the Espresso Layer back to Barista
+Core, since it maintains information about the entire request from the DecaFS
+Client. Once all fragments of the request have been received, Barista Core sends
+a response to the DecaFS Client via the Network Layer.
+
+Figure 6.1: The process of data fragmentation through DecaFS.
+
+28
+
+6.2
+
+Open
+
+Opening a ﬁle in DecaFS happens only in the Barista Layer. We allow ﬁles
+to be opened either as read only or read/write, with the ﬁle cursor starting at 0
+or end of ﬁle. Files opened for read/write are automatically created if they do
+not exist.
+The normal ﬂow of execution for open can been seen in Figure 6.3 and Figure 6.4, and failures can be seen in A.1. If a DecaFS Client requests to open a ﬁle,
+Barista Core ﬁrst checks if the ﬁle exists through decafs file stat in the Persistent Metadata Module. If the ﬁle does not exist, and the DecaFS Client wants
+to write to the ﬁle, it is created at this time. Then, Barista Core uses the Locking
+Strategy Module to obtain a lock (shared for read only, exclusive for read/write)
+on the ﬁle. Finally, Barista Core gets a ﬁle descriptor from the Volatile Metadata
+Module, which maintains associated metadata for that ﬁle descriptor throughout
+the time that the new instance of the ﬁle is open.
+
+29
+
+Figure 6.2: Components involved with a DecaFS open call.
+
+Figure 6.3: A successful call to open for reading a ﬁle.
+
+30
+
+Figure 6.4: A successful call to open for reading/writing a ﬁle.
+
+6.3
+
+Read
+
+Reading a ﬁle in DecaFS goes through every layer of the system, and involves
+most of the modules in the Barista Layer. A normal execution for read can
+be seen in Figure 6.6. When a read request comes in from a DecaFS Client,
+Barista Core will automatically break the read request into stripes. Stripes are
+then forwarded to the IO Manager Module, which is a component that students
+should be able to implement. Before processing moves to IO Manager, Barista
+Core will ensure that the ﬁle exists, a read or a write lock is held for the caller,
+and that the ﬁle is open for reading or both reading and writing.
+The IO Manager Module is responsible for breaking the stripe into chunks,
+determining what node a chunk is stored on, and determining whether the chunk
+needs to be read from the regular storage or a replica storage (if available). It is
+then the responsibility of the IO Manager to check the “health” of the system,
+31
+
+and only send requests to nodes that are “up”, meaning the nodes that have not
+received a failure. The API to determine system health is exposed in the Volatile
+Metadata Module. The IO Manager is also responsible for handling node failures,
+more information can be found in 7.1.5.
+IO Managers must break striped read requests into chunk size requests and
+send them to the Access Module, which will then handle the translation to the
+Network Layer. For each stripe processed, the IO Manager must inform Barista
+Core how many chunks were used in breaking down the striped request. Finally,
+the chunk request arrives on the corresponding Espresso Node, which returns the
+data.
+Read responses from the Espresso Layer contain the diﬀerent chunks requested
+by the IO Manager. These responses are sent to Barista Core, which waits for all
+chunks requested to arrive. Once the module has received all chunks, it assembles
+the full read buﬀer and sends the ﬁnal read response to the DecaFS Client.
+
+32
+
+Figure 6.5: Components involved with a DecaFS read call.
+
+33
+
+Figure 6.6: A successful call to read.
+
+34
+
+6.4
+
+Write
+
+Like Read (Section 6.3), writing to a ﬁle goes through all layers and most
+modules of DecaFS. A non-erroneous execution of a write call can be seen in
+Figure 6.8. Similar to a read request, when a write request arrives in the Barista
+Core Module from a DecaFS Client, Barista Core will break up the write request
+into stripe-size requests. Before processing moves to IO Manager, Barista Core
+will ensure that the ﬁle exists, a write lock is held for the caller, and that the ﬁle is
+open for write. Stripes are forwarded to the IO Manager Module for chunk-level
+processing.
+Once the striped-request reaches the IO Manager, it is the IO Manager’s
+responsibility to break down the request into chunk-sized requests and send these
+requests to the Access Module, which translates them into Network Requests.
+Chunk write requests arrive on the Espresso Layer in the Storage Module, where
+data is written to disk. Chunk Write Responses are sent back to Barista Core. As
+in the case of a read request, Barista core waits for all write responses to arrive
+before notifying the DecaFS Client that the write is complete. Barista Core
+maintains global metadata aﬀected by the write such as ﬁle size and moving the
+ﬁle cursor.
+
+6.4.1
+
+Metadata
+
+The IO Manager is responsible for maintaining metadata for determining what
+node each chunk is stored on. For each stripe processed, the IO Manager should
+update is local metadata when necessary. The IO Manager is later responsible
+for utilizing local metadata to locate previously-written chunks for read requests.
+
+35
+
+6.4.2
+
+Chunks and Replica Chunks
+
+It is also the responsibility of the IO Manager to facilitate Replication to
+ensure that DecaFS is Fault Tolerant. While processing a striped write request,
+there is no limitation on the number of chunk write requests sent or replication
+requests. The only limitation we impose on the IO Manager is that for each
+stripe, the IO Manager must utilize return parameters to notify Barista Core of
+the number of Chunk and Replica requests generated in the processing of the
+stripe. This allows Barista Core to handle Network Write Repsonses and notify
+the DecaFS Client on completion of the full write request.
+
+6.4.3
+
+Distribution and Replication Strategy Modules
+
+We provide a default IO Manager to the students that utilizes Mirrored Replication. Our IO Manager uses two sub-modules: Distribution Strategy and Replication Strategy to determine the node that each chunk (or replica) should be
+sent to. This allows students to alter the storage location of chunks (and replicas) without writing an entire IO Manager. More information about our Mirrored
+IO Manager can be found in 7.1.5.
+
+36
+
+Figure 6.7: Components involved with a DecaFS write call.
+
+37
+
+Figure 6.8: A successful call to write.
+
+38
+
+6.5
+
+Close
+
+Similar to Open (Section 6.2), the close call does not leave the Barista Layer.
+When a DecaFS Client requests to close a ﬁle, Barista Core uses Volatile Metadata to remove the ﬁle cursor representing the open instance of the ﬁle. If the
+cursor does not exist, or if the calling DecaFS Client is not the owner of the ﬁle
+cursor, this call will fail as seen in A.4. If removal of the cursor is successful, the
+lock held on the ﬁle will be released. Components involved with close can be seen
+in Figure 6.9 and a successful call to close can be seen in Figure 6.10.
+
+Figure 6.9: Components involved with a DecaFS close call.
+
+39
+
+Figure 6.10: A successful call to close.
+
+6.6
+
+Delete
+
+Similar to Read (6.2) and Write (6.4), the process of deleting a ﬁle utilizes
+every layer of DecaFS. When Barista Core receives a delete request from a DecaFS
+Client, it ensures that the ﬁle exists, and obtains an exclusive lock on the ﬁle from
+the Locking Strategy Module. Errors in either call result in a failed delete as seen
+in A.5. Barista Core then sends the delete request to the IO Manager.
+The IO Manager must determine all of the chunks that correspond to the ﬁle
+(6.6.1) and send a request to the Access Module to delete each chunk. The IO
+Manager must also notify Barista Core of the number of chunks it requested to
+delete. This number includes both chunks and potential replica chunks.
+Requests pass through the Access Module and are translated into Network Requests. Chunk level delete requests arrive on the Espresso Layer in the Espresso
+Storage Module and are deleted from disk.
+
+Espresso Storage Responses go
+
+through the Network Layer automatically and arrive at Barista Core. Barista
+Core waits for all chunk responses to arrive before responding to the DecaFS
+
+40
+
+Client that the delete has completed.
+A successful call to delete can be seen in Figure 6.12 and components involved
+can be seen in Figure 6.11.
+
+6.6.1
+
+Metadata
+
+IO Manager must utilize its local metadata discussed in Section 6.4 to local
+all chunks (and replica data) for a ﬁle on a delete call. This responsibility is
+due to the fact that deletion is a chunk-level operation, and the IO Manager is
+responsible for chunk-level processing, as discussed in Section 6.1.
+
+6.6.2
+
+Node Failures
+
+It is also the responsibility of the IO Manager to determine how to handle
+node failures during or before a delete call. We recommend that the IO Manager
+skips delete chunk calls to nodes that are down at the time of the call. Students
+can later clean up missed chunks using a Monitored Strategy discussed in 7.1.9.
+
+41
+
+Figure 6.11: Components involved with a DecaFS delete call.
+
+42
+
+Figure 6.12: A successful call to delete.
+
+43
+
+6.7
+
+Seek
+
+Seek is another operation that occurs only on the Barista Layer. Components
+involved can be seen in Figure 6.13 and a successful execution is shown in Figure 6.14. A DecaFS Client’s seek request arrives in Barista Core. Barista Core
+uses Volatile Metadata to ensure that the ﬁle cursor in question exists, and then
+sets the cursor to the new value under the calling DecaFS Client. Errors can
+occur if the ﬁle cursor does not exist, or the calling DecaFS Client is not the
+same as the client that opened the ﬁle. Error workﬂows can be seen in A.6.
+
+44
+
+Figure 6.13: Components involved with a DecaFS seek call.
+
+Figure 6.14: A successful call to seek.
+
+45
+
+6.8
+
+Stat
+
+TODO (Stat not implemented fully)
+
+46
+
+Chapter 7
+DecaFS Implementation
+
+7.1
+
+Barista
+
+7.1.1
+
+Barista Core
+
+7.1.2
+
+Persitent Metadata
+
+Persistent STL
+DecaFS uses a custom library called ”persistent stl” to manage all metadata
+that needs to be written to disk. The persistent stl includes a PersistentMap and
+a PersistentSet that can be created
+
+47
+
+7.1.3
+
+Volatile Metadata
+
+7.1.4
+
+Locking Strategy
+
+7.1.5
+
+IO Manager
+
+TODO: Explain how Node failure are handled in our sample impl of IO Manager.
+
+7.1.6
+
+Distribution Strategy
+
+7.1.7
+
+Replication Strategy
+
+7.1.8
+
+Access Module
+
+7.1.9
+
+Monitored Strategy
+
+TODO:
+* Cleanup of resources on Failed Nodes: removing chunks from delete
+* Other tasks for system health can be implemented here
+
+48
+
+7.2
+
+Network
+
+7.2.1
+
+Net TCP
+
+7.2.2
+
+Network Core
+
+7.3
+
+Espresso
+
+7.3.1
+
+Espresso Core
+
+7.3.2
+
+Espresso Storage
+
+49
+
+Chapter 8
+Testing and Validation
+We might have some of these
+
+50
+
+Chapter 9
+Conclusions
+
+51
+
+Chapter 10
+Future Work
+
+52
+
+Bibliography
+[1] Kosmosfs. https://code.google.com/p/kosmosfs/.
+[2] P. M. Chen, E. K. Lee, G. A. Gibson, R. H. Katz, and D. A. Patterson.
+Raid: High-performance, reliable secondary storage. ACM Comput. Surv.,
+26(2):145–185, June 1994.
+[3] J. Forrester. Jeﬀ’s thesis. Cal Poly Digital Commons.
+[4] S. Ghemawat, H. Gobioﬀ, and S.-T. Leung. The google ﬁle system. SIGOPS
+Oper. Syst. Rev., 37(5):29–43, Oct. 2003.
+[5] K. Hoganson. Computer science curricula in a global competitive environment. J. Comput. Sci. Coll., 20(1):168–177, Oct. 2004.
+[6] E. Levy and A. Silberschatz. Distributed ﬁle systems: Concepts and examples. ACM Comput. Surv., 22(4):321–374, Dec. 1990.
+[7] M. Ovsiannikov, S. Rus, D. Reeves, P. Sutter, S. Rao, and J. Kelly. The
+quantcast ﬁle system. Proc. VLDB Endow., 6(11):1092–1101, Aug. 2013.
+[8] Gemisus. About moosefs. http://www.moosefs.org/.
+[9] Google, Inc.
+
+Google and ibm announce university initiative to address
+
+53
+
+internet-scale computing challenges. http://googlepress.blogspot.com/
+2007/10/google-and-ibm-announce-university_08.html, Oct. 2007.
+[10] International Business Machines Corporation and others. Openafs. http:
+//www.openafs.org/.
+[11] The Apache Software Foundation. Hdfs architecture guide. http://hadoop.
+apache.org/docs/r1.2.1/hdfs_design.html.
+[12] University of Pittsburgh. Andrew ﬁle system (afs). http://technology.
+pitt.edu/network-web/hosting-timesharing/afs.html.
+[13] Zuse Institute Berlin. Xtreemfs. http://www.xtreemfs.org/.
+[14] Z. Ruan and W. F. Tichy. Performance analysis of ﬁle replication schemes in
+distributed systems. In Proceedings of the 1987 ACM SIGMETRICS Conference on Measurement and Modeling of Computer Systems, SIGMETRICS
+’87, pages 205–215, New York, NY, USA, 1987. ACM.
+[15] A. Wachsmann. Afs&mdash;a secure distributed ﬁlesystem, part iii. Linux
+J., 2005(132):8–, Apr. 2005.
+[16] J. Wein, K. Kourtchikov, Y. Cheng, R. Gutierez, R. Khmelichek, M. Topol,
+and C. Sherman. Virtualized games for teaching about distributed systems.
+SIGCSE Bull., 41(1):246–250, Mar. 2009.
+
+54
+
+Appendix A
+Workﬂows for Failures
+
+A.1
+
+Open Failures
+
+55
+
+Figure A.1: A failed call to open due to the DecaFS Client being unable
+to obtain a shared lock on the ﬁle.
+
+Figure A.2: A failed call to open due to the ﬁle not being found.
+
+56
+
+Figure A.3: A failed call to open due to the DecaFS Client being unable
+to obtain an exclusive lock on the ﬁle.
+
+A.2
+
+Read Failures
+
+TODO
+
+A.3
+
+Write Failures
+
+TODO
+
+A.4
+
+Close Failures
+
+57
+
+Figure A.4: A failed call to close due to the calling DecaFS Client
+being diﬀerent than the DecaFS Client that opened the ﬁle.
+
+Figure A.5: A failed call to close due to the ﬁle not being open in the
+ﬁrst place.
+
+58
+
+A.5
+
+Delete Failures
+
+59
+
+Figure A.6: A failed call to delete due to the ﬁle’s non-existance.
+
+Figure A.7: A failed call to delete due to the ﬁle being in use.
+
+60
+
+A.6
+
+Seek Failures
+
+61
+
+Figure A.8: A failed call to seek due to the ﬁle descriptor being invalid.
+
+Figure A.9: A failed call to seek due to the calling DecaFS Client
+diﬀering from the DecaFS Client associated with the ﬁle descriptor in
+question.
+
+62
+
+Appendix B
+APIs
+
+B.1
+
+Barista
+
+B.1.1
+
+Barista Core
+
+1 /∗
+2
+
+∗ I n i t i a l i z e b a r i s t a core
+
+3
+
+∗/
+
+4 extern ”C” void b a r i s t a c o r e i n i t ( int argc , char ∗ argv [ ] ) ;
+5
+6 /∗
+7
+
+∗
+
+8
+
+∗
+
+9
+
+∗ Flags :
+
+Open a f i l e f o r read or w r i t e a c c e s s .
+
+10
+
+∗
+
+O RDONLY open a f i l e f o r r e a d i n g
+
+11
+
+∗
+
+O RDWR open a f i l e f o r b o t h r e a d i n g and w r i t i n g
+
+12
+
+∗
+
+O APPEND s t a r t t h e f i l e c u r s o r a t t h e end o f t h e f i l e
+
+13
+
+∗
+
+14
+
+∗
+
+@ r e t u r n t h e f i l e i d f o r t h e newly opened f i l e ( non−z e r o )
+
+63
+
+15
+
+∗
+
+16
+
+∗/
+
+FILE IN USE i f t h e p r o p e r l o c k cannot be o b t a i n e d
+
+17 extern ”C” int o p e n f i l e ( const char ∗pathname , int f l a g s , struct
+client client ) ;
+18
+19 /∗
+20
+
+∗
+
+I f t h e p r o c e s s has a l o c k on t h e f i l e , c o m p l e t e t h e read .
+
+21
+
+∗
+
+T r a n s l a t e s read r e q u e s t i n t o chunks o f r e q u e s t s t o E s p r e s s o
+
+22
+
+∗
+
+nodes .
+
+23
+
+∗/
+
+24 extern ”C” s s i z e t r e a d f i l e ( int fd , void ∗ buf , s i z e t count ,
+struct c l i e n t c l i e n t ) ;
+25
+26 /∗
+27
+
+∗
+
+I f t h e p r o c e s s has an e x c l u s i v e l o c k on t h e f i l e , c o m p l e t e t h e
+
+28
+
+∗
+
+write .
+
+29
+
+∗
+
+T r a n s l a t e w r i t e r e q u e s t s i n t o chunks o f r e q u e s t s t o E s p r e s s o
+
+30
+
+∗
+
+nodes .
+
+31
+
+∗/
+
+32 extern ”C” s s i z e t w r i t e f i l e ( int fd , const void ∗ buf , s i z e t count
+, struct c l i e n t c l i e n t ) ;
+33
+34 /∗
+35
+
+∗
+
+36
+
+∗/
+
+Release l o c k s a s s o c i a t e with a fd .
+
+37 extern ”C” int c l o s e f i l e ( int fd , struct c l i e n t c l i e n t ) ;
+38
+39 /∗
+40
+
+∗
+
+Removes a f i l e from DecaFS .
+
+41
+
+∗
+
+@ r e t u r n >= 0 s u c c e s s , < 0 f a i l u r e
+
+42
+
+∗/
+
+64
+
+43 extern ”C” int d e l e t e f i l e ( char ∗pathname , struct c l i e n t c l i e n t ) ;
+44
+45 /∗
+46
+
+∗ Moves t h e f i l e c u r s o r t o t h e l o c a t i o n s p e c i f i c e d by whence , p l u s
+offset
+
+47
+
+∗ bytes .
+
+48
+
+∗
+
+49
+
+∗ I f t h e whence and o f f s e t c a u s e t h e c u r s o r t o be s e t p a s t t h e end
+of the f i l e
+
+50
+
+∗ i t w i l l be s e t t o t h e end o f t h e f i l e .
+
+51
+
+∗
+
+52
+
+∗ whence :
+
+53
+
+∗
+
+SEEK SET move t o o f f s e t from t h e b e g i n n i n g o f t h e f i l e
+
+54
+
+∗
+
+SEEK CUR move t o o f f s e t from t h e c u r r e n t l o c a t i o n o f t h e f d
+
+55
+
+∗
+
+56
+
+∗ @return t h e c u r s o r ’ s new l o c a t i o n on s u c c e s s and < 0 on f a i l u r e
+
+57
+
+∗
+
+58
+
+∗/
+
+59 extern ”C” int f i l e s e e k ( int fd , u i n t 3 2 t o f f s e t , int whence ,
+struct c l i e n t c l i e n t ) ;
+60
+61 /∗
+62
+
+∗
+
+63
+
+∗/
+
+F i l l s s t r u c t s t a t with f i l e info .
+
+64 extern ”C” int f i l e s t a t ( const char ∗ path , struct s t a t ∗ buf ) ;
+65 extern ”C” int f i l e f s t a t ( int fd , struct s t a t ∗ buf ) ;
+66
+67 /∗
+68
+
+∗
+
+C o l l e c t s i n f o r m a t i o n a b o u t a mounted f i l e s y s t e m .
+
+69
+
+∗
+
+p a t h i s t h e pathname o f any f i l e w i t h i n t h e mounted
+
+70
+
+∗
+
+filesystem .
+
+65
+
+71
+
+∗/
+
+72 extern ”C” void s t a t f s ( char ∗pathname , struct s t a t v f s ∗ s t a t ) ;
+73
+74 /∗
+75
+
+∗
+
+R e g i s t e r a module t o be c a l l e d w i t h a s p e c i f i c t i m e o u t ,
+
+76
+
+∗
+
+r e p e a t e d l y t h r o u g h o u t DecaFS e x e c u t i o n .
+
+77
+
+∗/
+
+78 extern ”C” void r e g i s t e r m o n i t o r m o d u l e ( void ( ∗ monitor module ) ,
+79
+
+struct t i m e v a l t i m e o u t ) ;
+
+80 /∗
+81
+
+∗
+
+82
+
+∗/
+
+R e g i s t e r a f u n c t i o n t o be c a l l e d on node f a i l u r e .
+
+83 extern ”C” void r e g i s t e r n o d e f a i l u r e h a n d l e r ( void ( ∗
+failure handler ) ) ;
+84
+85 /∗
+86
+
+∗
+
+R e g i s t e r a f u n c t i o n t o be c a l l e d on s t a r t u p t o r e c o v e r chunk
+metadata .
+
+87
+
+∗/
+
+88 extern ”C” void r e g i s t e r c h u n k m e t a d a t a h a n d l e r ( void ( ∗
+metadata handler ) ) ;
+89
+90 /∗
+91
+
+∗
+
+R e g i s t e r a f u n c t i o n t o be c a l l e d on s t a r t u p t o r e c o v e r chunk
+replica
+
+92
+
+∗
+
+93
+
+∗/
+
+metadata .
+
+94 extern ”C” void r e g i s t e r c h u n k r e p l i c a m e t a d a t a h a n d l e r ( void ( ∗
+metadata handler ) ) ;
+95
+96 /∗
+
+66
+
+97
+
+∗
+
+Move an e x i s t i n g chunk t o a d i f f e r e n t E s p r e s s o node i n t h e
+system .
+
+98
+
+∗/
+
+99 extern ”C” int move chunk ( const char∗ pathname , u i n t 3 2 t s t r i p e i d ,
+u i n t 3 2 t chunk num ,
+100
+
+u i n t 3 2 t d e s t n o d e , struct c l i e n t c l i e n t )
+;
+
+101 extern ”C” int fmove chunk ( u i n t 3 2 t f i l e i d , u i n t 3 2 t s t r i p e i d ,
+u i n t 3 2 t chunk num ,
+102
+
+u i n t 3 2 t d e s t n o d e , struct c l i e n t c l i e n t
+);
+
+103
+104 /∗
+105
+
+∗
+
+Move a c h u n k s
+
+r e p l i c a t o a d i f f e r e n t E s p r e s s o node i n t h e
+
+system .
+106
+
+∗/
+
+107 extern ”C” int m o v e c h u n k r e p l i c a ( const char∗ pathname , u i n t 3 2 t
+stripe id ,
+108
+
+u i n t 3 2 t chunk num , u i n t 3 2 t
+dest node ,
+
+109
+
+struct c l i e n t c l i e n t ) ;
+
+110 extern ”C” int f m o v e c h u n k r e p l i c a ( u i n t 3 2 t f i l e i d , u i n t 3 2 t
+stripe id ,
+111
+
+u i n t 3 2 t chunk num , u i n t 3 2 t
+dest node ,
+
+112
+
+struct c l i e n t c l i e n t ) ;
+
+113
+114 /∗
+115
+
+∗
+
+116
+
+∗/
+
+c r e a t e s a d i r e c t o r y i n t h e DecaFS i n s t a n c e .
+
+117 extern ”C” int m k d e c a f s d i r ( const char∗ dirname ) ;
+
+67
+
+118
+119 /∗
+120
+
+∗
+
+121
+
+∗/
+
+opens a d i r e c t o r y stream c o r r e s p o n d i n g t o t h e d i r e c t o r y name .
+
+122 extern ”C” DIR∗ o p e n d e c a f s d i r ( const char∗ name ) ;
+123
+124 /∗
+125
+
+∗
+
+returns a pointer to a dirent structure representing the next
+directory
+
+126
+
+∗
+
+127
+
+∗/
+
+e n t r y i n t h e d i r e c t o r y stream p o i n t e d t o by d i r p .
+
+128 extern ”C” struct d i r e n t ∗ r e a d d e c a f s d i r (DIR ∗ d i r p ) ;
+
+68
+
+

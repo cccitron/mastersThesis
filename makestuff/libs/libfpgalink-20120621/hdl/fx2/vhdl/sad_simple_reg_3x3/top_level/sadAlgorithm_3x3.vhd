@@ -31,7 +31,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity sadAlgorithm_3x3 is
    Port (
---		clk_I : IN STD_LOGIC;
+		clk_I : IN STD_LOGIC;
 	
       ttl : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);
       ttc : IN  STD_LOGIC_VECTOR (7 DOWNTO 0);
@@ -59,41 +59,57 @@ end sadAlgorithm_3x3;
 
 architecture Behavioral of sadAlgorithm_3x3 is
 	
---	type array_type_temp is array (0 to 7) of SIGNED(9 downto 0);
---	signal temp : array_type_temp;
+	type array_type_temp is array (0 to 7) of SIGNED(9 downto 0);
+	signal temp : array_type_temp;
+	
+--	SIGNAL template_window, search_window : pixelWindow;
 	
 	SIGNAL sum_sign : SIGNED(9 DOWNTO 0);
    
 begin
    
    -- Sum of the Absolute Difference between the template 3x3 and search 3x3
-   signed_sum : PROCESS (ttl, ttc, ttr, tml, tmc, tmr, tbl, tbc, tbr, stl, stc, str, sml, smc, smr, sbl, sbc, sbr)
+   signed_sum : PROCESS (clk_I) --ttl, ttc, ttr, tml, tmc, tmr, tbl, tbc, tbr, stl, stc, str, sml, smc, smr, sbl, sbc, sbr)
    BEGIN
       --sum_array_next <= sum_array;
-      sum_sign <= 
-         abs(SIGNED("00" & ttl) - SIGNED("00" & stl)) + 
-         abs(SIGNED("00" & ttc) - SIGNED("00" & stc)) + 
-         abs(SIGNED("00" & ttr) - SIGNED("00" & str)) + 
-         abs(SIGNED("00" & tml) - SIGNED("00" & sml)) +
-         abs(SIGNED("00" & tmc) - SIGNED("00" & smc)) +
-         abs(SIGNED("00" & tmr) - SIGNED("00" & smr)) +
-         abs(SIGNED("00" & tbl) - SIGNED("00" & sbl)) +
-         abs(SIGNED("00" & tbc) - SIGNED("00" & sbc)) +
-         abs(SIGNED("00" & tbr) - SIGNED("00" & sbr));
+--      sum_sign <= 
+--         abs(SIGNED("00" & ttl) - SIGNED("00" & stl)) + 
+--         abs(SIGNED("00" & ttc) - SIGNED("00" & stc)) + 
+--         abs(SIGNED("00" & ttr) - SIGNED("00" & str)) + 
+--         abs(SIGNED("00" & tml) - SIGNED("00" & sml)) +
+--         abs(SIGNED("00" & tmc) - SIGNED("00" & smc)) +
+--         abs(SIGNED("00" & tmr) - SIGNED("00" & smr)) +
+--         abs(SIGNED("00" & tbl) - SIGNED("00" & sbl)) +
+--         abs(SIGNED("00" & tbc) - SIGNED("00" & sbc)) +
+--         abs(SIGNED("00" & tbr) - SIGNED("00" & sbr));
 
 --		IF (RISING_EDGE(clk_I)) THEN
---			temp(0) <= abs(SIGNED("00" & ttl) - SIGNED("00" & stl));
+--			temp(0) <= abs(SIGNED('0' & (template_window(0))) - SIGNED('0' & (search_window(0))));
 --			
---			temp(1) <= temp(0) + abs(SIGNED("00" & ttc) - SIGNED("00" & stc));
---			temp(2) <= temp(1) + abs(SIGNED("00" & ttr) - SIGNED("00" & str));
---			temp(3) <= temp(2) + abs(SIGNED("00" & tml) - SIGNED("00" & sml));
---			temp(4) <= temp(3) + abs(SIGNED("00" & tmc) - SIGNED("00" & smc));
---			temp(5) <= temp(4) + abs(SIGNED("00" & tmr) - SIGNED("00" & smr));
---			temp(6) <= temp(5) + abs(SIGNED("00" & tbl) - SIGNED("00" & sbl));
---			temp(7) <= temp(6) + abs(SIGNED("00" & tbc) - SIGNED("00" & sbc));
+--			temp(1) <= temp(0) + abs(SIGNED('0' & (template_window(1))) - SIGNED('0' & (search_window(1))));
+--			temp(2) <= temp(1) + abs(SIGNED('0' & (template_window(2))) - SIGNED('0' & (search_window(2))));
+--			temp(3) <= temp(2) + abs(SIGNED('0' & (template_window(3))) - SIGNED('0' & (search_window(3))));
+--			temp(4) <= temp(3) + abs(SIGNED('0' & (template_window(4))) - SIGNED('0' & (search_window(4))));
+--			temp(5) <= temp(4) + abs(SIGNED('0' & (template_window(5))) - SIGNED('0' & (search_window(5))));
+--			temp(6) <= temp(5) + abs(SIGNED('0' & (template_window(6))) - SIGNED('0' & (search_window(6))));
+--			temp(7) <= temp(6) + abs(SIGNED('0' & (template_window(7))) - SIGNED('0' & (search_window(7))));
 --			
---			sum_sign <= temp(7) + abs(SIGNED("00" & tbr) - SIGNED("00" & sbr));
+--			sum_sign <= abs(SIGNED('0' & (template_window(8))) - SIGNED('0' & (search_window(8))));
 --		END IF;
+
+		IF (RISING_EDGE(clk_I)) THEN
+			temp(0) <= abs(SIGNED("00" & ttl) - SIGNED("00" & stl));
+			
+			temp(1) <= temp(0) + abs(SIGNED("00" & ttc) - SIGNED("00" & stc));
+			temp(2) <= temp(1) + abs(SIGNED("00" & ttr) - SIGNED("00" & str));
+			temp(3) <= temp(2) + abs(SIGNED("00" & tml) - SIGNED("00" & sml));
+			temp(4) <= temp(3) + abs(SIGNED("00" & tmc) - SIGNED("00" & smc));
+			temp(5) <= temp(4) + abs(SIGNED("00" & tmr) - SIGNED("00" & smr));
+			temp(6) <= temp(5) + abs(SIGNED("00" & tbl) - SIGNED("00" & sbl));
+			temp(7) <= temp(6) + abs(SIGNED("00" & tbc) - SIGNED("00" & sbc));
+			
+			sum_sign <= temp(7) + abs(SIGNED("00" & tbr) - SIGNED("00" & sbr));
+		END IF;
    END PROCESS signed_sum;
    
    -- Assigns the values from summer array to sad array
@@ -101,7 +117,7 @@ begin
    BEGIN
       --sad_array_next <= sad_array;
       --FOR i IN 0 TO 2 LOOP
-      IF (sum_sign < 256) THEN
+      IF (TO_INTEGER(sum_sign) < 256) THEN
          sad <= STD_LOGIC_VECTOR(sum_sign(7 DOWNTO 0));
       ELSE
          sad <= x"ff";

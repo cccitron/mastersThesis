@@ -33,17 +33,17 @@ USE work.window_array.all;
 
 entity sad_wrapper is
    Generic (
-      window : integer := 3; -- Window size, i.e. "3" -> 3x3 window
-      win    : integer := 1; -- win is the number of pixels above, below, right, & left of center pixel
+      window : integer := 3; --9; --3; -- Window size, i.e. "3" -> 3x3 window
+      win    : integer := 1; --4; --1; -- win is the number of pixels above, below, right, & left of center pixel
    
-      NCOL_C : INTEGER := 19; --25; --21; --33; --65; --200; --19; -- Number of columns in the search image
-      NROW_C : INTEGER := 3;  -- Number of rows in the search image
+      NCOL_C : INTEGER := 19; --24; --25; --21; --33; --65; --200; --19; -- Number of columns in the search image
+      NROW_C : INTEGER := 3; --9; --3;  -- Number of rows in the search image
       
-      PIXEL_CNT  : INTEGER := 57; --75; --63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
+      PIXEL_CNT  : INTEGER := 57; --216; --75; --63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
       DISP_RANGE : INTEGER := 16; -- Disparity range 0-15
-      DISP_ROW   : INTEGER := 2; --8; --4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
-      NUM_2_ROW  : INTEGER := 19; --25; --21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
-      LAST_ROW   : INTEGER := 38 --50 --42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
+      DISP_ROW   : INTEGER := 2; --1; --8; --4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
+      NUM_2_ROW  : INTEGER := 19; --24; --25; --21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
+      LAST_ROW   : INTEGER := 38 --192 --50 --42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
    );
    Port ( 
       clk_I      : in  STD_LOGIC;
@@ -121,6 +121,11 @@ architecture Behavioral of sad_wrapper is
    type array_type_disp is array (0 to DISP_ROW-1) of std_logic_vector(3 downto 0);
 	signal disparityArray, disparityArray_next : array_type_disp;
    SIGNAL ndx_disp, ndx_disp_next, f2h_disp_rd, f2h_disp_rd_next : INTEGER := 0;
+	
+	SIGNAL data_in, data_next : STD_LOGIC := '0';
+	TYPE array_type_data IS ARRAY (0 TO DISP_ROW-1) OF STD_LOGIC_VECTOR(DISP_RANGE-1 DOWNTO 0);
+	SIGNAL data_out : array_type_data := (OTHERS => (OTHERS => '0'));
+	SIGNAL data_init : STD_LOGIC := '1';
 
 begin
 
@@ -129,24 +134,24 @@ begin
 		if ( rising_edge(clk_I) ) then
          template_array  <= template_array_next;
          search_array <= search_array_next;
-         sad_array <= sad_array_next;
-         disparityArray <= disparityArray_next;
+			
+			IF (data_out(0) = x"ffff" AND data_out(1) = x"ffff") THEN
+				sad_array <= sad_array_next;
+			ELSE
+				sad_array <= sad_array;
+			END IF;
+         
+			disparityArray <= disparityArray_next;
          --assign_out <= assign_out_next;
          
 --         templ_next_t_row <= templ_next_t_row_next;
 --         search_next_s_row <= search_next_s_row_next;
-         
-			
-			
-			
-			
-			
 			
 --			template_array <= template_array;
 --			
 --			IF (chanAddr_I = "0000000" and h2fValid_I = '1' and junk_t = '0') THEN
 --				IF (disp_ready = '1') THEN
---					template_array(0 TO LAST_ROW-1) <= template_array(NUM_2_ROW TO PIXEL_CNT-1);
+--					template_array(0 TO LAST_ROW-1) <= template_array(NUM_8_ROW TO PIXEL_CNT-1);
 --				ELSE
 --					template_array(ndx_t) <= h2fData_I;
 --				END IF;
@@ -165,35 +170,61 @@ begin
 --         ELSE
 --            junk_t <= junk_t_next;
 --         END IF;
-			
-			
-			
-			
-			
-         ndx_t <= ndx_t_next;
-         IF (ndx_t = PIXEL_CNT) THEN
+				
+--			ndx_t <= ndx_t_next;
+         IF (ndx_t_next = PIXEL_CNT) THEN
             ndx_t <= LAST_ROW; --0;
             junk_t <= '1';
          ELSE
-            junk_t <= junk_t_next;
+            ndx_t <= ndx_t_next;
+				junk_t <= junk_t_next;
          END IF;
+				
+--         ndx_t <= ndx_t_next;
+--         IF (ndx_t = PIXEL_CNT) THEN
+--            ndx_t <= LAST_ROW; --0;
+--            junk_t <= '1';
+--         ELSE
+--            junk_t <= junk_t_next;
+--         END IF;
          
-         ndx_s <= ndx_s_next;
-         IF (ndx_s = PIXEL_CNT) THEN
+--			ndx_s <= ndx_s_next;
+         IF (ndx_s_next = PIXEL_CNT) THEN
             ndx_s <= LAST_ROW; --0;
             junk_s <= '1';
          ELSE
+				ndx_s <= ndx_s_next;
             junk_s <= junk_s_next;
          END IF;
+			
+--         ndx_s <= ndx_s_next;
+--         IF (ndx_s = PIXEL_CNT) THEN
+--            ndx_s <= LAST_ROW; --0;
+--            junk_s <= '1';
+--         ELSE
+--            junk_s <= junk_s_next;
+--         END IF;
          
-         f2h_t_rd <= f2h_t_rd_next;
-         IF (f2h_t_rd = PIXEL_CNT) THEN
-            f2h_t_rd <= 0;
+--         f2h_t_rd <= f2h_t_rd_next;
+--         IF (f2h_t_rd = PIXEL_CNT) THEN
+--            f2h_t_rd <= 0;
+--         END IF;
+--         
+--         f2h_s_rd <= f2h_s_rd_next;
+--         IF (f2h_s_rd = PIXEL_CNT) THEN
+--            f2h_s_rd <= 0;
+--         END IF;
+
+         IF (f2h_t_rd_next < PIXEL_CNT) THEN
+				f2h_t_rd <= f2h_t_rd_next;
+			ELSE
+				f2h_t_rd <= 0;
          END IF;
          
-         f2h_s_rd <= f2h_s_rd_next;
-         IF (f2h_s_rd = PIXEL_CNT) THEN
-            f2h_s_rd <= 0;
+         IF (f2h_s_rd_next < PIXEL_CNT) THEN
+				f2h_s_rd <= f2h_s_rd_next;
+			ELSE
+				f2h_s_rd <= 0;
          END IF;
          
          IF (f2h_sad_rd_next = DISP_RANGE) THEN
@@ -218,7 +249,21 @@ begin
             f2h_disp_rd <= f2h_disp_rd_next;
             disp_ready <= '0';
          END IF;
-         
+			
+--			data_init <= data_init;
+			-- When to pass data to SAD algorithm
+			IF (ndx_t_next = LAST_ROW AND ndx_s_next = PIXEL_CNT) THEN --data_init = '1' AND ndx_s_next = PIXEL_CNT) THEN
+--				data_init <= '1';
+--				data_in <= '0';
+--			ELSIF (data_init <= '1') THEN
+				data_in <= '1';
+--				data_init <= '0';
+--			ELSIF (data_out(0) = x"ffff" AND data_out(1) = x"ffff") THEN
+--				data_in <= '1';
+			ELSE
+				data_in <= '0';
+			END IF;
+			
 		end if;
 	end process;
       
@@ -315,18 +360,28 @@ begin
 	-- Windows to be sent to SAD Algorithm entity
 	window_setup : PROCESS(template_array, search_array)
 	BEGIN
-		FOR i IN 0 TO DISP_ROW-1 LOOP
-			FOR j IN 0 TO DISP_RANGE-1 LOOP
+		FOR i IN 0 TO DISP_ROW-1 LOOP -- 0 or 1
+			FOR j IN 0 TO DISP_RANGE-1 LOOP -- 0 to 15, for the 16 SAD calculations to compare and get the disparity value
+--				FOR k IN 0 TO 8 LOOP	-- 0 to 8, the 9 rows in 9x9 window
 				template_window(i, j) <=  (template_array(0+i), template_array(1+i), template_array(2+i),
 													template_array(0+NCOL_C+i), template_array(1+NCOL_C+i), template_array(2+NCOL_C+i),
 													template_array(0+NCOL_C+NCOL_C+i), template_array(1+NCOL_C+NCOL_C+i), template_array(2+NCOL_C+NCOL_C+i));
+--					template_window(i, j)((k*9) TO (8 + (k*9))) <=  
+--						(template_array(0+i+(NCOL_C*k)), template_array(1+i+(NCOL_C*k)), template_array(2+i+(NCOL_C*k)),
+--						 template_array(3+i+(NCOL_C*k)), template_array(4+i+(NCOL_C*k)), template_array(5+i+(NCOL_C*k)),
+--						 template_array(6+i+(NCOL_C*k)), template_array(7+i+(NCOL_C*k)), template_array(8+i+(NCOL_C*k)));
 
 				search_window(i, j)   <=  (search_array(0+i+j), search_array(1+i+j), search_array(2+i+j), 
 													search_array(0+NCOL_C+i+j), search_array(1+NCOL_C+i+j), search_array(2+NCOL_C+i+j),
 													search_array(0+NCOL_C+NCOL_C+i+j), search_array(1+NCOL_C+NCOL_C+i+j), search_array(2+NCOL_C+NCOL_C+i+j));
+--					search_window(i, j)((k*9) TO (8 + (k*9)))   <=  
+--						(search_array(0+i+j+(NCOL_C*k)), search_array(1+i+j+(NCOL_C*k)), search_array(2+i+j+(NCOL_C*k)), 
+--						 search_array(3+i+j+(NCOL_C*k)), search_array(4+i+j+(NCOL_C*k)), search_array(5+i+j+(NCOL_C*k)),
+--						 search_array(6+i+j+(NCOL_C*k)), search_array(7+i+j+(NCOL_C*k)), search_array(8+i+j+(NCOL_C*k)));
+
+--				END LOOP;
 			END LOOP;
 		END LOOP;
-		
 	END PROCESS window_setup;
 
    -- Sum of the Absolute Difference between the template 3x3 and search 3x3
@@ -334,9 +389,10 @@ begin
    BEGIN
       g_signed_sad_calc : FOR j IN 0 TO DISP_RANGE-1 GENERATE
       BEGIN
-		i_sad_alg_3x3 : ENTITY work.sadAlgorithm_3x3
+			i_sad_alg_9x9 : ENTITY work.sadAlgorithm_9x9
             PORT MAP (
 					clk_I => clk_I,
+					data_I => data_in,
 				
 --               ttl => template_array(0+i),
 --               ttc => template_array(1+i),
@@ -369,7 +425,9 @@ begin
 					template_window_I => template_window(i, j),
 
 					search_window_I   => search_window(i, j),
-												
+					
+					data_O => data_out(i)(j),
+					
                sad_O => sad_array_next(i, j)
          );
       END GENERATE g_signed_sad_calc;
@@ -504,9 +562,9 @@ begin
       sad_array(0, 1)(7 DOWNTO 0)  WHEN x"02",
       sad_array(0, 2)(7 DOWNTO 0)  WHEN x"04",
       x"0" & disparityArray(0)  WHEN x"08",
-      x"0" & disparityArray(1)  WHEN x"10",
+--      x"0" & disparityArray(1)  WHEN x"10",
       template_array(0)  WHEN x"20",
-      template_array(1)  WHEN x"40",
+--      template_array(1)  WHEN x"40",
       search_array(0)  WHEN x"80",
       x"f5"         WHEN OTHERS;
 

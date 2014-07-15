@@ -4,6 +4,6 @@
 
 #sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum_comp-to-fpga_fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/ex_cksum-me_compToFPGA/top_level/default.xsvf
 
-#sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum_comp-to-fpga_fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/sad_simple_reg_3x3/top_level/default.xsvf
+sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum_comp-to-fpga_fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/backup_sad_simple_reg_3x3/top_level/default.xsvf
 
-sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./pipeline_cksum-fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/pipeline_fifo-me/top_level/default.xsvf
+#sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./pipeline_cksum-fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/pipeline_fifo-me/top_level/default.xsvf

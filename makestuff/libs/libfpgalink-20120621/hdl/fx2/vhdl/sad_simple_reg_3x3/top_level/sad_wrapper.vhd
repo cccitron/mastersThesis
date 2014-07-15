@@ -34,14 +34,14 @@ entity sad_wrapper is
       window : integer := 3; -- Window size, i.e. "3" -> 3x3 window
       win    : integer := 1; -- win is the number of pixels above, below, right, & left of center pixel
    
-      NCOL_C : INTEGER := 21; --33; --65; --200; --19; -- Number of columns in the search image
+      NCOL_C : INTEGER := 19; --21; --33; --65; --200; --19; -- Number of columns in the search image
       NROW_C : INTEGER := 3;  -- Number of rows in the search image
       
-      PIXEL_CNT  : INTEGER := 63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
+      PIXEL_CNT  : INTEGER := 57; --63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
       DISP_RANGE : INTEGER := 16; -- Disparity range 0-15
-      DISP_ROW   : INTEGER := 4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
-      NUM_2_ROW  : INTEGER := 21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
-      LAST_ROW   : INTEGER := 42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
+      DISP_ROW   : INTEGER := 2; --4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
+      NUM_2_ROW  : INTEGER := 19; --21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
+      LAST_ROW   : INTEGER := 38 --42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
    );
    Port ( 
       clk_I      : in  STD_LOGIC;
@@ -314,7 +314,7 @@ begin
       BEGIN
          i_sad_alg_3x3 : ENTITY work.sadAlgorithm_3x3
             PORT MAP (
---					clk_I => clk_I,
+					clk_I => clk_I,
 				
                ttl => templ_array(0+i),
                ttc => templ_array(1+i),

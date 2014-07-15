@@ -1,0 +1,198 @@
+% Cal Poly Thesis
+% 
+% based on UC Thesis format
+%
+% modified by Mark Barry 2/07.
+%
+%presented by Scott Winkleblack
+%
+
+\documentclass[12pt]{ucthesis}
+\usepackage{ifpdf}
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+    \pdffalse % we are not running PDFLaTeX
+\else
+\pdfoutput=1 % we are running PDFLaTeX
+\pdftrue \fi
+
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{cite}
+
+\ifpdf
+    \usepackage[pdftex]{graphicx}
+    % Update title and author below...
+    \usepackage[pdftex,plainpages=false,breaklinks=true,colorlinks=true,urlcolor=blue,citecolor=blue,
+		linkcolor=blue,bookmarks=true,bookmarksopen=true,%
+		bookmarksopenlevel=3,pdfstartview=FitV,
+		pdfauthor={Kevin Schapansky},
+		pdftitle={Jester: A Device Abstraction and Data Fusion API for Skeletal Tracking Sensors},
+		pdfkeywords={thesis, masters, cal poly}]{hyperref}
+    %Options with pdfstartview are FitV, FitB and FitH
+    \pdfcompresslevel=1
+
+\else
+    \usepackage{graphicx}
+\fi
+
+\usepackage{hyperref}
+\hypersetup{
+	linktoc=all,
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{titlesec}
+% \titleformat{\chapter}[display]% OLD
+%     {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}% OLD
+% \titlespacing*{\chapter}{0pt}{50pt}{40pt}% OLD
+\titleformat{\chapter}[display]% NEW
+    {\normalfont\centering}{\chaptertitlename\ \thechapter}{12pt}{}% NEW
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}% NEW
+
+%\titleformat{\section}[block]{first}{label}{12pt}
+
+\titleformat{\section}{}{\thesection}{1em}{}
+\titleformat{\subsection}{}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{}{\theparagraph}{1em}{}
+
+\usepackage[font={}]{caption}
+
+%\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+%\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} 
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\usepackage{algorithmic}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[letterpaper,papersize={8.5in,11in}]{geometry}
+\usepackage[overload]{textcase}
+\usepackage[toc,page]{appendix}
+
+\usepackage{tabularx}
+\usepackage{algorithm}
+%\usepackage{algpseudocode}
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+
+\floatstyle{boxed}
+\restylefloat{table}
+
+%\bibliographystyle{abbrv}
+
+\setlength{\parindent}{0.25in} \setlength{\parskip}{6pt}
+
+\geometry{verbose,nohead,tmargin=1.25in,bmargin=1in,lmargin=1.5in,rmargin=1.3in}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+
+% Different font in captions (single-spaced, bold) ------------
+%\newcommand{\captionfonts}{\small\bf\ssp}
+\newcommand{\captionfonts}{}
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+% ---------------------------------------
+
+\begin{document}
+
+% Declarations for Front Matter
+
+% Update fields below!
+\title{Low-Cost Stereo Vision System for Autonomous Mobile Robots}
+\author{Connor Citron}
+\degreemonth{June} \degreeyear{2014} \degree{Master of Science}
+\defensemonth{June} \defenseyear{2014}
+\numberofmembers{3} \chair{Professor Chris Lupo, Ph.D.,\newline Department of Computer Science} \othermemberA{Professor Bruce Golden, Ph.D.,\newline Department of Dairy Science} \othermemberB{Professor John Seng, Ph.D.,\newline Department of Computer Science} \field{Computer Science} \campus{San Luis Obispo}
+\copyrightyears{seven}
+
+\maketitle
+
+\begin{frontmatter}
+
+% Custom made for Cal Poly (by Mark Barry, modified by Andrew Tsui).
+\copyrightpage
+
+% Custom made for Cal Poly (by Andrew Tsui).
+\committeemembershippage
+
+\begin{abstract}
+
+\input{chapters/Abstract}
+
+\end{abstract}
+
+\begin{acknowledgements}
+
+I would like to especially thank my parents and family for their love and support.
+
+\end{acknowledgements}
+
+\tableofcontents
+
+\listoftables
+
+\listoffigures
+
+\end{frontmatter}
+
+\pagestyle{plain}
+
+\renewcommand{\baselinestretch}{1.66}
+
+% ------------- Main chapters here --------------------
+
+\include{chapters/Introduction}
+
+%%\include{chapters/Motivation}
+
+\include{chapters/Background}
+
+\include{chapters/Related_Works}
+
+%\include{chapters/Methodology}
+%
+%\include{chapters/Algorithm}
+%
+%\include{chapters/Implementation}
+%
+%\include{chapters/Experimental_Setup}
+%
+%\include{chapters/Results}
+
+\include{chapters/Conclusions}
+
+\include{chapters/Future_Work}
+
+% ------------- End main chapters ----------------------
+
+%\clearpage
+%\bibliographystyle{plain}
+%\bibliography{references}
+
+%\begin{appendix}
+%%\addcontentsline{toc}{chapter}{\appendixnamelower}
+%\include{Appendix}
+%\end{appendix}
+
+\end{document}

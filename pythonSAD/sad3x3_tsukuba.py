@@ -155,9 +155,11 @@ try:
     
     for i in range(width-17):
         for j in range(height-2):
-            im.putpixel((i,j), (colorScheme[disparityAll[j][i]][0], colorScheme[disparityAll[j][i]][1], colorScheme[disparityAll[j][i]][2]))
+            im.putpixel((i,j), (colorScheme[(disparityAll[j][i] - 1) % 16][0], \
+                                colorScheme[(disparityAll[j][i] - 1) % 16][1], \
+                                colorScheme[(disparityAll[j][i] - 1) % 16][2]))
 
-    im.save("tsukuba_disp3x3.png")
+    im.save("tsukuba_disp3x3_decr_1.png")
 
     # time after image is created
     t2 = time.time()

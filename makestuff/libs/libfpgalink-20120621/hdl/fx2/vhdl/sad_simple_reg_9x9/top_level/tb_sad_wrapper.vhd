@@ -85,6 +85,13 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
 																		x"02", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"05", x"03", x"04", x"03", x"05", x"03", x"04",
 																		x"02", x"04", x"03", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"03", x"05", x"03", x"04", x"02", x"04", x"03", x"04");
 
+	type array_type_next is array (0 to 19) of std_logic_vector(7 downto 0);
+--	signal template_next : array_type_next :=  (x"ff", x"11", x"47", x"47", x"58", x"58", x"58", x"59", x"59", x"59", x"59", x"58", x"56", x"47", x"29", x"32", x"22", x"26", x"19", x"20");
+	signal template_next : array_type_next :=  (x"ff", x"0b", x"2f", x"2f", x"3a", x"3a", x"3a", x"3b", x"3b", x"3b", x"3b", x"3a", x"38", x"2f", x"1d", x"20", x"16", x"1a", x"13", x"14");
+--	signal search_next   : array_type_next :=  (x"ff", x"10", x"51", x"45", x"49", x"50", x"49", x"49", x"50", x"59", x"62", x"59", x"61", x"62", x"58", x"60", x"60", x"59", x"46", x"30");
+	signal search_next   : array_type_next :=  (x"ff", x"0a", x"33", x"2d", x"31", x"32", x"31", x"31", x"32", x"3b", x"3e", x"3b", x"3d", x"3e", x"3a", x"3c", x"3c", x"3b", x"2e", x"1e");
+
+
 --	signal templateArray : array_type_templ := (x"ff", x"02", x"05", x"05", x"03", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
 --                                                      x"04", x"00", x"07", x"01", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff",
 --                                                      x"07", x"05", x"09", x"06", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"ff", x"05");
@@ -176,36 +183,90 @@ BEGIN
 --         ndx_t <= ndx_t + 1;
 --      END LOOP;
 
+		-- Initial template
 		h2fData_I  <= templateArray(0);
 		h2fValid_I <= '1';
 		chanAddr_I <= "0000000";
 		sw_I <= x"00";
+		wait for clk_I_period;
 		
 		ndx := 1;
-		WHILE (ndx <= 56) LOOP
-			wait for clk_I_period;
+		WHILE (ndx < 57) LOOP
 			h2fData_I <= templateArray(ndx);
+			wait for clk_I_period;
 			ndx := ndx + 1;
 		END LOOP;
+		
+		h2fData_I <= templateArray(57);
+		
+		wait for clk_I_period;
+		h2fValid_I <= '0';
+		chanAddr_I <= "0000001";
+		
+		-- Initial search
+		wait for clk_I_period;
+		h2fData_I <= searchArray(0);
+		h2fValid_I <= '1';
+		
+		wait for clk_I_period;
+		
+		ndx := 1;
+		WHILE (ndx < 57) LOOP
+			h2fData_I <= searchArray(ndx);
+			wait for clk_I_period;
+			ndx := ndx + 1;
+		END LOOP;
+		
+		h2fData_I <= searchArray(57);
+		
+		wait for clk_I_period;
+		h2fValid_I <= '0';
+		ndx := 0;
+		
+		wait for clk_I_period*40;
+		f2hReady_I <= '1';
+		chanAddr_I <= "0000011";
+		wait for clk_I_period*2;
+		
+		-- Next template row
+		h2fData_I  <= template_next(0);
+		h2fValid_I <= '1';
+		chanAddr_I <= "0000000";
+		sw_I <= x"00";
+		wait for clk_I_period;
+		
+		ndx := 1;
+		WHILE (ndx < 19) LOOP
+			h2fData_I <= template_next(ndx);
+			wait for clk_I_period;
+			ndx := ndx + 1;
+		END LOOP;
+		
+		h2fData_I <= template_next(19);
 		
 		wait for clk_I_period;
 		h2fValid_I <= '0';
 		chanAddr_I <= "0000001";
 		
 		wait for clk_I_period;
-		h2fData_I <= searchArray(0);
+		h2fData_I <= search_next(0);
 		h2fValid_I <= '1';
 		
+		wait for clk_I_period;
+		
 		ndx := 1;
-		WHILE (ndx <= 56) LOOP
+		WHILE (ndx < 19) LOOP
+			h2fData_I <= search_next(ndx);
 			wait for clk_I_period;
-			h2fData_I <= searchArray(ndx);
 			ndx := ndx + 1;
 		END LOOP;
 		
+		h2fData_I <= search_next(19);
+		
 		wait for clk_I_period;
 		h2fValid_I <= '0';
-
+		
+		wait for clk_I_period*2;
       wait;
    end process;
 
