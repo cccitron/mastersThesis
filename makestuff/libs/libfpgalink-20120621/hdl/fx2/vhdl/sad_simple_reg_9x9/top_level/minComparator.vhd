@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity minComparator is
 	GENERIC (
-		SAD_SIZE : INTEGER := 10;
+		SAD_SIZE : INTEGER := 12;
 		POS_SIZE : INTEGER := 4
 	);
 	Port ( 

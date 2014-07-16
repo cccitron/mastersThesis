@@ -497,9 +497,11 @@ if __name__ == "__main__":
                     exit(0)
                 
                 # Initialize arrays
+                dispW = width-24 #17
+                dispH = height-8 #2
                 templateBuff = numpy.zeros((height, width), dtype = 'i')
                 searchBuff = numpy.zeros((height, width), dtype = 'i')
-                disparity_f2h = numpy.zeros((height-2, width-17), dtype = 'i')
+                disparity_f2h = numpy.zeros((dispH, dispW), dtype = 'i')
                 
                 # Assign pixel values to arrays
                 for i in range(height):
@@ -510,13 +512,13 @@ if __name__ == "__main__":
                 # Number of pixels per row to be sent
                 #ncol = 21 #33 #25 #21 #65
                 # Number of rows of pixels to be sent
-                nrow = 3
+                nrow = 9
                 # Disparity range 0-15
                 disp_range = 16
                 # Number of disparity values for an entire row
-                disp_row = 2#ncol - (disp_range + 1)
+                disp_row = 4 #ncol - (disp_range + 1)
                 # Number of pixels per row to be sent
-                ncol = disp_row + disp_range + 1
+                ncol = disp_row + disp_range + 7
                 
                 # template & search arrays, data sent over via bytearrays
                 buffTempl_h2f = bytearray(ncol * nrow + 1)
@@ -572,7 +574,7 @@ if __name__ == "__main__":
                 
                 # data to be sent to the FPGA
                 pos = 1
-                for i in range(3, height):
+                for i in range(nrow, height):
                     ndx = 1
                     for j in range(ncol):
                         templateRow_h2f[ndx] = templateBuff[i][j]
@@ -588,7 +590,7 @@ if __name__ == "__main__":
                     
                 for offset in range(disp_row, width-ncol, disp_row):
                     pos = 0
-                    for i in range(3):
+                    for i in range(nrow):
                         ndx = 1
                         for j in range(ncol):
                             templateRow_h2f[ndx] = templateBuff[i][j+offset]
@@ -602,7 +604,7 @@ if __name__ == "__main__":
                         disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)
                     pos += 1
 
-                    for i in range(3, height):
+                    for i in range(nrow, height):
                         ndx = 1
                         for j in range(ncol):
                             templateRow_h2f[ndx] = templateBuff[i][j+offset]
@@ -665,13 +667,13 @@ if __name__ == "__main__":
                     print("")'''
                     
                 # create disparity image
-                im = Image.new("RGB", (width-17, height-2), "black")
+                im = Image.new("RGB", (dispW, dispH), "black") #17, height-2), "black")
                 
-                for i in range(width-17):
-                    for j in range(height-2):
+                for i in range(dispW): #17):
+                    for j in range(dispH): #2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("tsukuba_disp3x3_2_1024_limited.png")
+                im.save("tsukuba_disp9x9_4.png")
                 im.show()
                 
                 # time after image is created

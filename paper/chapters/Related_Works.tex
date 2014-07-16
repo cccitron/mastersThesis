@@ -1,1 +1,11 @@
-Relate to things.
+\chapter{Related Works}
+
+There are several different ways to implement a stereo vision system. Many stereo vision systems are implemented on field-programmable gate arrays (FPGAs). FPGAs allow for parallelization when processing images. Systems that use FPGAs generally can achieve a high frames per second on a decent or good image quality, but most of these systems are expensive. 
+
+FPGA Design and Implementation of a Real-Time Stereo Vision System ~\cite{alteraStratixIVPaper} uses an Altera Stratix IV GX DE4 FPGA board to process the right and left images that come from the cameras that were attached to it. ~\cite{alteraStratixIVPaper} uses the Sum of Absolute Differences (SAD) algorithm to compute distances. This system allows for real time speeds up to 15 frames per second at an image resolution of 1280x1024. However, the Altera Stratix IV GX DE4 FPGA board costs over \$4000, ~\cite{alteraStratixIVBoard} which makes the system impractical for non-high budget projects.
+
+Improved Real-time Correlation-based FPGA Stereo Vision System ~\cite{xilinxVirtex5Paper} uses a Xilinx Virtex-5 board to process images. ~\cite{xilinxVirtex5Paper} uses a correlation-based algorithm, which is based on the Census Transform, to obtain the depth in images. The algorithm is fast, but there are some inherent weaknesses to it. This system can run at 70 frames per second for images at a resolution of 512x512. Unfortunately, the Xilinx Virtex-5 board costs more than \$1000, ~\cite{xilinxVirtex5Board} which is still quite expensive.
+
+Low-Cost Stereo Vision on an FPGA ~\cite{lowCost1000} uses a Xilinx Spartan-3 XC3S2000 board. ~\cite{lowCost1000} uses the Census Transform algorithm for image processing. This allows images with a resolution of 320x240 to be processed at 150 frames per second. The total hardware for the low-cost prototype used in ~\cite{lowCost1000} costs just over \$1000, which is a bit too pricy for a lot of projects.
+
+An Embedded Stereo Vision Module For Industrial Vehicles Automation ~\cite{xilinxSpartan3APaper} uses a Xilinx Spartan-3A-DSP FGPA board. ~\cite{xilinxSpartan3APaper} uses an Extended Kalman Filter (EKF) based visual simultaneous localization and mapping (SLAM) algorithm. The accuracy of this system directly varied with speed and distance of detected object. The Xilinx Spartan-3A-DSP FGPA board is  around \$600, ~\cite{xilinxSpartan3ABoard} which is fairly expensive still.

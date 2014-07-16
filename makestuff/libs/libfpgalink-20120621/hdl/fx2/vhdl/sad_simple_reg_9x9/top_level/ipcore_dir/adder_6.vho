@@ -55,10 +55,9 @@
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
 COMPONENT adder_6
   PORT (
-    a : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    b : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    clk : IN STD_LOGIC;
-    s : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+    a : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+    b : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+    s : OUT STD_LOGIC_VECTOR(10 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -71,7 +70,6 @@ your_instance_name : adder_6
   PORT MAP (
     a => a,
     b => b,
-    clk => clk,
     s => s
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ------------

@@ -33,18 +33,20 @@ USE work.window_array.all;
 
 entity sad_wrapper is
    Generic (
-      window : integer := 3; --9; --3; -- Window size, i.e. "3" -> 3x3 window
-      win    : integer := 1; --4; --1; -- win is the number of pixels above, below, right, & left of center pixel
+      window : integer := 9; --3; -- Window size, i.e. "3" -> 3x3 window
+      win    : integer := 4; --1; -- win is the number of pixels above, below, right, & left of center pixel
    
-      NCOL_C : INTEGER := 19; --24; --25; --21; --33; --65; --200; --19; -- Number of columns in the search image
-      NROW_C : INTEGER := 3; --9; --3;  -- Number of rows in the search image
+      NCOL_C : INTEGER := 27; --25; --27; --29; --24; --25; --21; --33; --65; --200; --19; -- Number of columns in the search image
+      NROW_C : INTEGER := 9; --3;  -- Number of rows in the search image
       
-      PIXEL_CNT  : INTEGER := 57; --216; --75; --63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
+      PIXEL_CNT  : INTEGER := 243; --225; --81; --87; --216; --75; --63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
       DISP_RANGE : INTEGER := 16; -- Disparity range 0-15
-      DISP_ROW   : INTEGER := 2; --1; --8; --4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
-      NUM_2_ROW  : INTEGER := 19; --24; --25; --21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
-      LAST_ROW   : INTEGER := 38 --192 --50 --42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
-   );
+      DISP_ROW   : INTEGER := 4; --2; --10; --12; --1; --8; --4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
+      NUM_2_ROW  : INTEGER := 27; --25; --27; --29; --24; --25; --21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
+      LAST_ROW   : INTEGER := 216; --200; --54 --58 --192 --50 --42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
+		
+		SAD_SIZE : INTEGER := 12
+	);
    Port ( 
       clk_I      : in  STD_LOGIC;
       
@@ -97,7 +99,7 @@ architecture Behavioral of sad_wrapper is
 	--signal sum_array, sum_array_next : array_type_signed;
    
    -- sad array
-   type array_type_sad is array (0 to DISP_ROW-1, 0 to DISP_RANGE-1) of std_logic_vector(9 downto 0);
+   type array_type_sad is array (0 to DISP_ROW-1, 0 to DISP_RANGE-1) of std_logic_vector(SAD_SIZE-1 downto 0);
 	signal sad_array, sad_array_next : array_type_sad;-- := (OTHERS => (OTHERS => '0'));
    
    SIGNAL ndx_sad, ndx_sad_next, f2h_sad_rd, f2h_sad_rd_next : INTEGER := 0;
@@ -110,7 +112,7 @@ architecture Behavioral of sad_wrapper is
    --signal assign_out, assign_out_next : STD_LOGIC := '0';
    
    -- 2D Array for the min SAD values in the min comparator
-   TYPE array_type_minSad IS ARRAY (0 to DISP_ROW-1, 0 TO DISP_RANGE-1) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
+   TYPE array_type_minSad IS ARRAY (0 to DISP_ROW-1, 0 TO DISP_RANGE-1) OF STD_LOGIC_VECTOR(SAD_SIZE-1 DOWNTO 0);
    SIGNAL minSad : array_type_minSad;
    
    -- 2D Array for the pos of the sad values in the min comparator
@@ -362,24 +364,24 @@ begin
 	BEGIN
 		FOR i IN 0 TO DISP_ROW-1 LOOP -- 0 or 1
 			FOR j IN 0 TO DISP_RANGE-1 LOOP -- 0 to 15, for the 16 SAD calculations to compare and get the disparity value
---				FOR k IN 0 TO 8 LOOP	-- 0 to 8, the 9 rows in 9x9 window
-				template_window(i, j) <=  (template_array(0+i), template_array(1+i), template_array(2+i),
-													template_array(0+NCOL_C+i), template_array(1+NCOL_C+i), template_array(2+NCOL_C+i),
-													template_array(0+NCOL_C+NCOL_C+i), template_array(1+NCOL_C+NCOL_C+i), template_array(2+NCOL_C+NCOL_C+i));
---					template_window(i, j)((k*9) TO (8 + (k*9))) <=  
---						(template_array(0+i+(NCOL_C*k)), template_array(1+i+(NCOL_C*k)), template_array(2+i+(NCOL_C*k)),
---						 template_array(3+i+(NCOL_C*k)), template_array(4+i+(NCOL_C*k)), template_array(5+i+(NCOL_C*k)),
---						 template_array(6+i+(NCOL_C*k)), template_array(7+i+(NCOL_C*k)), template_array(8+i+(NCOL_C*k)));
+				FOR k IN 0 TO 8 LOOP	-- 0 to 8, the 9 rows in 9x9 window
+--				template_window(i, j) <=  (template_array(0+i), template_array(1+i), template_array(2+i),
+--													template_array(0+NCOL_C+i), template_array(1+NCOL_C+i), template_array(2+NCOL_C+i),
+--													template_array(0+NCOL_C+NCOL_C+i), template_array(1+NCOL_C+NCOL_C+i), template_array(2+NCOL_C+NCOL_C+i));
+					template_window(i, j)((k*9) TO (8 + (k*9))) <=  
+						(template_array(0+i+(NCOL_C*k)), template_array(1+i+(NCOL_C*k)), template_array(2+i+(NCOL_C*k)),
+						 template_array(3+i+(NCOL_C*k)), template_array(4+i+(NCOL_C*k)), template_array(5+i+(NCOL_C*k)),
+						 template_array(6+i+(NCOL_C*k)), template_array(7+i+(NCOL_C*k)), template_array(8+i+(NCOL_C*k)));
 
-				search_window(i, j)   <=  (search_array(0+i+j), search_array(1+i+j), search_array(2+i+j), 
-													search_array(0+NCOL_C+i+j), search_array(1+NCOL_C+i+j), search_array(2+NCOL_C+i+j),
-													search_array(0+NCOL_C+NCOL_C+i+j), search_array(1+NCOL_C+NCOL_C+i+j), search_array(2+NCOL_C+NCOL_C+i+j));
---					search_window(i, j)((k*9) TO (8 + (k*9)))   <=  
---						(search_array(0+i+j+(NCOL_C*k)), search_array(1+i+j+(NCOL_C*k)), search_array(2+i+j+(NCOL_C*k)), 
---						 search_array(3+i+j+(NCOL_C*k)), search_array(4+i+j+(NCOL_C*k)), search_array(5+i+j+(NCOL_C*k)),
---						 search_array(6+i+j+(NCOL_C*k)), search_array(7+i+j+(NCOL_C*k)), search_array(8+i+j+(NCOL_C*k)));
+--				search_window(i, j)   <=  (search_array(0+i+j), search_array(1+i+j), search_array(2+i+j), 
+--													search_array(0+NCOL_C+i+j), search_array(1+NCOL_C+i+j), search_array(2+NCOL_C+i+j),
+--													search_array(0+NCOL_C+NCOL_C+i+j), search_array(1+NCOL_C+NCOL_C+i+j), search_array(2+NCOL_C+NCOL_C+i+j));
+					search_window(i, j)((k*9) TO (8 + (k*9)))   <=  
+						(search_array(0+i+j+(NCOL_C*k)), search_array(1+i+j+(NCOL_C*k)), search_array(2+i+j+(NCOL_C*k)), 
+						 search_array(3+i+j+(NCOL_C*k)), search_array(4+i+j+(NCOL_C*k)), search_array(5+i+j+(NCOL_C*k)),
+						 search_array(6+i+j+(NCOL_C*k)), search_array(7+i+j+(NCOL_C*k)), search_array(8+i+j+(NCOL_C*k)));
 
---				END LOOP;
+				END LOOP;
 			END LOOP;
 		END LOOP;
 	END PROCESS window_setup;
@@ -442,6 +444,8 @@ begin
       g_minComp8 : FOR j IN 0 TO 7 GENERATE -- For the initial 8 comp. of the 16 SAD values
       BEGIN
          i_minComp8 : ENTITY work.minComparator 
+				GENERIC MAP
+					(SAD_SIZE => SAD_SIZE)
             PORT MAP (
 					clk_I => clk_I,
                sad0_I => sad_array(i, j*2),
@@ -459,7 +463,9 @@ begin
    BEGIN
       g_minComp4 : FOR j IN 0 TO 3 GENERATE -- For the 2nd 4 comp. of the 8 SAD remaining values
       BEGIN
-         i_minComp4 : ENTITY work.minComparator 
+         i_minComp4 : ENTITY work.minComparator
+				GENERIC MAP
+					(SAD_SIZE => SAD_SIZE)
             PORT MAP (
                clk_I => clk_I,
 					sad0_I => minSad(i, j*2),
@@ -478,6 +484,8 @@ begin
       g_minComp2 : FOR j IN 0 TO 1 GENERATE -- For the 2nd 4 comp. of the 8 SAD remaining values
       BEGIN
          i_minComp2 : ENTITY work.minComparator 
+				GENERIC MAP
+					(SAD_SIZE => SAD_SIZE)
             PORT MAP (
                clk_I => clk_I,
 					sad0_I => minSad(i, j*2 + 8),
@@ -494,6 +502,8 @@ begin
    g_minResult : FOR i IN 0 TO DISP_ROW-1 GENERATE
    BEGIN
       i_minResult : ENTITY work.minComparator 
+			GENERIC MAP
+					(SAD_SIZE => SAD_SIZE)
          PORT MAP ( 
             clk_I => clk_I,
 				sad0_I => minSad(i, 12),

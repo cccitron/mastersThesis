@@ -46,8 +46,8 @@ try:
     print("width =", width)
     print("height = ", height)
     
-    ncol_c = width
-    nrow_c = 3
+    ncol_c = 25
+    nrow_c = 9
     iteration = 3#height - 2
     
 #    PIXEL_CNT  = 57 # Number of pixels sent to the Template and Search Arrays, each.
@@ -69,19 +69,19 @@ try:
             templateBuff[i][j] = imR.getpixel((j, i)) 
             searchBuff[i][j] = imL.getpixel((j, i))
 
-    '''# Print template array
+    # Print template array
     print("begin template read")            
-    for i in range(nrow_c):
+    for i in range(10):
         for j in range(ncol_c):
-            print(templateBuff[i][j], end=" ")
+            print("x%0.2x" % templateBuff[i][j], end=" ")
         print("")
 
     # Print search array
     print("\nbegin search read")            
-    for i in range(nrow_c):
+    for i in range(10):
         for j in range(ncol_c):
-            print(searchBuff[i][j], end=" ")
-        print("")'''
+            print("x%0.2x" % searchBuff[i][j], end=" ")
+        print("")
 
     for row in range(height-8):
         sadArray = numpy.zeros((DISP_ROW, DISP_RANGE), dtype = 'i')
@@ -97,8 +97,16 @@ try:
         #print(disparityArray)
         disparityAll[row] = disparityArray
 
-    print("\ndispare:")
-    print(disparityAll)
+        # Print SAD array
+        print(row)
+        for k in range(16):
+            print("reading from sad array ", k)
+            for ndx in range(DISP_RANGE):
+                print("x%0.2x" % int(sadArray[k][ndx]), end=" ")
+            print("\n")
+
+    #print("\ndispare:")
+    #print(disparityAll)
     
     # create disparity image
     im = Image.new("RGB", (width-17, height-2), "black")

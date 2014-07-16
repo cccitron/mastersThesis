@@ -42,10 +42,9 @@ LIBRARY XilinxCoreLib;
 -- synthesis translate_on
 ENTITY adder_6 IS
   PORT (
-    a : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    b : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    clk : IN STD_LOGIC;
-    s : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+    a : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+    b : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+    s : OUT STD_LOGIC_VECTOR(10 DOWNTO 0)
   );
 END adder_6;
 
@@ -53,10 +52,9 @@ ARCHITECTURE adder_6_a OF adder_6 IS
 -- synthesis translate_off
 COMPONENT wrapped_adder_6
   PORT (
-    a : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    b : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    clk : IN STD_LOGIC;
-    s : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+    a : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+    b : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
+    s : OUT STD_LOGIC_VECTOR(10 DOWNTO 0)
   );
 END COMPONENT;
 
@@ -64,13 +62,13 @@ END COMPONENT;
   FOR ALL : wrapped_adder_6 USE ENTITY XilinxCoreLib.c_addsub_v11_0(behavioral)
     GENERIC MAP (
       c_a_type => 1,
-      c_a_width => 8,
+      c_a_width => 11,
       c_add_mode => 0,
       c_ainit_val => "0",
       c_b_constant => 0,
       c_b_type => 1,
-      c_b_value => "00000000",
-      c_b_width => 8,
+      c_b_value => "00000000000",
+      c_b_width => 11,
       c_borrow_low => 1,
       c_bypass_low => 0,
       c_ce_overrides_bypass => 1,
@@ -83,8 +81,8 @@ END COMPONENT;
       c_has_sinit => 0,
       c_has_sset => 0,
       c_implementation => 0,
-      c_latency => 2,
-      c_out_width => 9,
+      c_latency => 0,
+      c_out_width => 11,
       c_sclr_overrides_sset => 1,
       c_sinit_val => "0",
       c_verbosity => 0,
@@ -97,7 +95,6 @@ U0 : wrapped_adder_6
   PORT MAP (
     a => a,
     b => b,
-    clk => clk,
     s => s
   );
 -- synthesis translate_on

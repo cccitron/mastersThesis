@@ -13,14 +13,14 @@ USE ieee.numeric_std.ALL;
 
 package window_array is
 
-	TYPE pixelWindow IS ARRAY(0 TO 8) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
-	TYPE pixel2DArray IS ARRAY(0 TO 1, 0 TO 15) OF pixelWindow;
---	TYPE pixelWindow IS ARRAY(0 TO 80) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
---	TYPE pixel2DArray IS ARRAY(0 TO 1, 0 TO 15) OF pixelWindow;
+--	TYPE pixelWindow IS ARRAY(0 TO 8) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+--	TYPE pixel2DArray IS ARRAY(0 TO 9, 0 TO 15) OF pixelWindow;
+	TYPE pixelWindow IS ARRAY(0 TO 80) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+	TYPE pixel2DArray IS ARRAY(0 TO 3, 0 TO 15) OF pixelWindow;
 	
-	TYPE signedWindow IS ARRAY(0 TO 8) OF SIGNED(10 DOWNTO 0);
-	TYPE signPixelWindow IS ARRAY(0 TO 8) OF STD_LOGIC_VECTOR(8 DOWNTO 0);
---	TYPE signedWindow IS ARRAY(0 TO 79) OF SIGNED(10 DOWNTO 0);
+--	TYPE signedWindow IS ARRAY(0 TO 8) OF SIGNED(10 DOWNTO 0);
+--	TYPE signPixelWindow IS ARRAY(0 TO 8) OF STD_LOGIC_VECTOR(8 DOWNTO 0);
+	TYPE signedWindow IS ARRAY(0 TO 79) OF SIGNED(10 DOWNTO 0);
 	
 -- type <new_type> is
 --  record

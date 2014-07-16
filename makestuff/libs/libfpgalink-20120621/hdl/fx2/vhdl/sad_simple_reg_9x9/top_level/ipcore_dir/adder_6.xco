@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Fri Jul 11 00:02:16 2014
+# Date: Tue Jul 15 16:04:27 2014
 #
 ##############################################################
 #
@@ -40,13 +40,13 @@ SELECT Adder_Subtracter xilinx.com:ip:c_addsub:11.0
 # END Select
 # BEGIN Parameters
 CSET a_type=Unsigned
-CSET a_width=8
+CSET a_width=11
 CSET add_mode=Add
 CSET ainit_value=0
 CSET b_constant=false
 CSET b_type=Unsigned
-CSET b_value=00000000
-CSET b_width=8
+CSET b_value=00000000000
+CSET b_width=11
 CSET borrow_sense=Active_Low
 CSET bypass=false
 CSET bypass_ce_priority=CE_Overrides_Bypass
@@ -56,9 +56,9 @@ CSET c_out=false
 CSET ce=false
 CSET component_name=adder_6
 CSET implementation=Fabric
-CSET latency=2
-CSET latency_configuration=Automatic
-CSET out_width=9
+CSET latency=0
+CSET latency_configuration=Manual
+CSET out_width=11
 CSET sclr=false
 CSET sinit=false
 CSET sinit_value=0
@@ -70,4 +70,4 @@ CSET sync_ctrl_priority=Reset_Overrides_Set
 MISC pkg_timestamp=2013-07-22T10:35:41Z
 # END Extra information
 GENERATE
-# CRC: 923547a2
+# CRC: cefee3b1

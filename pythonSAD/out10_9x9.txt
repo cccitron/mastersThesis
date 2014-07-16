@@ -1,0 +1,125 @@
+tsukubaright_bw.jpg JPEG 384x288 L
+tsukubaleft_bw.jpg JPEG 384x288 L
+width = 384
+height =  288
+begin template read
+x02 x03 x03 x03 x03 x03 x03 x03 x03 x03 x02 x02 x03 x03 x03 x02 x03 x02 x03 x02 x03 x02 x03 x02 x03 
+x02 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x05 x03 x04 x03 x05 x03 x04 x03 x05 x03 x05 x03 x05 
+x02 x04 x03 x04 x04 x04 x04 x04 x04 x04 x04 x03 x05 x03 x04 x02 x04 x03 x04 x03 x04 x03 x04 x03 x05 
+x0b x2f x2f x3a x3a x3a x3b x3b x3b x3b x3a x38 x2f x1d x20 x16 x1a x13 x14 x15 x1a x13 x0c x12 x17 
+x15 x34 x2d x3a x36 x39 x39 x39 x39 x39 x38 x36 x2d x1b x1e x17 x17 x12 x13 x13 x17 x12 x0b x11 x15 
+x15 x32 x2b x3b x38 x3b x3b x3a x3a x39 x39 x36 x2b x1a x1d x18 x1a x13 x12 x13 x19 x15 x0a x10 x14 
+x14 x34 x2b x3b x38 x3b x3b x39 x3b x3b x39 x36 x2c x1b x1e x16 x1a x12 x13 x14 x19 x13 x09 x10 x16 
+x13 x36 x2c x3c x39 x3a x39 x3a x3a x39 x3b x36 x2e x1c x1d x19 x1a x12 x11 x13 x18 x14 x09 x0f x15 
+x14 x38 x2d x3b x38 x3b x3c x38 x39 x39 x39 x37 x30 x1c x1e x16 x19 x13 x14 x14 x18 x16 x0b x0e x13 
+x14 x36 x2e x39 x39 x3a x3c x39 x3a x39 x38 x37 x31 x1c x1e x17 x1b x14 x11 x13 x1a x18 x0b x0e x13 
+
+begin search read
+x02 x02 x03 x03 x03 x04 x03 x03 x03 x03 x03 x02 x03 x01 x02 x02 x03 x02 x03 x02 x03 x02 x03 x02 x03 
+x02 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x05 x03 x04 x03 x05 x03 x04 x03 x05 x03 x05 x04 x04 
+x02 x04 x04 x04 x03 x04 x04 x04 x04 x04 x04 x03 x04 x03 x04 x03 x04 x03 x04 x03 x04 x03 x04 x03 x04 
+x0a x33 x2d x31 x32 x31 x31 x32 x3b x3e x3b x3d x3e x3a x3c x3c x3b x2e x1e x1e x18 x18 x14 x12 x16 
+x13 x37 x28 x31 x2f x31 x30 x30 x39 x3c x3a x3a x3c x38 x3b x3b x3a x2e x1f x1e x18 x17 x14 x12 x15 
+x14 x35 x2b x31 x32 x34 x31 x31 x39 x3c x3b x3b x3d x3d x3c x3b x39 x2f x1f x1b x1b x18 x12 x11 x14 
+x15 x33 x28 x30 x31 x31 x31 x2f x39 x3f x3a x3b x3d x3a x3b x39 x3b x30 x1f x1c x1a x17 x15 x10 x14 
+x13 x35 x29 x2e x2e x31 x32 x31 x37 x3c x3d x3c x3d x39 x3c x39 x3b x31 x20 x1b x19 x17 x13 x11 x14 
+x14 x34 x2a x2e x2e x31 x32 x32 x38 x3c x3b x3a x3b x39 x3a x38 x3a x33 x21 x1c x1b x17 x15 x10 x14 
+x15 x35 x2a x30 x30 x32 x33 x30 x36 x3d x3c x3d x3d x38 x3b x39 x3b x34 x22 x1d x1a x18 x14 x11 x15 
+0
+reading from sad array  0
+x144 x211 x183 x183 x15f x147 x16a x184 x1bc x1fd x29c x32f x3fc x498 x583 x5f4 
+
+reading from sad array  1
+x152 x14c xfe xe2 xb6 x93 xb9 xcf x110 x199 x258 x2fb x3cb x48e x581 x5e5 
+
+reading from sad array  2
+x14c x11c xf8 xce xab x8b xa9 xec x177 x21e x2eb x393 x486 x553 x637 x689 
+
+reading from sad array  3
+x157 x12f xf9 xcc xa4 x8a x87 x116 x1bd x276 x344 x413 x50c x5ce x69c x73e 
+
+reading from sad array  4
+x171 x13d x116 xe2 xb6 x91 xd2 x17f x230 x2f4 x3d1 x4bc x596 x650 x6ee x778 
+
+reading from sad array  5
+x1f7 x1d6 x1a4 x172 x129 x8e xc9 x17c x22e x317 x3fe x4da x5a0 x648 x6c8 x70d 
+
+reading from sad array  6
+x272 x24a x216 x1d5 x126 x95 xdc x198 x261 x35e x42a x4fc x598 x626 x65d x688 
+
+reading from sad array  7
+x30d x2e9 x2a2 x1fd x140 x9f xd3 x1a4 x27d x365 x42d x4cd x549 x592 x5ab x622 
+
+reading from sad array  8
+x39f x370 x2b3 x20a x13b x9b xe8 x1cd x293 x36d x40f x495 x4c8 x4f7 x538 x6ab 
+
+reading from sad array  9
+x448 x3af x2e6 x22f x147 x9e xe9 x1d1 x2ad x33f x3a7 x3ea x40b x4ae x5e3 x719 
+
+reading from sad array  10
+x480 x3e1 x304 x23a x143 xa0 xe8 x1ec x280 x2de x2fd x332 x3bf x55c x64e x7a5 
+
+reading from sad array  11
+x4a9 x3fc x304 x239 x148 x9c xf8 x1c0 x222 x23d x240 x2e7 x466 x5c8 x6d3 x840 
+
+reading from sad array  12
+x497 x3df x30a x24b x14b x8d xe9 x193 x1b0 x1ad x1e6 x385 x4c3 x644 x761 x856 
+
+reading from sad array  13
+x450 x39d x2c6 x208 x114 x82 xd2 x139 x142 x1a5 x2d4 x434 x58d x722 x7c5 x782 
+
+reading from sad array  14
+x3d1 x306 x24c x1a0 xda x76 xf7 x164 x1df x33a x426 x5a7 x712 x82d x794 x783 
+
+reading from sad array  15
+x327 x279 x1cf x151 xf7 x74 xf1 x1d2 x341 x45f x566 x6fb x7ea x7cd x764 x77a 
+
+1
+reading from sad array  0
+x178 x268 x1c2 x1c0 x197 x175 x19f x1ba x1f9 x245 x2f5 x3a2 x48b x545 x658 x6e5 
+
+reading from sad array  1
+x189 x185 x12b x108 xd2 xa6 xcf xec x130 x1d0 x2a5 x364 x452 x53d x656 x6d5 
+
+reading from sad array  2
+x186 x14e x123 xed xc7 x9c xbb x10d x1a5 x26a x34f x415 x530 x625 x72c x793 
+
+reading from sad array  3
+x193 x164 x122 xec xbd x9c x94 x13c x1f7 x2d0 x3b8 x4af x5d0 x6b7 x7a2 x860 
+
+reading from sad array  4
+x1b0 x16e x142 x103 xd0 xa2 xea x1b5 x27e x362 x463 x576 x677 x74e x806 x8ac 
+
+reading from sad array  5
+x247 x21f x1e6 x1a9 x157 xa1 xde x1b1 x27b x38e x499 x59c x681 x743 x7dd x830 
+
+reading from sad array  6
+x2d7 x2a6 x26b x21d x155 xa6 xf3 x1cf x2b8 x3e1 x4ce x5c1 x677 x71f x762 x795 
+
+reading from sad array  7
+x38b x35c x30e x24e x175 xb2 xea x1db x2da x3e7 x4d2 x58e x61e x673 x692 x715 
+
+reading from sad array  8
+x434 x3f8 x322 x259 x16e xac x107 x20c x2f7 x3ee x4b0 x552 x58b x5c0 x605 x7b1 
+
+reading from sad array  9
+x4f9 x441 x35c x281 x17b xae x10b x210 x315 x3c1 x43d x48e x4af x562 x6ca x836 
+
+reading from sad array  10
+x53e x47b x380 x28e x17b xae x10f x230 x2ec x352 x377 x3b8 x453 x62d x751 x8e0 
+
+reading from sad array  11
+x56e x497 x381 x28e x17f xaa x123 x207 x285 x298 x29d x35a x518 x6b2 x7f5 x99c 
+
+reading from sad array  12
+x556 x476 x38d x2a4 x185 x98 x110 x1d8 x201 x1f2 x22b x40f x589 x746 x89f x9be 
+
+reading from sad array  13
+x503 x432 x347 x25c x145 x8d xfb x172 x181 x1da x338 x4da x673 x848 x919 x8c1 
+
+reading from sad array  14
+x473 x382 x2bb x1e2 x102 x7e x125 x1a2 x231 x3af x4c9 x68e x83f x98a x8e2 x8bf 
+
+reading from sad array  15
+x3b0 x2e1 x22c x18a x122 x7f x120 x21d x3cf x50d x646 x823 x94a x91e x8a9 x8b5 
+

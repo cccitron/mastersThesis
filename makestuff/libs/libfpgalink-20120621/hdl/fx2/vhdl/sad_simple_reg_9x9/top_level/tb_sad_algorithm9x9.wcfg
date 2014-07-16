@@ -19,7 +19,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="17" />
    <wvobject fp_name="/tb_sadalgorithm_9x9/clk_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i</obj_property>
       <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -29,13 +29,13 @@
       <obj_property name="ObjectShortName">data_i</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sadalgorithm_9x9/template_window_i" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">template_window_i[0:8]</obj_property>
-      <obj_property name="ObjectShortName">template_window_i[0:8]</obj_property>
+      <obj_property name="ElementShortName">template_window_i[0:80]</obj_property>
+      <obj_property name="ObjectShortName">template_window_i[0:80]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sadalgorithm_9x9/search_window_i" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">search_window_i[0:8]</obj_property>
-      <obj_property name="ObjectShortName">search_window_i[0:8]</obj_property>
+      <obj_property name="ElementShortName">search_window_i[0:80]</obj_property>
+      <obj_property name="ObjectShortName">search_window_i[0:80]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sadalgorithm_9x9/data_o" type="logic" db_ref_id="1">
@@ -48,13 +48,13 @@
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sadalgorithm_9x9/template" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">template[0:8]</obj_property>
-      <obj_property name="ObjectShortName">template[0:8]</obj_property>
+      <obj_property name="ElementShortName">template[0:80]</obj_property>
+      <obj_property name="ObjectShortName">template[0:80]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sadalgorithm_9x9/search" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">search[0:8]</obj_property>
-      <obj_property name="ObjectShortName">search[0:8]</obj_property>
+      <obj_property name="ElementShortName">search[0:80]</obj_property>
+      <obj_property name="ObjectShortName">search[0:80]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sadalgorithm_9x9/clk_i_period" type="other" db_ref_id="1">
@@ -62,73 +62,10 @@
       <obj_property name="ObjectShortName">clk_i_period</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">subbed[0:8]</obj_property>
-      <obj_property name="ObjectShortName">subbed[0:8]</obj_property>
+   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/present_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">present_state</obj_property>
+      <obj_property name="ObjectShortName">present_state</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed[0]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[0]</obj_property>
-         <obj_property name="ObjectShortName">subbed[0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed[1]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[1]</obj_property>
-         <obj_property name="ObjectShortName">subbed[1]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed[2]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[2]</obj_property>
-         <obj_property name="ObjectShortName">subbed[2]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed[3]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[3]</obj_property>
-         <obj_property name="ObjectShortName">subbed[3]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed[4]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[4]</obj_property>
-         <obj_property name="ObjectShortName">subbed[4]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed[5]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[5]</obj_property>
-         <obj_property name="ObjectShortName">subbed[5]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed[6]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[6]</obj_property>
-         <obj_property name="ObjectShortName">subbed[6]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed[7]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[7]</obj_property>
-         <obj_property name="ObjectShortName">subbed[7]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sadalgorithm_9x9/uut/subbed[8]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[8]</obj_property>
-         <obj_property name="ObjectShortName">subbed[8]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/sub" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">sub[7:0]</obj_property>
-      <obj_property name="ObjectShortName">sub[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/sad_sum" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">sad_sum[10:0]</obj_property>
-      <obj_property name="ObjectShortName">sad_sum[10:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/ndx" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">ndx</obj_property>
-      <obj_property name="ObjectShortName">ndx</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/pos" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">pos</obj_property>
-      <obj_property name="ObjectShortName">pos</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sadalgorithm_9x9/uut/data_in" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">data_in</obj_property>
@@ -138,12 +75,29 @@
       <obj_property name="ElementShortName">data_out</obj_property>
       <obj_property name="ObjectShortName">data_out</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/present_state" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">present_state</obj_property>
-      <obj_property name="ObjectShortName">present_state</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb_sadalgorithm_9x9/uut/counter" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">counter</obj_property>
       <obj_property name="ObjectShortName">counter</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/sad_sum" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sad_sum[10:0]</obj_property>
+      <obj_property name="ObjectShortName">sad_sum[10:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/less" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">less[7:0]</obj_property>
+      <obj_property name="ObjectShortName">less[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/more" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">more[7:0]</obj_property>
+      <obj_property name="ObjectShortName">more[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_9x9/uut/sub" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sub[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sub[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>
