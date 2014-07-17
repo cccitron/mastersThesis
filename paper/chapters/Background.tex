@@ -1,2 +1,66 @@
 \chapter{Background}
-Back to the grounding.
+\label{bckgrnd}
+
+This chapter presents some general information on stereo vision that be useful for understanding the decision that were made in developing this stereo vision system.
+
+\section{Computer Stereo Vision}
+
+Computer vision is concerned with using computers to understand and use information that is within visual images ~\cite{computerVision}. There are many different types of computer vision, which range from using one image to multiple images to obtain information. One image is not enough to determine the three dimensional properties of the objects within the image.
+
+Stereo vision uses multiple images of the same scene in order to construct a three dimensional representation of the objects in the images ~\cite{stereoVision}. Comparing multiple images together for their similarities and differences allows for the depth to be obtained.
+
+Binocular stereo ~\cite{binocularStereo} involves comparing a pair of images. These images are normally acquired simultaneously from a scene. By searching for corresponding pairs of pixels between the two images, depth information can be determined ~\cite{binocularStereo}. Pixel based comparisons can require substantial amount of computational power and time. Certain assumptions are made because of the computational resources required. Camera calibration and epipolar lines [cite 14-14 and define better] are common assumptions. For example, two images of the same scene are 640 x 480 pixels in size. Each image therefore contains 307,200 pixels, which is over 600,000 pixels between the two images for one frame. For a real-time application, say 30 frames per second for example, that becomes over 18 million pixels between the two images that would need to be processed every second.
+
+Computational requirements for real-time applications can be reduced in several ways. First, by lowering the number of pixels in the images reduces the number of pixel comparison per second. Images at a size of 320 x 240 pixels would require a quarter of the number of computations at the cost of losing some amount of detail in the images. Also, reducing the number of frames per second will decrease the amount of computing needed. Going much below 30 frames per second is noticeable to a person and can be annoying to observe a slow frame rate. A robot on the other hand, depending on its task and how fast its moving, might only need a few frames per second in order to function within a desired range. So image resolution could be more important than frames per second for a robot if details are more important than speed.
+
+Figure~\ref{fig:sv_diagram} below represents a simplified illustration of binocular stereo vision. The two cameras are held at a known fixed distance from each other and are used to triangulate different the distance of objects in the images they create. The points U\textsubscript{L} and U\textsubscript{R} in the left and right images, respectively, are 2D represents the point P that is in 3D space. By comparing the offset of between U\textsubscript{L} and U\textsubscript{R} in the two images, it is possible to obtain the distance of point P away from the cameras ~\cite{stereoVisionDiagram}.
+
+\begin{figure}
+\begin{center}
+\includegraphics{figures/stereoVisionDiagram.jpg}
+\captionfonts
+\caption{Simplified binocular stereo vision system ~\cite{stereoVisionDiagram}.}
+\label{fig:sv_diagram}
+\end{center}
+\end{figure}
+
+The closer an object is to the stereo vision system, the greater the offset of corresponding pixels will be. If an object is too close to the system, it is possible for one camera to see part of an object that the other camera cannot. The farther an object is away from the stereo vision system, the smaller the offset of corresponding pixels will be. If an object is far enough away, it is possible for an object to be in almost the exact same location in both images. You can show this to yourself by holding a finger up close to your face, close one eye, and then alternate between which eye is open and which eye is closed. Your finger should appear to move a noticeable amount. Next, hold your finger as far away from you as you can and again alternate between which eye is open and which is closed. You should notice that your finger appears to move significantly less than it did when your finger was close to your face. That is how stereo vision works. The distance of an object is inversely proportional to the amount of offset between the two images.
+
+\subsection{Parallelism in Stereo Vision}
+
+Processing images for stereo vision allows for a high degree of parallelism. Locating the corresponding position of a pair of pixels is independent of finding another corresponding pair of pixels. This independent nature allows for the ability to process different parts of the same images at the same time, if there is hardware to support it.
+
+Field Programmable Gate Arrays (FPGAs) allow for parallel processing to be implemented of the images. In section \textbf{(Implementation)} the amount of parallel processing used for the modular stereo vision system presented in this paper is discussed. 
+
+\section{Stereo Vision Algorithms}
+
+Stereo vision algorithms can be placed into one of three different categories: pixel-based methods, area-based methods, and feature-based methods ~\cite{similarAlgorithms}. Pixel-based methods utilize pixel by pixel comparisons. They can produce dense disparity \textbf{(define!)} maps, but at the cost of higher computation complexity and higher noise sensitivity ~\cite{similarAlgorithms}. Area-based methods utilize block by block comparisons. They can also produce dense disparity maps and are less sensitive to noise, however, accuracy tends to be low in areas that are not smooth ~\cite{similarAlgorithms}. Feature-based methods utilize features, such as edges and lines for comparisons. They cannot produce dense disparity maps, but have a lower computational complexity and are insensitive to noise ~\cite{similarAlgorithms}. 
+
+There are a lot of stereo vision algorithms out there ~\cite{taxonomy}. In the taxonomy of ~\cite{taxonomy}, 20 different stereo vision algorithms were compared against each other using various reference images. Many algorithms are based on either the sum of absolute differences (SAD) or correlation algorithms ~\cite{alteraStratixIVPaper}.
+
+An algorithm that is similar to SAD is Sum of the Square Differences (SSD). Both of these algorithms produce similar results and contain around the same amount of error ~\cite{similarAlgorithms}. SAD was chosen over the other algorithms to implement because it is simpler to implement in hardware. SSD requires squaring the difference between corresponding pixels and summing it up. Since squaring a number is the number multiplied by itself, the number will be added to itself that many times to produce the squared value. This is a lot more over head, and more hardware, than just taking the absolute difference of the difference of each corresponding pair.
+
+\subsection{Sum of the Absolute Differences Algorithm}
+
+SAD is a pixel-based matching method ~\cite{alteraStratixIVPaper}. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

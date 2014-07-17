@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  16 JUL 2014 11:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  17 JUL 2014 12:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -82,6 +82,10 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
@@ -229,7 +233,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip45
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 48.
+Package hyperref Info: Option `colorlinks' set `true' on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
@@ -347,6 +351,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \g_MT_multlinerow_int=\count124
@@ -456,20 +462,20 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 (./chapters/Future_Work.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -509,7 +515,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 117.
+Package hyperref Info: Link coloring ON on input line 119.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -519,9 +525,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count145
 )
-LaTeX Info: Redefining \ref on input line 117.
-LaTeX Info: Redefining \pageref on input line 117.
-LaTeX Info: Redefining \nameref on input line 117.
+LaTeX Info: Redefining \ref on input line 119.
+LaTeX Info: Redefining \pageref on input line 119.
+LaTeX Info: Redefining \nameref on input line 119.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
@@ -568,21 +574,21 @@ Package caption Info: End \AtBeginDocument code.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 134.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 136.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 136.
  [2]
-LaTeX Font Info:    Try loading font information for U+msa on input line 137.
+LaTeX Font Info:    Try loading font information for U+msa on input line 139.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 137.
+LaTeX Font Info:    Try loading font information for U+msb on input line 139.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -615,7 +621,7 @@ CHAPTER 1.
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.165 \include{chapters/Introduction}
+l.167 \include{chapters/Introduction}
                                       [1
 
 
@@ -624,25 +630,32 @@ l.165 \include{chapters/Introduction}
 
  (./chapters/Background.tex
 CHAPTER 2.
-) [2
+[2
 
 
 
-]
+] <figures/stereoVisionDiagram.jpg, id=146, 276.28218pt x 212.29312pt>
+File: figures/stereoVisionDiagram.jpg Graphic file (type jpg)
+
+<use figures/stereoVisionDiagram.jpg>
+Package pdftex.def Info: figures/stereoVisionDiagram.jpg used on input line 20.
+
+(pdftex.def)             Requested size: 276.2815pt x 212.2926pt.
+ [3] [4 <./figures/stereoVisionDiagram.jpg>] [5]) [6]
 \openout2 = `chapters/Related_Works.aux'.
 
  (./chapters/Related_Works.tex
 CHAPTER 3.
-[3
+[7
 
 
 
-]) [4]
+]) [8]
 \openout2 = `chapters/Implementation.aux'.
 
  (./chapters/Implementation.tex
 CHAPTER 4.
-) [5
+) [9
 
 
 
@@ -651,7 +664,7 @@ CHAPTER 4.
 
  (./chapters/Experiments_and_Results.tex
 CHAPTER 5.
-) [6
+) [10
 
 
 
@@ -660,7 +673,7 @@ CHAPTER 5.
 
  (./chapters/Conclusions.tex
 CHAPTER 6.
-) [7
+) [11
 
 
 
@@ -669,12 +682,12 @@ CHAPTER 6.
 
  (./chapters/Future_Work.tex
 CHAPTER 7.
-) [8
+) [12
 
 
 
 ] (./thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 4--8
+Underfull \hbox (badness 10000) in paragraph at lines 8--12
 []\OT1/cmr/m/n/12 Digi-key.  [][]$\OT1/cmtt/m/n/12 http : / / www . digikey . c
 om / product-[]detail / en /
  []
@@ -683,50 +696,52 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--19
+Underfull \hbox (badness 10000) in paragraph at lines 19--23
 []\OT1/cmr/m/n/12 Xtremedsp starter plat-form  spartan-3a dsp 1800a edi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--19
+Underfull \hbox (badness 10000) in paragraph at lines 19--23
 \OT1/cmr/m/n/12 tion.  [][]$\OT1/cmtt/m/n/12 http : / / www . xilinx . com / pr
 oducts / boards-[]and-[]kits /
  []
 
-[9
+[13
 
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
+ [14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
  (./thesis.aux (./chapters/Introduction.aux)
 (./chapters/Background.aux) (./chapters/Related_Works.aux)
 (./chapters/Implementation.aux) (./chapters/Experiments_and_Results.aux)
 (./chapters/Conclusions.aux) (./chapters/Future_Work.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 918DB4509C143793CCFFA71E560C7E1D;479.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
+(rerunfilecheck)             Checksum: D65889C029452B1EC80A13438A7288C4;792.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
  ) 
 Here is how much of TeX's memory you used:
- 9294 strings out of 494985
- 139120 string characters out of 6180357
- 239796 words of memory out of 5000000
- 12292 multiletter control sequences out of 15000+600000
- 9099 words of font info for 35 fonts, out of 8000000 for 9000
+ 9371 strings out of 494985
+ 140334 string characters out of 6180357
+ 241633 words of memory out of 5000000
+ 12347 multiletter control sequences out of 15000+600000
+ 9406 words of font info for 36 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,8n,38p,668b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (18 pages, 68799 bytes).
+ 36i,8n,38p,1103b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on thesis.pdf (22 pages, 107253 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 275 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

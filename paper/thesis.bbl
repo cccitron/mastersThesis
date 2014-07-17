@@ -1,4 +1,8 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{stereoVisionDiagram}
+3d imaging with ni labview.
+\newblock \url{http://www.ni.com/white-paper/14103/en/}, August 2013.
 
 \bibitem{alteraStratixIVBoard}
 Digi-key.
@@ -17,6 +21,13 @@ Xtremedsp starter platform – spartan-3a dsp 1800a edition.
   \url{http://www.xilinx.com/products/boards-and-kits/HW-SD1800A-DSP-SB-UNI-G.htm},
   July 2014.
 
+\bibitem{similarAlgorithms}
+P.~Ben-Tzvi and Xin Xu.
+\newblock An embedded feature-based stereo vision system for autonomous mobile
+  robots.
+\newblock In {\em Robotic and Sensors Environments (ROSE), 2010 IEEE
+  International Workshop on}, pages 1--6, Oct 2010.
+
 \bibitem{xilinxSpartan3APaper}
 P.~Ben-Tzvi and Xin Xu.
 \newblock An embedded feature-based stereo vision system for autonomous mobile
@@ -24,11 +35,22 @@ P.~Ben-Tzvi and Xin Xu.
 \newblock In {\em Robotic and Sensors Environments (ROSE), 2010 IEEE
   International Workshop on}, pages 1--6, Oct 2010.
 
+\bibitem{stereoVision}
+M.Z. Brown, D.~Burschka, and G.D. Hager.
+\newblock Advances in computational stereo.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, 25(8):993--1008, Aug 2003.
+
 \bibitem{xilinxVirtex5Paper}
 Jingting Ding, Xin Du, Xinhuan Wang, and Jilin Liu.
 \newblock Improved real-time correlation-based fpga stereo vision system.
 \newblock In {\em Mechatronics and Automation (ICMA), 2010 International
   Conference on}, pages 104--108, Aug 2010.
+
+\bibitem{computerVision}
+M.~Gosta and M.~Grgic.
+\newblock Accomplishments and challenges of computer stereo vision.
+\newblock In {\em ELMAR, 2010 PROCEEDINGS}, pages 57--64, Sept 2010.
 
 \bibitem{alteraStratixIVPaper}
 N.~Isakova, S.~Basak, and AC. Sonmez.
@@ -36,10 +58,24 @@ N.~Isakova, S.~Basak, and AC. Sonmez.
 \newblock In {\em Innovations in Intelligent Systems and Applications (INISTA),
   2012 International Symposium on}, pages 1--5, July 2012.
 
+\bibitem{binocularStereo}
+Seunghun Jin, Junguk Cho, Xuan~Dai Pham, Kyoung-Mu Lee, Sung-Kee Park, Munsang
+  Kim, and J.W. Jeon.
+\newblock Fpga design and implementation of a real-time stereo vision system.
+\newblock {\em Circuits and Systems for Video Technology, IEEE Transactions
+  on}, 20(1):15--26, Jan 2010.
+
 \bibitem{lowCost1000}
 C.~Murphy, D.~Lindquist, AM. Rynning, Thomas Cecil, S.~Leavitt, and M.L. Chang.
 \newblock Low-cost stereo vision on an fpga.
 \newblock In {\em Field-Programmable Custom Computing Machines, 2007. FCCM
   2007. 15th Annual IEEE Symposium on}, pages 333--334, April 2007.
+
+\bibitem{taxonomy}
+D.~Scharstein, R.~Szeliski, and R.~Zabih.
+\newblock A taxonomy and evaluation of dense two-frame stereo correspondence
+  algorithms.
+\newblock In {\em Stereo and Multi-Baseline Vision, 2001. (SMBV 2001).
+  Proceedings. IEEE Workshop on}, pages 131--140, 2001.
 
 \end{thebibliography}
