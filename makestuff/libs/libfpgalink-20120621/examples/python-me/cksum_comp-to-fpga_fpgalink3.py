@@ -524,6 +524,9 @@ if __name__ == "__main__":
                 buffTempl_h2f = bytearray(ncol * nrow + 1)
                 buffSearch_h2f = bytearray(ncol * nrow + 1)
                 
+                buffTempl_h2f[0] = 0xf3
+                buffsearch_h2f[0] = 0xf3
+                
                 # initial time
                 t0 = time.time()
                 
@@ -673,7 +676,7 @@ if __name__ == "__main__":
                     for j in range(dispH): #2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("tsukuba_disp9x9_4.png")
+                im.save("tsukuba_disp9x9_2_out.png")
                 im.show()
                 
                 # time after image is created

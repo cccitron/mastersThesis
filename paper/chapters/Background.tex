@@ -42,12 +42,89 @@ An algorithm that is similar to SAD is Sum of the Square Differences (SSD). Both
 
 \subsection{Sum of the Absolute Differences Algorithm}
 
-SAD is a pixel-based matching method ~\cite{alteraStratixIVPaper}. 
+SAD is a pixel-based matching method ~\cite{alteraStratixIVPaper}. Stereo vision uses this algorithm to compare a group of pixels called a window from one picture with a window in another picture. The SAD algorithm, shown in Equation~\ref{eq:sadAlg1} ~\cite{alteraStratixIVPaper}, takes the absolute difference between each pair of corresponding pixels and sums all of those values together to create a SAD value. One SAD value by itself does not give any useful information about those two corresponding windows. Several SAD values will be calculated from different candidate windows for each reference window. Out of the all the SAD values calculated for the reference window, the SAD value with the smallest value (all of them are positive because of the absolute part in the equation) is determined to contain the matching pixel. Figure~\ref{fig:sad_corr} shows for one reference window, there are several candidate windows used. The line that the candidate windows move across are called epipolar lines. 
+
+\begin{equation}
+	\sum\limits_{(i,j)\in W}\left| I_{1}(i,j)-I_{2}(x+i,y+j) \right|
+	\label{eq:sadAlg1}
+\end{equation}
+
+\begin{figure}
+\begin{center}
+	\includegraphics{figures/sadCorrespondingWindows.png}
+	\captionfonts
+	\caption{Searching for corresponding points between the two images ~\cite{sadParallel}.}
+	\label{fig:sad_corr}
+\end{center}
+\end{figure}
+
+In stereo vision, epipolar lines are created from the two cameras capturing images from the same scene. Figure~\ref{fig:epipolar} show the epipolar line that point X must be on in the corresponding images. This is useful because if the epipolar lines are known for both images, then it is possible to know the line that two corresponding points are on. It reduces the problem of finding the the same two points from a 2D area to a 1D line. Now, if the epipolar lines in both images are horizontal as they are in Fig.~\ref{fig:sad_corr} as opposed to them being at a diagonal as they are in Fig.~\ref{fig:epipolar} then Eq.~\ref{eq:sadAlg1} reduces to Equation ~\ref{eq:sadAlg2}. For cameras that are not perfectly aligned, rectification is often used in order to align epipolar lines between images ~\cite{rectification}. However, many stereo vision algorithms will assume that the epipolar lines are rectified to simplify the overall processing required.
+
+\begin{figure}
+\begin{center}
+	\includegraphics[height=50mm]{figures/epipolar.png}
+	\captionfonts
+	\caption{The epipolar line that point X is on for both images ~\cite{epipolar}.}
+	\label{fig:epipolar}
+\end{center}
+\end{figure}
+
+\begin{equation}
+	\sum\limits_{(i,j)\in W}\left| I_{1}(i,j)-I_{2}(x+i,y) \right|
+	\label{eq:sadAlg2}
+\end{equation}
+
+The disparity is the amount of offset between two corresponding pixels. The disparity range is the range that the candidate window will move through the image and is represented by the value 'x' in Eq.~\ref{eq:sadAlg2}. It corresponds to the amount of SAD values that will be calculated. Figure~\ref{fig:sadGraphs} shows two types of SAD search methods. Fig.~\ref{fig:globalSAD} selects the overall SAD value with the lowest value to be the matching pixel. However, Fig.~\ref{fig:localSAD} limits the search region to a specific area. This helps to avoid issues of similar looking areas that are not near the reference window from being falsely identified as matching. The downside to this is that if an object gets too close, meaning it would have high disparity values, and if the search region is not large enough, then the objects distance will be miss classified. It is important to determine a window size and a search region that are not too small and are not too big.
+
+\begin{figure}
+\begin{center}
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{figures/sadGlobalGraph.png}
+		\caption{Global SAD search}
+		\label{fig:globalSAD}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{figures/sadLocalGraph.png}
+		\caption{Local SAD search}
+		\label{fig:localSAD}
+	\end{subfigure}
+	\captionfonts
+	\caption{The SAD between a reference window and several candidate windows ~\cite{sadParallel}.}
+	\label{fig:sadGraphs}
+\end{center}
+\end{figure}
 
 
 
-
-
+\begin{figure}
+\begin{center}
+	\begin{subfigure}{0.3\textwidth}
+		\begin{tabular}{|l|c|r|}
+			\hline
+			1 & 2 & 3 \\\hline
+	  		4 & 5 & 6 \\\hline
+	    	7 & 8 & 9 \\
+	    	\hline
+		\end{tabular}
+		\caption{Template Window}
+		\label{fig:template}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\begin{tabular}{|l|c|r|}
+			\hline
+			1 & 2 & 3 \\\hline
+	  		4 & 5 & 6 \\\hline
+	    	7 & 8 & 9 \\
+	    	\hline
+		\end{tabular}
+		\caption{Search Window}
+		\label{fig:search}
+	\end{subfigure}
+	\captionfonts
+	\caption{Template (reference) window and search (candidate) window.}
+	\label{fig:windows}
+\end{center}
+\end{figure}
 
 
 

@@ -51,12 +51,18 @@ entity sad_wrapper is
       clk_I      : in  STD_LOGIC;
       
       h2fData_I  : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
-      templ_O    : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+      
+		templ_I    : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		search_I   : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		templ_O    : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       search_O   : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       sad_O      : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       disp_O     : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       
       chanAddr_I : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		write_t_I  : IN  STD_LOGIC;
+		write_s_I  : IN  STD_LOGIC;
+		
       f2hReady_I : IN  STD_LOGIC;
       h2fValid_I : IN  STD_LOGIC;
       
@@ -129,6 +135,10 @@ architecture Behavioral of sad_wrapper is
 	SIGNAL data_out : array_type_data := (OTHERS => (OTHERS => '0'));
 	SIGNAL data_init : STD_LOGIC := '1';
 
+	SIGNAL write_t, write_s : STD_LOGIC := '0';
+	
+	SIGNAL junk_out : STD_LOGIC_VECTOR(7 DOWNTO 0) := x"ff";
+	
 begin
 
    process(clk_I)
@@ -254,27 +264,30 @@ begin
 			
 --			data_init <= data_init;
 			-- When to pass data to SAD algorithm
-			IF (ndx_t_next = LAST_ROW AND ndx_s_next = PIXEL_CNT) THEN --data_init = '1' AND ndx_s_next = PIXEL_CNT) THEN
---				data_init <= '1';
---				data_in <= '0';
---			ELSIF (data_init <= '1') THEN
+			IF (ndx_t_next = LAST_ROW AND ndx_s_next = LAST_ROW AND write_t = '0' AND write_s = '0') THEN --data_init = '1' AND ndx_s_next = PIXEL_CNT) THEN
 				data_in <= '1';
---				data_init <= '0';
---			ELSIF (data_out(0) = x"ffff" AND data_out(1) = x"ffff") THEN
---				data_in <= '1';
 			ELSE
 				data_in <= '0';
 			END IF;
 			
+			IF (junk_t = '1') THEN
+				junk_out <= templ_I;
+			ELSE
+				junk_out <= junk_out;
+			END IF;
+			
 		end if;
 	end process;
-      
+	
+	write_t <= write_t_I;
+	write_s <= write_s_I;
+		
 --	junk_t_next <= '0' when chanAddr_I = "0000000" and h2fValid_I = '1' else junk_t;
 		
    -- host to FPGA template_array
    -- reg 0
-   reg0_templ <= h2fData_I when chanAddr_I = "0000000" and h2fValid_I = '1' and junk_t = '0' else template_array(ndx_t);
-   junk_t_next <= '0' when chanAddr_I = "0000000" and h2fValid_I = '1' else junk_t;
+   reg0_templ <= templ_I when write_t = '1' and h2fValid_I = '1' and junk_t = '0' else template_array(ndx_t);
+   junk_t_next <= '0' when write_t = '1' and h2fValid_I = '1' else junk_t;
    
    fill_templ : PROCESS (reg0_templ, template_array, ndx_t, disp_ready)--, next_t_row, templ_next_t_row)
    BEGIN
@@ -291,7 +304,7 @@ begin
       END IF;
    END PROCESS fill_templ;
    
-   ndx_t_next <= ndx_t + 1 WHEN h2fValid_I = '1' AND chanAddr_I = "0000000" AND junk_t = '0'
+   ndx_t_next <= ndx_t + 1 WHEN h2fValid_I = '1' AND write_t = '1' AND junk_t = '0'
       ELSE ndx_t;
    
    -- reg 4
@@ -309,8 +322,8 @@ begin
    
    -- host to FPGA search_array
    -- reg 1
-   reg1_search <= h2fData_I when chanAddr_I = "0000001" and h2fValid_I = '1' and junk_s = '0' else search_array(ndx_s);
-   junk_s_next <= '0' when chanAddr_I = "0000001" and h2fValid_I = '1' else junk_s;
+   reg1_search <= search_I when write_s = '1' and h2fValid_I = '1' and junk_s = '0' else search_array(ndx_s);
+   junk_s_next <= '0' when write_s = '1' and h2fValid_I = '1' else junk_s;
    
    fill_search : PROCESS (reg1_search, search_array, ndx_s, disp_ready)--, search_next_s_row)
    BEGIN
@@ -328,7 +341,7 @@ begin
 --      search_array_next(ndx_s) <= reg1_search;
    END PROCESS fill_search;
    
-   ndx_s_next <= ndx_s + 1 WHEN h2fValid_I = '1' AND chanAddr_I = "0000001" and junk_s = '0' --ndx_t > 8
+   ndx_s_next <= ndx_s + 1 WHEN h2fValid_I = '1' AND write_s = '1' and junk_s = '0' --ndx_t > 8
       ELSE ndx_s;
    
 --   -- reg 5
@@ -567,7 +580,7 @@ begin
    disp_O   <= x"0" & disparityArray(f2h_disp_rd); --sad_array(f2h_sad_rd);
    
    WITH sw_I SELECT led_O <=
-      STD_LOGIC_VECTOR(TO_UNSIGNED(f2h_sad_rd, 8)) WHEN x"00", --h2fValid_I & chanAddr_I(6 DOWNTO 0) WHEN x"00",
+		junk_out WHEN x"00", -- STD_LOGIC_VECTOR(TO_UNSIGNED(f2h_sad_rd, 8)) WHEN x"00", --h2fValid_I & chanAddr_I(6 DOWNTO 0) WHEN x"00",
       sad_array(0, 0)(7 DOWNTO 0)  WHEN x"01",
       sad_array(0, 1)(7 DOWNTO 0)  WHEN x"02",
       sad_array(0, 2)(7 DOWNTO 0)  WHEN x"04",

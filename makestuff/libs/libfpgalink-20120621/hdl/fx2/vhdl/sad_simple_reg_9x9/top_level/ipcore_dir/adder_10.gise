@@ -27,6 +27,23 @@
     <file xil_pn:fileType="FILE_VHO" xil_pn:name="adder_10.vho" xil_pn:origination="imported"/>
   </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1405651184" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-6304051651786036530" xil_pn:start_ts="1405651184">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1405651184" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="3791046237706874527" xil_pn:start_ts="1405651184">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1405651184" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1405651184">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1405651184" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-4844293785891794672" xil_pn:start_ts="1405651184">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
 
 </generated_project>

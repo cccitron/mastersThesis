@@ -102,6 +102,9 @@ architecture behavioural of top_level is
    signal reg0_templ, reg1_search, reg2_sad, reg3_disp : std_logic_vector(7 downto 0)  := x"00";
    signal reg4_next_templ_row, reg5_next_search_row : std_logic_vector(7 downto 0)  := x"00";
 
+	SIGNAL write_t, write_s : STD_LOGIC := '0';
+	SIGNAL template_in, search_in : STD_LOGIC_VECTOR(7 DOWNTO 0) := x"00";
+
 begin                                                                     --BEGIN_SNIPPET(registers)
 	
 --   clk_proc : PROCESS (fx2Clk_in)
@@ -292,7 +295,7 @@ begin                                                                     --BEGI
 --      templ_array(7)  WHEN x"80",
 --      x"f5"          WHEN OTHERS;
       
-	flags <= "000" & f2hReady;
+--	flags <= "000" & f2hReady;
 	--seven_seg : entity work.seven_seg
 	--	port map(
 	--		clk_in     => fx2Clk_in,
@@ -302,17 +305,39 @@ begin                                                                     --BEGI
 	--		anodes_out => anode_out
 	--	);
    
+--	data_in : PROCESS(chanAddr)
+--	BEGIN
+--		IF (chanAddr = "0000000") THEN
+--			
+--		ELSIF (chanAddr = "0000000") THEN
+--			
+--		ELSE
+--			
+--		END IF;
+--	END PROCESS data_in;
+	
+	template_in <= h2fData;
+	search_in <= h2fData;
+	
+	write_t <= '1' WHEN chanAddr = "0000000" ELSE '0';
+	write_s <= '1' WHEN chanAddr = "0000001" ELSE '0';
+	
    sad_wrappings : entity work.sad_wrapper
       port map ( 
          clk_I      => fx2Clk_in, --clk_sad,
 
          h2fData_I  => h2fData,
+			templ_I    => template_in,
+         search_I   => search_in,
          templ_O    => reg0_templ, --reg1_next,
          search_O   => reg1_search, --reg2_next,
          sad_O      => reg2_sad,
          disp_O     => reg3_disp,
          
          chanAddr_I => chanAddr,
+			write_t_I  => write_t,
+			write_s_I  => write_s,
+			
          f2hReady_I => f2hReady,
          h2fValid_I => h2fValid,
          

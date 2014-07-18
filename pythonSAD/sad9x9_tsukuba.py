@@ -46,7 +46,7 @@ try:
     print("width =", width)
     print("height = ", height)
     
-    ncol_c = 25
+    ncol_c = 27
     nrow_c = 9
     iteration = 3#height - 2
     
@@ -73,14 +73,14 @@ try:
     print("begin template read")            
     for i in range(10):
         for j in range(ncol_c):
-            print("x%0.2x" % templateBuff[i][j], end=" ")
+            print("\"x%0.2x\"," % templateBuff[i][j], end=" ")
         print("")
 
     # Print search array
     print("\nbegin search read")            
     for i in range(10):
         for j in range(ncol_c):
-            print("x%0.2x" % searchBuff[i][j], end=" ")
+            print("\"x%0.2x\"," % searchBuff[i][j], end=" ")
         print("")
 
     for row in range(height-8):
@@ -103,7 +103,7 @@ try:
             print("reading from sad array ", k)
             for ndx in range(DISP_RANGE):
                 print("x%0.2x" % int(sadArray[k][ndx]), end=" ")
-            print("\n")
+            print("\n", sadArray.argmin(axis=1), "\n")
 
     #print("\ndispare:")
     #print(disparityAll)

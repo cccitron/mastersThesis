@@ -508,13 +508,13 @@ if __name__ == "__main__":
                         searchBuff[i][j] = imL.getpixel((j, i))
                 
                 # Number of pixels per row to be sent
-                ncol = 21 #33 #25 #21 #65
+                ncol = 27 #33 #25 #21 #65
                 # Number of rows of pixels to be sent
-                nrow = 3
+                nrow = 9
                 # Disparity range 0-15
                 disp_range = 16
                 # Number of disparity values for an entire row
-                disp_row = ncol - (disp_range + 1)
+                disp_row = 4 
                 
                 # template & search arrays, data sent over via bytearrays
                 buffTempl_h2f = bytearray(ncol * nrow + 1)
@@ -537,15 +537,15 @@ if __name__ == "__main__":
                 flWriteChannel(handle, 1000, 0x00, buffTempl_h2f)
                 flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)
                 
-                print("begin template read")            
-                for i in range(3):
+                '''print("begin template read")            
+                for i in range(nrow):
                     for ndx in range(ncol):
                         buf = flReadChannel(handle, 1000, 0x00, 1)
                         print(buf, end=" ")
                     print("\n")
 
                 print("begin search read")
-                for i in range(3):            
+                for i in range(nrow):            
                     for ndx in range(ncol):
                         buf = flReadChannel(handle, 1000, 0x01, 1)
                         print(buf, end=" ")
@@ -556,12 +556,30 @@ if __name__ == "__main__":
                     for ndx in range(disp_range):
                         buf = flReadChannel(handle, 1000, 0x02, 1)
                         print(buf, end=" ")
-                    print("\n")
+                    print("\n")'''
                 
-                print("reading from disparity array")            
+                print("begin template read")            
+                buf = flReadChannel(handle, 1000, 0x00, 243)
+                print(buf, "\n")
+
+                print("begin search read")
+                buf = flReadChannel(handle, 1000, 0x01, 243)
+                print(buf, "\n")
+                
+                for i in range(disp_row):
+                    print("reading from sad array ", i)    
+                    buf = flReadChannel(handle, 1000, 0x02, 16)
+                    print(buf, "\n")
+                
+                '''print("reading from disparity array")            
                 for ndx in range(disp_row):
                     disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)
                     print(disparity_f2h[0][ndx], end=" ")
+                print("\n\n\n")'''
+                
+                print("reading from disparity array")            
+                dispare = flReadChannel(handle, 1000, 0x03, 4)
+                print(dispare)
                 print("\n\n\n")
                 
                 '''# Next rows

@@ -11,48 +11,49 @@ A level-1 auxiliary file: chapters/Future_Work.aux
 The style file: plain.bst
 Database file #1: references.bib
 Warning--to sort, need author or key in stereoVisionDiagram
+Warning--to sort, need author or key in epipolar
 Warning--to sort, need author or key in alteraStratixIVBoard
 Warning--to sort, need author or key in xilinxVirtex5Board
 Warning--to sort, need author or key in xilinxSpartan3ABoard
-You've used 13 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            582 strings with 6520 characters,
-and the built_in function-call counts, 4596 in all, are:
-= -- 428
-> -- 191
-< -- 7
-+ -- 80
-- -- 64
-* -- 308
-:= -- 673
-add.period$ -- 35
-call.type$ -- 13
-change.case$ -- 71
+            599 strings with 7174 characters,
+and the built_in function-call counts, 5850 in all, are:
+= -- 551
+> -- 233
+< -- 10
++ -- 97
+- -- 78
+* -- 390
+:= -- 840
+add.period$ -- 43
+call.type$ -- 16
+change.case$ -- 87
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 197
-empty$ -- 412
-format.name$ -- 64
-if$ -- 1041
+cite$ -- 21
+duplicate$ -- 252
+empty$ -- 527
+format.name$ -- 78
+if$ -- 1335
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 9
-newline$ -- 64
-num.names$ -- 18
-pop$ -- 108
+int.to.str$ -- 16
+missing$ -- 11
+newline$ -- 78
+num.names$ -- 22
+pop$ -- 134
 preamble$ -- 1
-purify$ -- 58
+purify$ -- 71
 quote$ -- 0
-skip$ -- 163
+skip$ -- 214
 stack$ -- 0
-substring$ -- 247
-swap$ -- 69
-text.length$ -- 7
+substring$ -- 347
+swap$ -- 95
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
-warning$ -- 4
-while$ -- 34
-width$ -- 15
-write$ -- 133
-(There were 4 warnings)
+type$ -- 64
+warning$ -- 5
+while$ -- 42
+width$ -- 18
+write$ -- 164
+(There were 5 warnings)
