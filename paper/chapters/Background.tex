@@ -70,7 +70,7 @@ In stereo vision, epipolar lines are created from the two cameras capturing imag
 \end{figure}
 
 \begin{equation}
-	\sum\limits_{(i,j)\in W}\left| I_{1}(i,j)-I_{2}(x+i,y) \right|
+	\sum\limits_{(i,j)\in W}\left| I_{1}(i,j)-I_{2}(x+i,j) \right|
 	\label{eq:sadAlg2}
 \end{equation}
 
@@ -94,30 +94,38 @@ The disparity is the amount of offset between two corresponding pixels. The disp
 \end{center}
 \end{figure}
 
+For example, Figure ~\ref{fig:windows} shows a template window (Figure~\ref{fig:template}) from one image and the search area (Figure~\ref{fig:search}) in the other window. The disparity range is three, or zero to two. There are three 3x3 windows within the search region in Fig.~\ref{fig:search}. From left to right the three search windows have the center pixel as 4, 6, and 5, respectively. 
 
+Comparing corresponding pixels in the template window with the first search window (let's call it S0) gives the absolute differences for all nine pixels going from left to right and top to bottom of 8, 1, 1, 2, 1, 0, 1, 2, and 2. So the SAD value for S0 of 18 is obtained by adding up all nine of those values. The SAD value for the second search window (S1) is 6 and the last search window (S2) is 13. The template window has the smallest difference between S1, which means that the center pixel in S1 is determined to be the corresponding pixel for the center pixel in the template window. 
+
+The disparity value is 1 (how far the matching search window was shifted to the left). The disparity value is used to create a disparity map. Each disparity value in the disparity map is at the same relative location that the center pixel of its corresponding template window is located.
 
 \begin{figure}
 \begin{center}
 	\begin{subfigure}{0.3\textwidth}
-		\begin{tabular}{|l|c|r|}
-			\hline
-			1 & 2 & 3 \\\hline
-	  		4 & 5 & 6 \\\hline
-	    	7 & 8 & 9 \\
-	    	\hline
-		\end{tabular}
+		\begin{center}				
+			\begin{tabular}{|l|c|r|}
+				\hline
+				1 & 2 & 3 \\\hline
+	  			4 & 5 & 6 \\\hline
+		    	7 & 8 & 9 \\
+		    	\hline
+			\end{tabular}
+		\end{center}
 		\caption{Template Window}
 		\label{fig:template}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
-		\begin{tabular}{|l|c|r|}
-			\hline
-			1 & 2 & 3 \\\hline
-	  		4 & 5 & 6 \\\hline
-	    	7 & 8 & 9 \\
-	    	\hline
-		\end{tabular}
-		\caption{Search Window}
+		\begin{center}		
+			\begin{tabular}{|l|c|c|c|r|}
+				\hline
+				9 & 1 & 2 & 4 & 5 \\\hline
+		  		2 & 4 & 6 & 5 & 3 \\\hline
+		    	8 & 6 & 7 & 8 & 7 \\
+		    	\hline
+			\end{tabular}
+		\end{center}
+		\caption{Search Region}
 		\label{fig:search}
 	\end{subfigure}
 	\captionfonts
@@ -135,7 +143,39 @@ The disparity is the amount of offset between two corresponding pixels. The disp
 
 
 
-
+%\begin{figure}
+%\begin{center}
+%	\begin{subfigure}{0.3\textwidth}
+%		\begin{center}				
+%			\begin{tabular}{|l|c|r|}
+%				\hline
+%				1 & 2 & 3 \\\hline
+%	  			4 & 5 & 6 \\\hline
+%		    	7 & 8 & 9 \\
+%		    	\hline
+%			\end{tabular}
+%		\end{center}
+%		\caption{Template Window}
+%		\label{fig:template}
+%	\end{subfigure}
+%	\begin{subfigure}{0.3\textwidth}
+%		\begin{center}		
+%			\begin{tabular}{|l|c|r|}
+%				\hline
+%				1 & 2 & 3 \\\hline
+%		  		4 & 5 & 6 \\\hline
+%		    	7 & 8 & 9 \\
+%		    	\hline
+%			\end{tabular}
+%		\end{center}
+%		\caption{Search Window}
+%		\label{fig:search}
+%	\end{subfigure}
+%	\captionfonts
+%	\caption{Template (reference) window and search (candidate) window.}
+%	\label{fig:windows}
+%\end{center}
+%\end{figure}
 
 
 
