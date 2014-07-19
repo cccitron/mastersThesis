@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/tb_sadAlgorithm_3x3_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="tb_sadalgorithm_3x3" />
+            <top_module name="window_array" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/tb_sadalgorithm_3x3/clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_3x3/template_window_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">template_window_i[0:8]</obj_property>
+      <obj_property name="ObjectShortName">template_window_i[0:8]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_3x3/template" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">template[0:8]</obj_property>
+      <obj_property name="ObjectShortName">template[0:8]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_3x3/search_window_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">search_window_i[0:8]</obj_property>
+      <obj_property name="ObjectShortName">search_window_i[0:8]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_3x3/search" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">search[0:8]</obj_property>
+      <obj_property name="ObjectShortName">search[0:8]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_3x3/uut/temp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">temp[0:7]</obj_property>
+      <obj_property name="ObjectShortName">temp[0:7]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/tb_sadalgorithm_3x3/uut/temp[0]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">temp[0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_sadalgorithm_3x3/uut/temp[1]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">temp[1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_sadalgorithm_3x3/uut/temp[2]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">temp[2]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_sadalgorithm_3x3/uut/temp[3]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">temp[3]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_sadalgorithm_3x3/uut/temp[4]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">temp[4]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_sadalgorithm_3x3/uut/temp[5]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">temp[5]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_sadalgorithm_3x3/uut/temp[6]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[6]</obj_property>
+         <obj_property name="ObjectShortName">temp[6]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_sadalgorithm_3x3/uut/temp[7]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[7]</obj_property>
+         <obj_property name="ObjectShortName">temp[7]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_3x3/uut/sum_sign" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sum_sign[8:0]</obj_property>
+      <obj_property name="ObjectShortName">sum_sign[8:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_3x3/sad" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sad[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sad[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>
