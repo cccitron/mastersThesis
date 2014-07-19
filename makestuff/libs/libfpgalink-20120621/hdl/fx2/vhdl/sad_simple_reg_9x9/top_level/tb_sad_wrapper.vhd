@@ -85,11 +85,11 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
    signal led_O : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
-   constant clk_I_period : time := 20 ns;
+   constant clk_I_period : time := 10 ns;
    
    -- Array to represent 9x9 template
 	type array_type_init is array (0 to 243) of std_logic_vector(7 downto 0);
-	type array_type_next is array (0 to 27) of std_logic_vector(7 downto 0);
+	type array_type_next is array (0 to 55) of std_logic_vector(7 downto 0);
 
 	SIGNAL templateArray : array_type_init := (x"ff",
 		x"02", x"03", x"03", x"03", x"03", x"03", x"03", x"03", x"03", x"03", x"02", x"02", x"03", x"03", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", 
@@ -102,8 +102,9 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
 		x"13", x"36", x"2c", x"3c", x"39", x"3a", x"39", x"3a", x"3a", x"39", x"3b", x"36", x"2e", x"1c", x"1d", x"19", x"1a", x"12", x"11", x"13", x"18", x"14", x"09", x"0f", x"15", x"23", x"55", 
 		x"14", x"38", x"2d", x"3b", x"38", x"3b", x"3c", x"38", x"39", x"39", x"39", x"37", x"30", x"1c", x"1e", x"16", x"19", x"13", x"14", x"14", x"18", x"16", x"0b", x"0e", x"13", x"22", x"53"); 
 		
-	SIGNAL template_next : array_type_next := (x"ff",
-		x"14", x"36", x"2e", x"39", x"39", x"3a", x"3c", x"39", x"3a", x"39", x"38", x"37", x"31", x"1c", x"1e", x"17", x"1b", x"14", x"11", x"13", x"1a", x"18", x"0b", x"0e", x"13", x"1f", x"51");
+	SIGNAL template_next : array_type_next := (
+		x"ff", x"14", x"36", x"2e", x"39", x"39", x"3a", x"3c", x"39", x"3a", x"39", x"38", x"37", x"31", x"1c", x"1e", x"17", x"1b", x"14", x"11", x"13", x"1a", x"18", x"0b", x"0e", x"13", x"1f", x"51",
+		x"ff", x"14", x"36", x"2e", x"39", x"30", x"32", x"33", x"39", x"3a", x"39", x"38", x"37", x"31", x"1c", x"1e", x"17", x"1b", x"14", x"11", x"13", x"1a", x"18", x"0b", x"0e", x"13", x"1f", x"51");
 
 	SIGNAL searchArray : array_type_init := (x"ff",
 		x"02", x"02", x"03", x"03", x"03", x"04", x"03", x"03", x"03", x"03", x"03", x"02", x"03", x"01", x"02", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"02", 
@@ -116,8 +117,9 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
 		x"13", x"35", x"29", x"2e", x"2e", x"31", x"32", x"31", x"37", x"3c", x"3d", x"3c", x"3d", x"39", x"3c", x"39", x"3b", x"31", x"20", x"1b", x"19", x"17", x"13", x"11", x"14", x"17", x"15", 
 		x"14", x"34", x"2a", x"2e", x"2e", x"31", x"32", x"32", x"38", x"3c", x"3b", x"3a", x"3b", x"39", x"3a", x"38", x"3a", x"33", x"21", x"1c", x"1b", x"17", x"15", x"10", x"14", x"18", x"17"); 
 		
-	SIGNAL search_next : array_type_next := (x"ff",
-		x"15", x"35", x"2a", x"30", x"30", x"32", x"33", x"30", x"36", x"3d", x"3c", x"3d", x"3d", x"38", x"3b", x"39", x"3b", x"34", x"22", x"1d", x"1a", x"18", x"14", x"11", x"15", x"19", x"1a");
+	SIGNAL search_next : array_type_next := (
+		x"ff", x"15", x"35", x"2a", x"30", x"30", x"32", x"33", x"30", x"36", x"3d", x"3c", x"3d", x"3d", x"38", x"3b", x"39", x"3b", x"34", x"22", x"1d", x"1a", x"18", x"14", x"11", x"15", x"19", x"1a",
+		x"ff", x"15", x"35", x"2a", x"30", x"30", x"32", x"33", x"30", x"36", x"3d", x"3c", x"3d", x"3d", x"38", x"3b", x"39", x"3b", x"34", x"22", x"1d", x"1a", x"18", x"14", x"11", x"15", x"19", x"1a");
 	
 	SIGNAL ndx_t, ndx_s : INTEGER := 0;
  
@@ -156,7 +158,9 @@ BEGIN
    stim_proc: process
    
 --	VARIABLE ndx : INTEGER RANGE 0 TO 56;
-	VARIABLE ndx : INTEGER RANGE 0 TO 56;
+	VARIABLE ndx : INTEGER; -- RANGE 0 TO 56;
+	VARIABLE row : INTEGER;
+   VARIABLE offset : INTEGER;
 
    -- Text output
    variable line_out : line;
@@ -171,13 +175,13 @@ BEGIN
 
 		-- Initial template
 --		h2fData_I  <= templateArray(0);
-		templ_I  <= templateArray(0);
-		search_I  <= searchArray(0);
+		templ_I    <= templateArray(0);
+		search_I   <= searchArray(0);
 		h2fValid_I <= '1';
-		write_t_I <= '1';
-		write_s_I <= '1';
+		write_t_I  <= '1';
+		write_s_I  <= '1';
 		chanAddr_I <= "0000000";
-		sw_I <= x"00";
+		sw_I       <= x"00";
 		wait for clk_I_period;
 		
 		ndx := 1;
@@ -217,55 +221,56 @@ BEGIN
 --		h2fValid_I <= '0';
 --		ndx := 0;
 		
-		wait for clk_I_period*40;
-		f2hReady_I <= '1';
-		chanAddr_I <= "0000011";
-		wait for clk_I_period*2;
-		
-		-- Next template row
-		templ_I    <= template_next(0);
-		search_I   <= search_next(0);
-		h2fValid_I <= '1';
-		write_t_I <= '1';
-		write_s_I <= '1';
-		chanAddr_I <= "0000000";
-		sw_I <= x"00";
+		row := 0;
+		ndx := 0;
 		wait for clk_I_period;
+		WHILE (row < 2) LOOP
 		
-		ndx := 1;
-		WHILE (ndx < 27) LOOP
+			wait for clk_I_period*90;
+			offset := 27 * (1+row);
+
+			f2hReady_I <= '1';
+			chanAddr_I <= "0000011";
+			wait for clk_I_period*4;
+			f2hReady_I <= '0';
+			
+			-- Next template row
+--			templ_I    <= template_next(ndx);
+--			search_I   <= search_next(ndx);
+			h2fValid_I <= '1';
+			write_t_I  <= '1';
+			write_s_I  <= '1';
+			sw_I       <= x"00";
+			--wait for clk_I_period;
+			
+--			ndx := ndx + 1;
+--			offset := 27 * (1+row);
+--			wait for clk_I_period;
+			
+			WHILE (ndx < offset) LOOP
+				templ_I <= template_next(ndx);
+				search_I   <= search_next(ndx);
+				wait for clk_I_period;
+				ndx := ndx + 1;
+			END LOOP;
+			
 			templ_I <= template_next(ndx);
-			search_I   <= search_next(ndx);
+			search_I <= search_next(ndx);
+			
 			wait for clk_I_period;
+			h2fValid_I <= '0';
+			write_t_I <= '0';
+			write_s_I <= '0';
+			
 			ndx := ndx + 1;
+			row := row + 1;
 		END LOOP;
 		
-		templ_I <= template_next(27);
-		search_I   <= search_next(27);
-		
-		wait for clk_I_period;
-		h2fValid_I <= '0';
-		write_t_I <= '0';
-		write_s_I <= '0';
-		chanAddr_I <= "0000001";
-		
---		wait for clk_I_period;
---		h2fData_I <= search_next(0);
---		h2fValid_I <= '1';
---		
---		wait for clk_I_period;
---		
---		ndx := 1;
---		WHILE (ndx < 27) LOOP
---			h2fData_I <= search_next(ndx);
---			wait for clk_I_period;
---			ndx := ndx + 1;
---		END LOOP;
---		
---		h2fData_I <= search_next(27);
---		
---		wait for clk_I_period;
---		h2fValid_I <= '0';
+		wait for clk_I_period*90;
+		f2hReady_I <= '1';
+		chanAddr_I <= "0000011";
+		wait for clk_I_period*4;
+		f2hReady_I <= '0';
 		
 		wait for clk_I_period*2;
       wait;

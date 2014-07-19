@@ -144,7 +144,7 @@ begin
    process(clk_I)
 	begin
 		if ( rising_edge(clk_I) ) then
-         template_array  <= template_array_next;
+         template_array <= template_array_next;
          search_array <= search_array_next;
 			
 			IF (data_out(0) = x"ffff" AND data_out(1) = x"ffff") THEN

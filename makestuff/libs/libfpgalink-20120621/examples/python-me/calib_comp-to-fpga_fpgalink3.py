@@ -537,28 +537,35 @@ if __name__ == "__main__":
                 flWriteChannel(handle, 1000, 0x00, buffTempl_h2f)
                 flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)
                 
-                '''print("begin template read")            
+                print("begin template read")            
                 for i in range(nrow):
                     for ndx in range(ncol):
                         buf = flReadChannel(handle, 1000, 0x00, 1)
-                        print(buf, end=" ")
+                        print("x%0.2x" % buf, end=" ")
                     print("\n")
 
                 print("begin search read")
                 for i in range(nrow):            
                     for ndx in range(ncol):
                         buf = flReadChannel(handle, 1000, 0x01, 1)
-                        print(buf, end=" ")
+                        print("x%0.2x" % buf, end=" ")
                     print("\n")
                 
-                for i in range(disp_row):
+                for j in range(disp_row):
+                    print("reading from sad array ", j)    
+                    for ndx in range(disp_range):
+                        buf = flReadChannel(handle, 1000, 0x02, 1)
+                        print("x%0.2x" % buf, end=" ")
+                    print("\n")
+                
+                '''for i in range(disp_row):
                     print("reading from sad array ", i)    
                     for ndx in range(disp_range):
                         buf = flReadChannel(handle, 1000, 0x02, 1)
                         print(buf, end=" ")
                     print("\n")'''
                 
-                print("begin template read")            
+                '''print("begin template read")            
                 buf = flReadChannel(handle, 1000, 0x00, 243)
                 print(buf, "\n")
 
@@ -569,26 +576,26 @@ if __name__ == "__main__":
                 for i in range(disp_row):
                     print("reading from sad array ", i)    
                     buf = flReadChannel(handle, 1000, 0x02, 16)
-                    print(buf, "\n")
-                
-                '''print("reading from disparity array")            
-                for ndx in range(disp_row):
-                    disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)
-                    print(disparity_f2h[0][ndx], end=" ")
-                print("\n\n\n")'''
+                    print(buf, "\n")'''
                 
                 print("reading from disparity array")            
-                dispare = flReadChannel(handle, 1000, 0x03, 4)
-                print(dispare)
+                for ndx in range(disp_row):
+                    disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)
+                    print("x%0.2x" % disparity_f2h[0][ndx], end=" ")
                 print("\n\n\n")
                 
-                '''# Next rows
+                '''print("reading from disparity array")            
+                dispare = flReadChannel(handle, 1000, 0x03, 4)
+                print(dispare)
+                print("\n\n\n")'''
+                
+                # Next rows
                 templateRow_h2f = bytearray(ncol + 1)
                 searchRow_h2f = bytearray(ncol + 1)
                 
                 # data to be sent to the FPGA
                 pos = 1
-                for i in range(3, height):
+                for i in range(nrow, 10): #height):
                     ndx = 1
                     for j in range(ncol):
                         templateRow_h2f[ndx] = templateBuff[i][j]
@@ -598,7 +605,35 @@ if __name__ == "__main__":
                     flWriteChannel(handle, 1000, 0x00, templateRow_h2f)
                     flWriteChannel(handle, 1000, 0x01, searchRow_h2f)
                     
+                    print("begin template read")            
+                    for i in range(nrow):
+                        for ndx in range(ncol):
+                            buf = flReadChannel(handle, 1000, 0x00, 1)
+                            print("x%0.2x" % buf, end=" ")
+                        print("\n")
+
+                    print("begin search read")
+                    for i in range(nrow):            
+                        for ndx in range(ncol):
+                            buf = flReadChannel(handle, 1000, 0x01, 1)
+                            print("x%0.2x" % buf, end=" ")
+                        print("\n")
+                    
+                    for j in range(disp_row):
+                        print("reading from sad array ", j)    
+                        for ndx in range(disp_range):
+                            buf = flReadChannel(handle, 1000, 0x02, 1)
+                            print("x%0.2x" % buf, end=" ")
+                        print("\n")
+                    
+                    print("reading from disparity array")            
                     for ndx in range(disp_row):
+                        disparity_f2h[pos][ndx] = flReadChannel(handle, 1000, 0x03, 1)
+                        print("x%0.2x" % disparity_f2h[0][ndx], end=" ")
+                    print("\n\n\n")
+                    pos += 1
+                    
+                ''' for ndx in range(disp_row):
                         disparity_f2h[pos][ndx] = flReadChannel(handle, 1000, 0x03, 1)
                     pos += 1'''
                     
