@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/tb_sadAlgorithm_7x7_isim_beh.exe" -prj "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/tb_sadAlgorithm_7x7_beh.prj" "work.tb_sadAlgorithm_7x7" 

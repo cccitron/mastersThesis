@@ -71,14 +71,14 @@ try:
 
     # Print template array
     print("begin template read")            
-    for i in range(10):
+    for i in range(11):
         for j in range(ncol_c):
             print("\"x%0.2x\"," % templateBuff[i][j], end=" ")
         print("")
 
     # Print search array
     print("\nbegin search read")            
-    for i in range(10):
+    for i in range(11):
         for j in range(ncol_c):
             print("\"x%0.2x\"," % searchBuff[i][j], end=" ")
         print("")

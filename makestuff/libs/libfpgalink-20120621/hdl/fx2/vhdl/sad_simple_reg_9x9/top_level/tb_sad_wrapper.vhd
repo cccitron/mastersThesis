@@ -200,34 +200,14 @@ BEGIN
 		write_t_I  <= '0';
 		write_s_I  <= '0';
 --		chanAddr_I <= "0000001";
-		
---		-- Initial search
---		wait for clk_I_period;
---		h2fData_I <= searchArray(0);
---		h2fValid_I <= '1';
---		
---		wait for clk_I_period;
-		
---		ndx := 1;
---		WHILE (ndx < 243) LOOP
---			h2fData_I <= searchArray(ndx);
---			wait for clk_I_period;
---			ndx := ndx + 1;
---		END LOOP;
-		
---		h2fData_I <= searchArray(243);
-		
---		wait for clk_I_period;
---		h2fValid_I <= '0';
---		ndx := 0;
-		
-		row := 0;
+
+--		row := 0;
 		ndx := 0;
 		wait for clk_I_period;
-		WHILE (row < 2) LOOP
+--		WHILE (row < 2) LOOP
 		
 			wait for clk_I_period*90;
-			offset := 27 * (1+row);
+--			offset := 27 * (1+row);
 
 			f2hReady_I <= '1';
 			chanAddr_I <= "0000011";
@@ -247,9 +227,9 @@ BEGIN
 --			offset := 27 * (1+row);
 --			wait for clk_I_period;
 			
-			WHILE (ndx < offset) LOOP
-				templ_I <= template_next(ndx);
-				search_I   <= search_next(ndx);
+			WHILE (ndx < 27) LOOP --offset) LOOP
+				templ_I  <= template_next(ndx);
+				search_I <= search_next(ndx);
 				wait for clk_I_period;
 				ndx := ndx + 1;
 			END LOOP;
@@ -262,9 +242,9 @@ BEGIN
 			write_t_I <= '0';
 			write_s_I <= '0';
 			
-			ndx := ndx + 1;
-			row := row + 1;
-		END LOOP;
+--			ndx := ndx + 1;
+--			row := row + 1;
+--		END LOOP;
 		
 		wait for clk_I_period*90;
 		f2hReady_I <= '1';

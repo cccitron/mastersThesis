@@ -103,7 +103,7 @@ try:
             print("reading from sad array ", k)
             for ndx in range(DISP_RANGE):
                 print("x%0.2x" % int(sadArray[k][ndx]), end=" ")
-            print(sadArray.argmin(axis=1), "\n")
+            print("\n", sadArray.argmin(axis=1), "\n")
 
     #print("\ndispare:")
     #print(disparityAll)
