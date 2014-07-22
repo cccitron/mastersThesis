@@ -121,7 +121,7 @@ architecture Behavioral of sadAlgorithm_7x7 is
 --	SIGNAL temp_2 : array_type_2;
 	
 	-- sad sub signal
-	SIGNAL sad_sum : STD_LOGIC_VECTOR(12 DOWNTO 0) := "0000000000000";
+	SIGNAL sad_sum : STD_LOGIC_VECTOR(13 DOWNTO 0) := "00000000000000";
 	
 --	SIGNAL more, less, sub : STD_LOGIC_VECTOR(7 DOWNTO 0);
 	
@@ -162,7 +162,7 @@ begin
 			-- STATE: the initialization cycle ---------------------------------------
 				WHEN S0 =>
 					counter <= 0;
-					sad_sum <= x"000" & "0";
+					sad_sum <= x"000" & "00";
 					data_out <= '0';
 					ndx <= 0;
 --					pos <= 0;
@@ -191,7 +191,7 @@ begin
 			-- STATE: begin subracting corresponding values, wait for output values --
 				WHEN S2 =>
 					counter <= counter + 1;
-					sad_sum <= x"000" & "0"; --sad_sum;
+					sad_sum <= x"000" & "00"; --sad_sum;
 					data_out <= '0';
 					
 					
@@ -212,9 +212,9 @@ begin
 				WHEN S3 =>
 					counter <= counter + 1;
 					sad_sum <= STD_LOGIC_VECTOR(UNSIGNED(sad_sum) + 
-                  ("00000" & UNSIGNED(sub(0))) + ("00000" & UNSIGNED(sub(1))) + ("00000" & UNSIGNED(sub(2))) + 
-                  ("00000" & UNSIGNED(sub(3))) + ("00000" & UNSIGNED(sub(4))) + ("00000" & UNSIGNED(sub(5))) + 
-                  ("00000" & UNSIGNED(sub(6)))); -- + ("000000" & UNSIGNED(sub(7))) + ("000000" & UNSIGNED(sub(8))));
+                  ("000000" & UNSIGNED(sub(0))) + ("000000" & UNSIGNED(sub(1))) + ("000000" & UNSIGNED(sub(2))) + 
+                  ("000000" & UNSIGNED(sub(3))) + ("000000" & UNSIGNED(sub(4))) + ("000000" & UNSIGNED(sub(5))) + 
+                  ("000000" & UNSIGNED(sub(6)))); -- + ("000000" & UNSIGNED(sub(7))) + ("000000" & UNSIGNED(sub(8))));
 					ndx <= ndx + 1;
 --					pos <= pos + 1;
 					
@@ -233,7 +233,7 @@ begin
 			-- STATE: Go back to S1 --------------------------------------------------
 				WHEN OTHERS =>
 					counter <= 0;
-					sad_sum <= x"000" & "0";
+					sad_sum <= x"000" & "00";
 					ndx <= 0;
 --					pos <= 0;
 					

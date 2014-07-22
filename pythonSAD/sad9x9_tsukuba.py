@@ -13,8 +13,11 @@ numpy.set_printoptions(threshold=numpy.nan)
 numpy.set_printoptions(linewidth=2000)
 
 #for infile in sys.argv[1:]:
-infileR = "tsukubaright_bw.jpg"
-infileL = "tsukubaleft_bw.jpg"
+#infileR = "tsukubaright_bw.jpg"
+#infileL = "tsukubaleft_bw.jpg"
+infileR = "survStereoL_478h.png"
+infileL = "survStereoR_478h.png"
+
 
 colorScheme = numpy.array([(0x00, 0x00, 0x8F), \
                            (0x00, 0x0F, 0xFF), \
@@ -115,7 +118,7 @@ try:
         for j in range(height-8):
             im.putpixel((i,j), (colorScheme[disparityAll[j][i]][0], colorScheme[disparityAll[j][i]][1], colorScheme[disparityAll[j][i]][2]))
 
-    im.save("tsukuba_disp9x9.png")
+    im.save("survStereoRL_9x9.png")
 
     '''sadArray[i][j] = \
     abs(templateBuff[row][i]     - searchBuff[row][i+j])     + \
