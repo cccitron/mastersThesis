@@ -326,7 +326,7 @@ begin                                                                     --BEGI
       port map ( 
          clk_I      => fx2Clk_in, --clk_sad,
 
-         h2fData_I  => h2fData,
+--         h2fData_I  => h2fData,
 			templ_I    => template_in,
          search_I   => search_in,
          templ_O    => reg0_templ, --reg1_next,

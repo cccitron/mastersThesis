@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  19 JUL 2014 15:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  22 JUL 2014 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -639,7 +639,7 @@ CHAPTER 2.
 
 
 
-] <figures/stereoVisionDiagram.jpg, id=165, 276.28218pt x 212.29312pt>
+] <figures/stereoVisionDiagram.jpg, id=263, 276.28218pt x 212.29312pt>
 File: figures/stereoVisionDiagram.jpg Graphic file (type jpg)
 
 <use figures/stereoVisionDiagram.jpg>
@@ -647,7 +647,7 @@ Package pdftex.def Info: figures/stereoVisionDiagram.jpg used on input line 20.
 
 (pdftex.def)             Requested size: 276.2815pt x 212.2926pt.
  [3] [4 <./figures/stereoVisionDiagram.jpg>] [5] [6]
-<figures/sadCorrespondingWindows.png, id=202, 440.64626pt x 183.68625pt>
+<figures/sadCorrespondingWindows.png, id=301, 440.64626pt x 183.68625pt>
 File: figures/sadCorrespondingWindows.png Graphic file (type png)
 
 <use figures/sadCorrespondingWindows.png>
@@ -659,21 +659,21 @@ Overfull \hbox (28.70639pt too wide) in paragraph at lines 54--56
  [] 
  []
 
-<figures/epipolar.png, id=210, 563.10374pt x 315.1775pt>
+<figures/epipolar.png, id=309, 563.10374pt x 315.1775pt>
 File: figures/epipolar.png Graphic file (type png)
 
 <use figures/epipolar.png>
 Package pdftex.def Info: figures/epipolar.png used on input line 65.
 (pdftex.def)             Requested size: 254.16765pt x 142.26378pt.
  [7 <./figures/sadCorrespondingWindows.png (PNG copy)>] <figures/sadGlobalGraph
-.png, id=227, 208.78pt x 193.72375pt>
+.png, id=326, 208.78pt x 193.72375pt>
 File: figures/sadGlobalGraph.png Graphic file (type png)
 
 <use figures/sadGlobalGraph.png>
 Package pdftex.def Info: figures/sadGlobalGraph.png used on input line 82.
 (pdftex.def)             Requested size: 164.773pt x 152.89818pt.
 
-<figures/sadLocalGraph.png, id=228, 204.765pt x 192.72pt>
+<figures/sadLocalGraph.png, id=327, 204.765pt x 192.72pt>
 File: figures/sadLocalGraph.png Graphic file (type png)
 
 <use figures/sadLocalGraph.png>
@@ -695,16 +695,125 @@ CHAPTER 3.
 
  (./chapters/Implementation.tex
 CHAPTER 4.
-) [14
+[14
 
 
 
-]
+] <figures/sadAlgorithm_rtl.png, id=394, 591.008pt x 176.66pt>
+File: figures/sadAlgorithm_rtl.png Graphic file (type png)
+
+<use figures/sadAlgorithm_rtl.png>
+Package pdftex.def Info: figures/sadAlgorithm_rtl.png used on input line 21.
+(pdftex.def)             Requested size: 284.52756pt x 85.04921pt.
+ [15 <./figures/sadAlgorithm_rtl.png>]
+<figures/stateMachine.png, id=402, 350.911pt x 354.926pt>
+File: figures/stateMachine.png Graphic file (type png)
+
+<use figures/stateMachine.png>
+Package pdftex.def Info: figures/stateMachine.png used on input line 35.
+(pdftex.def)             Requested size: 284.52756pt x 287.78093pt.
+ [16 <./figures/stateMachine.png>]
+<figures/sadAlgorithm9x9.png, id=411, 550.055pt x 124.465pt>
+File: figures/sadAlgorithm9x9.png Graphic file (type png)
+
+<use figures/sadAlgorithm9x9.png>
+Package pdftex.def Info: figures/sadAlgorithm9x9.png used on input line 50.
+(pdftex.def)             Requested size: 341.43306pt x 77.26056pt.
+
+<figures/sadPipeline9x9.png, id=413, 179.069pt x 136.51pt>
+File: figures/sadPipeline9x9.png Graphic file (type png)
+
+<use figures/sadPipeline9x9.png>
+Package pdftex.def Info: figures/sadPipeline9x9.png used on input line 61.
+(pdftex.def)             Requested size: 170.71652pt x 130.14616pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (14.13643pt too wide) in paragraph at lines 68--70
+\OT1/cmtt/m/n/12 https : / / github . com / cccitron / mastersThesis / tree / m
+aster / makestuff / libs /
+ []
+
+[17 <./figures/sadAlgorithm9x9.png>]
+<figures/sadAlgorithm7x7.png, id=422, 558.888pt x 437.635pt>
+File: figures/sadAlgorithm7x7.png Graphic file (type png)
+
+<use figures/sadAlgorithm7x7.png>
+Package pdftex.def Info: figures/sadAlgorithm7x7.png used on input line 77.
+(pdftex.def)             Requested size: 341.43306pt x 267.35762pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/sadPipeline7x7.png, id=423, 186.296pt x 256.96pt>
+File: figures/sadPipeline7x7.png Graphic file (type png)
+
+<use figures/sadPipeline7x7.png>
+Package pdftex.def Info: figures/sadPipeline7x7.png used on input line 87.
+(pdftex.def)             Requested size: 170.71652pt x 235.48857pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/minComparator_rtl.png, id=424, 428.802pt x 220.022pt>
+File: figures/minComparator_rtl.png Graphic file (type png)
+
+<use figures/minComparator_rtl.png>
+Package pdftex.def Info: figures/minComparator_rtl.png used on input line 100.
+(pdftex.def)             Requested size: 284.52756pt x 145.9972pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/minComparator.png, id=425, 652.839pt x 654.445pt>
+File: figures/minComparator.png Graphic file (type png)
+
+<use figures/minComparator.png>
+Package pdftex.def Info: figures/minComparator.png used on input line 110.
+(pdftex.def)             Requested size: 426.79134pt x 427.85075pt.
+
+Overfull \hbox (14.85255pt too wide) in paragraph at lines 110--112
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/sad_wrapper_rtl.png, id=426, 482.603pt x 334.048pt>
+File: figures/sad_wrapper_rtl.png Graphic file (type png)
+
+<use figures/sad_wrapper_rtl.png>
+Package pdftex.def Info: figures/sad_wrapper_rtl.png used on input line 122.
+(pdftex.def)             Requested size: 284.52756pt x 196.94388pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/top_level_rtl.png, id=427, 516.329pt x 322.003pt>
+File: figures/top_level_rtl.png Graphic file (type png)
+
+<use figures/top_level_rtl.png>
+Package pdftex.def Info: figures/top_level_rtl.png used on input line 134.
+(pdftex.def)             Requested size: 426.79134pt x 266.16673pt.
+
+Overfull \hbox (14.85255pt too wide) in paragraph at lines 134--136
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [18 <./figures/sadPipeline9x9.png>] [19 <./figures/sadAlgorithm7x7.png>]
+[20 <./figures/sadPipeline7x7.png> <./figures/minComparator_rtl.png>] [21 <./fi
+gures/minComparator.png>] [22 <./figures/sad_wrapper_rtl.png> <./figures/top_le
+vel_rtl.png>]
 \openout2 = `chapters/Experiments_and_Results.aux'.
 
  (./chapters/Experiments_and_Results.tex
 CHAPTER 5.
-) [15
+) [23
 
 
 
@@ -713,7 +822,7 @@ CHAPTER 5.
 
  (./chapters/Conclusions.tex
 CHAPTER 6.
-) [16
+) [24
 
 
 
@@ -722,7 +831,7 @@ CHAPTER 6.
 
  (./chapters/Future_Work.tex
 CHAPTER 7.
-) [17
+) [25
 
 
 
@@ -792,13 +901,13 @@ Underfull \hbox (badness 1515) in paragraph at lines 41--45
 ages . inf . ed . ac . uk / rbf / CVonline /
  []
 
-[18
+[26
 
 
 
-] [19])
+] [27])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
- [20]
+ [28]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
  (./thesis.aux (./chapters/Introduction.aux)
 (./chapters/Background.aux) (./chapters/Related_Works.aux)
@@ -807,14 +916,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 199.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 199.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 03F74363275EC0BF3C006AE84CCAD8F5;792.
+(rerunfilecheck)             Checksum: C39F8DEBD4AB7A152524EE84887B2B5D;1530.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 199.
  ) 
 Here is how much of TeX's memory you used:
- 9485 strings out of 494985
- 142323 string characters out of 6180357
- 243948 words of memory out of 5000000
- 12435 multiletter control sequences out of 15000+600000
+ 9594 strings out of 494985
+ 144667 string characters out of 6180357
+ 246223 words of memory out of 5000000
+ 12506 multiletter control sequences out of 15000+600000
  9706 words of font info for 37 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,10n,39p,1103b,520s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -829,10 +938,10 @@ blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 tt12.pfb>
-Output written on thesis.pdf (28 pages, 232745 bytes).
+Output written on thesis.pdf (36 pages, 646163 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
- 338 compressed objects within 4 object streams
- 70 named destinations out of 1000 (max. 500000)
- 138 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 556 PDF objects out of 1000 (max. 8388607)
+ 475 compressed objects within 5 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 268 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -50,7 +50,7 @@ entity sad_wrapper is
    Port ( 
       clk_I      : in  STD_LOGIC;
       
-      h2fData_I  : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+--      h2fData_I  : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
       
 		templ_I    : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
 		search_I   : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);

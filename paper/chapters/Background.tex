@@ -16,12 +16,12 @@ Computational requirements for real-time applications can be reduced in several 
 Figure~\ref{fig:sv_diagram} below represents a simplified illustration of binocular stereo vision. The two cameras are held at a known fixed distance from each other and are used to triangulate different the distance of objects in the images they create. The points U\textsubscript{L} and U\textsubscript{R} in the left and right images, respectively, are 2D represents the point P that is in 3D space. By comparing the offset of between U\textsubscript{L} and U\textsubscript{R} in the two images, it is possible to obtain the distance of point P away from the cameras ~\cite{stereoVisionDiagram}.
 
 \begin{figure}
-\begin{center}
-\includegraphics{figures/stereoVisionDiagram.jpg}
-\captionfonts
-\caption{Simplified binocular stereo vision system ~\cite{stereoVisionDiagram}.}
-\label{fig:sv_diagram}
-\end{center}
+	\begin{center}
+		\includegraphics{figures/stereoVisionDiagram.jpg}
+		\captionfonts
+		\caption{Simplified binocular stereo vision system ~\cite{stereoVisionDiagram}.}
+		\label{fig:sv_diagram}
+	\end{center}
 \end{figure}
 
 The closer an object is to the stereo vision system, the greater the offset of corresponding pixels will be. If an object is too close to the system, it is possible for one camera to see part of an object that the other camera cannot. The farther an object is away from the stereo vision system, the smaller the offset of corresponding pixels will be. If an object is far enough away, it is possible for an object to be in almost the exact same location in both images. You can show this to yourself by holding a finger up close to your face, close one eye, and then alternate between which eye is open and which eye is closed. Your finger should appear to move a noticeable amount. Next, hold your finger as far away from you as you can and again alternate between which eye is open and which is closed. You should notice that your finger appears to move significantly less than it did when your finger was close to your face. That is how stereo vision works. The distance of an object is inversely proportional to the amount of offset between the two images.
