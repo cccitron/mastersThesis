@@ -66,11 +66,13 @@ Figure~\ref{fig:sadPipe9x9} illustrates the pipeline used for the 9x9 window ver
 \end{figure}
 
 The code for the 9x9 window implementation can be found on github:
-\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/}
+\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9}
 
 \subsubsection{7x7 Window}
 
-The 7x7 window implementation operated with 2 pixels being processed in parallel to get their disparity values. Each pixel has 16 SAD operations occurring in parallel. With only 32 SAD operations happening in parallel, as opposed to 64 that were done in parallel in Section~\ref{sec:9x9window} and with a window size that has used 32 pixels for each window in each SAD calculation, the process could utilize a higher degree of parallelization.
+The 7x7 window implementation operated with 2 pixels being processed in parallel to get their disparity values. Each pixel has 16 SAD operations occurring in parallel. With only 32 SAD operations happening in parallel, as opposed to 64 that were done in parallel in Section~\ref{sec:9x9window} and with a window size that has used 32 pixels for each window in each SAD calculation, the process could utilize a higher degree of parallelization, which takes up more space on the board than the more serial version from Sec.~\ref{sec:9x9window}. Figure~\ref{fig:sadAlg7x7} shows a simplified version of this process. Each clock cycle, for 7 cycles, the difference between corresponding pixels is calculated. Beginning one clock cycle after the differences begin to be calculated, so there is a value, called sub, to use, the sum\_out is incremented by sub. This process also occurs 7 times, one addition each clock cycle. Every clock cycle, a new \"absolute\" difference value is added to the sum\_out. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
+
+The main difference between this implementation and the 9x9 window implementation from Sec.~\ref{sec:9x9window} is that the difference between corresponding pixels is parallelized to calculate 7 of them at once. The blue dotted square in Fig.~\ref{fig:sadAlg7x7} represents all 7 of the subtraction calculations occur 7 times in the SAD calculation. Instead of requiring 49 clock cycles to take all the differences, it now only takes 7 clock cycles. Accordingly, each clock cycles, all 7 differences, in the sub array, are added to sum\_out.
 
 \begin{figure}[h]
 	\begin{center}
@@ -81,6 +83,7 @@ The 7x7 window implementation operated with 2 pixels being processed in parallel
 	\end{center}
 \end{figure}
 
+Figure~\ref{fig:sadPipe7x7} shows the pipeline used for the 7x7 window version. It takes 7 clock cycles to take all of the differences between all 49 pairs of pixel values. After the first difference is calculated, the differences can then begin to be summed up. The summing also takes 7 clock cycles and ends one cycle after the last difference is calculated. This results in a time of 8 clock cycles.
 
 \begin{figure}[h]
 	\begin{center}
@@ -91,9 +94,14 @@ The 7x7 window implementation operated with 2 pixels being processed in parallel
 	\end{center}
 \end{figure}
 
+The code for the 7x7 window implementation can be found on github:
+\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7}
 
 \subsection{Minimum Comparator Architecture}
 
+The purpose of the minimum comparator is to find the lowest value of two input values and output the lowest value. The top level implementation of the minimum comparator is shown in Figure~\ref{fig:minComp_rtl}. The process is synchronous, noted by the clock clk\_I. The index, pos0\_I and pos1\_I, of the SAD values, sad0\_I and sad1\_I, respectively, ranges from 0 to 15, which is the disparity range. 
+
+Appendix (APPENDIX) shows the code for the minimum comparator. If sad1 is less than sad0, then sad1 and its index, pos1, are returned, otherwise sad0 and pos0 are returned. Using a less than comparison takes up less hardware resources (CITE). This is useful because 15 minimum comparators (see Figure~\ref{fig:minComp})are used for each pixel that is processed in parallel. So 30 minimum comparators are used for the 7x7 window implementation and 60 minimum comparators are used for the 9x9 window implementation. Constructing the minimum comparator in this way also accounts for cases where two SAD values are equal to each other. The SAD value with the lower index is always assigned to the sad0\_I input and the higher indexed SAD values comes in through the sad1\_I input. Therefore, if two values are equal, the SAD value with a lower index, and a lower disparity, will be returned.
 
 \begin{figure}[h]
 	\begin{center}
@@ -104,6 +112,7 @@ The 7x7 window implementation operated with 2 pixels being processed in parallel
 	\end{center}
 \end{figure}
 
+When multiple minimum comparators are put together to create a tree, as shown in Fig.~\ref{fig:minComp}, it is possible to quickly determine which SAD value is the lowest. This process is used to ultimately find the index of the lowest SAD value out of the 16 SAD values calculated for a pixel. A normal serial comparison of 16 values, would take 15 comparisons, or 15 clock cycles, if one comparison were to happen each clock cycle. By having 15 comparators, the number of SAD values needed for comparisons can be reduced by half each clock cycle. Using a tree of comparators drops the comparison time from 15 clock cycles to only 4 clock cycles. Almost a 4 times speed up.
 
 \begin{figure}[h]
 	\begin{center}
@@ -117,6 +126,8 @@ The 7x7 window implementation operated with 2 pixels being processed in parallel
 
 \subsection{SAD Wrapper}
 
+The SAD wrapper is the entity that encompasses the SAD algorithms and minimum comparators. It receives the template image data from templ\_I and receives the search image data from search\_I. The write\_t\_I and write\_s\_I notify the wrapper when new data is actively being sent for the template and search images, respectively. The h2fReady\_I and f2hReady\_I are used to communicate when data is being sent to or from the host, the computer, from or to the FPGA. The sw\_I allows the 8 switches on Atlys board to be connected to data that is within the wrapper to be displayed on the 8 LEDs, led\_O. The outputs templ\_O for template image region, search\_O for search image region, sad\_O for the SAD values calculated from the current template and search image regions, and disp\_O that were found from the SAD values are sent out so they can be read, if desired. In the current implementations, templ\_O, search\_O, and sad\_O are used for debugging while disp\_O is used to obtain a depth map that is created from the pair of images. See Section~\ref{sec:fpgalink} for how the data is transferred to the computer.
+
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=100mm]{figures/sad_wrapper_rtl.png}
@@ -129,6 +140,8 @@ The 7x7 window implementation operated with 2 pixels being processed in parallel
 
 \subsection{Top Level}
 
+The implementation of the SAD wrapper and its internal entities has been designed such that it should be able to work with any FPGA that is large enough to hold it. Figure~\ref{fig:topLevel_rtl} shows the SAD wrapper inside a top level entity. The top level gives the SAD wrapper image data and the SAD wrapper gives the top level disparity values. Those values are then transmitted to the computer, see Sec.~\ref{sec:fpgalink}. The implementation in Fig.~\ref{fig:topLevel_rtl} represents the 9x9 window implementation. For the 7x7 window implementation, there are only two SAD and two minimum comparators, as opposed to 4 each, due to the higher level of parallelization used within the SAD algorithms.
+
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=150mm]{figures/top_level_rtl.png}
@@ -138,11 +151,19 @@ The 7x7 window implementation operated with 2 pixels being processed in parallel
 	\end{center}
 \end{figure}
 
+
 \section{FPGA and Computer Communication}
 
-
-
 \subsection{FPGALink}
+\label{sec:fpgalink}
 
+FPGALink ~\cite{fpgalink} was used to facilitate communications between the computer (host) and the FPGA (Atlys board) over USB. An overview of how the FPGALink works between the host and FPGA is shown in Figure ~\ref{fig:fpgalink}. The FPGALink has two possible communication modules to choose from, FX2 and EPP. According to ~\cite{fpgalink}, FX2 has an observed throughput around 26MB/s, while EEP has a observed throughput of around 1.26MB/s. FX2 was used due to its higher throughput.
 
-
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=150mm]{figures/fpgalinkOverview.png}
+		\captionfonts
+		\caption{Overview of FPGALink communications between host computer and FPGA ~\cite{fpgalink}.}
+		\label{fig:fpgalink}
+	\end{center}
+\end{figure}

@@ -23,14 +23,16 @@
 
 \usepackage{fixltx2e}
 
+\usepackage{listings}
+
 \ifpdf
     \usepackage[pdftex]{graphicx}
     % Update title and author below...
     \usepackage[pdftex,plainpages=false,breaklinks=true,colorlinks=true,urlcolor=blue,citecolor=blue,
 		linkcolor=blue,bookmarks=true,bookmarksopen=true,%
 		bookmarksopenlevel=3,pdfstartview=FitV,
-		pdfauthor={Kevin Schapansky},
-		pdftitle={Jester: A Device Abstraction and Data Fusion API for Skeletal Tracking Sensors},
+		pdfauthor={Connor Citron},
+		pdftitle={Stereo Vision System Module on Low-Cost FPGAs for Autonomous Mobile Robots},
 		pdfkeywords={thesis, masters, cal poly}]{hyperref}
     %Options with pdfstartview are FitV, FitB and FitH
     \pdfcompresslevel=1
@@ -48,6 +50,8 @@
     linkcolor=black,
     urlcolor=black
 }
+
+\usepackage{rotating}
 
 \usepackage{titlesec}
 % \titleformat{\chapter}[display]% OLD
@@ -122,7 +126,7 @@
 % Declarations for Front Matter
 
 % Update fields below!
-\title{Low-Cost Stereo Vision System for Autonomous Mobile Robots}
+\title{Stereo Vision System Module on Low-Cost FPGAs for Autonomous Mobile Robots}
 \author{Connor Citron}
 \degreemonth{August} \degreeyear{2014} \degree{Master of Science}
 \defensemonth{August} \defenseyear{2014}
@@ -191,9 +195,13 @@ I would like to especially thank my parents and family for their love and suppor
 \bibliographystyle{plain}
 \bibliography{references}
 
-%\begin{appendix}
-%%\addcontentsline{toc}{chapter}{\appendixnamelower}
-%\include{Appendix}
-%\end{appendix}
+\begin{appendix}
+\addcontentsline{toc}{chapter}{\appendixnamelower}
+\include{AppendixA}
+\include{AppendixB}
+\include{AppendixC}
+\include{AppendixD}
+\include{AppendixE}
+\end{appendix}
 
 \end{document}

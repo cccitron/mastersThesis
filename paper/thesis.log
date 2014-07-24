@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  22 JUL 2014 17:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  24 JUL 2014 16:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -87,13 +87,38 @@ Package: cite 2010/09/10  v 5.3
 Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
 LaTeX Info: Redefining \em on input line 420.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
+\lst@mode=\count97
+\lst@gtempboxa=\box52
+\lst@token=\toks15
+\lst@length=\count98
+\lst@currlwidth=\dimen111
+\lst@column=\count99
+\lst@pos=\count100
+\lst@lostspace=\dimen112
+\lst@width=\dimen113
+\lst@newlines=\count101
+\lst@lineno=\count102
+\lst@maxwidth=\dimen114
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count103
+\lst@skipnumbers=\count104
+\lst@framebox=\box53
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -114,10 +139,10 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count97
+\Gread@gobject=\count105
 ))
-\Gin@req@height=\dimen111
-\Gin@req@width=\dimen112
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
@@ -175,14 +200,14 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen113
-\Hy@linkcounter=\count98
-\Hy@pagecounter=\count99
+\@linkdim=\dimen117
+\Hy@linkcounter=\count106
+\Hy@pagecounter=\count107
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count100
+\Hy@SavedSpaceFactor=\count108
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -199,12 +224,12 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count101
+\c@Hy@tempcnt=\count109
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen114
-\Fld@menulength=\count102
-\Field@Width=\dimen115
-\Fld@charsize=\dimen116
+\XeTeXLinkMargin=\dimen118
+\Fld@menulength=\count110
+\Field@Width=\dimen119
+\Fld@charsize=\dimen120
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -214,17 +239,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count103
-\c@Item=\count104
-\c@Hfootnote=\count105
+\Hy@abspage=\count111
+\c@Item=\count112
+\c@Hfootnote=\count113
 )
 
 Package hyperref Message: Driver: hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count106
-\c@bookmark@seq@number=\count107
+\Fld@listcount=\count114
+\c@bookmark@seq@number=\count115
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -233,19 +258,31 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip45
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 50.
+Package hyperref Info: Option `colorlinks' set `true' on input line 52.
 
+(/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count116
+\rotFPtop=\skip46
+\rotFPbot=\skip47
+\rot@float@box=\box54
+\rot@mess@toks=\toks16
+)
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
-\ttl@box=\box52
-\beforetitleunit=\skip46
-\aftertitleunit=\skip47
-\ttl@plus=\dimen117
-\ttl@minus=\dimen118
-\ttl@toksa=\toks15
-\titlewidth=\dimen119
-\titlewidthlast=\dimen120
-\titlewidthfirst=\dimen121
+\ttl@box=\box55
+\beforetitleunit=\skip48
+\aftertitleunit=\skip49
+\ttl@plus=\dimen121
+\ttl@minus=\dimen122
+\ttl@toksa=\toks17
+\titlewidth=\dimen123
+\titlewidthlast=\dimen124
+\titlewidthfirst=\dimen125
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
@@ -253,13 +290,13 @@ Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen122
-\captionmargin@=\dimen123
-\captionwidth=\dimen124
-\caption@tempdima=\dimen125
-\caption@indent=\dimen126
-\caption@parindent=\dimen127
-\caption@hangindent=\dimen128
+\captionmargin=\dimen126
+\captionmargin@=\dimen127
+\captionwidth=\dimen128
+\caption@tempdima=\dimen129
+\caption@indent=\dimen130
+\caption@parindent=\dimen131
+\caption@hangindent=\dimen132
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 )
@@ -272,35 +309,37 @@ Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
 p \sbox \@tempboxa {{#1}.\hspace {6pt}#2}\ifdim \wd \@tempboxa >\hsize {#1}. {#
 2} \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@tempboxa \hfil }\
 fi \vskip \belowcaptionskip .
-\c@ContinuedFloat=\count108
+\c@ContinuedFloat=\count117
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: rotating package is loaded.
 ) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
-\c@subfigure=\count109
-\c@subtable=\count110
+\c@subfigure=\count118
+\c@subtable=\count119
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
 Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count111
-\calc@Bcount=\count112
-\calc@Adimen=\dimen129
-\calc@Bdimen=\dimen130
-\calc@Askip=\skip48
-\calc@Bskip=\skip49
+\calc@Acount=\count120
+\calc@Bcount=\count121
+\calc@Adimen=\dimen133
+\calc@Bdimen=\dimen134
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count113
-\calc@Cskip=\skip50
+\calc@Ccount=\count122
+\calc@Cskip=\skip52
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip51
+\@mathmargin=\skip53
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -308,51 +347,51 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks16
-\ex@=\dimen131
+\@emptytoks=\toks18
+\ex@=\dimen135
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen132
+\pmbraise@=\dimen136
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count114
+\inf@bad=\count123
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count115
-\leftroot@=\count116
+\uproot@=\count124
+\leftroot@=\count125
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count117
-\DOTSCASE@=\count118
+\classnum@=\count126
+\DOTSCASE@=\count127
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box53
-\strutbox@=\box54
-\big@size=\dimen133
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+\big@size=\dimen137
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count119
-\c@MaxMatrixCols=\count120
+\macc@depth=\count128
+\c@MaxMatrixCols=\count129
 \dotsspace@=\muskip11
-\c@parentequation=\count121
-\dspbrk@lvl=\count122
-\tag@help=\toks17
-\row@=\count123
-\column@=\count124
-\maxfields@=\count125
-\andhelp@=\toks18
-\eqnshift@=\dimen134
-\alignsep@=\dimen135
-\tagshift@=\dimen136
-\tagwidth@=\dimen137
-\totwidth@=\dimen138
-\lineht@=\dimen139
-\@envbody=\toks19
-\multlinegap=\skip52
-\multlinetaggap=\skip53
-\mathdisplay@stack=\toks20
+\c@parentequation=\count130
+\dspbrk@lvl=\count131
+\tag@help=\toks19
+\row@=\count132
+\column@=\count133
+\maxfields@=\count134
+\andhelp@=\toks20
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
+\@envbody=\toks21
+\multlinegap=\skip54
+\multlinetaggap=\skip55
+\mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -360,28 +399,24 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count126
-\l_MT_multwidth_dim=\dimen140
-\origjot=\skip54
-\l_MT_shortvdotswithinadjustabove_dim=\dimen141
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen142
-\l_MT_above_intertext_sep=\dimen143
-\l_MT_below_intertext_sep=\dimen144
-\l_MT_above_shortintertext_sep=\dimen145
-\l_MT_below_shortintertext_sep=\dimen146
+\g_MT_multlinerow_int=\count135
+\l_MT_multwidth_dim=\dimen144
+\origjot=\skip56
+\l_MT_shortvdotswithinadjustabove_dim=\dimen145
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen146
+\l_MT_above_intertext_sep=\dimen147
+\l_MT_below_intertext_sep=\dimen148
+\l_MT_above_shortintertext_sep=\dimen149
+\l_MT_below_shortintertext_sep=\dimen150
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-)
-\c@ALC@unique=\count127
-\c@ALC@line=\count128
-\c@ALC@rem=\count129
-\c@ALC@depth=\count130
-\ALC@tlm=\skip55
-\algorithmicindent=\skip56
+\c@ALC@unique=\count136
+\c@ALC@line=\count137
+\c@ALC@rem=\count138
+\c@ALC@depth=\count139
+\ALC@tlm=\skip57
+\algorithmicindent=\skip58
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -395,46 +430,46 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count131
-\Gm@cntv=\count132
-\c@Gm@tempcnt=\count133
-\Gm@bindingoffset=\dimen147
-\Gm@wd@mp=\dimen148
-\Gm@odd@mp=\dimen149
-\Gm@even@mp=\dimen150
-\Gm@layoutwidth=\dimen151
-\Gm@layoutheight=\dimen152
-\Gm@layouthoffset=\dimen153
-\Gm@layoutvoffset=\dimen154
-\Gm@dimlist=\toks21
+\Gm@cnth=\count140
+\Gm@cntv=\count141
+\c@Gm@tempcnt=\count142
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks23
 )
 (/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count134
-\c@@ppsavesec=\count135
-\c@@ppsaveapp=\count136
+\c@@pps=\count143
+\c@@ppsavesec=\count144
+\c@@ppsaveapp=\count145
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen155
-\extrarowheight=\dimen156
-\NC@list=\toks22
-\extratabsurround=\skip57
-\backup@length=\skip58
+\col@sep=\dimen159
+\extrarowheight=\dimen160
+\NC@list=\toks24
+\extratabsurround=\skip59
+\backup@length=\skip60
 )
-\TX@col@width=\dimen157
-\TX@old@table=\dimen158
-\TX@old@col=\dimen159
-\TX@target=\dimen160
-\TX@delta=\dimen161
-\TX@cols=\count137
-\TX@ftn=\toks23
+\TX@col@width=\dimen161
+\TX@old@table=\dimen162
+\TX@old@col=\dimen163
+\TX@target=\dimen164
+\TX@delta=\dimen165
+\TX@cols=\count146
+\TX@ftn=\toks25
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
@@ -442,59 +477,124 @@ nment
 
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count138
-\float@exts=\toks24
-\float@box=\box55
-\@float@everytoks=\toks25
-\@floatcapt=\box56
+\c@float@type=\count147
+\float@exts=\toks26
+\float@box=\box58
+\@float@everytoks=\toks27
+\@floatcapt=\box59
 )
-\@float@every@algorithm=\toks26
-\c@algorithm=\count139
+\@float@every@algorithm=\toks28
+\c@algorithm=\count148
 )
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip59
-\enit@outerparindent=\dimen162
-\enit@toks=\toks27
-\enit@inbox=\box57
-\enitdp@description=\count140
+\labelindent=\skip61
+\enit@outerparindent=\dimen166
+\enit@toks=\toks29
+\enit@inbox=\box60
+\enitdp@description=\count149
 )
-\@float@every@table=\toks28
+\@float@every@table=\toks30
  (./thesis.aux
 (./chapters/Introduction.aux) (./chapters/Background.aux)
 (./chapters/Related_Works.aux) (./chapters/Implementation.aux)
-(./chapters/Experiments_and_Results.aux) (./chapters/Conclusions.aux)
-(./chapters/Future_Work.aux))
+(./chapters/Experiments_and_Results.aux
+
+LaTeX Warning: Label `fig:tsukubaPy' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:tsukubaPy' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsukubaFPGA' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:tsukubaFPGA' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsukubaL' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:tsukubaL' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsukubaR' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:tsukubaR' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsukubaPy' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:tsukubaPy' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsukubaFPGA' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:tsukubaFPGA' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsukubaPy' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:tsukubaPy' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsukubaFPGA' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:tsukubaFPGA' multiply defined.
+
+
+LaTeX Warning: Label `fig:tsukubaDispMap' multiply defined.
+
+
+LaTeX Warning: Label `fig:venusPy' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:venusPy' multiply defined.
+
+
+LaTeX Warning: Label `fig:venusFPGA' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:venusFPGA' multiply defined.
+
+) (./chapters/Conclusions.aux) (./chapters/Future_Work.aux) (./AppendixA.aux)
+(./AppendixB.aux) (./AppendixC.aux) (./AppendixD.aux) (./AppendixE.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+\c@lstlisting=\count150
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count141
-\scratchdimen=\dimen163
-\scratchbox=\box58
-\nofMPsegments=\count142
-\nofMParguments=\count143
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count144
-\MPscratchDim=\dimen164
-\MPnumerator=\count145
-\makeMPintoPDFobject=\count146
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count151
+\scratchdimen=\dimen167
+\scratchbox=\box61
+\nofMPsegments=\count152
+\nofMParguments=\count153
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count154
+\MPscratchDim=\dimen168
+\MPnumerator=\count155
+\makeMPintoPDFobject=\count156
+\everyMPtoPDFconversion=\toks32
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -510,7 +610,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box59
+\AtBeginShipoutBox=\box62
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
@@ -520,7 +620,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 120.
+Package hyperref Info: Link coloring ON on input line 124.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -528,11 +628,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count147
+\c@section@level=\count157
 )
-LaTeX Info: Redefining \ref on input line 120.
-LaTeX Info: Redefining \pageref on input line 120.
-LaTeX Info: Redefining \nameref on input line 120.
+LaTeX Info: Redefining \ref on input line 124.
+LaTeX Info: Redefining \pageref on input line 124.
+LaTeX Info: Redefining \nameref on input line 124.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
@@ -579,45 +679,45 @@ Package caption Info: End \AtBeginDocument code.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 137.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 141.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 137.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 141.
  [2]
-LaTeX Font Info:    Try loading font information for U+msa on input line 140.
+LaTeX Font Info:    Try loading font information for U+msa on input line 144.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 140.
+LaTeX Font Info:    Try loading font information for U+msb on input line 144.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3]
-(./chapters/Abstract.tex) [4] [5] (./thesis.toc)
+(./chapters/Abstract.tex) [4] [5] (./thesis.toc [6
+
+])
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
 
- [6
-
-] (./thesis.lot)
+ [7] (./thesis.lot)
 \tf@lot=\write5
 \openout5 = `thesis.lot'.
 
- [7
 
-]
-(./thesis.lof)
+[8
+
+] (./thesis.lof [9
+
+])
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [8
-
-]
+ [10]
 \openout2 = `chapters/Introduction.aux'.
 
  (./chapters/Introduction.tex
@@ -626,7 +726,7 @@ CHAPTER 1.
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.168 \include{chapters/Introduction}
+l.172 \include{chapters/Introduction}
                                       [1
 
 
@@ -639,7 +739,7 @@ CHAPTER 2.
 
 
 
-] <figures/stereoVisionDiagram.jpg, id=263, 276.28218pt x 212.29312pt>
+] <figures/stereoVisionDiagram.jpg, id=397, 276.28218pt x 212.29312pt>
 File: figures/stereoVisionDiagram.jpg Graphic file (type jpg)
 
 <use figures/stereoVisionDiagram.jpg>
@@ -647,7 +747,7 @@ Package pdftex.def Info: figures/stereoVisionDiagram.jpg used on input line 20.
 
 (pdftex.def)             Requested size: 276.2815pt x 212.2926pt.
  [3] [4 <./figures/stereoVisionDiagram.jpg>] [5] [6]
-<figures/sadCorrespondingWindows.png, id=301, 440.64626pt x 183.68625pt>
+<figures/sadCorrespondingWindows.png, id=435, 440.64626pt x 183.68625pt>
 File: figures/sadCorrespondingWindows.png Graphic file (type png)
 
 <use figures/sadCorrespondingWindows.png>
@@ -659,21 +759,21 @@ Overfull \hbox (28.70639pt too wide) in paragraph at lines 54--56
  [] 
  []
 
-<figures/epipolar.png, id=309, 563.10374pt x 315.1775pt>
+<figures/epipolar.png, id=443, 563.10374pt x 315.1775pt>
 File: figures/epipolar.png Graphic file (type png)
 
 <use figures/epipolar.png>
 Package pdftex.def Info: figures/epipolar.png used on input line 65.
 (pdftex.def)             Requested size: 254.16765pt x 142.26378pt.
  [7 <./figures/sadCorrespondingWindows.png (PNG copy)>] <figures/sadGlobalGraph
-.png, id=326, 208.78pt x 193.72375pt>
+.png, id=460, 208.78pt x 193.72375pt>
 File: figures/sadGlobalGraph.png Graphic file (type png)
 
 <use figures/sadGlobalGraph.png>
 Package pdftex.def Info: figures/sadGlobalGraph.png used on input line 82.
 (pdftex.def)             Requested size: 164.773pt x 152.89818pt.
 
-<figures/sadLocalGraph.png, id=327, 204.765pt x 192.72pt>
+<figures/sadLocalGraph.png, id=461, 204.765pt x 192.72pt>
 File: figures/sadLocalGraph.png Graphic file (type png)
 
 <use figures/sadLocalGraph.png>
@@ -699,28 +799,28 @@ CHAPTER 4.
 
 
 
-] <figures/sadAlgorithm_rtl.png, id=394, 591.008pt x 176.66pt>
+] <figures/sadAlgorithm_rtl.png, id=528, 591.008pt x 176.66pt>
 File: figures/sadAlgorithm_rtl.png Graphic file (type png)
 
 <use figures/sadAlgorithm_rtl.png>
 Package pdftex.def Info: figures/sadAlgorithm_rtl.png used on input line 21.
 (pdftex.def)             Requested size: 284.52756pt x 85.04921pt.
  [15 <./figures/sadAlgorithm_rtl.png>]
-<figures/stateMachine.png, id=402, 350.911pt x 354.926pt>
+<figures/stateMachine.png, id=537, 350.911pt x 354.926pt>
 File: figures/stateMachine.png Graphic file (type png)
 
 <use figures/stateMachine.png>
 Package pdftex.def Info: figures/stateMachine.png used on input line 35.
 (pdftex.def)             Requested size: 284.52756pt x 287.78093pt.
  [16 <./figures/stateMachine.png>]
-<figures/sadAlgorithm9x9.png, id=411, 550.055pt x 124.465pt>
+<figures/sadAlgorithm9x9.png, id=546, 550.055pt x 124.465pt>
 File: figures/sadAlgorithm9x9.png Graphic file (type png)
 
 <use figures/sadAlgorithm9x9.png>
 Package pdftex.def Info: figures/sadAlgorithm9x9.png used on input line 50.
 (pdftex.def)             Requested size: 341.43306pt x 77.26056pt.
 
-<figures/sadPipeline9x9.png, id=413, 179.069pt x 136.51pt>
+<figures/sadPipeline9x9.png, id=548, 179.069pt x 136.51pt>
 File: figures/sadPipeline9x9.png Graphic file (type png)
 
 <use figures/sadPipeline9x9.png>
@@ -736,93 +836,279 @@ Overfull \hbox (14.13643pt too wide) in paragraph at lines 68--70
 aster / makestuff / libs /
  []
 
-[17 <./figures/sadAlgorithm9x9.png>]
-<figures/sadAlgorithm7x7.png, id=422, 558.888pt x 437.635pt>
+[17 <./figures/sadAlgorithm9x9.png>] [18 <./figures/sadPipeline9x9.png>]
+<figures/sadAlgorithm7x7.png, id=566, 558.888pt x 437.635pt>
 File: figures/sadAlgorithm7x7.png Graphic file (type png)
 
 <use figures/sadAlgorithm7x7.png>
-Package pdftex.def Info: figures/sadAlgorithm7x7.png used on input line 77.
+Package pdftex.def Info: figures/sadAlgorithm7x7.png used on input line 79.
 (pdftex.def)             Requested size: 341.43306pt x 267.35762pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/sadPipeline7x7.png, id=423, 186.296pt x 256.96pt>
+<figures/sadPipeline7x7.png, id=568, 186.296pt x 256.96pt>
 File: figures/sadPipeline7x7.png Graphic file (type png)
 
 <use figures/sadPipeline7x7.png>
-Package pdftex.def Info: figures/sadPipeline7x7.png used on input line 87.
+Package pdftex.def Info: figures/sadPipeline7x7.png used on input line 90.
 (pdftex.def)             Requested size: 170.71652pt x 235.48857pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/minComparator_rtl.png, id=424, 428.802pt x 220.022pt>
+
+Overfull \hbox (14.13643pt too wide) in paragraph at lines 97--99
+\OT1/cmtt/m/n/12 https : / / github . com / cccitron / mastersThesis / tree / m
+aster / makestuff / libs /
+ []
+
+[19 <./figures/sadAlgorithm7x7.png>] [20 <./figures/sadPipeline7x7.png>]
+<figures/minComparator_rtl.png, id=581, 428.802pt x 220.022pt>
 File: figures/minComparator_rtl.png Graphic file (type png)
 
 <use figures/minComparator_rtl.png>
-Package pdftex.def Info: figures/minComparator_rtl.png used on input line 100.
+Package pdftex.def Info: figures/minComparator_rtl.png used on input line 108.
 (pdftex.def)             Requested size: 284.52756pt x 145.9972pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/minComparator.png, id=425, 652.839pt x 654.445pt>
+ [21 <./figures/minComparator_rtl.png>]
+<figures/minComparator.png, id=589, 652.839pt x 654.445pt>
 File: figures/minComparator.png Graphic file (type png)
 
 <use figures/minComparator.png>
-Package pdftex.def Info: figures/minComparator.png used on input line 110.
+Package pdftex.def Info: figures/minComparator.png used on input line 119.
 (pdftex.def)             Requested size: 426.79134pt x 427.85075pt.
 
-Overfull \hbox (14.85255pt too wide) in paragraph at lines 110--112
+Overfull \hbox (14.85255pt too wide) in paragraph at lines 119--121
  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/sad_wrapper_rtl.png, id=426, 482.603pt x 334.048pt>
+<figures/sad_wrapper_rtl.png, id=591, 482.603pt x 334.048pt>
 File: figures/sad_wrapper_rtl.png Graphic file (type png)
 
 <use figures/sad_wrapper_rtl.png>
-Package pdftex.def Info: figures/sad_wrapper_rtl.png used on input line 122.
+Package pdftex.def Info: figures/sad_wrapper_rtl.png used on input line 133.
 (pdftex.def)             Requested size: 284.52756pt x 196.94388pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/top_level_rtl.png, id=427, 516.329pt x 322.003pt>
+[22] <figures/top_level_rtl.png, id=599, 516.329pt x 322.003pt>
 File: figures/top_level_rtl.png Graphic file (type png)
 
 <use figures/top_level_rtl.png>
-Package pdftex.def Info: figures/top_level_rtl.png used on input line 134.
+Package pdftex.def Info: figures/top_level_rtl.png used on input line 147.
 (pdftex.def)             Requested size: 426.79134pt x 266.16673pt.
 
-Overfull \hbox (14.85255pt too wide) in paragraph at lines 134--136
+Overfull \hbox (14.85255pt too wide) in paragraph at lines 147--149
  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [18 <./figures/sadPipeline9x9.png>] [19 <./figures/sadAlgorithm7x7.png>]
-[20 <./figures/sadPipeline7x7.png> <./figures/minComparator_rtl.png>] [21 <./fi
-gures/minComparator.png>] [22 <./figures/sad_wrapper_rtl.png> <./figures/top_le
-vel_rtl.png>]
+<figures/fpgalinkOverview.png, id=603, 562.1pt x 457.71pt>
+File: figures/fpgalinkOverview.png Graphic file (type png)
+
+<use figures/fpgalinkOverview.png>
+Package pdftex.def Info: figures/fpgalinkOverview.png used on input line 164.
+(pdftex.def)             Requested size: 426.79134pt x 347.52798pt.
+
+Overfull \hbox (14.85255pt too wide) in paragraph at lines 164--166
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [23] [24 <./figures/minComparator.png>] [25 <./figures/sad_wrapper_rtl.png> <
+./figures/top_level_rtl.png>] [26 <./figures/fpgalinkOverview.png>]
 \openout2 = `chapters/Experiments_and_Results.aux'.
 
- (./chapters/Experiments_and_Results.tex
+
+(./chapters/Experiments_and_Results.tex
 CHAPTER 5.
-) [23
+<figures/sad_tsukuba_3x3_0-15.png, id=626, 289.08pt x 216.81pt>
+File: figures/sad_tsukuba_3x3_0-15.png Graphic file (type png)
+
+<use figures/sad_tsukuba_3x3_0-15.png>
+Package pdftex.def Info: figures/sad_tsukuba_3x3_0-15.png used on input line 10
+.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/sad_tsukuba_5x5_0-15.png, id=627, 289.08pt x 216.81pt>
+File: figures/sad_tsukuba_5x5_0-15.png Graphic file (type png)
+
+<use figures/sad_tsukuba_5x5_0-15.png>
+Package pdftex.def Info: figures/sad_tsukuba_5x5_0-15.png used on input line 15
+.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/sad_tsukuba_7x7_0-15.png, id=628, 289.08pt x 216.81pt>
+File: figures/sad_tsukuba_7x7_0-15.png Graphic file (type png)
+
+<use figures/sad_tsukuba_7x7_0-15.png>
+Package pdftex.def Info: figures/sad_tsukuba_7x7_0-15.png used on input line 21
+.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/sad_tsukuba_9x9_0-15.png, id=629, 289.08pt x 216.81pt>
+File: figures/sad_tsukuba_9x9_0-15.png Graphic file (type png)
+
+<use figures/sad_tsukuba_9x9_0-15.png>
+Package pdftex.def Info: figures/sad_tsukuba_9x9_0-15.png used on input line 26
+.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/sad_tsukuba_11x11_0-15.png, id=630, 289.08pt x 216.81pt>
+File: figures/sad_tsukuba_11x11_0-15.png Graphic file (type png)
+
+<use figures/sad_tsukuba_11x11_0-15.png>
+Package pdftex.def Info: figures/sad_tsukuba_11x11_0-15.png used on input line 
+32.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/sad_tsukuba_13x13_0-15.png, id=631, 289.08pt x 216.81pt>
+File: figures/sad_tsukuba_13x13_0-15.png Graphic file (type png)
+
+<use figures/sad_tsukuba_13x13_0-15.png>
+Package pdftex.def Info: figures/sad_tsukuba_13x13_0-15.png used on input line 
+37.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/tsukubaL.jpg, id=638, 385.44pt x 289.08pt>
+File: figures/tsukubaL.jpg Graphic file (type jpg)
+ <use figures/tsukubaL.jpg>
+Package pdftex.def Info: figures/tsukubaL.jpg used on input line 84.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/tsukubaR.jpg, id=639, 385.44pt x 289.08pt>
+File: figures/tsukubaR.jpg Graphic file (type jpg)
+ <use figures/tsukubaR.jpg>
+Package pdftex.def Info: figures/tsukubaR.jpg used on input line 89.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/tsukuba_9x9_python3.png, id=640, 368.37625pt x 287.0725pt>
+File: figures/tsukuba_9x9_python3.png Graphic file (type png)
+
+<use figures/tsukuba_9x9_python3.png>
+Package pdftex.def Info: figures/tsukuba_9x9_python3.png used on input line 95.
+
+(pdftex.def)             Requested size: 185.37119pt x 144.45576pt.
+
+<figures/tsukuba_9x9_fpga.png, id=641, 361.35pt x 281.05pt>
+File: figures/tsukuba_9x9_fpga.png Graphic file (type png)
+
+<use figures/tsukuba_9x9_fpga.png>
+Package pdftex.def Info: figures/tsukuba_9x9_fpga.png used on input line 100.
+(pdftex.def)             Requested size: 185.37119pt x 144.17842pt.
+
+<figures/tsukuba_7x7_python3.png, id=642, 364.36125pt x 283.0575pt>
+File: figures/tsukuba_7x7_python3.png Graphic file (type png)
+
+<use figures/tsukuba_7x7_python3.png>
+Package pdftex.def Info: figures/tsukuba_7x7_python3.png used on input line 106
+.
+(pdftex.def)             Requested size: 185.37119pt x 144.00755pt.
+
+<figures/tsukuba_7x7_fpga.png, id=643, 364.36125pt x 283.0575pt>
+File: figures/tsukuba_7x7_fpga.png Graphic file (type png)
+
+<use figures/tsukuba_7x7_fpga.png>
+Package pdftex.def Info: figures/tsukuba_7x7_fpga.png used on input line 111.
+(pdftex.def)             Requested size: 185.37119pt x 144.00755pt.
+
+<figures/venusL.png, id=645, 435.6275pt x 384.43625pt>
+File: figures/venusL.png Graphic file (type png)
+
+<use figures/venusL.png>
+Package pdftex.def Info: figures/venusL.png used on input line 128.
+(pdftex.def)             Requested size: 185.37119pt x 163.58562pt.
+
+<figures/venusR.png, id=646, 435.6275pt x 384.43625pt>
+File: figures/venusR.png Graphic file (type png)
+
+<use figures/venusR.png>
+Package pdftex.def Info: figures/venusR.png used on input line 133.
+(pdftex.def)             Requested size: 185.37119pt x 163.58562pt.
+
+<figures/venus_9x9_python3.png, id=647, 418.56375pt x 382.42876pt>
+File: figures/venus_9x9_python3.png Graphic file (type png)
+
+<use figures/venus_9x9_python3.png>
+Package pdftex.def Info: figures/venus_9x9_python3.png used on input line 139.
+(pdftex.def)             Requested size: 185.37119pt x 169.36621pt.
+
+<figures/venus_9x9_fpga.png, id=648, 411.5375pt x 376.40625pt>
+File: figures/venus_9x9_fpga.png Graphic file (type png)
+
+<use figures/venus_9x9_fpga.png>
+Package pdftex.def Info: figures/venus_9x9_fpga.png used on input line 144.
+(pdftex.def)             Requested size: 185.37119pt x 169.5478pt.
+
+<figures/venus_7x7_python3.png, id=649, 414.54875pt x 378.41376pt>
+File: figures/venus_7x7_python3.png Graphic file (type png)
+
+<use figures/venus_7x7_python3.png>
+Package pdftex.def Info: figures/venus_7x7_python3.png used on input line 150.
+(pdftex.def)             Requested size: 185.37119pt x 169.21062pt.
+
+<figures/venus_7x7_fpga.png, id=650, 414.54875pt x 378.41376pt>
+File: figures/venus_7x7_fpga.png Graphic file (type png)
+
+<use figures/venus_7x7_fpga.png>
+Package pdftex.def Info: figures/venus_7x7_fpga.png used on input line 155.
+(pdftex.def)             Requested size: 185.37119pt x 169.21062pt.
+
+<figures/conesL.png, id=652, 451.6875pt x 376.40625pt>
+File: figures/conesL.png Graphic file (type png)
+
+<use figures/conesL.png>
+Package pdftex.def Info: figures/conesL.png used on input line 172.
+(pdftex.def)             Requested size: 185.37119pt x 154.47688pt.
+
+<figures/conesR.png, id=653, 451.6875pt x 376.40625pt>
+File: figures/conesR.png Graphic file (type png)
+
+<use figures/conesR.png>
+Package pdftex.def Info: figures/conesR.png used on input line 177.
+(pdftex.def)             Requested size: 185.37119pt x 154.47688pt.
+
+<figures/cones_9x9_matlab_0-59.png, id=654, 338.76563pt x 282.30469pt>
+File: figures/cones_9x9_matlab_0-59.png Graphic file (type png)
+
+<use figures/cones_9x9_matlab_0-59.png>
+Package pdftex.def Info: figures/cones_9x9_matlab_0-59.png used on input line 1
+83.
+(pdftex.def)             Requested size: 185.37119pt x 154.47975pt.
+
+<figures/cones_9x9_python3.png, id=657, 434.62375pt x 374.39874pt>
+File: figures/cones_9x9_python3.png Graphic file (type png)
+
+<use figures/cones_9x9_python3.png>
+Package pdftex.def Info: figures/cones_9x9_python3.png used on input line 188.
+(pdftex.def)             Requested size: 185.37119pt x 159.68579pt.
+) [27
 
 
 
+] [28 <./figures/sad_tsukuba_3x3_0-15.png (PNG copy)> <./figures/sad_tsukuba_5x
+5_0-15.png (PNG copy)> <./figures/sad_tsukuba_7x7_0-15.png (PNG copy)> <./figur
+es/sad_tsukuba_9x9_0-15.png (PNG copy)> <./figures/sad_tsukuba_11x11_0-15.png (
+PNG copy)> <./figures/sad_tsukuba_13x13_0-15.png (PNG copy)>] [29 <./figures/ts
+ukubaL.jpg> <./figures/tsukubaR.jpg> <./figures/tsukuba_9x9_python3.png (PNG co
+py)> <./figures/tsukuba_9x9_fpga.png (PNG copy)> <./figures/tsukuba_7x7_python3
+.png (PNG copy)> <./figures/tsukuba_7x7_fpga.png (PNG copy)>] [30 <./figures/ve
+nusL.png (PNG copy)> <./figures/venusR.png (PNG copy)> <./figures/venus_9x9_pyt
+hon3.png (PNG copy)> <./figures/venus_9x9_fpga.png (PNG copy)> <./figures/venus
+_7x7_python3.png (PNG copy)> <./figures/venus_7x7_fpga.png (PNG copy)>] [31 <./
+figures/conesL.png (PNG copy)> <./figures/conesR.png (PNG copy)> <./figures/con
+es_9x9_matlab_0-59.png (PNG copy)> <./figures/cones_9x9_python3.png (PNG copy)>
 ]
 \openout2 = `chapters/Conclusions.aux'.
 
  (./chapters/Conclusions.tex
 CHAPTER 6.
-) [24
+) [32
 
 
 
@@ -831,7 +1117,7 @@ CHAPTER 6.
 
  (./chapters/Future_Work.tex
 CHAPTER 7.
-) [25
+) [33
 
 
 
@@ -901,47 +1187,166 @@ Underfull \hbox (badness 1515) in paragraph at lines 41--45
 ages . inf . ed . ac . uk / rbf / CVonline /
  []
 
-[26
+[34
 
 
 
-] [27])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
- [28]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
+]
+Overfull \hbox (109.27783pt too wide) in paragraph at lines 47--53
+\OT1/cmtt/m/n/12 correlation-[]based-[]similarity-[]measures-[]in-[]area-[]base
+d-[]stereo-[]matching-[]systems/$[][]\OT1/cmr/m/n/12 ,
+ []
+
+[35] [36]
+Underfull \hbox (badness 2134) in paragraph at lines 140--143
+[]\OT1/cmr/m/n/12 Daniel Scharstein and Richard Szeliski.  Stereo.  [][]$\OT1/c
+mtt/m/n/12 http : / / vision .
+ []
+
+) [37]
+\openout2 = `AppendixA.aux'.
+
+ (./AppendixA.tex
+APPENDIX A.
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 17.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 17.
+) [38
+
+
+]
+\openout2 = `AppendixB.aux'.
+
+ (./AppendixB.tex
+APPENDIX B.
+Package color Info: Redefining color mygreen on input line 4.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
+) [39
+
+
+
+]
+\openout2 = `AppendixC.aux'.
+
+ (./AppendixC.tex
+APPENDIX C.
+Package color Info: Redefining color mygreen on input line 4.
+) [40
+
+
+
+]
+\openout2 = `AppendixD.aux'.
+
+ (./AppendixD.tex
+APPENDIX D.
+Package color Info: Redefining color mygreen on input line 4.
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)) [41
+
+
+
+]
+\openout2 = `AppendixE.aux'.
+
+
+(./AppendixE.tex
+APPENDIX E.
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]|\OT1/cmr/bx/n/12 Window
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\OT1/cmr/bx/n/12 Disparity
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 17--17
+[]|\OT1/cmr/bx/n/12 # of Slice
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+\OT1/cmr/bx/n/12 Reg-is-ters
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]|\OT1/cmr/bx/n/12 # of Slice
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+\OT1/cmr/bx/n/12 LUTs used
+ []
+
+
+Underfull \hbox (badness 6910) in paragraph at lines 19--19
+\OT1/cmr/bx/n/12 pied Slices
+ []
+
+
+Underfull \hbox (badness 4792) in paragraph at lines 20--22
+[]|\OT1/cmr/bx/n/12 # of MUX-
+ []
+
+) [42
+
+
+
+] [43]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
  (./thesis.aux (./chapters/Introduction.aux)
 (./chapters/Background.aux) (./chapters/Related_Works.aux)
 (./chapters/Implementation.aux) (./chapters/Experiments_and_Results.aux)
-(./chapters/Conclusions.aux) (./chapters/Future_Work.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 199.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 199.
+(./chapters/Conclusions.aux) (./chapters/Future_Work.aux) (./AppendixA.aux)
+(./AppendixB.aux) (./AppendixC.aux) (./AppendixD.aux) (./AppendixE.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C39F8DEBD4AB7A152524EE84887B2B5D;1530.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 199.
+(rerunfilecheck)             Checksum: 1CA4531FEB35B8BFD0F432CCC2E6CB54;2592.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 9594 strings out of 494985
- 144667 string characters out of 6180357
- 246223 words of memory out of 5000000
- 12506 multiletter control sequences out of 15000+600000
- 9706 words of font info for 37 fonts, out of 8000000 for 9000
+ 11548 strings out of 494985
+ 173749 string characters out of 6180357
+ 302853 words of memory out of 5000000
+ 14246 multiletter control sequences out of 15000+600000
+ 11405 words of font info for 45 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,10n,39p,1103b,520s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,42p,1194b,1368s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-tt12.pfb>
-Output written on thesis.pdf (36 pages, 646163 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
+fb>
+Output written on thesis.pdf (53 pages, 1818290 bytes).
 PDF statistics:
- 556 PDF objects out of 1000 (max. 8388607)
- 475 compressed objects within 5 object streams
- 98 named destinations out of 1000 (max. 500000)
- 268 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 936 PDF objects out of 1000 (max. 8388607)
+ 805 compressed objects within 9 object streams
+ 227 named destinations out of 1000 (max. 500000)
+ 511 words of extra memory for PDF output out of 10000 (max. 10000000)
 

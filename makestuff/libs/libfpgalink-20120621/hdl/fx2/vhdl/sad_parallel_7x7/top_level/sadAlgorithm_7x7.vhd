@@ -241,6 +241,8 @@ begin
 					
 			END CASE;
 			
+			-- Assign greater value to more and smaller to less
+			-- Loop is unrolled in hardware, 7 assignments occur simultaneously
          FOR i IN 0 TO 6 LOOP
             IF (search_window(ndx + (7*i)) < template_window(ndx + (7*i))) THEN 
                more(i) <= template_window(ndx + (7*i));
@@ -267,6 +269,7 @@ begin
 		END IF;
 	END PROCESS state_machine;
 
+	-- Subtraction IP CORE, sub(i) = more(i) - less(i)
 	g_differ_10 : FOR i IN 0 TO 6 GENERATE
 		i_subber : adder_10
 			PORT MAP (

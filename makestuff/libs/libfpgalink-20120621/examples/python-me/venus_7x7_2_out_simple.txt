@@ -1,0 +1,25 @@
+FPGALink Python Example Copyright (C) 2011-2012 Chris McClelland
+
+Attempting to open connection to FPGALink device 1443:0007...
+Loading firmware into 1443:0007...
+Awaiting renumeration...
+Attempting to open connection to FPGALink device 1443:0007 again...
+The FPGALink device at 1443:0007 scanned its JTAG chain, yielding:
+  0x44008093
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+Playing "../../hdl/fx2/vhdl/sad_simple_reg_7x7/top_level/default.xsvf" into the JTAG chain on FPGALink device 1443:0007...
+b'flReadChannel(): flRead(): usb_bulk_read() failed returnCode -110: error sending control message: Broken pipe'

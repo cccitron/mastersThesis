@@ -1,5 +1,5 @@
-\contentsline {chapter}{List of Tables}{vii}{chapter*.2}
-\contentsline {chapter}{List of Figures}{viii}{chapter*.3}
+\contentsline {chapter}{List of Tables}{viii}{chapter*.2}
+\contentsline {chapter}{List of Figures}{ix}{chapter*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Background}{2}{chapter.2}
 \contentsline {section}{\numberline {2.1}Computer Stereo Vision}{2}{section.2.1}
@@ -13,12 +13,28 @@
 \contentsline {subsubsection}{\numberline {4.1.1.1}State Diagram}{15}{subsubsection.4.1.1.1}
 \contentsline {subsubsection}{\numberline {4.1.1.2}9x9 Window}{16}{subsubsection.4.1.1.2}
 \contentsline {subsubsection}{\numberline {4.1.1.3}7x7 Window}{18}{subsubsection.4.1.1.3}
-\contentsline {subsection}{\numberline {4.1.2}Minimum Comparator Architecture}{18}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}SAD Wrapper}{18}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Top Level}{18}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}FPGA and Computer Communication}{18}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}FPGALink}{18}{subsection.4.2.1}
-\contentsline {chapter}{\numberline {5}Experiments and Results}{23}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusions}{24}{chapter.6}
-\contentsline {chapter}{\numberline {7}Future Work}{25}{chapter.7}
-\contentsline {chapter}{Bibliography}{26}{chapter*.19}
+\contentsline {subsection}{\numberline {4.1.2}Minimum Comparator Architecture}{20}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}SAD Wrapper}{22}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Top Level}{22}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}FPGA and Computer Communication}{23}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}FPGALink}{23}{subsection.4.2.1}
+\contentsline {chapter}{\numberline {5}Experiments and Results}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Window Size Selection}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}Resource Utilization on FPGA}{27}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Data Overflows}{27}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Testbench Simulation}{27}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}9x9 Window Implementation}{27}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}7x7 Window Implementation}{27}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Runtime for Test Image Pairs}{27}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Tsukuba}{27}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Venus}{27}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Cones}{27}{subsection.5.4.3}
+\contentsline {chapter}{\numberline {6}Conclusions}{32}{chapter.6}
+\contentsline {chapter}{\numberline {7}Future Work}{33}{chapter.7}
+\contentsline {chapter}{Bibliography}{34}{chapter*.24}
+\contentsline {chapter}{Appendix}{37}{chapter*.24}
+\contentsline {chapter}{\numberline {A}Absolute Difference 9x9 Window Code Snippet}{38}{appendix.A}
+\contentsline {chapter}{\numberline {B}Absolute Difference 7x7 Window Code Snippet}{39}{appendix.B}
+\contentsline {chapter}{\numberline {C}Minimum Comparator Code}{40}{appendix.C}
+\contentsline {chapter}{\numberline {D}Python3 Serial SAD Algorithm}{41}{appendix.D}
+\contentsline {chapter}{\numberline {E}Resource Utilization}{42}{appendix.E}

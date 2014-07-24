@@ -13,10 +13,10 @@ numpy.set_printoptions(threshold=numpy.nan)
 numpy.set_printoptions(linewidth=2000)
 
 #for infile in sys.argv[1:]:
-#infileR = "tsukubaright_bw.jpg"
-#infileL = "tsukubaleft_bw.jpg"
-infileR = "survStereoL_478h.png"
-infileL = "survStereoR_478h.png"
+infileR = "tsukubaright_bw.jpg"
+infileL = "tsukubaleft_bw.jpg"
+#infileR = "survStereoL_478h.png"
+#infileL = "survStereoR_478h.png"
 
 
 colorScheme = numpy.array([(0x00, 0x00, 0x8F), \
@@ -88,14 +88,14 @@ try:
     print("begin template read")            
     for i in range(11):
         for j in range(ncol):
-            print("\"x%0.2x\"," % templateBuff[i][j], end=" ")
+            print("x\"%0.2x\"," % templateBuff[i][j], end=" ")
         print("")
 
     # Print search array
     print("\nbegin search read")            
     for i in range(11):
         for j in range(ncol):
-            print("\"x%0.2x\"," % searchBuff[i][j], end=" ")
+            print("x\"%0.2x\"," % searchBuff[i][j], end=" ")
         print("")
 
     for row in range(dispH):
@@ -113,13 +113,16 @@ try:
         disparityAll[row] = disparityArray
 
         # Print SAD array
-        print(row)
+        '''print(row)
         for k in range(16):
             print("reading from sad array ", k)
             for ndx in range(disp_range):
                 print("x%0.2x" % int(sadArray[k][ndx]), end=" ")
-            print("\nmin index:", sadArray.argmin(axis=1)[0], sadArray.argmin(axis=1)[1], "\n")
+            print("\nmin index:", sadArray.argmin(axis=1)[0], sadArray.argmin(axis=1)[1], "\n")'''
 
+    # time after SAD Algorithm has finished
+    t1 = time.time()
+    
     #print("\ndispare:")
     #print(disparityAll)
     
@@ -130,7 +133,12 @@ try:
         for j in range(dispH):
             im.putpixel((i,j), (colorScheme[disparityAll[j][i]][0], colorScheme[disparityAll[j][i]][1], colorScheme[disparityAll[j][i]][2]))
 
-    im.save("survStereoRL_7x7.png")
+    print("\nt0 = ", t0)
+    print("t1 = ", t1)
+    print("t1 - t0 = ", t1-t0, " seconds")
+    print("t1 - t0 = ", (t1-t0)/60, " minutes")
+
+    im.save("tsukubabw_7x7_python3.png")
     im.show()
 
 except IOError:

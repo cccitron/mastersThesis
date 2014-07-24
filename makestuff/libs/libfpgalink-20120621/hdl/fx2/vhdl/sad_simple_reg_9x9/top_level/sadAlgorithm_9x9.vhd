@@ -259,7 +259,8 @@ begin
 		END IF;
 	END PROCESS state_machine;
 
-	subber : adder_10
+	-- Subtraction IP CORE, sub = more - less
+	subber : adder_10 -- subtr_core
 		PORT MAP (
 			a => more,
 			b => less,

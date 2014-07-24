@@ -1,0 +1,30 @@
+FPGALink Python Example Copyright (C) 2011-2012 Chris McClelland
+
+Attempting to open connection to FPGALink device 1443:0007...
+Loading firmware into 1443:0007...
+Awaiting renumeration...
+Attempting to open connection to FPGALink device 1443:0007 again...
+The FPGALink device at 1443:0007 scanned its JTAG chain, yielding:
+  0x44008093
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+Playing "../../hdl/fx2/vhdl/sad_fifo_9x9/top_level/default.xsvf" into the JTAG chain on FPGALink device 1443:0007...
+t0 =  1406217950.029438
+t1 =  1406218011.9969635
+t2 =  1406218012.6727085
+t1 - t0 =  61.967525482177734
+t2 - t1 =  0.6757450103759766
+t2 - t0 =  62.64327049255371

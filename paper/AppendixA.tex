@@ -1,0 +1,33 @@
+\chapter{Absolute Difference 9x9 Window Code Snippet}
+\label{sec:appdxA}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\lstset{
+	language=VHDL,
+	basicstyle=\footnotesize,
+	commentstyle=\color{mygreen},
+	keywordstyle=\color{blue}, 
+	tabsize=3
+}
+
+\begin{lstlisting}
+
+-- Assign greater value to more and smaller to less
+IF (search_window(ndx) < template_window(ndx)) THEN 
+	more <= template_window(ndx);
+	less <= search_window(ndx);
+ELSE
+	less <= template_window(ndx);
+	more <= search_window(ndx);
+END IF;
+
+-- Subtraction IP CORE, sub = more - less
+subber : subtr_core
+	PORT MAP (
+		a => more,
+		b => less,
+		s => sub
+	);
+	
+\end{lstlisting}

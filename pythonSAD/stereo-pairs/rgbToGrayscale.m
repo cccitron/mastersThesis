@@ -1,0 +1,1 @@
+imwrite(rgb2gray(imread('tsukubaR.png')), 'tsukubaR_BW.png');

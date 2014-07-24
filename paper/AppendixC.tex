@@ -1,0 +1,40 @@
+\chapter{Minimum Comparator Code}
+\label{sec:appdxC}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\lstset{
+	language=VHDL,
+	basicstyle=\footnotesize,
+	commentstyle=\color{mygreen},
+	keywordstyle=\color{blue}, 
+	tabsize=3
+}
+
+\begin{lstlisting}
+
+-- Constantly assign inputs
+sad0 <= sad0_I;
+pos0 <= pos0_I;
+sad1 <= sad1_I;
+pos1 <= pos1_I;
+
+-- Comparison
+PROCESS(clk_I)
+begin
+	IF (RISING_EDGE(clk_I)) THEN
+		IF (sad1 < sad0) THEN
+			sad_out <= sad1;
+			pos_out <= pos1;
+		ELSE
+			sad_out <= sad0;
+			pos_out <= pos0;
+		END IF;
+	END IF;
+END PROCESS;
+
+-- Constantly assign outputs
+sad_O <= sad_out;
+pos_O <= pos_out;
+
+\end{lstlisting}

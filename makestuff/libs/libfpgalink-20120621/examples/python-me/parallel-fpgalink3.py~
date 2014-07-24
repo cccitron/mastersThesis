@@ -365,8 +365,10 @@ if __name__ == "__main__":
         if ( isCommCapable ):
 
             # Black and white images
-            fileR = "tsukubaright_bw.jpg"
-            fileL = "tsukubaleft_bw.jpg"
+            #fileR = "tsukubaright_bw.jpg"
+            #fileL = "tsukubaleft_bw.jpg"
+            fileR = "venusR_bw.jpg"
+            fileL = "venusL_bw.jpg"
             
             # Each color represents a distance that corresponds with disparity range of 0-15
             colorScheme = numpy.array([(0x00, 0x00, 0x8F), \
@@ -400,9 +402,18 @@ if __name__ == "__main__":
                     print("Error, image sizes don't match!")
                     exit(0)
                 
+                # Number of rows of pixels to be sent
+                nrow = 7
+                # Disparity range 0-15
+                disp_range = 16
+                # Number of disparity values for an entire row
+                disp_row = 2 #ncol - (disp_range + 1)
+                # Number of pixels per row to be sent
+                ncol = (disp_row-1) + disp_range + (nrow-1)
+                
                 # Initialize arrays
-                dispW = width-21 #24 #17
-                dispH = height-6 #8 #2
+                dispW = width-(ncol-disp_row) #21 #24 #17
+                dispH = height-(nrow-1) #6 #8 #2
                 templateBuff = numpy.zeros((height, width), dtype = 'i')
                 searchBuff = numpy.zeros((height, width), dtype = 'i')
                 disparity_f2h = numpy.zeros((dispH, dispW), dtype = 'i')
@@ -415,14 +426,7 @@ if __name__ == "__main__":
                 
                 # Number of pixels per row to be sent
                 #ncol = 21 #33 #25 #21 #65
-                # Number of rows of pixels to be sent
-                nrow = 7
-                # Disparity range 0-15
-                disp_range = 16
-                # Number of disparity values for an entire row
-                disp_row = 2 #ncol - (disp_range + 1)
-                # Number of pixels per row to be sent
-                ncol = (disp_row-1) + disp_range + (nrow-1)
+               
                 
                 # template & search arrays, data sent over via bytearrays
                 buffTempl_h2f = bytearray(ncol * nrow + 1)
@@ -517,7 +521,7 @@ if __name__ == "__main__":
                     for j in range(dispH): #2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("tsukuba_disp7x7_2.png")
+                im.save("venus_disp7x7_2.png")
                 im.show()
                 
                 # time after image is created
