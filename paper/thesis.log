@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  24 JUL 2014 16:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.7.2)  25 JUL 2014 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -512,45 +512,6 @@ LaTeX Warning: Label `fig:tsukubaFPGA' multiply defined.
 LaTeX Warning: Label `sub@fig:tsukubaFPGA' multiply defined.
 
 
-LaTeX Warning: Label `fig:tsukubaL' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:tsukubaL' multiply defined.
-
-
-LaTeX Warning: Label `fig:tsukubaR' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:tsukubaR' multiply defined.
-
-
-LaTeX Warning: Label `fig:tsukubaPy' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:tsukubaPy' multiply defined.
-
-
-LaTeX Warning: Label `fig:tsukubaFPGA' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:tsukubaFPGA' multiply defined.
-
-
-LaTeX Warning: Label `fig:tsukubaPy' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:tsukubaPy' multiply defined.
-
-
-LaTeX Warning: Label `fig:tsukubaFPGA' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:tsukubaFPGA' multiply defined.
-
-
-LaTeX Warning: Label `fig:tsukubaDispMap' multiply defined.
-
-
 LaTeX Warning: Label `fig:venusPy' multiply defined.
 
 
@@ -563,7 +524,8 @@ LaTeX Warning: Label `fig:venusFPGA' multiply defined.
 LaTeX Warning: Label `sub@fig:venusFPGA' multiply defined.
 
 ) (./chapters/Conclusions.aux) (./chapters/Future_Work.aux) (./AppendixA.aux)
-(./AppendixB.aux) (./AppendixC.aux) (./AppendixD.aux) (./AppendixE.aux))
+(./AppendixB.aux) (./AppendixC.aux) (./AppendixD.aux) (./AppendixE.aux)
+(./AppendixF.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
@@ -739,7 +701,7 @@ CHAPTER 2.
 
 
 
-] <figures/stereoVisionDiagram.jpg, id=397, 276.28218pt x 212.29312pt>
+] <figures/stereoVisionDiagram.jpg, id=421, 276.28218pt x 212.29312pt>
 File: figures/stereoVisionDiagram.jpg Graphic file (type jpg)
 
 <use figures/stereoVisionDiagram.jpg>
@@ -747,7 +709,7 @@ Package pdftex.def Info: figures/stereoVisionDiagram.jpg used on input line 20.
 
 (pdftex.def)             Requested size: 276.2815pt x 212.2926pt.
  [3] [4 <./figures/stereoVisionDiagram.jpg>] [5] [6]
-<figures/sadCorrespondingWindows.png, id=435, 440.64626pt x 183.68625pt>
+<figures/sadCorrespondingWindows.png, id=459, 440.64626pt x 183.68625pt>
 File: figures/sadCorrespondingWindows.png Graphic file (type png)
 
 <use figures/sadCorrespondingWindows.png>
@@ -759,21 +721,21 @@ Overfull \hbox (28.70639pt too wide) in paragraph at lines 54--56
  [] 
  []
 
-<figures/epipolar.png, id=443, 563.10374pt x 315.1775pt>
+<figures/epipolar.png, id=467, 563.10374pt x 315.1775pt>
 File: figures/epipolar.png Graphic file (type png)
 
 <use figures/epipolar.png>
 Package pdftex.def Info: figures/epipolar.png used on input line 65.
 (pdftex.def)             Requested size: 254.16765pt x 142.26378pt.
  [7 <./figures/sadCorrespondingWindows.png (PNG copy)>] <figures/sadGlobalGraph
-.png, id=460, 208.78pt x 193.72375pt>
+.png, id=484, 208.78pt x 193.72375pt>
 File: figures/sadGlobalGraph.png Graphic file (type png)
 
 <use figures/sadGlobalGraph.png>
 Package pdftex.def Info: figures/sadGlobalGraph.png used on input line 82.
 (pdftex.def)             Requested size: 164.773pt x 152.89818pt.
 
-<figures/sadLocalGraph.png, id=461, 204.765pt x 192.72pt>
+<figures/sadLocalGraph.png, id=485, 204.765pt x 192.72pt>
 File: figures/sadLocalGraph.png Graphic file (type png)
 
 <use figures/sadLocalGraph.png>
@@ -799,28 +761,28 @@ CHAPTER 4.
 
 
 
-] <figures/sadAlgorithm_rtl.png, id=528, 591.008pt x 176.66pt>
+] <figures/sadAlgorithm_rtl.png, id=552, 591.008pt x 176.66pt>
 File: figures/sadAlgorithm_rtl.png Graphic file (type png)
 
 <use figures/sadAlgorithm_rtl.png>
 Package pdftex.def Info: figures/sadAlgorithm_rtl.png used on input line 21.
 (pdftex.def)             Requested size: 284.52756pt x 85.04921pt.
  [15 <./figures/sadAlgorithm_rtl.png>]
-<figures/stateMachine.png, id=537, 350.911pt x 354.926pt>
+<figures/stateMachine.png, id=561, 350.911pt x 354.926pt>
 File: figures/stateMachine.png Graphic file (type png)
 
 <use figures/stateMachine.png>
 Package pdftex.def Info: figures/stateMachine.png used on input line 35.
 (pdftex.def)             Requested size: 284.52756pt x 287.78093pt.
  [16 <./figures/stateMachine.png>]
-<figures/sadAlgorithm9x9.png, id=546, 550.055pt x 124.465pt>
+<figures/sadAlgorithm9x9.png, id=571, 550.055pt x 124.465pt>
 File: figures/sadAlgorithm9x9.png Graphic file (type png)
 
 <use figures/sadAlgorithm9x9.png>
 Package pdftex.def Info: figures/sadAlgorithm9x9.png used on input line 50.
 (pdftex.def)             Requested size: 341.43306pt x 77.26056pt.
 
-<figures/sadPipeline9x9.png, id=548, 179.069pt x 136.51pt>
+<figures/sadPipeline9x9.png, id=573, 179.069pt x 136.51pt>
 File: figures/sadPipeline9x9.png Graphic file (type png)
 
 <use figures/sadPipeline9x9.png>
@@ -837,14 +799,14 @@ aster / makestuff / libs /
  []
 
 [17 <./figures/sadAlgorithm9x9.png>] [18 <./figures/sadPipeline9x9.png>]
-<figures/sadAlgorithm7x7.png, id=566, 558.888pt x 437.635pt>
+<figures/sadAlgorithm7x7.png, id=590, 558.888pt x 437.635pt>
 File: figures/sadAlgorithm7x7.png Graphic file (type png)
 
 <use figures/sadAlgorithm7x7.png>
 Package pdftex.def Info: figures/sadAlgorithm7x7.png used on input line 79.
 (pdftex.def)             Requested size: 341.43306pt x 267.35762pt.
 
-<figures/sadPipeline7x7.png, id=568, 186.296pt x 256.96pt>
+<figures/sadPipeline7x7.png, id=592, 186.296pt x 256.96pt>
 File: figures/sadPipeline7x7.png Graphic file (type png)
 
 <use figures/sadPipeline7x7.png>
@@ -861,14 +823,14 @@ aster / makestuff / libs /
  []
 
 [19 <./figures/sadAlgorithm7x7.png>] [20 <./figures/sadPipeline7x7.png>]
-<figures/minComparator_rtl.png, id=581, 428.802pt x 220.022pt>
+<figures/minComparator_rtl.png, id=605, 428.802pt x 220.022pt>
 File: figures/minComparator_rtl.png Graphic file (type png)
 
 <use figures/minComparator_rtl.png>
 Package pdftex.def Info: figures/minComparator_rtl.png used on input line 108.
 (pdftex.def)             Requested size: 284.52756pt x 145.9972pt.
  [21 <./figures/minComparator_rtl.png>]
-<figures/minComparator.png, id=589, 652.839pt x 654.445pt>
+<figures/minComparator.png, id=613, 652.839pt x 654.445pt>
 File: figures/minComparator.png Graphic file (type png)
 
 <use figures/minComparator.png>
@@ -882,7 +844,7 @@ Overfull \hbox (14.85255pt too wide) in paragraph at lines 119--121
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/sad_wrapper_rtl.png, id=591, 482.603pt x 334.048pt>
+<figures/sad_wrapper_rtl.png, id=615, 482.603pt x 334.048pt>
 File: figures/sad_wrapper_rtl.png Graphic file (type png)
 
 <use figures/sad_wrapper_rtl.png>
@@ -892,7 +854,7 @@ Package pdftex.def Info: figures/sad_wrapper_rtl.png used on input line 133.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] <figures/top_level_rtl.png, id=599, 516.329pt x 322.003pt>
+[22] <figures/top_level_rtl.png, id=623, 516.329pt x 322.003pt>
 File: figures/top_level_rtl.png Graphic file (type png)
 
 <use figures/top_level_rtl.png>
@@ -906,7 +868,7 @@ Overfull \hbox (14.85255pt too wide) in paragraph at lines 147--149
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/fpgalinkOverview.png, id=603, 562.1pt x 457.71pt>
+<figures/fpgalinkOverview.png, id=627, 562.1pt x 457.71pt>
 File: figures/fpgalinkOverview.png Graphic file (type png)
 
 <use figures/fpgalinkOverview.png>
@@ -927,188 +889,196 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./chapters/Experiments_and_Results.tex
 CHAPTER 5.
-<figures/sad_tsukuba_3x3_0-15.png, id=626, 289.08pt x 216.81pt>
+<figures/sad_tsukuba_3x3_0-15.png, id=653, 289.08pt x 216.81pt>
 File: figures/sad_tsukuba_3x3_0-15.png Graphic file (type png)
 
 <use figures/sad_tsukuba_3x3_0-15.png>
-Package pdftex.def Info: figures/sad_tsukuba_3x3_0-15.png used on input line 10
+Package pdftex.def Info: figures/sad_tsukuba_3x3_0-15.png used on input line 18
 .
 (pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
 
-<figures/sad_tsukuba_5x5_0-15.png, id=627, 289.08pt x 216.81pt>
+<figures/sad_tsukuba_5x5_0-15.png, id=654, 289.08pt x 216.81pt>
 File: figures/sad_tsukuba_5x5_0-15.png Graphic file (type png)
 
 <use figures/sad_tsukuba_5x5_0-15.png>
-Package pdftex.def Info: figures/sad_tsukuba_5x5_0-15.png used on input line 15
+Package pdftex.def Info: figures/sad_tsukuba_5x5_0-15.png used on input line 23
 .
 (pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
 
-<figures/sad_tsukuba_7x7_0-15.png, id=628, 289.08pt x 216.81pt>
+<figures/sad_tsukuba_7x7_0-15.png, id=655, 289.08pt x 216.81pt>
 File: figures/sad_tsukuba_7x7_0-15.png Graphic file (type png)
 
 <use figures/sad_tsukuba_7x7_0-15.png>
-Package pdftex.def Info: figures/sad_tsukuba_7x7_0-15.png used on input line 21
+Package pdftex.def Info: figures/sad_tsukuba_7x7_0-15.png used on input line 29
 .
 (pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
 
-<figures/sad_tsukuba_9x9_0-15.png, id=629, 289.08pt x 216.81pt>
+<figures/sad_tsukuba_9x9_0-15.png, id=656, 289.08pt x 216.81pt>
 File: figures/sad_tsukuba_9x9_0-15.png Graphic file (type png)
 
 <use figures/sad_tsukuba_9x9_0-15.png>
-Package pdftex.def Info: figures/sad_tsukuba_9x9_0-15.png used on input line 26
+Package pdftex.def Info: figures/sad_tsukuba_9x9_0-15.png used on input line 34
 .
 (pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
 
-<figures/sad_tsukuba_11x11_0-15.png, id=630, 289.08pt x 216.81pt>
+<figures/sad_tsukuba_11x11_0-15.png, id=657, 289.08pt x 216.81pt>
 File: figures/sad_tsukuba_11x11_0-15.png Graphic file (type png)
 
 <use figures/sad_tsukuba_11x11_0-15.png>
 Package pdftex.def Info: figures/sad_tsukuba_11x11_0-15.png used on input line 
-32.
+40.
 (pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
 
-<figures/sad_tsukuba_13x13_0-15.png, id=631, 289.08pt x 216.81pt>
+<figures/sad_tsukuba_13x13_0-15.png, id=658, 289.08pt x 216.81pt>
 File: figures/sad_tsukuba_13x13_0-15.png Graphic file (type png)
 
 <use figures/sad_tsukuba_13x13_0-15.png>
 Package pdftex.def Info: figures/sad_tsukuba_13x13_0-15.png used on input line 
-37.
+45.
 (pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
-
-<figures/tsukubaL.jpg, id=638, 385.44pt x 289.08pt>
-File: figures/tsukubaL.jpg Graphic file (type jpg)
- <use figures/tsukubaL.jpg>
-Package pdftex.def Info: figures/tsukubaL.jpg used on input line 84.
-(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
-
-<figures/tsukubaR.jpg, id=639, 385.44pt x 289.08pt>
-File: figures/tsukubaR.jpg Graphic file (type jpg)
- <use figures/tsukubaR.jpg>
-Package pdftex.def Info: figures/tsukubaR.jpg used on input line 89.
-(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
-
-<figures/tsukuba_9x9_python3.png, id=640, 368.37625pt x 287.0725pt>
-File: figures/tsukuba_9x9_python3.png Graphic file (type png)
-
-<use figures/tsukuba_9x9_python3.png>
-Package pdftex.def Info: figures/tsukuba_9x9_python3.png used on input line 95.
-
-(pdftex.def)             Requested size: 185.37119pt x 144.45576pt.
-
-<figures/tsukuba_9x9_fpga.png, id=641, 361.35pt x 281.05pt>
-File: figures/tsukuba_9x9_fpga.png Graphic file (type png)
-
-<use figures/tsukuba_9x9_fpga.png>
-Package pdftex.def Info: figures/tsukuba_9x9_fpga.png used on input line 100.
-(pdftex.def)             Requested size: 185.37119pt x 144.17842pt.
-
-<figures/tsukuba_7x7_python3.png, id=642, 364.36125pt x 283.0575pt>
-File: figures/tsukuba_7x7_python3.png Graphic file (type png)
-
-<use figures/tsukuba_7x7_python3.png>
-Package pdftex.def Info: figures/tsukuba_7x7_python3.png used on input line 106
-.
-(pdftex.def)             Requested size: 185.37119pt x 144.00755pt.
-
-<figures/tsukuba_7x7_fpga.png, id=643, 364.36125pt x 283.0575pt>
-File: figures/tsukuba_7x7_fpga.png Graphic file (type png)
-
-<use figures/tsukuba_7x7_fpga.png>
-Package pdftex.def Info: figures/tsukuba_7x7_fpga.png used on input line 111.
-(pdftex.def)             Requested size: 185.37119pt x 144.00755pt.
-
-<figures/venusL.png, id=645, 435.6275pt x 384.43625pt>
-File: figures/venusL.png Graphic file (type png)
-
-<use figures/venusL.png>
-Package pdftex.def Info: figures/venusL.png used on input line 128.
-(pdftex.def)             Requested size: 185.37119pt x 163.58562pt.
-
-<figures/venusR.png, id=646, 435.6275pt x 384.43625pt>
-File: figures/venusR.png Graphic file (type png)
-
-<use figures/venusR.png>
-Package pdftex.def Info: figures/venusR.png used on input line 133.
-(pdftex.def)             Requested size: 185.37119pt x 163.58562pt.
-
-<figures/venus_9x9_python3.png, id=647, 418.56375pt x 382.42876pt>
-File: figures/venus_9x9_python3.png Graphic file (type png)
-
-<use figures/venus_9x9_python3.png>
-Package pdftex.def Info: figures/venus_9x9_python3.png used on input line 139.
-(pdftex.def)             Requested size: 185.37119pt x 169.36621pt.
-
-<figures/venus_9x9_fpga.png, id=648, 411.5375pt x 376.40625pt>
-File: figures/venus_9x9_fpga.png Graphic file (type png)
-
-<use figures/venus_9x9_fpga.png>
-Package pdftex.def Info: figures/venus_9x9_fpga.png used on input line 144.
-(pdftex.def)             Requested size: 185.37119pt x 169.5478pt.
-
-<figures/venus_7x7_python3.png, id=649, 414.54875pt x 378.41376pt>
-File: figures/venus_7x7_python3.png Graphic file (type png)
-
-<use figures/venus_7x7_python3.png>
-Package pdftex.def Info: figures/venus_7x7_python3.png used on input line 150.
-(pdftex.def)             Requested size: 185.37119pt x 169.21062pt.
-
-<figures/venus_7x7_fpga.png, id=650, 414.54875pt x 378.41376pt>
-File: figures/venus_7x7_fpga.png Graphic file (type png)
-
-<use figures/venus_7x7_fpga.png>
-Package pdftex.def Info: figures/venus_7x7_fpga.png used on input line 155.
-(pdftex.def)             Requested size: 185.37119pt x 169.21062pt.
-
-<figures/conesL.png, id=652, 451.6875pt x 376.40625pt>
-File: figures/conesL.png Graphic file (type png)
-
-<use figures/conesL.png>
-Package pdftex.def Info: figures/conesL.png used on input line 172.
-(pdftex.def)             Requested size: 185.37119pt x 154.47688pt.
-
-<figures/conesR.png, id=653, 451.6875pt x 376.40625pt>
-File: figures/conesR.png Graphic file (type png)
-
-<use figures/conesR.png>
-Package pdftex.def Info: figures/conesR.png used on input line 177.
-(pdftex.def)             Requested size: 185.37119pt x 154.47688pt.
-
-<figures/cones_9x9_matlab_0-59.png, id=654, 338.76563pt x 282.30469pt>
-File: figures/cones_9x9_matlab_0-59.png Graphic file (type png)
-
-<use figures/cones_9x9_matlab_0-59.png>
-Package pdftex.def Info: figures/cones_9x9_matlab_0-59.png used on input line 1
-83.
-(pdftex.def)             Requested size: 185.37119pt x 154.47975pt.
-
-<figures/cones_9x9_python3.png, id=657, 434.62375pt x 374.39874pt>
-File: figures/cones_9x9_python3.png Graphic file (type png)
-
-<use figures/cones_9x9_python3.png>
-Package pdftex.def Info: figures/cones_9x9_python3.png used on input line 188.
-(pdftex.def)             Requested size: 185.37119pt x 159.68579pt.
-) [27
+ [27
 
 
 
 ] [28 <./figures/sad_tsukuba_3x3_0-15.png (PNG copy)> <./figures/sad_tsukuba_5x
 5_0-15.png (PNG copy)> <./figures/sad_tsukuba_7x7_0-15.png (PNG copy)> <./figur
 es/sad_tsukuba_9x9_0-15.png (PNG copy)> <./figures/sad_tsukuba_11x11_0-15.png (
-PNG copy)> <./figures/sad_tsukuba_13x13_0-15.png (PNG copy)>] [29 <./figures/ts
-ukubaL.jpg> <./figures/tsukubaR.jpg> <./figures/tsukuba_9x9_python3.png (PNG co
-py)> <./figures/tsukuba_9x9_fpga.png (PNG copy)> <./figures/tsukuba_7x7_python3
-.png (PNG copy)> <./figures/tsukuba_7x7_fpga.png (PNG copy)>] [30 <./figures/ve
-nusL.png (PNG copy)> <./figures/venusR.png (PNG copy)> <./figures/venus_9x9_pyt
-hon3.png (PNG copy)> <./figures/venus_9x9_fpga.png (PNG copy)> <./figures/venus
-_7x7_python3.png (PNG copy)> <./figures/venus_7x7_fpga.png (PNG copy)>] [31 <./
-figures/conesL.png (PNG copy)> <./figures/conesR.png (PNG copy)> <./figures/con
-es_9x9_matlab_0-59.png (PNG copy)> <./figures/cones_9x9_python3.png (PNG copy)>
-]
+PNG copy)> <./figures/sad_tsukuba_13x13_0-15.png (PNG copy)>] [29] [30] [31]
+<figures/tsukuba_disp9x9_2_sad_overflow.png, id=698, 361.35pt x 281.05pt>
+File: figures/tsukuba_disp9x9_2_sad_overflow.png Graphic file (type png)
+
+<use figures/tsukuba_disp9x9_2_sad_overflow.png>
+Package pdftex.def Info: figures/tsukuba_disp9x9_2_sad_overflow.png used on inp
+ut line 146.
+(pdftex.def)             Requested size: 227.62204pt x 177.04099pt.
+ [32]
+<figures/tsukubaL.jpg, id=708, 385.44pt x 289.08pt>
+File: figures/tsukubaL.jpg Graphic file (type jpg)
+ <use figures/tsukubaL.jpg>
+Package pdftex.def Info: figures/tsukubaL.jpg used on input line 161.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/tsukubaR.jpg, id=709, 385.44pt x 289.08pt>
+File: figures/tsukubaR.jpg Graphic file (type jpg)
+ <use figures/tsukubaR.jpg>
+Package pdftex.def Info: figures/tsukubaR.jpg used on input line 166.
+(pdftex.def)             Requested size: 185.37119pt x 139.02588pt.
+
+<figures/tsukuba_9x9_python3.png, id=710, 368.37625pt x 287.0725pt>
+File: figures/tsukuba_9x9_python3.png Graphic file (type png)
+
+<use figures/tsukuba_9x9_python3.png>
+Package pdftex.def Info: figures/tsukuba_9x9_python3.png used on input line 172
+.
+(pdftex.def)             Requested size: 185.37119pt x 144.45576pt.
+
+<figures/tsukuba_9x9_fpga.png, id=711, 361.35pt x 281.05pt>
+File: figures/tsukuba_9x9_fpga.png Graphic file (type png)
+
+<use figures/tsukuba_9x9_fpga.png>
+Package pdftex.def Info: figures/tsukuba_9x9_fpga.png used on input line 177.
+(pdftex.def)             Requested size: 185.37119pt x 144.17842pt.
+
+<figures/tsukuba_7x7_python3.png, id=712, 364.36125pt x 283.0575pt>
+File: figures/tsukuba_7x7_python3.png Graphic file (type png)
+
+<use figures/tsukuba_7x7_python3.png>
+Package pdftex.def Info: figures/tsukuba_7x7_python3.png used on input line 183
+.
+(pdftex.def)             Requested size: 185.37119pt x 144.00755pt.
+
+<figures/tsukuba_7x7_fpga.png, id=713, 364.36125pt x 283.0575pt>
+File: figures/tsukuba_7x7_fpga.png Graphic file (type png)
+
+<use figures/tsukuba_7x7_fpga.png>
+Package pdftex.def Info: figures/tsukuba_7x7_fpga.png used on input line 188.
+(pdftex.def)             Requested size: 185.37119pt x 144.00755pt.
+
+<figures/venusL.png, id=717, 435.6275pt x 384.43625pt>
+File: figures/venusL.png Graphic file (type png)
+
+<use figures/venusL.png>
+Package pdftex.def Info: figures/venusL.png used on input line 206.
+(pdftex.def)             Requested size: 185.37119pt x 163.58562pt.
+
+<figures/venusR.png, id=718, 435.6275pt x 384.43625pt>
+File: figures/venusR.png Graphic file (type png)
+
+<use figures/venusR.png>
+Package pdftex.def Info: figures/venusR.png used on input line 211.
+(pdftex.def)             Requested size: 185.37119pt x 163.58562pt.
+
+<figures/venus_9x9_python3.png, id=719, 418.56375pt x 382.42876pt>
+File: figures/venus_9x9_python3.png Graphic file (type png)
+
+<use figures/venus_9x9_python3.png>
+Package pdftex.def Info: figures/venus_9x9_python3.png used on input line 217.
+(pdftex.def)             Requested size: 185.37119pt x 169.36621pt.
+
+<figures/venus_9x9_fpga.png, id=720, 411.5375pt x 376.40625pt>
+File: figures/venus_9x9_fpga.png Graphic file (type png)
+
+<use figures/venus_9x9_fpga.png>
+Package pdftex.def Info: figures/venus_9x9_fpga.png used on input line 222.
+(pdftex.def)             Requested size: 185.37119pt x 169.5478pt.
+
+<figures/venus_7x7_python3.png, id=721, 414.54875pt x 378.41376pt>
+File: figures/venus_7x7_python3.png Graphic file (type png)
+
+<use figures/venus_7x7_python3.png>
+Package pdftex.def Info: figures/venus_7x7_python3.png used on input line 228.
+(pdftex.def)             Requested size: 185.37119pt x 169.21062pt.
+
+<figures/venus_7x7_fpga.png, id=722, 414.54875pt x 378.41376pt>
+File: figures/venus_7x7_fpga.png Graphic file (type png)
+
+<use figures/venus_7x7_fpga.png>
+Package pdftex.def Info: figures/venus_7x7_fpga.png used on input line 233.
+(pdftex.def)             Requested size: 185.37119pt x 169.21062pt.
+ [33 <./figures/tsukuba_disp9x9_2_sad_overflow.png (PNG copy)>] [34 <./figures/
+tsukubaL.jpg> <./figures/tsukubaR.jpg> <./figures/tsukuba_9x9_python3.png (PNG 
+copy)> <./figures/tsukuba_9x9_fpga.png (PNG copy)> <./figures/tsukuba_7x7_pytho
+n3.png (PNG copy)> <./figures/tsukuba_7x7_fpga.png (PNG copy)>] <figures/conesL
+.png, id=738, 451.6875pt x 376.40625pt>
+File: figures/conesL.png Graphic file (type png)
+
+<use figures/conesL.png>
+Package pdftex.def Info: figures/conesL.png used on input line 252.
+(pdftex.def)             Requested size: 185.37119pt x 154.47688pt.
+
+<figures/conesR.png, id=739, 451.6875pt x 376.40625pt>
+File: figures/conesR.png Graphic file (type png)
+
+<use figures/conesR.png>
+Package pdftex.def Info: figures/conesR.png used on input line 257.
+(pdftex.def)             Requested size: 185.37119pt x 154.47688pt.
+
+<figures/cones_9x9_matlab_0-59.png, id=740, 338.76563pt x 282.30469pt>
+File: figures/cones_9x9_matlab_0-59.png Graphic file (type png)
+
+<use figures/cones_9x9_matlab_0-59.png>
+Package pdftex.def Info: figures/cones_9x9_matlab_0-59.png used on input line 2
+63.
+(pdftex.def)             Requested size: 185.37119pt x 154.47975pt.
+
+<figures/cones_9x9_python3.png, id=743, 434.62375pt x 374.39874pt>
+File: figures/cones_9x9_python3.png Graphic file (type png)
+
+<use figures/cones_9x9_python3.png>
+Package pdftex.def Info: figures/cones_9x9_python3.png used on input line 268.
+(pdftex.def)             Requested size: 185.37119pt x 159.68579pt.
+) [35] [36 <./figures/venusL.png (PNG copy)> <./figures/venusR.png (PNG copy)> 
+<./figures/venus_9x9_python3.png (PNG copy)> <./figures/venus_9x9_fpga.png (PNG
+ copy)> <./figures/venus_7x7_python3.png (PNG copy)> <./figures/venus_7x7_fpga.
+png (PNG copy)>] [37 <./figures/conesL.png (PNG copy)> <./figures/conesR.png (P
+NG copy)> <./figures/cones_9x9_matlab_0-59.png (PNG copy)> <./figures/cones_9x9
+_python3.png (PNG copy)>]
 \openout2 = `chapters/Conclusions.aux'.
 
- (./chapters/Conclusions.tex
+
+(./chapters/Conclusions.tex
 CHAPTER 6.
-) [32
+) [38
 
 
 
@@ -1117,7 +1087,7 @@ CHAPTER 6.
 
  (./chapters/Future_Work.tex
 CHAPTER 7.
-) [33
+) [39
 
 
 
@@ -1187,7 +1157,7 @@ Underfull \hbox (badness 1515) in paragraph at lines 41--45
 ages . inf . ed . ac . uk / rbf / CVonline /
  []
 
-[34
+[40
 
 
 
@@ -1197,13 +1167,13 @@ Overfull \hbox (109.27783pt too wide) in paragraph at lines 47--53
 d-[]stereo-[]matching-[]systems/$[][]\OT1/cmr/m/n/12 ,
  []
 
-[35] [36]
+[41] [42]
 Underfull \hbox (badness 2134) in paragraph at lines 140--143
 []\OT1/cmr/m/n/12 Daniel Scharstein and Richard Szeliski.  Stereo.  [][]$\OT1/c
 mtt/m/n/12 http : / / vision .
  []
 
-) [37]
+) [43]
 \openout2 = `AppendixA.aux'.
 
  (./AppendixA.tex
@@ -1218,7 +1188,7 @@ File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 17.
-) [38
+) [44
 
 
 ]
@@ -1229,7 +1199,7 @@ APPENDIX B.
 Package color Info: Redefining color mygreen on input line 4.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
-) [39
+) [45
 
 
 
@@ -1239,7 +1209,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  (./AppendixC.tex
 APPENDIX C.
 Package color Info: Redefining color mygreen on input line 4.
-) [40
+) [46
 
 
 
@@ -1251,7 +1221,7 @@ APPENDIX D.
 Package color Info: Redefining color mygreen on input line 4.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
-)) [41
+)) [47
 
 
 
@@ -1262,75 +1232,104 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (./AppendixE.tex
 APPENDIX E.
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
 []|\OT1/cmr/bx/n/12 Window
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
 []|\OT1/cmr/bx/n/12 Disparity
  []
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 17--17
+Underfull \hbox (badness 2318) in paragraph at lines 11--11
 []|\OT1/cmr/bx/n/12 # of Slice
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--17
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
 \OT1/cmr/bx/n/12 Reg-is-ters
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 []|\OT1/cmr/bx/n/12 # of Slice
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
 \OT1/cmr/bx/n/12 LUTs used
  []
 
 
-Underfull \hbox (badness 6910) in paragraph at lines 19--19
+Underfull \hbox (badness 6910) in paragraph at lines 13--13
 \OT1/cmr/bx/n/12 pied Slices
  []
 
 
-Underfull \hbox (badness 4792) in paragraph at lines 20--22
+Underfull \hbox (badness 4792) in paragraph at lines 14--16
 []|\OT1/cmr/bx/n/12 # of MUX-
  []
 
-) [42
+) [48
 
 
 
-] [43]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
- (./thesis.aux (./chapters/Introduction.aux)
-(./chapters/Background.aux) (./chapters/Related_Works.aux)
-(./chapters/Implementation.aux) (./chapters/Experiments_and_Results.aux)
-(./chapters/Conclusions.aux) (./chapters/Future_Work.aux) (./AppendixA.aux)
-(./AppendixB.aux) (./AppendixC.aux) (./AppendixD.aux) (./AppendixE.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
+] [49]
+\openout2 = `AppendixF.aux'.
+
+ (./AppendixF.tex
+APPENDIX F.
+<figures/testbench_simulation_9x9.png, id=920, 1264.725pt x 544.0325pt>
+File: figures/testbench_simulation_9x9.png Graphic file (type png)
+
+<use figures/testbench_simulation_9x9.png>
+Package pdftex.def Info: figures/testbench_simulation_9x9.png used on input lin
+e 6.
+(pdftex.def)             Requested size: 661.48183pt x 284.52756pt.
+
+Overfull \hbox (29.11932pt too wide) in paragraph at lines 6--8
+ [] 
+ []
+
+<figures/testbench_simulation_7x7.png, id=921, 866.23625pt x 583.17876pt>
+File: figures/testbench_simulation_7x7.png Graphic file (type png)
+
+<use figures/testbench_simulation_7x7.png>
+Package pdftex.def Info: figures/testbench_simulation_7x7.png used on input lin
+e 16.
+(pdftex.def)             Requested size: 422.63544pt x 284.52756pt.
+) [50
+
+
+
+] [51 <./figures/testbench_simulation_9x9.png (PNG copy)>] [52 <./figures/testb
+ench_simulation_7x7.png (PNG copy)>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
+ (./thesis.aux (./chapters/Introduction.aux) (./chapters/Background.aux)
+(./chapters/Related_Works.aux) (./chapters/Implementation.aux)
+(./chapters/Experiments_and_Results.aux) (./chapters/Conclusions.aux)
+(./chapters/Future_Work.aux) (./AppendixA.aux) (./AppendixB.aux)
+(./AppendixC.aux) (./AppendixD.aux) (./AppendixE.aux) (./AppendixF.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1CA4531FEB35B8BFD0F432CCC2E6CB54;2592.
+(rerunfilecheck)             Checksum: 6D32F5E8C8A1CE70CD8EAEE34CE365CC;2653.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 208.
  ) 
 Here is how much of TeX's memory you used:
- 11548 strings out of 494985
- 173749 string characters out of 6180357
- 302853 words of memory out of 5000000
- 14246 multiletter control sequences out of 15000+600000
+ 11610 strings out of 494985
+ 174988 string characters out of 6180357
+ 306133 words of memory out of 5000000
+ 14283 multiletter control sequences out of 15000+600000
  11405 words of font info for 45 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,12n,42p,1194b,1368s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,42p,1231b,1368s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -1343,10 +1342,10 @@ msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
 fb>
-Output written on thesis.pdf (53 pages, 1818290 bytes).
+Output written on thesis.pdf (62 pages, 2065162 bytes).
 PDF statistics:
- 936 PDF objects out of 1000 (max. 8388607)
- 805 compressed objects within 9 object streams
- 227 named destinations out of 1000 (max. 500000)
- 511 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1030 PDF objects out of 1200 (max. 8388607)
+ 887 compressed objects within 9 object streams
+ 242 named destinations out of 1000 (max. 500000)
+ 534 words of extra memory for PDF output out of 10000 (max. 10000000)
 

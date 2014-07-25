@@ -45,7 +45,7 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
     PORT(
          clk_I : IN  std_logic;
          
-			h2fData_I : IN  std_logic_vector(7 downto 0);
+			--h2fData_I : IN  std_logic_vector(7 downto 0);
          templ_I    : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
 			search_I   : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
 			templ_O : OUT  std_logic_vector(7 downto 0);
@@ -67,7 +67,7 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
     
    --Inputs
    signal clk_I : std_logic := '0';
-   signal h2fData_I : std_logic_vector(7 downto 0) := (others => '0');
+   --signal h2fData_I : std_logic_vector(7 downto 0) := (others => '0');
    signal chanAddr_I : std_logic_vector(6 downto 0) := (others => '0');
    signal f2hReady_I : std_logic := '0';
    signal h2fValid_I : std_logic := '0';
@@ -128,7 +128,7 @@ BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: sad_wrapper PORT MAP (
           clk_I => clk_I,
-          h2fData_I => h2fData_I,
+          --h2fData_I => h2fData_I,
 			 templ_I => templ_I,
 	       search_I => search_I,
           templ_O => templ_O,
@@ -247,10 +247,58 @@ BEGIN
 --		END LOOP;
 		
 		wait for clk_I_period*90;
+		ndx := 28;
 		f2hReady_I <= '1';
 		chanAddr_I <= "0000011";
 		wait for clk_I_period*4;
 		f2hReady_I <= '0';
+		
+		
+			-- Next template row
+--			templ_I    <= template_next(ndx);
+--			search_I   <= search_next(ndx);
+			h2fValid_I <= '1';
+			write_t_I  <= '1';
+			write_s_I  <= '1';
+			sw_I       <= x"00";
+			--wait for clk_I_period;
+			
+--			ndx := ndx + 1;
+--			offset := 27 * (1+row);
+--			wait for clk_I_period;
+			
+			WHILE (ndx < 55) LOOP --offset) LOOP
+				templ_I  <= template_next(ndx);
+				search_I <= search_next(ndx);
+				wait for clk_I_period;
+				ndx := ndx + 1;
+			END LOOP;
+			
+			templ_I <= template_next(ndx);
+			search_I <= search_next(ndx);
+			
+			wait for clk_I_period;
+			h2fValid_I <= '0';
+			write_t_I <= '0';
+			write_s_I <= '0';
+			
+--			ndx := ndx + 1;
+--			row := row + 1;
+--		END LOOP;
+		
+		wait for clk_I_period*90;
+		f2hReady_I <= '1';
+		chanAddr_I <= "0000011";
+		wait for clk_I_period*4;
+		f2hReady_I <= '0';
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		wait for clk_I_period*2;
       wait;
