@@ -1,5 +1,5 @@
 \chapter{Implementation}
-\label{impl}
+\label{sec:impl}
 
 This chapter presents the implementation and architecture of this stereo vision system.
 
@@ -28,7 +28,7 @@ There is a slight variation between the standard SAD algorithm and how it is imp
 
 \subsubsection{State Diagram}
 
-Inside the sadAlgorithm entity from Fig.~\ref{fig:sadAlg_rtl}, the state machine from Figure~\ref{fig:stateMachine} controls the SAD algorithm. The state machine begins at SO and initializes all the values used in it to 0. It then proceeds to S1 where the state machine remains on standby until data\_I becomes '1'. In S2, the counter begins from 0, the subtraction between respective pixel values begins, and on the next clock cycle, the state will be S3. While in S3, the counter is incremented by 1 every clock cycle. S3 is where the SAD algorithm is performed. After the counter is equal to windowSize (7 for the 7x7 and 81 for the 9x9, see the sections below for details), the SAD calculation is complete. The state machine sets data\_O to 1 to notify the SAD wrapper that the calculation is complete and it then moves to S1 and waits for new input.
+Inside the sadAlgorithm entity from Fig.~\ref{fig:sadAlg_rtl}, the state machine from Figure~\ref{fig:stateMachine} controls the SAD algorithm. The state machine begins at SO and initializes all the values used in it to 0. It then proceeds to S1 where the state machine remains on standby until data\_I becomes `1'. In S2, the counter begins from 0, the subtraction between respective pixel values begins, and on the next clock cycle, the state will be S3. While in S3, the counter is incremented by 1 every clock cycle. S3 is where the SAD algorithm is performed. After the counter is equal to windowSize (7 for the 7x7 and 81 for the 9x9, see the sections below for details), the SAD calculation is complete. The state machine sets data\_O to 1 to notify the SAD wrapper that the calculation is complete and it then moves to S1 and waits for new input.
 
 \begin{figure}[h]
 	\begin{center}
@@ -43,7 +43,7 @@ Inside the sadAlgorithm entity from Fig.~\ref{fig:sadAlg_rtl}, the state machine
 \subsubsection{9x9 Window}
 \label{sec:9x9window}
 
-The 9x9 window implementation operated with 4 pixels being processed in parallel to get their disparity values. Each pixel has 16 SAD operations occurring in parallel. With 64 SAD operations happening in parallel, each SAD calculation needed to process their windows with a higher degree of serialization in order to reduce space to fit on the Atlys board ~\cite{atlysBoard}. Figure~\ref{fig:sadAlg9x9} shows a simplified version of this process. Each clock cycle, for 81 cycles, the difference between corresponding pixels is calculated. Beginning one clock cycle after the differences begin to be calculated, so there is a value, sub, to use. The sum\_out is added to itself and sub. This process also occurs 81 times, one addition each clock cycle. Every clock cycle, a new \"absolute\" difference value is added to the sum\_out. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
+The 9x9 window implementation operated with 4 pixels being processed in parallel to get their disparity values. Each pixel has 16 SAD operations occurring in parallel. With 64 SAD operations happening in parallel, each SAD calculation needed to process their windows with a higher degree of serialization in order to reduce space to fit on the Atlys board~\cite{atlysBoard}. Figure~\ref{fig:sadAlg9x9} shows a simplified version of this process. Each clock cycle, for 81 cycles, the difference between corresponding pixels is calculated. Beginning one clock cycle after the differences begin to be calculated, so there is a value, sub, to use. The sum\_out is added to itself and sub. This process also occurs 81 times, one addition each clock cycle. Every clock cycle, a new "absolute" difference value is added to the sum\_out. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
 
 \begin{figure}[h]
 	\begin{center}
@@ -70,7 +70,7 @@ The code for the 9x9 window implementation can be found on github:
 
 \subsubsection{7x7 Window}
 
-The 7x7 window implementation operated with 2 pixels being processed in parallel to get their disparity values. Each pixel has 16 SAD operations occurring in parallel. With only 32 SAD operations happening in parallel, as opposed to 64 that were done in parallel in Section~\ref{sec:9x9window} and with a window size that has used 32 pixels for each window in each SAD calculation, the process could utilize a higher degree of parallelization, which takes up more space on the board than the more serial version from Sec.~\ref{sec:9x9window}. Figure~\ref{fig:sadAlg7x7} shows a simplified version of this process. Each clock cycle, for 7 cycles, the difference between corresponding pixels is calculated. Beginning one clock cycle after the differences begin to be calculated, so there is a value, called sub, to use, the sum\_out is incremented by sub. This process also occurs 7 times, one addition each clock cycle. Every clock cycle, a new \"absolute\" difference value is added to the sum\_out. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
+The 7x7 window implementation operated with 2 pixels being processed in parallel to get their disparity values. Each pixel has 16 SAD operations occurring in parallel. With only 32 SAD operations happening in parallel, as opposed to 64 that were done in parallel in Section~\ref{sec:9x9window} and with a window size that has used 32 pixels for each window in each SAD calculation, the process could utilize a higher degree of parallelization, which takes up more space on the board than the more serial version from Sec.~\ref{sec:9x9window}. Figure~\ref{fig:sadAlg7x7} shows a simplified version of this process. Each clock cycle, for 7 cycles, the difference between corresponding pixels is calculated. Beginning one clock cycle after the differences begin to be calculated, so there is a value, called sub, to use, the sum\_out is incremented by sub. This process also occurs 7 times, one addition each clock cycle. Every clock cycle, a new "absolute" difference value is added to the sum\_out. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
 
 The main difference between this implementation and the 9x9 window implementation from Sec.~\ref{sec:9x9window} is that the difference between corresponding pixels is parallelized to calculate 7 of them at once. The blue dotted square in Fig.~\ref{fig:sadAlg7x7} represents all 7 of the subtraction calculations occur 7 times in the SAD calculation. Instead of requiring 49 clock cycles to take all the differences, it now only takes 7 clock cycles. Accordingly, each clock cycles, all 7 differences, in the sub array, are added to sum\_out.
 
@@ -101,7 +101,7 @@ The code for the 7x7 window implementation can be found on github:
 
 The purpose of the minimum comparator is to find the lowest value of two input values and output the lowest value. The top level implementation of the minimum comparator is shown in Figure~\ref{fig:minComp_rtl}. The process is synchronous, noted by the clock clk\_I. The index, pos0\_I and pos1\_I, of the SAD values, sad0\_I and sad1\_I, respectively, ranges from 0 to 15, which is the disparity range. 
 
-Appendix (APPENDIX) shows the code for the minimum comparator. If sad1 is less than sad0, then sad1 and its index, pos1, are returned, otherwise sad0 and pos0 are returned. Using a less than comparison takes up less hardware resources (CITE). This is useful because 15 minimum comparators (see Figure~\ref{fig:minComp})are used for each pixel that is processed in parallel. So 30 minimum comparators are used for the 7x7 window implementation and 60 minimum comparators are used for the 9x9 window implementation. Constructing the minimum comparator in this way also accounts for cases where two SAD values are equal to each other. The SAD value with the lower index is always assigned to the sad0\_I input and the higher indexed SAD values comes in through the sad1\_I input. Therefore, if two values are equal, the SAD value with a lower index, and a lower disparity, will be returned.
+Appendix~\ref{sec:appdxC} shows the code for the minimum comparator. If sad1 is less than sad0, then sad1 and its index, pos1, are returned, otherwise sad0 and pos0 are returned. Using a less than comparison takes up less hardware resources (CITE). This is useful because 15 minimum comparators (see Figure~\ref{fig:minComp})are used for each pixel that is processed in parallel. So 30 minimum comparators are used for the 7x7 window implementation and 60 minimum comparators are used for the 9x9 window implementation. Constructing the minimum comparator in this way also accounts for cases where two SAD values are equal to each other. The SAD value with the lower index is always assigned to the sad0\_I input and the higher indexed SAD values comes in through the sad1\_I input. Therefore, if two values are equal, the SAD value with a lower index, and a lower disparity, will be returned.
 
 \begin{figure}[h]
 	\begin{center}
@@ -157,13 +157,13 @@ The implementation of the SAD wrapper and its internal entities has been designe
 \subsection{FPGALink}
 \label{sec:fpgalink}
 
-FPGALink ~\cite{fpgalink} was used to facilitate communications between the computer (host) and the FPGA (Atlys board) over USB. An overview of how the FPGALink works between the host and FPGA is shown in Figure ~\ref{fig:fpgalink}. The FPGALink has two possible communication modules to choose from, FX2 and EPP. According to ~\cite{fpgalink}, FX2 has an observed throughput around 26MB/s, while EEP has a observed throughput of around 1.26MB/s. FX2 was used due to its higher throughput.
+FPGALink~\cite{fpgalink} was used to facilitate communications between the computer (host) and the FPGA (Atlys board) over USB. An overview of how the FPGALink works between the host and FPGA is shown in Figure~\ref{fig:fpgalink}. The FPGALink has two possible communication modules to choose from, FX2 and EPP. According to~\cite{fpgalink}, FX2 has an observed throughput around 26 MB/s, while EEP has a observed throughput of around 1.26 MB/s. FX2 was used due to its higher throughput.
 
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=150mm]{figures/fpgalinkOverview.png}
 		\captionfonts
-		\caption{Overview of FPGALink communications between host computer and FPGA ~\cite{fpgalink}.}
+		\caption{Overview of FPGALink communications between host computer and FPGA~\cite{fpgalink}.}
 		\label{fig:fpgalink}
 	\end{center}
 \end{figure}

@@ -1,2 +1,9 @@
 \chapter{Future Work}
-In the Future!
+
+The next steps are to get a fully functional stereo vision implementation on the Atlys board that uses the SAD module presented in this paper. The Atlys board has a 1 GB DDR RAM chip, which could be used to buffer the images from the VmodCAM stereo camera module~\cite{atlysBoard}. The left and right images from the VmodCam could be buffered to the DDR RAM and then sections of the buffered images could be sent to the SAD module to obtain the disparity values. With the correct timing and buffering, both or one of the images and the disparity image could then be sent off board to a computer on a robot to use the image and depth data to navigate and interact with the world.
+
+After a fully functional implementation on the Atlys board is working, a custom FPGA board could be designed and manufactured. The custom board only needs the functionalities of the Atlys board in order to: communicate with the computer, obtain images from the stereo cameras, buffer the images on the DDR RAM, and process everything else on the FPGA IC. A custom board without the extra peripherals on board has the potential to further reduce the cost of a stereo vision FPGA board. Also, the stereo cameras could be built into the board to reduce the cost of hardware needed for connections.
+
+Furthermore, replacing the FPGA IC used on the Atlys board with one that has a clock frequency higher than 100 MHz or more space while keeping the cost of the IC around the same as the Atlys board FPGA IC is way to speed up the SAD calculation time and increase the frame rate.
+
+When all is said and done, having robots readily able to have better and less expensive "eyes" to perceive the world around them in greater depth will be pretty neat.

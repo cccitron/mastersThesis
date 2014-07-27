@@ -69,27 +69,28 @@ The h2fvalid\_i value near the top of the figure is high when image data is bein
 \subsection{9x9 Window Implementation Runtime}
 \label{sec:testbench9x9}
 
-Based on the testbench simulation in Fig.~\ref{fig:tb_9x9} the theoretical frames per second can be inferred for different image sizes. The simulation assumes the 100MHz clock on the FPGA is used, and thus each clock cycle is 10 ns long.
+Based on the testbench simulation in Fig.~\ref{fig:tb_9x9} the theoretical frames per second can be inferred for different image sizes. The simulation assumes the 100 MHz clock on the FPGA is used, and thus each clock cycle is 10 ns long.
 
 According to the testbench simulation, for a 9x9 window with 4 pixels being processed in parallel, the first section includes the initial image data given to the SAD wrapper up to the when the the corresponding disparity values come out, takes 3.35 us. After that, a constant cycle is produced that has the SAD wrapper take in the next row and produces the next disparity values, which takes 1.22 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 617x472, which is 291,224 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for pixel. Since 4 pixels are processed in parallel, 291,224 pixels is divided by 4 pixels/iteration, giving 72,806 iterations. So, 72,806 iterations times 1.22 us/iteration plus 3.35 us (initial section, hence minus one on number of iterations) gives 88,826.67 us or approximately 0.0888 seconds per frame. Therefore, an image size of 640x480 can be processed at around 11.26 frames per second. Table~\ref{table:tb_9x9} shows the theoretical frame rate for the image sizes used in this chapter.
 
 \begin{table}
 	\begin{center}
-		\begin{tabular}{|c|c|c|c|}
+		\begin{tabular}{|c|c|c|c|c|}
 			\hline 
+				\rowstyle{\bfseries} Image & 
 				\rowstyle{\bfseries} Image Width & 
 				\rowstyle{\bfseries} Image Height & 
-				\rowstyle{\bfseries} Seconds/frame & 
-				\rowstyle{\bfseries} Frames/second
+				\rowstyle{\bfseries} Sec/frame & 
+				\rowstyle{\bfseries} Frames/sec
 			\tabularnewline
 			\hline 
-			640 & 480 & 0.0888 & 11.26
+			VmodCAM & 640 & 480 & 0.0888 & 11.26
 			\tabularnewline
 			\hline 
-			384 & 288 & 0.0308 & 32.43
+			Tsukuba & 384 & 288 & 0.0308 & 32.43
 			\tabularnewline
 			\hline 
-			434 & 383 & 0.0470 & 21.27
+			Venus & 434 & 383 & 0.0470 & 21.27
 			\tabularnewline
 			\hline 			
 			\end{tabular}
@@ -102,25 +103,26 @@ According to the testbench simulation, for a 9x9 window with 4 pixels being proc
 \subsection{7x7 Window Implementation Runtime}
 \label{sec:testbench7x7}
 
-Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the theoretical frames per second (fps) can be inferred for different image sizes. The simulation assumes the 100MHz clock on the FPGA is used, and thus each clock cycle is 10 ns long.
+Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the theoretical frames per second (fps) can be inferred for different image sizes. The simulation assumes the 100 MHz clock on the FPGA is used, and thus each clock cycle is 10 ns long.
 
 According to the testbench simulation, for a 7x7 window with 2 pixels being processed in parallel, the first section includes the initial image data given to the SAD wrapper up to the when the the corresponding disparity values come out, takes 1.78 us. After that, a constant cycle is produced that has the SAD wrapper take in the next row and produces the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 619x474, which is 293,406 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for pixel. Since 2 pixels are processed in parallel, 293,406 pixels is divided by 2 pixels/iteration, giving 146,703 iterations. So, 146,703 iterations times 0.42 us/iteration plus 1.78 us (initial section, hence minus one on number of iterations) gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the theoretical frame rate for the image sizes used in this chapter.
 
 
 \begin{table}
 	\begin{center}
-		\begin{tabular}{|c|c|c|c|}
-			\hline 
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+				\rowstyle{\bfseries} Image & 
 				\rowstyle{\bfseries} Image Width & 
 				\rowstyle{\bfseries} Image Height & 
-				\rowstyle{\bfseries} Seconds/frame & 
-				\rowstyle{\bfseries} Frames/second
+				\rowstyle{\bfseries} Sec/frame & 
+				\rowstyle{\bfseries} Frames/sec
 			\\ \hline 
-			640 & 480 & 0.0616 & 16.23
+			VmodCAM & 640 & 480 & 0.0616 & 16.23
 			\\ \hline 
-			384 & 288 & 0.0215 & 46.51
+			Tsukuba & 384 & 288 & 0.0215 & 46.51
 			\\ \hline 
-			434 & 383 & 0.0327 & 30.58
+			Venus & 434 & 383 & 0.0327 & 30.58
 			\\ \hline 
 		\end{tabular}	
 		\captionfonts
@@ -132,7 +134,7 @@ According to the testbench simulation, for a 7x7 window with 2 pixels being proc
 \section{Test Image Pairs}
 \label{sec:runtime}
 
-In this section, FPGA disparity maps are compared to disparity maps created using Python. The SAD algorithm implementation in Python is show in Appendix~\ref{sec:appdxD}. The Python SAD version is performed completely in serial, so 1 pixel at a time. It is run on a desktop that (COMPUTER SPECS) running Ubuntu 64-bit.
+In this section, FPGA disparity maps are compared to disparity maps created using Python. The SAD algorithm implementation in Python is show in Appendix~\ref{sec:appdxD}. The Python SAD version is performed completely in serial, so 1 pixel at a time. It is run on a desktop that has a i7 CPU 950 at 3.07 GHz, 16 GB of RAM, and runs Ubuntu 64-bit. The images the Python version produced are also used to compare runtime of the algorithm.
 
 \subsection{Data Overflows}
 \label{sec:overflow}
@@ -153,7 +155,9 @@ Since most of the values were below 4,096, a measure was put in place in order t
 \subsection{Tsukuba}
 \label{sec:tsukuba}
 
-In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pair are shown. Figure~\ref{fig:tsukubaDispMap} shows how the 7x7 window implementation is slightly noisier than the 9x9 window implementation. As discussed in Section~\ref{sec:overflow}, the only noticeable difference between the Python implementation and the FPGA implementation is at the top of the disparity maps. This is caused by the two images not having similar enough corresponding regions, which causes SAD values to be greater than normal.
+In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pair are shown. Figure~\ref{fig:tsukubaDispMap} shows how the 7x7 window implementation is slightly noisier than the 9x9 window implementation. As discussed in Section~\ref{sec:overflow}, the only noticeable difference between the Python implementation and the FPGA implementation is at the top of the disparity maps. This is caused by the two images not having similar enough corresponding regions, which causes SAD values to be greater than normal. 
+
+For Tsukuba, the FPGA version should have a theoretical runtime of 32.43 or 46.51 frames per second for the 9x9 and 7x7 window implementations, respectively, from Table~\ref{table:tb_9x9} and Table~\ref{table:tb_7x7}. The serial Python implementation took 7.81 minutes for a 9x9 window with a disparity range of 16. The 7x7 window implementation with a disparity range of 16 in Python took 4.22 minutes to complete.
 
 \begin{figure}
 \begin{center}
@@ -170,7 +174,7 @@ In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pa
 	\\
 	\begin{subfigure}{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/tsukuba_9x9_python3.png}
-		\caption{Python3 9x9 Disparity Map}
+		\caption{Python 9x9 Disparity Map}
 		\label{fig:tsukubaPy}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
@@ -181,7 +185,7 @@ In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pa
 	\\
 	\begin{subfigure}{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/tsukuba_7x7_python3.png}
-		\caption{Python3 7x7 Disparity Map}
+		\caption{Python 7x7 Disparity Map}
 		\label{fig:tsukubaPy}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
@@ -200,6 +204,8 @@ In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pa
 
 In Figure~\ref{fig:venusL} and Figure~\ref{fig:venusR}, the Venus image pair are shown. In the image pair, the newspaper articles are flat and slanted, relative to the cameras. This gradual slope, also present in the background, can be difficult for the SAD algorithm to deal with, however, the algorithm is still able to give a fairly accurate representation of the depth in the image. It also causes the gradient pattern shown in the disparity maps. The 7x7 window depth maps have more noise than the 9x9 window depth maps.
 
+For Venus, the FPGA version should have a theoretical runtime of 21.27 or 30.58 frames per second for the 9x9 and 7x7 window implementations, respectively, from Table~\ref{table:tb_9x9} and Table~\ref{table:tb_7x7}. The serial Python implementation took 8.15 minutes for a 9x9 window with a disparity range of 16. The 7x7 window implementation with a disparity range of 16 in Python took 5.00 minutes to complete.
+
 \begin{figure}
 \begin{center}
 	\begin{subfigure}{0.45\textwidth}
@@ -215,7 +221,7 @@ In Figure~\ref{fig:venusL} and Figure~\ref{fig:venusR}, the Venus image pair are
 	\\
 	\begin{subfigure}{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/venus_9x9_python3.png}
-		\caption{Python3 9x9 Disparity Map}
+		\caption{Python 9x9 Disparity Map}
 		\label{fig:venusPy}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
@@ -226,7 +232,7 @@ In Figure~\ref{fig:venusL} and Figure~\ref{fig:venusR}, the Venus image pair are
 	\\
 	\begin{subfigure}{0.45\textwidth}
 		\includegraphics[width=\textwidth]{figures/venus_7x7_python3.png}
-		\caption{Python3 7x7 Disparity Map}
+		\caption{Python 7x7 Disparity Map}
 		\label{fig:venusPy}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}

@@ -1,9 +1,10 @@
+\select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Simplified binocular stereo vision system \nobreakspace {}\cite {stereoVisionDiagram}.\relax }}{4}{figure.caption.4}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Searching for corresponding points between the two images \nobreakspace {}\cite {sadParallel}.\relax }}{7}{figure.caption.5}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces The epipolar line that point X is on for both images \nobreakspace {}\cite {epipolar}.\relax }}{8}{figure.caption.6}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces The SAD between a reference window and several candidate windows \nobreakspace {}\cite {sadParallel}.\relax }}{9}{figure.caption.7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Simplified binocular stereo vision system~\cite {stereoVisionDiagram}.\relax }}{4}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Searching for corresponding points between the two images~\cite {sadParallel}.\relax }}{7}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces The epipolar line that point X is on for both images~\cite {epipolar}.\relax }}{8}{figure.caption.6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces The SAD between a reference window and several candidate windows~\cite {sadParallel}.\relax }}{9}{figure.caption.7}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Template (reference) window and search (candidate) window.\relax }}{10}{figure.caption.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -17,20 +18,21 @@
 \contentsline {figure}{\numberline {4.8}{\ignorespaces The minimum comparator tree designed to quickly find the minimum value and corresponding index out of the 16 SAD values that are calculated for one pixel.\relax }}{24}{figure.caption.16}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces The SAD wrapper that encompasses the SAD algorithm and minimum comparator. It interacts with the top level.\relax }}{25}{figure.caption.17}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces The overview of the structure used for implementing the 9x9 window. The 7x7 window has two less SAD and minComp each.\relax }}{25}{figure.caption.18}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Overview of FPGALink communications between host computer and FPGA \nobreakspace {}\cite {fpgalink}.\relax }}{26}{figure.caption.19}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Overview of FPGALink communications between host computer and FPGA~\cite {fpgalink}.\relax }}{26}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Window size comparisons for disparity maps\nobreakspace {}\cite {matlab} of the Tskukuba image pair\nobreakspace {}\cite {middlebury}.\relax }}{28}{figure.caption.20}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Data overflow for Tskukuba image pair \nobreakspace {}\cite {middlebury}.\relax }}{33}{figure.caption.21}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Disparity map comparison of the Tskukuba image pair \nobreakspace {}\cite {middlebury}.\relax }}{34}{figure.caption.22}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Disparity map comparison of the Venus image pair \nobreakspace {}\cite {middlebury}.\relax }}{36}{figure.caption.23}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Disparity map comparison of the Cones image pair \nobreakspace {}\cite {middlebury}.\relax }}{37}{figure.caption.24}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Window size comparisons for disparity maps~\cite {matlab} of the Tskukuba image pair~\cite {middlebury}.\relax }}{28}{figure.caption.20}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Data overflow for Tskukuba image pair ~\cite {middlebury}.\relax }}{33}{figure.caption.21}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Disparity map comparison of the Tskukuba image pair ~\cite {middlebury}.\relax }}{34}{figure.caption.22}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Disparity map comparison of the Venus image pair ~\cite {middlebury}.\relax }}{36}{figure.caption.23}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Disparity map comparison of the Cones image pair ~\cite {middlebury}.\relax }}{37}{figure.caption.24}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Frame rate comparison of different image sizes.\relax }}{39}{figure.caption.25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {F.1}{\ignorespaces Testbench simulation for the 9x9 window implementation.\relax }}{51}{figure.caption.27}
-\contentsline {figure}{\numberline {F.2}{\ignorespaces Testbench simulation for the 7x7 window implementation.\relax }}{52}{figure.caption.28}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {F.1}{\ignorespaces Testbench simulation for the 9x9 window implementation.\relax }}{53}{figure.caption.28}
+\contentsline {figure}{\numberline {F.2}{\ignorespaces Testbench simulation for the 7x7 window implementation.\relax }}{54}{figure.caption.29}
