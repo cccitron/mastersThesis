@@ -1,11 +1,11 @@
 \chapter{Implementation}
 \label{sec:impl}
 
-This chapter presents the implementation and architecture of this stereo vision system.
+This chapter presents the implementation and architecture of stereo vision system presented in this paper.
 
 \section{Architecture Overview}
 
-The stereo vision system module in this paper is composed of three main parts: SADs, minimum comparators, and a wrapper around the previous two that takes in image data and outputs disparity values.
+The stereo vision module in this paper is composed of three main parts: SAD, minimum comparators, and a wrapper around the previous two that takes in image data and outputs disparity values.
 
 The code for the following sections is located on github under:
 \\\path{https://github.com/cccitron/mastersThesis}.
@@ -25,7 +25,6 @@ There is a slight variation between the standard SAD algorithm and how it is imp
 	\end{center}
 \end{figure}
 
-
 \subsubsection{State Diagram}
 
 Inside the sadAlgorithm entity from Fig.~\ref{fig:sadAlg_rtl}, the state machine from Figure~\ref{fig:stateMachine} controls the SAD algorithm. The state machine begins at SO and initializes all the values used in it to 0. It then proceeds to S1 where the state machine remains on standby until data\_I becomes `1'. In S2, the counter begins from 0, the subtraction between respective pixel values begins, and on the next clock cycle, the state will be S3. While in S3, the counter is incremented by 1 every clock cycle. S3 is where the SAD algorithm is performed. After the counter is equal to windowSize (7 for the 7x7 and 81 for the 9x9, see the sections below for details), the SAD calculation is complete. The state machine sets data\_O to 1 to notify the SAD wrapper that the calculation is complete and it then moves to S1 and waits for new input.
@@ -38,7 +37,6 @@ Inside the sadAlgorithm entity from Fig.~\ref{fig:sadAlg_rtl}, the state machine
 		\label{fig:stateMachine}
 	\end{center}
 \end{figure}
-
 
 \subsubsection{9x9 Window}
 \label{sec:9x9window}
@@ -123,7 +121,6 @@ When multiple minimum comparators are put together to create a tree, as shown in
 	\end{center}
 \end{figure}
 
-
 \subsection{SAD Wrapper}
 
 The SAD wrapper is the entity that encompasses the SAD algorithms and minimum comparators. It receives the template image data from templ\_I and receives the search image data from search\_I. The write\_t\_I and write\_s\_I notify the wrapper when new data is actively being sent for the template and search images, respectively. The h2fReady\_I and f2hReady\_I are used to communicate when data is being sent to or from the host, the computer, from or to the FPGA. The sw\_I allows the 8 switches on Atlys board to be connected to data that is within the wrapper to be displayed on the 8 LEDs, led\_O. The outputs templ\_O for template image region, search\_O for search image region, sad\_O for the SAD values calculated from the current template and search image regions, and disp\_O that were found from the SAD values are sent out so they can be read, if desired. In the current implementations, templ\_O, search\_O, and sad\_O are used for debugging while disp\_O is used to obtain a depth map that is created from the pair of images. See Section~\ref{sec:fpgalink} for how the data is transferred to the computer.
@@ -137,7 +134,6 @@ The SAD wrapper is the entity that encompasses the SAD algorithms and minimum co
 	\end{center}
 \end{figure}
 
-
 \subsection{Top Level}
 
 The implementation of the SAD wrapper and its internal entities has been designed such that it should be able to work with any FPGA that is large enough to hold it. Figure~\ref{fig:topLevel_rtl} shows the SAD wrapper inside a top level entity. The top level gives the SAD wrapper image data and the SAD wrapper gives the top level disparity values. Those values are then transmitted to the computer, see Sec.~\ref{sec:fpgalink}. The implementation in Fig.~\ref{fig:topLevel_rtl} represents the 9x9 window implementation. For the 7x7 window implementation, there are only two SAD and two minimum comparators, as opposed to 4 each, due to the higher level of parallelization used within the SAD algorithms.
@@ -150,7 +146,6 @@ The implementation of the SAD wrapper and its internal entities has been designe
 		\label{fig:topLevel_rtl}
 	\end{center}
 \end{figure}
-
 
 \section{FPGA and Computer Communication}
 
