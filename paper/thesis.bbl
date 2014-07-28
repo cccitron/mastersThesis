@@ -51,12 +51,12 @@ Siddhant Ahaja.
   \url{https://siddhantahuja.wordpress.com/2009/05/11/correlation-based-similarity-measures-in-area-based-stereo-matching-systems/},
   May 2009.
 
-\bibitem{similarAlgorithms}
-P.~Ben-Tzvi and Xin Xu.
-\newblock An embedded feature-based stereo vision system for autonomous mobile
-  robots.
-\newblock In {\em Robotic and Sensors Environments (ROSE), 2010 IEEE
-  International Workshop on}, pages 1--6, Oct 2010.
+\bibitem{actStereoMap}
+K.~Al~Mutib, M.~Al~Sulaiman, H.~Ramdane, M.M. Emaduddin, and E.A. Mattar.
+\newblock Active stereo vision for mobile robot localization and mapping path
+  planning.
+\newblock In {\em Computer Modelling and Simulation (UKSim), 2012 UKSim 14th
+  International Conference on}, pages 293--299, 2012.
 
 \bibitem{xilinxSpartan3APaper}
 P.~Ben-Tzvi and Xin Xu.
@@ -76,6 +76,13 @@ Chris.
 \newblock Fpgalink: Easy usb to fpga communication.
 \newblock \url{http://www.makestuff.eu/wordpress/software/fpgalink/}, March
   2011.
+
+\bibitem{stereoFPGA}
+P.~Corke and P.~Dunn.
+\newblock Real-time stereopsis using fpgas.
+\newblock In {\em TENCON '97. IEEE Region 10 Annual Conference. Speech and
+  Image Technologies for Computing and Telecommunications., Proceedings of
+  IEEE}, volume~1, pages 235--238 vol.1, 1997.
 
 \bibitem{xilinxVirtex5Paper}
 Jingting Ding, Xin Du, Xinhuan Wang, and Jilin Liu.
@@ -103,6 +110,12 @@ Li~He-xi, Wang Guo-rong, and Shi Yong-hua.
   ICMTMA '09. International Conference on}, volume~2, pages 758--762, April
   2009.
 
+\bibitem{fpga}
+N.~Isakova, S.~Basak, and A.C. Sonmez.
+\newblock Fpga design and implementation of a real-time stereo vision system.
+\newblock In {\em Innovations in Intelligent Systems and Applications (INISTA),
+  2012 International Symposium on}, pages 1--5, 2012.
+
 \bibitem{alteraStratixIVPaper}
 N.~Isakova, S.~Basak, and AC. Sonmez.
 \newblock Fpga design and implementation of a real-time stereo vision system.
@@ -115,6 +128,19 @@ Seunghun Jin, Junguk Cho, Xuan~Dai Pham, Kyoung-Mu Lee, Sung-Kee Park, Munsang
 \newblock Fpga design and implementation of a real-time stereo vision system.
 \newblock {\em Circuits and Systems for Video Technology, IEEE Transactions
   on}, 20(1):15--26, Jan 2010.
+
+\bibitem{industRobot}
+J.~Y~S Luh.
+\newblock Industrial robot that moves around unexpected obstacles with a
+  minimum distance.
+\newblock In {\em Decision and Control, 1983. The 22nd IEEE Conference on},
+  volume~22, pages 1458--1463, 1983.
+
+\bibitem{3DVision}
+J.~Y~S Luh and John~A. Klaasen.
+\newblock A three-dimensional vision by off-shelf system with multi-cameras.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, PAMI-7(1):35--45, 1985.
 
 \bibitem{lowCost1000}
 C.~Murphy, D.~Lindquist, AM. Rynning, Thomas Cecil, S.~Leavitt, and M.L. Chang.
@@ -140,5 +166,17 @@ D.~Scharstein, R.~Szeliski, and R.~Zabih.
 Daniel Scharstein and Richard Szeliski.
 \newblock Stereo.
 \newblock \url{http://vision.middlebury.edu/stereo/}, April 2012.
+
+\bibitem{quadRobot}
+Xuesong Shao, Yiping Yang, and Wei Wang.
+\newblock Obstacle crossing with stereo vision for a quadruped robot.
+\newblock In {\em Mechatronics and Automation (ICMA), 2012 International
+  Conference on}, pages 1738--1743, 2012.
+
+\bibitem{nav}
+Zhao Yong-guo, Cheng Wei, and Liu Guang-liang.
+\newblock The navigation of mobile robot based on stereo vision.
+\newblock In {\em Intelligent Computation Technology and Automation (ICICTA),
+  2012 Fifth International Conference on}, pages 670--673, 2012.
 
 \end{thebibliography}

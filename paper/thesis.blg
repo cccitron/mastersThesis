@@ -16,53 +16,54 @@ A level-1 auxiliary file: AppendixD.aux
 A level-1 auxiliary file: AppendixE.aux
 A level-1 auxiliary file: AppendixF.aux
 Database file #1: references.bib
+Warning--I didn't find a database entry for "similarAlgorithms"
 Warning--to sort, need author or key in stereoVisionDiagram
 Warning--to sort, need author or key in epipolar
+Warning--to sort, need author or key in xilinxSpartan3ABoard
+Warning--to sort, need author or key in atlysBoard
 Warning--to sort, need author or key in alteraStratixIVBoard
 Warning--to sort, need author or key in xilinxVirtex5Board
-Warning--to sort, need author or key in xilinxSpartan3ABoard
 Warning--to sort, need author or key in bumblebee
-Warning--to sort, need author or key in atlysBoard
 Warning--to sort, need author or key in vmodcam
-You've used 23 entries,
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            633 strings with 8324 characters,
-and the built_in function-call counts, 7411 in all, are:
-= -- 698
-> -- 281
-< -- 11
-+ -- 119
-- -- 92
-* -- 468
-:= -- 1065
-add.period$ -- 61
-call.type$ -- 23
-change.case$ -- 115
+            674 strings with 9585 characters,
+and the built_in function-call counts, 10223 in all, are:
+= -- 975
+> -- 383
+< -- 18
++ -- 160
+- -- 126
+* -- 644
+:= -- 1461
+add.period$ -- 79
+call.type$ -- 29
+change.case$ -- 150
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 313
-empty$ -- 697
-format.name$ -- 92
-if$ -- 1694
+cite$ -- 37
+duplicate$ -- 443
+empty$ -- 939
+format.name$ -- 126
+if$ -- 2347
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 12
-newline$ -- 110
-num.names$ -- 30
-pop$ -- 192
+int.to.str$ -- 29
+missing$ -- 18
+newline$ -- 140
+num.names$ -- 42
+pop$ -- 238
 preamble$ -- 1
-purify$ -- 92
+purify$ -- 121
 quote$ -- 0
-skip$ -- 271
+skip$ -- 387
 stack$ -- 0
-substring$ -- 395
-swap$ -- 108
-text.length$ -- 11
+substring$ -- 615
+swap$ -- 170
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 92
+type$ -- 116
 warning$ -- 8
-while$ -- 52
-width$ -- 25
-write$ -- 229
-(There were 8 warnings)
+while$ -- 75
+width$ -- 31
+write$ -- 297
+(There were 9 warnings)

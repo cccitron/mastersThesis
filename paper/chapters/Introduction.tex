@@ -1,2 +1,20 @@
 \chapter{Introduction}
-Introducing ...
+\label{sec:intro}
+
+Stereo vision uses two adjacent cameras to create a three dimensional image. This is similar to how human eyes work. A depth map can be created by comparing the offset of the same pixels of the two cameras. This depth map is a three dimensional representation of the real world. Mobile robots can use stereo vision to improve their awareness of their surroundings.
+
+The point cloud made from the pixels of the depth map in combination with one of the actual images allows for object detection and object identification. As opposed to infrared laser scanning which can only be used indoors, stereo vision can be used anywhere there is adequate lighting. The data obtained from a stereo vision system can be used to map or recreate objects and places it has seen \cite{actStereoMap}.
+
+Some of the earliest research of stereo vision was used with industrial robots \cite{industRobot}. In the 1980s, the challenge of industrial robots needing to avoid unexpected obstacles was addressed with stereo vision in order to detect those objects quickly and to determine how far the robot would need to adjust its course to prevent accidental collisions \cite{3DVision}.
+
+As stereo vision systems become more essential for mobile robots, embedded stereo vision systems become more important. Embedded stereo vision systems allow for smaller robots to achieve the same capabilities as their larger counterparts \cite{xilinxSpartan3ABoard}.
+
+One problem faced with stereo vision systems is the amount of information that needs to be processed to allow for real time operations, which can make the robot perform slowly \cite{nav}. Smaller image sizes will help speed up performance, but at the cost of the resolution of the object in the images. 
+
+Most of the image processing is independent of the rest of the image which allows for parallelization of the images. In the 1990s, research into using Field Programmable Gateway Arrays (FPGAs) with stereo vision began to gain momentum due to the parallelizability of FPGAs \cite{stereoFPGA}. In the 2000s and onward is when FPGAs became more practical for higher speeds and higher image resolutions for real time mobile robot applications \cite{fpga}.
+
+Mobile robots such as autonomous quadrupeds are able to use stereo vision to navigate difficult terrain while avoiding obstacles in their path \cite{quadRobot}.
+
+The stereo vision system module presented in this paper is used on a FPGA Atlys board~\cite{atlysBoard} and is shown to work with two different types of implementations of the Sum of the Absolute differences algorithm. 
+
+Background information on stereo vision and the Sum of the Absolute differences algorithm used in this stereo vision implementation can be found in CHAPTER 2. Related work is presented in CHAPTER 3. The implementation of the system used on the FPGA board is described in CHAPTER 4. Experiments and results are presented in CHAPTER 5. Finally, the conclusion and future work are in CHAPTER 9 and CHAPTER 10, respectively.
