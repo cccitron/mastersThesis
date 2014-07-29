@@ -10,7 +10,7 @@
 \section{Window Size Selection}
 \label{sec:windowSize}
 
-The size of the window (i.e. 9x9 pixels) affects the quality of the disparity map (see Figure~\ref{fig:tsukubaWinSize}) and the number of computations required to create the disparity map. The 3x3 window size in Figure~\ref{fig:tsukuba3x3} will be processed the fastest  out of the window sizes shown since each SAD calculation only has 9 pairs of pixels compared to say the 13x13 window, or 169 pairs of pixels in Figure~\ref{fig:tsukuba13x13}. The 13x13 window has the least amount of noise, in its disparity map, but it also loses some detail as shown by the lamp in the foreground of the image compared to the other images. Also, as the window size gets larger, more resources are needed on the FPGA board. The 7x7 and 9x9 window sizes were used because they both were reasonably compromising on the amount of noise in the disparity maps and the amount of hardware resources needed for implementation. 
+The size of the window (i.e. 9x9 pixels) affects the quality of the disparity map (see Figure~\ref{fig:tsukubaWinSize}) and the number of computations required to create the disparity map. The 3x3 window size in Figure~\ref{fig:tsukuba3x3} will be processed the fastest out of the window sizes shown since each SAD calculation only has 9 pairs of pixels. The 13x13 window in Figure~\ref{fig:tsukuba13x13} has 169 pairs of pixels, which will require a lot more calculations per SAD value. However, the 13x13 window has the least amount of noise in its disparity map, but it also loses some detail as shown by comparing the lamp in the foreground of the image compared to the lamp in the other images. Also, as the window size gets larger, more resources are needed on the FPGA board. The 7x7 and 9x9 window sizes were used because they both were a compromise on the amount of noise in the disparity maps and the amount of hardware resources needed for implementation. 
 
 \begin{figure}
 \begin{center}
@@ -52,19 +52,17 @@ The size of the window (i.e. 9x9 pixels) affects the quality of the disparity ma
 \end{center}
 \end{figure}
 
-
 \section{Resource Utilization on FPGA}
 \label{sec:utilize}
 
 See Table~\ref{table:utilize} in Appendix~\ref{sec:appdxE}. The 7x7 window implementation actually uses more resources on the FPGA board than the 9x9 window implementation due to the amount of parallel calculations used in the SAD algorithm. There is still plenty of space on the board for other types of top level designs that could use this SAD module.
-
 
 \section{Testbench Simulation}
 \label{sec:testbench}
 
 See Figure~\ref{fig:tb_9x9} and Figure~\ref{fig:tb_7x7} in Appendix~\ref{sec:appdxF} for the testbench simulations for the 9x9 window and 7x7 window implementations, respectively.
 
-The h2fvalid\_i value near the top of the figure is high when image data is being written to the SAD wrapper. The first section that is high is the initial rows being sent to the wrapper. The smaller following sections that are high are the next row being sent to the wrapper. The wrapper has been designed to allow both the template image data and the search image data to be sent to the wrapper at the same time, thus reducing the amount of time taken to get all necessary data into the wrapper. When the signal f2hready\_i goes high, it means that the disparity values are being sent out of the wrapper. 
+The h2fvalid\_i value, near the top of the figure, goes high when image data is being written to the SAD wrapper. The first section that is high is the initial rows being sent to the wrapper. The smaller following sections that are high is when the next row being sent to the wrapper. The wrapper has been designed to allow both the template image data and the search image data to be sent to the wrapper at the same time, thus reducing the amount of time taken to get all necessary data into the wrapper. When the signal f2hready\_i goes high, it means that the disparity values are being sent out of the wrapper.
 
 \subsection{9x9 Window Implementation Runtime}
 \label{sec:testbench9x9}
