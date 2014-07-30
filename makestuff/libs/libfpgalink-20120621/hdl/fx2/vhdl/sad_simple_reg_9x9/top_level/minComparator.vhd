@@ -57,7 +57,7 @@ begin
 	sad1 <= sad1_I;
 	pos1 <= pos1_I;
 
-	process(clk_I) --sad0, pos0, sad1, pos1)
+	process(clk_I)
 	begin
 		IF (RISING_EDGE(clk_I)) THEN
 			if (sad1 < sad0) then

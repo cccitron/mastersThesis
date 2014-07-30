@@ -25,6 +25,8 @@ use ieee.numeric_std.all;
 
 entity top_level is
 	port(
+		rst_I 		  : IN    STD_LOGIC;
+	
 		-- FX2 interface -----------------------------------------------------------------------------
 		fx2Clk_in     : in    std_logic;                    -- 48MHz clock from FX2
 		fx2Addr_out   : out   std_logic_vector(1 downto 0); -- select FIFO: "10" for EP6OUT, "11" for EP8IN
@@ -78,27 +80,6 @@ architecture behavioural of top_level is
    signal reg4, reg4_next         : std_logic_vector(7 downto 0)  := x"00";
    signal reg5, reg5_next         : std_logic_vector(7 downto 0)  := x"00";
    
---   -- Template array for storing data transfered to the FPGA from comp
---   type array_type_templ is array (0 to 8) of std_logic_vector(7 downto 0);
---	signal templ_array, templ_array_next : array_type_templ := (OTHERS => (OTHERS => '0'));
---   
---   -- Search array for storing data transfered to the FPGA from comp
---   type array_type_search is array (0 to 8) of std_logic_vector(7 downto 0);
---	signal search_array, search_array_next : array_type_search := (OTHERS => (OTHERS => '0'));
---   
---   SIGNAL ndx_t, ndx_t_next, f2h_t_rd, f2h_t_rd_next : INTEGER := 0;
---   SIGNAL ndx_s, ndx_s_next, f2h_s_rd, f2h_s_rd_next : INTEGER := 0;
---   
---   -- sum array
---   type array_type_sad is array (0 to 8) of std_logic_vector(7 downto 0);
---	signal sad_array, sad_array_next : array_type_sad := (OTHERS => (OTHERS => '0'));
---   
---   SIGNAL ndx_sad, ndx_sad_next, f2h_sad_rd, f2h_sad_rd_next : INTEGER := 0;
---   
---   SIGNAL sel_arr : STD_LOGIC := '0';
-   
-   --SIGNAL clk_sad : STD_LOGIC := '0';
-   
    signal reg0_templ, reg1_search, reg2_sad, reg3_disp : std_logic_vector(7 downto 0)  := x"00";
    signal reg4_next_templ_row, reg5_next_search_row : std_logic_vector(7 downto 0)  := x"00";
 
@@ -106,116 +87,27 @@ architecture behavioural of top_level is
 	SIGNAL template_in, search_in : STD_LOGIC_VECTOR(7 DOWNTO 0) := x"00";
 
 begin                                                                     --BEGIN_SNIPPET(registers)
-	
---   clk_proc : PROCESS (fx2Clk_in)
---   BEGIN
---      clk_sad <= NOT(clk_sad);
---   END PROCESS clk_proc;
-   
+
    -- Infer registers
 	process(fx2Clk_in)
 	begin
 		if ( rising_edge(fx2Clk_in) ) then
-			--checksum <= checksum_next;
 			reg0 <= reg0_next;
 			reg1 <= reg1_next;
 			reg2 <= reg2_next;
 			reg3 <= reg3_next;
          reg4 <= reg4_next;
-         reg5 <= reg5_next;
---         templ_array <= templ_array_next;
---         
---         ndx_t <= ndx_t_next;
---         IF (ndx_t = 9) THEN
---            ndx_t <= 8;
---            --sel_arr <= '1';
---         END IF;
---         
---         f2h_t_rd <= f2h_t_rd_next;
---         IF (f2h_t_rd = 9) THEN
---            f2h_t_rd <= 8;
---            --sel_arr <= '0';
---         END IF;
---         
---         f2h_sad_rd <= f2h_sad_rd_next;
---         IF (f2h_sad_rd = 9) THEN
---            f2h_sad_rd <= 8;
---         END IF;
-         
+         reg5 <= reg5_next;         
 		end if;
 	end process;
 
 	-- Drive register inputs for each channel when the host is writing
---	checksum_next <=
---		std_logic_vector(unsigned(checksum) + unsigned(h2fData))
---			when chanAddr = "0000000" and h2fValid = '1'
---		else x"0000"
---			when chanAddr = "0000001" and h2fValid = '1' and h2fData(0) = '1'
---		else checksum;
-	reg0_next <= reg0_templ; --h2fData when chanAddr = "0000000" and h2fValid = '1' else reg0;
-	reg1_next <= reg1_search; --reg1_templ; --templ_array(f2h_t_rd); --h2fData when chanAddr = "0000001" and h2fValid = '1' else reg1;
-	reg2_next <= reg2_sad; --reg2_search; --search_array(f2h_s_rd); --h2fData when chanAddr = "0000010" and h2fValid = '1' else reg2;
-	reg3_next <= reg3_disp; --reg3_sad; --sad_array(f2h_sad_rd); --h2fData when chanAddr = "0000011" and h2fValid = '1' else reg3;
+	reg0_next <= reg0_templ;
+	reg1_next <= reg1_search;
+	reg2_next <= reg2_sad; 
+	reg3_next <= reg3_disp;
    reg4_next <= reg4_next_templ_row;
    reg5_next <= reg5_next_search_row;
-   
---   -- host to FPGA templ_array, reg0
---   templ_array_next(ndx_t)  <= h2fData when chanAddr = "0000001" and h2fValid = '1' else templ_array(ndx_t);
---   --search_array_next(ndx_s) <= h2fData when chanAddr = "0000010" and h2fValid = '1' else search_array(ndx_s);
---   
---   ndx_t_next <= ndx_t + 1 WHEN h2fValid = '1'
---      ELSE ndx_t;
---   
---   -- FPGA templ_array to host, reg1
---   --temp_array_next(f2h_rd) <= h2fData when chanAddr = "0000001" and h2fValid = '1' else templ_array(f2h_rd);
---   
---   f2h_t_rd_next <= f2h_t_rd + 1 WHEN f2hReady = '1'
---      ELSE f2h_t_rd;
---   
---   sum : PROCESS (fx2Clk_in)--ndx_t)
---   BEGIN
---      IF (RISING_EDGE(fx2Clk_in)) THEN
---         sad_array <= sad_array;
---         IF (ndx_t > 1 AND ndx_sad < 2) THEN
---            sad_array(ndx_sad) <= STD_LOGIC_VECTOR(UNSIGNED(templ_array(ndx_sad)) + UNSIGNED(templ_array(ndx_sad + 1)));
---         END IF;
---      END IF;
---   END PROCESS sum;
-   
-   -- store values from comp in templ_array
---   compToFPGA : process (fx2Clk_in) --h2fData, chanAddr, h2fValid, temp_array)
---   begin
---      if (falling_edge(fx2Clk_in)) then
---         temp_array <= temp_array;
---         IF (chanAddr = x"03" AND h2fValid = '1') THEN
---            temp_array(ndx) <= reg3_next;
---            IF (ndx < 8) THEN
---               ndx <= ndx + 1;
---            ELSE
---               ndx <= ndx;
---            END IF;
---         ELSE
---            ndx <= ndx;
---         END IF;
---      end if;
---   end process compToFPGA;
-   
---   compToFPGA : process (fx2Clk_in) --h2fData, chanAddr, h2fValid, temp_array)
---   begin
---      if (rising_edge(fx2Clk_in)) then
---         temp_array <= temp_array;
---         IF (chanAddr = x"03" AND h2fValid = '1') THEN
---            temp_array(ndx) <= h2fData;
---            IF (ndx < 8) THEN
---               ndx <= ndx + 1;
---            ELSE
---               ndx <= ndx;
---            END IF;
---         ELSE
---            ndx <= ndx;
---         END IF;
---      end if;
---   end process compToFPGA;
 	
 	-- Select values to return for each channel when the host is reading
 	with chanAddr select f2hData <=
@@ -228,7 +120,6 @@ begin                                                                     --BEGI
 		x"00" when others;
 
 	-- Used to Assert that there's always data for reading, and always room for writing
-	--f2hValid <= '1';
    f2hValid <= '1' WHEN f2hReady = '1' ELSE '0';
 	h2fReady <= '1';                                                         --END_SNIPPET(registers)
 
@@ -257,64 +148,6 @@ begin                                                                     --BEGI
 			f2hValid_in    => f2hValid,
 			f2hReady_out   => f2hReady
 		);
-
-	-- LEDs and 7-seg display
-   
-   -- This section of code took in data from re3 and displayed it on the LEDs
---   process (fx2Clk_in)
---   begin
---      if (rising_edge(fx2Clk_in)) then
---         temp <= reg3;
---      end if;
---   end process;
---   led_out <= temp;   process (fx2Clk_in)
---   process (fx2Clk_in)
---   begin
---      if (rising_edge(fx2Clk_in)) then
---         temp_array <= temp_array;
---         temp_array(ndx) <= reg3;
---         if (ndx < 8) then
---            ndx <= ndx + 1;
---         else
---            ndx <= ndx;
---         end if;
---      end if;
---   end process;
-	--led_out <= reg3;
-   
-   -- Use the switch to select which element from temp_array to display on LEDs
---   WITH sw_in SELECT led_out <=
---      h2fValid & chanAddr(6 DOWNTO 0) WHEN x"00",
---      templ_array(0)  WHEN x"01",
---      templ_array(1)  WHEN x"02",
---      templ_array(2)  WHEN x"04",
---      templ_array(3)  WHEN x"08",
---      templ_array(4)  WHEN x"10",
---      templ_array(5)  WHEN x"20",
---      templ_array(6)  WHEN x"40",
---      templ_array(7)  WHEN x"80",
---      x"f5"          WHEN OTHERS;
-      
---	flags <= "000" & f2hReady;
-	--seven_seg : entity work.seven_seg
-	--	port map(
-	--		clk_in     => fx2Clk_in,
-	--		data_in    => checksum,
-	--		dots_in    => flags,
-	--		segs_out   => sseg_out,
-	--		anodes_out => anode_out
-	--	);
-   
---	data_in : PROCESS(chanAddr)
---	BEGIN
---		IF (chanAddr = "0000000") THEN
---			
---		ELSIF (chanAddr = "0000000") THEN
---			
---		ELSE
---			
---		END IF;
---	END PROCESS data_in;
 	
 	template_in <= h2fData;
 	search_in <= h2fData;
@@ -324,13 +157,13 @@ begin                                                                     --BEGI
 	
    sad_wrappings : entity work.sad_wrapper
       port map ( 
-         clk_I      => fx2Clk_in, --clk_sad,
-
---         h2fData_I  => h2fData,
+         clk_I      => fx2Clk_in,
+			rst_I 	  => rst_I,
+			
 			templ_I    => template_in,
          search_I   => search_in,
-         templ_O    => reg0_templ, --reg1_next,
-         search_O   => reg1_search, --reg2_next,
+         templ_O    => reg0_templ, 
+         search_O   => reg1_search, 
          sad_O      => reg2_sad,
          disp_O     => reg3_disp,
          

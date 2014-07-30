@@ -48,10 +48,9 @@ entity sad_wrapper is
 		SAD_SIZE : INTEGER := 12
 	);
    Port ( 
-      clk_I      : in  STD_LOGIC;
-      
---      h2fData_I  : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
-      
+      clk_I      : IN  STD_LOGIC;
+		rst_I		  : IN  STD_LOGIC;
+            
 		templ_I    : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
 		search_I   : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
 		templ_O    : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -80,12 +79,6 @@ architecture Behavioral of sad_wrapper is
 	-- Windows 3x3 for template and search, to be passed to SAD Algorithm
 	SIGNAL template_window, search_window : pixel2DArray; --pixelWindow;
    
---   type array_type_next_templ_row is array (0 to NCOL_C-1) of std_logic_vector(7 downto 0);
---	signal templ_next_t_row, templ_next_t_row_next : array_type_next_templ_row := (OTHERS => (OTHERS => '0'));
---   
---   type array_type_next_search_row is array (0 to NCOL_C-1) of std_logic_vector(7 downto 0);
---	signal search_next_s_row, search_next_s_row_next : array_type_next_search_row := (OTHERS => (OTHERS => '0'));
-   
    SIGNAL ndx_t_row, ndx_t_row_next, ndx_s_row, ndx_s_row_next : INTEGER := 0;
    SIGNAL next_t_row, next_s_row, disp_ready, neg_disp : STD_LOGIC := '0';
    SIGNAL junk_t_row, junk_t_row_next, junk_s_row, junk_s_row_next : STD_LOGIC := '1';
@@ -100,10 +93,6 @@ architecture Behavioral of sad_wrapper is
    -- The first byte written to the board is sometimes junk, so the first byte will be ignored
    SIGNAL junk_t, junk_t_next, junk_s, junk_s_next : STD_LOGIC := '1';
    
-   -- signed sum array
-   --type array_type_signed is array (0 to DISP_RANGE-1) of SIGNED(8 downto 0);
-	--signal sum_array, sum_array_next : array_type_signed;
-   
    -- sad array
    type array_type_sad is array (0 to DISP_ROW-1, 0 to DISP_RANGE-1) of std_logic_vector(SAD_SIZE-1 downto 0);
 	signal sad_array, sad_array_next : array_type_sad;-- := (OTHERS => (OTHERS => '0'));
@@ -115,7 +104,6 @@ architecture Behavioral of sad_wrapper is
    
    signal reg0_templ, reg1_search, reg2_disp : std_logic_vector(7 downto 0) := x"00";
    signal reg4_next_templ_row, reg5_next_search_row : std_logic_vector(7 downto 0) := x"00";
-   --signal assign_out, assign_out_next : STD_LOGIC := '0';
    
    -- 2D Array for the min SAD values in the min comparator
    TYPE array_type_minSad IS ARRAY (0 to DISP_ROW-1, 0 TO DISP_RANGE-1) OF STD_LOGIC_VECTOR(SAD_SIZE-1 DOWNTO 0);
@@ -141,9 +129,34 @@ architecture Behavioral of sad_wrapper is
 	
 begin
 
-   process(clk_I)
+   process(clk_I, rst_I)
 	begin
-		if ( rising_edge(clk_I) ) then
+		IF (rst_I = '0') THEN
+			template_array <= (OTHERS => (OTHERS => '0'));
+			search_array   <= (OTHERS => (OTHERS => '0'));
+			sad_array      <= ((OTHERS => (OTHERS => '0')),
+									 (OTHERS => (OTHERS => '0')),
+									 (OTHERS => (OTHERS => '0')),
+									 (OTHERS => (OTHERS => '0')));
+			disparityArray <= (OTHERS => (OTHERS => '0'));
+			
+			ndx_t  <= 0;
+			junk_t <= '1';
+			ndx_s  <= 0;
+			junk_s <= '1';
+			
+			f2h_t_rd <= 0;
+			f2h_s_rd <= 0;
+			
+			f2h_sad_rd  <= 0;
+			ndx_sad     <= 0;
+			f2h_disp_rd <= 0;
+         disp_ready  <= '0';
+			
+			data_in  <= '0';
+			junk_out <= x"ff";
+			
+		ELSIF ( rising_edge(clk_I) ) then
          template_array <= template_array_next;
          search_array <= search_array_next;
 			
@@ -154,78 +167,22 @@ begin
 			END IF;
          
 			disparityArray <= disparityArray_next;
-         --assign_out <= assign_out_next;
          
---         templ_next_t_row <= templ_next_t_row_next;
---         search_next_s_row <= search_next_s_row_next;
-			
---			template_array <= template_array;
---			
---			IF (chanAddr_I = "0000000" and h2fValid_I = '1' and junk_t = '0') THEN
---				IF (disp_ready = '1') THEN
---					template_array(0 TO LAST_ROW-1) <= template_array(NUM_8_ROW TO PIXEL_CNT-1);
---				ELSE
---					template_array(ndx_t) <= h2fData_I;
---				END IF;
---				
---				IF (ndx_t = PIXEL_CNT-1) THEN
---					ndx_t <= LAST_ROW;
-----					junk_t <= '1';
---				ELSE
---					ndx_t <= ndx_t + 1;
-----					junk_t <= junk_t
---				END IF;
---			END IF;
---			
---         IF (ndx_t = PIXEL_CNT) THEN
---            junk_t <= '1';
---         ELSE
---            junk_t <= junk_t_next;
---         END IF;
-				
---			ndx_t <= ndx_t_next;
          IF (ndx_t_next = PIXEL_CNT) THEN
-            ndx_t <= LAST_ROW; --0;
+            ndx_t <= LAST_ROW;
             junk_t <= '1';
          ELSE
             ndx_t <= ndx_t_next;
 				junk_t <= junk_t_next;
          END IF;
-				
---         ndx_t <= ndx_t_next;
---         IF (ndx_t = PIXEL_CNT) THEN
---            ndx_t <= LAST_ROW; --0;
---            junk_t <= '1';
---         ELSE
---            junk_t <= junk_t_next;
---         END IF;
          
---			ndx_s <= ndx_s_next;
          IF (ndx_s_next = PIXEL_CNT) THEN
-            ndx_s <= LAST_ROW; --0;
+            ndx_s <= LAST_ROW;
             junk_s <= '1';
          ELSE
 				ndx_s <= ndx_s_next;
             junk_s <= junk_s_next;
          END IF;
-			
---         ndx_s <= ndx_s_next;
---         IF (ndx_s = PIXEL_CNT) THEN
---            ndx_s <= LAST_ROW; --0;
---            junk_s <= '1';
---         ELSE
---            junk_s <= junk_s_next;
---         END IF;
-         
---         f2h_t_rd <= f2h_t_rd_next;
---         IF (f2h_t_rd = PIXEL_CNT) THEN
---            f2h_t_rd <= 0;
---         END IF;
---         
---         f2h_s_rd <= f2h_s_rd_next;
---         IF (f2h_s_rd = PIXEL_CNT) THEN
---            f2h_s_rd <= 0;
---         END IF;
 
          IF (f2h_t_rd_next < PIXEL_CNT) THEN
 				f2h_t_rd <= f2h_t_rd_next;
@@ -262,9 +219,8 @@ begin
             disp_ready <= '0';
          END IF;
 			
---			data_init <= data_init;
 			-- When to pass data to SAD algorithm
-			IF (ndx_t_next = LAST_ROW AND ndx_s_next = LAST_ROW AND write_t = '0' AND write_s = '0') THEN --data_init = '1' AND ndx_s_next = PIXEL_CNT) THEN
+			IF (ndx_t_next = LAST_ROW AND ndx_s_next = LAST_ROW AND write_t = '0' AND write_s = '0') THEN 
 				data_in <= '1';
 			ELSE
 				data_in <= '0';
@@ -281,24 +237,18 @@ begin
 	
 	write_t <= write_t_I;
 	write_s <= write_s_I;
-		
---	junk_t_next <= '0' when chanAddr_I = "0000000" and h2fValid_I = '1' else junk_t;
-		
+				
    -- host to FPGA template_array
    -- reg 0
    reg0_templ <= templ_I when write_t = '1' and h2fValid_I = '1' and junk_t = '0' else template_array(ndx_t);
    junk_t_next <= '0' when write_t = '1' and h2fValid_I = '1' else junk_t;
    
-   fill_templ : PROCESS (reg0_templ, template_array, ndx_t, disp_ready)--, next_t_row, templ_next_t_row)
+   fill_templ : PROCESS (reg0_templ, template_array, ndx_t, disp_ready)
    BEGIN
       template_array_next <= template_array;
       
-      IF (disp_ready = '1') THEN--next_t_row = '1') THEN
+      IF (disp_ready = '1') THEN
          template_array_next(0 TO LAST_ROW-1) <= template_array(NUM_2_ROW TO PIXEL_CNT-1);
-         
---         FOR i IN 0 TO NCOL_C-1 LOOP
---            template_array_next(LAST_ROW + i) <= templ_next_t_row(i);
---         END LOOP;
       ELSE
          template_array_next(ndx_t) <= reg0_templ;
       END IF;
@@ -307,58 +257,24 @@ begin
    ndx_t_next <= ndx_t + 1 WHEN h2fValid_I = '1' AND write_t = '1' AND junk_t = '0'
       ELSE ndx_t;
    
-   -- reg 4
---   reg4_next_templ_row <= h2fData_I when chanAddr_I = "0000100" and h2fValid_I = '1' and junk_t_row = '0' else templ_next_t_row(ndx_t_row);
---   junk_t_row_next <= '0' when chanAddr_I = "0000100" and h2fValid_I = '1' else junk_t_row;
---
---   fill_next_templ_row : PROCESS (reg4_next_templ_row, templ_next_t_row, ndx_t_row)
---   BEGIN
---      templ_next_t_row_next <= templ_next_t_row;
---      templ_next_t_row_next(ndx_t_row) <= reg4_next_templ_row;
---   END PROCESS fill_next_templ_row;
---   
---   ndx_t_row_next <= ndx_t_row + 1 WHEN h2fValid_I = '1' AND chanAddr_I = "0000100" AND junk_t_row = '0'
---      ELSE ndx_t_row;
-   
    -- host to FPGA search_array
    -- reg 1
    reg1_search <= search_I when write_s = '1' and h2fValid_I = '1' and junk_s = '0' else search_array(ndx_s);
    junk_s_next <= '0' when write_s = '1' and h2fValid_I = '1' else junk_s;
    
-   fill_search : PROCESS (reg1_search, search_array, ndx_s, disp_ready)--, search_next_s_row)
+   fill_search : PROCESS (reg1_search, search_array, ndx_s, disp_ready)
    BEGIN
       search_array_next <= search_array;
       
-      IF (disp_ready = '1') THEN --(next_s_row = '1') THEN
+      IF (disp_ready = '1') THEN
          search_array_next(0 TO LAST_ROW-1) <= search_array(NUM_2_ROW TO PIXEL_CNT-1);
-         
---         FOR i IN 0 TO NCOL_C-1 LOOP
---            search_array_next(LAST_ROW + i) <= search_next_s_row(i);
---         END LOOP;
       ELSE
          search_array_next(ndx_s) <= reg1_search;
       END IF;
---      search_array_next(ndx_s) <= reg1_search;
    END PROCESS fill_search;
    
    ndx_s_next <= ndx_s + 1 WHEN h2fValid_I = '1' AND write_s = '1' and junk_s = '0' --ndx_t > 8
       ELSE ndx_s;
-   
---   -- reg 5
---   reg5_next_search_row <= h2fData_I when chanAddr_I = "0000101" and h2fValid_I = '1' and junk_s_row = '0' else search_next_s_row(ndx_s_row);
---   junk_s_row_next <= '0' when chanAddr_I = "0000101" and h2fValid_I = '1' else junk_s_row;
---
---   fill_next_search_row : PROCESS (reg5_next_search_row, search_next_s_row, ndx_s_row)
---   BEGIN
---      search_next_s_row_next <= search_next_s_row;
---      search_next_s_row_next(ndx_s_row) <= reg5_next_search_row;
---   END PROCESS fill_next_search_row;
---   
---   ndx_s_row_next <= ndx_s_row + 1 WHEN h2fValid_I = '1' AND chanAddr_I = "0000101" AND junk_s_row = '0'
---      ELSE ndx_s_row;
---   
-   -- FPGA template_array to host, reg1
-   --temp_array_next(f2h_rd) <= h2fData when chanAddr = "0000001" and h2fValid = '1' else template_array(f2h_rd);
    
    f2h_t_rd_next <= f2h_t_rd + 1 WHEN f2hReady_I = '1' AND chanAddr_I = "0000000"
       ELSE f2h_t_rd;
@@ -409,34 +325,6 @@ begin
 					clk_I => clk_I,
 					data_I => data_in,
 				
---               ttl => template_array(0+i),
---               ttc => template_array(1+i),
---               ttr => template_array(2+i),
---               tml => template_array(0+NCOL_C+i),
---               tmc => template_array(1+NCOL_C+i),
---               tmr => template_array(2+NCOL_C+i),
---               tbl => template_array(0+NCOL_C+NCOL_C+i),
---               tbc => template_array(1+NCOL_C+NCOL_C+i),
---               tbr => template_array(2+NCOL_C+NCOL_C+i),
---
---               stl => search_array(0+i+j),
---               stc => search_array(1+i+j),
---               str => search_array(2+i+j),
---               sml => search_array(0+NCOL_C+i+j),
---               smc => search_array(1+NCOL_C+i+j),
---               smr => search_array(2+NCOL_C+i+j),
---               sbl => search_array(0+NCOL_C+NCOL_C+i+j),
---               sbc => search_array(1+NCOL_C+NCOL_C+i+j),
---               sbr => search_array(2+NCOL_C+NCOL_C+i+j),
-			
---					template_window_I => (template_array(0+i), template_array(1+i), template_array(2+i),
---												template_array(0+NCOL_C+i), template_array(1+NCOL_C+i), template_array(2+NCOL_C+i),
---												template_array(0+NCOL_C+NCOL_C+i), template_array(1+NCOL_C+NCOL_C+i), template_array(2+NCOL_C+NCOL_C+i)),
---
---					search_window_I   => (search_array(0+i+j), search_array(1+i+j), search_array(2+i+j), 
---												search_array(0+NCOL_C+i+j), search_array(1+NCOL_C+i+j), search_array(2+NCOL_C+i+j),
---												search_array(0+NCOL_C+NCOL_C+i+j), search_array(1+NCOL_C+NCOL_C+i+j), search_array(2+NCOL_C+NCOL_C+i+j)),
-
 					template_window_I => template_window(i, j),
 
 					search_window_I   => search_window(i, j),
@@ -462,9 +350,9 @@ begin
             PORT MAP (
 					clk_I => clk_I,
                sad0_I => sad_array(i, j*2),
-               pos0_I => STD_LOGIC_VECTOR(TO_UNSIGNED(j*2, 4)),--"00",--std_logic_vector(to_unsigned(0, 2)),
+               pos0_I => STD_LOGIC_VECTOR(TO_UNSIGNED(j*2, 4)),
                sad1_I => sad_array(i, (j*2)+1),
-               pos1_I => STD_LOGIC_VECTOR(TO_UNSIGNED((j*2)+1, 4)),--"01",--std_logic_vector(to_unsigned(1, 2)),
+               pos1_I => STD_LOGIC_VECTOR(TO_UNSIGNED((j*2)+1, 4)),
                sad_O  => minSad(i, j), -- 0 to 7 of minSad
                pos_O  => minPos(i, j)  -- 0 to 7 of minPos
          );
@@ -505,8 +393,8 @@ begin
                pos0_I => minPos(i, j*2 + 8),
                sad1_I => minSad(i, (j*2)+1 + 8),
                pos1_I => minPos(i, (j*2)+1 + 8),
-               sad_O  => minSad(i, j+12), -- 12 to 13 of minSad
-               pos_O  => minPos(i, j+12)  -- 12 to 13 of minPos
+               sad_O  => minSad(i, j+12), 
+               pos_O  => minPos(i, j+12)
          );
       END GENERATE g_minComp2;
    END GENERATE g_sadComp2;
@@ -534,61 +422,25 @@ begin
       disparityArray_next <= disparityArray;
 
       IF (ndx_t = LAST_ROW AND ndx_s = LAST_ROW) THEN -- both arrays are full and ready for new data
---         assign_out <= '1';
---      END IF;
-      
---      IF
          FOR i IN 0 TO DISP_ROW-1 LOOP --- To pipeline, could have this hold until ready, to give enough time for comp to read all disp values
---            if (minSad(i, 13) < minSad(i, 12)) then
---               disparityArray_next(i) <= minPos(i, 13);
---            else
---               disparityArray_next(i) <= minPos(i, 12);
---            end if;
---            
             disparityArray_next(i) <= minPos(i, 14);
          END LOOP;
       END IF;
    END PROCESS disparity_assign;
    
---   disparity_assign : PROCESS(minPos, disparityArray, ndx_s, ndx_t, ndx_disp, assign_out)
---   BEGIN
---      disparityArray_next <= disparityArray;
---
---      IF (ndx_t = LAST_ROW AND ndx_s = LAST_ROW) THEN -- both arrays are full and ready for new data
---         assign_out_next <= '1';
---      ELSIF (ndx_disp = 0) THEN
---         assign_out_next <= '0';
---      ELSE
---         assign_out_next <= assign_out;
---      END IF;
---      
---      IF (assign_out = '1') THEN
---         --FOR i IN 0 TO DISP_ROW-1 LOOP --- To pipeline, could have this hold until ready, to give enough time for comp to read all disp values
---            if (minSad(ndx_disp, 13) < minSad(ndx_disp, 12)) then
---               disparityArray_next(ndx_disp) <= minPos(ndx_disp, 13);
---            else
---               disparityArray_next(ndx_disp) <= minPos(ndx_disp, 12);
---            end if;
---            ndx_disp_next <= ndx_disp + 1;
---         --END LOOP;
---      END IF;
---   END PROCESS disparity_assign;
-   
    templ_O  <= template_array(f2h_t_rd);
    search_O <= search_array(f2h_s_rd);
    sad_O    <= sad_array(ndx_sad, f2h_sad_rd)(7 DOWNTO 0);
-   disp_O   <= x"0" & disparityArray(f2h_disp_rd); --sad_array(f2h_sad_rd);
+   disp_O   <= x"0" & disparityArray(f2h_disp_rd);
    
    WITH sw_I SELECT led_O <=
-		junk_out WHEN x"00", -- STD_LOGIC_VECTOR(TO_UNSIGNED(f2h_sad_rd, 8)) WHEN x"00", --h2fValid_I & chanAddr_I(6 DOWNTO 0) WHEN x"00",
-      sad_array(0, 0)(7 DOWNTO 0)  WHEN x"01",
-      sad_array(0, 1)(7 DOWNTO 0)  WHEN x"02",
-      sad_array(0, 2)(7 DOWNTO 0)  WHEN x"04",
-      x"0" & disparityArray(0)  WHEN x"08",
---      x"0" & disparityArray(1)  WHEN x"10",
-      template_array(0)  WHEN x"20",
---      template_array(1)  WHEN x"40",
-      search_array(0)  WHEN x"80",
-      x"f5"         WHEN OTHERS;
+		junk_out WHEN x"00",
+      sad_array(0, 0)(7 DOWNTO 0) 	WHEN x"01",
+      sad_array(0, 1)(7 DOWNTO 0)   WHEN x"02",
+      sad_array(0, 2)(7 DOWNTO 0)   WHEN x"04",
+      x"0" & disparityArray(0)  		WHEN x"08",
+      template_array(0)  				WHEN x"20",
+      search_array(0)  					WHEN x"80",
+      x"f5"         						WHEN OTHERS;
 
 end Behavioral;

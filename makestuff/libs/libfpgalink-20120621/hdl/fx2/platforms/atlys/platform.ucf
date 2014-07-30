@@ -16,7 +16,9 @@
 #
 
 #NET "clk"   LOC = "L15";
-#NET "reset" LOC = "T15"; # Bank = 2, Pin name = IO_L1N_M0_CMPMISO_2, Sch name = M0/RESET
+NET "rst_I" LOC = "T15"; # Bank = 2, Pin name = IO_L1N_M0_CMPMISO_2, Sch name = M0/RESET
+
+#NET "RESET_I" 			LOC = T15;
 
 #===============================================================================
 # USB interface

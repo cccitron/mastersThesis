@@ -365,10 +365,10 @@ if __name__ == "__main__":
         if ( isCommCapable ):
 
             # Black and white images
-            #fileR = "tsukubaright_bw.jpg"
-            #fileL = "tsukubaleft_bw.jpg"
-            fileR = "venusR_bw.png"
-            fileL = "venusL_bw.png"
+            fileR = "tsukubaright_bw.jpg"
+            fileL = "tsukubaleft_bw.jpg"
+            #fileR = "venusR_bw.png"
+            #fileL = "venusL_bw.png"
             
             # Each color represents a distance that corresponds with disparity range of 0-15
             colorScheme = numpy.array([(0x00, 0x00, 0x8F), \
@@ -521,7 +521,7 @@ if __name__ == "__main__":
                     for j in range(dispH): #2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("venus_disp7x7_2.png")
+                im.save("disp7x7_2.png")
                 im.show()
                 
                 # time after image is created

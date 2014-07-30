@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="top_level_blackbox.svg"
+   sodipodi:docname="sad_wrapper_blackbox.svg"
    inkscape:export-filename="/home/cccitron/mastersThesis/paper/figures/sad_wrapper_rtl.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="372.81175"
-     inkscape:cy="627.91199"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="683.42765"
+     inkscape:cy="609.06527"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -117,7 +117,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -125,102 +125,6 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="250"
-       y="152.36218"
-       id="text2989"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2991"
-         x="250"
-         y="152.36218"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch">clk_I</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="250"
-       y="202.31882"
-       id="text2989-0"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2991-3"
-         x="250"
-         y="202.31882"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch">templ_I</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="250"
-       y="252.82645"
-       id="text2989-0-3"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2991-3-5"
-         x="250"
-         y="252.82645"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch">search_I</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="250"
-       y="302.36218"
-       id="text2989-0-3-9"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2991-3-5-8"
-         x="250"
-         y="302.36218"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch">write_t_I</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="250"
-       y="352.36218"
-       id="text2989-0-3-6"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2991-3-5-4"
-         x="250"
-         y="352.36218"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch">write_s_I</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="250"
-       y="402.36218"
-       id="text2989-0-3-4"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2991-3-5-2"
-         x="250"
-         y="402.36218"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch">f2hReady_I</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="250"
-       y="452.71933"
-       id="text2989-0-3-47"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2991-3-5-3"
-         x="250"
-         y="452.71933"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch">h2fValid_I</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="250"
-       y="502.71933"
-       id="text2989-0-3-7"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan2991-3-5-21"
-         x="250"
-         y="502.71933"
-         style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch">sw_I</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3114"
@@ -228,46 +132,173 @@
        height="412.67609"
        x="300.04013"
        y="115.23012" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 250,144.36218 50,0"
-       id="path3884"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 250.22596,193.24775 50,0"
-       id="path3884-9"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 249.96429,244.18361 50,0"
-       id="path3884-8"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 250.17857,294.1479 50,0"
-       id="path3884-0"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 250.17857,344.1479 50,0"
-       id="path3884-5"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 250,394.50504 50,0"
-       id="path3884-7"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 250.17857,444.86218 50,0"
-       id="path3884-87"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 250.17857,494.1479 50,0"
-       id="path3884-01"
-       inkscape:connector-curvature="0" />
+    <g
+       id="g3113">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2989"
+         y="136.36218"
+         x="250"
+         style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch"
+           y="136.36218"
+           x="250"
+           id="tspan2991"
+           sodipodi:role="line">clk_I</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3884"
+         d="m 250,128.36218 50,0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3103"
+       transform="translate(0,14)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2989-0"
+         y="202.31882"
+         x="250"
+         style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch"
+           y="202.31882"
+           x="250"
+           id="tspan2991-3"
+           sodipodi:role="line">templ_I</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3884-9"
+         d="m 250.22596,193.24775 50,0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3098"
+       transform="translate(0,16)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2989-0-3"
+         y="252.82645"
+         x="250"
+         style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch"
+           y="252.82645"
+           x="250"
+           id="tspan2991-3-5"
+           sodipodi:role="line">search_I</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3884-8"
+         d="m 249.96429,244.18361 50,0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3093"
+       transform="translate(0,18)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2989-0-3-9"
+         y="302.36218"
+         x="250"
+         style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch"
+           y="302.36218"
+           x="250"
+           id="tspan2991-3-5-8"
+           sodipodi:role="line">write_t_I</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3884-0"
+         d="m 250.17857,294.1479 50,0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3088"
+       transform="translate(0,18)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2989-0-3-6"
+         y="352.36218"
+         x="250"
+         style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch"
+           y="352.36218"
+           x="250"
+           id="tspan2991-3-5-4"
+           sodipodi:role="line">write_s_I</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3884-5"
+         d="m 250.17857,344.1479 50,0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3083"
+       transform="translate(0,18)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2989-0-3-4"
+         y="402.36218"
+         x="250"
+         style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch"
+           y="402.36218"
+           x="250"
+           id="tspan2991-3-5-2"
+           sodipodi:role="line">f2hReady_I</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3884-7"
+         d="m 250,394.50504 50,0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3078"
+       transform="translate(0,18)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2989-0-3-47"
+         y="452.71933"
+         x="250"
+         style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch"
+           y="452.71933"
+           x="250"
+           id="tspan2991-3-5-3"
+           sodipodi:role="line">h2fValid_I</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3884-87"
+         d="m 250.17857,444.86218 50,0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3073"
+       transform="translate(0,10)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2989-0-3-7"
+         y="506.71933"
+         x="250"
+         style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch"
+           y="506.71933"
+           x="250"
+           id="tspan2991-3-5-21"
+           sodipodi:role="line">sw_I</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3884-01"
+         d="m 250.17857,498.1479 50,0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -385,5 +416,26 @@
            height="191"
            x="203"
            y="589.36218" /></flowRegion><flowPara
-         id="flowPara6981"></flowPara></flowRoot>  </g>
+         id="flowPara6981" /></flowRoot>    <g
+       id="g3108"
+       transform="translate(0,4)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2989-9"
+         y="169.04112"
+         x="250"
+         style="font-size:20px;font-style:normal;font-weight:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Courier 10 Pitch;-inkscape-font-specification:Courier 10 Pitch"
+           y="169.04112"
+           x="250"
+           id="tspan2991-2"
+           sodipodi:role="line">rst_I</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path3884-29"
+         d="m 249.99998,161.04111 50,0"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+  </g>
 </svg>
