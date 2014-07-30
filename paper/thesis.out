@@ -5,7 +5,7 @@
 \BOOKMARK [1][]{section.2.1}{Computer Stereo Vision}{chapter.2}% 5
 \BOOKMARK [2][]{subsection.2.1.1}{Parallelism in Stereo Vision}{section.2.1}% 6
 \BOOKMARK [1][]{section.2.2}{Stereo Vision Algorithms}{chapter.2}% 7
-\BOOKMARK [2][]{subsection.2.2.1}{Sum of the Absolute Differences Algorithm}{section.2.2}% 8
+\BOOKMARK [2][]{subsection.2.2.1}{Sum of the Absolute Differences \(SAD\) Algorithm}{section.2.2}% 8
 \BOOKMARK [0][]{chapter.3}{Related Work}{}% 9
 \BOOKMARK [0][]{chapter.4}{Implementation}{}% 10
 \BOOKMARK [1][]{section.4.1}{Architecture Overview}{chapter.4}% 11
@@ -16,26 +16,25 @@
 \BOOKMARK [2][]{subsection.4.1.2}{Minimum Comparator Architecture}{section.4.1}% 16
 \BOOKMARK [2][]{subsection.4.1.3}{SAD Wrapper}{section.4.1}% 17
 \BOOKMARK [2][]{subsection.4.1.4}{Top Level}{section.4.1}% 18
-\BOOKMARK [1][]{section.4.2}{FPGA and Computer Communication}{chapter.4}% 19
-\BOOKMARK [2][]{subsection.4.2.1}{FPGALink}{section.4.2}% 20
-\BOOKMARK [0][]{chapter.5}{Experiments and Results}{}% 21
-\BOOKMARK [1][]{section.5.1}{Window Size Selection}{chapter.5}% 22
-\BOOKMARK [1][]{section.5.2}{Resource Utilization on FPGA}{chapter.5}% 23
-\BOOKMARK [1][]{section.5.3}{Testbench Simulation}{chapter.5}% 24
-\BOOKMARK [2][]{subsection.5.3.1}{9x9 Window Implementation Runtime}{section.5.3}% 25
-\BOOKMARK [2][]{subsection.5.3.2}{7x7 Window Implementation Runtime}{section.5.3}% 26
-\BOOKMARK [1][]{section.5.4}{Test Image Pairs}{chapter.5}% 27
-\BOOKMARK [2][]{subsection.5.4.1}{Data Overflows}{section.5.4}% 28
-\BOOKMARK [2][]{subsection.5.4.2}{Tsukuba}{section.5.4}% 29
-\BOOKMARK [2][]{subsection.5.4.3}{Venus}{section.5.4}% 30
-\BOOKMARK [2][]{subsection.5.4.4}{Cones}{section.5.4}% 31
-\BOOKMARK [0][]{chapter.6}{Conclusions}{}% 32
-\BOOKMARK [0][]{chapter.7}{Future Work}{}% 33
-\BOOKMARK [0][]{chapter*.26}{Bibliography}{}% 34
-\BOOKMARK [0][]{chapter*.26}{Appendix}{}% 35
-\BOOKMARK [0][]{appendix.A}{Absolute Difference 9x9 Window Code Snippet}{}% 36
-\BOOKMARK [0][]{appendix.B}{Absolute Difference 7x7 Window Code Snippet}{}% 37
-\BOOKMARK [0][]{appendix.C}{Minimum Comparator Code}{}% 38
-\BOOKMARK [0][]{appendix.D}{Python3 Serial SAD Algorithm}{}% 39
-\BOOKMARK [0][]{appendix.E}{Resource Utilization}{}% 40
-\BOOKMARK [0][]{appendix.F}{Testbench Simulations}{}% 41
+\BOOKMARK [1][]{section.4.2}{FPGALink}{chapter.4}% 19
+\BOOKMARK [0][]{chapter.5}{Experiments and Results}{}% 20
+\BOOKMARK [1][]{section.5.1}{Window Size Selection}{chapter.5}% 21
+\BOOKMARK [1][]{section.5.2}{Resource Utilization on FPGA}{chapter.5}% 22
+\BOOKMARK [1][]{section.5.3}{Testbench Simulation}{chapter.5}% 23
+\BOOKMARK [2][]{subsection.5.3.1}{9x9 Window Implementation Runtime}{section.5.3}% 24
+\BOOKMARK [2][]{subsection.5.3.2}{7x7 Window Implementation Runtime}{section.5.3}% 25
+\BOOKMARK [1][]{section.5.4}{Test Image Pairs}{chapter.5}% 26
+\BOOKMARK [2][]{subsection.5.4.1}{Data Overflows}{section.5.4}% 27
+\BOOKMARK [2][]{subsection.5.4.2}{Tsukuba}{section.5.4}% 28
+\BOOKMARK [2][]{subsection.5.4.3}{Venus}{section.5.4}% 29
+\BOOKMARK [2][]{subsection.5.4.4}{Cones}{section.5.4}% 30
+\BOOKMARK [0][]{chapter.6}{Conclusions}{}% 31
+\BOOKMARK [0][]{chapter.7}{Future Work}{}% 32
+\BOOKMARK [0][]{chapter*.26}{Bibliography}{}% 33
+\BOOKMARK [0][]{chapter*.26}{Appendix}{}% 34
+\BOOKMARK [0][]{appendix.A}{Absolute Difference 9x9 Window Code Snippet}{}% 35
+\BOOKMARK [0][]{appendix.B}{Absolute Difference 7x7 Window Code Snippet}{}% 36
+\BOOKMARK [0][]{appendix.C}{Minimum Comparator Code}{}% 37
+\BOOKMARK [0][]{appendix.D}{Resource Utilization}{}% 38
+\BOOKMARK [0][]{appendix.E}{Testbench Simulations}{}% 39
+\BOOKMARK [0][]{appendix.F}{Python3 Serial SAD Algorithm}{}% 40

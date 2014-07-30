@@ -1,28 +1,21 @@
-\chapter{Resource Utilization}
+\chapter{Testbench Simulations}
 \label{sec:appdxE}
 
-\begin{sidewaystable}
-\begin{center}
-	\begin{tabular}{| p{2cm} | p{2cm} | p{2.5cm} | p{2.5cm} | p{3cm} | p{2.5cm} | p{3cm} |}
-		\hline
-		\rowstyle{\bfseries} Window Size & 
-		\rowstyle{\bfseries} Disparity Range & 
-		\rowstyle{\bfseries} \# of pixels processed in parallel & 
-		\rowstyle{\bfseries} \# of Slice Registers used out of 54,576 &
-		\rowstyle{\bfseries} \# of Slice LUTs used out of 27,288 & 
-		\rowstyle{\bfseries} \# of occupied Slices out of 6,822 & 
-		\rowstyle{\bfseries} \# of MUXCYs used out of 13,644
-		\tabularnewline
-		\hline
-		7x7 & 16 & 2 & 8,465 (15\%) & 17,220 (63\%) & 5,640 (82\%) &  3,796 (27\%)
-		\tabularnewline
-		\hline 
-		9x9 & 16 & 4 & 8,136 (14\%) & 16,038 (58\%) & 4,719 (69\%) &  2,280 (16\%)
-		\tabularnewline
-		\hline 
-	\end{tabular}
-	\captionfonts
-	\caption{Resource utilization on the FPGA Atlys board for both window implementations.}
-	\label{table:utilize}
-\end{center}
-\end{sidewaystable}
+\begin{sidewaysfigure}
+	\begin{center}
+		\includegraphics[height=100mm]{figures/testbench_simulation_9x9.png}
+		\captionfonts
+		\caption{Testbench simulation for the 9x9 window implementation.}
+		\label{fig:tb_9x9}
+	\end{center}
+\end{sidewaysfigure}
+
+
+\begin{sidewaysfigure}
+	\begin{center}
+		\includegraphics[height=100mm]{figures/testbench_simulation_7x7.png}
+		\captionfonts
+		\caption{Testbench simulation for the 7x7 window implementation.}
+		\label{fig:tb_7x7}
+	\end{center}
+\end{sidewaysfigure}

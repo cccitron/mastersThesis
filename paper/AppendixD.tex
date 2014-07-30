@@ -1,41 +1,29 @@
-\chapter{Python3 Serial SAD Algorithm}
+\chapter{Resource Utilization}
 \label{sec:appdxD}
 
-\definecolor{mygreen}{rgb}{0,0.6,0}
-
-\lstset{
-	language=Python,
-	basicstyle=\footnotesize,
-	commentstyle=\color{mygreen},
-	keywordstyle=\color{blue}, 
-	tabsize=4
-}
-
-\begin{lstlisting}
-# Parameters for 9x9 window size SAD Algorithm
-winSize = 9
-dispRange = 16
-dispRow = 4
-win = (int)(winSize/2)
-ncol = (dispRow-1) + dispRange + (winSize-1)
-dispH = height - (winSize-1)
-dispW = width - (ncol - dispRow)
-
-# Serial SAD Algorithm
-for row in range(dispH):
-	sadArray = numpy.zeros((dispW, dispRange), dtype = 'i')
-	for i in range(dispW):
-		for j in range(dispRange):
-			for m in range(-win, (win+1)):
-				for n in range(-win, (win+1)):
-					sadArray[i][j] += \
-						abs(templateBuff[row+m+win][n+i+win] - \ 
-						searchBuff[row+m+win][n+i+j+win])
-	disparityArray = sadArray.argmin(axis=1)
-	disparityAll[row] = disparityArray
-\end{lstlisting}
-
-The full code for the Python3 SAD Algorithm can be found on github:
-\\\path{https://github.com/cccitron/mastersThesis/tree/master/pythonSAD}
-
+\begin{sidewaystable}
+\begin{center}
+	\begin{tabular}{| p{2cm} | p{2cm} | p{2.5cm} | p{2.5cm} | p{3cm} | p{2.5cm} | p{3cm} |}
+		\hline
+		\rowstyle{\bfseries} Window Size & 
+		\rowstyle{\bfseries} Disparity Range & 
+		\rowstyle{\bfseries} \# of pixels processed in parallel & 
+		\rowstyle{\bfseries} \# of Slice Registers used out of 54,576 &
+		\rowstyle{\bfseries} \# of Slice LUTs used out of 27,288 & 
+		\rowstyle{\bfseries} \# of occupied Slices out of 6,822 & 
+		\rowstyle{\bfseries} \# of MUXCYs used out of 13,644
+		\tabularnewline
+		\hline
+		7x7 & 16 & 2 & 8,465 (15\%) & 17,220 (63\%) & 5,640 (82\%) &  3,796 (27\%)
+		\tabularnewline
+		\hline 
+		9x9 & 16 & 4 & 8,136 (14\%) & 16,038 (58\%) & 4,719 (69\%) &  2,280 (16\%)
+		\tabularnewline
+		\hline 
+	\end{tabular}
+	\captionfonts
+	\caption{Resource utilization on the FPGA Atlys board for both window implementations.}
+	\label{table:utilize}
+\end{center}
+\end{sidewaystable}
 

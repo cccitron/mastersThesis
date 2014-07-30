@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {2.1}Computer Stereo Vision}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Parallelism in Stereo Vision}{6}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Stereo Vision Algorithms}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Sum of the Absolute Differences Algorithm}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Sum of the Absolute Differences (SAD) Algorithm}{7}{subsection.2.2.1}
 \contentsline {chapter}{\numberline {3}Related Work}{12}{chapter.3}
 \contentsline {chapter}{\numberline {4}Implementation}{15}{chapter.4}
 \contentsline {section}{\numberline {4.1}Architecture Overview}{15}{section.4.1}
@@ -17,8 +17,7 @@
 \contentsline {subsection}{\numberline {4.1.2}Minimum Comparator Architecture}{21}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}SAD Wrapper}{23}{subsection.4.1.3}
 \contentsline {subsection}{\numberline {4.1.4}Top Level}{23}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}FPGA and Computer Communication}{24}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}FPGALink}{24}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.2}FPGALink}{24}{section.4.2}
 \contentsline {chapter}{\numberline {5}Experiments and Results}{28}{chapter.5}
 \contentsline {section}{\numberline {5.1}Window Size Selection}{28}{section.5.1}
 \contentsline {section}{\numberline {5.2}Resource Utilization on FPGA}{28}{section.5.2}
@@ -37,6 +36,6 @@
 \contentsline {chapter}{\numberline {A}Absolute Difference 9x9 Window Code Snippet}{48}{appendix.A}
 \contentsline {chapter}{\numberline {B}Absolute Difference 7x7 Window Code Snippet}{49}{appendix.B}
 \contentsline {chapter}{\numberline {C}Minimum Comparator Code}{50}{appendix.C}
-\contentsline {chapter}{\numberline {D}Python3 Serial SAD Algorithm}{51}{appendix.D}
-\contentsline {chapter}{\numberline {E}Resource Utilization}{52}{appendix.E}
-\contentsline {chapter}{\numberline {F}Testbench Simulations}{54}{appendix.F}
+\contentsline {chapter}{\numberline {D}Resource Utilization}{51}{appendix.D}
+\contentsline {chapter}{\numberline {E}Testbench Simulations}{53}{appendix.E}
+\contentsline {chapter}{\numberline {F}Python3 Serial SAD Algorithm}{56}{appendix.F}

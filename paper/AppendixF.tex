@@ -1,21 +1,39 @@
-\chapter{Testbench Simulations}
+\chapter{Python3 Serial SAD Algorithm}
 \label{sec:appdxF}
 
-\begin{sidewaysfigure}
-	\begin{center}
-		\includegraphics[height=100mm]{figures/testbench_simulation_9x9.png}
-		\captionfonts
-		\caption{Testbench simulation for the 9x9 window implementation.}
-		\label{fig:tb_9x9}
-	\end{center}
-\end{sidewaysfigure}
+\definecolor{mygreen}{rgb}{0,0.6,0}
 
+\lstset{
+	language=Python,
+	basicstyle=\footnotesize,
+	commentstyle=\color{mygreen},
+	keywordstyle=\color{blue}, 
+	tabsize=4
+}
 
-\begin{sidewaysfigure}
-	\begin{center}
-		\includegraphics[height=100mm]{figures/testbench_simulation_7x7.png}
-		\captionfonts
-		\caption{Testbench simulation for the 7x7 window implementation.}
-		\label{fig:tb_7x7}
-	\end{center}
-\end{sidewaysfigure}
+\begin{lstlisting}
+# Parameters for 9x9 window size SAD Algorithm
+winSize = 9
+dispRange = 16
+dispRow = 4
+win = (int)(winSize/2)
+ncol = (dispRow-1) + dispRange + (winSize-1)
+dispH = height - (winSize-1)
+dispW = width - (ncol - dispRow)
+
+# Serial SAD Algorithm
+for row in range(dispH):
+	sadArray = numpy.zeros((dispW, dispRange), dtype = 'i')
+	for i in range(dispW):
+		for j in range(dispRange):
+			for m in range(-win, (win+1)):
+				for n in range(-win, (win+1)):
+					sadArray[i][j] += \
+						abs(templateBuff[row+m+win][n+i+win] - \ 
+						searchBuff[row+m+win][n+i+j+win])
+	disparityArray = sadArray.argmin(axis=1)
+	disparityAll[row] = disparityArray
+\end{lstlisting}
+
+The full code for the Python3 SAD Algorithm can be found on github:
+\\\path{https://github.com/cccitron/mastersThesis/tree/master/pythonSAD}
