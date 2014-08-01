@@ -10,7 +10,7 @@
 \section{Window Size Selection}
 \label{sec:windowSize}
 
-The size of the window (i.e. 9x9 pixels) affects the quality of the disparity map (see Figure~\ref{fig:tsukubaWinSize}) and the number of computations required to create the disparity map. The 3x3 window size in Figure~\ref{fig:tsukuba3x3} is processed the fastest out of the window sizes shown since each SAD calculation only has 9 pairs of pixels. The 13x13 window in Figure~\ref{fig:tsukuba13x13} has 169 pairs of pixels, which will require 160 more calculations per SAD value. However, the 13x13 window has the least amount of noise in its disparity map, but it loses some detail as shown by comparing the neck of the lamp in the foreground of the image compared to the lamp necks in the other images. Also, as the window size gets larger, more resources are needed on the FPGA board. The 7x7 and 9x9 window sizes were used because they provided a good compromise on the amount of noise in the disparity maps and the amount of hardware resources required for implementation. 
+The size of the window (e.g. 9x9 pixels) affects the quality of the disparity map (see Figure~\ref{fig:tsukubaWinSize}) and the number of computations required to create the disparity map. The 3x3 window size in Figure~\ref{fig:tsukuba3x3} is processed the fastest out of the window sizes shown since each SAD calculation only has 9 pairs of pixels. The 13x13 window in Figure~\ref{fig:tsukuba13x13} has 169 pairs of pixels, which will require 160 more calculations per SAD value. However, the 13x13 window has the least amount of noise in its disparity map, but it loses some detail as shown by comparing the neck of the lamp in the foreground of the image compared to the lamp necks in the other images. Also, as the window size gets larger, more resources are needed on the FPGA board. The 7x7 and 9x9 window sizes were used because they provided a good compromise on the amount of noise in the disparity maps and the amount of hardware resources required for implementation. 
 
 \begin{figure}
 \begin{center}
@@ -62,7 +62,7 @@ See Table~\ref{table:utilize} in Appendix~\ref{sec:appdxD}. The 7x7 window imple
 
 See Figure~\ref{fig:tb_9x9} and Figure~\ref{fig:tb_7x7} in Appendix~\ref{sec:appdxE} for the testbench simulations for the 9x9 window and 7x7 window implementations, respectively.
 
-The signal h2fvalid\_i, near the top of the figures, goes high when image data is sent to the SAD wrapper. The first section that is high is the initial rows being sent to the wrapper. The smaller following sections that go high are when the next row is being sent to the wrapper. The wrapper has been designed to allow both the template image data and the search image data to be sent to the wrapper at the same time, thus reducing the amount of time taken to get all necessary data into the wrapper. When the signal f2hready\_i goes high, it means that the disparity values are being sent out of the wrapper.
+The signal h2fvalid\_i, near the top of the figures, went high when image data is sent to the SAD wrapper. The first time h2fvalid\_i went high until the second time it went high was when the initial rows were given to the wrapper up to when the initial disparity values were produced. A cycle began afterwards where h2fvalid\_i would go high for several clock cycles and then go low for several more clock cycles. The high section represented when the next row was sent to the wrapper while the low section represented the time it took to calculate the SAD values and produce the next disparity values. The wrapper has been designed to allow both the template image data and the search image data to be sent to the wrapper at the same time, thus reducing the amount of time taken to get all necessary data into the wrapper. When the signal f2hready\_i goes high, it means that the disparity values are being sent out of the wrapper.
 
 \subsection{9x9 Window Implementation Runtime}
 \label{sec:testbench9x9}
@@ -101,9 +101,9 @@ In the testbench simulation, the window size is 9x9 and 4 pixels are processed i
 \subsection{7x7 Window Implementation Runtime}
 \label{sec:testbench7x7}
 
-Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the theoretical frames per second can be inferred for different image sizes. The simulation uses a clock cycle of 10 ns.
+Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the theoretical frame rate can be inferred for different image sizes. The simulation uses a clock cycle of 10 ns.
 
-In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced that has the SAD wrapper get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 619x474, which is 293,406 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 293,406 pixels is divided by 2 pixels/iteration, giving 146,703 iterations. So, 146,702 iterations times 0.42 us/iteration plus 1.78 us (initial section, hence minus one on number of iterations) gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the theoretical frame rate for the image sizes used in this chapter.
+In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 619x474, which is 293,406 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 293,406 pixels is divided by 2 pixels/iteration, giving 146,703 iterations. So, 146,702 iterations times 0.42 us/iteration plus 1.78 us (initial section, hence minus one on number of iterations) gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the theoretical frame rate for the image sizes used in this chapter.
 
 
 \begin{table}
@@ -132,7 +132,7 @@ In the testbench simulation, the window size is 7x7 and 2 pixels are processed i
 \section{Test Image Pairs}
 \label{sec:runtime}
 
-In this section, FPGA disparity maps are compared to disparity maps created using Python. Part of the SAD algorithm implementation in Python is show in Appendix~\ref{sec:appdxF}. The Python SAD version is performed completely in serial, so 1 pixel at a time. It is run on a desktop that has an i7 CPU 950 at 3.07 GHz, 16 GB of RAM, and runs Ubuntu 64-bit. The images the Python version produced are used to compare disparity map quality and runtime of the algorithm.
+In this section, FPGA disparity maps are compared to disparity maps created using Python. Part of the SAD algorithm implementation in Python is shown in Appendix~\ref{sec:appdxF}. The Python SAD version is performed completely in serial, so 1 pixel at a time. It is run on a desktop that has an i7 CPU 950 at 3.07 GHz, 16 GB of RAM, and runs Ubuntu 64-bit. The images the Python version produced are used to compare disparity map quality and runtime of the algorithm.
 
 \subsection{Data Overflows}
 \label{sec:overflow}
@@ -141,7 +141,7 @@ The code for the hardware to be generated is designed in VHDL. The size of the d
 
 Since most of the values were below 4,096, a measure was put in place in order to reduce the amount of bits needed during the minimum comparisons. If a SAD value was greater than 4,095, then 4,095 was returned for the calculated SAD because the greater the value, the less likely that search pixel is the correct corresponding one to the template pixel. In Figure~\ref{fig:tsukubaDispMap} and Figure~\ref{fig:venusDispMap}, the only noticeable difference in the Python to FPGA comparisons is at the top of the images. The colors, warmer is closer and cooler is farther away, show that the top areas are thought to be closer than they actually are in the FPGA images. For a robot, it would be better to error on the side of thinking an object is closer than it actually is because the robot will be less prone to collide with the object. If a robot thought an object was farther away than it actually was, then the likelihood of collision would increase.
 
-\begin{figure}
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=80mm]{figures/tsukuba_disp9x9_2_sad_overflow.png}
 		\captionfonts
@@ -153,7 +153,7 @@ Since most of the values were below 4,096, a measure was put in place in order t
 \subsection{Tsukuba}
 \label{sec:tsukuba}
 
-In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pair is shown. Figure~\ref{fig:tsukubaDispMap} shows how the 7x7 window implementation is slightly noisier than the 9x9 window implementation. As discussed in Section~\ref{sec:overflow}, the only noticeable difference between the Python implementation and the FPGA implementation is at the top of the disparity maps. The difference caused by the two images not having similar enough corresponding regions or occlusions of certain parts of the objects in one of the images. This causes SAD values to be greater than normal. 
+In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pair is shown. Figure~\ref{fig:tsukubaDispMap} shows how the 7x7 window implementation is slightly noisier than the 9x9 window implementation. As discussed in Section~\ref{sec:overflow}, the only noticeable difference between the Python implementation and the FPGA implementation is at the top of the disparity maps. This difference is caused by not having enough similarities between corresponding regions. It is possible for certain parts of an object in one image to be occluded in the image. This causes SAD values to be greater than normal. 
 
 For Tsukuba, the FPGA version has a theoretical runtime of 32.43 and 46.51 frames per second for the 9x9 and 7x7 window implementations, respectively, from Table~\ref{table:tb_9x9} and Table~\ref{table:tb_7x7}. The serial Python implementation took 7.81 minutes for a 9x9 window with a disparity range of 16. The 7x7 window implementation with a disparity range of 16 in Python took 4.22 minutes to complete.
 

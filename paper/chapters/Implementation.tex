@@ -12,9 +12,7 @@ The code for the following sections is located on github under:
 
 \subsection{Sum of the Absolute Differences Architecture}
 
-Two versions of the SAD algorithm have been implemented in this paper. The first uses a 9x9 window and the other one uses a 7x7 window. Figure~\ref{fig:sadAlg_rtl} shows the top level entity of the SAD implementation used. Both versions have a clocked input (clk\_I) and a one bit data input (data\_I) to notify the algorithm to begin calculating the SAD value. The template\_window\_I and search\_window\_I between the two versions differ in the sense that the number of bytes, 49 or 81, sent to the sadAlgorithm entity are different. The data\_O signal notifies when the calculation is complete and that it is ready for the next set of input. The calculated SAD value is sent out of the entity through sad\_O.
-
-There is a slight variation between the standard SAD algorithm and how it is implemented in this stereo vision system. Instead of subtracting two pixel values and then taking the absolute difference between them, the implementation in this paper finds which corresponding pixel has a greater value and then sends the two pixels to the subtracter based on that. See Appendix~\ref{sec:appdxA} and Appendix~\ref{sec:appdxB} for the code used. The subtracter then takes the greater value and subtracts from it the lesser value and returns the difference, sub. The value sub will always be greater than or equal to zero, which is equal to the absolute difference of the two corresponding pixels. This process was implemented to reduce the complexity by not needing signed values and allowed for the number of bytes used for logic in the algorithm to be reduced since the values no longer need additional bits to account for the signed portion of negative values.
+Two versions of the SAD algorithm have been implemented in this paper. The first uses a 9x9 window and the other one uses a 7x7 window. Figure~\ref{fig:sadAlg_rtl} shows the top level entity of the SAD implementation used. Both versions have a clocked input (clk\_I) and a one bit data input (data\_I) to notify the algorithm to begin calculating the SAD value. The template\_window\_I and search\_window\_I between the two versions differ in the sense that the number of bytes, 49 or 81, sent to the sadAlgorithm entity are different. The data\_O signal notifies when the calculation is complete and is ready for the next set of input. The calculated SAD value is sent out of the entity through sad\_O.
 
 \begin{figure}[h]
 	\begin{center}
@@ -24,6 +22,9 @@ There is a slight variation between the standard SAD algorithm and how it is imp
 		\label{fig:sadAlg_rtl}
 	\end{center}
 \end{figure}
+
+There is a slight variation between the standard SAD algorithm and how it is implemented in this stereo vision system. Instead of subtracting two pixel values and then taking the absolute difference between them, the implementation in this paper finds which corresponding pixel has a greater value and then sends the two pixels to the subtracter. See Appendix~\ref{sec:appdxA} and Appendix~\ref{sec:appdxB} for the code used. The subtracter then takes the greater value and subtracts from it the lesser value and returns the difference, "sub". The value sub will always be greater than or equal to zero, which is equal to the absolute difference of the two corresponding pixels. This process allows for the absolute value to be obtained without having to deal with signed values and the additional bits needed to account for the signed portion of the negative values. 
+
 
 \subsubsection{State Diagram}
 
@@ -41,7 +42,7 @@ Inside the sadAlgorithm entity from Fig.~\ref{fig:sadAlg_rtl}, the state machine
 \subsubsection{9x9 Window}
 \label{sec:9x9window}
 
-The 9x9 window implementation operated with 4 pixels processed in parallel. Every pixel has 16 SAD operations processed in parallel. There are 64 SAD operations total occurring in parallel for the 4 pixels. However, each SAD calculation has a higher degree of serialization than the 7x7 window implementation in order to reduce space to fit on the Atlys board~\cite{atlysBoard}. Figure~\ref{fig:sadAlg9x9} shows a simplified version of this process. Each clock cycle, for 81 cycles, the difference between corresponding pixels is calculated. Beginning one clock cycle after the differences start to be calculated the difference, sub, sum\_out is added to itself and sub. This process also occurs 81 times, one addition each clock cycle. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
+The 9x9 window implementation operated with 4 pixels processed in parallel. Every pixel has 16 SAD operations processed in parallel. There are 64 SAD operations total occurring in parallel for the 4 pixels. However, each SAD calculation has a higher degree of serialization than the 7x7 window implementation in order to reduce space to fit on the Atlys board~\cite{atlysBoard}. Figure~\ref{fig:sadAlg9x9} shows a simplified version of this process. For each of the 81 clock cycles, the difference between corresponding pixels is calculated. Beginning one clock cycle after the differences start to be calculated the difference, sub, sum\_out is added to itself and sub. This process also occurs 81 times, one addition for each clock cycle. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
 
 \begin{figure}[h]
 	\begin{center}
@@ -52,7 +53,7 @@ The 9x9 window implementation operated with 4 pixels processed in parallel. Ever
 	\end{center}
 \end{figure}
 
-Figure~\ref{fig:sadPipe9x9} illustrates the pipeline used in a SAD calculation in a SAD calculation for the 9x9 window version. It takes 81 clock cycles to take all of the differences between all 81 pairs of pixel values. After the first difference is calculated, the differences can then begin to be summed up. The summing also takes 81 clock cycles and ends one cycle after the last difference is calculated. This results in it taking 82 clock cycles.
+Figure~\ref{fig:sadPipe9x9} illustrates the pipeline used in a SAD calculation for the 9x9 window version. It takes 81 clock cycles to take the differences between all 81 pairs of pixel values. After the first difference is calculated, the differences can then be summed up. The summing also takes 81 clock cycles and ends one cycle after the last difference is calculated. This results in it taking 82 clock cycles.
 
 \begin{figure}[h]
 	\begin{center}
@@ -71,7 +72,7 @@ The code for the 9x9 window implementation can be found on github:
 
 The 7x7 window implementation operated with 2 pixels processed in parallel. Each pixel has 16 SAD operations processed in parallel. There are only 32 SAD operations occurring in parallel, as opposed to 64 that were performed in parallel in Sec.~\ref{sec:9x9window}. The 7x7 window size has 32 pixels less than the 9x9 version for each window in every SAD calculation. The process was able to utilize a higher degree of parallelization. The increased parallelism takes up more space on the board than the serial version from Sec.~\ref{sec:9x9window}. Figure~\ref{fig:sadAlg7x7} shows a simplified version of this process. Each clock cycle during 7 cycles, the difference, sub, between corresponding pixels is calculated. One clock cycle after the differences begin to be calculated, sum\_out is added to itself and the value sub. This process also occurs 7 times, one set of addition each clock cycle. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
 
-The main difference between this implementation and the 9x9 window implementation from Sec.~\ref{sec:9x9window} is that the difference between corresponding pixels is parallelized to calculate 7 absolute differences at once. The dotted box in Fig.~\ref{fig:sadAlg7x7} represents all 7 of the subtraction calculations occurring 7 times in the SAD calculation. Instead of requiring 49 clock cycles to calculate all the differences, it only takes 7 clock cycles. All 7 of the differences that were calculated are added to sum\_out each clock cycle.
+The main difference between this implementation and the 9x9 window implementation from Sec.~\ref{sec:9x9window} is the difference between corresponding pixels is parallelized to calculate 7 absolute differences at once. The dotted box in Fig.~\ref{fig:sadAlg7x7} represents all 7 of the subtraction calculations occurring 7 times in the SAD calculation. Instead of requiring 49 clock cycles to calculate all the differences, it only takes 7 clock cycles. All 7 of the differences that were calculated are added to sum\_out each clock cycle.
 
 \begin{figure}[h]
 	\begin{center}
@@ -84,6 +85,9 @@ The main difference between this implementation and the 9x9 window implementatio
 
 Figure~\ref{fig:sadPipe7x7} shows the pipeline used for the 7x7 window version. It takes 7 clock cycles to take all of the differences between all 49 pairs of pixel values. After the first set of differences is calculated, the differences can begin to be summed up. The summing also takes 7 clock cycles and ends one cycle after the last difference is calculated. This results in a total of 8 clock cycles.
 
+The code for the 7x7 window implementation can be found on github:
+\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7}
+
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=50mm]{figures/sadPipeline7x7.png}
@@ -92,9 +96,6 @@ Figure~\ref{fig:sadPipe7x7} shows the pipeline used for the 7x7 window version. 
 		\label{fig:sadPipe7x7}
 	\end{center}
 \end{figure}
-
-The code for the 7x7 window implementation can be found on github:
-\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7}
 
 \subsection{Minimum Comparator Architecture}
 

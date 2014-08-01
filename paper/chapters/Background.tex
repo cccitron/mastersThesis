@@ -3,9 +3,9 @@
 
 This chapter presents some general information on stereo vision that should be useful for understanding the decisions that were made in developing this stereo vision system.
 
-\section{Computer Stereo Vision}
+\section{Computer Stereo Vision Overview}
 
-Computer vision is concerned with using computers to understand and use information that is within visual images~\cite{computerVision}. There are many different types of computer vision, which range from using one image to multiple images in order to obtain information. One image is not enough to determine the three dimensional properties of the objects within the image.
+Computer vision is concerned with using computers to understand and use information that is within visual images~\cite{computerVision}. There are many different types of computer vision, which range from using one image to multiple images in order to obtain information. One image cannot provide the depth of the objects within the image.
 
 Stereo vision uses multiple images of the same scene, taken from different perspectives, in order to construct a three dimensional representation of the objects in the images~\cite{stereoVision}. Comparing multiple images together for their similarities and differences allows for the depth to be obtained.
 
@@ -15,7 +15,7 @@ Computational requirements for real-time applications can be reduced in several 
 
 Figure~\ref{fig:sv_diagram} represents a simplified illustration of binocular stereo vision. The two cameras are held at a known fixed distance from each other and are used to triangulate the distance of different objects in the images they create. The points U\textsubscript{L} and U\textsubscript{R} in the left and right images, respectively, are 2D represents the point P in 3D space. By comparing the offset between U\textsubscript{L} and U\textsubscript{R} in the two images, it is possible to obtain the distance of point P from the cameras~\cite{stereoVisionDiagram}.
 
-\begin{figure}
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[height=60mm]{figures/stereoVisionDiagram.jpg}
 		\captionfonts
@@ -38,7 +38,7 @@ Stereo vision algorithms can be placed into one of 3 categories: pixel-based met
 
 There are a lot of different stereo vision algorithms~\cite{taxonomy}. In the taxonomy of~\cite{taxonomy}, 20 different stereo vision algorithms were compared against each other using various reference images. Many algorithms used are based on either the Sum of Absolute Differences (SAD) or correlation algorithms~\cite{alteraStratixIVPaper}.
 
-An algorithm that is similar to SAD is the Sum of the Square Differences (SSD). Both of these algorithms produce similar results and contain around the same amount of error~\cite{xilinxSpartan3ABoard}. SAD was chosen over the other algorithms to implement in this paper because it is highly parallilizable and is simpler to implement in hardware. SSD requires squaring the difference between corresponding pixels and summing it up. Since squaring a number is the number multiplied by itself, the number will be added to itself that many times to produce the squared value. This is a lot more over head and more hardware is required than just taking the absolute value of the difference of a corresponding pair.
+An algorithm that is similar to SAD is the Sum of the Square Differences (SSD). Both of these algorithms produce similar results and contain around the same amount of error~\cite{xilinxSpartan3ABoard}. SAD was chosen over the other algorithms to implement in this paper because it is highly parallilizable and is simpler to implement in hardware. SSD requires squaring the difference between corresponding pixels and summing it up. Since squaring a number is the number multiplied by itself, the number will be added to itself that many times to produce the squared value. This causes more over head and more hardware is required than just taking the absolute value of the difference of a corresponding pair.
 
 \subsection{Sum of the Absolute Differences (SAD) Algorithm}
 
@@ -49,7 +49,7 @@ SAD is a pixel-based matching method~\cite{alteraStratixIVPaper}. Stereo vision 
 	\label{eq:sadAlg1}
 \end{equation}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
 	\includegraphics[height=50mm]{figures/sadCorrespondingWindows.png}
 	\captionfonts
@@ -58,11 +58,11 @@ SAD is a pixel-based matching method~\cite{alteraStratixIVPaper}. Stereo vision 
 \end{center}
 \end{figure}
 
-In stereo vision, epipolar lines are created from the two cameras capturing images from the same scene. Figure~\ref{fig:epipolar} show the epipolar line that point X must be on in the corresponding images. This is useful because if the epipolar lines are known for both images, then it is possible to know the line that two corresponding points are on. It reduces the problem of finding the same two points from a 2D area to a 1D line. Now, if the epipolar lines in both images are horizontal as they are in Fig.~\ref{fig:sad_corr} as opposed to them being at a diagonal as they are in Fig.~\ref{fig:epipolar}, then Eq.~\ref{eq:sadAlg1} reduces to Equation~\ref{eq:sadAlg2}. For cameras that are not perfectly aligned, rectification is often used in order to align epipolar lines between images~\cite{rectification}. However, many stereo vision algorithms will assume that the epipolar lines are rectified to simplify the overall processing required.
+In stereo vision, epipolar lines are created from the two cameras capturing images from the same scene. Figure~\ref{fig:epipolar} shows the epipolar line that point X must be on in the corresponding images. This is useful because if the epipolar lines are known for both images, then it is possible to know the line that two corresponding points are on. It reduces the problem of finding the same two points from a 2D area to a 1D line. Now, if the epipolar lines in both images are horizontal as they are in Fig.~\ref{fig:sad_corr} as opposed to them being at a diagonal as they are in Fig.~\ref{fig:epipolar}, then Eq.~\ref{eq:sadAlg1} reduces to Equation~\ref{eq:sadAlg2}. For cameras that are not perfectly aligned, rectification is often used in order to align epipolar lines between images~\cite{rectification}. However, many stereo vision algorithms will assume that the epipolar lines are rectified to simplify the overall processing required.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
-	\includegraphics[height=50mm]{figures/epipolar.png}
+	\includegraphics[height=55mm]{figures/epipolar.png}
 	\captionfonts
 	\caption{The epipolar line that point X is on for both images~\cite{epipolar}.}
 	\label{fig:epipolar}
@@ -74,9 +74,11 @@ In stereo vision, epipolar lines are created from the two cameras capturing imag
 	\label{eq:sadAlg2}
 \end{equation}
 
-The disparity is the amount of offset between two corresponding pixels. The disparity range is the number of pixels that the candidate window will move through the image and is represented by the value `x' in Eq.~\ref{eq:sadAlg2}. It corresponds to the amount of SAD values that will be calculated for each pixel. Figure~\ref{fig:sadGraphs} shows two types of SAD search methods. Fig.~\ref{fig:globalSAD} selects the overall SAD value with the lowest value to be the matching pixel. However, Fig.~\ref{fig:localSAD} limits the search region to a specific area. This helps to avoid issues of similar looking areas that are not near the reference window from being falsely identified as matching. The downside to this method is that if an object gets too close, meaning it would have high disparity values, and if the search region is not large enough, then the distance of the object will be miss classified. It is important to determine a window size and a search region that are not too small and are not too big.
+The disparity is the amount of offset between two corresponding pixels. The disparity range is the number of pixels that the candidate window will move through the image and is represented by the value `x' in Eq.~\ref{eq:sadAlg2}. It corresponds to the amount of SAD values that will be calculated for each pixel. Figure~\ref{fig:sadGraphs} shows two types of SAD search methods. Fig.~\ref{fig:globalSAD} selects the overall SAD value with the lowest value to be the matching pixel. However, Fig.~\ref{fig:localSAD} limits the search region to a specific area. This helps to avoid issues of similar looking areas that are not near the reference window from being falsely identified as matching. The downside to this method is that if an object gets too close, meaning it would have high disparity values, and if the search region is not large enough, then the distance of the object will be miss classified. It is important to determine a window size and a search region that fit desired parameters.
 
-\begin{figure}
+For example, Figure~\ref{fig:template} shows a reference (template) window from one image.  Figure~\ref{fig:search} shows the candidate (search) area in from the other image. The disparity range is 3, or 0 to 2. There are three 3x3 windows within the search region in Fig.~\ref{fig:search}. From left to right the three search windows have their center pixel as 4, 6, and 5, respectively. 
+
+\begin{figure}[h]
 \begin{center}
 	\begin{subfigure}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{figures/sadGlobalGraph.png}
@@ -94,11 +96,9 @@ The disparity is the amount of offset between two corresponding pixels. The disp
 \end{center}
 \end{figure}
 
-For example, Figure~\ref{fig:template} shows a reference (template) window from one image.  Figure~\ref{fig:search} shows the candidate (search) area in from the other image. The disparity range is 3, or 0 to 2. There are three 3x3 windows within the search region in Fig.~\ref{fig:search}. From left to right the three search windows have their center pixel as 4, 6, and 5, respectively. 
-
 Comparing corresponding pixels in the template window with the first search window (S0) gives the absolute differences for all 9 pixels going from left to right and top to bottom of 8, 1, 1, 2, 1, 0, 1, 2, and 2. So the SAD value for S0 is 18, which is obtained by adding up all nine of those values. The SAD value for the second search window (S1) is 6 and the last search window (S2) is 13. The template window has the smallest SAD value with S1. Therefore the center pixel in S1 is determined to be the corresponding pixel for the center pixel in the template window. The disparity value is 1 (how far the matching search window was shifted to the right). The disparity value, along with many others, is used to create a disparity map. Each disparity value in the disparity map is at the same relative location that the center pixel of its corresponding template window is located.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{center}
 	\begin{subfigure}{0.3\textwidth}
 		\begin{center}				
