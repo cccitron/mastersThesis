@@ -517,14 +517,14 @@ if __name__ == "__main__":
                 disp_row = 4 
                 
                 # template & search arrays, data sent over via bytearrays
-                buffTempl_h2f = bytearray(ncol * nrow + 1)
-                buffSearch_h2f = bytearray(ncol * nrow + 1)
+                buffTempl_h2f = bytearray(ncol * nrow)
+                buffSearch_h2f = bytearray(ncol * nrow)
                 
                 # initial time
                 t0 = time.time()
                 
                 # The initial data to be sent to the FPGA
-                ndx = 1
+                ndx = 0
                 for i in range(nrow):
                     for j in range(ncol):
                         buffTempl_h2f[ndx] = templateBuff[i][j]
@@ -590,13 +590,13 @@ if __name__ == "__main__":
                 print("\n\n\n")'''
                 
                 # Next rows
-                templateRow_h2f = bytearray(ncol + 1)
-                searchRow_h2f = bytearray(ncol + 1)
+                templateRow_h2f = bytearray(ncol)
+                searchRow_h2f = bytearray(ncol)
                 
                 # data to be sent to the FPGA
                 pos = 1
-                for i in range(nrow, height):
-                    ndx = 1
+                for i in range(nrow, 10): #height):
+                    ndx = 0
                     for j in range(ncol):
                         templateRow_h2f[ndx] = templateBuff[i][j]
                         searchRow_h2f[ndx] = searchBuff[i][j]
