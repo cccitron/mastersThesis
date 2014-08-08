@@ -5,5 +5,11 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="432" delta="unknown" >"/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/sad_wrapper.vhd" Line 52: Formal &lt;<arg fmt="%s" index="1">rst_i</arg>&gt; has no actual or default value.
+</msg>
+
+<msg type="error" file="Simulator" num="777" delta="unknown" >Static elaboration of top level VHDL design unit <arg fmt="%s" index="1">tb_sad_wrapper</arg> in library <arg fmt="%s" index="2">work</arg> failed
+</msg>
+
 </messages>
 

@@ -25,6 +25,8 @@ use ieee.numeric_std.all;
 
 entity top_level is
 	port(
+		rst_I 		  : IN    STD_LOGIC;
+	
 		-- FX2 interface -----------------------------------------------------------------------------
 		fx2Clk_in     : in    std_logic;                    -- 48MHz clock from FX2
 		fx2Addr_out   : out   std_logic_vector(1 downto 0); -- select FIFO: "10" for EP6OUT, "11" for EP8IN
@@ -325,8 +327,8 @@ begin                                                                     --BEGI
    sad_wrappings : entity work.sad_wrapper
       port map ( 
          clk_I      => fx2Clk_in, --clk_sad,
+			rst_I 	  => rst_I,
 
-         h2fData_I  => h2fData,
 			templ_I    => template_in,
          search_I   => search_in,
          templ_O    => reg0_templ, --reg1_next,

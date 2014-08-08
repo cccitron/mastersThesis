@@ -7,6 +7,8 @@
 \chapter{Experiments and Results}
 \label{sec:exp}
 
+The experiments and results presented in this section used the FPGA Atlys board and a desktop computer that has an i7 CPU 950 at 3.07 GHz, 16 GB of RAM, and runs Ubuntu 64-bit. Due to hardware and timing issues with the DDR RAM on the FPGA board, the board was unable to hold all of the data for both images. Part of the rows of both images were sent to the FPGA board from the computer. The board processed the data and send the disparity values back to the computer. The computer then provide the board with the next set of data and so on until the entire disparity map was created. This was used to test the quality and accuracy of the disparity maps from the FPGA implementation in comparison to computer implementations. The transfer time of sending both images to the FPGA board was not a real-time solution. To test for the maximum possible frames per second the SAD wrapper perform at, testbench simulations were used to obtain the time it should take to produce a disparity map on the board at a 100 MHz clock. The Atlys board has a 100 MHz clock on it, so that determined the clock cycle of 10 ns in the testbench simulations.
+
 \section{Window Size Selection}
 \label{sec:windowSize}
 
@@ -55,12 +57,37 @@ The size of the window (e.g. 9x9 pixels) affects the quality of the disparity ma
 \section{Resource Utilization on FPGA}
 \label{sec:utilize}
 
-See Table~\ref{table:utilize} in Appendix~\ref{sec:appdxD}. The 7x7 window implementation actually uses more resources on the FPGA board than the 9x9 window implementation due to the amount of parallel calculations used in the SAD algorithm. There is still plenty of space on the board for other top level entity designs for this SAD module.
+See Table~\ref{table:utilize} for resource utilization. The 7x7 window implementation actually uses more resources on the FPGA board than the 9x9 window implementation due to the amount of parallel calculations used in the SAD algorithm. There is still plenty of space on the board for other top level entity designs for this SAD module.
+
+\begin{table}
+\begin{center}
+	\begin{tabular}{| p{2cm} | p{2cm} | p{2.5cm} | p{3cm} | p{2.5cm} |}
+		\hline
+		\rowstyle{\bfseries} Window Size & 
+		\rowstyle{\bfseries} \# of pixels in parallel & 
+		\rowstyle{\bfseries} \# of Slice Registers, out of 54,576 &
+		\rowstyle{\bfseries} \# of Slice LUTs, out of 27,288 & 
+		\rowstyle{\bfseries} \# of occupied Slices, out of 6,822 %& 
+		%\rowstyle{\bfseries} \# of MUXCYs, out of 13,644
+		\tabularnewline
+		\hline
+		7x7 & 2 & 8,465 (15\%) & 17,220 (63\%) & 5,640 (82\%) %&  3,796 (27\%)
+		\tabularnewline
+		\hline 
+		9x9 & 4 & 8,136 (14\%) & 16,038 (58\%) & 4,719 (69\%) %&  2,280 (16\%)
+		\tabularnewline
+		\hline 
+	\end{tabular}
+	\captionfonts
+	\caption{Resource utilization on the FPGA Atlys board for both window implementations.}
+	\label{table:utilize}
+\end{center}
+\end{table}
 
 \section{Testbench Simulation}
 \label{sec:testbench}
 
-See Figure~\ref{fig:tb_9x9} and Figure~\ref{fig:tb_7x7} in Appendix~\ref{sec:appdxE} for the testbench simulations for the 9x9 window and 7x7 window implementations, respectively.
+See Figure~\ref{fig:tb_9x9} and Figure~\ref{fig:tb_7x7} in Appendix~\ref{sec:appdxD} for the testbench simulations for the 9x9 window and 7x7 window implementations, respectively.
 
 The signal h2fvalid\_i, near the top of the figures, went high when image data is sent to the SAD wrapper. The first time h2fvalid\_i went high until the second time it went high was when the initial rows were given to the wrapper up to when the initial disparity values were produced. A cycle began afterwards where h2fvalid\_i would go high for several clock cycles and then go low for several more clock cycles. The high section represented when the next row was sent to the wrapper while the low section represented the time it took to calculate the SAD values and produce the next disparity values. The wrapper has been designed to allow both the template image data and the search image data to be sent to the wrapper at the same time, thus reducing the amount of time taken to get all necessary data into the wrapper. When the signal f2hready\_i goes high, it means that the disparity values are being sent out of the wrapper.
 
@@ -132,7 +159,7 @@ In the testbench simulation, the window size is 7x7 and 2 pixels are processed i
 \section{Test Image Pairs}
 \label{sec:runtime}
 
-In this section, FPGA disparity maps are compared to disparity maps created using Python. Part of the SAD algorithm implementation in Python is shown in Appendix~\ref{sec:appdxF}. The Python SAD version is performed completely in serial, so 1 pixel at a time. It is run on a desktop that has an i7 CPU 950 at 3.07 GHz, 16 GB of RAM, and runs Ubuntu 64-bit. The images the Python version produced are used to compare disparity map quality and runtime of the algorithm.
+In this section, FPGA disparity maps are compared to disparity maps created using Python. Part of the SAD algorithm implementation in Python is shown in Appendix~\ref{sec:appdxE}. The Python SAD version is performed completely in serial, so 1 pixel at a time. The images the Python version produced are used to compare disparity map quality and runtime of the algorithm.
 
 \subsection{Data Overflows}
 \label{sec:overflow}

@@ -1,0 +1,14 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/tb_sad_wrapper_isim_beh.exe -prj /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/tb_sad_wrapper_beh.prj work.tb_sad_wrapper 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/ipcore_dir/adder_10.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/window_array.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/sadAlgorithm_7x7.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/minComparator.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/sad_wrapper.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/tb_sad_wrapper.vhd" into library work
+Starting static elaboration
+ERROR:HDLCompiler:432 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/sad_wrapper.vhd" Line 52: Formal <rst_i> has no actual or default value.
+ERROR:Simulator:777 - Static elaboration of top level VHDL design unit tb_sad_wrapper in library work failed

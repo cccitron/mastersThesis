@@ -36,21 +36,20 @@ entity sad_wrapper is
       window : integer := 7; --9; --3; -- Window size, i.e. "3" -> 3x3 window
       win    : integer := 3; --4; --1; -- win is the number of pixels above, below, right, & left of center pixel
    
-      NCOL_C : INTEGER := 27; --23; --25; --27; --25; --27; --29; --24; --25; --21; --33; --65; --200; --19; -- Number of columns in the search image
+      NCOL_C : INTEGER := 25; --27; --23; --25; --27; --25; --27; --29; --24; --25; --21; --33; --65; --200; --19; -- Number of columns in the search image
       NROW_C : INTEGER := 7; --9; --3;  -- Number of rows in the search image
       
-      PIXEL_CNT  : INTEGER := 189; --161; --225; --243; --225; --81; --87; --216; --75; --63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
+      PIXEL_CNT  : INTEGER := 175; --189; --161; --225; --243; --225; --81; --87; --216; --75; --63; --99; --195; --600; --57; -- Number of pixels sent to the Template and Search Arrays, each.
       DISP_RANGE : INTEGER := 16; -- Disparity range 0-15
-      DISP_ROW   : INTEGER := 6; --2; --4; --2; --10; --12; --1; --8; --4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
-      NUM_2_ROW  : INTEGER := 27; --25; --27; --25; --27; --29; --24; --25; --21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
-      LAST_ROW   : INTEGER := 162; --200; --216; --200; --54 --58 --192 --50 --42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
+      DISP_ROW   : INTEGER := 4; --6; --2; --4; --2; --10; --12; --1; --8; --4; --16; --48; --2;  -- Number of disparity values for an entire row, to be sent back to comp.
+      NUM_2_ROW  : INTEGER := 25; --27; --25; --27; --25; --27; --29; --24; --25; --21; --33; --65; --200; --19; -- The index of the first element of the second row for the template & search images.
+      LAST_ROW   : INTEGER := 150; --162; --200; --216; --200; --54 --58 --192 --50 --42 --66 --130 --400 --38  -- The index of the first element of the last row for the template & search images.
 		
 		SAD_SIZE : INTEGER := 12
 	);
    Port ( 
       clk_I      : in  STD_LOGIC;
-      
-      h2fData_I  : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+      rst_I		  : IN  STD_LOGIC;
       
 		templ_I    : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
 		search_I   : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -143,7 +142,32 @@ begin
 
    process(clk_I)
 	begin
-		if ( rising_edge(clk_I) ) then
+		IF (rst_I = '0') THEN
+			template_array <= (OTHERS => (OTHERS => '0'));
+			search_array   <= (OTHERS => (OTHERS => '0'));
+			sad_array      <= ((OTHERS => (OTHERS => '0')),
+									 (OTHERS => (OTHERS => '0')),
+									 (OTHERS => (OTHERS => '0')),
+									 (OTHERS => (OTHERS => '0')));
+			disparityArray <= (OTHERS => (OTHERS => '0'));
+			
+			ndx_t  <= 0;
+			junk_t <= '1';
+			ndx_s  <= 0;
+			junk_s <= '1';
+			
+			f2h_t_rd <= 0;
+			f2h_s_rd <= 0;
+			
+			f2h_sad_rd  <= 0;
+			ndx_sad     <= 0;
+			f2h_disp_rd <= 0;
+         disp_ready  <= '0';
+			
+			data_in  <= '0';
+			junk_out <= x"ff";
+			
+		ELSIF ( rising_edge(clk_I) ) then
          template_array <= template_array_next;
          search_array <= search_array_next;
 			

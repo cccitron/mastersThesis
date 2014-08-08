@@ -407,7 +407,7 @@ if __name__ == "__main__":
                 # Disparity range 0-15
                 disp_range = 16
                 # Number of disparity values for an entire row
-                disp_row = 2 #ncol - (disp_range + 1)
+                disp_row = 4 #2 #ncol - (disp_range + 1)
                 # Number of pixels per row to be sent
                 ncol = (disp_row-1) + disp_range + (nrow-1)
                 

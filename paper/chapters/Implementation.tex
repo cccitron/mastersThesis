@@ -138,7 +138,18 @@ The SAD wrapper is the entity that encompasses the SAD algorithms and minimum co
 
 \subsection{Top Level}
 
-The implementation of the SAD wrapper and its internal entities were designed to be able to work with any FPGA that has enough resources to hold it (see Appendix~\ref{sec:appdxD}). Figure~\ref{fig:topLevel_rtl} shows the SAD wrapper inside a top level entity. The top level gives the SAD wrapper image data and the SAD wrapper gives the top level disparity values. Those values are then transmitted to the computer, see Sec.~\ref{sec:fpgalink} for the communication process. The implementation in Fig.~\ref{fig:topLevel_rtl} represents the 9x9 window implementation. For the 7x7 window implementation, there are only 2 SAD and 2 minimum comparators, as opposed to 4 each.
+Figure~\ref{fig:compFPGAcomp} shows the top most level, the FPGA board itself, and its interaction with the computer. This setup was used to produce the disparity map images in Chapter~\ref{sec:exp}. The computer transferred the pixel data from both images to the FPGA board. The FPGA board used the SAD wrapper entity within a top level entity. The top level handled the communication between the board and the computer. The board transferred the disparity values to the computer.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=100mm]{figures/compFPGAcomp.png}
+		\captionfonts
+		\caption{The setup for testing the SAD module on the FPGA board. The computer sent the image pixel data to the FPGA board and the FPGA board sent the disparity values to the computer.}
+		\label{fig:compFPGAcomp}
+	\end{center}
+\end{figure}
+
+The implementation of the SAD wrapper and its internal entities were designed to be able to work with any FPGA that has enough resources to hold it (see Table~\ref{table:utilize}). Figure~\ref{fig:topLevel_rtl} shows the SAD wrapper inside a top level entity. The top level gives the SAD wrapper image data and the SAD wrapper gives the top level disparity values. Those values are then transmitted to the computer, see Sec.~\ref{sec:fpgalink} for the communication process. The implementation in Fig.~\ref{fig:topLevel_rtl} represents the 9x9 window implementation. For the 7x7 window implementation, there are only 2 SAD and 2 minimum comparators, as opposed to 4 each.
 
 \begin{figure}[h]
 	\begin{center}
