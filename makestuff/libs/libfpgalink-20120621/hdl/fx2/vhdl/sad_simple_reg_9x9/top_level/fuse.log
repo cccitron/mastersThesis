@@ -1,0 +1,41 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/tb_sad_wrapper_isim_beh.exe -prj /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/tb_sad_wrapper_beh.prj work.tb_sad_wrapper 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/ipcore_dir/adder_10.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/window_array.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/sadAlgorithm_9x9.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/minComparator.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/sad_wrapper.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/tb_sad_wrapper.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 102108 KB
+Fuse CPU Usage: 1170 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package textio
+Compiling package std_logic_textio
+Compiling package numeric_std
+Compiling package window_array
+Compiling package xbip_addsub_v2_0_comp
+Compiling package bip_utils_pkg_v2_0
+Compiling package bip_usecase_utils_pkg_v2_0
+Compiling package c_addsub_pkg_v11_0
+Compiling package xbip_pipe_v2_0_xst_comp
+Compiling package c_reg_fd_v11_0_comp
+Compiling architecture behavioral of entity c_reg_fd_v11_0 [\c_reg_fd_v11_0(8,"0","0",1,0,0,...]
+Compiling architecture behavioral of entity c_addsub_v11_0_legacy [\c_addsub_v11_0_legacy(8,8,8,0,7...]
+Compiling architecture behavioral of entity c_addsub_v11_0 [\c_addsub_v11_0(0,"spartan6",0,8...]
+Compiling architecture adder_10_a of entity adder_10 [adder_10_default]
+Compiling architecture behavioral of entity sadAlgorithm_9x9 [sadalgorithm_9x9_default]
+Compiling architecture behavioral of entity minComparator [\minComparator(12,4)\]
+Compiling architecture behavioral of entity sad_wrapper [\sad_wrapper(9,4,27,9,243,16,4,2...]
+Compiling architecture behavior of entity tb_sad_wrapper
+Time Resolution for simulation is 1ps.
+Compiled 27 VHDL Units
+Built simulation executable /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/tb_sad_wrapper_isim_beh.exe
+Fuse Memory Usage: 1218592 KB
+Fuse CPU Usage: 1590 ms
+GCC CPU Usage: 8090 ms

@@ -220,7 +220,7 @@ begin
          END IF;
 			
 			-- When to pass data to SAD algorithm
-			IF (ndx_t_next = LAST_ROW AND ndx_s_next = LAST_ROW AND write_t = '0' AND write_s = '0') THEN 
+			IF (ndx_s_next = PIXEL_CNT) THEN
 				data_in <= '1';
 			ELSE
 				data_in <= '0';

@@ -44,6 +44,7 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
     COMPONENT sad_wrapper
     PORT(
          clk_I : IN  std_logic;
+			rst_I : IN  STD_LOGIC;
          
 			--h2fData_I : IN  std_logic_vector(7 downto 0);
          templ_I    : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -67,6 +68,7 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
     
    --Inputs
    signal clk_I : std_logic := '0';
+	signal rst_I : std_logic := '1';
    --signal h2fData_I : std_logic_vector(7 downto 0) := (others => '0');
    signal chanAddr_I : std_logic_vector(6 downto 0) := (others => '0');
    signal f2hReady_I : std_logic := '0';
@@ -124,6 +126,7 @@ BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: sad_wrapper PORT MAP (
           clk_I => clk_I,
+			 rst_I => rst_I,
           --h2fData_I => h2fData_I,
 			 templ_I => templ_I,
 	       search_I => search_I,

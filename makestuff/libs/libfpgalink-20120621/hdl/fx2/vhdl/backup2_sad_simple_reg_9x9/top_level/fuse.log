@@ -1,18 +1,18 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/tb_sad_wrapper_isim_beh.exe -prj /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/tb_sad_wrapper_beh.prj work.tb_sad_wrapper 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup2_sad_simple_reg_9x9/top_level/tb_sad_wrapper_isim_beh.exe -prj /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup2_sad_simple_reg_9x9/top_level/tb_sad_wrapper_beh.prj work.tb_sad_wrapper 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/ipcore_dir/adder_10.vhd" into library work
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/window_array.vhd" into library work
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/sadAlgorithm_9x9.vhd" into library work
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/minComparator.vhd" into library work
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/sad_wrapper.vhd" into library work
-Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/tb_sad_wrapper.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup2_sad_simple_reg_9x9/top_level/ipcore_dir/adder_10.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup2_sad_simple_reg_9x9/top_level/window_array.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup2_sad_simple_reg_9x9/top_level/sadAlgorithm_9x9.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup2_sad_simple_reg_9x9/top_level/minComparator.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup2_sad_simple_reg_9x9/top_level/sad_wrapper.vhd" into library work
+Parsing VHDL file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup2_sad_simple_reg_9x9/top_level/tb_sad_wrapper.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 102092 KB
-Fuse CPU Usage: 1010 ms
+Fuse Memory Usage: 102088 KB
+Fuse CPU Usage: 1020 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package textio
@@ -36,7 +36,7 @@ Compiling architecture behavior of entity tb_sad_wrapper
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 27 VHDL Units
-Built simulation executable /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9/top_level/tb_sad_wrapper_isim_beh.exe
-Fuse Memory Usage: 1218620 KB
-Fuse CPU Usage: 1350 ms
-GCC CPU Usage: 3600 ms
+Built simulation executable /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup2_sad_simple_reg_9x9/top_level/tb_sad_wrapper_isim_beh.exe
+Fuse Memory Usage: 1218300 KB
+Fuse CPU Usage: 1370 ms
+GCC CPU Usage: 3580 ms
