@@ -34,10 +34,10 @@ colorScheme = numpy.array([(0x00, 0x00, 0x8F), \
 disp = numpy.loadtxt('cDisp.txt', dtype='int')
 [dispH, dispW] = disp.shape
 
-for i in range(288):
-    for j in range(384):
+'''for i in range(282): #280
+    for j in range(363): #361
         if (disp[i][j] > 15):
-            disp[i][j] = 15
+            disp[i][j] = 15'''
 
 # create disparity image
 im = Image.new("RGB", (dispW, dispH), "black")

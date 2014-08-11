@@ -17,8 +17,8 @@ int main(int argc, char** argv)
    int arrL[288][384]; //atoi(argv[3])][atoi(argv[4])]; // height x width
    int arrR[288][384]; //[atoi(argv[3])][atoi(argv[4])]; // height x width
    //int sadArray[atoi(argv[4])-(atoi(argv[6]) + atoi(argv[5])−2)][atoi(argv[6])]; // dispW x dispRange
-   int sadArray[atoi(argv[6])]; // dispRange
-   int arrDisp[atoi(argv[7])-(atoi(argv[5])-1)][atoi(argv[4])-(atoi(argv[6]) + atoi(argv[5])-2)];
+   int sadArray[16]; //atoi(argv[6])]; // dispRange
+   int arrDisp[280][361]; //atoi(argv[7])-(atoi(argv[5])-1)][atoi(argv[4])-(atoi(argv[6]) + atoi(argv[5])-2)];
    
    struct timespec start, stop;
    long seconds, nseconds;
@@ -26,29 +26,31 @@ int main(int argc, char** argv)
 
    int l, r;
 
-   if (argc < 8)
+   /*if (argc < 8)
       return -1;
-   printf("Enough Arguments\n");   
+   printf("Enough Arguments\n");   */
    
-   fpL = fopen(argv[1], "r");
+   //fpL = fopen(argv[1], "r");
+   fpL = fopen("imgL.txt", "r");
    if (fpL == NULL)
       return -1;
    printf("imgL.txt opened\n"); 
      
-   fpR = fopen(argv[2], "r");
+   //fpR = fopen(argv[2], "r");
+   fpR = fopen("imgR.txt", "r");
    if (fpR == NULL)
       return -1;
    printf("imgR.txt opened\n");
    
-   height = atoi(argv[3]);
-   width = atoi(argv[4]);
-   winSize = atoi(argv[5]);
-   dispRange = atoi(argv[6]);
-   dispRow = atoi(argv[7]);
+   height = 288; //atoi(argv[3]);
+   width = 384; //atoi(argv[4]);
+   winSize = 9; //atoi(argv[5]);
+   dispRange = 16; //atoi(argv[6]);
+   //dispRow = atoi(argv[7]);
    win = (int)(winSize/2);
-   ncol = (dispRow-1) + dispRange + (winSize-1);
+   ncol = 24; //(dispRow-1) + dispRange + (winSize-1);
    dispH = height - (winSize-1);
-   dispW = width - (ncol - dispRow);
+   dispW = width - (ncol-1); //(ncol - dispRow);
 
    printf("height = %d\n", height);
    printf("width = %d\n", width);
@@ -94,11 +96,11 @@ int main(int argc, char** argv)
       for (j = 0; j < dispW; j++)
       {
          memset(sadArray, 0, sizeof(int) * dispRange);
-         for (k = 0; k < dispRange; k++)
+         for (k = 0; k < dispRange; k++) // 0 to 15
          {
-            for (m = -win; m <= win; m++)
+            for (m = -win; m <= win; m++) // -4 to 4
             {
-               for (n = -win; n <= win; n++)
+               for (n = -win; n <= win; n++) // -4 to 4
                {
                   sadArray[k] += abs(arrR[i+m+win][n+j+win] - arrL[i+m+win][n+j+k+win]);
                }
@@ -107,7 +109,7 @@ int main(int argc, char** argv)
          
          minPos = 0;
          minVal = sadArray[0];
-         for (pos = 0; pos < 16; pos++) //dispRange; pos++)
+         for (pos = 1; pos < 16; pos++) //dispRange; pos++)
          {
             if (sadArray[pos] < minVal)
             {
@@ -135,9 +137,9 @@ int main(int argc, char** argv)
 
    // Write disparity values to output file
    fpDisp = fopen("cDisp.txt", "w");
-   for (i = 0; i < height; i++)
+   for (i = 0; i < dispH; i++)
    {
-      for (j = 0; j < width; j++)
+      for (j = 0; j < dispW; j++)
       {
          fprintf(fpDisp, "%d ", arrDisp[i][j]);
       }

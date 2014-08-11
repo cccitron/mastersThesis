@@ -191,9 +191,9 @@ The signal h2fvalid\_i, near the top of the figures, went high when image data i
 \subsection{9x9 Window Implementation Runtime}
 \label{sec:testbench9x9}
 
-Based on the testbench simulation in Fig.~\ref{fig:tb_9x9} the theoretical frames per second can be inferred for different image sizes. The simulation assumes the 100 MHz clock on the FPGA is used, which is the clock frequency used on the Atlys board. The clock cycle duration is therefore 10 ns long.
+Based on the testbench simulation in Fig.~\ref{fig:tb_9x9} the simulated frames per second can be inferred for different image sizes. The simulation assumes the 100 MHz clock on the FPGA is used, which is the clock frequency used on the Atlys board. The clock cycle duration is therefore 10 ns long.
 
-In the testbench simulation, the window size is 9x9 and 4 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 3.35 us. After that, a constant cycle is produced, which includes the SAD wrapper taking in the next row and producing the next disparity values. This cycle takes 1.22 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 617x472, or 291,224 pixels. Disparity values are not produced for pixels where either the window would run off the image or where there is not enough room for the 16 SAD values to be calculated for the pixel. Since 4 pixels are processed in parallel, 291,224 pixels are divided by 4 pixels/iteration, giving 72,806 iterations. So, 72,805 iterations times 1.22 us/iteration plus 3.35 us (initial section, hence minus one on number of iterations) gives 88,826.67 us or approximately 0.0888 seconds per frame. Therefore, an image size of 640x480 can be processed at around 11.26 frames per second. Table~\ref{table:tb_9x9} shows the theoretical frame rate for the image sizes used in this chapter.
+In the testbench simulation, the window size is 9x9 and 4 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 3.35 us. After that, a constant cycle is produced, which includes the SAD wrapper taking in the next row and producing the next disparity values. This cycle takes 1.22 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 617x472, or 291,224 pixels. Disparity values are not produced for pixels where either the window would run off the image or where there is not enough room for the 16 SAD values to be calculated for the pixel. Since 4 pixels are processed in parallel, 291,224 pixels are divided by 4 pixels/iteration, giving 72,806 iterations. So, 72,805 iterations times 1.22 us/iteration plus 3.35 us (initial section, hence minus one on number of iterations) gives 88,826.67 us or approximately 0.0888 seconds per frame. Therefore, an image size of 640x480 can be processed at around 11.26 frames per second. Table~\ref{table:tb_9x9} shows the simulated frame rate for the image sizes used in this chapter.
 
 \begin{table}
 	\begin{center}
@@ -217,7 +217,7 @@ In the testbench simulation, the window size is 9x9 and 4 pixels are processed i
 			\hline 			
 			\end{tabular}
 		\captionfonts
-		\caption{9x9 window for theoretical runtime for the FPGA board for different image sizes.}
+		\caption{9x9 window for the testbench simulated runtime for the FPGA board for different image sizes.}
 		\label{table:tb_9x9}
 	\end{center}
 \end{table}
@@ -225,9 +225,9 @@ In the testbench simulation, the window size is 9x9 and 4 pixels are processed i
 \subsection{7x7 Window Implementation Runtime}
 \label{sec:testbench7x7}
 
-Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the theoretical frame rate can be inferred for different image sizes. The simulation uses a clock cycle of 10 ns.
+Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the simulated frame rate can be inferred for different image sizes. The simulation uses a clock cycle of 10 ns.
 
-In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 619x474, which is 293,406 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 293,406 pixels is divided by 2 pixels/iteration, giving 146,703 iterations. So, 146,702 iterations times 0.42 us/iteration plus 1.78 us (initial section, hence minus one on number of iterations) gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the theoretical frame rate for the image sizes used in this chapter.
+In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 619x474, which is 293,406 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 293,406 pixels is divided by 2 pixels/iteration, giving 146,703 iterations. So, 146,702 iterations times 0.42 us/iteration plus 1.78 us (initial section, hence minus one on number of iterations) gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the simulated frame rate for the image sizes used in this chapter.
 
 
 \begin{table}
@@ -248,7 +248,7 @@ In the testbench simulation, the window size is 7x7 and 2 pixels are processed i
 			\\ \hline 
 		\end{tabular}	
 		\captionfonts
-		\caption{7x7 window for theoretical runtime for the FPGA board for different image sizes.}
+		\caption{7x7 window for the testbench simulation runtime for the FPGA board for different image sizes.}
 		\label{table:tb_7x7}
 	\end{center}
 \end{table}
@@ -298,7 +298,7 @@ Since most of the values were below 4,096, a measure was put in place in order t
 
 In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pair is shown. Figure~\ref{fig:tsukubaDispMap} shows how the 7x7 window implementation is slightly noisier than the 9x9 window implementation. As discussed in Section~\ref{sec:overflow}, the only noticeable difference between the Python implementation and the FPGA implementation is at the top of the disparity maps. This difference is caused by not having enough similarities between corresponding regions. It is possible for certain parts of an object in one image to be occluded in the image. This causes SAD values to be greater than normal. 
 
-For Tsukuba, the FPGA version has a theoretical runtime of 32.43 and 46.51 frames per second for the 9x9 and 7x7 window implementations, respectively, from Table~\ref{table:tb_9x9} and Table~\ref{table:tb_7x7}. For a speed comparison, the SAD algorithm was implemented in C since it is faster than Python. Python code handled the code for reading the images and creating the disparity map. The C code processed the images serially, which took 1.209 seconds for the 9x9 window with a disparity range of 16. The 7x7 window implementation in C with a disparity range of 16 took 0.759 seconds to complete.
+For Tsukuba, the FPGA version has a simulated runtime of 32.43 and 46.51 frames per second for the 9x9 and 7x7 window implementations, respectively, from Table~\ref{table:tb_9x9} and Table~\ref{table:tb_7x7}. For a speed comparison, the SAD algorithm was implemented in C since it is faster than Python. Python code handled the code for reading the images and creating the disparity map. The C code processed the images serially, which took 1.209 seconds for the 9x9 window with a disparity range of 16. The 7x7 window implementation in C with a disparity range of 16 took 0.759 seconds to complete.
 
 \begin{figure}
 \begin{center}
@@ -345,7 +345,7 @@ For Tsukuba, the FPGA version has a theoretical runtime of 32.43 and 46.51 frame
 
 In Figure~\ref{fig:venusL} and Figure~\ref{fig:venusR}, the Venus image pair is shown. In the image pair, the newspaper articles are flat and slanted, relative to the cameras. This gradual slope, also present in the background, can be difficult for the SAD algorithm to deal with; however, the algorithm is still able to give a fairly accurate representation of the depth in the image. It also causes the gradient pattern shown in the disparity maps. The 7x7 window depth maps have more noise than the 9x9 window depth maps.
 
-For Venus, the FPGA version has a theoretical runtime of 21.27 and 30.58 frames per second for the 9x9 and 7x7 window implementations, respectively, from Tbl.~\ref{table:tb_9x9} and Tbl.~\ref{table:tb_7x7}. The C code processed the images serially, which took 2.074 seconds for the 9x9 window with a disparity range of 16. The 7x7 window implementation in C with a disparity range of 16 took 1.294 seconds to complete.
+For Venus, the FPGA version has a simulated runtime of 21.27 and 30.58 frames per second for the 9x9 and 7x7 window implementations, respectively, from Tbl.~\ref{table:tb_9x9} and Tbl.~\ref{table:tb_7x7}. The C code processed the images serially, which took 2.074 seconds for the 9x9 window with a disparity range of 16. The 7x7 window implementation in C with a disparity range of 16 took 1.294 seconds to complete.
 
 \begin{figure}
 \begin{center}
