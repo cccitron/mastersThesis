@@ -544,7 +544,7 @@ if __name__ == "__main__":
                         
                 #print("template:\n", buffTempl_h2f)
                         
-                # Write bytes to FPGA register (reg) 1 ### change to reg 0 or something
+                # Write intial bytes to FPGA
                 flWriteChannel(handle, 1000, 0x00, buffTempl_h2f)
                 flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)
                 
@@ -570,6 +570,7 @@ if __name__ == "__main__":
                     print("\n")'''
                 
                 #print("reading from disparity array")
+                # Get back initial disparity values
                 dispBuffer = flReadChannel(handle, 1000, 0x03, 4)         
                 for ndx in range(disp_row):
                     disparity_f2h[0][ndx] = dispBuffer[ndx]
@@ -586,6 +587,7 @@ if __name__ == "__main__":
                 searchRow_h2f[0] = 0xf3
                 
                 # data to be sent to the FPGA
+                # First column of height-nrows that are sent over to FPGA
                 pos = 1
                 for i in range(nrow, height):
                     ndx = 1
@@ -601,6 +603,7 @@ if __name__ == "__main__":
                         disparity_f2h[pos][ndx] = flReadChannel(handle, 1000, 0x03, 1)
                     pos += 1
                     
+                # All other columns of rows that are sent over there after
                 for offset in range(disp_row, width-ncol, disp_row):
                     pos = 0
                     for i in range(nrow):
@@ -627,8 +630,11 @@ if __name__ == "__main__":
                         flWriteChannel(handle, 1000, 0x00, templateRow_h2f)
                         flWriteChannel(handle, 1000, 0x01, searchRow_h2f)
                         
+                        dispBuffer = flReadChannel(handle, 1000, 0x03, 4)         
                         for ndx in range(disp_row):
-                            disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)
+                            disparity_f2h[pos][ndx+offset] = dispBuffer[ndx]
+                        '''for ndx in range(disp_row):
+                            disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)'''
                         pos += 1
                     
                 # time after SAD Algorithm has finished

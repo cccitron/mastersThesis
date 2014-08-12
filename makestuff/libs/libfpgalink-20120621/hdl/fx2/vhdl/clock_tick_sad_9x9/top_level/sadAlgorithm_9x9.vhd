@@ -44,6 +44,7 @@ entity sadAlgorithm_9x9 is
       
 		data_O				: OUT STD_LOGIC;
       sad_O : OUT STD_LOGIC_VECTOR (SAD_SIZE-1 DOWNTO 0)
+--		counter_O : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
    );
 end sadAlgorithm_9x9;
 
@@ -163,6 +164,8 @@ begin
 			IF (ndx = 80) THEN
 				ndx <= 0;
 			END IF;
+			
+--			counter_O <= STD_LOGIC_VECTOR(TO_UNSIGNED(counter, 7));
 
 		END IF;
 	END PROCESS state_machine;

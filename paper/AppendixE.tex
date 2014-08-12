@@ -1,10 +1,10 @@
-\chapter{Python3 Serial SAD Algorithm}
+\chapter{C Serial SAD Algorithm}
 \label{sec:appdxE}
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 
 \lstset{
-	language=Python,
+	language=C,
 	basicstyle=\footnotesize,
 	commentstyle=\color{mygreen},
 	keywordstyle=\color{blue}, 
@@ -12,28 +12,56 @@
 }
 
 \begin{lstlisting}
-# Parameters for 9x9 window size SAD Algorithm
-winSize = 9
-dispRange = 16
-dispRow = 4
-win = (int)(winSize/2)
-ncol = (dispRow-1) + dispRange + (winSize-1)
-dispH = height - (winSize-1)
-dispW = width - (ncol - dispRow)
-
-# Serial SAD Algorithm
-for row in range(dispH):
-	sadArray = numpy.zeros((dispW, dispRange), dtype = 'i')
-	for i in range(dispW):
-		for j in range(dispRange):
-			for m in range(-win, (win+1)):
-				for n in range(-win, (win+1)):
-					sadArray[i][j] += \
-						abs(templateBuff[row+m+win][n+i+win] - \ 
-						searchBuff[row+m+win][n+i+j+win])
-	disparityArray = sadArray.argmin(axis=1)
-	disparityAll[row] = disparityArray
+// SAD Algorithm Code Snippet
+for (i = 0; i < dispH; i++) {
+   for (j = 0; j < dispW; j++) {
+      memset(sadArray, 0, sizeof(int) * dispRange);
+      for (k = 0; k < dispRange; k++) {
+         for (m = -win; m <= win; m++) {
+            for (n = -win; n <= win; n++)
+               sadArray[k] += abs(arrR[i+m+win][n+j+win] - 
+                  arrL[i+m+win][n+j+k+win]);
+         }
+      }
+      minPos = 0;
+      minVal = sadArray[0];
+      for (pos = 1; pos < dispRange; pos++)
+         if (sadArray[pos] < minVal) {
+            minVal = sadArray[pos];
+            minPos = pos;
+         }
+      arrDisp[i][j] = minPos;
+   }
+}
 \end{lstlisting}
 
-The full code for the Python3 SAD Algorithm can be found on github:
+The full code for the C SAD Algorithm can be found on github:
 \\\path{https://github.com/cccitron/mastersThesis/tree/master/pythonSAD}
+
+
+%\begin{lstlisting}
+%# Parameters for 9x9 window size SAD Algorithm
+%winSize = 9
+%dispRange = 16
+%dispRow = 4
+%win = (int)(winSize/2)
+%ncol = (dispRow-1) + dispRange + (winSize-1)
+%dispH = height - (winSize-1)
+%dispW = width - (ncol - dispRow)
+%
+%# Serial SAD Algorithm
+%for row in range(dispH):
+%	sadArray = numpy.zeros((dispW, dispRange), dtype = 'i')
+%	for i in range(dispW):
+%		for j in range(dispRange):
+%			for m in range(-win, (win+1)):
+%				for n in range(-win, (win+1)):
+%					sadArray[i][j] += \
+%						abs(templateBuff[row+m+win][n+i+win] - \ 
+%						searchBuff[row+m+win][n+i+j+win])
+%	disparityArray = sadArray.argmin(axis=1)
+%	disparityAll[row] = disparityArray
+%\end{lstlisting}
+%
+%The full code for the Python3 SAD Algorithm can be found on github:
+%\\\path{https://github.com/cccitron/mastersThesis/tree/master/pythonSAD}

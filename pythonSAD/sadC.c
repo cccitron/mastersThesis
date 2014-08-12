@@ -106,7 +106,7 @@ int main(int argc, char** argv)
          
          minPos = 0;
          minVal = sadArray[0];
-         for (pos = 0; pos < 16; pos++) //dispRange; pos++)
+         for (pos = 1; pos < dispRange; pos++) //dispRange; pos++)
          {
             if (sadArray[pos] < minVal)
             {
