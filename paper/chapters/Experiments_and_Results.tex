@@ -158,25 +158,42 @@ See Table~\ref{table:utilize} for resource utilization. The 7x7 window implement
 
 \begin{table}
 \begin{center}
-	\begin{tabular}{| p{2cm} | p{2cm} | p{2.5cm} | p{3cm} | p{2.5cm} |}
+	\begin{tabular}{| p{1.9cm} | p{2.2cm} | p{2.5cm} | p{2.9cm} | p{2.7cm} |}
 		\hline
 		\rowstyle{\bfseries} Window Size & 
 		\rowstyle{\bfseries} \# of pixels in parallel & 
+		\rowstyle{\bfseries} SAD Alg. Parallelized & 
 		\rowstyle{\bfseries} \# of Slice Registers, out of 54,576 &
-		\rowstyle{\bfseries} \# of Slice LUTs, out of 27,288 & 
-		\rowstyle{\bfseries} \# of occupied Slices, out of 6,822 %& 
-		%\rowstyle{\bfseries} \# of MUXCYs, out of 13,644
+		\rowstyle{\bfseries} \# of Slice LUTs, out of 27,288 %& 
+		%\rowstyle{\bfseries} \# of occupied Slices, out of 6,822
 		\tabularnewline
 		\hline
-		7x7 & 2 & 8,465 (15\%) & 17,220 (63\%) & 5,640 (82\%) %&  3,796 (27\%)
+		7x7 & 4 & No & 6,683 (12\%) & 12,234 (44\%) %& 3,267 (47\%) 
 		\tabularnewline
 		\hline 
-		9x9 & 4 & 8,136 (14\%) & 16,038 (58\%) & 4,719 (69\%) %&  2,280 (16\%)
+		\rowstyle{\bfseries} 7x7 & 
+		\rowstyle{\bfseries} 2 & 
+		\rowstyle{\bfseries} Yes & 
+		\rowstyle{\bfseries} 8,455 (15\%) & 
+		\rowstyle{\bfseries} 17,205 (63\%) %& 5,712 (83\%) 
+		\tabularnewline
+		\hline 
+		\rowstyle{\bfseries} 9x9 & 
+		\rowstyle{\bfseries} 4 & 
+		\rowstyle{\bfseries} No & 
+		\rowstyle{\bfseries} 8,131 (14\%) & 
+		\rowstyle{\bfseries} 16,022 (58\%) %& 4,355 (63\%)
+		\tabularnewline
+		\hline
+		9x9 & 2 & No & 5,998 (10\%) & 12,122 (44\%) %& 3,471 (50\%)
+		\tabularnewline
+		\hline 
+		9x9 & 1 & No & 4,725 (8\%) & 10,312 (37\%) %& 3,066 (44\%)
 		\tabularnewline
 		\hline 
 	\end{tabular}
 	\captionfonts
-	\caption{Resource utilization on the FPGA Atlys board for both window implementations.}
+	\caption{Resource utilization on the FPGA Atlys board for the window implementations.}
 	\label{table:utilize}
 \end{center}
 \end{table}
@@ -271,6 +288,143 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 	\end{center}
 \end{figure}
 
+\section{FPGA Clock Cycle Runtimes}
+
+\begin{subequations}
+\begin{align} 	\label{eq:clockCycles}
+	height = 288	& \qquad \text{(image height)}\\
+	width = 384 	\qquad & \text{(image width)}\\
+	winSize = 9	 	\qquad & \text{(9x9 window size)}\\
+	dispRange = 16 	\qquad & \text{(disparity range 0-15)}\\
+	parPix = 4 		\qquad & \text{(pixels processed in parallel)}\\
+	sadCyc = 82		\qquad & \text{(\# of cycles for SAD algorithm)}\\
+	minCyc = 4		\qquad & \text{(\# of cycles for Min. comparator)}\\
+	dispH = 280 &= height - (winSize - 1) \\
+	lessPix = 23 &= (dispRange-1) + (winSize-1) \\
+	dispW = 360 &= (width-lessPix) - (width-lessPix) \% parPix \\
+	dispPixels = 100,800 &= dispH * dispW \\
+	baseIters = 25,200 &= dispPixels / parPix \\
+	colAdd = 89 &= dispWidth / parPix - 1 \\
+	addIters = 712 &= colAdd * (winSize-1) \\
+	totIters = 25,912 &= basIters + addIters \\
+	sadTotCyc = 2,124,784 &= sadCyc * totIters \\
+	minTotCyc = 103,648 &= minCyc * totIters \\
+	totClkCyc = 2,228,432 &= sadTotCyc + minTotCyc
+\end{align}
+\end{subequations}
+
+
+%\begin{subequations}
+%\begin{align} 	\label{eq:clockCycles}
+%	height = 288	&	\quad \text{(image height)}\\
+%	width = 384 	&	\quad \text{(image width)}\\
+%	winSize = 9	 	&	\quad \text{(9x9 window size)}\\
+%	dispRange = 16 	&	\quad \text{(disparity range 0-15)}\\
+%	parPix = 4 		&	\quad \text{(pixels processed in parallel)}\\
+%	dispH &= height - (winSize - 1) \\
+%	      &= 280	\nonumber \\
+%	lessPix &= (dispRange-1) + (winSize-1) \\
+%	dispW &= (width-lessPix) - (width-lessPix) \% parPix \\
+%	dispW &= 360	\nonumber \\
+%	dispPixels &= dispH * dispW \\
+%			   &= 100,800 \nonumber \\
+%	baseIters &= dispPixels / parPix \\
+%			  &= 25,200 \nonumber \\
+%	colAdd &= dispWidth / parPix - 1 \\
+%	       &= 89 \nonumber \\
+%	addIters &= colAdd * (winSize-1) \\
+%			 &= 712 \nonumber \\
+%	totIters &= basIters + addIters \\
+%			 &= 25,912 \nonumber \\
+%	sadCyc = 82	&	\quad \text{(\# of cycles for SAD algorithm)}\\
+%	minCyc = 4		&	\quad \text{(\# of cycles for Min. comparator)}\\
+%	sadTotCyc &= sadCyc * totIters \\
+%			  &= 2,124,784 \nonumber \\
+%	minTotCyc &= minCyc * totIters \\
+%			  &= 103,648 \nonumber \\
+%	totClkCyc &= sadTotCyc + minTotCyc \\
+%			  &= 2,228,432 \nonumber
+%\end{align}
+%\end{subequations}
+
+
+\begin{table}
+	\begin{center}
+		\begin{tabu}{| p{1.8cm} | p{2cm} | p{2.5cm} | p{1.9cm} | p{1.7cm} | p{1.9cm} |}
+			\hline
+				\rowstyle{\bfseries} Image Size (HxW) & 
+				\rowstyle{\bfseries} Disparity Image Size & 
+				\rowstyle{\bfseries} Window Size & 
+				\rowstyle{\bfseries} SAD Cycles & 
+				\rowstyle{\bfseries} Min. Comp. Cycles &
+				\rowstyle{\bfseries} Total Clock Cycles				
+			\\ \hline 
+			288 x 384 & 280 x 360 & 9x9 & 2,124,784 & 103,648 & 2,228,432
+			\\ \hline 
+			288 x 384 & 282 x 362 & 7x7 & 416,976 & 208,488 & 625,464
+			\\ \hline 
+			288 x 384 & 282 x 360 & 7x7 (4 pix //) & 1,295,700 & 103,656 & 1,399,356
+			\\ \tabucline[2pt]{-} 
+			
+			383 x 434 & 375 x 408 & 9x9 & 3,202,756 & 156,232 & 3,358,988
+			\\ \hline 
+			383 x 434 & 377 x 412 & 7x7 & 631,136 & 315,568 & 946,704
+			\\ \hline 
+			383 x 434 & 377 x 412 & 7x7 (4 pix //) & 1,972,150 & 157,772 & 2,129,922
+			\\ \tabucline[2pt]{-}
+			
+			480 x 640 & 472 x 616 & 9x9 & 6,060,784 & 295,648 & 6,356,432
+			\\ \hline 
+			480 x 640 & 474 x 618 & 7x7 & 1,186,512 & 593,256 & 1,779,768
+			\\ \hline 
+			480 x 640 & 474 x 616 & 7x7 (4 pix //) & 3,695,700 & 295,656 & 3,991,356
+			\\ \hline
+		\end{tabu}	
+		\captionfonts
+		\caption{Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithm and the minimum comparator .}
+		\label{table:tb_7x7}
+	\end{center}
+\end{table}
+
+\begin{table}
+	\begin{center}
+		\begin{tabu}{| p{2.5cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+			\hline
+				\rowstyle{\bfseries} Window Size & 
+				\rowstyle{\bfseries} Total Cycles & 
+				\rowstyle{\bfseries} Sec/Frame @ 48MHz & 
+				\rowstyle{\bfseries} Sec/Frame @ 100MHz & 
+				\rowstyle{\bfseries} Frames/Sec @ 48MHz &
+				\rowstyle{\bfseries} Frames/Sec @ 100MHz
+			\\ \hline 
+			9x9 & 2,228,432 & 0.04457 & 0.02228 & 22.437 & 44.875
+			\\ \hline 
+			7x7 & 625,464 & 0.01251 & 0.00625 & 79.941 & 159.881
+			\\ \hline 
+			7x7 (4 pix //) & 1,399,356 & 0.02799 & 0.01399 & 35.731 & 71.461
+			\\ \tabucline[2pt]{-} 
+			
+			9x9 & 3,358,988 & 0.06718 & 0.03359 & 14.885 & 29.771
+			\\ \hline 
+			7x7 & 946,704 & 0.01893 & 0.00947 & 52.815 & 105.630
+			\\ \hline 
+			7x7 (4 pix //) & 2,129,922 & 0.04260 & 0.02130 & 23.475 & 46.950
+			\\ \tabucline[2pt]{-}
+			
+			9x9 & 6,356,432 & 0.1271 & 0.06356 & 7.866 & 15.732
+			\\ \hline 
+			7x7 & 1,779,768 & 0.03560 & 0.01780 & 28.094 & 56.187
+			\\ \hline 
+			7x7 (4 pix //) & 3,991,356 & 0.07983 & 0.03991 & 12.527 & 25.054
+			\\ \hline
+		\end{tabu}	
+		\captionfonts
+		\caption{Frame rates that are possible for the number of clock cycles taken per image.}
+		\label{table:tb_7x7}
+	\end{center}
+\end{table}
+
+
 \section{Test Image Pairs}
 \label{sec:runtime}
 
@@ -278,31 +432,32 @@ In this section, FPGA disparity maps are compared to disparity maps created usin
 
 \begin{table}
 	\begin{center}
-		\begin{tabular}{|c|c|c|c|c|}
+		\begin{tabu}{|c|c|c|c|c|c|}
 			\hline
 				\rowstyle{\bfseries} Image & 
 				\rowstyle{\bfseries} Window Size & 
 				\rowstyle{\bfseries} Code & 
 				\rowstyle{\bfseries} Sec/frame & 
-				\rowstyle{\bfseries} Frames/sec
+				\rowstyle{\bfseries} FPS &
+				\rowstyle{\bfseries} Speed up
 			\\ \hline 
-			Tsukuba & 7x7 & C & 0.8849 & 1.130
+			Tsukuba & 7x7 & C & 0.1532 & 6.527 & 1
 			\\ \hline 
-			Tsukuba & 7x7 & VHDL & 0.0215 & 46.51
+			Tsukuba & 7x7 & VHDL & 0.0215 & 46.51 & 
+			\\ \tabucline[2pt]{-}
+			Tsukuba & 9x9 & C & 0.2454 & 4.075 & 1
 			\\ \hline 
-			Tsukuba & 9x9 & C & 1.4128 & 0.7078
+			Tsukuba & 9x9 & VHDL & 0.0308 & 32.43 & 
+			\\ \tabucline[2pt]{-}
+			Venus & 7x7 & C & 0.2327 & 4.297 & 1
 			\\ \hline 
-			Tsukuba & 9x9 & VHDL & 0.0308 & 32.43
+			Venus & 7x7 & VHDL & 0.0327 & 30.58 & 
+			\\ \tabucline[2pt]{-}
+			Venus & 9x9 & C & 0.3776 & 2.648 & 1
 			\\ \hline 
-			Venus & 7x7 & C & 1.3438 & 0.7442
+			Venus & 9x9 & VHDL & 0.0470 & 21.27 & 
 			\\ \hline 
-			Venus & 7x7 & VHDL & 0.0327 & 30.58
-			\\ \hline 
-			Venus & 9x9 & C & 2.1681 & 0.4612
-			\\ \hline 
-			Venus & 9x9 & VHDL & 0.0470 & 21.27
-			\\ \hline 
-		\end{tabular}	
+		\end{tabu}	
 		\captionfonts
 		\caption{Tsukuba and Venus image pairs comparison runtimes for C code and FPGA testbench simulations. The disparity range is 16 for both.}
 		\label{table:runtimeComp}

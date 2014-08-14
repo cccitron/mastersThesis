@@ -40,13 +40,13 @@ disp = numpy.loadtxt('cDisp.txt', dtype='int')
             disp[i][j] = 15'''
 
 # create disparity image
-im = Image.new("RGB", (dispW, dispH), "black")
+im = Image.new("RGB", (dispW, dispH), "white")
 
 for i in range(dispW):
     for j in range(dispH):
         im.putpixel((i,j), (colorScheme[disp[j][i]][0], colorScheme[disp[j][i]][1], colorScheme[disp[j][i]][2]))
 
-im.save("venus_c_7x7.png")
+im.save("venus_cO2_7x7.png")
 im.show()
 
 #fDisp.close()

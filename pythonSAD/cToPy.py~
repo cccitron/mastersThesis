@@ -34,19 +34,19 @@ colorScheme = numpy.array([(0x00, 0x00, 0x8F), \
 disp = numpy.loadtxt('cDisp.txt', dtype='int')
 [dispH, dispW] = disp.shape
 
-for i in range(282): #280
+'''for i in range(282): #280
     for j in range(363): #361
         if (disp[i][j] > 15):
-            disp[i][j] = 15
+            disp[i][j] = 15'''
 
 # create disparity image
-im = Image.new("RGB", (dispW, dispH), "black")
+im = Image.new("RGB", (dispW, dispH), "white")
 
 for i in range(dispW):
     for j in range(dispH):
         im.putpixel((i,j), (colorScheme[disp[j][i]][0], colorScheme[disp[j][i]][1], colorScheme[disp[j][i]][2]))
 
-im.save("tsukuba_c_7x7.png")
+im.save("tsukuba_cO2_9x9.png")
 im.show()
 
 #fDisp.close()

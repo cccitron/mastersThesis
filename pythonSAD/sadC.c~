@@ -59,23 +59,36 @@ int main(int argc, char** argv)
 
    memset(arrDisp, 0, sizeof(int) * dispH * dispW);
    
+   if (fscanf(fpR, "%d", &r) == 1 && fscanf(fpL, "%d", &l) == 1)
+   {
+      arrR[0][0] = r;
+      arrL[0][0] = l;
+   }
+   else
+   {
+      printf("Error reading integers (0,0).\n");
+   }
+      
    i = 0;
-   j = 0;
-   fscanf(fpR, "%d", &r);
-   fscanf(fpL, "%d", &l);
-   while (!feof(fpR) || !feof(fpL))
+   j = 1;
+   while (i < height j < width && !feof(fpR) && !feof(fpL))
    {
       //printf("%d ", l);
       arrR[i][j] = r;
       arrL[i][j] = l;
       
-      fscanf(fpR, "%d", &r);
-      fscanf(fpL, "%d", &l);
-      j++;
-      if (j == width)
+      if (fscanf(fpR, "%d", &r) == 1 && fscanf(fpL, "%d", &l) == 1)
       {
-         j = 0;
-         i++;
+         j++;
+         if (j == width)
+         {
+            j = 0;
+            i++;
+         }
+      }
+      else
+      {
+         printf("Error reading integers (%d, %d).\n", i, j);
       }
    }
    
@@ -106,7 +119,7 @@ int main(int argc, char** argv)
          
          minPos = 0;
          minVal = sadArray[0];
-         for (pos = 0; pos < 16; pos++) //dispRange; pos++)
+         for (pos = 1; pos < dispRange; pos++) //dispRange; pos++)
          {
             if (sadArray[pos] < minVal)
             {

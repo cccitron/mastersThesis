@@ -135,9 +135,7 @@ architecture Behavioral of sad_wrapper is
 	SIGNAL data_init : STD_LOGIC := '1';
 
 	SIGNAL write_t, write_s : STD_LOGIC := '0';
-	
-	SIGNAL junk_out : STD_LOGIC_VECTOR(7 DOWNTO 0) := x"ff";
-	
+		
 begin
 
    process(clk_I)
@@ -165,7 +163,6 @@ begin
          disp_ready  <= '0';
 			
 			data_in  <= '0';
-			junk_out <= x"ff";
 			
 		ELSIF ( rising_edge(clk_I) ) then
          template_array <= template_array_next;
@@ -292,12 +289,6 @@ begin
 				data_in <= '1';
 			ELSE
 				data_in <= '0';
-			END IF;
-			
-			IF (junk_t = '1') THEN
-				junk_out <= templ_I;
-			ELSE
-				junk_out <= junk_out;
 			END IF;
 			
 		end if;
@@ -574,7 +565,7 @@ begin
    disp_O   <= x"0" & disparityArray(f2h_disp_rd); --sad_array(f2h_sad_rd);
    
    WITH sw_I SELECT led_O <=
-		junk_out WHEN x"00", -- STD_LOGIC_VECTOR(TO_UNSIGNED(f2h_sad_rd, 8)) WHEN x"00", --h2fValid_I & chanAddr_I(6 DOWNTO 0) WHEN x"00",
+		-- STD_LOGIC_VECTOR(TO_UNSIGNED(f2h_sad_rd, 8)) WHEN x"00", --h2fValid_I & chanAddr_I(6 DOWNTO 0) WHEN x"00",
       sad_array(0, 0)(7 DOWNTO 0)  WHEN x"01",
       sad_array(0, 1)(7 DOWNTO 0)  WHEN x"02",
       sad_array(0, 2)(7 DOWNTO 0)  WHEN x"04",
@@ -583,6 +574,6 @@ begin
       template_array(0)  WHEN x"20",
 --      template_array(1)  WHEN x"40",
       search_array(0)  WHEN x"80",
-      x"f5"         WHEN OTHERS;
+      x"fe"         WHEN OTHERS;
 
 end Behavioral;
