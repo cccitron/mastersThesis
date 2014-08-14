@@ -128,14 +128,10 @@ architecture Behavioral of sad_wrapper is
 	SIGNAL junk_out : STD_LOGIC_VECTOR(7 DOWNTO 0) := x"ff";
 	
 	-- Clock tick, keeps track of how many clock cycles it takes to perform create the disparity map
-	--SIGNAL ticTempl, ticSearch, ticMin, ticDisp : STD_LOGIC_VECTOR(31 DOWNTO 0) := x"00000000";
-	SIGNAL ticMin : STD_LOGIC_VECTOR(23 DOWNTO 0) := x"000000";
-	SIGNAL ticSad : STD_LOGIC_VECTOR(23 DOWNTO 0) := x"000000";
---	TYPE array_type_cnt IS ARRAY (0 to DISP_ROW-1, 0 to DISP_RANGE-1) OF STD_LOGIC_VECTOR(6 DOWNTO 0);
---	SIGNAL counter : array_type_cnt;
---	SIGNAL lowToHigh, highToLow : STD_LOGIC := '0';
+	SIGNAL tocSad, tocMin : INTEGER RANGE 0 TO 4194303 := 0;
+	SIGNAL sadOut, minOut : STD_LOGIC_VECTOR(21 DOWNTO 0) := "00" & x"00000";
 	-- State Diagram ticToc
-   TYPE state_type_tic IS (T0, T1, T2, T3);
+   TYPE state_type_tic IS (T0, T1, T2);
    SIGNAL present_state : state_type_tic := T0;
 	
 begin
@@ -165,24 +161,17 @@ begin
          disp_ready  <= '0';
 			
 			data_in  <= '0';
-			junk_out <= x"ff";
 			
---			ticTempl  <= x"00000000";
---			ticSearch <= x"00000000";
-			ticSad    <= x"000000";
---			ticCnt    <= x"000000";
-			ticMin    <= x"000000";
---			ticDisp   <= x"00000000";
-			
---			lowToHigh <= '0';
---			highToLow <= '0';
+			tocSAD <= 0;
+			tocMin <= 0;	
+
 			present_state <= T0;
 			
 		ELSIF ( rising_edge(clk_I) ) then
          template_array <= template_array_next;
          search_array <= search_array_next;
 			
-			IF (data_out(0) = x"ffff" AND data_out(1) = x"ffff") THEN
+			IF (data_out(0)(0) = '1') THEN -- = x"ffff" AND data_out(1) = x"ffff") THEN
 				sad_array <= sad_array_next;
 			ELSE
 				sad_array <= sad_array;
@@ -247,71 +236,11 @@ begin
 			ELSE
 				data_in <= '0';
 			END IF;
-			
-			IF (junk_t = '1') THEN
-				junk_out <= templ_I;
-			ELSE
-				junk_out <= junk_out;
-			END IF;
-			
---			-- ticToc Template write_t is high
---			IF (write_t = '1') THEN -- AND junk_t = '0') THEN
---				ticTempl <= STD_LOGIC_VECTOR(UNSIGNED(ticTempl) + 1);
---			ELSE
---				ticTempl <= ticTempl;
---			END IF;
-			
---			-- ticToc Search write_s is high
---			IF (write_s = '1') THEN -- AND junk_s = '0') THEN
---				ticSearch <= STD_LOGIC_VECTOR(UNSIGNED(ticSearch) + 1);
---			ELSE
---				ticSearch <= ticSearch;
---			END IF;
-			
-			-- ticToc SAD, write_s goes low until data_out goes high
---			CASE present_state IS
---				WHEN T0 =>
---					ticSad <= ticSad;
---					ticMin <= ticMin;
---					
---					IF (write_s = '1') THEN
---						present_state <= T1;
---					ELSE
---						present_state <= T0;
---					END IF;
---				WHEN T1 =>
---					ticSad <= ticSad;
---					ticMin <= ticMin;
---					
---					IF (write_s = '0') THEN
---						present_state <= T2;
---					ELSE
---						present_state <= T1;
---					END IF;
---				WHEN T2 =>
---					ticSad <= STD_LOGIC_VECTOR(UNSIGNED(ticSad) + 1);
---					ticMin <= ticMin;
---					present_state <= T3;
---				WHEN T3 =>
---					ticSad <= STD_LOGIC_VECTOR(UNSIGNED(ticSad) + 1);
---					
---					IF (data_out(0) = x"ffff" AND data_out(1) = x"ffff") THEN
---						present_state <= T0;
---						ticMin <= STD_LOGIC_VECTOR(UNSIGNED(ticMin) + 1);
---					ELSE
---						present_state <= T3;
---						ticMin <= ticMin;
---					END IF;
---				WHEN OTHERS =>
---					ticSad <= ticSad;
---					ticMin <= ticMin;
---					present_state <= T0;
---			END CASE;
+
 			CASE present_state IS
 				WHEN T0 =>
-					ticSad <= ticSad;
-					ticMin <= ticMin;
---					ticCnt <= ticCnt;
+					tocSad <= tocSad;
+					tocMin <= tocMin;
 					
 					IF (data_in = '1') THEN
 						present_state <= T1;
@@ -319,37 +248,23 @@ begin
 						present_state <= T0;
 					END IF;
 				WHEN T1 =>
-					ticSad <= STD_LOGIC_VECTOR(UNSIGNED(ticSad) + 1);
-					
-					IF (data_out(0) = x"ffff" AND data_out(1) = x"ffff") THEN
-						ticMin <= STD_LOGIC_VECTOR(UNSIGNED(ticMin) + 1);
---						ticCnt <= STD_LOGIC_VECTOR(UNSIGNED(ticCnt) + 83);--(x"0000" & '0' & UNSIGNED(counter(0, 0))));
+					tocSad <= tocSad + 1;
+					present_state <= T2;
+				WHEN T2 =>
+					IF (data_out(0)(0) = '1') THEN
+						tocSad <= tocSad;
+						tocMin <= tocMin + 4;
 						present_state <= T0;
 					ELSE
-						ticMin <= ticMin;
---						ticCnt <= ticCnt;
-						present_state <= T1;
+						tocSad <= tocSad + 1;
+						tocMin <= tocMin;
+						present_state <= T2;
 					END IF;
 				WHEN OTHERS =>
-					ticSad <= ticSad;
-					ticMin <= ticMin;
---					ticCnt <= ticCnt;
+					tocSad <= tocSad;
+					tocMin <= tocMin;
 					present_state <= T0;
 			END CASE;
-			
-			-- ticToc Minimum Comparator
---			IF () THEN -- Add static amount of cycles after data_out goes high?
---				
---			ELSE
---				ticMin <= ticMin;
---			END IF;
-			
---			-- ticToc Disparity f2h_disp_rd is greater than 0
---			IF (f2h_disp_rd = 3) THEN -- may need to just add 4 to ticDisp when f2h_disp_rd = 4
---				ticDisp <= STD_LOGIC_VECTOR(UNSIGNED(ticDisp) + 4);
---			ELSE
---				ticDisp <= ticDisp;
---			END IF;
 			
 		end if;
 	end process;
@@ -553,35 +468,19 @@ begin
    sad_O    <= sad_array(ndx_sad, f2h_sad_rd)(7 DOWNTO 0);
    disp_O   <= x"0" & disparityArray(f2h_disp_rd);
    
-	-- Output clock cycle counts LEDs
+	sadOut <= STD_LOGIC_VECTOR(TO_UNSIGNED(tocSad, 32));
+	minOut <= STD_LOGIC_VECTOR(TO_UNSIGNED(tocMin, 32));
+	
+	-- Output clock cycle counts to LEDs
 	WITH sw_I SELECT led_O <=
---		ticTempl(7 DOWNTO 0)		WHEN x"00",
---      ticTempl(15 DOWNTO 8) 	WHEN x"01",
---      ticTempl(23 DOWNTO 16)	WHEN x"02",
---      ticTempl(31 DOWNTO 24)	WHEN x"04",
+		sadOut(7 DOWNTO 0)				WHEN x"00",
+      sadOut(15 DOWNTO 8) 				WHEN x"01",
+      "00" & sadOut(21 DOWNTO 16)	WHEN x"02",
 		
---      ticCnt(7 DOWNTO 0)	WHEN x"10",
---      ticCnt(15 DOWNTO 8) 	WHEN x"11",
---      ticCnt(23 DOWNTO 16)	WHEN x"12",
-      --x"0" & ticCnt(27 DOWNTO 24)	WHEN x"14",
-		
-		ticSad(7 DOWNTO 0)		WHEN x"20",
-      ticSad(15 DOWNTO 8) 		WHEN x"21",
-      ticSad(23 DOWNTO 16)		WHEN x"22",
-      --x"0" & ticSad(27 DOWNTO 24)		WHEN x"24",
-		--ticSad(39 DOWNTO 32)		WHEN x"28",
-		
-		ticMin(7 DOWNTO 0)		WHEN x"40",
-      ticMin(15 DOWNTO 8) 		WHEN x"41",
-      ticMin(23 DOWNTO 16)		WHEN x"42",
---      ticMin(31 DOWNTO 24)		WHEN x"44",
-		
---		ticDisp(7 DOWNTO 0)		WHEN x"80",
---      ticDisp(15 DOWNTO 8) 	WHEN x"81",
---      ticDisp(23 DOWNTO 16)	WHEN x"82",
---      ticDisp(31 DOWNTO 24)	WHEN x"84",
-		
-      x"f5"         				WHEN OTHERS;
+		minOut(7 DOWNTO 0)				WHEN x"10",
+      minOut(15 DOWNTO 8) 				WHEN x"11",
+      "00" & minOut(21 DOWNTO 16)	WHEN x"12",
+      x"fe"         						WHEN OTHERS;
 	
 --   WITH sw_I SELECT led_O <=
 --		junk_out WHEN x"00",

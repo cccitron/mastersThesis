@@ -43,7 +43,7 @@ entity sadAlgorithm_9x9 is
 		search_window_I   : IN pixelWindow;
       
 		data_O				: OUT STD_LOGIC;
-      sad_O : OUT STD_LOGIC_VECTOR (SAD_SIZE-1 DOWNTO 0)
+      sad_O : OUT STD_LOGIC_VECTOR (SAD_SIZE-1 DOWNTO 0)--;
 --		counter_O : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
    );
 end sadAlgorithm_9x9;

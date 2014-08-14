@@ -20,7 +20,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="32" />
+   <WVObjectSize size="29" />
    <wvobject fp_name="/tb_sad_wrapper/clk_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i</obj_property>
       <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -3273,31 +3273,6 @@
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/tictempl" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">tictempl[31:0]</obj_property>
-      <obj_property name="ObjectShortName">tictempl[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/ticsearch" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ticsearch[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ticsearch[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/ticsad" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ticsad[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ticsad[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/ticmin" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ticmin[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ticmin[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/ticdisp" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ticdisp[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ticdisp[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb_sad_wrapper/uut/present_state" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">present_state</obj_property>
       <obj_property name="ObjectShortName">present_state</obj_property>
@@ -3309,5 +3284,14 @@
    <wvobject fp_name="/tb_sad_wrapper/uut/data_out" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">data_out[0:3]</obj_property>
       <obj_property name="ObjectShortName">data_out[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/tocsad" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">tocsad</obj_property>
+      <obj_property name="ObjectShortName">tocsad</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/tocout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tocout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tocout[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>

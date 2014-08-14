@@ -1,0 +1,29 @@
+SET_PARAMETER b_width 8
+SET_PARAMETER bypass_ce_priority CE_Overrides_Bypass
+SET_PARAMETER a_width 8
+SET_PARAMETER ce false
+SET_PARAMETER borrow_sense Active_Low
+SET_PARAMETER c_out false
+SET_PARAMETER ainit_value 0
+SET_PARAMETER b_constant false
+SET_PARAMETER bypass false
+SET_PARAMETER implementation Fabric
+SET_PARAMETER bypass_sense Active_High
+SET_PARAMETER a_type Unsigned
+SET_PARAMETER sset false
+SET_PARAMETER latency 0
+SET_PARAMETER b_value 00000000
+SET_PARAMETER sync_ce_priority Sync_Overrides_CE
+SET_PARAMETER component_name adder_10
+SET_PARAMETER add_mode Subtract
+SET_PARAMETER b_type Unsigned
+SET_PARAMETER sclr false
+SET_PARAMETER c_in false
+SET_PARAMETER sync_ctrl_priority Reset_Overrides_Set
+SET_PARAMETER latency_configuration Manual
+SET_PARAMETER sinit_value 0
+SET_PARAMETER sinit false
+SET_PARAMETER out_width 8
+SET_ERROR_CODE 2
+SET_ERROR_MSG  CANCEL: Customization cancelled.
+SET_ERROR_TEXT Finished initializing IP model.	

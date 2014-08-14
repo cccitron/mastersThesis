@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7/top_level/tb_sadAlgorithm_7x7_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="bip_usecase_utils_pkg_v2_0" />
+            <top_module name="bip_utils_pkg_v2_0" />
+            <top_module name="c_addsub_pkg_v11_0" />
+            <top_module name="c_reg_fd_v11_0_comp" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="tb_sadalgorithm_7x7" />
+            <top_module name="textio" />
+            <top_module name="window_array" />
+            <top_module name="xbip_addsub_v2_0_comp" />
+            <top_module name="xbip_pipe_v2_0_xst_comp" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/tb_sadalgorithm_7x7/clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_7x7/data_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_i</obj_property>
+      <obj_property name="ObjectShortName">data_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_7x7/template_window_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">template_window_i[0:48]</obj_property>
+      <obj_property name="ObjectShortName">template_window_i[0:48]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_7x7/search_window_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">search_window_i[0:48]</obj_property>
+      <obj_property name="ObjectShortName">search_window_i[0:48]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_7x7/data_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_o</obj_property>
+      <obj_property name="ObjectShortName">data_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_7x7/sad_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sad_o[11:0]</obj_property>
+      <obj_property name="ObjectShortName">sad_o[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_7x7/template" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">template[0:48]</obj_property>
+      <obj_property name="ObjectShortName">template[0:48]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_7x7/search" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">search[0:48]</obj_property>
+      <obj_property name="ObjectShortName">search[0:48]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sadalgorithm_7x7/clk_i_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i_period</obj_property>
+      <obj_property name="ObjectShortName">clk_i_period</obj_property>
+   </wvobject>
+</wave_config>

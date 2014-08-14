@@ -407,16 +407,21 @@ if __name__ == "__main__":
                 # Disparity range 0-15
                 disp_range = 16
                 # Number of disparity values for an entire row
-                disp_row = 2 #ncol - (disp_range + 1)
+                disp_row = 2 #2 #ncol - (disp_range + 1)
                 # Number of pixels per row to be sent
                 ncol = (disp_row-1) + disp_range + (nrow-1)
                 
                 # Initialize arrays
                 dispW = width-(ncol-disp_row) #21 #24 #17
+                remains = dispW % disp_row
+                dispW = dispW - remains
                 dispH = height-(nrow-1) #6 #8 #2
                 templateBuff = numpy.zeros((height, width), dtype = 'i')
                 searchBuff = numpy.zeros((height, width), dtype = 'i')
                 disparity_f2h = numpy.zeros((dispH, dispW), dtype = 'i')
+                
+                print("height x width =", height, "x", width)
+                print("dispH x dispW =", dispH, "x", dispW)
                 
                 # Assign pixel values to arrays
                 for i in range(height):
@@ -452,9 +457,12 @@ if __name__ == "__main__":
                 flWriteChannel(handle, 1000, 0x00, buffTempl_h2f)
                 flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)
                 
-                #print("reading from disparity array")            
+                #print("reading from disparity array")        
+                dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
                 for ndx in range(disp_row):
-                    disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)
+                    disparity_f2h[0][ndx] = dispBuffer[ndx]    
+                '''for ndx in range(disp_row):
+                    disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)'''
                     #print(disparity_f2h[0][ndx], end=" ")
                 #print("\n\n\n")
                 
@@ -493,8 +501,11 @@ if __name__ == "__main__":
                         flWriteChannel(handle, 1000, 0x00, templateRow_h2f)
                         flWriteChannel(handle, 1000, 0x01, searchRow_h2f)
                     
+                    dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
                     for ndx in range(disp_row):
-                        disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)
+                        disparity_f2h[pos][ndx+offset] = dispBuffer[ndx]
+                    '''for ndx in range(disp_row):
+                        disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)'''
                     pos += 1
 
                     for i in range(nrow, height):
@@ -507,21 +518,24 @@ if __name__ == "__main__":
                         flWriteChannel(handle, 1000, 0x00, templateRow_h2f)
                         flWriteChannel(handle, 1000, 0x01, searchRow_h2f)
                         
+                        dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
                         for ndx in range(disp_row):
-                            disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)
+                            disparity_f2h[pos][ndx+offset] = dispBuffer[ndx]
+                        '''for ndx in range(disp_row):
+                            disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)'''
                         pos += 1
                     
                 # time after SAD Algorithm has finished
                 t1 = time.time()
                     
                 # create disparity image
-                im = Image.new("RGB", (dispW, dispH), "black") #17, height-2), "black")
+                im = Image.new("RGB", (dispW, dispH), "white") #17, height-2), "black")
                 
                 for i in range(dispW): #17):
                     for j in range(dispH): #2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("disp7x7_2.png")
+                im.save("venus_clock_disp7x7_2.png")
                 im.show()
                 
                 # time after image is created

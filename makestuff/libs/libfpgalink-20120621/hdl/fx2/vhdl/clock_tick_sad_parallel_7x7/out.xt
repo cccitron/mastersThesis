@@ -1,0 +1,1378 @@
+for i in top_level.vhdl ../comm_fpga/comm_fpga_fx2.vhdl myComp.vhd; do if [ "${i##*.}" = "vhdl" ]; then echo "vhdl work \"$i\""; elif [ "${i##*.}" = "v" ]; then echo "verilog work \"$i\""; fi; done > top_level.prj
+mkdir -p xst/projnav.tmp
+xst -intstyle ise -ifn ../../platforms/atlys/platform.xst -ofn top_level.syr
+Reading design: top_level.prj
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/comm_fpga/comm_fpga_fx2.vhdl" into library work
+Parsing entity <comm_fpga_fx2>.
+Parsing architecture <behavioural> of entity <comm_fpga_fx2>.
+Parsing VHDL file "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level.vhdl" into library work
+Parsing entity <top_level>.
+Parsing architecture <behavioural> of entity <top_level>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top_level> (architecture <behavioural>) from library <work>.
+WARNING:HDLCompiler:89 - "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level.vhdl" Line 50: <mycomp> remains a black-box since it has no binding entity.
+
+Elaborating entity <comm_fpga_fx2> (architecture <behavioural>) from library <work>.
+WARNING:HDLCompiler:1127 - "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level.vhdl" Line 199: Assignment to flags ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_level>.
+    Related source file is "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level.vhdl".
+INFO:Xst:3210 - "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksum-me/top_level.vhdl" line 175: Output port <f2hReady_out> of the instance <comm_fpga_fx2> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <reg0>.
+    Found 8-bit register for signal <reg1>.
+    Found 8-bit register for signal <reg2>.
+    Found 8-bit register for signal <reg3>.
+    Found 8-bit register for signal <reg4>.
+    Found 8-bit 7-to-1 multiplexer for signal <_n0092> created at line 66.
+    Summary:
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <top_level> synthesized.
+
+Synthesizing Unit <comm_fpga_fx2>.
+    Related source file is "/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/comm_fpga/comm_fpga_fx2.vhdl".
+    Found 32-bit register for signal <count>.
+    Found 7-bit register for signal <chanAddr>.
+    Found 1-bit register for signal <isWrite>.
+    Found 1-bit register for signal <isAligned>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 21                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 8                                              |
+    | Clock              | fx2Clk_in (rising_edge)                        |
+    | Power Up State     | s_idle                                         |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_18_OUT<31:0>> created at line 1308.
+    Found 1-bit tristate buffer for signal <fx2Data_io<7>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<6>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<5>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<4>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<3>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<2>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<1>> created at line 222
+    Found 1-bit tristate buffer for signal <fx2Data_io<0>> created at line 222
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred  48 Multiplexer(s).
+	inferred   8 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <comm_fpga_fx2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit subtractor                                     : 1
+# Registers                                            : 9
+ 1-bit register                                        : 2
+ 32-bit register                                       : 1
+ 7-bit register                                        : 1
+ 8-bit register                                        : 5
+# Multiplexers                                         : 50
+ 1-bit 2-to-1 multiplexer                              : 34
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 7-to-1 multiplexer                              : 1
+# Tristates                                            : 8
+ 1-bit tristate buffer                                 : 8
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit subtractor                                     : 1
+# Registers                                            : 81
+ Flip-Flops                                            : 81
+# Multiplexers                                         : 50
+ 1-bit 2-to-1 multiplexer                              : 34
+ 2-bit 2-to-1 multiplexer                              : 7
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 7-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <comm_fpga_fx2/FSM_0> on signal <state[1:4]> with user encoding.
+------------------------------------
+ State                  | Encoding
+------------------------------------
+ s_idle                 | 0000
+ s_get_count0           | 0001
+ s_get_count1           | 0010
+ s_get_count2           | 0011
+ s_get_count3           | 0100
+ s_begin_write          | 0101
+ s_write                | 0110
+ s_end_write_aligned    | 0111
+ s_end_write_nonaligned | 1000
+ s_read                 | 1001
+------------------------------------
+
+Optimizing unit <top_level> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 0.
+WARNING:Xst:2677 - Node <comm_fpga_fx2/state_FSM_FFd1_1> of sequential type is unconnected in block <top_level>.
+FlipFlop comm_fpga_fx2/state_FSM_FFd1 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd3 has been replicated 2 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd4 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 90
+ Flip-Flops                                            : 90
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+fx2Clk_in                          | IBUF+BUFG              | 90    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.783ns (Maximum Frequency: 264.365MHz)
+   Minimum input arrival time before clock: 4.879ns
+   Maximum output required time after clock: 7.619ns
+   Maximum combinational path delay: 7.750ns
+
+=========================================================================
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ../../platforms/atlys/platform.ucf -p xc6slx45-csg324-3 top_level.ngc top_level.ngd
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -uc ../../platforms/atlys/platform.ucf -p
+xc6slx45-csg324-3 top_level.ngc top_level.ngd
+
+Reading NGO file
+"/home/cccitron/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/backup1-ex_cksu
+m-me/top_level.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file
+"../../platforms/atlys/platform.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+ERROR:ConstraintSystem:59 - Constraint <NET "CLK_I" LOC = L15;>
+   [../../platforms/atlys/platform.ucf(2)]: NET "CLK_I" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "CLK_I" LOC = L15;> [../../platforms/atlys/platform.ucf(2)]' could not
+   be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "RESET_I" LOC = T15;>
+   [../../platforms/atlys/platform.ucf(3)]: NET "RESET_I" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "RESET_I" LOC = T15;> [../../platforms/atlys/platform.ucf(3)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_0_P" LOC = D8;>
+   [../../platforms/atlys/platform.ucf(4)]: NET "TMDS_TX_0_P" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_0_P" LOC = D8;> [../../platforms/atlys/platform.ucf(4)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_0_N" LOC = C8;>
+   [../../platforms/atlys/platform.ucf(5)]: NET "TMDS_TX_0_N" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_0_N" LOC = C8;> [../../platforms/atlys/platform.ucf(5)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_1_P" LOC = C7;>
+   [../../platforms/atlys/platform.ucf(6)]: NET "TMDS_TX_1_P" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_1_P" LOC = C7;> [../../platforms/atlys/platform.ucf(6)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_1_N" LOC = A7;>
+   [../../platforms/atlys/platform.ucf(7)]: NET "TMDS_TX_1_N" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_1_N" LOC = A7;> [../../platforms/atlys/platform.ucf(7)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_2_P" LOC = B8;>
+   [../../platforms/atlys/platform.ucf(8)]: NET "TMDS_TX_2_P" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_2_P" LOC = B8;> [../../platforms/atlys/platform.ucf(8)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_2_N" LOC = A8;>
+   [../../platforms/atlys/platform.ucf(9)]: NET "TMDS_TX_2_N" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_2_N" LOC = A8;> [../../platforms/atlys/platform.ucf(9)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_CLK_P" LOC = B6;>
+   [../../platforms/atlys/platform.ucf(10)]: NET "TMDS_TX_CLK_P" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_CLK_P" LOC = B6;> [../../platforms/atlys/platform.ucf(10)]'
+   could not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_CLK_N" LOC = A6;>
+   [../../platforms/atlys/platform.ucf(11)]: NET "TMDS_TX_CLK_N" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_CLK_N" LOC = A6;> [../../platforms/atlys/platform.ucf(11)]'
+   could not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_SCL" LOC = D9;>
+   [../../platforms/atlys/platform.ucf(12)]: NET "TMDS_TX_SCL" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_SCL" LOC = D9;> [../../platforms/atlys/platform.ucf(12)]'
+   could not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_SDA" LOC = C9;>
+   [../../platforms/atlys/platform.ucf(13)]: NET "TMDS_TX_SDA" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "TMDS_TX_SDA" LOC = C9;> [../../platforms/atlys/platform.ucf(13)]'
+   could not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "CLK_I" IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(16)]: NET "CLK_I" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "RESET_I" IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(17)]: NET "RESET_I" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_0_P" IOSTANDARD = TMDS_33;>
+   [../../platforms/atlys/platform.ucf(18)]: NET "TMDS_TX_0_P" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_0_N" IOSTANDARD = TMDS_33;>
+   [../../platforms/atlys/platform.ucf(19)]: NET "TMDS_TX_0_N" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_1_P" IOSTANDARD = TMDS_33;>
+   [../../platforms/atlys/platform.ucf(20)]: NET "TMDS_TX_1_P" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_1_N" IOSTANDARD = TMDS_33;>
+   [../../platforms/atlys/platform.ucf(21)]: NET "TMDS_TX_1_N" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_2_P" IOSTANDARD = TMDS_33;>
+   [../../platforms/atlys/platform.ucf(22)]: NET "TMDS_TX_2_P" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_2_N" IOSTANDARD = TMDS_33;>
+   [../../platforms/atlys/platform.ucf(23)]: NET "TMDS_TX_2_N" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_CLK_P" IOSTANDARD =
+   TMDS_33;> [../../platforms/atlys/platform.ucf(24)]: NET "TMDS_TX_CLK_P" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_CLK_N" IOSTANDARD =
+   TMDS_33;> [../../platforms/atlys/platform.ucf(25)]: NET "TMDS_TX_CLK_N" not
+   found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_SCL" IOSTANDARD = I2C;>
+   [../../platforms/atlys/platform.ucf(26)]: NET "TMDS_TX_SCL" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "TMDS_TX_SDA" IOSTANDARD = I2C;>
+   [../../platforms/atlys/platform.ucf(27)]: NET "TMDS_TX_SDA" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "SW_I[0]" LOC = A10 |>
+   [../../platforms/atlys/platform.ucf(30)]: NET "SW_I[0]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SW_I[0]" LOC = A10 |> [../../platforms/atlys/platform.ucf(30)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(30)]: NET "SW_I[0]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "SW_I[1]" LOC = D14 |>
+   [../../platforms/atlys/platform.ucf(31)]: NET "SW_I[1]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SW_I[1]" LOC = D14 |> [../../platforms/atlys/platform.ucf(31)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(31)]: NET "SW_I[1]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "SW_I[2]" LOC = C14 |>
+   [../../platforms/atlys/platform.ucf(32)]: NET "SW_I[2]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SW_I[2]" LOC = C14 |> [../../platforms/atlys/platform.ucf(32)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(32)]: NET "SW_I[2]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "SW_I[3]" LOC = P15 |>
+   [../../platforms/atlys/platform.ucf(33)]: NET "SW_I[3]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SW_I[3]" LOC = P15 |> [../../platforms/atlys/platform.ucf(33)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(33)]: NET "SW_I[3]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "SW_I[4]" LOC = P12 |>
+   [../../platforms/atlys/platform.ucf(34)]: NET "SW_I[4]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SW_I[4]" LOC = P12 |> [../../platforms/atlys/platform.ucf(34)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(34)]: NET "SW_I[4]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "SW_I[5]" LOC = R5 |>
+   [../../platforms/atlys/platform.ucf(35)]: NET "SW_I[5]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SW_I[5]" LOC = R5 |> [../../platforms/atlys/platform.ucf(35)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(35)]: NET "SW_I[5]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "SW_I[6]" LOC = T5 |>
+   [../../platforms/atlys/platform.ucf(36)]: NET "SW_I[6]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SW_I[6]" LOC = T5 |> [../../platforms/atlys/platform.ucf(36)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(36)]: NET "SW_I[6]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "SW_I[7]" LOC = E4 |>
+   [../../platforms/atlys/platform.ucf(37)]: NET "SW_I[7]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "SW_I[7]" LOC = E4 |> [../../platforms/atlys/platform.ucf(37)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(37)]: NET "SW_I[7]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "LED_O[0]" LOC = U18 |>
+   [../../platforms/atlys/platform.ucf(39)]: NET "LED_O[0]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "LED_O[0]" LOC = U18 |> [../../platforms/atlys/platform.ucf(39)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(39)]: NET "LED_O[0]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "LED_O[1]" LOC = M14 |>
+   [../../platforms/atlys/platform.ucf(40)]: NET "LED_O[1]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "LED_O[1]" LOC = M14 |> [../../platforms/atlys/platform.ucf(40)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(40)]: NET "LED_O[1]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "LED_O[2]" LOC = N14 |>
+   [../../platforms/atlys/platform.ucf(41)]: NET "LED_O[2]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "LED_O[2]" LOC = N14 |> [../../platforms/atlys/platform.ucf(41)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(41)]: NET "LED_O[2]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "LED_O[3]" LOC = L14 |>
+   [../../platforms/atlys/platform.ucf(42)]: NET "LED_O[3]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "LED_O[3]" LOC = L14 |> [../../platforms/atlys/platform.ucf(42)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(42)]: NET "LED_O[3]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "LED_O[4]" LOC = M13 |>
+   [../../platforms/atlys/platform.ucf(43)]: NET "LED_O[4]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "LED_O[4]" LOC = M13 |> [../../platforms/atlys/platform.ucf(43)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(43)]: NET "LED_O[4]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "LED_O[5]" LOC = D4 |>
+   [../../platforms/atlys/platform.ucf(44)]: NET "LED_O[5]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "LED_O[5]" LOC = D4 |> [../../platforms/atlys/platform.ucf(44)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(44)]: NET "LED_O[5]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "LED_O[6]" LOC = P16 |>
+   [../../platforms/atlys/platform.ucf(45)]: NET "LED_O[6]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "LED_O[6]" LOC = P16 |> [../../platforms/atlys/platform.ucf(45)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(45)]: NET "LED_O[6]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "LED_O[7]" LOC = N12 |>
+   [../../platforms/atlys/platform.ucf(46)]: NET "LED_O[7]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "LED_O[7]" LOC = N12 |> [../../platforms/atlys/platform.ucf(46)]' could
+   not be found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <IOSTANDARD = LVCMOS33;>
+   [../../platforms/atlys/platform.ucf(46)]: NET "LED_O[7]" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:58 - Constraint <NET
+   "*/mcb_ddr2/memc?_mcb_raw_wrapper_inst/selfrefresh_mcb_mode" TIG;>
+   [../../platforms/atlys/platform.ucf(64)]: NET
+   "*/mcb_ddr2/memc?_mcb_raw_wrapper_inst/selfrefresh_mcb_mode" does not match
+   any design objects.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "/pll_lock" TIG;>
+   [../../platforms/atlys/platform.ucf(65)]: NET "/pll_lock" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:58 - Constraint <NET
+   "*/mcb_ddr2/memc?_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_to
+   p_inst/mcb_soft_calibration_inst/CKE_Train" TIG;>
+   [../../platforms/atlys/platform.ucf(67)]: NET
+   "*/mcb_ddr2/memc?_mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_to
+   p_inst/mcb_soft_calibration_inst/CKE_Train" does not match any design
+   objects.
+
+ERROR:ConstraintSystem:58 - Constraint <NET "mcb3_dram_dq[*]"                   
+                IN_TERM = NONE;> [../../platforms/atlys/platform.ucf(84)]: NET
+   "mcb3_dram_dq[*]" does not match any design objects.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "mcb3_dram_dqs"                     
+                IN_TERM = NONE;> [../../platforms/atlys/platform.ucf(85)]: NET
+   "mcb3_dram_dqs" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "mcb3_dram_dqs_n"                   
+                IN_TERM = NONE;> [../../platforms/atlys/platform.ucf(86)]: NET
+   "mcb3_dram_dqs_n" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "mcb3_dram_udqs"                    
+                IN_TERM = NONE;> [../../platforms/atlys/platform.ucf(87)]: NET
+   "mcb3_dram_udqs" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "mcb3_dram_udqs_n"                  
+                IN_TERM = NONE;> [../../platforms/atlys/platform.ucf(88)]: NET
+   "mcb3_dram_udqs_n" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:58 - Constraint <NET  "mcb3_dram_dq[*]"                  
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(93)]: NET "mcb3_dram_dq[*]" does not
+   match any design objects.
+
+ERROR:ConstraintSystem:58 - Constraint <NET  "mcb3_dram_a[*]"                   
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(94)]: NET "mcb3_dram_a[*]" does not match
+   any design objects.
+
+ERROR:ConstraintSystem:58 - Constraint <NET  "mcb3_dram_ba[*]"                  
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(95)]: NET "mcb3_dram_ba[*]" does not
+   match any design objects.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dqs"                    
+               IOSTANDARD = DIFF_SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(96)]: NET "mcb3_dram_dqs" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_udqs"                   
+               IOSTANDARD = DIFF_SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(97)]: NET "mcb3_dram_udqs" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dqs_n"                  
+               IOSTANDARD = DIFF_SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(98)]: NET "mcb3_dram_dqs_n" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_udqs_n"                 
+               IOSTANDARD = DIFF_SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(99)]: NET "mcb3_dram_udqs_n" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_ck"                     
+               IOSTANDARD = DIFF_SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(100)]: NET "mcb3_dram_ck" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_ck_n"                   
+               IOSTANDARD = DIFF_SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(101)]: NET "mcb3_dram_ck_n" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_cke"                    
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(102)]: NET "mcb3_dram_cke" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_ras_n"                  
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(103)]: NET "mcb3_dram_ras_n" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_cas_n"                  
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(104)]: NET "mcb3_dram_cas_n" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_we_n"                   
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(105)]: NET "mcb3_dram_we_n" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_odt"                    
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(106)]: NET "mcb3_dram_odt" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dm"                     
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(107)]: NET "mcb3_dram_dm" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_udm"                    
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(108)]: NET "mcb3_dram_udm" not found. 
+   Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_rzq"                         
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(109)]: NET "mcb3_rzq" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_zio"                         
+               IOSTANDARD = SSTL18_II;>
+   [../../platforms/atlys/platform.ucf(110)]: NET "mcb3_zio" not found.  Please
+   verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[0]"                   
+           LOC = "J7" ;> [../../platforms/atlys/platform.ucf(115)]: NET
+   "mcb3_dram_a[0]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[0]"                            LOC = "J7" ;>
+   [../../platforms/atlys/platform.ucf(115)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[10]"                  
+           LOC = "F4" ;> [../../platforms/atlys/platform.ucf(116)]: NET
+   "mcb3_dram_a[10]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[10]"                           LOC = "F4" ;>
+   [../../platforms/atlys/platform.ucf(116)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[11]"                  
+           LOC = "D3" ;> [../../platforms/atlys/platform.ucf(117)]: NET
+   "mcb3_dram_a[11]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[11]"                           LOC = "D3" ;>
+   [../../platforms/atlys/platform.ucf(117)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[12]"                  
+           LOC = "G6" ;> [../../platforms/atlys/platform.ucf(118)]: NET
+   "mcb3_dram_a[12]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[12]"                           LOC = "G6" ;>
+   [../../platforms/atlys/platform.ucf(118)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[1]"                   
+           LOC = "J6" ;> [../../platforms/atlys/platform.ucf(119)]: NET
+   "mcb3_dram_a[1]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[1]"                            LOC = "J6" ;>
+   [../../platforms/atlys/platform.ucf(119)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[2]"                   
+           LOC = "H5" ;> [../../platforms/atlys/platform.ucf(120)]: NET
+   "mcb3_dram_a[2]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[2]"                            LOC = "H5" ;>
+   [../../platforms/atlys/platform.ucf(120)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[3]"                   
+           LOC = "L7" ;> [../../platforms/atlys/platform.ucf(121)]: NET
+   "mcb3_dram_a[3]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[3]"                            LOC = "L7" ;>
+   [../../platforms/atlys/platform.ucf(121)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[4]"                   
+           LOC = "F3" ;> [../../platforms/atlys/platform.ucf(122)]: NET
+   "mcb3_dram_a[4]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[4]"                            LOC = "F3" ;>
+   [../../platforms/atlys/platform.ucf(122)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[5]"                   
+           LOC = "H4" ;> [../../platforms/atlys/platform.ucf(123)]: NET
+   "mcb3_dram_a[5]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[5]"                            LOC = "H4" ;>
+   [../../platforms/atlys/platform.ucf(123)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[6]"                   
+           LOC = "H3" ;> [../../platforms/atlys/platform.ucf(124)]: NET
+   "mcb3_dram_a[6]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[6]"                            LOC = "H3" ;>
+   [../../platforms/atlys/platform.ucf(124)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[7]"                   
+           LOC = "H6" ;> [../../platforms/atlys/platform.ucf(125)]: NET
+   "mcb3_dram_a[7]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[7]"                            LOC = "H6" ;>
+   [../../platforms/atlys/platform.ucf(125)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[8]"                   
+           LOC = "D2" ;> [../../platforms/atlys/platform.ucf(126)]: NET
+   "mcb3_dram_a[8]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[8]"                            LOC = "D2" ;>
+   [../../platforms/atlys/platform.ucf(126)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_a[9]"                   
+           LOC = "D1" ;> [../../platforms/atlys/platform.ucf(127)]: NET
+   "mcb3_dram_a[9]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_a[9]"                            LOC = "D1" ;>
+   [../../platforms/atlys/platform.ucf(127)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_ba[0]"                  
+           LOC = "F2" ;> [../../platforms/atlys/platform.ucf(128)]: NET
+   "mcb3_dram_ba[0]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_ba[0]"                           LOC = "F2" ;>
+   [../../platforms/atlys/platform.ucf(128)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_ba[1]"                  
+           LOC = "F1" ;> [../../platforms/atlys/platform.ucf(129)]: NET
+   "mcb3_dram_ba[1]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_ba[1]"                           LOC = "F1" ;>
+   [../../platforms/atlys/platform.ucf(129)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_ba[2]"                  
+           LOC = "E1" ;> [../../platforms/atlys/platform.ucf(130)]: NET
+   "mcb3_dram_ba[2]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_ba[2]"                           LOC = "E1" ;>
+   [../../platforms/atlys/platform.ucf(130)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_cas_n"                  
+           LOC = "K5" ;> [../../platforms/atlys/platform.ucf(131)]: NET
+   "mcb3_dram_cas_n" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_cas_n"                           LOC = "K5" ;>
+   [../../platforms/atlys/platform.ucf(131)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_ck"                     
+           LOC = "G3" ;> [../../platforms/atlys/platform.ucf(132)]: NET
+   "mcb3_dram_ck" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_ck"                              LOC = "G3" ;>
+   [../../platforms/atlys/platform.ucf(132)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_ck_n"                   
+           LOC = "G1" ;> [../../platforms/atlys/platform.ucf(133)]: NET
+   "mcb3_dram_ck_n" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_ck_n"                            LOC = "G1" ;>
+   [../../platforms/atlys/platform.ucf(133)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_cke"                    
+           LOC = "H7" ;> [../../platforms/atlys/platform.ucf(134)]: NET
+   "mcb3_dram_cke" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_cke"                             LOC = "H7" ;>
+   [../../platforms/atlys/platform.ucf(134)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dm"                     
+           LOC = "K3" ;> [../../platforms/atlys/platform.ucf(135)]: NET
+   "mcb3_dram_dm" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dm"                              LOC = "K3" ;>
+   [../../platforms/atlys/platform.ucf(135)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[0]"                  
+           LOC = "L2" ;> [../../platforms/atlys/platform.ucf(136)]: NET
+   "mcb3_dram_dq[0]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[0]"                           LOC = "L2" ;>
+   [../../platforms/atlys/platform.ucf(136)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[10]"                 
+           LOC = "N2" ;> [../../platforms/atlys/platform.ucf(137)]: NET
+   "mcb3_dram_dq[10]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[10]"                          LOC = "N2" ;>
+   [../../platforms/atlys/platform.ucf(137)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[11]"                 
+           LOC = "N1" ;> [../../platforms/atlys/platform.ucf(138)]: NET
+   "mcb3_dram_dq[11]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[11]"                          LOC = "N1" ;>
+   [../../platforms/atlys/platform.ucf(138)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[12]"                 
+           LOC = "T2" ;> [../../platforms/atlys/platform.ucf(139)]: NET
+   "mcb3_dram_dq[12]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[12]"                          LOC = "T2" ;>
+   [../../platforms/atlys/platform.ucf(139)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[13]"                 
+           LOC = "T1" ;> [../../platforms/atlys/platform.ucf(140)]: NET
+   "mcb3_dram_dq[13]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[13]"                          LOC = "T1" ;>
+   [../../platforms/atlys/platform.ucf(140)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[14]"                 
+           LOC = "U2" ;> [../../platforms/atlys/platform.ucf(141)]: NET
+   "mcb3_dram_dq[14]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[14]"                          LOC = "U2" ;>
+   [../../platforms/atlys/platform.ucf(141)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[15]"                 
+           LOC = "U1" ;> [../../platforms/atlys/platform.ucf(142)]: NET
+   "mcb3_dram_dq[15]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[15]"                          LOC = "U1" ;>
+   [../../platforms/atlys/platform.ucf(142)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[1]"                  
+           LOC = "L1" ;> [../../platforms/atlys/platform.ucf(143)]: NET
+   "mcb3_dram_dq[1]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[1]"                           LOC = "L1" ;>
+   [../../platforms/atlys/platform.ucf(143)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[2]"                  
+           LOC = "K2" ;> [../../platforms/atlys/platform.ucf(144)]: NET
+   "mcb3_dram_dq[2]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[2]"                           LOC = "K2" ;>
+   [../../platforms/atlys/platform.ucf(144)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[3]"                  
+           LOC = "K1" ;> [../../platforms/atlys/platform.ucf(145)]: NET
+   "mcb3_dram_dq[3]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[3]"                           LOC = "K1" ;>
+   [../../platforms/atlys/platform.ucf(145)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[4]"                  
+           LOC = "H2" ;> [../../platforms/atlys/platform.ucf(146)]: NET
+   "mcb3_dram_dq[4]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[4]"                           LOC = "H2" ;>
+   [../../platforms/atlys/platform.ucf(146)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[5]"                  
+           LOC = "H1" ;> [../../platforms/atlys/platform.ucf(147)]: NET
+   "mcb3_dram_dq[5]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[5]"                           LOC = "H1" ;>
+   [../../platforms/atlys/platform.ucf(147)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[6]"                  
+           LOC = "J3" ;> [../../platforms/atlys/platform.ucf(148)]: NET
+   "mcb3_dram_dq[6]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[6]"                           LOC = "J3" ;>
+   [../../platforms/atlys/platform.ucf(148)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[7]"                  
+           LOC = "J1" ;> [../../platforms/atlys/platform.ucf(149)]: NET
+   "mcb3_dram_dq[7]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[7]"                           LOC = "J1" ;>
+   [../../platforms/atlys/platform.ucf(149)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[8]"                  
+           LOC = "M3" ;> [../../platforms/atlys/platform.ucf(150)]: NET
+   "mcb3_dram_dq[8]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[8]"                           LOC = "M3" ;>
+   [../../platforms/atlys/platform.ucf(150)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dq[9]"                  
+           LOC = "M1" ;> [../../platforms/atlys/platform.ucf(151)]: NET
+   "mcb3_dram_dq[9]" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dq[9]"                           LOC = "M1" ;>
+   [../../platforms/atlys/platform.ucf(151)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dqs"                    
+           LOC = "L4" ;> [../../platforms/atlys/platform.ucf(152)]: NET
+   "mcb3_dram_dqs" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dqs"                             LOC = "L4" ;>
+   [../../platforms/atlys/platform.ucf(152)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_dqs_n"                  
+           LOC = "L3" ;> [../../platforms/atlys/platform.ucf(153)]: NET
+   "mcb3_dram_dqs_n" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_dqs_n"                           LOC = "L3" ;>
+   [../../platforms/atlys/platform.ucf(153)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_odt"                    
+           LOC = "K6" ;> [../../platforms/atlys/platform.ucf(154)]: NET
+   "mcb3_dram_odt" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_odt"                             LOC = "K6" ;>
+   [../../platforms/atlys/platform.ucf(154)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_ras_n"                  
+           LOC = "L5" ;> [../../platforms/atlys/platform.ucf(155)]: NET
+   "mcb3_dram_ras_n" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_ras_n"                           LOC = "L5" ;>
+   [../../platforms/atlys/platform.ucf(155)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_udm"                    
+           LOC = "K4" ;> [../../platforms/atlys/platform.ucf(157)]: NET
+   "mcb3_dram_udm" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_udm"                             LOC = "K4" ;>
+   [../../platforms/atlys/platform.ucf(157)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_udqs"                   
+           LOC = "P2" ;> [../../platforms/atlys/platform.ucf(158)]: NET
+   "mcb3_dram_udqs" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_udqs"                            LOC = "P2" ;>
+   [../../platforms/atlys/platform.ucf(158)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_udqs_n"                 
+           LOC = "P1" ;> [../../platforms/atlys/platform.ucf(159)]: NET
+   "mcb3_dram_udqs_n" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_udqs_n"                          LOC = "P1" ;>
+   [../../platforms/atlys/platform.ucf(159)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_dram_we_n"                   
+           LOC = "E3" ;> [../../platforms/atlys/platform.ucf(160)]: NET
+   "mcb3_dram_we_n" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_dram_we_n"                            LOC = "E3" ;>
+   [../../platforms/atlys/platform.ucf(160)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_rzq"                         
+           LOC = "L6" ;> [../../platforms/atlys/platform.ucf(169)]: NET
+   "mcb3_rzq" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_rzq"                                  LOC = "L6" ;>
+   [../../platforms/atlys/platform.ucf(169)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET  "mcb3_zio"                         
+           LOC = "C2" ;> [../../platforms/atlys/platform.ucf(175)]: NET
+   "mcb3_zio" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET  "mcb3_zio"                                  LOC = "C2" ;>
+   [../../platforms/atlys/platform.ucf(175)]' could not be found and so the
+   Locate constraint will be removed.
+
+Done...
+
+Checking expanded design ...
+ERROR:NgdBuild:604 - logical block 'comp' with type 'myComp' could not be
+   resolved. A pin name misspelling can cause this, a missing edif or ngc file,
+   case mismatch between the block name and the edif or ngc file name, or the
+   misspelling of a type name. Symbol 'myComp' is not supported in target
+   'spartan6'.
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:   130
+  Number of warnings:  75
+
+Total REAL time to NGDBUILD completion:  3 sec
+Total CPU time to NGDBUILD completion:   3 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "top_level.bld"...

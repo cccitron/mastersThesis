@@ -41,6 +41,10 @@
     <transform xil_pn:end_ts="1407460491" xil_pn:in_ck="8392370876705349846" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1407460491">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="comm_fpga_fx2.vhd"/>
       <outfile xil_pn:name="minComparator.vhd"/>
       <outfile xil_pn:name="sadAlgorithm_7x7.vhd"/>
@@ -67,6 +71,11 @@
     <transform xil_pn:end_ts="1407460491" xil_pn:in_ck="-2420261753769773995" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1407460491">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="comm_fpga_fx2.vhd"/>
       <outfile xil_pn:name="ipcore_dir/adder_10.vhd"/>
       <outfile xil_pn:name="minComparator.vhd"/>
@@ -80,7 +89,10 @@
     <transform xil_pn:end_ts="1407460495" xil_pn:in_ck="-2420261753769773995" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-594359497006542490" xil_pn:start_ts="1407460491">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
@@ -92,6 +104,7 @@
     <transform xil_pn:end_ts="1407460496" xil_pn:in_ck="-1408608984607744836" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5392175275036679329" xil_pn:start_ts="1407460495">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
