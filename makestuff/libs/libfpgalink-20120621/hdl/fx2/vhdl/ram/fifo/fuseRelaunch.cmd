@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/tb_ddr2_testbench_isim_beh.exe" -prj "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ex_fifo-me/fifo/tb_ddr2_testbench_beh.prj" "work.tb_ddr2_testbench" 

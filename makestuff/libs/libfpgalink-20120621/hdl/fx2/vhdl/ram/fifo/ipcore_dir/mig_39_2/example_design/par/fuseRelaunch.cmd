@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top_isim_beh.exe" -prj "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/ram/fifo/ipcore_dir/mig_39_2/example_design/par/tb_example_top_beh.prj" "work.tb_example_top" 

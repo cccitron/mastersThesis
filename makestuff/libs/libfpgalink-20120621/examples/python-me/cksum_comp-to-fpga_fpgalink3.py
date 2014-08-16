@@ -501,7 +501,7 @@ if __name__ == "__main__":
                     exit(0)
                 
                  # Number of rows of pixels to be sent
-                nrow = 7#9
+                nrow = 7
                 # Disparity range 0-15
                 disp_range = 16
                 # Number of disparity values for an entire row
@@ -697,7 +697,7 @@ if __name__ == "__main__":
                     for j in range(dispH): #2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("venus_clock_disp7x7_4.png")
+                im.save("venus_buffer_disp7x7_4.png")
                 im.show()
                 
                 # time after image is created

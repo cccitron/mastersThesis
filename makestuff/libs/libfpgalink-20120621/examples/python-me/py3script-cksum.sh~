@@ -8,4 +8,9 @@
 
 #sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./calib_comp-to-fpga_fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/sad_noJ_9x9/top_level/default.xsvf
 
-sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum_comp-to-fpga_fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/clock_tick_sad_9x9/top_level/default.xsvf
+#sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum_comp-to-fpga_fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/clock_tick_sad_9x9/top_level/default.xsvf
+
+#sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum_comp-to-fpga_fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/clock_tick_sad_7x7/top_level/default.xsvf
+
+sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./cksum_comp-to-fpga_fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/sad_buffer_9x9/top_level/default.xsvf
+

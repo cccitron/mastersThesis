@@ -4,6 +4,9 @@
 #1\ignorespaces
 }
 
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
 \chapter{Experiments and Results}
 \label{sec:exp}
 
@@ -168,27 +171,27 @@ See Table~\ref{table:utilize} for resource utilization. The 7x7 window implement
 		%\rowstyle{\bfseries} \# of occupied Slices, out of 6,822
 		\tabularnewline
 		\hline
-		7x7 & 4 & No & 6,683 (12\%) & 12,234 (44\%) %& 3,267 (47\%) 
+		7x7 & 4 & No & 6,512 (11\%) & 12,297 (45\%) %& 3,267 (47\%) 
 		\tabularnewline
 		\hline 
 		\rowstyle{\bfseries} 7x7 & 
 		\rowstyle{\bfseries} 2 & 
 		\rowstyle{\bfseries} Yes & 
-		\rowstyle{\bfseries} 8,455 (15\%) & 
-		\rowstyle{\bfseries} 17,205 (63\%) %& 5,712 (83\%) 
+		\rowstyle{\bfseries} 8,343 (15\%) & 
+		\rowstyle{\bfseries} 17,631 (64\%) %& 5,712 (83\%) 
 		\tabularnewline
 		\hline 
 		\rowstyle{\bfseries} 9x9 & 
 		\rowstyle{\bfseries} 4 & 
 		\rowstyle{\bfseries} No & 
-		\rowstyle{\bfseries} 8,131 (14\%) & 
-		\rowstyle{\bfseries} 16,022 (58\%) %& 4,355 (63\%)
+		\rowstyle{\bfseries} 10,445 (19\%) & 
+		\rowstyle{\bfseries} 19,082 (69\%) %& 4,355 (63\%)
 		\tabularnewline
 		\hline
-		9x9 & 2 & No & 5,998 (10\%) & 12,122 (44\%) %& 3,471 (50\%)
+		9x9 & 2 & No & 8,176 (14\%) & 15,658 (57\%) %& 3,471 (50\%)
 		\tabularnewline
 		\hline 
-		9x9 & 1 & No & 4,725 (8\%) & 10,312 (37\%) %& 3,066 (44\%)
+		9x9 & 1 & No & 6,947 (12\%) & 12,745 (46\%) %& 3,066 (44\%)
 		\tabularnewline
 		\hline 
 	\end{tabular}
@@ -292,7 +295,7 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 
 \begin{subequations}
 \begin{align} 	\label{eq:clockCycles}
-	height = 288	& \qquad \text{(image height)}\\
+	height = 288 	\qquad & \text{(image height)}\\
 	width = 384 	\qquad & \text{(image width)}\\
 	winSize = 9	 	\qquad & \text{(9x9 window size)}\\
 	dispRange = 16 	\qquad & \text{(disparity range 0-15)}\\
@@ -309,7 +312,8 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 	totIters = 25,912 &= basIters + addIters \\
 	sadTotCyc = 2,124,784 &= sadCyc * totIters \\
 	minTotCyc = 103,648 &= minCyc * totIters \\
-	totClkCyc = 2,228,432 &= sadTotCyc + minTotCyc
+	extraCyc = 52,824 &= totIters * 2 \\
+	totClkCyc = 2,306,168 &= sadTotCyc + minTotCyc + extraCyc
 \end{align}
 \end{subequations}
 
@@ -350,77 +354,78 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 
 \begin{table}
 	\begin{center}
-		\begin{tabu}{| p{1.8cm} | p{2cm} | p{2.5cm} | p{1.9cm} | p{1.7cm} | p{1.9cm} |}
+		\begin{tabu}{| p{1.8cm} | p{2cm} | p{1,7cm} | p{1.7cm} | p{1.7cm} | p{1.5cm} | p{1.6cm} |}
 			\hline
 				\rowstyle{\bfseries} Image Size (HxW) & 
 				\rowstyle{\bfseries} Disparity Image Size & 
 				\rowstyle{\bfseries} Window Size & 
 				\rowstyle{\bfseries} SAD Cycles & 
 				\rowstyle{\bfseries} Min. Comp. Cycles &
-				\rowstyle{\bfseries} Total Clock Cycles				
+				\rowstyle{\bfseries} Extra Cycles &
+				\rowstyle{\bfseries} Total Clock Cycles			
 			\\ \hline 
-			288 x 384 & 280 x 360 & 9x9 & 2,124,784 & 103,648 & 2,228,432
+			288 x 384 & 280 x 360 & 9x9 & 2,124,784 & 103,648 & 51,824 & 2,306,168
 			\\ \hline 
-			288 x 384 & 282 x 362 & 7x7 & 416,976 & 208,488 & 625,464
+			288 x 384 & 282 x 362 & 7x7 & 416,976 & 208,488 & 521,220 & 1,198,806
 			\\ \hline 
-			288 x 384 & 282 x 360 & 7x7 (4 pix //) & 1,295,700 & 103,656 & 1,399,356
+			288 x 384 & 282 x 360 & \specialcell{7x7\\(4 pix //)} & 1,295,700 & 103,656 & 51,828 & 1,477,098
 			\\ \tabucline[2pt]{-} 
 			
-			383 x 434 & 375 x 408 & 9x9 & 3,202,756 & 156,232 & 3,358,988
+			383 x 434 & 375 x 408 & 9x9 & 3,202,756 & 156,232 & 78,116 & 3,476,162
 			\\ \hline 
-			383 x 434 & 377 x 412 & 7x7 & 631,136 & 315,568 & 946,704
+			383 x 434 & 377 x 412 & 7x7 & 631,136 & 315,568 & 788,920 & 1,814,516
 			\\ \hline 
-			383 x 434 & 377 x 412 & 7x7 (4 pix //) & 1,972,150 & 157,772 & 2,129,922
+			383 x 434 & 377 x 412 & \specialcell{7x7\\(4 pix //)} & 1,972,150 & 157,772 & 78,886 & 2,248,251
 			\\ \tabucline[2pt]{-}
 			
-			480 x 640 & 472 x 616 & 9x9 & 6,060,784 & 295,648 & 6,356,432
+			480 x 640 & 472 x 616 & 9x9 & 6,060,784 & 295,648 & 147,824 & 6,578,168
 			\\ \hline 
-			480 x 640 & 474 x 618 & 7x7 & 1,186,512 & 593,256 & 1,779,768
+			480 x 640 & 474 x 618 & 7x7 & 1,186,512 & 593,256 & 1,483,140 & 3,411,222
 			\\ \hline 
-			480 x 640 & 474 x 616 & 7x7 (4 pix //) & 3,695,700 & 295,656 & 3,991,356
+			480 x 640 & 474 x 616 & \specialcell{7x7\\(4 pix //)} & 3,695,700 & 295,656 & 147,828 & 4,213,098
 			\\ \hline
 		\end{tabu}	
 		\captionfonts
 		\caption{Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithm and the minimum comparator .}
-		\label{table:tb_7x7}
+		\label{table:clockCount}
 	\end{center}
 \end{table}
 
 \begin{table}
 	\begin{center}
-		\begin{tabu}{| p{2.5cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+		\begin{tabu}{| p{1.8cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
 			\hline
 				\rowstyle{\bfseries} Window Size & 
 				\rowstyle{\bfseries} Total Cycles & 
-				\rowstyle{\bfseries} Sec/Frame @ 48MHz & 
-				\rowstyle{\bfseries} Sec/Frame @ 100MHz & 
-				\rowstyle{\bfseries} Frames/Sec @ 48MHz &
-				\rowstyle{\bfseries} Frames/Sec @ 100MHz
+				\rowstyle{\bfseries} Sec/ Frame @ 48MHz & 
+				\rowstyle{\bfseries} Sec/ Frame @ 100MHz & 
+				\rowstyle{\bfseries} Frames/ Sec @ 48MHz &
+				\rowstyle{\bfseries} Frames/ Sec @ 100MHz
 			\\ \hline 
-			9x9 & 2,228,432 & 0.04457 & 0.02228 & 22.437 & 44.875
+			9x9 & 2,306,168 & 0.04612 & 0.02306 & 21.68 & 43.36
 			\\ \hline 
-			7x7 & 625,464 & 0.01251 & 0.00625 & 79.941 & 159.881
+			7x7 & 1,198,806 & 0.02398 & 0.01199 & 41.71 & 83.42
 			\\ \hline 
-			7x7 (4 pix //) & 1,399,356 & 0.02799 & 0.01399 & 35.731 & 71.461
+			\specialcell{7x7\\(4 pix //)} & 1,477,098 & 0.02954 & 0.0148 & 33.85 & 67.70
 			\\ \tabucline[2pt]{-} 
 			
-			9x9 & 3,358,988 & 0.06718 & 0.03359 & 14.885 & 29.771
+			9x9 & 3,476,162 & 0.06952 & 0.03476 & 14.38 & 28.77
 			\\ \hline 
-			7x7 & 946,704 & 0.01893 & 0.00947 & 52.815 & 105.630
+			7x7 & 1,814,516 & 0.03629 & 0.01815 & 27.56 & 55.11
 			\\ \hline 
-			7x7 (4 pix //) & 2,129,922 & 0.04260 & 0.02130 & 23.475 & 46.950
+			\specialcell{7x7\\(4 pix //)} & 2,248,251 & 0.04497 & 0.02248 & 22.24 & 44.48
 			\\ \tabucline[2pt]{-}
 			
-			9x9 & 6,356,432 & 0.1271 & 0.06356 & 7.866 & 15.732
+			9x9 & 6,578,168 & 0.13156 & 0.06578 & 7.60 & 15.20
 			\\ \hline 
-			7x7 & 1,779,768 & 0.03560 & 0.01780 & 28.094 & 56.187
+			7x7 & 3,411,222 & 0.06822 & 0.03411 & 14.66 & 29.32
 			\\ \hline 
-			7x7 (4 pix //) & 3,991,356 & 0.07983 & 0.03991 & 12.527 & 25.054
+			\specialcell{7x7\\(4 pix //)} & 4,213,098 & 0.08426 & 0.04213 & 11.87 & 23.74
 			\\ \hline
 		\end{tabu}	
 		\captionfonts
 		\caption{Frame rates that are possible for the number of clock cycles taken per image.}
-		\label{table:tb_7x7}
+		\label{table:clockCountFPS}
 	\end{center}
 \end{table}
 
@@ -443,19 +448,19 @@ In this section, FPGA disparity maps are compared to disparity maps created usin
 			\\ \hline 
 			Tsukuba & 7x7 & C & 0.1532 & 6.527 & 1
 			\\ \hline 
-			Tsukuba & 7x7 & VHDL & 0.0215 & 46.51 & 
+			Tsukuba & 7x7 & VHDL & 0.0215 & 83.42 & 12.78
 			\\ \tabucline[2pt]{-}
 			Tsukuba & 9x9 & C & 0.2454 & 4.075 & 1
 			\\ \hline 
-			Tsukuba & 9x9 & VHDL & 0.0308 & 32.43 & 
+			Tsukuba & 9x9 & VHDL & 0.0308 & 43.36 & 10.64
 			\\ \tabucline[2pt]{-}
 			Venus & 7x7 & C & 0.2327 & 4.297 & 1
 			\\ \hline 
-			Venus & 7x7 & VHDL & 0.0327 & 30.58 & 
+			Venus & 7x7 & VHDL & 0.0327 & 55.11 & 12.83
 			\\ \tabucline[2pt]{-}
 			Venus & 9x9 & C & 0.3776 & 2.648 & 1
 			\\ \hline 
-			Venus & 9x9 & VHDL & 0.0470 & 21.27 & 
+			Venus & 9x9 & VHDL & 0.0470 & 28.77 & 10.86
 			\\ \hline 
 		\end{tabu}	
 		\captionfonts

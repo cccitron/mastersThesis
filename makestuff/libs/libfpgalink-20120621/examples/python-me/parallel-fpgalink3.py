@@ -535,7 +535,7 @@ if __name__ == "__main__":
                     for j in range(dispH): #2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("venus_clock_disp7x7_2.png")
+                im.save("venus_buffer_disp7x7_2.png")
                 im.show()
                 
                 # time after image is created
