@@ -157,7 +157,7 @@ The disparity range used to obtain the disparity value for each pixel affects th
 \end{center}
 \end{table}
 
-See Table~\ref{table:utilize} for resource utilization. The 7x7 window implementation actually uses more resources on the FPGA board than the 9x9 window implementation due to the amount of parallel calculations used in the SAD algorithm. There is still plenty of space on the board for other top level entity designs for this SAD module.
+See Table~\ref{table:utilize} for resource utilization. The emboldened 7x7 and 9x9 rows were the resource utilization of the implementations used in this paper. The emboldened 7x7 window implementation uses fewer resources on the FPGA board than the emboldened 9x9 window implementation. Both implementations used in this paper, the emboldened rows, use more resources than the other implementations of the same window size. The emboldened 7x7 implementation processes half the amount of pixels in parallel, but each of its SAD algorithms has 7 times as many subtracters than the other 7x7 implementation. The emboldened 9x9 implementation process more pixels in parallel than the other 9x9 implementations. There is plenty of space on the board for other top level entity designs for this SAD module.
 
 \begin{table}
 \begin{center}
@@ -196,7 +196,7 @@ See Table~\ref{table:utilize} for resource utilization. The 7x7 window implement
 		\hline 
 	\end{tabular}
 	\captionfonts
-	\caption{Resource utilization on the FPGA Atlys board for the window implementations.}
+	\caption{Resource utilization on the FPGA Atlys board for different window implementations.}
 	\label{table:utilize}
 \end{center}
 \end{table}
@@ -247,7 +247,10 @@ In the testbench simulation, the window size is 9x9 and 4 pixels are processed i
 
 Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the simulated frame rate can be inferred for different image sizes. The simulation uses a clock cycle of 10 ns.
 
-In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 619x474, which is 293,406 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 293,406 pixels is divided by 2 pixels/iteration, giving 146,703 iterations. So, 146,702 iterations times 0.42 us/iteration plus 1.78 us (initial section, hence minus one on number of iterations) gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the simulated frame rate for the image sizes used in this chapter.
+In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 474x618, which is 292,932 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 292,932 pixels is divided by 2 pixels/iteration, giving 146,703 base iterations. There is an additional 1,848 iterations that occur due to the loading of the 6 top row segments  before any disparity values can be obtained for each column of the pair of pixels processed in parallel. There are 308 columns past the initial column (618/2 - 1) times 6 plus the base number of iterations gives a total of 148,551 iterations. The additional iterations causes an overhead of only 1.24\%. So, 148,551 total iterations times 0.24 us/iteration gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the simulated frame rate for the image sizes used in this chapter.
+
+
+%In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 619x474, which is 293,406 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 293,406 pixels is divided by 2 pixels/iteration, giving 146,703 iterations. So, 146,702 iterations times 0.42 us/iteration plus 1.78 us (initial section, hence minus one on number of iterations) gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the simulated frame rate for the image sizes used in this chapter.
 
 \begin{table}
 	\begin{center}
@@ -351,6 +354,15 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 %\end{align}
 %\end{subequations}
 
+A clock cycle counter was introduced to 3 implementations, the 9x9 with 4 pixels in parallel, the 7x7 with 2 pixels in parallel and parallel SAD algorithms, and the 7x7 with 4 pixels in parallel (4 pix //). The 7x7 (4 pix //) was tested to demonstrate how the 7x7 with 2 pixels in parallel has a higher frame rate due to the parallelized SAD algorithms. 
+
+Table~\ref{table:clockCount} shows the recorded clock cycle counts for the Tsukuba (288 x 384) and Venus (383 x 434) for the SAD algorithms and minimum comparators. The VmodCAM (480 x 640) clock cycles were calculated based on the series of equations in Eq.~\ref{eq:clockCycles}. For all implementations, the minimum comparators take 5 clock cycles from when it gets the 16 SAD values to when it outputs the disparity value for the lowest SAD value. Each iteration has some number of additional clock cycles, depending on the implementation.
+
+The 9x9 implementation is able to have its next rows, 27 pixels each, buffered within the 82 clock cycles it takes for the SAD algorithms to finish. An additional 2 clock cycles per iteration are used to allow data to be properly transferred between processes. There are a total of 89 clock cycles per iteration.
+
+The 7x7 implementation is unable to have its next rows, 23 pixels each, buffered within the 8 clock cycles it takes for the SAD algorithms to finish. The limiting factor is the time it takes to buffer each pair of rows, so there are 23 clock cycles per iteration.
+
+The 7x7 (4 pix //) implementation is able to have its next rows, 25 pixels each, buffered within the 50 clock cycles it takes for the SAD algorithms to finish. An additional 2 clock cycles per iteration are used to allow data to be properly transferred between processes. There are a total of 57 clock cycles per iteration.
 
 \begin{table}
 	\begin{center}
@@ -364,25 +376,25 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 				\rowstyle{\bfseries} Extra Cycles &
 				\rowstyle{\bfseries} Total Clock Cycles			
 			\\ \hline 
-			288 x 384 & 280 x 360 & 9x9 & 2,124,784 & 103,648 & 51,824 & 2,306,168
+			288 x 384 & 280 x 360 & 9x9 & 2,124,784 & 129,560 & 51,824 & 2,306,168
 			\\ \hline 
-			288 x 384 & 282 x 362 & 7x7 & 416,976 & 208,488 & 521,220 & 1,198,806
+			288 x 384 & 282 x 362 & 7x7 & 416,976 & 260,610 & 521,220 & 1,198,806
 			\\ \hline 
-			288 x 384 & 282 x 360 & \specialcell{7x7\\(4 pix //)} & 1,295,700 & 103,656 & 51,828 & 1,477,098
+			288 x 384 & 282 x 360 & \specialcell{7x7\\(4 pix //)} & 1,295,700 & 129,570 & 51,828 & 1,477,098
 			\\ \tabucline[2pt]{-} 
 			
-			383 x 434 & 375 x 408 & 9x9 & 3,202,756 & 156,232 & 78,116 & 3,476,162
+			383 x 434 & 375 x 408 & 9x9 & 3,202,756 & 195,290 & 78,116 & 3,476,162
 			\\ \hline 
-			383 x 434 & 377 x 412 & 7x7 & 631,136 & 315,568 & 788,920 & 1,814,516
+			383 x 434 & 377 x 412 & 7x7 & 631,136 & 394,460 & 788,920 & 1,814,516
 			\\ \hline 
-			383 x 434 & 377 x 412 & \specialcell{7x7\\(4 pix //)} & 1,972,150 & 157,772 & 78,886 & 2,248,251
+			383 x 434 & 377 x 412 & \specialcell{7x7\\(4 pix //)} & 1,972,150 & 197,215 & 78,886 & 2,248,251
 			\\ \tabucline[2pt]{-}
 			
-			480 x 640 & 472 x 616 & 9x9 & 6,060,784 & 295,648 & 147,824 & 6,578,168
+			480 x 640 & 472 x 616 & 9x9 & 6,060,784 & 369,550 & 147,824 & 6,578,168
 			\\ \hline 
-			480 x 640 & 474 x 618 & 7x7 & 1,186,512 & 593,256 & 1,483,140 & 3,411,222
+			480 x 640 & 474 x 618 & 7x7 & 1,186,512 & 741,570 & 1,483,140 & 3,411,222
 			\\ \hline 
-			480 x 640 & 474 x 616 & \specialcell{7x7\\(4 pix //)} & 3,695,700 & 295,656 & 147,828 & 4,213,098
+			480 x 640 & 474 x 616 & \specialcell{7x7\\(4 pix //)} & 3,695,700 & 369,570 & 147,828 & 4,213,098
 			\\ \hline
 		\end{tabu}	
 		\captionfonts
@@ -391,16 +403,18 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 	\end{center}
 \end{table}
 
+Table~\ref{table:clockCountFPS} is a continuation of Tbl.~\ref{table:clockCount}. It shows the time it takes per frame and the frame rate with a clock speed of 48 MHz and 100 MHz. The 48 MHz is the transfer rate of the FPGALink to and from the computer to the board. It was used for the data acquisition in order to not introduce timing issues for the data given to the SAD wrapper. The image processing always takes a consistent amount of clock cycles, so the frame rate can be calculated for a clock speed of 100 MHz, which is the clock that is on the Atlys board.
+
 \begin{table}
 	\begin{center}
 		\begin{tabu}{| p{1.8cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
 			\hline
 				\rowstyle{\bfseries} Window Size & 
 				\rowstyle{\bfseries} Total Cycles & 
-				\rowstyle{\bfseries} Sec/ Frame @ 48MHz & 
-				\rowstyle{\bfseries} Sec/ Frame @ 100MHz & 
-				\rowstyle{\bfseries} Frames/ Sec @ 48MHz &
-				\rowstyle{\bfseries} Frames/ Sec @ 100MHz
+				\rowstyle{\bfseries} Sec/ Frame @ 48 MHz & 
+				\rowstyle{\bfseries} Sec/ Frame @ 100 MHz & 
+				\rowstyle{\bfseries} Frames/ Sec @ 48 MHz &
+				\rowstyle{\bfseries} Frames/ Sec @ 100 MHz
 			\\ \hline 
 			9x9 & 2,306,168 & 0.04612 & 0.02306 & 21.68 & 43.36
 			\\ \hline 
@@ -429,6 +443,7 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 	\end{center}
 \end{table}
 
+Table~\ref{table:clockCountFPS} shows the frames per second (FPS) comparisons for the Tsukuba and Venus image pairs between C and VHDL implementations. The C code was compiled with gcc using optimization O2 and run on a single processor core. The VHDL code is the 7x7 and 9x9 implementations for the FPGA. For the 7x7 VHDL implementation, it was around 12.80 times faster than the C 7x7 version. The 9x9 VHDL implementation was approximately 10.75 times faster than the C 9x9 version.
 
 \section{Test Image Pairs}
 \label{sec:runtime}
@@ -511,7 +526,7 @@ For Tsukuba, the FPGA version has a simulated runtime of 32.43 and 46.51 frames 
 		\label{fig:tsukubaC9x9}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/tsukuba_9x9_fpga.png}
+		\includegraphics[width=\textwidth]{figures/tsukuba_buffer_9x9_4.png}
 		\caption{FPGA 9x9 Disparity Map}
 		\label{fig:tsukubaFPGA9x9}
 	\end{subfigure}
@@ -522,7 +537,7 @@ For Tsukuba, the FPGA version has a simulated runtime of 32.43 and 46.51 frames 
 		\label{fig:tsukubaC7x7}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/tsukuba_7x7_fpga.png}
+		\includegraphics[width=\textwidth]{figures/tsukuba_buffer_7x7_2.png}
 		\caption{FPGA 7x7 Disparity Map}
 		\label{fig:tsukubaFPGA7x7}
 	\end{subfigure}
@@ -558,7 +573,7 @@ For Venus, the FPGA version has a simulated runtime of 21.27 and 30.58 frames pe
 		\label{fig:venusC9x9}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/venus_9x9_fpga.png}
+		\includegraphics[width=\textwidth]{figures/venus_buffer_9x9_4.png}
 		\caption{FPGA 9x9 Disparity Map}
 		\label{fig:venusFPGA9x9}
 	\end{subfigure}
@@ -569,7 +584,7 @@ For Venus, the FPGA version has a simulated runtime of 21.27 and 30.58 frames pe
 		\label{fig:venusC7x7}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/venus_7x7_fpga.png}
+		\includegraphics[width=\textwidth]{figures/venus_buffer_7x7_2.png}
 		\caption{FPGA 7x7 Disparity Map}
 		\label{fig:venusFPGA7x7}
 	\end{subfigure}

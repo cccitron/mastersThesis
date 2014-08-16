@@ -7,12 +7,12 @@
 \contentsline {table}{\numberline {5.1}{\ignorespaces Number of 1 byte pixels need based on the window size and number of pixels processed in parallel for producing a number of disparity values simultaneously for a disparity range of 16.\relax }}{32}{table.caption.22}
 \contentsline {table}{\numberline {5.2}{\ignorespaces Number of SAD calculation entities and minimum comparators entities needed per pixel processed in parallel based on the disparity range.\relax }}{33}{table.caption.23}
 \contentsline {table}{\numberline {5.3}{\ignorespaces Number of SAD calculation and minimum comparator entities needed based on the number of pixels processed in parallel for a disparity range of 16.\relax }}{33}{table.caption.24}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Resource utilization on the FPGA Atlys board for the window implementations.\relax }}{34}{table.caption.25}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Resource utilization on the FPGA Atlys board for different window implementations.\relax }}{34}{table.caption.25}
 \contentsline {table}{\numberline {5.5}{\ignorespaces 9x9 window for the testbench simulated runtime for the FPGA board for different image sizes.\relax }}{36}{table.caption.26}
 \contentsline {table}{\numberline {5.6}{\ignorespaces 7x7 window for the testbench simulation runtime for the FPGA board for different image sizes.\relax }}{37}{table.caption.27}
-\contentsline {table}{\numberline {5.7}{\ignorespaces Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithm and the minimum comparator .\relax }}{40}{table.caption.29}
-\contentsline {table}{\numberline {5.8}{\ignorespaces Frame rates that are possible for the number of clock cycles taken per image.\relax }}{41}{table.caption.30}
-\contentsline {table}{\numberline {5.9}{\ignorespaces Tsukuba and Venus image pairs comparison runtimes for C code and FPGA testbench simulations. The disparity range is 16 for both.\relax }}{42}{table.caption.31}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithm and the minimum comparator .\relax }}{41}{table.caption.29}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Frame rates that are possible for the number of clock cycles taken per image.\relax }}{42}{table.caption.30}
+\contentsline {table}{\numberline {5.9}{\ignorespaces Tsukuba and Venus image pairs comparison runtimes for C code and FPGA testbench simulations. The disparity range is 16 for both.\relax }}{44}{table.caption.31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
