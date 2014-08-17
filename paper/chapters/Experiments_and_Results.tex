@@ -7,6 +7,13 @@
 \newcommand{\specialcell}[2][c]{%
   \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}% For beginning \Cref
+\crefrangelabelformat{equation}{(#3#1#4--#5#2#6)}
+
+\crefmultiformat{equation}{equations (#2#1#3}{, #2#1#3)}{#2#1#3}{#2#1#3}
+\Crefmultiformat{equation}{Equations (#2#1#3}{, #2#1#3)}{#2#1#3}{#2#1#3}
+
 \chapter{Experiments and Results}
 \label{sec:exp}
 
@@ -296,28 +303,37 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 
 \section{FPGA Clock Cycle Runtimes}
 
+A clock cycle counter was introduced to 3 implementations, the 9x9 with 4 pixels in parallel, the 7x7 with 2 pixels in parallel and parallel SAD algorithms, and the 7x7 with 4 pixels in parallel (4 pix //). The 7x7 (4 pix //) was tested to demonstrate how the 7x7 with 2 pixels in parallel has a higher frame rate due to the parallelized SAD algorithms. 
+
+Table~\ref{table:clockCount} shows the recorded clock cycle counts for the Tsukuba (288 x 384) and Venus (383 x 434) for the SAD algorithms and minimum comparators. The VmodCAM (480 x 640) clock cycles were calculated based on the series of equations in Equation~\ref{eq:clockCycles}. For all implementations, the minimum comparators take 5 clock cycles from when it gets the 16 SAD values to when it outputs the disparity value for the lowest SAD value. Each iteration has some number of additional clock cycles, depending on the implementation.
+
+Eq.~\ref{eq:clockCycles} produced the same SAD Cycles and Min. Comp. Cycles as the values recorded from the FPGA in Tbl.~\ref{eq:clockCycles} for the Tsukuba and Venus image pairs. Eq.~\ref{eq:clockCycles} also was used to calculate the total cycles required per iteration. Testbench simulations in Appendix~\ref{sec:appdxD} were used to determine the additional clock cycles needed per iteration. The simulations also verified the number of clock cycles required for data input, SAD algorithm, and minimum comparators.
+
+~\Cref{eq:a,eq:b,eq:c,eq:d,eq:e,eq:f,eq:g} are the parameters for the rest of the equations. ~\Cref{eq:h} gives the height of the disparity map image. The width of the disparity map image, ~\Cref{eq:j}, needs to be divisible by ~\Cref{eq:e}, so ~\Cref{eq:i} is used to reduce it. The number of pixels in the disparity map image is calculated in ~\Cref{eq:k}. The base number of iterations, ~\Cref{eq:l}, is the minimum number of iterations required to create the disparity map. Additional iterations, ~\Cref{eq:n}, occur from the SAD algorithm proceeding through the images in the form of columns, top to bottom, left to right. There are a certain amount of iterations at the top of each column that are not used because enough of the rows must be loaded in order to obtain the disparity values. ~\Cref{eq:o} is the total number of iterations needed to process the pair of images. ~\Cref{eq:p} is the number of cycles for the SAD algorithms. ~\Cref{eq:q} is the number of cycles for the minimum comparators. ~\Cref{eq:r} are the extra cycles that occur from syncing up the data. ~\Cref{eq:s} is the total number of cycles for the entire pair of images to be processed.
+
 \begin{subequations}
-\begin{align} 	\label{eq:clockCycles}
-	height = 288 	\qquad & \text{(image height)}\\
-	width = 384 	\qquad & \text{(image width)}\\
-	winSize = 9	 	\qquad & \text{(9x9 window size)}\\
-	dispRange = 16 	\qquad & \text{(disparity range 0-15)}\\
-	parPix = 4 		\qquad & \text{(pixels processed in parallel)}\\
-	sadCyc = 82		\qquad & \text{(\# of cycles for SAD algorithm)}\\
-	minCyc = 4		\qquad & \text{(\# of cycles for Min. comparator)}\\
-	dispH = 280 &= height - (winSize - 1) \\
-	lessPix = 23 &= (dispRange-1) + (winSize-1) \\
-	dispW = 360 &= (width-lessPix) - (width-lessPix) \% parPix \\
-	dispPixels = 100,800 &= dispH * dispW \\
-	baseIters = 25,200 &= dispPixels / parPix \\
-	colAdd = 89 &= dispWidth / parPix - 1 \\
-	addIters = 712 &= colAdd * (winSize-1) \\
-	totIters = 25,912 &= basIters + addIters \\
-	sadTotCyc = 2,124,784 &= sadCyc * totIters \\
-	minTotCyc = 103,648 &= minCyc * totIters \\
-	extraCyc = 52,824 &= totIters * 2 \\
-	totClkCyc = 2,306,168 &= sadTotCyc + minTotCyc + extraCyc
+\begin{align}
+	height = 288 	\qquad & \text{(image height)} \label{eq:a}\\
+	width = 384 	\qquad & \text{(image width)} \label{eq:b}\\
+	winSize = 9	 	\qquad & \text{(9x9 window size)} \label{eq:c}\\
+	dispRange = 16 	\qquad & \text{(disparity range 0-15)} \label{eq:d}\\
+	parPix = 4 		\qquad & \text{(pixels processed in parallel)} \label{eq:e}\\
+	sadCyc = 82		\qquad & \text{(\# of cycles for SAD algorithm)} \label{eq:f}\\
+	minCyc = 4		\qquad & \text{(\# of cycles for Min. comparator)} \label{eq:g}\\
+	dispH = 280 &= height - (winSize - 1) \label{eq:h}\\
+	lessPix = 23 &= (dispRange-1) + (winSize-1) \label{eq:i}\\
+	dispW = 360 &= (width-lessPix) - (width-lessPix) \% parPix \label{eq:j}\\
+	dispPixels = 100,800 &= dispH * dispW \label{eq:k}\\
+	baseIters = 25,200 &= dispPixels / parPix \label{eq:l}\\
+	colAdd = 89 &= dispWidth / parPix - 1 \label{eq:m}\\
+	addIters = 712 &= colAdd * (winSize-1) \label{eq:n}\\
+	totIters = 25,912 &= basIters + addIters \label{eq:o}\\
+	sadTotCyc = 2,124,784 &= sadCyc * totIters \label{eq:p}\\
+	minTotCyc = 103,648 &= minCyc * totIters \label{eq:q}\\
+	extraCyc = 52,824 &= totIters * 2 \label{eq:r}\\
+	totClkCyc = 2,306,168 &= sadTotCyc + minTotCyc + extraCyc \label{eq:s}
 \end{align}
+	\label{eq:clockCycles}
 \end{subequations}
 
 
@@ -353,10 +369,6 @@ The smaller the image size, the higher the frame rate, as shown in Figure~\ref{f
 %			  &= 2,228,432 \nonumber
 %\end{align}
 %\end{subequations}
-
-A clock cycle counter was introduced to 3 implementations, the 9x9 with 4 pixels in parallel, the 7x7 with 2 pixels in parallel and parallel SAD algorithms, and the 7x7 with 4 pixels in parallel (4 pix //). The 7x7 (4 pix //) was tested to demonstrate how the 7x7 with 2 pixels in parallel has a higher frame rate due to the parallelized SAD algorithms. 
-
-Table~\ref{table:clockCount} shows the recorded clock cycle counts for the Tsukuba (288 x 384) and Venus (383 x 434) for the SAD algorithms and minimum comparators. The VmodCAM (480 x 640) clock cycles were calculated based on the series of equations in Eq.~\ref{eq:clockCycles}. For all implementations, the minimum comparators take 5 clock cycles from when it gets the 16 SAD values to when it outputs the disparity value for the lowest SAD value. Each iteration has some number of additional clock cycles, depending on the implementation.
 
 The 9x9 implementation is able to have its next rows, 27 pixels each, buffered within the 82 clock cycles it takes for the SAD algorithms to finish. An additional 2 clock cycles per iteration are used to allow data to be properly transferred between processes. There are a total of 89 clock cycles per iteration.
 
@@ -416,25 +428,25 @@ Table~\ref{table:clockCountFPS} is a continuation of Tbl.~\ref{table:clockCount}
 				\rowstyle{\bfseries} Frames/ Sec @ 48 MHz &
 				\rowstyle{\bfseries} Frames/ Sec @ 100 MHz
 			\\ \hline 
-			9x9 & 2,306,168 & 0.04612 & 0.02306 & 21.68 & 43.36
+			9x9 & 2,306,168 & 0.04804 & 0.02306 & 20.82 & 43.36
 			\\ \hline 
-			7x7 & 1,198,806 & 0.02398 & 0.01199 & 41.71 & 83.42
+			7x7 & 1,198,806 & 0.02497 & 0.01199 & 40.05 & 83.42
 			\\ \hline 
-			\specialcell{7x7\\(4 pix //)} & 1,477,098 & 0.02954 & 0.0148 & 33.85 & 67.70
+			\specialcell{7x7\\(4 pix //)} & 1,477,098 & 0.03077 & 0.0148 & 32.50 & 67.70
 			\\ \tabucline[2pt]{-} 
 			
-			9x9 & 3,476,162 & 0.06952 & 0.03476 & 14.38 & 28.77
+			9x9 & 3,476,162 & 0.07241 & 0.03476 & 13.81 & 28.77
 			\\ \hline 
-			7x7 & 1,814,516 & 0.03629 & 0.01815 & 27.56 & 55.11
+			7x7 & 1,814,516 & 0.03780 & 0.01815 & 26.46 & 55.11
 			\\ \hline 
-			\specialcell{7x7\\(4 pix //)} & 2,248,251 & 0.04497 & 0.02248 & 22.24 & 44.48
+			\specialcell{7x7\\(4 pix //)} & 2,248,251 & 0.04683 & 0.02248 & 21.35 & 44.48
 			\\ \tabucline[2pt]{-}
 			
-			9x9 & 6,578,168 & 0.13156 & 0.06578 & 7.60 & 15.20
+			9x9 & 6,578,168 & 0.1370 & 0.06578 & 7.298 & 15.20
 			\\ \hline 
-			7x7 & 3,411,222 & 0.06822 & 0.03411 & 14.66 & 29.32
+			7x7 & 3,411,222 & 0.06578 & 0.03411 & 15.20 & 29.32
 			\\ \hline 
-			\specialcell{7x7\\(4 pix //)} & 4,213,098 & 0.08426 & 0.04213 & 11.87 & 23.74
+			\specialcell{7x7\\(4 pix //)} & 4,213,098 & 0.08776 & 0.04213 & 11.39 & 23.74
 			\\ \hline
 		\end{tabu}	
 		\captionfonts
