@@ -234,7 +234,7 @@ begin
             --disp_ready <= '0';
          END IF;
 			
-         --------- data next state machine ----------------
+         -- data next state machine ------------------------
 			CASE present_state IS
 				WHEN ST0 =>
 					data_next <= '0';
@@ -257,7 +257,7 @@ begin
 					present_state <= ST0;
 			END CASE;
 			
-			
+			-- buffer state machine ---------------------------
          CASE buff_state IS
             WHEN ST0 =>
                data_in <= '0';

@@ -227,6 +227,88 @@ BEGIN
 		ndx := 0;
 		wait for clk_I_period*40; --20; --10;
 
+		
+
+-------- Read out disparity values 1 ---------------
+--      
+--		wait for clk_I_period*59; --31; --90;
+--
+--		f2hReady_I <= '1';
+--		chanAddr_I <= "0000011";
+--		wait for clk_I_period*4;
+--		f2hReady_I <= '0';
+----------------------------------------------------
+--
+-------- Next row 1 -------------------------------
+--		wait for clk_I_period*100;
+--      
+--      h2fValid_I <= '1';
+--		write_t_I  <= '1';
+--		write_s_I  <= '1';
+--		sw_I       <= x"00";
+--		
+--		WHILE (ndx < 27) LOOP --offset) LOOP
+--			templ_I  <= template_next(ndx);
+--			search_I <= search_next(ndx);
+--			wait for clk_I_period;
+--			ndx := ndx + 1;
+--		END LOOP;
+--		
+--		templ_I <= template_next(ndx);
+--		search_I <= search_next(ndx);
+--		
+--		wait for clk_I_period;
+--		h2fValid_I <= '0';
+--		write_t_I <= '0';
+--		write_s_I <= '0';
+----------------------------------------------------
+--
+-------- Read out disparity values 1 ---------------
+--      ndx := ndx + 1;
+--		wait for clk_I_period*100; --20; --90;
+--		ndx := 28;
+--		f2hReady_I <= '1';
+--		chanAddr_I <= "0000011";
+--		wait for clk_I_period*4;
+--		f2hReady_I <= '0';
+----------------------------------------------------
+--
+-------- Next template row 2 -----------------------
+----		ndx := 0;
+--		wait for clk_I_period*120; --20;
+--		
+--		h2fValid_I <= '1';
+--		write_t_I  <= '1';
+--		write_s_I  <= '1';
+--		sw_I       <= x"00";
+--		
+--		WHILE (ndx < 55) LOOP --offset) LOOP
+--			templ_I  <= template_next(ndx);
+--			search_I <= search_next(ndx);
+--			wait for clk_I_period;
+--			ndx := ndx + 1;
+--		END LOOP;
+--		
+--		templ_I <= template_next(ndx);
+--		search_I <= search_next(ndx);
+--		
+--		wait for clk_I_period;
+--		h2fValid_I <= '0';
+--		write_t_I <= '0';
+--		write_s_I <= '0';
+--------------------------------------------------		
+--
+-------- Read out disparity values 2 ---------------
+--		wait for clk_I_period*95; --80; --90;
+--		f2hReady_I <= '1';
+--		chanAddr_I <= "0000011";
+--		wait for clk_I_period*4;
+--		f2hReady_I <= '0';
+-----------------------------------------------------
+
+
+
+
 ------ Next row 1 -------------------------------
 		h2fValid_I <= '1';
 		write_t_I  <= '1';
@@ -251,7 +333,7 @@ BEGIN
 
 ------ Read out disparity values 1 ---------------
       ndx := ndx + 1;
-		wait for clk_I_period*31; --90;
+		wait for clk_I_period*23; --31; --90;
 
 		f2hReady_I <= '1';
 		chanAddr_I <= "0000011";
@@ -287,7 +369,7 @@ BEGIN
 
 
 ------ Read out disparity values 1 ---------------
-		wait for clk_I_period*20; --90;
+		wait for clk_I_period*34; --20; --90;
 		ndx := 28;
 		f2hReady_I <= '1';
 		chanAddr_I <= "0000011";
@@ -296,7 +378,7 @@ BEGIN
 --------------------------------------------------		
 
 ------ Read out disparity values 2 ---------------
-		wait for clk_I_period*80; --90;
+		wait for clk_I_period*82; --80; --90;
 		f2hReady_I <= '1';
 		chanAddr_I <= "0000011";
 		wait for clk_I_period*4;
