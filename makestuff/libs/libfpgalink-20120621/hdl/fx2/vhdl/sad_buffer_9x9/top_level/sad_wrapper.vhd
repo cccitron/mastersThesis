@@ -80,7 +80,7 @@ architecture Behavioral of sad_wrapper is
 	-- Windows 3x3 for template and search, to be passed to SAD Algorithm
 	SIGNAL template_window, search_window : pixel2DArray; --pixelWindow;
    
-   SIGNAL ndx_t_row, ndx_t_row_next, ndx_s_row, ndx_s_row_next : INTEGER := 0;
+   --SIGNAL ndx_t_row, ndx_t_row_next, ndx_s_row, ndx_s_row_next : INTEGER := 0;
    SIGNAL next_t_row, next_s_row, disp_ready, neg_disp : STD_LOGIC := '0';
    SIGNAL junk_t_row, junk_t_row_next, junk_s_row, junk_s_row_next : STD_LOGIC := '1';
    
@@ -125,9 +125,10 @@ architecture Behavioral of sad_wrapper is
 	SIGNAL data_init : STD_LOGIC := '1';
 
 	SIGNAL write_t, write_s : STD_LOGIC := '0';
-	TYPE state_type IS (ST0, ST1, ST2);
-	SIGNAL present_state : state_type := ST0;
-		
+	TYPE state_type IS (ST0, ST1, ST2, ST3, ST4, ST5);
+	SIGNAL present_state, buff_state : state_type := ST0;
+   SIGNAL templ_ps, templ_ns, search_ps, search_ns : state_type := ST0;
+   
 begin
 
    process(clk_I, rst_I)
@@ -155,7 +156,7 @@ begin
 			f2h_sad_rd  <= 0;
 			ndx_sad     <= 0;
 			f2h_disp_rd <= 0;
-         disp_ready  <= '0';
+         --disp_ready  <= '0';
 			
 			data_in  <= '0';
 			
@@ -163,13 +164,16 @@ begin
 			data_next <= '0';
 			
 			present_state <= ST0;
+         templ_ps <= ST0;
+         search_ps <= ST0;
+         buff_state <= ST0;
 			
 		ELSIF ( rising_edge(clk_I) ) then
          template_array <= template_array_next;
+         templ_ps <= templ_ns;
+         
          search_array <= search_array_next;
-			
-			--buff_t <= buff_t_next;
-			--buff_s <= buff_s_next;
+			search_ps <= search_ns;
 			
 			IF (data_out(0)(0) = '1') THEN -- = x"ffff" AND data_out(1) = x"ffff") THEN
 				sad_array <= sad_array_next;
@@ -224,19 +228,13 @@ begin
 
          IF (f2h_disp_rd_next = DISP_ROW) THEN
             f2h_disp_rd <= 0;
-            disp_ready <= '1';
+            --disp_ready <= '1';
          ELSE
             f2h_disp_rd <= f2h_disp_rd_next;
-            disp_ready <= '0';
+            --disp_ready <= '0';
          END IF;
 			
-			-- When to pass data to SAD algorithm
---			IF (ndx_s_next = PIXEL_CNT) THEN
---				data_next <= '1';
---			ELSE
---				data_next <= '0';
---			END IF;
-			
+         --------- data next state machine ----------------
 			CASE present_state IS
 				WHEN ST0 =>
 					data_next <= '0';
@@ -249,7 +247,7 @@ begin
 				WHEN ST1 =>
 					data_next <= '1';
 					
-					IF (ndx_s_next = LAST_ROW+1 OR data_in = '1') THEN
+					IF (ndx_s_next =  PIXEL_CNT OR data_in = '1') THEN --LAST_ROW+1 OR data_in = '1') THEN
 						present_state <= ST0;
 					ELSE
 						present_state <= ST1;
@@ -260,17 +258,74 @@ begin
 			END CASE;
 			
 			
-			IF ((ndx_s_next = PIXEL_CNT AND data_init = '1') OR (data_out(0)(0) = '1' AND data_next = '1')) THEN
-				data_in <= '1';
-				data_init <= '0';
-				buff_t <= template_array;
-				buff_s <= search_array;
-			ELSE
-				data_in <= '0';
-				data_init <= data_init;
-				buff_t <= buff_t;
-				buff_s <= buff_s;
-			END IF;
+         CASE buff_state IS
+            WHEN ST0 =>
+               data_in <= '0';
+               data_init <= data_init;
+               buff_t <= buff_t;
+               buff_s <= buff_s;
+               
+               IF ((ndx_s_next = PIXEL_CNT AND data_init = '1') 
+                   OR (data_out(0)(0) = '1' AND data_next = '1')) THEN                  
+                  buff_state <= ST1;
+               ELSE
+                  buff_state <= ST0;
+               END IF;
+            WHEN ST1 =>
+               data_in <= '0';
+               data_init <= data_init;
+               buff_t <= buff_t;
+               buff_s <= buff_s;
+
+               buff_state <= ST2;
+            WHEN ST2 =>
+               data_in <= '1';
+               data_init <= '0';
+               buff_t <= template_array;
+               buff_s <= search_array;
+                  
+               buff_state <= ST3;
+            WHEN ST3 =>
+               data_in <= '0';
+               data_init <= data_init;
+               buff_t <= buff_t;
+               buff_s <= buff_s;
+
+               buff_state <= ST4;
+            WHEN ST4 =>
+               data_in <= '0';
+               data_init <= data_init;
+               buff_t <= buff_t;
+               buff_s <= buff_s;
+
+               buff_state <= ST5;
+            WHEN ST5 =>
+               data_in <= '0';
+               data_init <= data_init;
+               buff_t <= buff_t;
+               buff_s <= buff_s;
+
+               buff_state <= ST0;
+            WHEN OTHERS =>
+               data_in <= '0';
+               data_init <= data_init;
+               buff_t <= buff_t;
+               buff_s <= buff_s;
+            
+               buff_state <= ST0;
+         END CASE;
+         
+--			IF ((ndx_s_next = PIXEL_CNT AND data_init = '1') OR (data_out(0)(0) = '1' AND data_next = '1')) THEN
+--				data_in <= '1';
+--				data_init <= '0';
+--				buff_t <= template_array;
+--				buff_s <= search_array;
+--			ELSE
+--				data_in <= '0';
+--				data_init <= data_init;
+--				buff_t <= buff_t;
+--				buff_s <= buff_s;
+--			END IF;
 			
 		end if;
 	end process;
@@ -294,15 +349,44 @@ begin
 --      END IF;
 --   END PROCESS fill_templ;
    
-	fill_templ : PROCESS (reg0_templ, template_array, ndx_t, ndx_t_next)
+	fill_templ : PROCESS (reg0_templ, template_array, ndx_t, ndx_t_next, write_t, templ_ps, data_next)
    BEGIN
       template_array_next <= template_array;
       
-      IF (ndx_t_next = PIXEL_CNT) THEN
-         template_array_next(0 TO LAST_ROW-1) <= template_array(NUM_2_ROW TO PIXEL_CNT-1);
-      ELSE
-         template_array_next(ndx_t) <= reg0_templ;
-      END IF;
+      CASE templ_ps IS
+         WHEN ST0 =>
+            template_array_next(ndx_t) <= reg0_templ;
+            
+            IF (ndx_t_next = PIXEL_CNT) THEN --LAST_ROW AND write_t = '0') THEN
+               templ_ns <= ST1;
+            ELSE
+               templ_ns <= ST0;
+            END IF;
+         WHEN ST1 =>
+            IF (data_next = '1') THEN -----------------------------------------
+               templ_ns <= ST2;
+            ELSE
+               templ_ns <= ST1;
+            END IF;
+         WHEN ST2 =>
+            IF (data_next = '0') THEN
+               templ_ns <= ST3;
+            ELSE
+               templ_ns <= ST2;
+            END IF;
+         WHEN ST3 =>
+            template_array_next(0 TO LAST_ROW-1) <= template_array(NUM_2_ROW TO PIXEL_CNT-1);
+            templ_ns <= ST0;
+            
+         WHEN OTHERS =>
+            templ_ns <= ST0;
+      END CASE;
+      
+--      IF (ndx_t_next = PIXEL_CNT) THEN --LAST_ROW+1 AND write_t = '0') THEN
+--         template_array_next(0 TO LAST_ROW-1) <= template_array(NUM_2_ROW TO PIXEL_CNT-1);
+--      ELSE
+--         template_array_next(ndx_t) <= reg0_templ;
+--      END IF;
    END PROCESS fill_templ;
 	
    ndx_t_next <= ndx_t + 1 WHEN h2fValid_I = '1' AND write_t = '1' AND junk_t = '0'
@@ -313,15 +397,45 @@ begin
    reg1_search <= search_I when write_s = '1' and h2fValid_I = '1' and junk_s = '0' else search_array(ndx_s);
    junk_s_next <= '0' when write_s = '1' and h2fValid_I = '1' else junk_s;
    
-   fill_search : PROCESS (reg1_search, search_array, ndx_s, ndx_s_next)
+   fill_search : PROCESS (reg1_search, search_array, ndx_s, ndx_s_next, search_ps, data_next)
    BEGIN
       search_array_next <= search_array;
       
-      IF (ndx_s_next = PIXEL_CNT) THEN
-         search_array_next(0 TO LAST_ROW-1) <= search_array(NUM_2_ROW TO PIXEL_CNT-1);
-      ELSE
-         search_array_next(ndx_s) <= reg1_search;
-      END IF;
+      CASE search_ps IS
+         WHEN ST0 =>
+            search_array_next(ndx_s) <= reg1_search;
+            
+            IF (ndx_s_next = PIXEL_CNT) THEN --= LAST_ROW AND write_s = '0') THEN
+               search_ns <= ST1;
+            ELSE
+               search_ns <= ST0;
+            END IF;
+            
+         WHEN ST1 =>
+            IF (data_next = '1') THEN
+               search_ns <= ST2;
+            ELSE
+               search_ns <= ST1;
+            END IF;
+         WHEN ST2 =>
+            IF (data_next = '0') THEN
+               search_ns <= ST3;
+            ELSE
+               search_ns <= ST2;
+            END IF;
+         WHEN ST3 =>
+            search_array_next(0 TO LAST_ROW-1) <= search_array(NUM_2_ROW TO PIXEL_CNT-1);
+            search_ns <= ST0;
+            
+         WHEN OTHERS =>
+            search_ns <= ST0;
+      END CASE;
+      
+--      IF (ndx_s_next = PIXEL_CNT) THEN -- = LAST_ROW AND write_s = '0') THEN
+--         search_array_next(0 TO LAST_ROW-1) <= search_array(NUM_2_ROW TO PIXEL_CNT-1);
+--      ELSE
+--         search_array_next(ndx_s) <= reg1_search;
+--      END IF;
    END PROCESS fill_search;
    
    ndx_s_next <= ndx_s + 1 WHEN h2fValid_I = '1' AND write_s = '1' and junk_s = '0' --ndx_t > 8
@@ -342,7 +456,7 @@ begin
 
 
 	-- Windows to be sent to SAD Algorithm entity
-	window_setup : PROCESS(template_array, search_array)
+	window_setup : PROCESS(buff_t, buff_s) --template_array, search_array)
 	BEGIN
 		FOR i IN 0 TO DISP_ROW-1 LOOP -- 0 or 1
 			FOR j IN 0 TO DISP_RANGE-1 LOOP -- 0 to 15, for the 16 SAD calculations to compare and get the disparity value
