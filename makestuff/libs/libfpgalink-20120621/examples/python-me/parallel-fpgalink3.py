@@ -459,10 +459,10 @@ if __name__ == "__main__":
                 
                 #print("reading from disparity array")        
                 dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
-                for ndx in range(disp_row):
-                    disparity_f2h[0][ndx] = dispBuffer[ndx]    
                 '''for ndx in range(disp_row):
-                    disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)'''
+                    disparity_f2h[0][ndx] = dispBuffer[ndx]'''    
+                for ndx in range(disp_row):
+                    disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)
                     #print(disparity_f2h[0][ndx], end=" ")
                 #print("\n\n\n")
                 
@@ -501,11 +501,11 @@ if __name__ == "__main__":
                         flWriteChannel(handle, 1000, 0x00, templateRow_h2f)
                         flWriteChannel(handle, 1000, 0x01, searchRow_h2f)
                     
-                    dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
+                    '''dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
                     for ndx in range(disp_row):
-                        disparity_f2h[pos][ndx+offset] = dispBuffer[ndx]
-                    '''for ndx in range(disp_row):
-                        disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)'''
+                        disparity_f2h[pos][ndx+offset] = dispBuffer[ndx]'''
+                    for ndx in range(disp_row):
+                        disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)
                     pos += 1
 
                     for i in range(nrow, height):
@@ -518,11 +518,11 @@ if __name__ == "__main__":
                         flWriteChannel(handle, 1000, 0x00, templateRow_h2f)
                         flWriteChannel(handle, 1000, 0x01, searchRow_h2f)
                         
-                        dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
+                        '''dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
                         for ndx in range(disp_row):
-                            disparity_f2h[pos][ndx+offset] = dispBuffer[ndx]
-                        '''for ndx in range(disp_row):
-                            disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)'''
+                            disparity_f2h[pos][ndx+offset] = dispBuffer[ndx]'''
+                        for ndx in range(disp_row):
+                            disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)
                         pos += 1
                     
                 # time after SAD Algorithm has finished
@@ -535,7 +535,7 @@ if __name__ == "__main__":
                     for j in range(dispH): #2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("venus_buffer_disp7x7_2.png")
+                im.save("venus_buffer_7x7_2.png")
                 im.show()
                 
                 # time after image is created

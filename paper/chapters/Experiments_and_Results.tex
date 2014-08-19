@@ -178,27 +178,27 @@ See Table~\ref{table:utilize} for resource utilization. The emboldened 7x7 and 9
 		%\rowstyle{\bfseries} \# of occupied Slices, out of 6,822
 		\tabularnewline
 		\hline
-		7x7 & 4 & No & 6,512 (11\%) & 12,297 (45\%) %& 3,267 (47\%) 
+		7x7 & 4 & No & 8,623 (15\%) & 12,330 (45\%)
 		\tabularnewline
 		\hline 
 		\rowstyle{\bfseries} 7x7 & 
 		\rowstyle{\bfseries} 2 & 
 		\rowstyle{\bfseries} Yes & 
-		\rowstyle{\bfseries} 8,343 (15\%) & 
-		\rowstyle{\bfseries} 17,631 (64\%) %& 5,712 (83\%) 
+		\rowstyle{\bfseries} 10,143 (18\%) & 
+		\rowstyle{\bfseries} 17,072 (62\%)  
 		\tabularnewline
 		\hline 
 		\rowstyle{\bfseries} 9x9 & 
 		\rowstyle{\bfseries} 4 & 
 		\rowstyle{\bfseries} No & 
-		\rowstyle{\bfseries} 10,445 (19\%) & 
-		\rowstyle{\bfseries} 19,082 (69\%) %& 4,355 (63\%)
+		\rowstyle{\bfseries} 11,013 (20\%) & 
+		\rowstyle{\bfseries} 16,356 (59\%) 
 		\tabularnewline
 		\hline
-		9x9 & 2 & No & 8,176 (14\%) & 15,658 (57\%) %& 3,471 (50\%)
+		9x9 & 2 & No & 8,538 (15\%) & 12,442 (45\%)
 		\tabularnewline
 		\hline 
-		9x9 & 1 & No & 6,947 (12\%) & 12,745 (46\%) %& 3,066 (44\%)
+		9x9 & 1 & No & 7,110 (13\%) & 10,422 (38\%)
 		\tabularnewline
 		\hline 
 	\end{tabular}
@@ -233,13 +233,13 @@ In the testbench simulation, the window size is 9x9 and 4 pixels are processed i
 				\rowstyle{\bfseries} Frames/sec
 			\tabularnewline
 			\hline 
-			VmodCAM & 640 & 480 & 0.0888 & 11.26
+			Tsukuba & 384 & 288 & 0.02228 & 44.87
 			\tabularnewline
 			\hline 
-			Tsukuba & 384 & 288 & 0.0308 & 32.43
+			Venus & 434 & 383 & 0.03359 & 29.77			
 			\tabularnewline
 			\hline 
-			Venus & 434 & 383 & 0.0470 & 21.27
+			VmodCAM & 640 & 480 & 0.06356 & 15.73
 			\tabularnewline
 			\hline 			
 			\end{tabular}
@@ -269,11 +269,11 @@ In the testbench simulation, the window size is 7x7 and 2 pixels are processed i
 				\rowstyle{\bfseries} Sec/frame & 
 				\rowstyle{\bfseries} Frames/sec
 			\\ \hline 
-			VmodCAM & 640 & 480 & 0.0616 & 16.23
+			Tsukuba & 384 & 288 & 0.01199 & 83.42
 			\\ \hline 
-			Tsukuba & 384 & 288 & 0.0215 & 46.51
+			Venus & 434 & 383 & 0.01815 & 55.11
 			\\ \hline 
-			Venus & 434 & 383 & 0.0327 & 30.58
+			VmodCAM & 640 & 480 & 0.03411 & 29.32
 			\\ \hline 
 		\end{tabular}	
 		\captionfonts
@@ -309,7 +309,7 @@ Table~\ref{table:clockCount} shows the recorded clock cycle counts for the Tsuku
 
 Eq.~\ref{eq:clockCycles} produced the same SAD Cycles and Min. Comp. Cycles as the values recorded from the FPGA in Tbl.~\ref{eq:clockCycles} for the Tsukuba and Venus image pairs. Eq.~\ref{eq:clockCycles} also was used to calculate the total cycles required per iteration. Testbench simulations in Appendix~\ref{sec:appdxD} were used to determine the additional clock cycles needed per iteration. The simulations also verified the number of clock cycles required for data input, SAD algorithm, and minimum comparators.
 
-~\Cref{eq:a,eq:b,eq:c,eq:d,eq:e,eq:f,eq:g} are the parameters for the rest of the equations. ~\Cref{eq:h} gives the height of the disparity map image. The width of the disparity map image, ~\Cref{eq:j}, needs to be divisible by ~\Cref{eq:e}, so ~\Cref{eq:i} is used to reduce it. The number of pixels in the disparity map image is calculated in ~\Cref{eq:k}. The base number of iterations, ~\Cref{eq:l}, is the minimum number of iterations required to create the disparity map. Additional iterations, ~\Cref{eq:n}, occur from the SAD algorithm proceeding through the images in the form of columns, top to bottom, left to right. There are a certain amount of iterations at the top of each column that are not used because enough of the rows must be loaded in order to obtain the disparity values. ~\Cref{eq:o} is the total number of iterations needed to process the pair of images. ~\Cref{eq:p} is the number of cycles for the SAD algorithms. ~\Cref{eq:q} is the number of cycles for the minimum comparators. ~\Cref{eq:r} are the extra cycles that occur from syncing up the data. ~\Cref{eq:s} is the total number of cycles for the entire pair of images to be processed.
+~\Cref{eq:a,eq:b,eq:c,eq:d,eq:e,eq:f,eq:g} are the parameters for the rest of the equations. ~\Cref{eq:h} gives the height of the disparity map image. The width of the disparity map image, ~\Cref{eq:j}, needs to be divisible by ~\Cref{eq:e}, so ~\Cref{eq:i} is used to reduce it. The number of pixels in the disparity map image is calculated in ~\Cref{eq:k}. The base number of iterations, ~\Cref{eq:l}, is the minimum number of iterations required to create the disparity map. Additional iterations, ~\Cref{eq:n}, occur from the SAD algorithm proceeding through the images in the form of columns, top to bottom, left to right. There are a certain amount of iterations at the top of each column that are not used because enough of the rows must be loaded in order to obtain the disparity values. ~\Cref{eq:o} is the total number of iterations needed to process the pair of images. ~\Cref{eq:p} is the number of cycles for the SAD algorithms. ~\Cref{eq:q} is the number of cycles for the minimum comparators. ~\Cref{eq:r} represents the extra cycles that occur for the 7x7 implementation only. The SAD algorithm is faster than the data can be loaded, so its iterations take longer than just the SAD algorithm and minimum comparator cycles. ~\Cref{eq:s} is the total number of cycles for the entire pair of images to be processed.
 
 \begin{subequations}
 \begin{align}
@@ -330,45 +330,11 @@ Eq.~\ref{eq:clockCycles} produced the same SAD Cycles and Min. Comp. Cycles as t
 	totIters = 25,912 &= basIters + addIters \label{eq:o}\\
 	sadTotCyc = 2,124,784 &= sadCyc * totIters \label{eq:p}\\
 	minTotCyc = 103,648 &= minCyc * totIters \label{eq:q}\\
-	extraCyc = 52,824 &= totIters * 2 \label{eq:r}\\
-	totClkCyc = 2,306,168 &= sadTotCyc + minTotCyc + extraCyc \label{eq:s}
+	extraCyc = 0 &= totIters * 0 \label{eq:r}\\
+	totClkCyc = 2,228,432 &= sadTotCyc + minTotCyc + extraCyc \label{eq:s}
 \end{align}
 	\label{eq:clockCycles}
 \end{subequations}
-
-
-%\begin{subequations}
-%\begin{align} 	\label{eq:clockCycles}
-%	height = 288	&	\quad \text{(image height)}\\
-%	width = 384 	&	\quad \text{(image width)}\\
-%	winSize = 9	 	&	\quad \text{(9x9 window size)}\\
-%	dispRange = 16 	&	\quad \text{(disparity range 0-15)}\\
-%	parPix = 4 		&	\quad \text{(pixels processed in parallel)}\\
-%	dispH &= height - (winSize - 1) \\
-%	      &= 280	\nonumber \\
-%	lessPix &= (dispRange-1) + (winSize-1) \\
-%	dispW &= (width-lessPix) - (width-lessPix) \% parPix \\
-%	dispW &= 360	\nonumber \\
-%	dispPixels &= dispH * dispW \\
-%			   &= 100,800 \nonumber \\
-%	baseIters &= dispPixels / parPix \\
-%			  &= 25,200 \nonumber \\
-%	colAdd &= dispWidth / parPix - 1 \\
-%	       &= 89 \nonumber \\
-%	addIters &= colAdd * (winSize-1) \\
-%			 &= 712 \nonumber \\
-%	totIters &= basIters + addIters \\
-%			 &= 25,912 \nonumber \\
-%	sadCyc = 82	&	\quad \text{(\# of cycles for SAD algorithm)}\\
-%	minCyc = 4		&	\quad \text{(\# of cycles for Min. comparator)}\\
-%	sadTotCyc &= sadCyc * totIters \\
-%			  &= 2,124,784 \nonumber \\
-%	minTotCyc &= minCyc * totIters \\
-%			  &= 103,648 \nonumber \\
-%	totClkCyc &= sadTotCyc + minTotCyc \\
-%			  &= 2,228,432 \nonumber
-%\end{align}
-%\end{subequations}
 
 The 9x9 implementation is able to have its next rows, 27 pixels each, buffered within the 82 clock cycles it takes for the SAD algorithms to finish. An additional 2 clock cycles per iteration are used to allow data to be properly transferred between processes. There are a total of 89 clock cycles per iteration.
 
@@ -388,25 +354,25 @@ The 7x7 (4 pix //) implementation is able to have its next rows, 25 pixels each,
 				\rowstyle{\bfseries} Extra Cycles &
 				\rowstyle{\bfseries} Total Clock Cycles			
 			\\ \hline 
-			288 x 384 & 280 x 360 & 9x9 & 2,124,784 & 129,560 & 51,824 & 2,306,168
+			288 x 384 & 280 x 360 & 9x9 & 2,124,784 & 103,648 & 0 & 2,228,432
 			\\ \hline 
-			288 x 384 & 282 x 362 & 7x7 & 416,976 & 260,610 & 521,220 & 1,198,806
+			288 x 384 & 282 x 362 & 7x7 & 416,976 & 208,488 & 573,342 & 1,198,806
 			\\ \hline 
-			288 x 384 & 282 x 360 & \specialcell{7x7\\(4 pix //)} & 1,295,700 & 129,570 & 51,828 & 1,477,098
+			288 x 384 & 282 x 360 & \specialcell{7x7\\(4 pix //)} & 1,295,700 & 103,656 & 0 & 1,399,356
 			\\ \tabucline[2pt]{-} 
 			
-			383 x 434 & 375 x 408 & 9x9 & 3,202,756 & 195,290 & 78,116 & 3,476,162
+			383 x 434 & 375 x 408 & 9x9 & 3,202,756 & 156,232 & 0 & 3,358,988
 			\\ \hline 
-			383 x 434 & 377 x 412 & 7x7 & 631,136 & 394,460 & 788,920 & 1,814,516
+			383 x 434 & 377 x 412 & 7x7 & 631,136 & 315,568 & 867,812 & 1,814,516
 			\\ \hline 
-			383 x 434 & 377 x 412 & \specialcell{7x7\\(4 pix //)} & 1,972,150 & 197,215 & 78,886 & 2,248,251
+			383 x 434 & 377 x 412 & \specialcell{7x7\\(4 pix //)} & 1,972,150 & 157,772 & 0 & 2,129,922
 			\\ \tabucline[2pt]{-}
 			
-			480 x 640 & 472 x 616 & 9x9 & 6,060,784 & 369,550 & 147,824 & 6,578,168
+			480 x 640 & 472 x 616 & 9x9 & 6,060,784 & 295,648 & 0 & 6,356,432
 			\\ \hline 
-			480 x 640 & 474 x 618 & 7x7 & 1,186,512 & 741,570 & 1,483,140 & 3,411,222
+			480 x 640 & 474 x 618 & 7x7 & 1,186,512 & 593,256 & 1,631,454 & 3,411,222
 			\\ \hline 
-			480 x 640 & 474 x 616 & \specialcell{7x7\\(4 pix //)} & 3,695,700 & 369,570 & 147,828 & 4,213,098
+			480 x 640 & 474 x 616 & \specialcell{7x7\\(4 pix //)} & 3,695,700 & 295,656 & 0 & 3,991,356
 			\\ \hline
 		\end{tabu}	
 		\captionfonts
@@ -428,25 +394,25 @@ Table~\ref{table:clockCountFPS} is a continuation of Tbl.~\ref{table:clockCount}
 				\rowstyle{\bfseries} Frames/ Sec @ 48 MHz &
 				\rowstyle{\bfseries} Frames/ Sec @ 100 MHz
 			\\ \hline 
-			9x9 & 2,306,168 & 0.04804 & 0.02306 & 20.82 & 43.36
+			9x9 & 2,228,432 & 0.04642 & 0.02228 & 21.54 & 44.87
 			\\ \hline 
 			7x7 & 1,198,806 & 0.02497 & 0.01199 & 40.05 & 83.42
 			\\ \hline 
-			\specialcell{7x7\\(4 pix //)} & 1,477,098 & 0.03077 & 0.0148 & 32.50 & 67.70
+			\specialcell{7x7\\(4 pix //)} & 1,399,356 & 0.02915 & 0.01399 & 34.31 & 71.46
 			\\ \tabucline[2pt]{-} 
 			
-			9x9 & 3,476,162 & 0.07241 & 0.03476 & 13.81 & 28.77
+			9x9 & 3,358,988 & 0.06997 & 0.03359 & 14.29 & 29.77
 			\\ \hline 
 			7x7 & 1,814,516 & 0.03780 & 0.01815 & 26.46 & 55.11
 			\\ \hline 
-			\specialcell{7x7\\(4 pix //)} & 2,248,251 & 0.04683 & 0.02248 & 21.35 & 44.48
+			\specialcell{7x7\\(4 pix //)} & 2,129,922 & 0.04437 & 0.02130 & 22.54 & 46.95
 			\\ \tabucline[2pt]{-}
 			
-			9x9 & 6,578,168 & 0.1370 & 0.06578 & 7.298 & 15.20
+			9x9 & 6,356,432 & 0.1324 & 0.06356 & 7.553 & 15.73
 			\\ \hline 
-			7x7 & 3,411,222 & 0.06578 & 0.03411 & 15.20 & 29.32
+			7x7 & 3,411,222 & 0.06578 & 0.03411 & 14.07 & 29.32
 			\\ \hline 
-			\specialcell{7x7\\(4 pix //)} & 4,213,098 & 0.08776 & 0.04213 & 11.39 & 23.74
+			\specialcell{7x7\\(4 pix //)} & 3,991,356 & 0.08314 & 0.03991 & 12.03 & 25.05
 			\\ \hline
 		\end{tabu}	
 		\captionfonts
@@ -475,19 +441,19 @@ In this section, FPGA disparity maps are compared to disparity maps created usin
 			\\ \hline 
 			Tsukuba & 7x7 & C & 0.1532 & 6.527 & 1
 			\\ \hline 
-			Tsukuba & 7x7 & VHDL & 0.0215 & 83.42 & 12.78
+			Tsukuba & 7x7 & VHDL & 0.01199 & 83.42 & 12.78
 			\\ \tabucline[2pt]{-}
 			Tsukuba & 9x9 & C & 0.2454 & 4.075 & 1
 			\\ \hline 
-			Tsukuba & 9x9 & VHDL & 0.0308 & 43.36 & 10.64
+			Tsukuba & 9x9 & VHDL & 0.02228 & 44.87 & 11.01
 			\\ \tabucline[2pt]{-}
 			Venus & 7x7 & C & 0.2327 & 4.297 & 1
 			\\ \hline 
-			Venus & 7x7 & VHDL & 0.0327 & 55.11 & 12.83
+			Venus & 7x7 & VHDL & 0.01815 & 55.11 & 12.83
 			\\ \tabucline[2pt]{-}
 			Venus & 9x9 & C & 0.3776 & 2.648 & 1
 			\\ \hline 
-			Venus & 9x9 & VHDL & 0.0470 & 28.77 & 10.86
+			Venus & 9x9 & VHDL & 0.03359 & 29.77 & 11.24
 			\\ \hline 
 		\end{tabu}	
 		\captionfonts
@@ -499,7 +465,7 @@ In this section, FPGA disparity maps are compared to disparity maps created usin
 \subsection{Data Overflows}
 \label{sec:overflow}
 
-The code for the hardware to be generated is designed in VHDL. The size of the data used for storing logic and values in hardware is defined during the coding process. In the SAD algorithm, it is possible for the SAD value to become much larger than the individual pixel values. For example, the pixel values range from 0 to 255, or 8 bits, while some SAD values could be over 4,095 and need to be stored in more than 12 bits. Most SAD values were under 4,096, so to account for those that were above it, the SAD algorithm use 14 bits to account for any values from 0 to 16,383. Figure~\ref{fig:overflow} shows what can happen when the data size allotted for the SAD algorithm is not large enough (i.e. only having 10 bits for storage). The data used is unsigned, so when it goes above the highest supported value, it goes back to 0 and continues from there.
+The code for the hardware to be generated is designed in VHDL. The size of the data used for storing logic and values in hardware is defined during the coding process. In the SAD algorithm, it is possible for the SAD value to become much larger than the individual pixel values. For example, the pixel values range from 0 to 255, or 8 bits, while some SAD values could be over 4,095 and need to be stored in more than 12 bits. Most SAD values were under 4,096, so to account for those that were above it, the SAD algorithm used 14 bits to account for any values from 0 to 16,383. Figure~\ref{fig:overflow} shows what can happen when the data size allotted for the SAD algorithm is not large enough (i.e. only having 10 bits for storage). The data used is unsigned, so when it goes above the highest supported value, it goes back to 0 and continues from there.
 
 Since most of the values were below 4,096, a measure was put in place in order to reduce the amount of bits needed during the minimum comparisons. If a SAD value was greater than 4,095, then 4,095 was returned for the calculated SAD because the greater the value, the less likely that search pixel is the correct corresponding one to the template pixel. In Figure~\ref{fig:tsukubaDispMap} and Figure~\ref{fig:venusDispMap}, the only noticeable difference in the C to FPGA comparisons is at the top of the images. The colors, warmer is closer and cooler is farther away, show that the top areas are thought to be closer than they actually are in the FPGA images. For a robot, it would be better to error on the side of thinking an object is closer than it actually is because the robot will be less prone to collide with the object. If a robot thought an object was farther away than it actually was, then the likelihood of collision would increase.
 
@@ -549,7 +515,7 @@ For Tsukuba, the FPGA version has a simulated runtime of 32.43 and 46.51 frames 
 		\label{fig:tsukubaC7x7}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/tsukuba_buffer_7x7_2.png}
+		\includegraphics[width=\textwidth]{figures/tsukuba_buffer_7x7_4.png}
 		\caption{FPGA 7x7 Disparity Map}
 		\label{fig:tsukubaFPGA7x7}
 	\end{subfigure}
@@ -596,7 +562,7 @@ For Venus, the FPGA version has a simulated runtime of 21.27 and 30.58 frames pe
 		\label{fig:venusC7x7}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/venus_buffer_7x7_2.png}
+		\includegraphics[width=\textwidth]{figures/venus_buffer_7x7_4.png}
 		\caption{FPGA 7x7 Disparity Map}
 		\label{fig:venusFPGA7x7}
 	\end{subfigure}

@@ -20,7 +20,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="21" />
+   <WVObjectSize size="24" />
    <wvobject fp_name="/tb_sad_wrapper/clk_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i</obj_property>
       <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -1968,6 +1968,20 @@
    <wvobject fp_name="/tb_sad_wrapper/uut/data_out" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">data_out[0:3]</obj_property>
       <obj_property name="ObjectShortName">data_out[0:3]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/buff_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">buff_state</obj_property>
+      <obj_property name="ObjectShortName">buff_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/minpos" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">minpos[0:3]</obj_property>
+      <obj_property name="ObjectShortName">minpos[0:3]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/minsad" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">minsad[0:3]</obj_property>
+      <obj_property name="ObjectShortName">minsad[0:3]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>

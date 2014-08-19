@@ -7,5 +7,5 @@
 
 #sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./parallel-fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/clock_tick_sad_parallel_7x7/top_level/default.xsvf
 
-sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./parallel-fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/sad_buffer_parallel_7x7/top_level/default.xsvf
+sudo LD_LIBRARY_PATH=../../linux.x86_64/rel ./parallel-fpgalink3.py -s -v 1443:0007 -i 1443:0007 -x ../../hdl/fx2/vhdl/sad_buffer_parallelSAD_7x7/top_level/default.xsvf
 

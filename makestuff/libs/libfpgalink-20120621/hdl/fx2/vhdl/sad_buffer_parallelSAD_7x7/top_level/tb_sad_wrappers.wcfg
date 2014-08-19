@@ -20,7 +20,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="33" />
    <wvobject fp_name="/tb_sad_wrapper/clk_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i</obj_property>
       <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -2608,5 +2608,65 @@
    <wvobject fp_name="/tb_sad_wrapper/uut/data_init" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">data_init</obj_property>
       <obj_property name="ObjectShortName">data_init</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/ndx_s_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_s_next</obj_property>
+      <obj_property name="ObjectShortName">ndx_s_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/ndx_t" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_t</obj_property>
+      <obj_property name="ObjectShortName">ndx_t</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/ndx_s" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_s</obj_property>
+      <obj_property name="ObjectShortName">ndx_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/ndx_t_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_t_next</obj_property>
+      <obj_property name="ObjectShortName">ndx_t_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/ndx_s_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_s_next</obj_property>
+      <obj_property name="ObjectShortName">ndx_s_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_t_rd_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">f2h_t_rd_next</obj_property>
+      <obj_property name="ObjectShortName">f2h_t_rd_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_t_rd" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">f2h_t_rd</obj_property>
+      <obj_property name="ObjectShortName">f2h_t_rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_sad_rd_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">f2h_sad_rd_next</obj_property>
+      <obj_property name="ObjectShortName">f2h_sad_rd_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_sad_rd" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">f2h_sad_rd</obj_property>
+      <obj_property name="ObjectShortName">f2h_sad_rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_s_rd_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">f2h_s_rd_next</obj_property>
+      <obj_property name="ObjectShortName">f2h_s_rd_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_s_rd" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">f2h_s_rd</obj_property>
+      <obj_property name="ObjectShortName">f2h_s_rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_disp_rd_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">f2h_disp_rd_next</obj_property>
+      <obj_property name="ObjectShortName">f2h_disp_rd_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_disp_rd" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">f2h_disp_rd</obj_property>
+      <obj_property name="ObjectShortName">f2h_disp_rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/ndx_sad_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_sad_next</obj_property>
+      <obj_property name="ObjectShortName">ndx_sad_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/ndx_sad" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">ndx_sad</obj_property>
+      <obj_property name="ObjectShortName">ndx_sad</obj_property>
    </wvobject>
 </wave_config>
