@@ -87,7 +87,7 @@ architecture Behavioral of sad_wrapper is
    
    SIGNAL ndx_t_row, ndx_t_row_next, ndx_s_row, ndx_s_row_next : INTEGER := 0;
    SIGNAL next_t_row, next_s_row, disp_ready, neg_disp : STD_LOGIC := '0';
-   SIGNAL junk_t_row, junk_t_row_next, junk_s_row, junk_s_row_next : STD_LOGIC := '1';
+--   SIGNAL junk_t_row, junk_t_row_next, junk_s_row, junk_s_row_next : STD_LOGIC := '1';
    
    -- Search array for storing data transfered to the FPGA from comp
    type array_type_search is array (0 to PIXEL_CNT-1) of std_logic_vector(7 downto 0);
@@ -97,7 +97,7 @@ architecture Behavioral of sad_wrapper is
    SIGNAL ndx_s, ndx_s_next, f2h_s_rd, f2h_s_rd_next : INTEGER := 0;
    
    -- The first byte written to the board is sometimes junk, so the first byte will be ignored
-   SIGNAL junk_t, junk_t_next, junk_s, junk_s_next : STD_LOGIC := '1';
+--   SIGNAL junk_t, junk_t_next, junk_s, junk_s_next : STD_LOGIC := '1';
    
    -- signed sum array
    --type array_type_signed is array (0 to DISP_RANGE-1) of SIGNED(8 downto 0);
@@ -156,9 +156,9 @@ begin
 			buff_s <= (OTHERS => (OTHERS => '0'));
 			
 			ndx_t  <= 0;
-			junk_t <= '1';
+--			junk_t <= '1';
 			ndx_s  <= 0;
-			junk_s <= '1';
+--			junk_s <= '1';
 			
 			f2h_t_rd <= 0;
 			f2h_s_rd <= 0;
@@ -197,19 +197,19 @@ begin
 --			ndx_t <= ndx_t_next;
          IF (ndx_t_next = PIXEL_CNT) THEN
             ndx_t <= LAST_ROW; --0;
-            junk_t <= '1';
+--            junk_t <= '1';
          ELSE
             ndx_t <= ndx_t_next;
-				junk_t <= junk_t_next;
+--				junk_t <= junk_t_next;
          END IF;
          
 --			ndx_s <= ndx_s_next;
          IF (ndx_s_next = PIXEL_CNT) THEN
             ndx_s <= LAST_ROW; --0;
-            junk_s <= '1';
+--            junk_s <= '1';
          ELSE
 				ndx_s <= ndx_s_next;
-            junk_s <= junk_s_next;
+--            junk_s <= junk_s_next;
          END IF;
 
          IF (f2h_t_rd_next < PIXEL_CNT) THEN
@@ -336,8 +336,8 @@ begin
 		
    -- host to FPGA template_array
    -- reg 0
-   reg0_templ <= templ_I when write_t = '1' and h2fValid_I = '1' and junk_t = '0' else template_array(ndx_t);
-   junk_t_next <= '0' when write_t = '1' and h2fValid_I = '1' else junk_t;
+   reg0_templ <= templ_I when write_t = '1' and h2fValid_I = '1' else template_array(ndx_t);
+--   junk_t_next <= '0' when write_t = '1' and h2fValid_I = '1' else junk_t;
    
    fill_templ : PROCESS (reg0_templ, template_array, ndx_t, ndx_t_next, write_t, templ_ps, data_next)
    BEGIN
@@ -373,13 +373,13 @@ begin
       END CASE;
    END PROCESS fill_templ;
    
-   ndx_t_next <= ndx_t + 1 WHEN h2fValid_I = '1' AND write_t = '1' AND junk_t = '0'
+   ndx_t_next <= ndx_t + 1 WHEN h2fValid_I = '1' AND write_t = '1'
       ELSE ndx_t;
    
    -- host to FPGA search_array
    -- reg 1
-   reg1_search <= search_I when write_s = '1' and h2fValid_I = '1' and junk_s = '0' else search_array(ndx_s);
-   junk_s_next <= '0' when write_s = '1' and h2fValid_I = '1' else junk_s;
+   reg1_search <= search_I when write_s = '1' and h2fValid_I = '1' else search_array(ndx_s);
+--   junk_s_next <= '0' when write_s = '1' and h2fValid_I = '1' else junk_s;
    
    fill_search : PROCESS (reg1_search, search_array, ndx_s, ndx_s_next, search_ps, data_next)
    BEGIN
@@ -416,7 +416,7 @@ begin
       END CASE;
    END PROCESS fill_search;
    
-   ndx_s_next <= ndx_s + 1 WHEN h2fValid_I = '1' AND write_s = '1' and junk_s = '0' --ndx_t > 8
+   ndx_s_next <= ndx_s + 1 WHEN h2fValid_I = '1' AND write_s = '1'
       ELSE ndx_s;
 
    f2h_t_rd_next <= f2h_t_rd + 1 WHEN f2hReady_I = '1' AND chanAddr_I = "0000000"

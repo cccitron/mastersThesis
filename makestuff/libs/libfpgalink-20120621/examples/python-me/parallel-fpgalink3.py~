@@ -367,8 +367,8 @@ if __name__ == "__main__":
             # Black and white images
             #fileR = "tsukubaright_bw.jpg"
             #fileL = "tsukubaleft_bw.jpg"
-            #fileR = "venusR_bw.png"
-            #fileL = "venusL_bw.png"
+            fileR = "venusR_bw.png"
+            fileL = "venusL_bw.png"
             
             # Each color represents a distance that corresponds with disparity range of 0-15
             colorScheme = numpy.array([(0x00, 0x00, 0x8F), \
@@ -458,11 +458,11 @@ if __name__ == "__main__":
                 flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)
                 
                 #print("reading from disparity array")        
-                dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
-                '''for ndx in range(disp_row):
+                '''dispBuffer = flReadChannel(handle, 10000, 0x03, disp_row)         
+                for ndx in range(disp_row):
                     disparity_f2h[0][ndx] = dispBuffer[ndx]'''    
                 for ndx in range(disp_row):
-                    disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)
+                    disparity_f2h[0][ndx] = flReadChannel(handle, 10000, 0x03, 1)
                     #print(disparity_f2h[0][ndx], end=" ")
                 #print("\n\n\n")
                 
@@ -525,6 +525,7 @@ if __name__ == "__main__":
                             disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)
                         pos += 1
                     
+                    
                 # time after SAD Algorithm has finished
                 t1 = time.time()
                     
@@ -535,7 +536,7 @@ if __name__ == "__main__":
                     for j in range(dispH): #2):
                         im.putpixel((i,j), (colorScheme[disparity_f2h[j][i]][0], colorScheme[disparity_f2h[j][i]][1], colorScheme[disparity_f2h[j][i]][2]))
 
-                im.save("venus_buffer_7x7_2.png")
+                im.save("tsukuba_buffer_7x7_2.png")
                 im.show()
                 
                 # time after image is created

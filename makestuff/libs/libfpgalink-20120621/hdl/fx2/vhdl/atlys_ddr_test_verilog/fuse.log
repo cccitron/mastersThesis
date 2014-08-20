@@ -1,0 +1,177 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/tb_ddr2_interface_isim_beh.exe -prj /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/tb_ddr2_interface_beh.prj work.tb_ddr2_interface work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/rtl/ddr2.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/rtl/infrastructure.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_controller.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_mcb_controller.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration_top.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_ui_top.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ipcore_dir/ddr2/user_design/sim/ddr2_model_c3.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/ddr_interface.v" into library work
+Analyzing Verilog file "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/tb_ddr2_interface.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "/home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/tb_ddr2_interface.v" Line 78: Port c3_clk0 is not connected to this instance
+WARNING:HDLCompiler:329 - "/build/xfndry/isimco/hipsBuilds/P_hips_v23.0/rst/hips/mcb/common_modules.v" Line 260: Target <(null)> of concurrent assignment or output port connection should be a net type.
+Completed static elaboration
+Fuse Memory Usage: 122852 KB
+Fuse CPU Usage: 19850 ms
+Compiling module IBUFG
+Compiling module PLL_ADV(CLKFBOUT_MULT=25,CLKIN1_...
+Compiling module BUFG
+Compiling module BUFPLL_MCB_default
+Compiling module infrastructure(C_INCLK_PERIOD=10...
+Compiling module xil_mcb_mod49
+Compiling module xil_mcb_mod109
+Compiling module xil_mcb_mod46
+Compiling module xil_mcb_mod20
+Compiling module xil_mcb_mod21
+Compiling module xil_mcb_mod22
+Compiling module xil_mcb_mod19
+Compiling module xil_mcb_mod31
+Compiling module xil_mcb_mod29
+Compiling module xil_mcb_mod24
+Compiling module xil_mcb_mod25
+Compiling module xil_mcb_mod27
+Compiling module xil_mcb_mod28_default
+Compiling module xil_mcb_mod33
+Compiling module xil_mcb_mod32
+Compiling module xil_mcb_mod106
+Compiling module xil_mcb_mod62
+Compiling module xil_mcb_mod63
+Compiling module xil_mcb_mod61
+Compiling module xil_mcb_mod64
+Compiling module xil_mcb_mod65
+Compiling module xil_mcb_mod111
+Compiling module xil_mcb_mod110
+Compiling module xil_mcb_mod47
+Compiling module xil_mcb_mod38
+Compiling module xil_mcb_mod39
+Compiling module xil_mcb_mod40
+Compiling module xil_mcb_mod41
+Compiling module xil_mcb_mod42
+Compiling module xil_mcb_mod43
+Compiling module xil_mcb_mod44
+Compiling module xil_mcb_mod50
+Compiling module xil_mcb_mod45(PORT_CONFIG="B32_B...
+Compiling module xil_mcb_mod48(PORT_CONFIG="B32_B...
+Compiling module xil_mcb_mod100
+Compiling module xil_mcb_mod72(RD_WRB=1,PIN_WIDTH...
+Compiling module xil_mcb_mod73
+Compiling module xil_mcb_mod92
+Compiling module xil_mcb_mod93
+Compiling module xil_mcb_mod78
+Compiling module xil_mcb_mod102
+Compiling module xil_mcb_mod101
+Compiling module xil_mcb_mod77
+Compiling module xil_mcb_mod98
+Compiling module xil_mcb_mod97
+Compiling module xil_mcb_mod80
+Compiling module xil_mcb_mod81
+Compiling module xil_mcb_mod86
+Compiling module xil_mcb_mod91
+Compiling module xil_mcb_mod90
+Compiling module xil_mcb_mod76
+Compiling module xil_mcb_mod75
+Compiling module xil_mcb_mod88
+Compiling module xil_mcb_mod79
+Compiling module xil_mcb_mod74
+Compiling module xil_mcb_mod82
+Compiling module xil_mcb_mod87
+Compiling module xil_mcb_mod83
+Compiling module xil_mcb_mod96
+Compiling module xil_mcb_mod94
+Compiling module xil_mcb_mod95
+Compiling module xil_mcb_mod84
+Compiling module xil_mcb_mod89
+Compiling module xil_mcb_mod99
+Compiling module xil_mcb_mod85
+Compiling module xil_mcb_mod103(PIN_WIDTH=16)
+Compiling module xil_mcb_mod72(RD_WRB=0,PIN_WIDTH...
+Compiling module xil_mcb_mod103(RD_WRB=0,PIN_WIDT...
+Compiling module xil_mcb_mod103(RD_WRB=1,PIN_WIDT...
+Compiling module xil_mcb_mod104(PIN_WIDTH=16,PORT...
+Compiling module xil_mcb_mod56
+Compiling module xil_mcb_mod107
+Compiling module xil_mcb_mod59
+Compiling module xil_mcb_mod108
+Compiling module xil_mcb_mod52
+Compiling module xil_mcb_mod53
+Compiling module xil_mcb_mod5
+Compiling module xil_mcb_mod54
+Compiling module xil_mcb_mod70
+Compiling module xil_mcb_mod55
+Compiling module xil_mcb_mod57
+Compiling module xil_mcb_mod58
+Compiling module xil_mcb_mod51
+Compiling module xil_mcb_mod17
+Compiling module xil_mcb_mod14
+Compiling module xil_mcb_mod0
+Compiling module xil_mcb_mod23
+Compiling module xil_mcb_mod67
+Compiling module xil_mcb_mod68
+Compiling module xil_mcb_mod66
+Compiling module xil_mcb_mod7
+Compiling module xil_mcb_mod69
+Compiling module xil_mcb_mod71
+Compiling module MCB_des(PORT_CONFIG="B32_B32_R32...
+Compiling module B_MCB(ARB_NUM_TIME_SLOTS=12,ARB_...
+Compiling module MCB(ARB_NUM_TIME_SLOTS=12,ARB_TI...
+Compiling module iodrp_controller
+Compiling module iodrp_mcb_controller
+Compiling module mcb_soft_calibration(C_MEM_TZQIN...
+Compiling module IOBUF
+Compiling module IODRP2_default
+Compiling module mcb_soft_calibration_top(C_MEM_T...
+Compiling module OSERDES2_copy1
+Compiling module OSERDES2(BYPASS_GCLK_FF="TRUE",D...
+Compiling module OSERDES2(BYPASS_GCLK_FF="TRUE",D...
+Compiling module OSERDES2(BYPASS_GCLK_FF="TRUE",D...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",IDELA...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",MCB_A...
+Compiling module IODRP2_MCB(DATA_RATE="SDR",MCB_A...
+Compiling module OBUFT
+Compiling module OBUFTDS
+Compiling module IOBUFDS
+Compiling module PULLDOWN
+Compiling module PULLUP
+Compiling module mcb_raw_wrapper(C_MEMCLK_PERIOD=...
+Compiling module mcb_ui_top(C_MEMCLK_PERIOD=3200,...
+Compiling module memc_wrapper(C_MEMCLK_PERIOD=320...
+Compiling module ddr2(C3_P0_MASK_SIZE=8,C3_P0_DAT...
+Compiling module ddr_interface
+Compiling module ddr2_model_c3_default
+Compiling module tb_ddr2_interface
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 23 sub-compilation(s) to finish...
+Compiled 148 Verilog Units
+Built simulation executable /home/cccitron/mastersThesis/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/atlys_ddr_test_verilog/tb_ddr2_interface_isim_beh.exe
+Fuse Memory Usage: 1222584 KB
+Fuse CPU Usage: 24080 ms
+GCC CPU Usage: 130810 ms

@@ -42,14 +42,14 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Window size comparisons for disparity maps~\cite  {matlab} of the Tskukuba image pair~\cite  {middlebury}.\relax }}{31}{figure.caption.21}}
 \newlabel{fig:tsukubaWinSize}{{5.1}{31}{Window size comparisons for disparity maps~\cite {matlab} of the Tskukuba image pair~\cite {middlebury}.\relax }{figure.caption.21}{}}
 \newlabel{fig:tsukubaWinSize@cref}{{[figure][1][5]5.1}{31}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Number of 1 byte pixels need based on the window size and number of pixels processed in parallel for producing a number of disparity values simultaneously for a disparity range of 16.\relax }}{32}{table.caption.22}}
-\newlabel{table:pixelCount}{{5.1}{32}{Number of 1 byte pixels need based on the window size and number of pixels processed in parallel for producing a number of disparity values simultaneously for a disparity range of 16.\relax }{table.caption.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Number of 1 byte pixels based on the window size and number of pixels processed in parallel for producing disparity values simultaneously for a disparity range of 16.\relax }}{32}{table.caption.22}}
+\newlabel{table:pixelCount}{{5.1}{32}{Number of 1 byte pixels based on the window size and number of pixels processed in parallel for producing disparity values simultaneously for a disparity range of 16.\relax }{table.caption.22}{}}
 \newlabel{table:pixelCount@cref}{{[table][1][5]5.1}{32}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Number of SAD calculation entities and minimum comparators entities needed per pixel processed in parallel based on the disparity range.\relax }}{33}{table.caption.23}}
-\newlabel{table:dispRange}{{5.2}{33}{Number of SAD calculation entities and minimum comparators entities needed per pixel processed in parallel based on the disparity range.\relax }{table.caption.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Number of SAD algorithm entities and minimum comparators entities needed per pixel processed in parallel based on the disparity range.\relax }}{33}{table.caption.23}}
+\newlabel{table:dispRange}{{5.2}{33}{Number of SAD algorithm entities and minimum comparators entities needed per pixel processed in parallel based on the disparity range.\relax }{table.caption.23}{}}
 \newlabel{table:dispRange@cref}{{[table][2][5]5.2}{33}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Number of SAD calculation and minimum comparator entities needed based on the number of pixels processed in parallel for a disparity range of 16.\relax }}{33}{table.caption.24}}
-\newlabel{table:pixelInParallel}{{5.3}{33}{Number of SAD calculation and minimum comparator entities needed based on the number of pixels processed in parallel for a disparity range of 16.\relax }{table.caption.24}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Number of SAD algorithm and minimum comparator entities needed based on the number of pixels processed in parallel for a disparity range of 16.\relax }}{33}{table.caption.24}}
+\newlabel{table:pixelInParallel}{{5.3}{33}{Number of SAD algorithm and minimum comparator entities needed based on the number of pixels processed in parallel for a disparity range of 16.\relax }{table.caption.24}{}}
 \newlabel{table:pixelInParallel@cref}{{[table][3][5]5.3}{33}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Resource utilization on the FPGA Atlys board for different window implementations.\relax }}{34}{table.caption.25}}
 \newlabel{table:utilize}{{5.4}{34}{Resource utilization on the FPGA Atlys board for different window implementations.\relax }{table.caption.25}{}}
@@ -57,176 +57,166 @@
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Testbench Simulation}{34}{section.5.3}}
 \newlabel{sec:testbench}{{5.3}{34}{Testbench Simulation}{section.5.3}{}}
 \newlabel{sec:testbench@cref}{{[section][3][5]5.3}{34}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}9x9 Window Implementation Runtime}{35}{subsection.5.3.1}}
-\newlabel{sec:testbench9x9}{{5.3.1}{35}{9x9 Window Implementation Runtime}{subsection.5.3.1}{}}
-\newlabel{sec:testbench9x9@cref}{{[subsection][1][5,3]5.3.1}{35}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces 9x9 window for the testbench simulated runtime for the FPGA board for different image sizes.\relax }}{36}{table.caption.26}}
-\newlabel{table:tb_9x9}{{5.5}{36}{9x9 window for the testbench simulated runtime for the FPGA board for different image sizes.\relax }{table.caption.26}{}}
-\newlabel{table:tb_9x9@cref}{{[table][5][5]5.5}{36}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}7x7 Window Implementation Runtime}{36}{subsection.5.3.2}}
-\newlabel{sec:testbench7x7}{{5.3.2}{36}{7x7 Window Implementation Runtime}{subsection.5.3.2}{}}
-\newlabel{sec:testbench7x7@cref}{{[subsection][2][5,3]5.3.2}{36}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces 7x7 window for the testbench simulation runtime for the FPGA board for different image sizes.\relax }}{37}{table.caption.27}}
-\newlabel{table:tb_7x7}{{5.6}{37}{7x7 window for the testbench simulation runtime for the FPGA board for different image sizes.\relax }{table.caption.27}{}}
-\newlabel{table:tb_7x7@cref}{{[table][6][5]5.6}{37}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.1}Pixel Parallelization}{37}{subsubsection.5.3.2.1}}
-\newlabel{sec:7x7pixelParallel4}{{5.3.2.1}{37}{Pixel Parallelization}{subsubsection.5.3.2.1}{}}
-\newlabel{sec:7x7pixelParallel4@cref}{{[subsubsection][1][5,3,2]5.3.2.1}{37}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Frame Rate}{38}{subsection.5.3.3}}
-\newlabel{sec:frameRate}{{5.3.3}{38}{Frame Rate}{subsection.5.3.3}{}}
-\newlabel{sec:frameRate@cref}{{[subsection][3][5,3]5.3.3}{38}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Frame rate comparison of different image sizes.\relax }}{38}{figure.caption.28}}
-\newlabel{fig:frameRate}{{5.2}{38}{Frame rate comparison of different image sizes.\relax }{figure.caption.28}{}}
-\newlabel{fig:frameRate@cref}{{[figure][2][5]5.2}{38}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}FPGA Clock Cycle Runtimes}{38}{section.5.4}}
-\newlabel{eq:a}{{5.1a}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.1}{}}
-\newlabel{eq:a@cref}{{[subequation][1][5,1]5.1a}{41}}
-\newlabel{eq:b}{{5.1b}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.2}{}}
-\newlabel{eq:b@cref}{{[subequation][2][5,1]5.1b}{41}}
-\newlabel{eq:c}{{5.1c}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.3}{}}
-\newlabel{eq:c@cref}{{[subequation][3][5,1]5.1c}{41}}
-\newlabel{eq:d}{{5.1d}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.4}{}}
-\newlabel{eq:d@cref}{{[subequation][4][5,1]5.1d}{41}}
-\newlabel{eq:e}{{5.1e}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.5}{}}
-\newlabel{eq:e@cref}{{[subequation][5][5,1]5.1e}{41}}
-\newlabel{eq:f}{{5.1f}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.6}{}}
-\newlabel{eq:f@cref}{{[subequation][6][5,1]5.1f}{41}}
-\newlabel{eq:g}{{5.1g}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.7}{}}
-\newlabel{eq:g@cref}{{[subequation][7][5,1]5.1g}{41}}
-\newlabel{eq:h}{{5.1h}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.8}{}}
-\newlabel{eq:h@cref}{{[subequation][8][5,1]5.1h}{41}}
-\newlabel{eq:i}{{5.1i}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.9}{}}
-\newlabel{eq:i@cref}{{[subequation][9][5,1]5.1i}{41}}
-\newlabel{eq:j}{{5.1j}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.10}{}}
-\newlabel{eq:j@cref}{{[subequation][10][5,1]5.1j}{41}}
-\newlabel{eq:k}{{5.1k}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.11}{}}
-\newlabel{eq:k@cref}{{[subequation][11][5,1]5.1k}{41}}
-\newlabel{eq:l}{{5.1l}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.12}{}}
-\newlabel{eq:l@cref}{{[subequation][12][5,1]5.1l}{41}}
-\newlabel{eq:m}{{5.1m}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.13}{}}
-\newlabel{eq:m@cref}{{[subequation][13][5,1]5.1m}{41}}
-\newlabel{eq:n}{{5.1n}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.14}{}}
-\newlabel{eq:n@cref}{{[subequation][14][5,1]5.1n}{41}}
-\newlabel{eq:o}{{5.1o}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.15}{}}
-\newlabel{eq:o@cref}{{[subequation][15][5,1]5.1o}{41}}
-\newlabel{eq:p}{{5.1p}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.16}{}}
-\newlabel{eq:p@cref}{{[subequation][16][5,1]5.1p}{41}}
-\newlabel{eq:q}{{5.1q}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.17}{}}
-\newlabel{eq:q@cref}{{[subequation][17][5,1]5.1q}{41}}
-\newlabel{eq:r}{{5.1r}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.18}{}}
-\newlabel{eq:r@cref}{{[subequation][18][5,1]5.1r}{41}}
-\newlabel{eq:s}{{5.1s}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.19}{}}
-\newlabel{eq:s@cref}{{[subequation][19][5,1]5.1s}{41}}
-\newlabel{eq:clockCycles}{{5.1}{41}{FPGA Clock Cycle Runtimes}{equation.5.1.19}{}}
-\newlabel{eq:clockCycles@cref}{{[subequation][1][5]5.1}{41}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithm and the minimum comparator .\relax }}{43}{table.caption.29}}
-\newlabel{table:clockCount}{{5.7}{43}{Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithm and the minimum comparator .\relax }{table.caption.29}{}}
-\newlabel{table:clockCount@cref}{{[table][7][5]5.7}{43}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Frame rates that are possible for the number of clock cycles taken per image.\relax }}{44}{table.caption.30}}
-\newlabel{table:clockCountFPS}{{5.8}{44}{Frame rates that are possible for the number of clock cycles taken per image.\relax }{table.caption.30}{}}
-\newlabel{table:clockCountFPS@cref}{{[table][8][5]5.8}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Test Image Pairs}{45}{section.5.5}}
-\newlabel{sec:runtime}{{5.5}{45}{Test Image Pairs}{section.5.5}{}}
-\newlabel{sec:runtime@cref}{{[section][5][5]5.5}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Data Overflows}{45}{subsection.5.5.1}}
-\newlabel{sec:overflow}{{5.5.1}{45}{Data Overflows}{subsection.5.5.1}{}}
-\newlabel{sec:overflow@cref}{{[subsection][1][5,5]5.5.1}{45}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Tsukuba and Venus image pairs comparison runtimes for C code and FPGA testbench simulations. The disparity range is 16 for both.\relax }}{46}{table.caption.31}}
-\newlabel{table:runtimeComp}{{5.9}{46}{Tsukuba and Venus image pairs comparison runtimes for C code and FPGA testbench simulations. The disparity range is 16 for both.\relax }{table.caption.31}{}}
-\newlabel{table:runtimeComp@cref}{{[table][9][5]5.9}{46}}
+\citation{atlysBoard}
+\citation{ug388}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Pixel Parallelization}{36}{section.5.4}}
+\newlabel{sec:7x7pixelParallel4}{{5.4}{36}{Pixel Parallelization}{section.5.4}{}}
+\newlabel{sec:7x7pixelParallel4@cref}{{[section][4][5]5.4}{36}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}FPGA Clock Cycle Runtimes}{36}{section.5.5}}
+\newlabel{eq:a}{{5.1a}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.1}{}}
+\newlabel{eq:a@cref}{{[subequation][1][5,1]5.1a}{38}}
+\newlabel{eq:b}{{5.1b}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.2}{}}
+\newlabel{eq:b@cref}{{[subequation][2][5,1]5.1b}{38}}
+\newlabel{eq:c}{{5.1c}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.3}{}}
+\newlabel{eq:c@cref}{{[subequation][3][5,1]5.1c}{38}}
+\newlabel{eq:d}{{5.1d}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.4}{}}
+\newlabel{eq:d@cref}{{[subequation][4][5,1]5.1d}{38}}
+\newlabel{eq:e}{{5.1e}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.5}{}}
+\newlabel{eq:e@cref}{{[subequation][5][5,1]5.1e}{38}}
+\newlabel{eq:f}{{5.1f}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.6}{}}
+\newlabel{eq:f@cref}{{[subequation][6][5,1]5.1f}{38}}
+\newlabel{eq:g}{{5.1g}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.7}{}}
+\newlabel{eq:g@cref}{{[subequation][7][5,1]5.1g}{38}}
+\newlabel{eq:h}{{5.1h}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.8}{}}
+\newlabel{eq:h@cref}{{[subequation][8][5,1]5.1h}{38}}
+\newlabel{eq:i}{{5.1i}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.9}{}}
+\newlabel{eq:i@cref}{{[subequation][9][5,1]5.1i}{38}}
+\newlabel{eq:j}{{5.1j}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.10}{}}
+\newlabel{eq:j@cref}{{[subequation][10][5,1]5.1j}{38}}
+\newlabel{eq:k}{{5.1k}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.11}{}}
+\newlabel{eq:k@cref}{{[subequation][11][5,1]5.1k}{38}}
+\newlabel{eq:l}{{5.1l}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.12}{}}
+\newlabel{eq:l@cref}{{[subequation][12][5,1]5.1l}{38}}
+\newlabel{eq:m}{{5.1m}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.13}{}}
+\newlabel{eq:m@cref}{{[subequation][13][5,1]5.1m}{38}}
+\newlabel{eq:n}{{5.1n}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.14}{}}
+\newlabel{eq:n@cref}{{[subequation][14][5,1]5.1n}{38}}
+\newlabel{eq:o}{{5.1o}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.15}{}}
+\newlabel{eq:o@cref}{{[subequation][15][5,1]5.1o}{38}}
+\newlabel{eq:p}{{5.1p}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.16}{}}
+\newlabel{eq:p@cref}{{[subequation][16][5,1]5.1p}{38}}
+\newlabel{eq:q}{{5.1q}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.17}{}}
+\newlabel{eq:q@cref}{{[subequation][17][5,1]5.1q}{38}}
+\newlabel{eq:r}{{5.1r}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.18}{}}
+\newlabel{eq:r@cref}{{[subequation][18][5,1]5.1r}{38}}
+\newlabel{eq:s}{{5.1s}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.19}{}}
+\newlabel{eq:s@cref}{{[subequation][19][5,1]5.1s}{38}}
+\newlabel{eq:clockCycles}{{5.1}{38}{FPGA Clock Cycle Runtimes}{equation.5.1.19}{}}
+\newlabel{eq:clockCycles@cref}{{[subequation][1][5]5.1}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Frame Rate}{39}{subsection.5.5.1}}
+\newlabel{sec:frameRate}{{5.5.1}{39}{Frame Rate}{subsection.5.5.1}{}}
+\newlabel{sec:frameRate@cref}{{[subsection][1][5,5]5.5.1}{39}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithms and the minimum comparators.\relax }}{40}{table.caption.26}}
+\newlabel{table:clockCount}{{5.5}{40}{Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithms and the minimum comparators.\relax }{table.caption.26}{}}
+\newlabel{table:clockCount@cref}{{[table][5][5]5.5}{40}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Frame rates that are possible for the number of clock cycles taken per image.\relax }}{41}{table.caption.27}}
+\newlabel{table:clockCountFPS}{{5.6}{41}{Frame rates that are possible for the number of clock cycles taken per image.\relax }{table.caption.27}{}}
+\newlabel{table:clockCountFPS@cref}{{[table][6][5]5.6}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Frame rate comparison of different image sizes.\relax }}{42}{figure.caption.28}}
+\newlabel{fig:frameRate}{{5.2}{42}{Frame rate comparison of different image sizes.\relax }{figure.caption.28}{}}
+\newlabel{fig:frameRate@cref}{{[figure][2][5]5.2}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Test Image Pairs}{42}{section.5.6}}
+\newlabel{sec:runtime}{{5.6}{42}{Test Image Pairs}{section.5.6}{}}
+\newlabel{sec:runtime@cref}{{[section][6][5]5.6}{42}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Tsukuba and Venus image pairs comparison runtimes for C code and FPGA testbench simulations. The disparity range is 16 for both.\relax }}{43}{table.caption.29}}
+\newlabel{table:runtimeComp}{{5.7}{43}{Tsukuba and Venus image pairs comparison runtimes for C code and FPGA testbench simulations. The disparity range is 16 for both.\relax }{table.caption.29}{}}
+\newlabel{table:runtimeComp@cref}{{[table][7][5]5.7}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Data Overflows}{43}{subsection.5.6.1}}
+\newlabel{sec:overflow}{{5.6.1}{43}{Data Overflows}{subsection.5.6.1}{}}
+\newlabel{sec:overflow@cref}{{[subsection][1][5,6]5.6.1}{43}}
 \citation{middlebury}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Data overflow for Tskukuba image pair~\cite  {middlebury}.\relax }}{47}{figure.caption.32}}
-\newlabel{fig:overflow}{{5.3}{47}{Data overflow for Tskukuba image pair~\cite {middlebury}.\relax }{figure.caption.32}{}}
-\newlabel{fig:overflow@cref}{{[figure][3][5]5.3}{47}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Tsukuba}{47}{subsection.5.5.2}}
-\newlabel{sec:tsukuba}{{5.5.2}{47}{Tsukuba}{subsection.5.5.2}{}}
-\newlabel{sec:tsukuba@cref}{{[subsection][2][5,5]5.5.2}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Data overflow for Tskukuba image pair~\cite  {middlebury}.\relax }}{44}{figure.caption.30}}
+\newlabel{fig:overflow}{{5.3}{44}{Data overflow for Tskukuba image pair~\cite {middlebury}.\relax }{figure.caption.30}{}}
+\newlabel{fig:overflow@cref}{{[figure][3][5]5.3}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Tsukuba}{44}{subsection.5.6.2}}
+\newlabel{sec:tsukuba}{{5.6.2}{44}{Tsukuba}{subsection.5.6.2}{}}
+\newlabel{sec:tsukuba@cref}{{[subsection][2][5,6]5.6.2}{44}}
 \citation{middlebury}
 \citation{middlebury}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Venus}{48}{subsection.5.5.3}}
-\newlabel{sec:venus}{{5.5.3}{48}{Venus}{subsection.5.5.3}{}}
-\newlabel{sec:venus@cref}{{[subsection][3][5,5]5.5.3}{48}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.4}Cones}{48}{subsection.5.5.4}}
-\newlabel{sec:cones}{{5.5.4}{48}{Cones}{subsection.5.5.4}{}}
-\newlabel{sec:cones@cref}{{[subsection][4][5,5]5.5.4}{48}}
-\newlabel{fig:tsukubaL}{{5.4a}{49}{Left Tsukuba Grayscale Image\relax }{figure.caption.33}{}}
-\newlabel{fig:tsukubaL@cref}{{[subfigure][1][5,4]5.4a}{49}}
-\newlabel{sub@fig:tsukubaL}{{a}{49}{Left Tsukuba Grayscale Image\relax }{figure.caption.33}{}}
-\newlabel{sub@fig:tsukubaL@cref}{{[subfigure][1][5,4]5.4a}{49}}
-\newlabel{fig:tsukubaR}{{5.4b}{49}{Right Tsukuba Grayscale Image\relax }{figure.caption.33}{}}
-\newlabel{fig:tsukubaR@cref}{{[subfigure][2][5,4]5.4b}{49}}
-\newlabel{sub@fig:tsukubaR}{{b}{49}{Right Tsukuba Grayscale Image\relax }{figure.caption.33}{}}
-\newlabel{sub@fig:tsukubaR@cref}{{[subfigure][2][5,4]5.4b}{49}}
-\newlabel{fig:tsukubaC9x9}{{5.4c}{49}{C 9x9 Disparity Map\relax }{figure.caption.33}{}}
-\newlabel{fig:tsukubaC9x9@cref}{{[subfigure][3][5,4]5.4c}{49}}
-\newlabel{sub@fig:tsukubaC9x9}{{c}{49}{C 9x9 Disparity Map\relax }{figure.caption.33}{}}
-\newlabel{sub@fig:tsukubaC9x9@cref}{{[subfigure][3][5,4]5.4c}{49}}
-\newlabel{fig:tsukubaFPGA9x9}{{5.4d}{49}{FPGA 9x9 Disparity Map\relax }{figure.caption.33}{}}
-\newlabel{fig:tsukubaFPGA9x9@cref}{{[subfigure][4][5,4]5.4d}{49}}
-\newlabel{sub@fig:tsukubaFPGA9x9}{{d}{49}{FPGA 9x9 Disparity Map\relax }{figure.caption.33}{}}
-\newlabel{sub@fig:tsukubaFPGA9x9@cref}{{[subfigure][4][5,4]5.4d}{49}}
-\newlabel{fig:tsukubaC7x7}{{5.4e}{49}{C 7x7 Disparity Map\relax }{figure.caption.33}{}}
-\newlabel{fig:tsukubaC7x7@cref}{{[subfigure][5][5,4]5.4e}{49}}
-\newlabel{sub@fig:tsukubaC7x7}{{e}{49}{C 7x7 Disparity Map\relax }{figure.caption.33}{}}
-\newlabel{sub@fig:tsukubaC7x7@cref}{{[subfigure][5][5,4]5.4e}{49}}
-\newlabel{fig:tsukubaFPGA7x7}{{5.4f}{49}{FPGA 7x7 Disparity Map\relax }{figure.caption.33}{}}
-\newlabel{fig:tsukubaFPGA7x7@cref}{{[subfigure][6][5,4]5.4f}{49}}
-\newlabel{sub@fig:tsukubaFPGA7x7}{{f}{49}{FPGA 7x7 Disparity Map\relax }{figure.caption.33}{}}
-\newlabel{sub@fig:tsukubaFPGA7x7@cref}{{[subfigure][6][5,4]5.4f}{49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Disparity map comparison of the Tskukuba image pair~\cite  {middlebury}.\relax }}{49}{figure.caption.33}}
-\newlabel{fig:tsukubaDispMap}{{5.4}{49}{Disparity map comparison of the Tskukuba image pair~\cite {middlebury}.\relax }{figure.caption.33}{}}
-\newlabel{fig:tsukubaDispMap@cref}{{[figure][4][5]5.4}{49}}
-\newlabel{fig:venusL}{{5.5a}{50}{Left Venus Grayscale Image\relax }{figure.caption.34}{}}
-\newlabel{fig:venusL@cref}{{[subfigure][1][5,5]5.5a}{50}}
-\newlabel{sub@fig:venusL}{{a}{50}{Left Venus Grayscale Image\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:venusL@cref}{{[subfigure][1][5,5]5.5a}{50}}
-\newlabel{fig:venusR}{{5.5b}{50}{Right Venus Grayscale Image\relax }{figure.caption.34}{}}
-\newlabel{fig:venusR@cref}{{[subfigure][2][5,5]5.5b}{50}}
-\newlabel{sub@fig:venusR}{{b}{50}{Right Venus Grayscale Image\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:venusR@cref}{{[subfigure][2][5,5]5.5b}{50}}
-\newlabel{fig:venusC9x9}{{5.5c}{50}{C 9x9 Disparity Map\relax }{figure.caption.34}{}}
-\newlabel{fig:venusC9x9@cref}{{[subfigure][3][5,5]5.5c}{50}}
-\newlabel{sub@fig:venusC9x9}{{c}{50}{C 9x9 Disparity Map\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:venusC9x9@cref}{{[subfigure][3][5,5]5.5c}{50}}
-\newlabel{fig:venusFPGA9x9}{{5.5d}{50}{FPGA 9x9 Disparity Map\relax }{figure.caption.34}{}}
-\newlabel{fig:venusFPGA9x9@cref}{{[subfigure][4][5,5]5.5d}{50}}
-\newlabel{sub@fig:venusFPGA9x9}{{d}{50}{FPGA 9x9 Disparity Map\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:venusFPGA9x9@cref}{{[subfigure][4][5,5]5.5d}{50}}
-\newlabel{fig:venusC7x7}{{5.5e}{50}{C 7x7 Disparity Map\relax }{figure.caption.34}{}}
-\newlabel{fig:venusC7x7@cref}{{[subfigure][5][5,5]5.5e}{50}}
-\newlabel{sub@fig:venusC7x7}{{e}{50}{C 7x7 Disparity Map\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:venusC7x7@cref}{{[subfigure][5][5,5]5.5e}{50}}
-\newlabel{fig:venusFPGA7x7}{{5.5f}{50}{FPGA 7x7 Disparity Map\relax }{figure.caption.34}{}}
-\newlabel{fig:venusFPGA7x7@cref}{{[subfigure][6][5,5]5.5f}{50}}
-\newlabel{sub@fig:venusFPGA7x7}{{f}{50}{FPGA 7x7 Disparity Map\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:venusFPGA7x7@cref}{{[subfigure][6][5,5]5.5f}{50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Disparity map comparison of the Venus image pair~\cite  {middlebury}.\relax }}{50}{figure.caption.34}}
-\newlabel{fig:venusDispMap}{{5.5}{50}{Disparity map comparison of the Venus image pair~\cite {middlebury}.\relax }{figure.caption.34}{}}
-\newlabel{fig:venusDispMap@cref}{{[figure][5][5]5.5}{50}}
 \citation{matlab}
 \citation{matlab}
 \citation{middlebury}
-\newlabel{fig:conesL}{{5.6a}{51}{Left Cones Grayscale Image\relax }{figure.caption.35}{}}
-\newlabel{fig:conesL@cref}{{[subfigure][1][5,6]5.6a}{51}}
-\newlabel{sub@fig:conesL}{{a}{51}{Left Cones Grayscale Image\relax }{figure.caption.35}{}}
-\newlabel{sub@fig:conesL@cref}{{[subfigure][1][5,6]5.6a}{51}}
-\newlabel{fig:conesR}{{5.6b}{51}{Right Cones Grayscale Image\relax }{figure.caption.35}{}}
-\newlabel{fig:conesR@cref}{{[subfigure][2][5,6]5.6b}{51}}
-\newlabel{sub@fig:conesR}{{b}{51}{Right Cones Grayscale Image\relax }{figure.caption.35}{}}
-\newlabel{sub@fig:conesR@cref}{{[subfigure][2][5,6]5.6b}{51}}
-\newlabel{fig:conesMatlab}{{5.6c}{51}{9x9 at Disparity Range of 60 ~\cite {matlab}\relax }{figure.caption.35}{}}
-\newlabel{fig:conesMatlab@cref}{{[subfigure][3][5,6]5.6c}{51}}
-\newlabel{sub@fig:conesMatlab}{{c}{51}{9x9 at Disparity Range of 60 ~\cite {matlab}\relax }{figure.caption.35}{}}
-\newlabel{sub@fig:conesMatlab@cref}{{[subfigure][3][5,6]5.6c}{51}}
-\newlabel{fig:conesPy}{{5.6d}{51}{9x9 at Disparity Range of 16\relax }{figure.caption.35}{}}
-\newlabel{fig:conesPy@cref}{{[subfigure][4][5,6]5.6d}{51}}
-\newlabel{sub@fig:conesPy}{{d}{51}{9x9 at Disparity Range of 16\relax }{figure.caption.35}{}}
-\newlabel{sub@fig:conesPy@cref}{{[subfigure][4][5,6]5.6d}{51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Disparity map comparison of the Cones image pair ~\cite  {middlebury}.\relax }}{51}{figure.caption.35}}
-\newlabel{fig:conesDispMap}{{5.6}{51}{Disparity map comparison of the Cones image pair ~\cite {middlebury}.\relax }{figure.caption.35}{}}
-\newlabel{fig:conesDispMap@cref}{{[figure][6][5]5.6}{51}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.3}Venus}{45}{subsection.5.6.3}}
+\newlabel{sec:venus}{{5.6.3}{45}{Venus}{subsection.5.6.3}{}}
+\newlabel{sec:venus@cref}{{[subsection][3][5,6]5.6.3}{45}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.4}Cones}{45}{subsection.5.6.4}}
+\newlabel{sec:cones}{{5.6.4}{45}{Cones}{subsection.5.6.4}{}}
+\newlabel{sec:cones@cref}{{[subsection][4][5,6]5.6.4}{45}}
+\newlabel{fig:tsukubaL}{{5.4a}{46}{Left Tsukuba Grayscale Image\relax }{figure.caption.31}{}}
+\newlabel{fig:tsukubaL@cref}{{[subfigure][1][5,4]5.4a}{46}}
+\newlabel{sub@fig:tsukubaL}{{a}{46}{Left Tsukuba Grayscale Image\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:tsukubaL@cref}{{[subfigure][1][5,4]5.4a}{46}}
+\newlabel{fig:tsukubaR}{{5.4b}{46}{Right Tsukuba Grayscale Image\relax }{figure.caption.31}{}}
+\newlabel{fig:tsukubaR@cref}{{[subfigure][2][5,4]5.4b}{46}}
+\newlabel{sub@fig:tsukubaR}{{b}{46}{Right Tsukuba Grayscale Image\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:tsukubaR@cref}{{[subfigure][2][5,4]5.4b}{46}}
+\newlabel{fig:tsukubaC9x9}{{5.4c}{46}{C 9x9 Disparity Map\relax }{figure.caption.31}{}}
+\newlabel{fig:tsukubaC9x9@cref}{{[subfigure][3][5,4]5.4c}{46}}
+\newlabel{sub@fig:tsukubaC9x9}{{c}{46}{C 9x9 Disparity Map\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:tsukubaC9x9@cref}{{[subfigure][3][5,4]5.4c}{46}}
+\newlabel{fig:tsukubaFPGA9x9}{{5.4d}{46}{FPGA 9x9 Disparity Map\relax }{figure.caption.31}{}}
+\newlabel{fig:tsukubaFPGA9x9@cref}{{[subfigure][4][5,4]5.4d}{46}}
+\newlabel{sub@fig:tsukubaFPGA9x9}{{d}{46}{FPGA 9x9 Disparity Map\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:tsukubaFPGA9x9@cref}{{[subfigure][4][5,4]5.4d}{46}}
+\newlabel{fig:tsukubaC7x7}{{5.4e}{46}{C 7x7 Disparity Map\relax }{figure.caption.31}{}}
+\newlabel{fig:tsukubaC7x7@cref}{{[subfigure][5][5,4]5.4e}{46}}
+\newlabel{sub@fig:tsukubaC7x7}{{e}{46}{C 7x7 Disparity Map\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:tsukubaC7x7@cref}{{[subfigure][5][5,4]5.4e}{46}}
+\newlabel{fig:tsukubaFPGA7x7}{{5.4f}{46}{FPGA 7x7 Disparity Map\relax }{figure.caption.31}{}}
+\newlabel{fig:tsukubaFPGA7x7@cref}{{[subfigure][6][5,4]5.4f}{46}}
+\newlabel{sub@fig:tsukubaFPGA7x7}{{f}{46}{FPGA 7x7 Disparity Map\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:tsukubaFPGA7x7@cref}{{[subfigure][6][5,4]5.4f}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Disparity map comparison of the Tskukuba image pair~\cite  {middlebury}.\relax }}{46}{figure.caption.31}}
+\newlabel{fig:tsukubaDispMap}{{5.4}{46}{Disparity map comparison of the Tskukuba image pair~\cite {middlebury}.\relax }{figure.caption.31}{}}
+\newlabel{fig:tsukubaDispMap@cref}{{[figure][4][5]5.4}{46}}
+\newlabel{fig:venusL}{{5.5a}{47}{Left Venus Grayscale Image\relax }{figure.caption.32}{}}
+\newlabel{fig:venusL@cref}{{[subfigure][1][5,5]5.5a}{47}}
+\newlabel{sub@fig:venusL}{{a}{47}{Left Venus Grayscale Image\relax }{figure.caption.32}{}}
+\newlabel{sub@fig:venusL@cref}{{[subfigure][1][5,5]5.5a}{47}}
+\newlabel{fig:venusR}{{5.5b}{47}{Right Venus Grayscale Image\relax }{figure.caption.32}{}}
+\newlabel{fig:venusR@cref}{{[subfigure][2][5,5]5.5b}{47}}
+\newlabel{sub@fig:venusR}{{b}{47}{Right Venus Grayscale Image\relax }{figure.caption.32}{}}
+\newlabel{sub@fig:venusR@cref}{{[subfigure][2][5,5]5.5b}{47}}
+\newlabel{fig:venusC9x9}{{5.5c}{47}{C 9x9 Disparity Map\relax }{figure.caption.32}{}}
+\newlabel{fig:venusC9x9@cref}{{[subfigure][3][5,5]5.5c}{47}}
+\newlabel{sub@fig:venusC9x9}{{c}{47}{C 9x9 Disparity Map\relax }{figure.caption.32}{}}
+\newlabel{sub@fig:venusC9x9@cref}{{[subfigure][3][5,5]5.5c}{47}}
+\newlabel{fig:venusFPGA9x9}{{5.5d}{47}{FPGA 9x9 Disparity Map\relax }{figure.caption.32}{}}
+\newlabel{fig:venusFPGA9x9@cref}{{[subfigure][4][5,5]5.5d}{47}}
+\newlabel{sub@fig:venusFPGA9x9}{{d}{47}{FPGA 9x9 Disparity Map\relax }{figure.caption.32}{}}
+\newlabel{sub@fig:venusFPGA9x9@cref}{{[subfigure][4][5,5]5.5d}{47}}
+\newlabel{fig:venusC7x7}{{5.5e}{47}{C 7x7 Disparity Map\relax }{figure.caption.32}{}}
+\newlabel{fig:venusC7x7@cref}{{[subfigure][5][5,5]5.5e}{47}}
+\newlabel{sub@fig:venusC7x7}{{e}{47}{C 7x7 Disparity Map\relax }{figure.caption.32}{}}
+\newlabel{sub@fig:venusC7x7@cref}{{[subfigure][5][5,5]5.5e}{47}}
+\newlabel{fig:venusFPGA7x7}{{5.5f}{47}{FPGA 7x7 Disparity Map\relax }{figure.caption.32}{}}
+\newlabel{fig:venusFPGA7x7@cref}{{[subfigure][6][5,5]5.5f}{47}}
+\newlabel{sub@fig:venusFPGA7x7}{{f}{47}{FPGA 7x7 Disparity Map\relax }{figure.caption.32}{}}
+\newlabel{sub@fig:venusFPGA7x7@cref}{{[subfigure][6][5,5]5.5f}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Disparity map comparison of the Venus image pair~\cite  {middlebury}.\relax }}{47}{figure.caption.32}}
+\newlabel{fig:venusDispMap}{{5.5}{47}{Disparity map comparison of the Venus image pair~\cite {middlebury}.\relax }{figure.caption.32}{}}
+\newlabel{fig:venusDispMap@cref}{{[figure][5][5]5.5}{47}}
+\newlabel{fig:conesL}{{5.6a}{48}{Left Cones Grayscale Image\relax }{figure.caption.33}{}}
+\newlabel{fig:conesL@cref}{{[subfigure][1][5,6]5.6a}{48}}
+\newlabel{sub@fig:conesL}{{a}{48}{Left Cones Grayscale Image\relax }{figure.caption.33}{}}
+\newlabel{sub@fig:conesL@cref}{{[subfigure][1][5,6]5.6a}{48}}
+\newlabel{fig:conesR}{{5.6b}{48}{Right Cones Grayscale Image\relax }{figure.caption.33}{}}
+\newlabel{fig:conesR@cref}{{[subfigure][2][5,6]5.6b}{48}}
+\newlabel{sub@fig:conesR}{{b}{48}{Right Cones Grayscale Image\relax }{figure.caption.33}{}}
+\newlabel{sub@fig:conesR@cref}{{[subfigure][2][5,6]5.6b}{48}}
+\newlabel{fig:conesMatlab}{{5.6c}{48}{9x9 at Disparity Range of 60 ~\cite {matlab}\relax }{figure.caption.33}{}}
+\newlabel{fig:conesMatlab@cref}{{[subfigure][3][5,6]5.6c}{48}}
+\newlabel{sub@fig:conesMatlab}{{c}{48}{9x9 at Disparity Range of 60 ~\cite {matlab}\relax }{figure.caption.33}{}}
+\newlabel{sub@fig:conesMatlab@cref}{{[subfigure][3][5,6]5.6c}{48}}
+\newlabel{fig:conesPy}{{5.6d}{48}{9x9 at Disparity Range of 16\relax }{figure.caption.33}{}}
+\newlabel{fig:conesPy@cref}{{[subfigure][4][5,6]5.6d}{48}}
+\newlabel{sub@fig:conesPy}{{d}{48}{9x9 at Disparity Range of 16\relax }{figure.caption.33}{}}
+\newlabel{sub@fig:conesPy@cref}{{[subfigure][4][5,6]5.6d}{48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Disparity map comparison of the Cones image pair ~\cite  {middlebury}.\relax }}{48}{figure.caption.33}}
+\newlabel{fig:conesDispMap}{{5.6}{48}{Disparity map comparison of the Cones image pair ~\cite {middlebury}.\relax }{figure.caption.33}{}}
+\newlabel{fig:conesDispMap@cref}{{[figure][6][5]5.6}{48}}
 \@setckpt{chapters/Experiments_and_Results}{
-\setcounter{page}{52}
+\setcounter{page}{49}
 \setcounter{equation}{1}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -236,17 +226,17 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{5}
-\setcounter{section}{5}
+\setcounter{section}{6}
 \setcounter{subsection}{4}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
 \setcounter{figure}{6}
-\setcounter{table}{9}
+\setcounter{table}{7}
 \setcounter{lstnumber}{1}
 \setcounter{Item}{0}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{33}
+\setcounter{bookmark@seq@number}{31}
 \setcounter{r@tfl@t}{0}
 \setcounter{ContinuedFloat}{0}
 \setcounter{subfigure}{4}

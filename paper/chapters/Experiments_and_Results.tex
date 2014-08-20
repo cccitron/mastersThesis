@@ -17,12 +17,12 @@
 \chapter{Experiments and Results}
 \label{sec:exp}
 
-The experiments and results presented in this section used the FPGA Atlys board and a desktop computer that has an i7 CPU 950 at 3.07 GHz, 16 GB of RAM, and runs Ubuntu 64-bit. Due to hardware and timing issues with the DDR RAM on the FPGA board, the board was unable to hold all of the data for both images. Part of the rows of both images were sent to the FPGA board from the computer. The board processed the data and send the disparity values back to the computer. The computer then provide the board with the next set of data and so on until the entire disparity map was created. This was used to test the quality and accuracy of the disparity maps from the FPGA implementation in comparison to computer implementations. The transfer time of sending both images to the FPGA board and getting back the disparity map was not a real-time solution since it took around 20 seconds to complete the whole process. To test for the maximum possible frames per second the SAD wrapper perform at, testbench simulations were used to obtain the time it should take to produce a disparity map on the board at a 100 MHz clock. The Atlys board has a 100 MHz clock on it, so that determined the clock cycle of 10 ns in the testbench simulations. However, for the experiments that produced the disparity image maps where the image data came from the computer to the board, a 48 MHz clock was used, which is the clock frequency of the FPGALink. This was done in order to keep the input data in sync with the SAD wrapper.
+The experiments and results presented in this section used the FPGA Atlys board and a desktop computer that has an i7 CPU 950 at 3.07 GHz, 16 GB of RAM, and runs Ubuntu 64-bit. Due to hardware and timing issues with the DDR2 RAM on the FPGA board, the board was unable to hold all of the data for both images. Part of the rows of both images were sent to the FPGA board from the computer. The board processed the data and sent the disparity values back to the computer. The computer then provide the board with the next set of partial row data and so on until the entire disparity map was created. The images were processed from top to bottom, left to right, where the column width was based on the number of pixels processed in parallel. This was used to test the quality and accuracy of the disparity maps from the FPGA implementation in comparison to computer implementations. The transfer time of sending both images to the FPGA board and getting back the disparity map was not a real-time solution since it took at least 20 seconds to complete the whole process. To test for the maximum possible frames per second the SAD wrapper perform at, testbench simulations were used to obtain the time it should take to produce a disparity map on the board for a 100 MHz clock. The Atlys board has a 100 MHz clock on it, which determined the clock cycle of 10 ns in the testbench simulations. However, for the experiments that produced the disparity image maps where the image data was sent from the computer to the board, a 48 MHz clock was used, which was the clock frequency of the FPGALink. This was done in order to synchronize the input data with the SAD wrapper.
 
 \section{Window Size Selection}
 \label{sec:windowSize}
 
-The size of the window (e.g. 9x9 pixels) affects the quality of the disparity map (see Figure~\ref{fig:tsukubaWinSize}) and the number of computations required to create the disparity map. The 3x3 window size in Figure~\ref{fig:tsukuba3x3} is processed the fastest out of the window sizes shown since each SAD calculation only has 9 pairs of pixels. The 13x13 window in Figure~\ref{fig:tsukuba13x13} has 169 pairs of pixels, which will require 160 more calculations per SAD value. However, the 13x13 window has the least amount of noise in its disparity map, but it loses some detail as shown by comparing the neck of the lamp in the foreground of the image compared to the lamp necks in the other images. Table~\ref{table:pixelCount} shows the number of pixels required for different window sizes with a disparity range of 16. The disparity values (1, 2, and 4) represent the number of pixels processed in parallel. The number of pixels show how many pixels are needed from the pair of images to calculate disparity values for the pixels processed in parallel (1, 2, and 4). As the window size gets larger, more resources are needed on the FPGA board. The 7x7 and 9x9 window sizes were used because they provided a good compromise on the amount of noise in the disparity maps and the amount of hardware resources required for implementation.
+The size of the window (e.g. 9x9 pixels) affects the quality of the disparity map (see Figure~\ref{fig:tsukubaWinSize}) and the number of computations required to create the disparity map. The 3x3 window size used in Figure~\ref{fig:tsukuba3x3} was processed the fastest out of the window sizes shown since each SAD calculation only had 9 pairs of pixels. The 13x13 window in Figure~\ref{fig:tsukuba13x13} has 169 pairs of pixels, which required 160 more calculations per SAD value. However, the 13x13 window has the least amount of noise in its disparity map, but it loses some detail as shown by comparing the neck of the lamp in the foreground of the image to the lamp necks in the other images. Table~\ref{table:pixelCount} shows the number of pixels needed based on the window size and the number of pixels processed in parallel. As the window size gets larger, more resources are needed on the FPGA board. The 7x7 and 9x9 window sizes were selected because they provided a good compromise on the amount of noise in the disparity maps to the amount of hardware resources required for implementation.
 
 \begin{figure}
 \begin{center}
@@ -104,7 +104,7 @@ The size of the window (e.g. 9x9 pixels) affects the quality of the disparity ma
 		\hline 
 	\end{tabular}
 	\captionfonts
-	\caption{Number of 1 byte pixels need based on the window size and number of pixels processed in parallel for producing a number of disparity values simultaneously for a disparity range of 16.}
+	\caption{Number of 1 byte pixels based on the window size and number of pixels processed in parallel for producing disparity values simultaneously for a disparity range of 16.}
 	\label{table:pixelCount}
 \end{center}
 \end{table}
@@ -112,7 +112,7 @@ The size of the window (e.g. 9x9 pixels) affects the quality of the disparity ma
 \section{Resource Utilization on FPGA}
 \label{sec:utilize}
 
-The disparity range used to obtain the disparity value for each pixel affects the number of SAD entities and the number of minimum comparator entities required. Table~\ref{table:dispRange} shows the direct correlation between the disparity range and number of those entities needed. A lower disparity range of 8 requires fewer resources, but does not work well for objects that get close to the pair of cameras. A disparity range of 32 will give better results with objects that are closer; however, the resource requirements increase as well. The disparity range of 16 was used, since it provided a compromise of resource space to detectable object distance. For a disparity range of 16, Table~\ref{table:pixelInParallel} shows the amount of SAD entities and minimum comparators needed for processing different numbers of pixels in parallel. Processing 2 or 4 pixels in parallel allowed for the speed needed while allowing for a resource utilization size that fits on the Atlys board.
+The disparity range used to obtain the disparity value for each pixel affects the number of SAD entities and the number of minimum comparator entities required. Table~\ref{table:dispRange} shows the direct correlation between the disparity range and number of those entities needed. A lower disparity range of 8 requires fewer resources, but does not work well for objects that get close to the pair of cameras. A disparity range of 32 will give better results with objects that are closer; however, the resource requirements increase as well. The disparity range of 16 was selected since it provided a compromise of resource space to minimum detectable object distance. For a disparity range of 16, Table~\ref{table:pixelInParallel} shows the amount of SAD algorithm and minimum comparator entities needed to processing different numbers of pixels in parallel. Processing 2 or 4 pixels in parallel allowed for the speed needed while having a resource utilization size that fits on the Atlys board.
 
 \begin{table}
 \begin{center}
@@ -132,7 +132,7 @@ The disparity range used to obtain the disparity value for each pixel affects th
 		\\ \hline 
 	\end{tabular}
 	\captionfonts
-	\caption{Number of SAD calculation entities and minimum comparators entities needed per pixel processed in parallel based on the disparity range.}
+	\caption{Number of SAD algorithm entities and minimum comparators entities needed per pixel processed in parallel based on the disparity range.}
 	\label{table:dispRange}
 \end{center}
 \end{table}
@@ -159,12 +159,12 @@ The disparity range used to obtain the disparity value for each pixel affects th
 		\\ \hline 
 	\end{tabular}
 	\captionfonts
-	\caption{Number of SAD calculation and minimum comparator entities needed based on the number of pixels processed in parallel for a disparity range of 16.}
+	\caption{Number of SAD algorithm and minimum comparator entities needed based on the number of pixels processed in parallel for a disparity range of 16.}
 	\label{table:pixelInParallel}
 \end{center}
 \end{table}
 
-See Table~\ref{table:utilize} for resource utilization. The emboldened 7x7 and 9x9 rows were the resource utilization of the implementations used in this paper. The emboldened 7x7 window implementation uses fewer resources on the FPGA board than the emboldened 9x9 window implementation. Both implementations used in this paper, the emboldened rows, use more resources than the other implementations of the same window size. The emboldened 7x7 implementation processes half the amount of pixels in parallel, but each of its SAD algorithms has 7 times as many subtracters than the other 7x7 implementation. The emboldened 9x9 implementation process more pixels in parallel than the other 9x9 implementations. There is plenty of space on the board for other top level entity designs for this SAD module.
+See Table~\ref{table:utilize} for resource utilization. The bold 7x7 and 9x9 rows were the resource utilization of the implementations presented in Chapter~\ref{sec:impl}. The bold 7x7 window implementation used fewer resources on the FPGA board than the bold 9x9 window implementation. Both implementations used more resources than the other implementations of the same window size. The bold 7x7 implementation processed half the amount of pixels in parallel, but each of its SAD algorithm entities has 7 times as many subtracters than the other 7x7 implementation, which allowed it to run faster. The bold 9x9 implementation processed more pixels in parallel than the other 9x9 implementations. There is plenty of space on the board for other top level entity designs for this SAD module.
 
 \begin{table}
 \begin{center}
@@ -178,27 +178,27 @@ See Table~\ref{table:utilize} for resource utilization. The emboldened 7x7 and 9
 		%\rowstyle{\bfseries} \# of occupied Slices, out of 6,822
 		\tabularnewline
 		\hline
-		7x7 & 4 & No & 8,623 (15\%) & 12,330 (45\%)
+		7x7 & 4 & No & 8,729 (15\%) & 12,215 (44\%)
 		\tabularnewline
 		\hline 
 		\rowstyle{\bfseries} 7x7 & 
 		\rowstyle{\bfseries} 2 & 
 		\rowstyle{\bfseries} Yes & 
-		\rowstyle{\bfseries} 10,143 (18\%) & 
-		\rowstyle{\bfseries} 17,072 (62\%)  
+		\rowstyle{\bfseries} 10,990 (20\%) & 
+		\rowstyle{\bfseries} 17,329 (63\%)  
 		\tabularnewline
 		\hline 
 		\rowstyle{\bfseries} 9x9 & 
 		\rowstyle{\bfseries} 4 & 
 		\rowstyle{\bfseries} No & 
-		\rowstyle{\bfseries} 11,013 (20\%) & 
-		\rowstyle{\bfseries} 16,356 (59\%) 
+		\rowstyle{\bfseries} 10,969 (20\%) & 
+		\rowstyle{\bfseries} 15,359 (56\%) 
 		\tabularnewline
 		\hline
-		9x9 & 2 & No & 8,538 (15\%) & 12,442 (45\%)
+		9x9 & 2 & No & 8,306 (15\%) & 12,414 (45\%)
 		\tabularnewline
 		\hline 
-		9x9 & 1 & No & 7,110 (13\%) & 10,422 (38\%)
+		9x9 & 1 & No & 7,108 (13\%) & 10,426 (38\%)
 		\tabularnewline
 		\hline 
 	\end{tabular}
@@ -213,104 +213,96 @@ See Table~\ref{table:utilize} for resource utilization. The emboldened 7x7 and 9
 
 See Figure~\ref{fig:tb_9x9} and Figure~\ref{fig:tb_7x7} in Appendix~\ref{sec:appdxD} for the testbench simulations for the 9x9 window and 7x7 window implementations, respectively.
 
-The signal h2fvalid\_i, near the top of the figures, went high when image data is sent to the SAD wrapper. The first time h2fvalid\_i went high until the second time it went high was when the initial rows were given to the wrapper up to when the initial disparity values were produced. A cycle began afterwards where h2fvalid\_i would go high for several clock cycles and then go low for several more clock cycles. The high section represented when the next row was sent to the wrapper while the low section represented the time it took to calculate the SAD values and produce the next disparity values. The wrapper has been designed to allow both the template image data and the search image data to be sent to the wrapper at the same time, thus reducing the amount of time taken to get all necessary data into the wrapper. When the signal f2hready\_i goes high, it means that the disparity values are being sent out of the wrapper.
+The signal h2fvalid\_i, near the top of the figures, went high when image data was sent to the SAD wrapper. For the 9x9 implementation, a cycle was created from the number of clock cycles it took for the SAD algorithms and minimum comparators to run. The signal data\_out went low when the SAD algorithm was running and went high after the SAD values were sent to the minimum comparators. For the 7x7 implementation, the SAD algorithms and minimum comparators complete is fewer clock cycles than it takes to write in the next pair of row data. The cycle was created from the number of clock cycles it took to write in the row data. The wrapper was designed to allow both the template image data and the search image data to be sent to the wrapper at the same time, thus reducing the amount of time taken to get all necessary data into the wrapper. When the signal f2hready\_i goes high, it means that the disparity values were sent out of the wrapper.
 
-\subsection{9x9 Window Implementation Runtime}
-\label{sec:testbench9x9}
+For the testbench simulations, it is assumed that the data being sent into the SAD wrapper was supplied when the desired data was needed. So there was no delay to slow the process down. On a full FPGA implementation, the image data would be stored in DDR2 RAM on the Atlys board from the cameras and then sent to the SAD wrapper. According to Digilent, the DDR2 RAM can run at up to an 800 MHz data rate~\cite{atlysBoard}. However, for reading data out of the DDR2 RAM, it takes around 22-32 clock cycles to begin receiving data after sending the read command to it~\cite{ug388}. By configuring the DDR2 RAM as 2 64-bit bi-directional ports, each image would have its own port and data could be stuck together for 8 bytes of data being read from it at a time. Using BRAMs within the FPGA chip as an intermediary buffer between the DDR2 RAM and SAD wrapper, it should be sufficient to prevent timing delays.
 
-Based on the testbench simulation in Fig.~\ref{fig:tb_9x9} the simulated frames per second can be inferred for different image sizes. The simulation assumes the 100 MHz clock on the FPGA is used, which is the clock frequency used on the Atlys board. The clock cycle duration is therefore 10 ns long.
+The 9x9 window implementation has its next data rows buffered while the SAD algorithms are running. The SAD algorithms take longer to run than it did to fill up the next rows. This means there were several clock cycles that could be used if the incoming data was slower than ideal speeds.
 
-In the testbench simulation, the window size is 9x9 and 4 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 3.35 us. After that, a constant cycle is produced, which includes the SAD wrapper taking in the next row and producing the next disparity values. This cycle takes 1.22 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 617x472, or 291,224 pixels. Disparity values are not produced for pixels where either the window would run off the image or where there is not enough room for the 16 SAD values to be calculated for the pixel. Since 4 pixels are processed in parallel, 291,224 pixels are divided by 4 pixels/iteration, giving 72,806 iterations. So, 72,805 iterations times 1.22 us/iteration plus 3.35 us (initial section, hence minus one on number of iterations) gives 88,826.67 us or approximately 0.0888 seconds per frame. Therefore, an image size of 640x480 can be processed at around 11.26 frames per second. Table~\ref{table:tb_9x9} shows the simulated frame rate for the image sizes used in this chapter.
+The 7x7 window implementation, for its maximum speed, needed a pixel of data sent into the SAD wrapper every clock cycle. In the simulation, h2fvalid\_i is always high, showing that data was always being sent into it. 
 
-\begin{table}
-	\begin{center}
-		\begin{tabular}{|c|c|c|c|c|}
-			\hline 
-				\rowstyle{\bfseries} Image & 
-				\rowstyle{\bfseries} Image Width & 
-				\rowstyle{\bfseries} Image Height & 
-				\rowstyle{\bfseries} Sec/frame & 
-				\rowstyle{\bfseries} Frames/sec
-			\tabularnewline
-			\hline 
-			Tsukuba & 384 & 288 & 0.02228 & 44.87
-			\tabularnewline
-			\hline 
-			Venus & 434 & 383 & 0.03359 & 29.77			
-			\tabularnewline
-			\hline 
-			VmodCAM & 640 & 480 & 0.06356 & 15.73
-			\tabularnewline
-			\hline 			
-			\end{tabular}
-		\captionfonts
-		\caption{9x9 window for the testbench simulated runtime for the FPGA board for different image sizes.}
-		\label{table:tb_9x9}
-	\end{center}
-\end{table}
-
-\subsection{7x7 Window Implementation Runtime}
-\label{sec:testbench7x7}
-
-Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the simulated frame rate can be inferred for different image sizes. The simulation uses a clock cycle of 10 ns.
-
-In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 474x618, which is 292,932 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 292,932 pixels is divided by 2 pixels/iteration, giving 146,703 base iterations. There is an additional 1,848 iterations that occur due to the loading of the 6 top row segments  before any disparity values can be obtained for each column of the pair of pixels processed in parallel. There are 308 columns past the initial column (618/2 - 1) times 6 plus the base number of iterations gives a total of 148,551 iterations. The additional iterations causes an overhead of only 1.24\%. So, 148,551 total iterations times 0.24 us/iteration gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the simulated frame rate for the image sizes used in this chapter.
+%\subsection{9x9 Window Implementation Runtime}
+%\label{sec:testbench9x9}
+%
+%Based on the testbench simulation in Fig.~\ref{fig:tb_9x9} the simulated frames per second can be inferred for different image sizes. The simulation assumes the 100 MHz clock on the FPGA is used, which was the clock frequency on the Atlys board. The clock cycle duration is therefore 10 ns long.
+%
+%In the testbench simulation, the window size is 9x9 and 4 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 3.35 us. After that, a constant cycle was produced, which includes the SAD wrapper taking in the next row and producing the next disparity values. This cycle takes 1.22 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 617x472, or 291,224 pixels. Disparity values are not produced for pixels where either the window would run off the image or where there is not enough room for the 16 SAD values to be calculated for the pixel. Since 4 pixels are processed in parallel, 291,224 pixels are divided by 4 pixels/iteration, giving 72,806 iterations. So, 72,805 iterations times 1.22 us/iteration plus 3.35 us (initial section, hence minus one on number of iterations) gives 88,826.67 us or approximately 0.0888 seconds per frame. Therefore, an image size of 640x480 can be processed at around 11.26 frames per second. Table~\ref{table:tb_9x9} shows the simulated frame rate for the image sizes used in this chapter.
+%
+%\begin{table}
+%	\begin{center}
+%		\begin{tabular}{|c|c|c|c|c|}
+%			\hline 
+%				\rowstyle{\bfseries} Image & 
+%				\rowstyle{\bfseries} Image Width & 
+%				\rowstyle{\bfseries} Image Height & 
+%				\rowstyle{\bfseries} Sec/frame & 
+%				\rowstyle{\bfseries} Frames/sec
+%			\tabularnewline
+%			\hline 
+%			Tsukuba & 384 & 288 & 0.02228 & 44.87
+%			\tabularnewline
+%			\hline 
+%			Venus & 434 & 383 & 0.03359 & 29.77			
+%			\tabularnewline
+%			\hline 
+%			VmodCAM & 640 & 480 & 0.06356 & 15.73
+%			\tabularnewline
+%			\hline 			
+%			\end{tabular}
+%		\captionfonts
+%		\caption{9x9 window for the testbench simulated runtime for the FPGA board for different image sizes.}
+%		\label{table:tb_9x9}
+%	\end{center}
+%\end{table}
+%
+%\subsection{7x7 Window Implementation Runtime}
+%\label{sec:testbench7x7}
+%
+%Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the simulated frame rate can be inferred for different image sizes. The simulation uses a clock cycle of 10 ns.
+%
+%In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 474x618, which is 292,932 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 292,932 pixels is divided by 2 pixels/iteration, giving 146,703 base iterations. There is an additional 1,848 iterations that occur due to the loading of the 6 top row segments  before any disparity values can be obtained for each column of the pair of pixels processed in parallel. There are 308 columns past the initial column (618/2 - 1) times 6 plus the base number of iterations gives a total of 148,551 iterations. The additional iterations causes an overhead of only 1.24\%. So, 148,551 total iterations times 0.24 us/iteration gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the simulated frame rate for the image sizes used in this chapter.
 
 
 %In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 619x474, which is 293,406 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 293,406 pixels is divided by 2 pixels/iteration, giving 146,703 iterations. So, 146,702 iterations times 0.42 us/iteration plus 1.78 us (initial section, hence minus one on number of iterations) gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the simulated frame rate for the image sizes used in this chapter.
 
-\begin{table}
-	\begin{center}
-		\begin{tabular}{|c|c|c|c|c|}
-			\hline
-				\rowstyle{\bfseries} Image & 
-				\rowstyle{\bfseries} Image Width & 
-				\rowstyle{\bfseries} Image Height & 
-				\rowstyle{\bfseries} Sec/frame & 
-				\rowstyle{\bfseries} Frames/sec
-			\\ \hline 
-			Tsukuba & 384 & 288 & 0.01199 & 83.42
-			\\ \hline 
-			Venus & 434 & 383 & 0.01815 & 55.11
-			\\ \hline 
-			VmodCAM & 640 & 480 & 0.03411 & 29.32
-			\\ \hline 
-		\end{tabular}	
-		\captionfonts
-		\caption{7x7 window for the testbench simulation runtime for the FPGA board for different image sizes.}
-		\label{table:tb_7x7}
-	\end{center}
-\end{table}
+%\begin{table}
+%	\begin{center}
+%		\begin{tabular}{|c|c|c|c|c|}
+%			\hline
+%				\rowstyle{\bfseries} Image & 
+%				\rowstyle{\bfseries} Image Width & 
+%				\rowstyle{\bfseries} Image Height & 
+%				\rowstyle{\bfseries} Sec/frame & 
+%				\rowstyle{\bfseries} Frames/sec
+%			\\ \hline 
+%			Tsukuba & 384 & 288 & 0.01199 & 83.42
+%			\\ \hline 
+%			Venus & 434 & 383 & 0.01815 & 55.11
+%			\\ \hline 
+%			VmodCAM & 640 & 480 & 0.03411 & 29.32
+%			\\ \hline 
+%		\end{tabular}	
+%		\captionfonts
+%		\caption{7x7 window for the testbench simulation runtime for the FPGA board for different image sizes.}
+%		\label{table:tb_7x7}
+%	\end{center}
+%\end{table}
 
-\subsubsection{Pixel Parallelization}
+\section{Pixel Parallelization}
 \label{sec:7x7pixelParallel4}
 
-The 7x7 window implementation used a parallelized SAD algorithm (see Section~\ref{sec:7x7window}). Due to the additional resources needed, only 2 pixels could be processed in parallel instead of 4. The reduced number of pixels in parallel is made up for by the speed up of the SAD algorithm. A variant of 7x7 window implementation was used that processed 4 pixels in parallel (the Atlys board was unable to support more) and used the SAD algorithm implementation similar to the 9x9 window implementation (see Section~\ref{sec:9x9window}). For a 640x480 image pair, the testbench simulation of the variant 7x7 implementation was shown to perform at a rate of 15.15 frames per second, which is slightly slower than the 16.23 frames per second the main 7x7 implementation had. The main 7x7 implementation was used for its higher frame rate.
-
-\subsection{Frame Rate}
-\label{sec:frameRate}
-
-The smaller the image size, the higher the frame rate, as shown in Figure~\ref{fig:frameRate}. Once the number of pixels in an image goes below 180,000 for the 7x7 window implementation or 140,000 for the 9x9 window implementation, the frame rate approaches 30 frames per second. For robots, a frame rate of 10 should be sufficient for most tasks. Both the 9x9 and 7x7 window implementations were shown be above 10 frames per second for an image size of 640x480.
-
-\begin{figure}[h]
-	\begin{center}
-		\includegraphics[width=100mm]{figures/frameRate.png}
-		\captionfonts
-		\caption{Frame rate comparison of different image sizes.}
-		\label{fig:frameRate}
-	\end{center}
-\end{figure}
+The 7x7 window implementation used a parallelized SAD algorithm (see Section~\ref{sec:7x7window}). Due to the additional resources needed, only 2 pixels were processed in parallel instead of 4. The reduced number of pixels in parallel was made up for from the speed up of the SAD algorithm. In order to verify the parallelized SAD algorithm produced a speed up greater than reduction of pixels processed in parallel, a 7x7 window implementation of the 9x9 window implementation (see Section~\ref{sec:9x9window}) was introduced. This version of the 7x7 implementation processed 4 pixels in parallel (4 pix //) and did not have the SAD algorithm parallelized.
 
 \section{FPGA Clock Cycle Runtimes}
 
 A clock cycle counter was introduced to 3 implementations, the 9x9 with 4 pixels in parallel, the 7x7 with 2 pixels in parallel and parallel SAD algorithms, and the 7x7 with 4 pixels in parallel (4 pix //). The 7x7 (4 pix //) was tested to demonstrate how the 7x7 with 2 pixels in parallel has a higher frame rate due to the parallelized SAD algorithms. 
 
-Table~\ref{table:clockCount} shows the recorded clock cycle counts for the Tsukuba (288 x 384) and Venus (383 x 434) for the SAD algorithms and minimum comparators. The VmodCAM (480 x 640) clock cycles were calculated based on the series of equations in Equation~\ref{eq:clockCycles}. For all implementations, the minimum comparators take 5 clock cycles from when it gets the 16 SAD values to when it outputs the disparity value for the lowest SAD value. Each iteration has some number of additional clock cycles, depending on the implementation.
+Table~\ref{table:clockCount} shows the recorded clock cycle counts for the Tsukuba (288 x 384) and Venus (383 x 434) for the SAD algorithms and minimum comparators. The VmodCAM (480 x 640) clock cycles were calculated based on the series of equations in Equation~\ref{eq:clockCycles}. For all implementations, the minimum comparators take 4 clock cycles from when it gets the 16 SAD values to when it outputs the disparity value for the lowest SAD value. The 7x7 with parallelized SAD has additional clock cycles due to how fast its SAD algorithms ran in comparison to data load times of the next row into the SAD wrapper.
 
-Eq.~\ref{eq:clockCycles} produced the same SAD Cycles and Min. Comp. Cycles as the values recorded from the FPGA in Tbl.~\ref{eq:clockCycles} for the Tsukuba and Venus image pairs. Eq.~\ref{eq:clockCycles} also was used to calculate the total cycles required per iteration. Testbench simulations in Appendix~\ref{sec:appdxD} were used to determine the additional clock cycles needed per iteration. The simulations also verified the number of clock cycles required for data input, SAD algorithm, and minimum comparators.
+Eq.~\ref{eq:clockCycles} produced the same SAD Cycles and Min. Comp. Cycles as the values recorded from the FPGA in Tbl.~\ref{eq:clockCycles} for the Tsukuba and Venus image pairs. Eq.~\ref{eq:clockCycles} also was used to calculate the total cycles required per iteration. Testbench simulations in Appdx.~\ref{sec:appdxD} were used to determine the additional clock cycles needed per iteration. The simulations also verified the number of clock cycles required for data input, SAD algorithm, and minimum comparators.
 
-~\Cref{eq:a,eq:b,eq:c,eq:d,eq:e,eq:f,eq:g} are the parameters for the rest of the equations. ~\Cref{eq:h} gives the height of the disparity map image. The width of the disparity map image, ~\Cref{eq:j}, needs to be divisible by ~\Cref{eq:e}, so ~\Cref{eq:i} is used to reduce it. The number of pixels in the disparity map image is calculated in ~\Cref{eq:k}. The base number of iterations, ~\Cref{eq:l}, is the minimum number of iterations required to create the disparity map. Additional iterations, ~\Cref{eq:n}, occur from the SAD algorithm proceeding through the images in the form of columns, top to bottom, left to right. There are a certain amount of iterations at the top of each column that are not used because enough of the rows must be loaded in order to obtain the disparity values. ~\Cref{eq:o} is the total number of iterations needed to process the pair of images. ~\Cref{eq:p} is the number of cycles for the SAD algorithms. ~\Cref{eq:q} is the number of cycles for the minimum comparators. ~\Cref{eq:r} represents the extra cycles that occur for the 7x7 implementation only. The SAD algorithm is faster than the data can be loaded, so its iterations take longer than just the SAD algorithm and minimum comparator cycles. ~\Cref{eq:s} is the total number of cycles for the entire pair of images to be processed.
-
+~\Cref{eq:a,eq:b,eq:c,eq:d,eq:e,eq:f,eq:g} are the parameters for the rest of the equations. ~\Cref{eq:h} gives the height of the disparity map image. The width of the disparity map image, ~\Cref{eq:j}, needs to be divisible by ~\Cref{eq:e}, so ~\Cref{eq:i} is used to reduce it to a divisible amount. The number of pixels in the disparity map image is calculated in ~\Cref{eq:k}. The base number of iterations, ~\Cref{eq:l}, is the minimum number of iterations required to create the disparity map. Additional iterations, ~\Cref{eq:n}, occur from the SAD algorithm proceeding through the images in the form of columns, top to bottom, left to right. There are a certain amount of iterations at the top of each column that are not used because a winSize of rows must be loaded in order to obtain the disparity values. ~\Cref{eq:o} is the total number of iterations needed to process the pair of images. ~\Cref{eq:p} is the total number of cycles for the SAD algorithms. ~\Cref{eq:q} is the total number of cycles for the minimum comparators. ~\Cref{eq:r} represents the extra cycles that occur only for the 7x7 implementation with the parallelized SAD algorithms. For that implementation, the SAD algorithm is faster than the data can be loaded, so its iterations take longer than just the number of SAD algorithm and minimum comparator cycles. ~\Cref{eq:s} is the total number of cycles for the entire pair of images to be processed on the FPGA.
+\\
 \begin{subequations}
 \begin{align}
 	height = 288 	\qquad & \text{(image height)} \label{eq:a}\\
@@ -335,12 +327,12 @@ Eq.~\ref{eq:clockCycles} produced the same SAD Cycles and Min. Comp. Cycles as t
 \end{align}
 	\label{eq:clockCycles}
 \end{subequations}
+\\
+The 9x9 implementation was able to have its next rows of 27 pixels each buffered within the 82 clock cycles it took for the SAD algorithms to finish. There were a total of 86 clock cycles per iteration.
 
-The 9x9 implementation is able to have its next rows, 27 pixels each, buffered within the 82 clock cycles it takes for the SAD algorithms to finish. An additional 2 clock cycles per iteration are used to allow data to be properly transferred between processes. There are a total of 89 clock cycles per iteration.
+The 7x7 implementation with parallelized SAD was unable to have its next rows, 23 pixels each, buffered within the 8 clock cycles it took for the SAD algorithms to finish. The limiting factor is the time it took to buffer each pair of rows, so there are 23 clock cycles per iteration. The 4 clock cycles for the minimum comparators was hidden within the 23 clock cycles.
 
-The 7x7 implementation is unable to have its next rows, 23 pixels each, buffered within the 8 clock cycles it takes for the SAD algorithms to finish. The limiting factor is the time it takes to buffer each pair of rows, so there are 23 clock cycles per iteration.
-
-The 7x7 (4 pix //) implementation is able to have its next rows, 25 pixels each, buffered within the 50 clock cycles it takes for the SAD algorithms to finish. An additional 2 clock cycles per iteration are used to allow data to be properly transferred between processes. There are a total of 57 clock cycles per iteration.
+The 7x7 (4 pix //) implementation was able to have its next rows of 25 pixels each buffered within the 50 clock cycles it took for the SAD algorithms to finish. There were a total of 54 clock cycles per iteration.
 
 \begin{table}
 	\begin{center}
@@ -376,12 +368,12 @@ The 7x7 (4 pix //) implementation is able to have its next rows, 25 pixels each,
 			\\ \hline
 		\end{tabu}	
 		\captionfonts
-		\caption{Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithm and the minimum comparator .}
+		\caption{Number of clock cycles counted when a pair of images were processed on the FPGA for the SAD algorithms and the minimum comparators.}
 		\label{table:clockCount}
 	\end{center}
 \end{table}
 
-Table~\ref{table:clockCountFPS} is a continuation of Tbl.~\ref{table:clockCount}. It shows the time it takes per frame and the frame rate with a clock speed of 48 MHz and 100 MHz. The 48 MHz is the transfer rate of the FPGALink to and from the computer to the board. It was used for the data acquisition in order to not introduce timing issues for the data given to the SAD wrapper. The image processing always takes a consistent amount of clock cycles, so the frame rate can be calculated for a clock speed of 100 MHz, which is the clock that is on the Atlys board.
+Table~\ref{table:clockCountFPS} is a continuation of Tbl.~\ref{table:clockCount}. It shows the time it took per frame and the frame rate with a clock speed of 48 MHz and 100 MHz. The 48 MHz was the transfer rate of the FPGALink to and from the computer to the board. It was used in order to not introduce timing issues for the data given to the SAD wrapper. The image processing always takes a consistent amount of clock cycles, relative to the image sizes, so the frame rate can be calculated for a clock speed of 100 MHz, which is the clock frequency of the clock on the Atlys board.
 
 \begin{table}
 	\begin{center}
@@ -421,12 +413,26 @@ Table~\ref{table:clockCountFPS} is a continuation of Tbl.~\ref{table:clockCount}
 	\end{center}
 \end{table}
 
-Table~\ref{table:clockCountFPS} shows the frames per second (FPS) comparisons for the Tsukuba and Venus image pairs between C and VHDL implementations. The C code was compiled with gcc using optimization O2 and run on a single processor core. The VHDL code is the 7x7 and 9x9 implementations for the FPGA. For the 7x7 VHDL implementation, it was around 12.80 times faster than the C 7x7 version. The 9x9 VHDL implementation was approximately 10.75 times faster than the C 9x9 version.
+\subsection{Frame Rate}
+\label{sec:frameRate}
+
+The smaller the image size, the higher the frame rate, as shown in Figure~\ref{fig:frameRate}. Once the number of pixels in an image goes below 300,000 for the 7x7 window implementation or 170,000 for the 9x9 window implementation, the frame rate reaches 30 frames per second. For robots, a frame rate of 10 should be sufficient for most tasks. Both the 9x9 and 7x7 window implementations were shown be above 10 frames per second for an image size of 640x480.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=100mm]{figures/frameRate.png}
+		\captionfonts
+		\caption{Frame rate comparison of different image sizes.}
+		\label{fig:frameRate}
+	\end{center}
+\end{figure}
 
 \section{Test Image Pairs}
 \label{sec:runtime}
 
-In this section, FPGA disparity maps are compared to disparity maps created using C code. Part of the SAD algorithm implementation in C is shown in Appendix~\ref{sec:appdxE}. The C SAD version is performed completely in serial, so 1 pixel is processed at a time. The images the C version produced were used to compare disparity map quality and runtime of the algorithm. Python was used to convert the data in the grayscale image pairs into text files. Each row was separated by a new line. Each column was separated by a blank space. The C code read in the data from the text files, performed the SAD algorithm on the data, and wrote the disparity map data to a text file. The disparity map text file was read by a Python script and converted to a disparity map image. The time comparisons focused on the total time it took the SAD algorithm to run and disparity map data to be generated. Table~\ref{table:runtimeComp} shows the frame rate comparisons.
+In this section, FPGA disparity maps are compared to disparity maps created using C code. Part of the SAD algorithm implementation in C is shown in Appendix~\ref{sec:appdxE}. The C SAD version was performed completely in serial, so 1 pixel was processed at a time. The images the C version produced were used to compare disparity map quality and runtime of the VHDL algorithm for the FPGA board. Python was used to convert the data in the grayscale image pairs into text files. Each row was separated by a new line. Each column was separated by a blank space. The C code read in the data from the text files, performed the SAD algorithm on the data, and wrote the disparity map data to a text file. The disparity map text file was read by a Python script and converted into a disparity map image. The time comparisons focused on the total time it took the SAD algorithm to run and disparity map data to be generated.
+
+Table~\ref{table:runtimeComp} shows the frames per second (FPS) comparisons for the Tsukuba and Venus image pairs between C and VHDL implementations. The C code was compiled with gcc using optimization O2 and ran on a single processor core. The VHDL code is the 7x7 and 9x9 implementations for the FPGA. The 7x7 VHDL implementation averaged around 12.80 times faster than the C 7x7 version. The 9x9 VHDL implementation was around 11.12 times faster than the C 9x9 version.
 
 \begin{table}
 	\begin{center}
@@ -465,9 +471,9 @@ In this section, FPGA disparity maps are compared to disparity maps created usin
 \subsection{Data Overflows}
 \label{sec:overflow}
 
-The code for the hardware to be generated is designed in VHDL. The size of the data used for storing logic and values in hardware is defined during the coding process. In the SAD algorithm, it is possible for the SAD value to become much larger than the individual pixel values. For example, the pixel values range from 0 to 255, or 8 bits, while some SAD values could be over 4,095 and need to be stored in more than 12 bits. Most SAD values were under 4,096, so to account for those that were above it, the SAD algorithm used 14 bits to account for any values from 0 to 16,383. Figure~\ref{fig:overflow} shows what can happen when the data size allotted for the SAD algorithm is not large enough (i.e. only having 10 bits for storage). The data used is unsigned, so when it goes above the highest supported value, it goes back to 0 and continues from there.
+The size of the data used for storing logic and values in hardware was defined during the coding process. In the SAD algorithm, it was possible for the SAD value to become much larger than the individual pixel values. For example, the pixel values range from 0 to 255, or 8 bits, while some SAD values could be over 4,095 and need to be stored in more than 12 bits. Most SAD values were under 4,096, so the SAD algorithm used 14 bits to account for any values from 0 to 16,383. Figure~\ref{fig:overflow} shows what can happen when the data size allotted for the SAD algorithm is not large enough (e.g. only having 10 bits for storage). The data used was unsigned, so when it went above the highest supported value, it went back down to 0 and continued from there.
 
-Since most of the values were below 4,096, a measure was put in place in order to reduce the amount of bits needed during the minimum comparisons. If a SAD value was greater than 4,095, then 4,095 was returned for the calculated SAD because the greater the value, the less likely that search pixel is the correct corresponding one to the template pixel. In Figure~\ref{fig:tsukubaDispMap} and Figure~\ref{fig:venusDispMap}, the only noticeable difference in the C to FPGA comparisons is at the top of the images. The colors, warmer is closer and cooler is farther away, show that the top areas are thought to be closer than they actually are in the FPGA images. For a robot, it would be better to error on the side of thinking an object is closer than it actually is because the robot will be less prone to collide with the object. If a robot thought an object was farther away than it actually was, then the likelihood of collision would increase.
+Since most of the values were below 4,096, a measure was put in place in order to reduce the amount of bits needed during the minimum comparisons. If a SAD value was greater than 4,095, then 4,095 was returned for the calculated SAD because the greater the value, the less likely that search pixel was the correct corresponding one to the template pixel. In Figure~\ref{fig:tsukubaDispMap} and Figure~\ref{fig:venusDispMap}, there are only a total of 64 pixels that differ between all of the disparity map images. All of the differing pixels are in the 9x9 Venus disparity image, which are from those values being over 4,095 and were handled accordingly. The colors show that warmer is closer and cooler is farther away. %For a robot, it would be better to error on the side of thinking an object is closer than it actually is because the robot will be less prone to collide with the object. If a robot thought an object was farther away than it actually was, then the likelihood of collision would increase.
 
 \begin{figure}[h]
 	\begin{center}
@@ -481,9 +487,9 @@ Since most of the values were below 4,096, a measure was put in place in order t
 \subsection{Tsukuba}
 \label{sec:tsukuba}
 
-In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pair is shown. Figure~\ref{fig:tsukubaDispMap} shows how the 7x7 window implementation is slightly noisier than the 9x9 window implementation. As discussed in Section~\ref{sec:overflow}, the only difference between the C implementation and the FPGA implementation is at the top of the disparity maps. This difference is caused by not having enough similarities between corresponding regions. It is possible for certain parts of an object in one image to be occluded in the image. This caused SAD values to be greater than normal. 
+In Figure~\ref{fig:tsukubaL} and Figure~\ref{fig:tsukubaR}, the Tsukuba image pair is shown. Figure~\ref{fig:tsukubaDispMap} shows how the 7x7 window implementation is slightly noisier than the 9x9 window implementation. There are no differences between the corresponding disparity maps of the C code to the VHDL code.
 
-For Tsukuba, the FPGA version has a simulated runtime of 32.43 and 46.51 frames per second for the 9x9 and 7x7 window implementations, respectively, from Table~\ref{table:tb_9x9} and Table~\ref{table:tb_7x7}. For a speed comparison, the SAD algorithm was implemented in C since it is faster than Python. Python code handled the code for reading the images and creating the disparity map. As shown in Tbl.~\ref{table:runtimeComp}, the C code processed the images serially, which took 1.4128 seconds for the 9x9 window with a disparity range of 16. The 7x7 window implementation in C with a disparity range of 16 took 0.8849 seconds to complete.
+%For Tsukuba, the FPGA version has a simulated runtime of 32.43 and 46.51 frames per second for the 9x9 and 7x7 window implementations, respectively, from Table~\ref{table:tb_9x9} and Table~\ref{table:tb_7x7}. For a speed comparison, the SAD algorithm was implemented in C since it is faster than Python. Python code handled the code for reading the images and creating the disparity map. As shown in Tbl.~\ref{table:runtimeComp}, the C code processed the images serially, which took 1.4128 seconds for the 9x9 window with a disparity range of 16. The 7x7 window implementation in C with a disparity range of 16 took 0.8849 seconds to complete.
 
 \begin{figure}
 \begin{center}
@@ -515,7 +521,7 @@ For Tsukuba, the FPGA version has a simulated runtime of 32.43 and 46.51 frames 
 		\label{fig:tsukubaC7x7}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/tsukuba_buffer_7x7_4.png}
+		\includegraphics[width=\textwidth]{figures/tsukuba_buffer_7x7_2.png}
 		\caption{FPGA 7x7 Disparity Map}
 		\label{fig:tsukubaFPGA7x7}
 	\end{subfigure}
@@ -528,9 +534,7 @@ For Tsukuba, the FPGA version has a simulated runtime of 32.43 and 46.51 frames 
 \subsection{Venus}
 \label{sec:venus}
 
-In Figure~\ref{fig:venusL} and Figure~\ref{fig:venusR}, the Venus image pair is shown. In the image pair, the newspaper articles are flat and slanted, relative to the cameras. This gradual slope, also present in the background, can be difficult for the SAD algorithm to deal with; however, the algorithm is still able to give a fairly accurate representation of the depth in the image. It also causes the gradient pattern shown in the disparity maps. The 7x7 window depth maps have more noise than the 9x9 window depth maps.
-
-For Venus, the FPGA version has a simulated runtime of 21.27 and 30.58 frames per second for the 9x9 and 7x7 window implementations, respectively, from Tbl.~\ref{table:tb_9x9} and Tbl.~\ref{table:tb_7x7}. As shown in Tbl.~\ref{table:runtimeComp}, the C code processed the images serially, which took 2.1681 seconds for the 9x9 window with a disparity range of 16. The 7x7 window implementation in C with a disparity range of 16 took 1.3438 seconds to complete.
+In Figure~\ref{fig:venusL} and Figure~\ref{fig:venusR}, the Venus image pair is shown. In the image pair, the newspaper articles are flat and slanted, relative to the cameras. This gradual slope, also present in the background, can be difficult for the SAD algorithm to deal with; however, the algorithm is still able to give a fairly accurate representation of the depth in the image. It also causes the gradient pattern shown in the disparity maps. The 7x7 window depth maps have more noise than the 9x9 window depth maps. The only differences between the corresponding disparity maps of the C code to the VHDL code were with the 9x9 implementations. There were 64 pixels that differ between the C and FPGA 9x9 implementations. The SAD values that correspond to those pixels on the FPGA were above 4,095, so they were cut off at 4,095. 64 pixels out of 155,324 pixels only gives  0.0412\% error.
 
 \begin{figure}
 \begin{center}
@@ -562,7 +566,7 @@ For Venus, the FPGA version has a simulated runtime of 21.27 and 30.58 frames pe
 		\label{fig:venusC7x7}
 	\end{subfigure}
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{figures/venus_buffer_7x7_4.png}
+		\includegraphics[width=\textwidth]{figures/venus_buffer_7x7_2.png}
 		\caption{FPGA 7x7 Disparity Map}
 		\label{fig:venusFPGA7x7}
 	\end{subfigure}
@@ -576,7 +580,7 @@ For Venus, the FPGA version has a simulated runtime of 21.27 and 30.58 frames pe
 \subsection{Cones}
 \label{sec:cones}
 
-In Figure~\ref{fig:conesL} and Figure~\ref{fig:conesR}, the Venus image pair is shown. Figure~\ref{fig:conesDispMap} shows the issue of objects in an image pair being too close to the stereo cameras. The closer an object is to the stereo cameras, the greater its disparity value will be. Using the SAD algorithm with a 9x9 window and a disparity range of 60 (as opposed to the range of 16 used on the FPGA board) produces the results in Figure~\ref{fig:conesMatlab}. When the disparity range is not high enough, the disparity map in Figure~\ref{fig:conesPy} is produced.
+In Figure~\ref{fig:conesL} and Figure~\ref{fig:conesR}, the Cones image pair is shown. Figure~\ref{fig:conesDispMap} shows the issue of objects in an image pair being too close to the stereo cameras. The closer an object is to the stereo cameras, the greater its disparity value will be. Using the SAD algorithm with a 9x9 window and a disparity range of 60 (as opposed to the range of 16 used on the FPGA board) produces the results in Figure~\ref{fig:conesMatlab}. When the disparity range is not high enough, the disparity map in Figure~\ref{fig:conesPy} is produced.
 
 \begin{figure}
 \begin{center}

@@ -90,10 +90,10 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
    constant clk_I_period : time := 10 ns;
    
    -- Array to represent 9x9 template
-	type array_type_init is array (0 to 161) of std_logic_vector(7 downto 0);
-	type array_type_next is array (0 to 47) of std_logic_vector(7 downto 0);
+	type array_type_init is array (0 to 160) of std_logic_vector(7 downto 0);
+	type array_type_next is array (0 to 45) of std_logic_vector(7 downto 0);
 
-	SIGNAL templateArray : array_type_init := (x"ff",
+	SIGNAL templateArray : array_type_init := (
 		x"2c", x"60", x"49", x"55", x"35", x"1d", x"30", x"28", x"2f", x"2c", x"49", x"62", x"56", x"58", x"58", x"57", x"5b", x"59", x"5c", x"5b", x"5f", x"5e", x"60", 
 		x"2c", x"60", x"47", x"56", x"47", x"39", x"3d", x"36", x"37", x"3b", x"4e", x"5a", x"57", x"56", x"58", x"57", x"5a", x"58", x"5a", x"59", x"5b", x"5c", x"5f", 
 		x"2c", x"37", x"2e", x"35", x"31", x"2f", x"33", x"32", x"34", x"36", x"36", x"37", x"39", x"3a", x"3b", x"3b", x"3f", x"3e", x"3f", x"3f", x"42", x"43", x"47", 
@@ -103,10 +103,10 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
 		x"30", x"44", x"35", x"3f", x"3b", x"3d", x"3c", x"3d", x"3f", x"3f", x"3f", x"41", x"45", x"44", x"42", x"43", x"42", x"40", x"42", x"41", x"45", x"47", x"47");
 		
 	SIGNAL template_next : array_type_next := (
-		x"ff", x"2f", x"43", x"35", x"3d", x"38", x"3a", x"3b", x"39", x"3d", x"40", x"40", x"43", x"44", x"44", x"44", x"47", x"42", x"40", x"44", x"41", x"44", x"44", x"44", 
-		x"ff", x"2e", x"41", x"34", x"3d", x"37", x"3a", x"3b", x"3b", x"3d", x"3e", x"42", x"43", x"47", x"46", x"43", x"44", x"43", x"3c", x"41", x"41", x"43", x"42", x"43");
+		x"2f", x"43", x"35", x"3d", x"38", x"3a", x"3b", x"39", x"3d", x"40", x"40", x"43", x"44", x"44", x"44", x"47", x"42", x"40", x"44", x"41", x"44", x"44", x"44", 
+		x"2e", x"41", x"34", x"3d", x"37", x"3a", x"3b", x"3b", x"3d", x"3e", x"42", x"43", x"47", x"46", x"43", x"44", x"43", x"3c", x"41", x"41", x"43", x"42", x"43");
 	
-	SIGNAL searchArray : array_type_init := (x"ff",
+	SIGNAL searchArray : array_type_init := (
 		x"2d", x"60", x"47", x"56", x"4e", x"52", x"53", x"51", x"51", x"40", x"1e", x"32", x"2e", x"33", x"2c", x"40", x"68", x"55", x"5e", x"59", x"5a", x"5a", x"5d", 
 		x"2e", x"5d", x"46", x"52", x"4c", x"4e", x"51", x"52", x"54", x"4e", x"36", x"37", x"37", x"34", x"37", x"49", x"5f", x"56", x"59", x"58", x"5b", x"5b", x"5d", 
 		x"2c", x"36", x"2a", x"34", x"30", x"31", x"33", x"33", x"34", x"36", x"35", x"33", x"35", x"36", x"39", x"38", x"3b", x"3c", x"3e", x"3c", x"41", x"3f", x"42", 
@@ -116,8 +116,8 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
 		x"22", x"42", x"34", x"3c", x"39", x"3c", x"3b", x"3c", x"3d", x"3e", x"3d", x"3e", x"3e", x"3f", x"45", x"40", x"44", x"43", x"47", x"42", x"47", x"42", x"45");
 		
 	SIGNAL search_next : array_type_next := (
-		x"ff", x"2c", x"42", x"34", x"3b", x"38", x"3c", x"3c", x"3a", x"3d", x"3a", x"3b", x"3b", x"3d", x"3f", x"42", x"41", x"44", x"46", x"48", x"46", x"4b", x"44", x"42", 
-		x"ff", x"2d", x"41", x"33", x"3a", x"37", x"3a", x"3d", x"39", x"3b", x"3a", x"3b", x"3c", x"3c", x"3e", x"41", x"43", x"47", x"47", x"4a", x"45", x"47", x"45", x"40");
+		x"2c", x"42", x"34", x"3b", x"38", x"3c", x"3c", x"3a", x"3d", x"3a", x"3b", x"3b", x"3d", x"3f", x"42", x"41", x"44", x"46", x"48", x"46", x"4b", x"44", x"42", 
+		x"2d", x"41", x"33", x"3a", x"37", x"3a", x"3d", x"39", x"3b", x"3a", x"3b", x"3c", x"3c", x"3e", x"41", x"43", x"47", x"47", x"4a", x"45", x"47", x"45", x"40");
 
 --	SIGNAL templateArray : array_type_init := (x"ff",
 --		x"02", x"03", x"03", x"03", x"03", x"03", x"03", x"03", x"03", x"03", x"02", x"02", x"03", x"03", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03",
@@ -224,210 +224,54 @@ BEGIN
       wait for clk_I_period*20;
 
       -- insert stimulus here 
+		
+-- Initial template -----------------------------------
+		templ_I    <= templateArray(0);
+		search_I   <= searchArray(0);
+		h2fValid_I <= '1';
+		write_t_I  <= '1';
+		write_s_I  <= '1';
+		sw_I       <= x"00";
+		wait for clk_I_period;
+		
+		ndx := 1;
+		WHILE (ndx < 160) LOOP
+			templ_I <= templateArray(ndx);
+			search_I <= searchArray(ndx);
+			wait for clk_I_period;
+			ndx := ndx + 1;
+		END LOOP;
+		
+		templ_I <= templateArray(160);
+		search_I <= searchArray(160);
+		
+		wait for clk_I_period;
+		h2fValid_I <= '0';
+		write_t_I  <= '0';
+		write_s_I  <= '0';
 
---		-- Initial rows
---		h2fValid_I <= '1';
---		write_t_I  <= '1';
---		write_s_I  <= '1';
---		sw_I       <= x"00";
---		ndx := 0;
---		
---		WHILE (ndx < 162) LOOP
---			templ_I <= templateArray(ndx);
---			search_I <= searchArray(ndx);
---			wait for clk_I_period;
---			ndx := ndx + 1;
---		END LOOP;
---		
---		h2fValid_I <= '0';
---		write_t_I  <= '0';
---		write_s_I  <= '0';
---		
---		wait for clk_I_period*16;
---		f2hReady_I <= '1';
---		chanAddr_I <= "0000011";
---		wait for clk_I_period*2;
---		f2hReady_I <= '0';
---		
---		-- Initial next row
---		h2fValid_I <= '1';
---		write_t_I  <= '1';
---		write_s_I  <= '1';
---		sw_I       <= x"00";
---		ndx := 0;
---		
---		WHILE (ndx < 24) LOOP
---			templ_I <= templateArray(ndx);
---			search_I <= searchArray(ndx);
---			wait for clk_I_period;
---			ndx := ndx + 1;
---		END LOOP;
---		
---		h2fValid_I <= '0';
---		write_t_I  <= '0';
---		write_s_I  <= '0';
---		
---		wait for clk_I_period*16;
---		f2hReady_I <= '1';
---		chanAddr_I <= "0000011";
---		ndx := 25;
---		wait for clk_I_period*2;
---		f2hReady_I <= '0';
---
---
---
---		-- Initial next row
---		h2fValid_I <= '1';
---		write_t_I  <= '1';
---		write_s_I  <= '1';
---		sw_I       <= x"00";
---		ndx := 24;
---		
---		WHILE (ndx < 48) LOOP
---			templ_I <= templateArray(ndx);
---			search_I <= searchArray(ndx);
---			wait for clk_I_period;
---			ndx := ndx + 1;
---		END LOOP;
---		
---		h2fValid_I <= '0';
---		write_t_I  <= '0';
---		write_s_I  <= '0';
---		
---		wait for clk_I_period*16;
---		f2hReady_I <= '1';
---		chanAddr_I <= "0000011";
---		wait for clk_I_period*2;
---		f2hReady_I <= '0';
-
-		-- Initial template
---		h2fData_I  <= templateArray(0);
---		templ_I    <= templateArray(0);
+		ndx := 0;
+--		wait for clk_I_period*40; --*10; --40;
+      
+		
+----		templ_I    <= templateArray(0);
 --		search_I   <= searchArray(0);
 --		h2fValid_I <= '1';
---		write_t_I  <= '1';
+----		write_t_I  <= '1';
 --		write_s_I  <= '1';
---		chanAddr_I <= "0000000";
---		sw_I       <= x"00";
---		wait for clk_I_period;
---		
---		ndx := 1;
---		WHILE (ndx < 243) LOOP
---			templ_I <= templateArray(ndx);
---			search_I <= searchArray(ndx);
---			wait for clk_I_period;
---			ndx := ndx + 1;
---		END LOOP;
---		
---		templ_I <= templateArray(243);
---		search_I <= searchArray(243);
---		
---		wait for clk_I_period;
---		h2fValid_I <= '0';
---		write_t_I  <= '0';
---		write_s_I  <= '0';
-----		chanAddr_I <= "0000001";
---		
-----		-- Initial search
-----		wait for clk_I_period;
-----		h2fData_I <= searchArray(0);
-----		h2fValid_I <= '1';
-----		
-----		wait for clk_I_period;
---		
-----		ndx := 1;
-----		WHILE (ndx < 243) LOOP
-----			h2fData_I <= searchArray(ndx);
-----			wait for clk_I_period;
-----			ndx := ndx + 1;
-----		END LOOP;
---		
-----		h2fData_I <= searchArray(243);
---		
-----		wait for clk_I_period;
-----		h2fValid_I <= '0';
-----		ndx := 0;
---		
---		row := 0;
---		ndx := 0;
---		wait for clk_I_period;
---		WHILE (row < 2) LOOP
---		
---			wait for clk_I_period*90;
---			offset := 27 * (1+row);
---
---			f2hReady_I <= '1';
---			chanAddr_I <= "0000011";
---			wait for clk_I_period*4;
---			f2hReady_I <= '0';
---			
---			-- Next template row
-----			templ_I    <= template_next(ndx);
-----			search_I   <= search_next(ndx);
---			h2fValid_I <= '1';
---			write_t_I  <= '1';
---			write_s_I  <= '1';
---			sw_I       <= x"00";
---			--wait for clk_I_period;
---			
-----			ndx := ndx + 1;
-----			offset := 27 * (1+row);
-----			wait for clk_I_period;
---			
---			WHILE (ndx < offset) LOOP
---				templ_I <= template_next(ndx);
---				search_I   <= search_next(ndx);
---				wait for clk_I_period;
---				ndx := ndx + 1;
---			END LOOP;
---			
---			templ_I <= template_next(ndx);
---			search_I <= search_next(ndx);
---			
---			wait for clk_I_period;
---			h2fValid_I <= '0';
---			write_t_I <= '0';
---			write_s_I <= '0';
---			
---			ndx := ndx + 1;
---			row := row + 1;
---		END LOOP;
---		
---		wait for clk_I_period*90;
---		f2hReady_I <= '1';
---		chanAddr_I <= "0000011";
---		wait for clk_I_period*4;
---		f2hReady_I <= '0';
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
---		-- Initial template -----------------------------------
-----		h2fData_I  <= templateArray(0);
---		templ_I    <= templateArray(0);
---		search_I   <= searchArray(0);
---		h2fValid_I <= '1';
---		write_t_I  <= '1';
---		write_s_I  <= '1';
---		chanAddr_I <= "0000000";
+--		--chanAddr_I <= "0000000";
 --		sw_I       <= x"00";
 --		wait for clk_I_period;
 --		
 --		ndx := 1;
 --		WHILE (ndx < 161) LOOP
---			templ_I <= templateArray(ndx);
+----			templ_I <= templateArray(ndx);
 --			search_I <= searchArray(ndx);
 --			wait for clk_I_period;
 --			ndx := ndx + 1;
 --		END LOOP;
 --		
---		templ_I <= templateArray(161);
+----		templ_I <= templateArray(161);
 --		search_I <= searchArray(161);
 --		
 --		wait for clk_I_period;
@@ -436,119 +280,16 @@ BEGIN
 --		write_s_I  <= '0';
 --
 --		ndx := 0;
---		wait for clk_I_period;--*10; ---------------------------------
---
--------- Next row 1 -------------------------------
---		h2fValid_I <= '1';
---		write_t_I  <= '1';
---		write_s_I  <= '1';
---		sw_I       <= x"00";
 --		
---		WHILE (ndx < 23) LOOP --offset) LOOP
---			templ_I  <= template_next(ndx);
---			search_I <= search_next(ndx);
---			wait for clk_I_period;
---			ndx := ndx + 1;
---		END LOOP;
---		
---		templ_I <= template_next(ndx);
---		search_I <= search_next(ndx);
---		
---		wait for clk_I_period;
---		h2fValid_I <= '0';
---		write_t_I <= '0';
---		write_s_I <= '0';
-----------------------------------------------------		
---
--------- Read out disparity values 1 ---------------
---		--wait for clk_I_period; --*51; --90;-----------------------------
---		ndx := ndx + 1;
---		f2hReady_I <= '1';
---		chanAddr_I <= "0000011";
---		wait for clk_I_period*4;
---		f2hReady_I <= '0';
-----------------------------------------------------
---
---		
--------- Next template row 2 -----------------------
-----		ndx := 0;
-----		wait for clk_I_period*10;
---		
---		h2fValid_I <= '1';
---		write_t_I  <= '1';
---		write_s_I  <= '1';
---		sw_I       <= x"00";
---		
---		WHILE (ndx < 47) LOOP --offset) LOOP
---			templ_I  <= template_next(ndx);
---			search_I <= search_next(ndx);
---			wait for clk_I_period;
---			ndx := ndx + 1;
---		END LOOP;
---		
---		templ_I <= template_next(ndx);
---		search_I <= search_next(ndx);
---		
---		wait for clk_I_period;
---		h2fValid_I <= '0';
---		write_t_I <= '0';
---		write_s_I <= '0';
-----------------------------------------------------
---
---
--------- Read out disparity values 1 ---------------
---		--wait for clk_I_period; --*51; --90;---------------------------
---		ndx := 28;
---		f2hReady_I <= '1';
---		chanAddr_I <= "0000011";
---		wait for clk_I_period*4;
---		f2hReady_I <= '0';
-----------------------------------------------------		
---
--------- Read out disparity values 2 ---------------
---		wait for clk_I_period*11; --90;----------------------------------
---		f2hReady_I <= '1';
---		chanAddr_I <= "0000011";
---		wait for clk_I_period*4;
---		f2hReady_I <= '0';
------------------------------------------------------
+--		wait for clk_I_period*40;
 		
--- Initial template -----------------------------------
-		templ_I    <= templateArray(0);
-		search_I   <= searchArray(0);
-		h2fValid_I <= '1';
-		write_t_I  <= '1';
-		write_s_I  <= '1';
-		--chanAddr_I <= "0000000";
-		sw_I       <= x"00";
-		wait for clk_I_period;
-		
-		ndx := 1;
-		WHILE (ndx < 161) LOOP
-			templ_I <= templateArray(ndx);
-			search_I <= searchArray(ndx);
-			wait for clk_I_period;
-			ndx := ndx + 1;
-		END LOOP;
-		
-		templ_I <= templateArray(161);
-		search_I <= searchArray(161);
-		
-		wait for clk_I_period;
-		h2fValid_I <= '0';
-		write_t_I  <= '0';
-		write_s_I  <= '0';
-
-		ndx := 0;
-		--wait for clk_I_period*40; --*10; --40;
-      
 ------ Next row 1 -------------------------------
 		h2fValid_I <= '1';
 		write_t_I  <= '1';
 		write_s_I  <= '1';
 		sw_I       <= x"00";
 		
-		WHILE (ndx < 23) LOOP
+		WHILE (ndx < 22) LOOP
 			templ_I  <= template_next(ndx);
 			search_I <= search_next(ndx);
 			wait for clk_I_period;
@@ -584,7 +325,7 @@ BEGIN
 		write_s_I  <= '1';
 		sw_I       <= x"00";
 		
-		WHILE (ndx < 47) LOOP
+		WHILE (ndx < 45) LOOP
 			templ_I  <= template_next(ndx);
 			search_I <= search_next(ndx);
 			wait for clk_I_period;
@@ -640,19 +381,19 @@ BEGIN
    
    begin		
       -- hold reset state for 100 ns.
-      wait for clk_I_period*210;	
+      wait for clk_I_period*209;	
 		f2hReady_I <= '1';
 		chanAddr_I <= "0000011";
 		wait for clk_I_period*2;
 		f2hReady_I <= '0';
 		
-		wait for clk_I_period*22;	
+		wait for clk_I_period*21;	
 		f2hReady_I <= '1';
 		chanAddr_I <= "0000011";
 		wait for clk_I_period*2;
 		f2hReady_I <= '0';
 		
-		wait for clk_I_period*22;	
+		wait for clk_I_period*21;	
 		f2hReady_I <= '1';
 		chanAddr_I <= "0000011";
 		wait for clk_I_period*2;

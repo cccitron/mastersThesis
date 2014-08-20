@@ -458,11 +458,11 @@ if __name__ == "__main__":
                 flWriteChannel(handle, 1000, 0x01, buffSearch_h2f)
                 
                 #print("reading from disparity array")        
-                dispBuffer = flReadChannel(handle, 1000, 0x03, disp_row)         
-                '''for ndx in range(disp_row):
+                '''dispBuffer = flReadChannel(handle, 10000, 0x03, disp_row)         
+                for ndx in range(disp_row):
                     disparity_f2h[0][ndx] = dispBuffer[ndx]'''    
                 for ndx in range(disp_row):
-                    disparity_f2h[0][ndx] = flReadChannel(handle, 1000, 0x03, 1)
+                    disparity_f2h[0][ndx] = flReadChannel(handle, 10000, 0x03, 1)
                     #print(disparity_f2h[0][ndx], end=" ")
                 #print("\n\n\n")
                 
@@ -524,6 +524,7 @@ if __name__ == "__main__":
                         for ndx in range(disp_row):
                             disparity_f2h[pos][ndx+offset] = flReadChannel(handle, 1000, 0x03, 1)
                         pos += 1
+                    
                     
                 # time after SAD Algorithm has finished
                 t1 = time.time()

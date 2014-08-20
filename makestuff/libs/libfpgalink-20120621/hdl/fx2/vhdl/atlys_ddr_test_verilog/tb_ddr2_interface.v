@@ -170,8 +170,8 @@ module tb_ddr2_interface;
 		reset = 0;
 
 		// Calibration
-		wait (c3_calib_done);
-		$display("Calibration done");
+//		wait (c3_calib_done);
+//		$display("Calibration done");
 
 		#100;
 

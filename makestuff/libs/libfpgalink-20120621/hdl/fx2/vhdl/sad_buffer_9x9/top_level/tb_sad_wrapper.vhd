@@ -90,10 +90,10 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
    constant clk_I_period : time := 10 ns;
    
    -- Array to represent 9x9 template
-	type array_type_init is array (0 to 243) of std_logic_vector(7 downto 0);
-	type array_type_next is array (0 to 55) of std_logic_vector(7 downto 0);
+	type array_type_init is array (0 to 242) of std_logic_vector(7 downto 0);
+	type array_type_next is array (0 to 53) of std_logic_vector(7 downto 0);
 
-	SIGNAL templateArray : array_type_init := (x"ff",
+	SIGNAL templateArray : array_type_init := (
       x"02", x"03", x"03", x"03", x"03", x"03", x"03", x"03", x"03", x"03", x"02", x"02", x"03", x"03", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", 
       x"02", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"05", x"03", x"04", x"03", x"05", x"03", x"04", x"03", x"05", x"03", x"05", x"03", x"05", x"03", x"05", 
       x"02", x"04", x"03", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"03", x"05", x"03", x"04", x"02", x"04", x"03", x"04", x"03", x"04", x"03", x"04", x"03", x"05", x"03", x"04", 
@@ -114,11 +114,11 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
 --		x"14", x"38", x"2d", x"3b", x"38", x"3b", x"3c", x"38", x"39", x"39", x"39", x"37", x"30", x"1c", x"1e", x"16", x"19", x"13", x"14", x"14", x"18", x"16", x"0b", x"0e", x"13", x"22", x"53"); 
 		
 	SIGNAL template_next : array_type_next := (
-		x"ff", x"14", x"36", x"2e", x"39", x"39", x"3a", x"3c", x"39", x"3a", x"39", x"38", x"37", x"31", x"1c", x"1e", x"17", x"1b", x"14", x"11", x"13", x"1a", x"18", x"0b", x"0e", x"13", x"1f", x"51", 
+		x"14", x"36", x"2e", x"39", x"39", x"3a", x"3c", x"39", x"3a", x"39", x"38", x"37", x"31", x"1c", x"1e", x"17", x"1b", x"14", x"11", x"13", x"1a", x"18", x"0b", x"0e", x"13", x"1f", x"51", 
          --x"14", x"36", x"2e", x"39", x"39", x"3a", x"3c", x"39", x"3a", x"39", x"38", x"37", x"31", x"1c", x"1e", x"17", x"1b", x"14", x"11", x"13", x"1a", x"18", x"0b", x"0e", x"13", x"1f", x"51",
-		x"ff", x"14", x"36", x"2e", x"39", x"30", x"32", x"33", x"39", x"3a", x"39", x"38", x"37", x"31", x"1c", x"1e", x"17", x"1b", x"14", x"11", x"13", x"1a", x"18", x"0b", x"0e", x"13", x"1f", x"51");
+		x"14", x"36", x"2e", x"39", x"30", x"32", x"33", x"39", x"3a", x"39", x"38", x"37", x"31", x"1c", x"1e", x"17", x"1b", x"14", x"11", x"13", x"1a", x"18", x"0b", x"0e", x"13", x"1f", x"51");
 
-	SIGNAL searchArray : array_type_init := (x"ff",
+	SIGNAL searchArray : array_type_init := (
       x"02", x"02", x"03", x"03", x"03", x"04", x"03", x"03", x"03", x"03", x"03", x"02", x"03", x"01", x"02", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"03", x"02", x"02", 
       x"02", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"04", x"05", x"03", x"04", x"03", x"05", x"03", x"04", x"03", x"05", x"03", x"05", x"04", x"04", x"03", x"04", 
       x"02", x"04", x"04", x"04", x"03", x"04", x"04", x"04", x"04", x"04", x"04", x"03", x"04", x"03", x"04", x"03", x"04", x"03", x"04", x"03", x"04", x"03", x"04", x"03", x"04", x"03", x"05", 
@@ -140,9 +140,9 @@ ARCHITECTURE behavior OF tb_sad_wrapper IS
 --		x"14", x"34", x"2a", x"2e", x"2e", x"31", x"32", x"32", x"38", x"3c", x"3b", x"3a", x"3b", x"39", x"3a", x"38", x"3a", x"33", x"21", x"1c", x"1b", x"17", x"15", x"10", x"14", x"18", x"17"); 
 		
 	SIGNAL search_next : array_type_next := (
-		x"ff", x"15", x"35", x"2a", x"30", x"30", x"32", x"33", x"30", x"36", x"3d", x"3c", x"3d", x"3d", x"38", x"3b", x"39", x"3b", x"34", x"22", x"1d", x"1a", x"18", x"14", x"11", x"15", x"19", x"1a", 
+		x"15", x"35", x"2a", x"30", x"30", x"32", x"33", x"30", x"36", x"3d", x"3c", x"3d", x"3d", x"38", x"3b", x"39", x"3b", x"34", x"22", x"1d", x"1a", x"18", x"14", x"11", x"15", x"19", x"1a", 
          --x"15", x"35", x"2a", x"30", x"30", x"32", x"33", x"30", x"36", x"3d", x"3c", x"3d", x"3d", x"38", x"3b", x"39", x"3b", x"34", x"22", x"1d", x"1a", x"18", x"14", x"11", x"15", x"19", x"1a",
-		x"ff", x"14", x"36", x"2e", x"39", x"30", x"32", x"33", x"30", x"36", x"3d", x"3c", x"3d", x"3d", x"38", x"3b", x"39", x"3b", x"34", x"22", x"1d", x"1a", x"18", x"14", x"11", x"15", x"19", x"1a");
+		x"14", x"36", x"2e", x"39", x"30", x"32", x"33", x"30", x"36", x"3d", x"3c", x"3d", x"3d", x"38", x"3b", x"39", x"3b", x"34", x"22", x"1d", x"1a", x"18", x"14", x"11", x"15", x"19", x"1a");
 	
 	SIGNAL ndx_t, ndx_s : INTEGER := 0;
  
@@ -209,15 +209,15 @@ BEGIN
 		wait for clk_I_period;
 		
 		ndx := 1;
-		WHILE (ndx < 243) LOOP
+		WHILE (ndx < 242) LOOP
 			templ_I <= templateArray(ndx);
 			search_I <= searchArray(ndx);
 			wait for clk_I_period;
 			ndx := ndx + 1;
 		END LOOP;
 		
-		templ_I <= templateArray(243);
-		search_I <= searchArray(243);
+		templ_I <= templateArray(242);
+		search_I <= searchArray(242);
 		
 		wait for clk_I_period;
 		h2fValid_I <= '0';
@@ -315,7 +315,7 @@ BEGIN
 		write_s_I  <= '1';
 		sw_I       <= x"00";
 		
-		WHILE (ndx < 27) LOOP --offset) LOOP
+		WHILE (ndx < 26) LOOP --offset) LOOP
 			templ_I  <= template_next(ndx);
 			search_I <= search_next(ndx);
 			wait for clk_I_period;
@@ -351,7 +351,7 @@ BEGIN
 		write_s_I  <= '1';
 		sw_I       <= x"00";
 		
-		WHILE (ndx < 55) LOOP --offset) LOOP
+		WHILE (ndx < 53) LOOP --offset) LOOP
 			templ_I  <= template_next(ndx);
 			search_I <= search_next(ndx);
 			wait for clk_I_period;

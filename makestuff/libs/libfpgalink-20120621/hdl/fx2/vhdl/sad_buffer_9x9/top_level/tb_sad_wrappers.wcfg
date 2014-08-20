@@ -20,7 +20,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="28" />
+   <WVObjectSize size="19" />
    <wvobject fp_name="/tb_sad_wrapper/clk_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i</obj_property>
       <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -38,34 +38,9 @@
       <obj_property name="ElementShortName">h2fvalid_i</obj_property>
       <obj_property name="ObjectShortName">h2fvalid_i</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/sw_i" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">sw_i[7:0]</obj_property>
-      <obj_property name="ObjectShortName">sw_i[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/templ_o" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">templ_o[7:0]</obj_property>
-      <obj_property name="ObjectShortName">templ_o[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/search_o" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">search_o[7:0]</obj_property>
-      <obj_property name="ObjectShortName">search_o[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/sad_o" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">sad_o[7:0]</obj_property>
-      <obj_property name="ObjectShortName">sad_o[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb_sad_wrapper/disp_o" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">disp_o[7:0]</obj_property>
       <obj_property name="ObjectShortName">disp_o[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/led_o" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">led_o[7:0]</obj_property>
-      <obj_property name="ObjectShortName">led_o[7:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sad_wrapper/uut/disparityarray" type="array" db_ref_id="1">
@@ -2513,6 +2488,111 @@
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/search_window" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">search_window[0:3]</obj_property>
+      <obj_property name="ObjectShortName">search_window[0:3]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">search_window[0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][0]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[0]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][1]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[1]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][1]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][2]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[2]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][2]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][3]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[3]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][3]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][4]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[4]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][4]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][5]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[5]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][5]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][6]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[6]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][6]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][7]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[7]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][7]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][8]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[8]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][8]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][9]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[9]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][9]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][10]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[10]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][10]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][11]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[11]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][11]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][12]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[12]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][12]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][13]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[13]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][13]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][14]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[14]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][14]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][15]" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">[15]</obj_property>
+            <obj_property name="ObjectShortName">search_window[0][15]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/tb_sad_wrapper/uut/search_window[1]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">search_window[1]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_sad_wrapper/uut/search_window[2]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">search_window[2]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_sad_wrapper/uut/search_window[3]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">search_window[3]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
    <wvobject fp_name="/tb_sad_wrapper/uut/template_array" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">template_array[0:242]</obj_property>
       <obj_property name="ObjectShortName">template_array[0:242]</obj_property>
@@ -4953,116 +5033,6 @@
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/sad_array" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">sad_array[0:3]</obj_property>
-      <obj_property name="ObjectShortName">sad_array[0:3]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[0]</obj_property>
-         <obj_property name="ObjectShortName">sad_array[0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][0]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[0]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][0]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][1]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[1]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][1]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][2]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[2]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][2]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][3]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[3]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][3]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][4]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[4]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][4]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][5]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[5]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][5]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][6]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[6]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][6]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][7]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[7]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][7]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][8]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[8]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][8]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][9]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[9]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][9]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][10]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[10]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][10]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][11]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[11]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][11]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][12]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[12]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][12]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][13]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[13]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][13]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][14]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[14]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][14]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][15]" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">[15]</obj_property>
-            <obj_property name="ObjectShortName">sad_array[0][15]</obj_property>
-            <obj_property name="Radix">HEXRADIX</obj_property>
-         </wvobject>
-      </wvobject>
-      <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[1]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[1]</obj_property>
-         <obj_property name="ObjectShortName">sad_array[1]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[2]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[2]</obj_property>
-         <obj_property name="ObjectShortName">sad_array[2]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[3]" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">[3]</obj_property>
-         <obj_property name="ObjectShortName">sad_array[3]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_disp_rd" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">f2h_disp_rd</obj_property>
-      <obj_property name="ObjectShortName">f2h_disp_rd</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb_sad_wrapper/uut/template_window" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">template_window[0:3]</obj_property>
       <obj_property name="ObjectShortName">template_window[0:3]</obj_property>
@@ -5573,110 +5543,115 @@
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/search_window" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">search_window[0:3]</obj_property>
-      <obj_property name="ObjectShortName">search_window[0:3]</obj_property>
+   <wvobject fp_name="/tb_sad_wrapper/uut/sad_array" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sad_array[0:3]</obj_property>
+      <obj_property name="ObjectShortName">sad_array[0:3]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0]" type="array" db_ref_id="1">
+      <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[0]</obj_property>
-         <obj_property name="ObjectShortName">search_window[0]</obj_property>
+         <obj_property name="ObjectShortName">sad_array[0]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][0]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][0]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[0]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][0]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][0]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][1]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][1]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[1]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][1]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][1]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][2]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][2]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[2]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][2]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][2]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][3]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][3]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[3]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][3]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][3]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][4]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][4]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[4]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][4]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][4]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][5]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][5]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[5]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][5]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][5]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][6]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][6]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[6]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][6]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][6]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][7]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][7]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[7]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][7]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][7]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][8]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][8]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[8]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][8]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][8]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][9]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][9]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[9]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][9]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][9]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][10]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][10]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[10]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][10]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][10]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][11]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][11]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[11]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][11]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][11]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][12]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][12]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[12]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][12]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][12]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][13]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][13]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[13]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][13]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][13]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][14]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][14]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[14]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][14]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][14]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_sad_wrapper/uut/search_window[0][15]" type="array" db_ref_id="1">
+         <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[0][15]" type="array" db_ref_id="1">
             <obj_property name="ElementShortName">[15]</obj_property>
-            <obj_property name="ObjectShortName">search_window[0][15]</obj_property>
+            <obj_property name="ObjectShortName">sad_array[0][15]</obj_property>
             <obj_property name="Radix">HEXRADIX</obj_property>
          </wvobject>
       </wvobject>
-      <wvobject fp_name="/tb_sad_wrapper/uut/search_window[1]" type="array" db_ref_id="1">
+      <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[1]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[1]</obj_property>
-         <obj_property name="ObjectShortName">search_window[1]</obj_property>
+         <obj_property name="ObjectShortName">sad_array[1]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_sad_wrapper/uut/search_window[2]" type="array" db_ref_id="1">
+      <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[2]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[2]</obj_property>
-         <obj_property name="ObjectShortName">search_window[2]</obj_property>
+         <obj_property name="ObjectShortName">sad_array[2]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_sad_wrapper/uut/search_window[3]" type="array" db_ref_id="1">
+      <wvobject fp_name="/tb_sad_wrapper/uut/sad_array[3]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[3]</obj_property>
-         <obj_property name="ObjectShortName">search_window[3]</obj_property>
+         <obj_property name="ObjectShortName">sad_array[3]</obj_property>
          <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_sad_wrapper/uut/f2h_disp_rd" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">f2h_disp_rd</obj_property>
+      <obj_property name="ObjectShortName">f2h_disp_rd</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sad_wrapper/uut/buff_state" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">buff_state</obj_property>
@@ -5685,10 +5660,6 @@
    <wvobject fp_name="/tb_sad_wrapper/uut/data_in" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">data_in</obj_property>
       <obj_property name="ObjectShortName">data_in</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/data_init" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">data_init</obj_property>
-      <obj_property name="ObjectShortName">data_init</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_sad_wrapper/uut/data_out" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">data_out[0:3]</obj_property>
@@ -5699,20 +5670,8 @@
       <obj_property name="ElementShortName">data_next</obj_property>
       <obj_property name="ObjectShortName">data_next</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/present_state" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">present_state</obj_property>
-      <obj_property name="ObjectShortName">present_state</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/junk_t" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">junk_t</obj_property>
-      <obj_property name="ObjectShortName">junk_t</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/ndx_t" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">ndx_t</obj_property>
-      <obj_property name="ObjectShortName">ndx_t</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_sad_wrapper/uut/ndx_t_next" type="other" db_ref_id="1">
-      <obj_property name="ElementShortName">ndx_t_next</obj_property>
-      <obj_property name="ObjectShortName">ndx_t_next</obj_property>
+   <wvobject fp_name="/tb_sad_wrapper/uut/data_init" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_init</obj_property>
+      <obj_property name="ObjectShortName">data_init</obj_property>
    </wvobject>
 </wave_config>

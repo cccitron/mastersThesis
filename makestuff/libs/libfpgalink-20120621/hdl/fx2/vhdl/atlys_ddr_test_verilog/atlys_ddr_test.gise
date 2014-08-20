@@ -23,18 +23,128 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="atlys_ddr_test_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
     <file xil_pn:fileType="FILE_UCF" xil_pn:name="ipcore_dir/ddr2/user_design/par/ddr2.ucf" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/ddr2.v" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/infrastructure.v" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_controller.v" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_mcb_controller.v" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration_top.v" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_ui_top.v" xil_pn:origination="imported"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/ddr2.v" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/infrastructure.v" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_controller.v" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_mcb_controller.v" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration_top.v" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_ui_top.v" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v" xil_pn:origination="imported">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_ddr2_interface_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_ddr2_interface_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_ddr2_interface_isim_beh.wdb"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
   </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1408502053" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1408502053">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1408502220" xil_pn:in_ck="1841435932541270531" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1408502220">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="atlys_ddr_test.v"/>
+      <outfile xil_pn:name="ddr_interface.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/sim/ddr2_model_c3.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/sim/ddr2_model_parameters_c3.vh"/>
+      <outfile xil_pn:name="tb_ddr2_interface.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1408502053" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6715758228423077288" xil_pn:start_ts="1408502053">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1408502053" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-4480902549607492250" xil_pn:start_ts="1408502053">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1408502053" xil_pn:in_ck="2640052636948500499" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-3408375999889797014" xil_pn:start_ts="1408502053">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/ddr2.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/infrastructure.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_controller.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_mcb_controller.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration_top.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_ui_top.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1408502220" xil_pn:in_ck="-793099533709932007" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1408502220">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="atlys_ddr_test.v"/>
+      <outfile xil_pn:name="ddr_interface.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/ddr2.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/infrastructure.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_controller.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/iodrp_mcb_controller.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_raw_wrapper.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_soft_calibration_top.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/mcb_controller/mcb_ui_top.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/rtl/memc_wrapper.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/sim/ddr2_model_c3.v"/>
+      <outfile xil_pn:name="ipcore_dir/ddr2/user_design/sim/ddr2_model_parameters_c3.vh"/>
+      <outfile xil_pn:name="tb_ddr2_interface.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1408502263" xil_pn:in_ck="-793099533709932007" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1971484076110585359" xil_pn:start_ts="1408502220">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_ddr2_interface_beh.prj"/>
+      <outfile xil_pn:name="tb_ddr2_interface_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1408502263" xil_pn:in_ck="4896768866459521600" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="9063643027048392594" xil_pn:start_ts="1408502263">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_ddr2_interface_isim_beh.wdb"/>
+    </transform>
+  </transforms>
 
 </generated_project>

@@ -508,13 +508,13 @@ if __name__ == "__main__":
                         searchBuff[i][j] = imL.getpixel((j, i))
                 
                 # Number of pixels per row to be sent
-                ncol = 27 #33 #25 #21 #65
+                ncol = 23 #33 #25 #21 #65
                 # Number of rows of pixels to be sent
-                nrow = 9
+                nrow = 7
                 # Disparity range 0-15
                 disp_range = 16
                 # Number of disparity values for an entire row
-                disp_row = 4 
+                disp_row = 2
                 
                 # template & search arrays, data sent over via bytearrays
                 buffTempl_h2f = bytearray(ncol * nrow + 1)

@@ -65,7 +65,7 @@ Figure~\ref{fig:sadPipe9x9} illustrates the pipeline used in a SAD calculation f
 \end{figure}
 
 The code for the 9x9 window implementation can be found on github:
-\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_simple_reg_9x9}
+\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_buffer_9x9}
 
 \subsubsection{7x7 Window}
 \label{sec:7x7window}
@@ -86,7 +86,7 @@ The main difference between this implementation and the 9x9 window implementatio
 Figure~\ref{fig:sadPipe7x7} shows the pipeline used for the 7x7 window version. It takes 7 clock cycles to take all of the differences between all 49 pairs of pixel values. After the first set of differences is calculated, the differences can begin to be summed up. The summing also takes 7 clock cycles and ends one cycle after the last difference is calculated. This results in a total of 8 clock cycles.
 
 The code for the 7x7 window implementation can be found on github:
-\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_parallel_7x7}
+\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_buffer_parallelSAD_7x7}
 
 \begin{figure}[h]
 	\begin{center}
@@ -101,7 +101,7 @@ The code for the 7x7 window implementation can be found on github:
 
 The purpose of the minimum comparator is to find the lowest value of two input values and output the lowest value. The top level implementation of the minimum comparator is shown in Figure~\ref{fig:minComp_rtl}. The process is synchronous, noted by the clock clk\_I. The index, pos0\_I and pos1\_I, of the SAD values sad0\_I and sad1\_I, respectively, ranges from 0 to 15, which gives a disparity range of 16. 
 
-Appendix~\ref{sec:appdxC} shows the code for the minimum comparator. If sad1 is less than sad0, then sad1 and its index, pos1, are returned, otherwise sad0 and pos0 are returned. Using a less than comparison is supposed to take up less hardware than a greater than or equal to comparison~\cite{lessThan}. This is useful because 15 minimum comparators (see Figure~\ref{fig:minComp}) are used for each pixel that is processed in parallel. So 30 minimum comparators are used for the 7x7 window implementation and 60 minimum comparators are used for the 9x9 window implementation. Constructing the minimum comparator in this way accounts for cases where 2 SAD values are equal to each other. The SAD value with the lower index is always assigned to the sad0\_I input and the higher indexed SAD value goes to the sad1\_I input. Therefore, if 2 values are equal, the SAD value with a lower index, and a lower disparity, will be returned. This assumes if two SAD values are equal to each other the value with the index closer to 0 is more likely to be correct.
+Appendix~\ref{sec:appdxC} shows the code for the minimum comparator. If sad1 is less than sad0, then sad1 and its index, pos1, are returned, otherwise sad0 and pos0 are returned. Using a less than comparison is supposed to take up less hardware than a greater than or equal to comparison~\cite{lessThan}. This is useful because 15 minimum comparators (see Figure~\ref{fig:minComp}) are used for each pixel that is processed in parallel. So 30 minimum comparators are used for the 7x7 window implementation and 60 minimum comparators are used for the 9x9 window implementation. Constructing the minimum comparator in this way accounts for cases where 2 SAD values are equal to each other. The SAD value with the lower index is always assigned to the sad0\_I input and the higher indexed SAD value goes to the sad1\_I input. Therefore, if 2 values are equal, the SAD value with a lower index, and a lower disparity, will be returned. %This assumes if two SAD values are equal to each other the value with the index closer to 0 is more likely to be correct.
 
 \begin{figure}[h]
 	\begin{center}

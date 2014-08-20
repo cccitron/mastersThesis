@@ -1,0 +1,191 @@
+FPGALink Python Example Copyright (C) 2011-2012 Chris McClelland
+
+Attempting to open connection to FPGALink device 1443:0007...
+The FPGALink device at 1443:0007 scanned its JTAG chain, yielding:
+  0x44008093
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+  0x00000000
+Playing "../../hdl/fx2/vhdl/sad_buffer_parallelSAD_7x7/top_level/default.xsvf" into the JTAG chain on FPGALink device 1443:0007...
+begin template read
+x02 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x05 x03 x04 x03 x05 x03 x04 x03 x05 x03 x05 
+
+x02 x04 x03 x04 x04 x04 x04 x04 x04 x04 x04 x03 x05 x03 x04 x02 x04 x03 x04 x03 x04 x03 x04 
+
+x0b x2f x2f x3a x3a x3a x3b x3b x3b x3b x3a x38 x2f x1d x20 x16 x1a x13 x14 x15 x1a x13 x0c 
+
+x15 x34 x2d x3a x36 x39 x39 x39 x39 x39 x38 x36 x2d x1b x1e x17 x17 x12 x13 x13 x17 x12 x0b 
+
+x15 x32 x2b x3b x38 x3b x3b x3a x3a x39 x39 x36 x2b x1a x1d x18 x1a x13 x12 x13 x19 x15 x0a 
+
+x14 x34 x2b x3b x38 x3b x3b x39 x3b x3b x39 x36 x2c x1b x1e x16 x1a x12 x13 x14 x19 x13 x09 
+
+x14 x34 x2b x3b x38 x3b x3b x39 x3b x3b x39 x36 x2c x1b x1e x16 x1a x12 x13 x14 x19 x13 x09 
+
+begin search read
+x02 x02 x03 x03 x03 x04 x03 x03 x03 x03 x03 x02 x03 x01 x02 x02 x03 x02 x03 x02 x03 x02 x03 
+
+x02 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x05 x03 x04 x03 x05 x03 x04 x03 x05 x03 x05 
+
+x02 x04 x04 x04 x03 x04 x04 x04 x04 x04 x04 x03 x04 x03 x04 x03 x04 x03 x04 x03 x04 x03 x04 
+
+x0a x33 x2d x31 x32 x31 x31 x32 x3b x3e x3b x3d x3e x3a x3c x3c x3b x2e x1e x1e x18 x18 x14 
+
+x13 x37 x28 x31 x2f x31 x30 x30 x39 x3c x3a x3a x3c x38 x3b x3b x3a x2e x1f x1e x18 x17 x14 
+
+x14 x35 x2b x31 x32 x34 x31 x31 x39 x3c x3b x3b x3d x3d x3c x3b x39 x2f x1f x1b x1b x18 x12 
+
+x15 x33 x28 x30 x31 x31 x31 x2f x39 x3f x3a x3b x3d x3a x3b x39 x3b x30 x1f x1c x1a x17 x15 
+
+reading from sad array  0
+xe8 x87 x26 x2b x0e xfe x1d x39 x64 x66 x69 x8b xf7 x4a xcd xf5 
+
+reading from sad array  1
+x2c x39 x0e xed xd3 xc6 xe6 x01 x07 xf6 x2c x88 xf7 x62 xea x22 
+
+reading from disparity array
+x00 x05 
+
+
+
+begin template read
+x02 x04 x03 x04 x04 x04 x04 x04 x04 x04 x04 x03 x05 x03 x04 x02 x04 x03 x04 x03 x04 x03 x04 
+
+x0b x2f x2f x3a x3a x3a x3b x3b x3b x3b x3a x38 x2f x1d x20 x16 x1a x13 x14 x15 x1a x13 x0c 
+
+x15 x34 x2d x3a x36 x39 x39 x39 x39 x39 x38 x36 x2d x1b x1e x17 x17 x12 x13 x13 x17 x12 x0b 
+
+x15 x32 x2b x3b x38 x3b x3b x3a x3a x39 x39 x36 x2b x1a x1d x18 x1a x13 x12 x13 x19 x15 x0a 
+
+x14 x34 x2b x3b x38 x3b x3b x39 x3b x3b x39 x36 x2c x1b x1e x16 x1a x12 x13 x14 x19 x13 x09 
+
+x13 x36 x2c x3c x39 x3a x39 x3a x3a x39 x3b x36 x2e x1c x1d x19 x1a x12 x11 x13 x18 x14 x09 
+
+x13 x36 x2c x3c x39 x3a x39 x3a x3a x39 x3b x36 x2e x1c x1d x19 x1a x12 x11 x13 x18 x14 x09 
+
+begin search read
+x02 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x04 x05 x03 x04 x03 x05 x03 x04 x03 x05 x03 x05 
+
+x02 x04 x04 x04 x03 x04 x04 x04 x04 x04 x04 x03 x04 x03 x04 x03 x04 x03 x04 x03 x04 x03 x04 
+
+x0a x33 x2d x31 x32 x31 x31 x32 x3b x3e x3b x3d x3e x3a x3c x3c x3b x2e x1e x1e x18 x18 x14 
+
+x13 x37 x28 x31 x2f x31 x30 x30 x39 x3c x3a x3a x3c x38 x3b x3b x3a x2e x1f x1e x18 x17 x14 
+
+x14 x35 x2b x31 x32 x34 x31 x31 x39 x3c x3b x3b x3d x3d x3c x3b x39 x2f x1f x1b x1b x18 x12 
+
+x15 x33 x28 x30 x31 x31 x31 x2f x39 x3f x3a x3b x3d x3a x3b x39 x3b x30 x1f x1c x1a x17 x15 
+
+x13 x35 x29 x2e x2e x31 x32 x31 x37 x3c x3d x3c x3d x39 x3c x39 x3b x31 x20 x1b x19 x17 x13 
+
+reading from sad array  0
+x12 xda x5e x6a x44 x2d x51 x64 x9b x98 xa6 xc3 x4a xb6 x5f x96 
+
+reading from sad array  1
+x5e x6c x30 x12 xed xd9 xf8 x0d x1a xfe x47 xb0 x3e xc9 x74 xc3 
+
+reading from disparity array
+x00 x05 
+
+
+
+begin template read
+x0b x2f x2f x3a x3a x3a x3b x3b x3b x3b x3a x38 x2f x1d x20 x16 x1a x13 x14 x15 x1a x13 x0c 
+
+x15 x34 x2d x3a x36 x39 x39 x39 x39 x39 x38 x36 x2d x1b x1e x17 x17 x12 x13 x13 x17 x12 x0b 
+
+x15 x32 x2b x3b x38 x3b x3b x3a x3a x39 x39 x36 x2b x1a x1d x18 x1a x13 x12 x13 x19 x15 x0a 
+
+x14 x34 x2b x3b x38 x3b x3b x39 x3b x3b x39 x36 x2c x1b x1e x16 x1a x12 x13 x14 x19 x13 x09 
+
+x13 x36 x2c x3c x39 x3a x39 x3a x3a x39 x3b x36 x2e x1c x1d x19 x1a x12 x11 x13 x18 x14 x09 
+
+x14 x38 x2d x3b x38 x3b x3c x38 x39 x39 x39 x37 x30 x1c x1e x16 x19 x13 x14 x14 x18 x16 x0b 
+
+x14 x38 x2d x3b x38 x3b x3c x38 x39 x39 x39 x37 x30 x1c x1e x16 x19 x13 x14 x14 x18 x16 x0b 
+
+begin search read
+x02 x04 x04 x04 x03 x04 x04 x04 x04 x04 x04 x03 x04 x03 x04 x03 x04 x03 x04 x03 x04 x03 x04 
+
+x0a x33 x2d x31 x32 x31 x31 x32 x3b x3e x3b x3d x3e x3a x3c x3c x3b x2e x1e x1e x18 x18 x14 
+
+x13 x37 x28 x31 x2f x31 x30 x30 x39 x3c x3a x3a x3c x38 x3b x3b x3a x2e x1f x1e x18 x17 x14 
+
+x14 x35 x2b x31 x32 x34 x31 x31 x39 x3c x3b x3b x3d x3d x3c x3b x39 x2f x1f x1b x1b x18 x12 
+
+x15 x33 x28 x30 x31 x31 x31 x2f x39 x3f x3a x3b x3d x3a x3b x39 x3b x30 x1f x1c x1a x17 x15 
+
+x13 x35 x29 x2e x2e x31 x32 x31 x37 x3c x3d x3c x3d x39 x3c x39 x3b x31 x20 x1b x19 x17 x13 
+
+x14 x34 x2a x2e x2e x31 x32 x32 x38 x3c x3b x3a x3b x39 x3a x38 x3a x33 x21 x1c x1b x17 x15 
+
+reading from sad array  0
+x49 x2f x9b x9d x6c x57 x80 x93 xd0 xd0 xdb xfd x9f x22 xe7 x36 
+
+reading from sad array  1
+x98 xa2 x60 x33 x02 xed x0c x25 x2d x14 x5a xdc x89 x2c xf7 x61 
+
+reading from disparity array
+x00 x05 
+
+
+
+begin template read
+x15 x34 x2d x3a x36 x39 x39 x39 x39 x39 x38 x36 x2d x1b x1e x17 x17 x12 x13 x13 x17 x12 x0b 
+
+x15 x32 x2b x3b x38 x3b x3b x3a x3a x39 x39 x36 x2b x1a x1d x18 x1a x13 x12 x13 x19 x15 x0a 
+
+x14 x34 x2b x3b x38 x3b x3b x39 x3b x3b x39 x36 x2c x1b x1e x16 x1a x12 x13 x14 x19 x13 x09 
+
+x13 x36 x2c x3c x39 x3a x39 x3a x3a x39 x3b x36 x2e x1c x1d x19 x1a x12 x11 x13 x18 x14 x09 
+
+x14 x38 x2d x3b x38 x3b x3c x38 x39 x39 x39 x37 x30 x1c x1e x16 x19 x13 x14 x14 x18 x16 x0b 
+
+x14 x36 x2e x39 x39 x3a x3c x39 x3a x39 x38 x37 x31 x1c x1e x17 x1b x14 x11 x13 x1a x18 x0b 
+
+x14 x36 x2e x39 x39 x3a x3c x39 x3a x39 x38 x37 x31 x1c x1e x17 x1b x14 x11 x13 x1a x18 x0b 
+
+begin search read
+x0a x33 x2d x31 x32 x31 x31 x32 x3b x3e x3b x3d x3e x3a x3c x3c x3b x2e x1e x1e x18 x18 x14 
+
+x13 x37 x28 x31 x2f x31 x30 x30 x39 x3c x3a x3a x3c x38 x3b x3b x3a x2e x1f x1e x18 x17 x14 
+
+x14 x35 x2b x31 x32 x34 x31 x31 x39 x3c x3b x3b x3d x3d x3c x3b x39 x2f x1f x1b x1b x18 x12 
+
+x15 x33 x28 x30 x31 x31 x31 x2f x39 x3f x3a x3b x3d x3a x3b x39 x3b x30 x1f x1c x1a x17 x15 
+
+x13 x35 x29 x2e x2e x31 x32 x31 x37 x3c x3d x3c x3d x39 x3c x39 x3b x31 x20 x1b x19 x17 x13 
+
+x14 x34 x2a x2e x2e x31 x32 x32 x38 x3c x3b x3a x3b x39 x3a x38 x3a x33 x21 x1c x1b x17 x15 
+
+x15 x35 x2a x30 x30 x32 x33 x30 x36 x3d x3c x3d x3d x38 x3b x39 x3b x34 x22 x1d x1a x18 x14 
+
+reading from sad array  0
+x36 x45 x9a x9b x66 x48 x7e x97 xd9 xdf xe2 x09 xbd x5b x3f xa2 
+
+reading from sad array  1
+x60 x6b x1c xe7 xb3 x93 xba xde xe4 xcb x0e xa8 x6a x32 x19 x9f 
+
+reading from disparity array
+x00 x05 
+
+
+
+t0 =  1408463148.2661023
+t1 =  1408463148.6271756
+t2 =  1408463148.6271763
+t1 - t0 =  0.36107325553894043
+t2 - t1 =  7.152557373046875e-07
+t2 - t0 =  0.36107397079467773
