@@ -112,7 +112,7 @@ Appendix~\ref{sec:appdxC} shows the code for the minimum comparator. If sad1 is 
 	\end{center}
 \end{figure}
 
-When multiple minimum comparators are put together to create a tree, as shown in Fig.~\ref{fig:minComp}, it is possible to quickly determine which SAD value is the lowest. This process is used to find the index of the lowest SAD value out of the 16 SAD values calculated for each pixel. A normal serial comparison of 16 values would take 15 comparisons, or 15 clock cycles, if one comparison occurred each clock cycle. By having 15 comparators, the number of SAD values needed to be compared can be reduced by half each clock cycle. Using a tree of comparators drops the comparison time from 15 clock cycles to only 4 clock cycles. It is almost a 4 times speed up.
+Multiple minimum comparators are put together to create a tree, as shown in Fig.~\ref{fig:minComp}, in order to quickly determine which SAD value is the lowest. This process is used to find the index of the lowest SAD value out of the 16 SAD values calculated for each pixel. A normal serial comparison of 16 values would take 15 comparisons, or 15 clock cycles, if one comparison occurred each clock cycle. Having 15 comparators allows the number of SAD values needed to be reduced by half each clock cycle. Using a tree of comparators drops the comparison time from 15 clock cycles to only 4 clock cycles. It is almost a 4 times speed up.
 
 \begin{figure}[h]
 	\begin{center}
@@ -125,7 +125,7 @@ When multiple minimum comparators are put together to create a tree, as shown in
 
 \subsection{SAD Wrapper}
 
-The SAD wrapper is the entity that encompasses the SAD algorithms and minimum comparators. The wrapper gets a clock signal through clk\_I and a reset signal through rst\_I. It receives the template image data through templ\_I and receives the search image data through search\_I. The write\_t\_I and write\_s\_I notify the wrapper when new data is actively being sent for the template and search images, respectively. It is designed to allow data from both images to be sent to the wrapper in parallel or serially. The h2fReady\_I and f2hReady\_I are used to communicate when data is being sent to or from the host, the computer, from or to the FPGA. The sw\_I allows the 8 switches on Atlys board to be connected to data that is within the wrapper to be displayed on the 8 LEDs, led\_O. The outputs templ\_O for template image region, search\_O for search image region, sad\_O for the SAD values calculated from the current template and search image regions, and disp\_O that were found from the SAD values are outputted so they can be read, if desired. In the current implementations, templ\_O, search\_O, and sad\_O are used for debugging purposes only while disp\_O is used to create the depth map. See Section~\ref{sec:fpgalink} for how the data is transferred to the computer.
+The SAD wrapper is the entity that encompasses the SAD algorithms and minimum comparators. The wrapper gets a clock signal through clk\_I and a reset signal through rst\_I. It receives the template image data through templ\_I and receives the search image data through search\_I. The write\_t\_I and write\_s\_I notify the wrapper when new data is actively being sent for the template and search images, respectively. It is designed to allow data from both images to be sent to the wrapper in parallel or serially. The SAD wrapper is able to buffer the next pair of row data while the SAD algorithms are running. The h2fReady\_I and f2hReady\_I are used to communicate when data is being sent to or from the host, the computer, from or to the FPGA. The sw\_I allows the 8 switches on Atlys board to be connected to data that is within the wrapper to be displayed on the 8 LEDs, led\_O. The outputs templ\_O for template image region, search\_O for search image region, sad\_O for the SAD values calculated from the current template and search image regions, and disp\_O that were found from the SAD values are sent out so they can be read, if desired. In the current implementations, templ\_O, search\_O, and sad\_O are used for debugging purposes only while disp\_O is used to create the depth map. See Section~\ref{sec:fpgalink} for how the data is transferred to the computer.
 
 \begin{figure}[h]
 	\begin{center}
@@ -138,7 +138,7 @@ The SAD wrapper is the entity that encompasses the SAD algorithms and minimum co
 
 \subsection{Top Level}
 
-Figure~\ref{fig:compFPGAcomp} shows the top most level, the FPGA board itself, and its interaction with the computer. This setup was used to produce the disparity map images in Chapter~\ref{sec:exp}. The computer transferred the pixel data from both images to the FPGA board. The FPGA board used the SAD wrapper entity within a top level entity. The top level handled the communication between the board and the computer. The board transferred the disparity values to the computer.
+Figure~\ref{fig:compFPGAcomp} shows the top most level, the FPGA board itself, and its interaction with the computer. This setup was used to produce the disparity map images in Chapter~\ref{sec:exp}. The computer transferred the pixel data from both images to the FPGA board for reasons explained in Ch.~\ref{sec:exp}. The FPGA board used the SAD wrapper entity within a top level entity. The top level handled the communication between the board and the computer. The board transferred the disparity values to the computer.
 
 \begin{figure}[h]
 	\begin{center}
@@ -163,7 +163,7 @@ The implementation of the SAD wrapper and its internal entities were designed to
 \section{FPGALink}
 \label{sec:fpgalink}
 
-FPGALink~\cite{fpgalink} was used to facilitate communications between the computer (host) and the FPGA (Atlys board) over USB. An overview of how the FPGALink works between the host and FPGA is shown in Figure~\ref{fig:fpgalink}. The FPGALink has two possible communication modules to choose from, FX2 and EPP. According to~\cite{fpgalink}, FX2 has an observed throughput around 26 MB/s, while EEP has a observed throughput of around 1.26 MB/s. FX2 was used due to its higher throughput.
+FPGALink~\cite{fpgalink} was used to facilitate communications between the computer (host) and the FPGA (Atlys board) over USB. An overview of how the FPGALink works between the host and FPGA is shown in Figure~\ref{fig:fpgalink}. The FPGALink has two possible communication modules to choose from, FX2 and EPP. According to~\cite{fpgalink}, FX2 has an observed throughput up to around 26 MB/s, while EEP has a observed throughput up to around 1.26 MB/s. FX2 was used due to its higher throughput.
 
 \begin{figure}[h]
 	\begin{center}
