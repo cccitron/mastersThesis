@@ -15,10 +15,10 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Architecture overview of the SAD algorithm with the 7x7 window implementation.\relax }}{20}{figure.caption.13}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Pipeline architecture of the SAD algorithm with the 7x7 window implementation.\relax }}{21}{figure.caption.14}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces The top level minimum comparator implementation.\relax }}{22}{figure.caption.15}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces The minimum comparator tree designed to quickly find the minimum value and corresponding index out of the 16 SAD values that are calculated for one pixel.\relax }}{25}{figure.caption.16}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces The SAD wrapper that encompasses the SAD algorithm and minimum comparator. It interacts with the top level.\relax }}{26}{figure.caption.17}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces The minimum comparator tree designed to quickly find the minimum value and corresponding index out of the 16 SAD values that are calculated for one pixel.\relax }}{23}{figure.caption.16}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces The SAD wrapper that encompasses the SAD algorithm and minimum comparator. It interacts with the top level.\relax }}{25}{figure.caption.17}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces The setup for testing the SAD module on the FPGA board. The computer sent the image pixel data to the FPGA board and the FPGA board sent the disparity values to the computer.\relax }}{26}{figure.caption.18}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces The overview of the structure used for implementing the 9x9 window. The 7x7 window has two less SAD and minComp each.\relax }}{27}{figure.caption.19}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces The overview of the structure used for implementing the 9x9 window. The 7x7 window has two less SAD and minComp each.\relax }}{26}{figure.caption.19}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Overview of FPGALink communications between host computer and FPGA~\cite {fpgalink}.\relax }}{28}{figure.caption.20}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Window size comparisons for disparity maps~\cite {matlab} of the Tskukuba image pair~\cite {middlebury}.\relax }}{31}{figure.caption.21}
