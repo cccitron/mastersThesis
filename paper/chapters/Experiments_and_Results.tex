@@ -71,14 +71,13 @@ The size of the window (e.g. 9x9 pixels) affected the quality of the disparity m
 
 \begin{table}
 \begin{center}
-	\begin{tabular}{| p{1.7cm} | p{2.5cm} | p{2.7cm} | p{2.7cm} | p{2.7cm} |}
+	\begin{tabular}{| p{1.7cm} | p{2.5cm} | p{2.7cm} | >{\raggedright} p{2.7cm} | >{\raggedright\arraybackslash} p{2.7cm} |}
 		\hline
 		\rowstyle{\bfseries} Window Size & 
 		\rowstyle{\bfseries} \# of pixels/ window & 
-		\rowstyle{\bfseries} \# of pixels/ disparity value &
-		\rowstyle{\bfseries} \# of pixels/2 disparity values & 
-		\rowstyle{\bfseries} \# of pixels/4 disparity values %& 
-		%\rowstyle{\bfseries} \# of MUXCYs, out of 13,644
+		\rowstyle{\bfseries} \# of pixels/ disparity value & 
+		\rowstyle{\bfseries} \# of pixels/ 2 disparity values & 
+		\rowstyle{\bfseries} \# of pixels/ 4 disparity values
 		\tabularnewline
 		\hline
 		3x3 & 9 & 108 & 114 & 126
@@ -229,7 +228,7 @@ The 7x7 window implementation with parallelized SAD, for its maximum speed, need
 %\subsection{9x9 Window Implementation Runtime}
 %\label{sec:testbench9x9}
 %
-%Based on the testbench simulation in Fig.~\ref{fig:tb_9x9} the simulated frames per second can be inferred for different image sizes. The simulation assumes the 100 MHz clock on the FPGA is used, which was the clock frequency on the Atlys board. The clock cycle duration is therefore 10 ns long.
+%Based on the testbench simulation in Figure~\ref{fig:tb_9x9} the simulated frames per second can be inferred for different image sizes. The simulation assumes the 100 MHz clock on the FPGA is used, which was the clock frequency on the Atlys board. The clock cycle duration is therefore 10 ns long.
 %
 %In the testbench simulation, the window size is 9x9 and 4 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 3.35 us. After that, a constant cycle was produced, which includes the SAD wrapper taking in the next row and producing the next disparity values. This cycle takes 1.22 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 617x472, or 291,224 pixels. Disparity values are not produced for pixels where either the window would run off the image or where there is not enough room for the 16 SAD values to be calculated for the pixel. Since 4 pixels are processed in parallel, 291,224 pixels are divided by 4 pixels/iteration, giving 72,806 iterations. So, 72,805 iterations times 1.22 us/iteration plus 3.35 us (initial section, hence minus one on number of iterations) gives 88,826.67 us or approximately 0.0888 seconds per frame. Therefore, an image size of 640x480 can be processed at around 11.26 frames per second. Table~\ref{table:tb_9x9} shows the simulated frame rate for the image sizes used in this chapter.
 %
@@ -263,7 +262,7 @@ The 7x7 window implementation with parallelized SAD, for its maximum speed, need
 %\subsection{7x7 Window Implementation Runtime}
 %\label{sec:testbench7x7}
 %
-%Based on the testbench simulation in Fig.~\ref{fig:tb_7x7} the simulated frame rate can be inferred for different image sizes. The simulation uses a clock cycle of 10 ns.
+%Based on the testbench simulation in Figure~\ref{fig:tb_7x7} the simulated frame rate can be inferred for different image sizes. The simulation uses a clock cycle of 10 ns.
 %
 %In the testbench simulation, the window size is 7x7 and 2 pixels are processed in parallel. The first section of the simulation includes the initial image data given to the SAD wrapper up to the point where that data's disparity values are returned. This section takes 1.78 us. After that, a constant cycle is produced allowing the SAD wrapper to get the next row and produce the next disparity values, which takes 0.42 us. A 640x480 image has 307,200 pixels, which will produce a disparity map of 474x618, which is 292,932 pixels. Disparity values are not produced for pixels that either the windows cannot fit on or there is not enough room for the 16 SAD values to be calculated for the pixel. Since 2 pixels are processed in parallel, 292,932 pixels is divided by 2 pixels/iteration, giving 146,703 base iterations. There is an additional 1,848 iterations that occur due to the loading of the 6 top row segments  before any disparity values can be obtained for each column of the pair of pixels processed in parallel. There are 308 columns past the initial column (618/2 - 1) times 6 plus the base number of iterations gives a total of 148,551 iterations. The additional iterations causes an overhead of only 1.24\%. So, 148,551 total iterations times 0.24 us/iteration gives 61,617.04 us or approximately 0.0616 seconds per frame. Therefore, an image size of 640x480 can be processed at around 16.23 frames per second. Table~\ref{table:tb_7x7} shows the simulated frame rate for the image sizes used in this chapter.
 
@@ -384,15 +383,16 @@ Table~\ref{table:clockCountFPS} is a continuation of Tbl.~\ref{table:clockCount}
 
 \begin{table}
 	\begin{center}
-		\begin{tabu}{| p{1.8cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+		\begin{tabu}{| p{1.8cm} | p{1.8cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
 			\hline
 				\rowstyle{\bfseries} Window Size & 
 				\rowstyle{\bfseries} Total Cycles & 
 				\rowstyle{\bfseries} Sec/ Frame @ 48 MHz & 
 				\rowstyle{\bfseries} Sec/ Frame @ 100 MHz & 
 				\rowstyle{\bfseries} Frames/ Sec @ 48 MHz &
-				\rowstyle{\bfseries} Frames/ Sec @ 100 MHz
-			\\ \hline 
+				\rowstyle{\bfseries} Frames/ Sec @ 100 MHz 
+			\tabularnewline
+			\hline 
 			9x9 & 2,228,432 & 0.04642 & 0.02228 & 21.54 & 44.87
 			\\ \hline 
 			7x7 & 1,198,806 & 0.02497 & 0.01199 & 40.05 & 83.42

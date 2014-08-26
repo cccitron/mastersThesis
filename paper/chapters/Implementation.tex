@@ -1,7 +1,7 @@
 \chapter{Implementation}
 \label{sec:impl}
 
-This chapter presents the implementation and architecture of stereo vision system module presented in this paper.
+This chapter presents the implementation and architecture of the stereo vision system module presented in this paper.
 
 \section{Architecture Overview}
 
@@ -12,7 +12,7 @@ The code for the following sections is located on github under:
 
 \subsection{Sum of the Absolute Differences Architecture}
 
-Two versions of the SAD algorithm have been implemented in this paper. The first uses a 9x9 window and the other one uses a 7x7 window. Figure~\ref{fig:sadAlg_rtl} shows the top level entity of the SAD implementation used. Both versions have a clocked input (clk\_I) and a one bit data input (data\_I) to notify the algorithm to begin calculating the SAD value. The template\_window\_I and search\_window\_I between the two versions differ because 49 (7x7) or 81 (9x9) bytes are sent to the sadAlgorithm entity. The data\_O signal notifies when the calculation is complete and is ready for the next set of input. The calculated SAD value is sent out of the entity through sad\_O.
+Two versions of the SAD algorithm have been implemented in this paper. The first uses a 9x9 window and the other one uses a 7x7 window. Figure~\ref{fig:sadAlg_rtl} shows the top level entity of the SAD implementation used. Both versions have a clocked input (clk\_I) and a one bit data input (data\_I) to notify the algorithm to begin calculating the SAD value. The template\_window\_I and search\_window\_I between the two versions differ because 49 (7x7) or 81 (9x9) bytes are sent to the sadAlgorithm entity. The data out signal (data\_O) notifies when the calculation is complete and is ready for the next set of input. The calculated SAD value is sent out of the entity through sad\_O.
 
 \begin{figure}
 	\begin{center}
@@ -28,7 +28,7 @@ There is a slight variation between the standard SAD algorithm and how it is imp
 
 \subsubsection{State Diagram}
 
-Inside the sadAlgorithm entity from Fig.~\ref{fig:sadAlg_rtl}, the state machine from Figure~\ref{fig:stateMachine} controls the SAD algorithm. The state machine begins at state SO and initializes all the values used in it to 0. It then proceeds to S1 where the state machine remains on standby until data\_I becomes `1'. In S2, the counter starts at 0, the subtraction between corresponding pixel values begins, and on the next clock cycle, the state will be S3. While in S3, the counter is incremented by 1 every clock cycle. S3 is where the SAD algorithm is performed. After the counter is equal to windowSize (7 for the 7x7 and 81 for the 9x9, see Section~\ref{sec:9x9window} and Section~\ref{sec:7x7window} for details) the SAD calculation is complete. The state machine sets data\_O to `1' to notify the SAD wrapper that the calculation is complete and the state moves to S1 and waits for the next set of input.
+Inside the sadAlgorithm entity from Fig.~\ref{fig:sadAlg_rtl}, the state machine from Figure~\ref{fig:stateMachine} controls the SAD algorithm. The state machine begins at state SO and initializes all the values used in it to 0. It then proceeds to S1 where the state machine remains on standby until data\_I becomes `1'. In S2, the counter starts at 0, the subtraction between corresponding pixel values begins, and on the next clock cycle, the state will be S3. While in S3, the counter is incremented by 1 every clock cycle. S3 is where the SAD algorithm is performed. After the counter is equal to windowSize of 7 for the 7x7 or 81 for the 9x9 (see Section~\ref{sec:9x9window} and Section~\ref{sec:7x7window} for details) the SAD calculation is complete. The state machine sets data\_O to `1' to notify the SAD wrapper that the calculation is complete and the state moves to S1 and waits for the next set of input.
 
 \begin{figure}
 	\begin{center}
@@ -42,7 +42,7 @@ Inside the sadAlgorithm entity from Fig.~\ref{fig:sadAlg_rtl}, the state machine
 \subsubsection{9x9 Window}
 \label{sec:9x9window}
 
-The 9x9 window implementation operated with 4 pixels processed in parallel. Every pixel has 16 SAD operations processed in parallel. There are 64 SAD operations total occurring in parallel for the 4 pixels. However, each SAD calculation has a higher degree of serialization than the 7x7 window implementation in order to reduce space to fit on the Atlys board~\cite{atlysBoard}. Figure~\ref{fig:sadAlg9x9} shows a simplified version of this process. For each of the 81 clock cycles, the difference between corresponding pixels is calculated. Beginning one clock cycle after the differences start to be calculated the difference, sub, sum\_out is added to itself and sub. This process also occurs 81 times, one addition for each clock cycle. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
+The 9x9 window implementation operated with 4 pixels processed in parallel. Every pixel has 16 SAD operations processed in parallel. So there are 64 SAD entities in this implementation. However, each SAD calculation has a higher degree of serialization than the 7x7 window implementation in order to reduce space to fit on the Atlys board~\cite{atlysBoard}. Figure~\ref{fig:sadAlg9x9} shows a simplified version of this process. For each of the 81 clock cycles, the difference between corresponding pixels is calculated. Beginning one clock cycle after the differences start to be calculated the difference, sub, sum\_out is added to itself and sub. This process also occurs 81 times, one addition for each clock cycle. The state machine in Figure~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
 
 \begin{figure}
 	\begin{center}
@@ -70,9 +70,9 @@ The code for the 9x9 window implementation can be found on github:
 \subsubsection{7x7 Window}
 \label{sec:7x7window}
 
-The 7x7 window implementation operated with 2 pixels processed in parallel. Each pixel has 16 SAD operations processed in parallel. There are only 32 SAD operations occurring in parallel, as opposed to 64 that were performed in parallel in Sec.~\ref{sec:9x9window}. The 7x7 window size has 32 pixels less than the 9x9 version for each window in every SAD calculation. The process was able to utilize a higher degree of parallelization. The increased parallelism takes up more space on the board than the serial version from Sec.~\ref{sec:9x9window}. Figure~\ref{fig:sadAlg7x7} shows a simplified version of this process. Each clock cycle during 7 cycles, the difference, sub, between corresponding pixels is calculated. One clock cycle after the differences begin to be calculated, sum\_out is added to itself and the value sub. This process also occurs 7 times, one set of addition each clock cycle. The state machine in Fig.~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
+The 7x7 window implementation operated with 2 pixels processed in parallel. Each pixel has 16 SAD operations processed in parallel. There are only 32 SAD operations occurring in parallel, as opposed to 64 that were performed in parallel in Sec.~\ref{sec:9x9window}. The 7x7 window size has 32 pixels less than the 9x9 version for each window in every SAD calculation. The process was able to utilize a higher degree of parallelization. The increased parallelism takes up more space on the board than the serial version from Sec.~\ref{sec:9x9window}. Figure~\ref{fig:sadAlg7x7} shows a simplified version of this process. Each clock cycle during 7 cycles, the difference, sub, between corresponding pixels is calculated. One clock cycle after the differences begin to be calculated, sum\_out is added to itself and the value sub. This process also occurs 7 times, one set of addition each clock cycle. The state machine in Figure~\ref{fig:stateMachine} stops the calculation for sum\_out after the full SAD value has been summed up.
 
-The main difference between this implementation and the 9x9 window implementation from Sec.~\ref{sec:9x9window} is that the calculation of the differences between corresponding pixels is parallelized to calculate 7 absolute values at once. The dotted box in Fig.~\ref{fig:sadAlg7x7} represents all 7 of the subtraction calculations occurring 7 times in the SAD calculation. Instead of requiring 49 clock cycles to calculate all the differences, it only takes 7 clock cycles. All 7 of the differences that were calculated are added to sum\_out each clock cycle.
+The main difference between this implementation and the 9x9 window implementation from Sec.~\ref{sec:9x9window} is that the calculation of the differences between corresponding pixels is parallelized to calculate 7 absolute values at once. The dotted box in Figure~\ref{fig:sadAlg7x7} represents all 7 of the subtraction calculations occurring 7 times in the SAD calculation. Instead of requiring 49 clock cycles to calculate all the differences, it only takes 7 clock cycles. All 7 of the differences that were calculated are added to sum\_out each clock cycle.
 
 \begin{figure}
 	\begin{center}
@@ -112,7 +112,7 @@ Appendix~\ref{sec:appdxC} shows the code for the minimum comparator. If sad1 is 
 	\end{center}
 \end{figure}
 
-Multiple minimum comparators were put together to create a tree, as shown in Fig.~\ref{fig:minComp}, in order to quickly determine which SAD value was the lowest. This process is used to find the index of the lowest SAD value out of the 16 SAD values calculated for each pixel. A normal serial comparison of 16 values would take 15 comparisons, or 15 clock cycles, if one comparison occurred each clock cycle. Having 15 comparators allows the number of SAD values needed to be reduced by half each clock cycle. Using a tree of comparators drops the comparison time from 15 clock cycles to only 4 clock cycles. It is almost a 4 times speed up.
+Multiple minimum comparators were put together to create a tree, as shown in Figure~\ref{fig:minComp}, in order to quickly determine which SAD value was the lowest. This process is used to find the index of the lowest SAD value out of the 16 SAD values calculated for each pixel. A normal serial comparison of 16 values would take 15 comparisons, or 15 clock cycles, if one comparison occurred each clock cycle. Having 15 comparators allows the number of SAD values needed to be reduced by half each clock cycle. Using a tree of comparators drops the comparison time from 15 clock cycles to only 4 clock cycles. It is almost a 4 times speed up.
 
 \begin{figure}
 	\begin{center}
@@ -149,7 +149,7 @@ Figure~\ref{fig:compFPGAcomp} shows the top most level, the FPGA board itself, a
 	\end{center}
 \end{figure}
 
-The implementation of the SAD wrapper and its internal entities were designed to be able to work with any FPGA that has enough resources to hold it (see Table~\ref{table:utilize}). Figure~\ref{fig:topLevel_rtl} shows the SAD wrapper inside a top level entity. The top level gives the SAD wrapper image data and the SAD wrapper sends the top level disparity values. Those values are then transmitted to the computer. See Sec.~\ref{sec:fpgalink} for the communication process. The implementation in Fig.~\ref{fig:topLevel_rtl} represents the 9x9 window implementation. For the 7x7 window implementation, there are only 2 SAD and 2 minimum comparators, as opposed to 4 each.
+The implementation of the SAD wrapper and its internal entities were designed to be able to work with any FPGA that has enough resources to hold it (see Table~\ref{table:utilize}). Figure~\ref{fig:topLevel_rtl} shows the SAD wrapper inside a top level entity. The top level gives the SAD wrapper image data and the SAD wrapper sends the top level disparity values. Those values are then transmitted to the computer. See Sec.~\ref{sec:fpgalink} for the communication process. The implementation in Figure~\ref{fig:topLevel_rtl} represents the 9x9 window implementation. For the 7x7 window implementation, there are only 2 SAD and 2 minimum comparators, as opposed to 4 each.
 
 \begin{figure}
 	\begin{center}
@@ -163,7 +163,7 @@ The implementation of the SAD wrapper and its internal entities were designed to
 \section{FPGALink}
 \label{sec:fpgalink}
 
-FPGALink~\cite{fpgalink} was used to facilitate communications between the computer (host) and the FPGA (Atlys board) over USB. An overview of how the FPGALink works between the host and FPGA is shown in Figure~\ref{fig:fpgalink}. The FPGALink has two possible communication modules to choose from, FX2 and EPP. According to~\cite{fpgalink}, FX2 has an observed throughput up to around 26 MB/s, while EEP has a observed throughput up to around 1.26 MB/s. FX2 was used due to its higher throughput.
+FPGALink~\cite{fpgalink} was used to facilitate communications between the computer (host) and the FPGA (Atlys board) over USB. An overview of how the FPGALink works between the host and FPGA is shown in Figure~\ref{fig:fpgalink}. The FPGALink has two possible communication modules to choose from, FX2 and EPP. According to~\cite{fpgalink}, FX2 has an observed throughput up to around 26 MB/s, while EPP has a observed throughput up to around 1.26 MB/s. FX2 was used due to its higher throughput.
 
 \begin{figure}
 	\begin{center}
