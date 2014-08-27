@@ -1,3 +1,4 @@
+
 \chapter{Implementation}
 \label{sec:impl}
 
@@ -12,7 +13,7 @@ The code for the following sections is located on github under:
 
 \subsection{Sum of the Absolute Differences Architecture}
 
-Two versions of the SAD algorithm have been implemented in this paper. The first uses a 9x9 window and the other one uses a 7x7 window. Figure~\ref{fig:sadAlg_rtl} shows the top level entity of the SAD implementation used. Both versions have a clocked input (clk\_I) and a one bit data input (data\_I) to notify the algorithm to begin calculating the SAD value. The template\_window\_I and search\_window\_I between the two versions differ because 49 (7x7) or 81 (9x9) bytes are sent to the sadAlgorithm entity. The data out signal (data\_O) notifies when the calculation is complete and is ready for the next set of input. The calculated SAD value is sent out of the entity through sad\_O.
+Two versions of the SAD algorithm have been implemented in this paper. The first uses a 9x9 window and the other one uses a 7x7 window. Figure~\ref{fig:sadAlg_rtl} shows the top level entity of the SAD implementation used. Both versions have a clocked input (clk\_I) and a one bit data input (data\_I) to notify the algorithm to begin calculating the SAD value. The template\_window\_I and search\_window\_I between the two versions differ because 49 (7x7) or 81 (9x9) bytes are sent to the sadAlgorithm entity. The data out signal (data\_O) notifies when the calculation is complete and is ready for the next set of input. The calculated SAD value is sent out through sad\_O.
 
 \begin{figure}
 	\begin{center}
@@ -65,7 +66,7 @@ Figure~\ref{fig:sadPipe9x9} illustrates the pipeline used in a SAD calculation f
 \end{figure}
 
 The code for the 9x9 window implementation can be found on github:
-\\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_buffer_9x9}
+\\\sloppy\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_buffer_9x9}
 
 \subsubsection{7x7 Window}
 \label{sec:7x7window}
@@ -74,7 +75,9 @@ The 7x7 window implementation operated with 2 pixels processed in parallel. Each
 
 The main difference between this implementation and the 9x9 window implementation from Sec.~\ref{sec:9x9window} is that the calculation of the differences between corresponding pixels is parallelized to calculate 7 absolute values at once. The dotted box in Figure~\ref{fig:sadAlg7x7} represents all 7 of the subtraction calculations occurring 7 times in the SAD calculation. Instead of requiring 49 clock cycles to calculate all the differences, it only takes 7 clock cycles. All 7 of the differences that were calculated are added to sum\_out each clock cycle.
 
-\begin{figure}
+Figure~\ref{fig:sadPipe7x7} shows the pipeline used for the 7x7 window version. It takes 7 clock cycles to calculate the differences between all 49 pairs of pixel values. After the first set of differences is calculated, the differences can begin to be summed up. The summing also takes 7 clock cycles and ends one cycle after the last difference is calculated. This results in a total of 8 clock cycles.\\
+
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=130mm]{figures/sadAlgorithm7x7.png}
 		\captionfonts
@@ -82,8 +85,6 @@ The main difference between this implementation and the 9x9 window implementatio
 		\label{fig:sadAlg7x7}
 	\end{center}
 \end{figure}
-
-Figure~\ref{fig:sadPipe7x7} shows the pipeline used for the 7x7 window version. It takes 7 clock cycles to calculate the differences between all 49 pairs of pixel values. After the first set of differences is calculated, the differences can begin to be summed up. The summing also takes 7 clock cycles and ends one cycle after the last difference is calculated. This results in a total of 8 clock cycles.
 
 The code for the 7x7 window implementation can be found on github:
 \\\path{https://github.com/cccitron/mastersThesis/tree/master/makestuff/libs/libfpgalink-20120621/hdl/fx2/vhdl/sad_buffer_parallelSAD_7x7}
@@ -96,6 +97,8 @@ The code for the 7x7 window implementation can be found on github:
 		\label{fig:sadPipe7x7}
 	\end{center}
 \end{figure}
+
+
 
 \subsection{Minimum Comparator Architecture}
 
