@@ -13,7 +13,7 @@ The code for the following sections is located on github under:
 
 \subsection{Sum of the Absolute Differences Architecture}
 
-Two versions of the SAD algorithm have been implemented in this paper. The first uses a 9x9 window and the other one uses a 7x7 window. Figure~\ref{fig:sadAlg_rtl} shows the top level entity of the SAD implementation used. Both versions have a clocked input (clk\_I) and a one bit data input (data\_I) to notify the algorithm to begin calculating the SAD value. The template\_window\_I and search\_window\_I between the two versions differ because 49 (7x7) or 81 (9x9) bytes are sent to the sadAlgorithm entity. The data out signal (data\_O) notifies when the calculation is complete and is ready for the next set of input. The calculated SAD value is sent out through sad\_O.
+Two versions of the SAD algorithm have been implemented in this paper. The first uses a 9x9 window and the other one uses a 7x7 window. Figure~\ref{fig:sadAlg_rtl} shows the top level entity of the SAD implementation used. Both versions have a clocked input (clk\_I) and a 1 bit data input (data\_I) to notify the algorithm to begin calculating the SAD value. The template\_window\_I and search\_window\_I between the two versions differ because 49 (7x7) or 81 (9x9) bytes are sent to the sadAlgorithm entity. The 1 bit data out signal (data\_O) notifies when the calculation is complete and is ready for the next set of input. The calculated SAD value is sent out through sad\_O.
 
 \begin{figure}
 	\begin{center}
